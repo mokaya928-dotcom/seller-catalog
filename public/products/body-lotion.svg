@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#dcfce7" />
+    </linearGradient>
+    <linearGradient id="bottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#bbf7d0" />
+      <stop offset="35%" stop-color="#ffffff" />
+      <stop offset="70%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#86efac" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#14532d" flood-opacity="0.22" />
+    </filter>
+  </defs>
+  <rect width="500" height="500" fill="url(#bg)" rx="24" />
+  <!-- Studio Pedestal -->
+  <ellipse cx="250" cy="425" rx="180" ry="32" fill="#bbf7d0" opacity="0.6" />
+  <ellipse cx="250" cy="420" rx="130" ry="18" fill="#15803d" opacity="0.15" />
+
+  <g filter="url(#shadow)">
+    <!-- Pump Dispenser -->
+    <path d="M 230 70 L 290 70 L 295 90 L 255 90 L 255 125 L 245 125 L 245 90 L 230 70 Z" fill="#1f2937" />
+    <rect x="235" y="115" width="30" height="25" rx="4" fill="#9ca3af" />
+    <rect x="225" y="138" width="50" height="22" rx="4" fill="#374151" />
+
+    <!-- Tall Bottle Body -->
+    <path d="M 200 160 C 200 160, 180 185, 180 230 L 180 395 C 180 410, 320 410, 320 395 L 320 230 C 320 185, 300 160, 300 160 Z" fill="url(#bottle)" />
+
+    <!-- Label -->
+    <rect x="195" y="235" width="110" height="135" rx="10" fill="#ffffff" />
+    <text x="250" y="265" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#15803d" text-anchor="middle" letter-spacing="2">BOTANICAL</text>
+    <text x="250" y="290" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#111827" text-anchor="middle">BODY LOTION</text>
+    <line x1="215" y1="300" x2="285" y2="300" stroke="#22c55e" stroke-width="2" />
+    <text x="250" y="322" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#4b5563" text-anchor="middle">SHEA &amp; ALOE VERA</text>
+    <text x="250" y="340" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#16a34a" text-anchor="middle">24H HYDRATION</text>
+    <text x="250" y="358" font-family="system-ui, sans-serif" font-size="8" font-weight="500" fill="#9ca3af" text-anchor="middle">400 ML / 13.5 FL OZ</text>
+
+    <!-- Reflection highlight -->
+    <path d="M 195 200 L 195 390" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.75" />
+  </g>
+</svg>

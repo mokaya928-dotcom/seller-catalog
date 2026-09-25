@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Retail Price Tag & Shelf Strip Suite | Dove Men+Care Relax</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #2E8F84;
+      --teal-light: #4cb9ac;
+      --teal-dark: #1b5e56;
+      --slate-top: #484B4E;
+      --slate-bottom: #2C2F32;
+      --copper: #C4602F;
+      --copper-light: #e07945;
+      --gold: #E9B593;
+      --gold-metallic: #d9aa84;
+      --off-white: #F7F7F7;
+      --light-grey: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0f1318;
+      color: #e2e8f0;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      padding: 30px 20px 80px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, var(--copper), var(--copper-light));
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      box-shadow: 0 4px 15px rgba(196, 96, 47, 0.35);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      color: #94a3b8;
+      font-size: 15px;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Tabs & Controls */
+    .view-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 25px 0 35px;
+    }
+
+    .btn-tab {
+      background: #1e2632;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      padding: 10px 22px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-tab:hover {
+      background: #283344;
+      border-color: var(--teal);
+      color: #fff;
+    }
+
+    .btn-tab.active {
+      background: var(--teal);
+      border-color: var(--teal-light);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(46, 143, 132, 0.4);
+    }
+
+    /* Showcase Cards */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .card-preview {
+      background: #171d26;
+      border: 1px solid #283546;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #243142;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .specs-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #243142;
+      color: var(--gold);
+      border: 1px solid rgba(233, 181, 147, 0.25);
+    }
+
+    .image-stage {
+      background: #0b0e12;
+      border-radius: 16px;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 480px;
+      position: relative;
+      overflow: hidden;
+      border: 1px dashed #2b394a;
+    }
+
+    .image-stage img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .image-stage img:hover {
+      transform: scale(1.015);
+    }
+
+    .stage-portrait img {
+      max-height: 640px;
+      width: auto;
+    }
+
+    .stage-shelf img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      justify-content: flex-end;
+    }
+
+    .btn-action {
+      background: #202b3a;
+      border: 1px solid #36475d;
+      color: #f1f5f9;
+      padding: 9px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--copper);
+      border-color: var(--gold);
+      color: #fff;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      border-color: var(--teal-light);
+    }
+
+    .btn-primary:hover {
+      background: #24756c;
+      border-color: var(--teal);
+    }
+
+    /* Explanatory Deep Dive */
+    .deep-dive {
+      margin-top: 60px;
+      background: #171d26;
+      border: 1px solid #283546;
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .deep-dive h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--copper);
+      padding-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 860px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-box {
+      background: #10151c;
+      border: 1px solid #232e3d;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .feature-box h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-box p {
+      font-size: 13.5px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Color Swatches */
+    .palette-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .swatch {
+      flex: 1;
+      min-width: 140px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #0d1117;
+      border: 1px solid #253140;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .swatch-color {
+      height: 38px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .swatch-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    .swatch-hex {
+      font-size: 11px;
+      color: #64748b;
+      font-family: monospace;
+    }
+
+    /* A4 Print Sheets Styling */
+    .a4-page {
+      background: #ffffff;
+      color: #0f172a;
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto 40px;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      border: 1px solid #cbd5e1;
+    }
+
+    .a4-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      border-bottom: 2px dashed #94a3b8;
+    }
+
+    .a4-grid-hangtags {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .a4-tag-item {
+      border: 1px dashed #94a3b8;
+      padding: 12px;
+      border-radius: 12px;
+      background: #f8fafc;
+      text-align: center;
+      position: relative;
+    }
+
+    .cut-line-indicator {
+      font-size: 11px;
+      font-family: monospace;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+
+    .punch-hole-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #475569;
+      margin: 0 auto 10px;
+    }
+
+    .a4-tag-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .a4-shelf-strips {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .a4-strip-item {
+      border: 1px dashed #94a3b8;
+      padding: 8px 12px;
+      background: #f8fafc;
+      border-radius: 8px;
+    }
+
+    .a4-strip-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 8mm;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+      }
+      .view-controls, .card-actions, .deep-dive, header, .no-print, .card-preview {
+        display: none !important;
+      }
+      #section-a4 {
+        display: block !important;
+      }
+      .a4-page {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge-pill">Luxury Retail Merchandising Suite</div>
+      <h1>Dove Men+Care Relax Price Tag Architecture</h1>
+      <p class="subtitle">
+        High-impact retail point-of-sale fixtures crafted from the authentic product color palette. Features a 3:4 portrait luxury hang tag and a 38mm-compliant horizontal shelf talker strip.
+      </p>
+    </header>
+
+    <!-- View Switcher -->
+    <div class="view-controls">
+      <button class="btn-tab active" onclick="showView('all')">View Both Formats</button>
+      <button class="btn-tab" onclick="showView('portrait')">1. Portrait Hang Tag (3:4)</button>
+      <button class="btn-tab" onclick="showView('shelf')">2. Horizontal Shelf Strip</button>
+      <button class="btn-tab" onclick="showView('a4')">🖨️ 3. Print-Ready A4 Sheets (PDF)</button>
+    </div>
+
+    <div class="showcase-grid">
+      <!-- 1. PORTRAIT HANG TAG -->
+      <section class="card-preview" id="section-portrait">
+        <div class="card-header">
+          <div class="card-title">
+            <span>🏷️</span>
+            <span>Portrait Hang Tag (3:4 Ratio)</span>
+          </div>
+          <span class="specs-badge">1200 × 1600 px • 3:4 Ratio • Die-Cut Ready</span>
+        </div>
+
+        <div class="image-stage stage-portrait">
+          <img src="retail_price_tag_portrait.png" alt="Dove Men+Care Relax Luxury Portrait Retail Price Tag">
+        </div>
+
+        <div class="card-actions">
+          <a href="retail_price_tag_portrait.png" download="Dove_MenCare_Relax_HangTag.png" class="btn-action btn-primary">
+            ⬇ Download High-Res Tag (PNG)
+          </a>
+          <button onclick="window.print()" class="btn-action">
+            🖨️ Print Die-Cut Proof
+          </button>
+        </div>
+      </section>
+
+      <!-- 2. SLIM HORIZONTAL SHELF STRIP -->
+      <section class="card-preview" id="section-shelf">
+        <div class="card-header">
+          <div class="card-title">
+            <span>📏</span>
+            <span>Slim Horizontal Shelf Edge Strip</span>
+          </div>
+          <span class="specs-badge">1800 × 420 px • 38mm Standard Rail Compliant</span>
+        </div>
+
+        <div class="image-stage stage-shelf">
+          <img src="retail_shelf_strip_horizontal.png" alt="Dove Men+Care Relax Slim Horizontal Shelf Strip">
+        </div>
+
+        <div class="card-actions">
+          <a href="retail_shelf_strip_horizontal.png" download="Dove_MenCare_Relax_ShelfStrip.png" class="btn-action btn-primary">
+            ⬇ Download High-Res Shelf Strip (PNG)
+          </a>
+          <button onclick="window.print()" class="btn-action">
+            🖨️ Print Shelf Talker
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- 3. PRINT-READY A4 SHEETS SECTION -->
+    <section id="section-a4" style="display: none; margin-top: 10px;">
+      <div style="text-align: center; margin-bottom: 25px;" class="no-print">
+        <button onclick="window.print()" class="btn-action btn-primary" style="padding: 12px 28px; font-size: 15px; border-radius: 12px; cursor: pointer;">
+          🖨️ Click to Print A4 Sheets / Save to PDF (Ctrl + P)
+        </button>
+        <p style="color: #94a3b8; font-size: 13px; margin-top: 8px;">
+          Standard A4 Size (210 × 297 mm) • Ready for heavy cardstock, sticker paper, or counter fixtures
+        </p>
+      </div>
+
+      <!-- A4 Page 1: Hang Tags (6 Up) -->
+      <div class="a4-page">
+        <div class="a4-header">
+          <div>
+            <strong style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Page 1: Boutique Hang Tags (6-Up Grid)</strong>
+            <div style="font-size: 11px; color: #64748b;">Cut along dashed lines ✂ • Punch center hole for ribbon/elastic tie</div>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; color: #047857;">A4 Format • Cardstock Ready</div>
+        </div>
+
+        <div class="a4-grid-hangtags">
+          <div class="a4-tag-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - ✂</div>
+            <div class="punch-hole-dot" title="Punch Hole Here"></div>
+            <img src="retail_price_tag_portrait.png" alt="Hang Tag">
+          </div>
+          <div class="a4-tag-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - ✂</div>
+            <div class="punch-hole-dot" title="Punch Hole Here"></div>
+            <img src="retail_price_tag_portrait.png" alt="Hang Tag">
+          </div>
+          <div class="a4-tag-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - ✂</div>
+            <div class="punch-hole-dot" title="Punch Hole Here"></div>
+            <img src="retail_price_tag_portrait.png" alt="Hang Tag">
+          </div>
+          <div class="a4-tag-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - ✂</div>
+            <div class="punch-hole-dot" title="Punch Hole Here"></div>
+            <img src="retail_price_tag_portrait.png" alt="Hang Tag">
+          </div>
+          <div class="a4-tag-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - ✂</div>
+            <div class="punch-hole-dot" title="Punch Hole Here"></div>
+            <img src="retail_price_tag_portrait.png" alt="Hang Tag">
+          </div>
+          <div class="a4-tag-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - ✂</div>
+            <div class="punch-hole-dot" title="Punch Hole Here"></div>
+            <img src="retail_price_tag_portrait.png" alt="Hang Tag">
+          </div>
+        </div>
+      </div>
+
+      <!-- A4 Page 2: Shelf Strips (6 Up) -->
+      <div class="a4-page">
+        <div class="a4-header">
+          <div>
+            <strong style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Page 2: Retail Shelf Edge Strips (38mm C-Channel)</strong>
+            <div style="font-size: 11px; color: #64748b;">Cut along horizontal dashed guidelines ✂ • Slide directly into shelf extrusions</div>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; color: #047857;">A4 Format • Sticker Paper Ready</div>
+        </div>
+
+        <div class="a4-shelf-strips">
+          <div class="a4-strip-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂</div>
+            <img src="retail_shelf_strip_horizontal.png" alt="Shelf Strip">
+          </div>
+          <div class="a4-strip-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂</div>
+            <img src="retail_shelf_strip_horizontal.png" alt="Shelf Strip">
+          </div>
+          <div class="a4-strip-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂</div>
+            <img src="retail_shelf_strip_horizontal.png" alt="Shelf Strip">
+          </div>
+          <div class="a4-strip-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂</div>
+            <img src="retail_shelf_strip_horizontal.png" alt="Shelf Strip">
+          </div>
+          <div class="a4-strip-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂</div>
+            <img src="retail_shelf_strip_horizontal.png" alt="Shelf Strip">
+          </div>
+          <div class="a4-strip-item">
+            <div class="cut-line-indicator">✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂</div>
+            <img src="retail_shelf_strip_horizontal.png" alt="Shelf Strip">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MERCHANDISING DEEP DIVE: "WHAT IS THIS ALL ABOUT" -->
+    <article class="deep-dive">
+      <h2>Retail Psychology & Merchandising Breakdown: What This Is All About</h2>
+      <p style="color: #94a3b8; line-height: 1.7; font-size: 14.5px;">
+        In modern beauty, personal care, and luxury FMCG merchandising, standard black-and-white adhesive supermarket labels commoditize premium products and trigger price resistance. A custom-branded retail price tag and shelf strip elevate the customer's perceived value, framing the product as an intentional, high-end grooming investment rather than a generic commodity.
+      </p>
+
+      <div class="palette-strip">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #2E8F84;"></div>
+          <div class="swatch-name">Eucalyptus Teal</div>
+          <div class="swatch-hex">#2E8F84 (Footer / Accent)</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: linear-gradient(180deg, #484B4E, #2C2F32);"></div>
+          <div class="swatch-name">Dark Slate Gradient</div>
+          <div class="swatch-hex">#484B4E → #2C2F32 (Pump / Panel)</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: linear-gradient(90deg, #C4602F, #E9B593);"></div>
+          <div class="swatch-name">Cedar Copper & Gold</div>
+          <div class="swatch-hex">#C4602F → #E9B593 (Metallic Line / Price)</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #F7F7F7; border: 1px solid #ccc;"></div>
+          <div class="swatch-name" style="color: #cbd5e1;">Studio Off-White</div>
+          <div class="swatch-hex">#F7F7F7 (Hero Backdrop)</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="feature-box">
+          <h3>1. Clean Hero Separation (Zero Visual Clutter)</h3>
+          <p>
+            The hero bottle is kept 100% pure and unaltered. Because the packaging already carries its brand, ingredients, and claims, re-typing those words over the bottle image creates cognitive overload. The ~60% height allocation gives the bottle breathing room, accented by a 400px diffused radial backlight glow and a soft ground shadow.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h3>2. Copper "Relax" Mood Anchor</h3>
+          <p>
+            Shoppers scan grooming shelves by scent, mood, and variant before reading microscopic ingredient lists. The metallic copper pill badge instantly registers "RELAX" in the top right peripheral field, aligning directly with the cedar and eucalyptus scent profile of the Dove Men+Care variant.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h3>3. Price Framing & Currency Anchoring</h3>
+          <p>
+            The price is set in large, authoritative serif typography (Georgia Bold) in crisp white, preceded by a refined gold "KES" code. By keeping the currency marker subtle and the numerals clean and prominent, the tag establishes transparent luxury pricing without looking aggressive or discount-driven.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h3>4. Dual Form-Factor Deployment</h3>
+          <p>
+            <strong>Portrait Hang Tag (3:4):</strong> Hung directly from the pump neck or displayed in freestanding acrylic counter stands for high-end boutique display.<br>
+            <strong>Horizontal Shelf Strip (38mm):</strong> Designed to slide seamlessly into standard retail C-channel shelf extrusions, giving 360° visual brand ownership across physical store fixtures.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    function showView(view) {
+      const portrait = document.getElementById('section-portrait');
+      const shelf = document.getElementById('section-shelf');
+      const a4 = document.getElementById('section-a4');
+      const buttons = document.querySelectorAll('.btn-tab');
+
+      buttons.forEach(b => b.classList.remove('active'));
+
+      if (view === 'portrait') {
+        portrait.style.display = 'block';
+        shelf.style.display = 'none';
+        if (a4) a4.style.display = 'none';
+        buttons[1].classList.add('active');
+      } else if (view === 'shelf') {
+        portrait.style.display = 'none';
+        shelf.style.display = 'block';
+        if (a4) a4.style.display = 'none';
+        buttons[2].classList.add('active');
+      } else if (view === 'a4') {
+        portrait.style.display = 'none';
+        shelf.style.display = 'none';
+        if (a4) a4.style.display = 'block';
+        buttons[3].classList.add('active');
+      } else {
+        portrait.style.display = 'block';
+        shelf.style.display = 'block';
+        if (a4) a4.style.display = 'block';
+        buttons[0].classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
