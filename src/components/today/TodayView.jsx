@@ -275,23 +275,23 @@ export default function TodayView({
         onShowToast={onShowToast}
       />
 
-      {/* 2. PROMINENT INSTANT POSTER GENERATOR BUTTON (TOP OF SCREEN) */}
-      <div className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 text-slate-950 rounded-2xl p-4 shadow-lg border-2 border-amber-300 flex items-center justify-between gap-3 relative overflow-hidden group">
+      {/* 2. Instant Poster Studio Action Card */}
+      <div className="bg-slate-900 text-white rounded-2xl p-4 shadow-sm border border-slate-800 flex items-center justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
-          <div className="w-11 h-11 rounded-2xl bg-slate-950 text-amber-300 flex items-center justify-center shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
-            <Camera className="w-6 h-6 stroke-[2.5px]" />
+          <div className="w-10 h-10 rounded-xl bg-white/10 text-amber-300 flex items-center justify-center flex-shrink-0">
+            <Camera className="w-5 h-5 stroke-[2.2px]" />
           </div>
           <div className="min-w-0">
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs font-black uppercase tracking-wider text-slate-950">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-white">
                 Create New Poster
               </span>
-              <span className="text-[9px] font-black uppercase tracking-wider bg-slate-950 text-amber-300 px-2 py-0.5 rounded-full shadow-2xs">
+              <span className="text-[9px] font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 px-1.5 py-0.2 rounded border border-amber-400/30">
                 Snap / Upload
               </span>
             </div>
-            <p className="text-[11px] font-bold text-slate-900 leading-tight truncate mt-0.5">
-              Upload your photo &amp; get a high-res flyer in seconds!
+            <p className="text-[11px] text-slate-300 truncate mt-0.5">
+              Upload product photo or snap camera for an instant flyer
             </p>
           </div>
         </div>
@@ -299,21 +299,21 @@ export default function TodayView({
         <button
           type="button"
           onClick={() => setIsNewProductModalOpen(true)}
-          className="bg-slate-950 hover:bg-slate-900 active:bg-black text-amber-300 hover:text-amber-200 font-black text-xs px-3.5 py-2.5 rounded-xl shadow-md transition flex items-center gap-1.5 flex-shrink-0 active:scale-95 cursor-pointer whitespace-nowrap"
+          className="bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs px-3.5 py-2 rounded-xl shadow-xs transition flex items-center gap-1.5 flex-shrink-0 active:scale-95 cursor-pointer whitespace-nowrap"
         >
-          <Sparkles className="w-4 h-4 fill-amber-300" />
+          <Sparkles className="w-3.5 h-3.5 fill-slate-950 text-slate-950" />
           <span>+ Create Poster</span>
         </button>
       </div>
 
       {/* Category Selection Bar: NEVER MIX CATEGORIES! */}
-      <div className="bg-white rounded-2xl p-3 border border-gray-200 shadow-sm space-y-2">
+      <div className="bg-white rounded-2xl p-3 border border-slate-200/90 shadow-xs space-y-2">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1.5 text-xs font-extrabold text-gray-900 uppercase tracking-wider">
-            <Tag className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Posting Category (Never Mixed)</span>
+          <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900 uppercase tracking-wider">
+            <Tag className="w-3.5 h-3.5 text-slate-500" />
+            <span>Posting Category</span>
           </div>
-          <span className="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+          <span className="text-[11px] font-bold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200">
             {activeCategoryCount} items
           </span>
         </div>
@@ -327,12 +327,12 @@ export default function TodayView({
                 key={tab.id}
                 onClick={() => {
                   if (onChangeCategory) onChangeCategory(tab.id);
-                  onShowToast(`✓ Posting from: ${tab.label}. Categories are never mixed!`, 'info');
+                  onShowToast(`✓ Category: ${tab.label}`, 'info');
                 }}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition flex items-center gap-1.5 ${
                   isActive
-                    ? 'bg-emerald-700 text-white shadow-sm ring-2 ring-emerald-500/20'
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                    ? 'bg-slate-900 text-white shadow-xs'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                 }`}
               >
                 <span>{tab.icon}</span>
@@ -340,8 +340,8 @@ export default function TodayView({
                 <span
                   className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
                     isActive
-                      ? 'bg-emerald-800 text-emerald-100'
-                      : 'bg-gray-200 text-gray-600'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-slate-200 text-slate-600'
                   }`}
                 >
                   {tab.count}
@@ -353,11 +353,11 @@ export default function TodayView({
       </div>
 
       {/* Daily Progress & Batch Control Card */}
-      <div className="bg-white rounded-2xl p-4 border border-gray-200 shadow-sm space-y-3">
+      <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs space-y-3.5">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-emerald-600" />
-            <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">
+            <Sparkles className="w-4 h-4 text-slate-700" />
+            <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
               Today's Post Queue
             </span>
           </div>
@@ -366,35 +366,35 @@ export default function TodayView({
               <button
                 type="button"
                 onClick={onOpenTimeSchedule}
-                className="px-2.5 py-1 rounded-xl text-[11px] font-black text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition flex items-center gap-1 shadow-2xs active:scale-95 cursor-pointer"
+                className="px-2.5 py-1 rounded-lg text-[11px] font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition flex items-center gap-1 active:scale-95 cursor-pointer"
                 title="Adjust daily posting schedule times & alarms"
               >
-                <Clock className="w-3 h-3 text-emerald-700" />
+                <Clock className="w-3 h-3 text-slate-500" />
                 <span>Times &amp; Alarms</span>
               </button>
             )}
-            <span className="text-xs font-extrabold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">
+            <span className="text-xs font-extrabold text-slate-900 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200">
               {postedCount} of {totalPosts} Posted
             </span>
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+        <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
           <div 
             className="bg-emerald-600 h-full rounded-full transition-all duration-500 ease-out"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
 
-        {/* Queue Length Selector Pills (Post as much as you want) */}
-        <div className="pt-1 border-t border-gray-100">
+        {/* Queue Length Selector Pills */}
+        <div className="pt-1 border-t border-slate-100">
           <div className="flex items-center justify-between gap-2 mb-2">
-            <span className="text-[11px] font-bold text-gray-600 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-[11px] font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1">
               <Zap className="w-3 h-3 text-amber-500" /> Batch Size ({postingCategory === 'beauty' ? 'Beauty' : postingCategory}):
             </span>
-            <span className="text-[11px] text-gray-500">
-              {activeCategoryCount} items in this category
+            <span className="text-[11px] text-slate-500">
+              {activeCategoryCount} items in category
             </span>
           </div>
 
@@ -404,12 +404,12 @@ export default function TodayView({
                 key={num}
                 onClick={() => {
                   onChangePostLimit(num);
-                  onShowToast(`✓ Set schedule to ${num} ${postingCategory === 'beauty' ? 'beauty' : postingCategory} posts.`, 'info');
+                  onShowToast(`✓ Set schedule to ${num} posts.`, 'info');
                 }}
                 className={`py-1.5 px-2 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1 ${
                   postLimit === num
-                    ? 'bg-emerald-600 text-white shadow-sm'
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                    ? 'bg-slate-900 text-white shadow-xs'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                 }`}
               >
                 {num} Posts
@@ -420,8 +420,8 @@ export default function TodayView({
               onClick={handleShowAll}
               className={`py-1.5 px-2 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1 ${
                 postLimit === 'all'
-                  ? 'bg-emerald-600 text-white shadow-sm'
-                  : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200'
+                  ? 'bg-slate-900 text-white shadow-xs'
+                  : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
               }`}
             >
               All ({activeCategoryCount})
@@ -430,23 +430,23 @@ export default function TodayView({
         </div>
 
         {/* Global Caption Language Switcher: Swahili vs English */}
-        <div className="pt-2 border-t border-gray-100 flex items-center justify-between gap-2">
-          <div className="flex items-center gap-1.5 text-[11px] font-bold text-gray-700 uppercase tracking-wider">
-            <Languages className="w-3.5 h-3.5 text-emerald-600" />
+        <div className="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-600 uppercase tracking-wider">
+            <Languages className="w-3.5 h-3.5 text-slate-500" />
             <span>Caption Language:</span>
           </div>
 
-          <div className="inline-flex items-center p-0.5 bg-gray-100 rounded-xl border border-gray-200 shadow-2xs">
+          <div className="inline-flex items-center p-0.5 bg-slate-100 rounded-lg border border-slate-200">
             <button
               type="button"
               onClick={() => {
                 setGlobalCaptionLang('swahili');
                 onShowToast('✓ Switched all captions to Kiswahili! 🇰🇪', 'info');
               }}
-              className={`px-3 py-1 rounded-lg text-xs font-black transition-all flex items-center gap-1.5 ${
+              className={`px-3 py-1 rounded-md text-xs font-bold transition-all flex items-center gap-1.5 ${
                 globalCaptionLang === 'swahili'
-                  ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white text-slate-900 shadow-2xs'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
               title="Set all captions to Kiswahili"
             >
@@ -458,10 +458,10 @@ export default function TodayView({
                 setGlobalCaptionLang('english');
                 onShowToast('✓ Switched all captions to English!', 'info');
               }}
-              className={`px-3 py-1 rounded-lg text-xs font-black transition-all flex items-center gap-1.5 ${
+              className={`px-3 py-1 rounded-md text-xs font-bold transition-all flex items-center gap-1.5 ${
                 globalCaptionLang === 'english'
-                  ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white text-slate-900 shadow-2xs'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
               title="Set all captions to English"
             >
@@ -476,7 +476,7 @@ export default function TodayView({
             type="button"
             onClick={handleBulkDownload}
             disabled={isBulkDownloading || allDisplayPosts.length === 0}
-            className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-800 to-teal-800 hover:from-emerald-900 hover:to-teal-900 text-white font-extrabold text-xs shadow-xs flex items-center justify-center gap-2 transition active:scale-[0.99] disabled:opacity-50"
+            className="w-full py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-xs flex items-center justify-center gap-2 transition active:scale-[0.99] disabled:opacity-50 cursor-pointer"
             title="Download all scheduled flyers and captions as a single .zip file"
           >
             {isBulkDownloading ? (
@@ -486,7 +486,7 @@ export default function TodayView({
               </>
             ) : (
               <>
-                <Download className="w-4 h-4 text-amber-300 stroke-[2.5px]" />
+                <Download className="w-3.5 h-3.5 text-amber-300 stroke-[2.2px]" />
                 <span>Download All {allDisplayPosts.length} Flyers (.ZIP Bundle)</span>
                 <span className="text-[10px] px-1.5 py-0.2 rounded bg-white/20 text-white font-mono">
                   1-Click
@@ -497,17 +497,17 @@ export default function TodayView({
         </div>
 
         {/* Category Guard & 24hr Auto-Regeneration Explainer */}
-        <div className="bg-emerald-50/60 rounded-xl p-2.5 border border-emerald-100 text-[11px] text-emerald-800 flex items-start gap-2">
-          <RefreshCw className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
+        <div className="bg-slate-50 rounded-xl p-2.5 border border-slate-200 text-[11px] text-slate-600 flex items-start gap-2">
+          <RefreshCw className="w-3.5 h-3.5 text-slate-500 flex-shrink-0 mt-0.5" />
           <span>
-            <strong>Category-Pure Posting:</strong> Posts stay strictly within your selected category so products like bedding or clothes never mix with your beauty drops!
+            <strong>Category-Pure Posting:</strong> Posts stay strictly within your selected category so products like bedding or clothes never mix with your beauty drops.
           </span>
         </div>
       </div>
 
       {/* Quick Add Any Product Dropdown with Optgroups */}
-      <div className="bg-white rounded-2xl p-3 border border-gray-200 shadow-sm flex items-center gap-2">
-        <ShoppingBag className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+      <div className="bg-white rounded-2xl p-3 border border-slate-200/90 shadow-xs flex items-center gap-2">
+        <ShoppingBag className="w-4 h-4 text-slate-500 flex-shrink-0" />
         <select
           value={selectedQuickAddId}
           onChange={(e) => {
@@ -519,7 +519,7 @@ export default function TodayView({
             setSelectedQuickAddId(e.target.value);
             if (e.target.value) handleQuickAdd(e.target.value);
           }}
-          className="flex-1 text-xs font-medium bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="flex-1 text-xs font-medium bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-2 text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400"
         >
           <option value="">+ Post any specific product right now...</option>
           <option value="__NEW_PRODUCT__" className="font-bold text-amber-900 bg-amber-50">

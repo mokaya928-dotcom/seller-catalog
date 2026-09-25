@@ -341,7 +341,7 @@ export default function App() {
   // SELLER TOOL VIEW: Daily Post Generator & Inventory
   // -----------------------------------------------------------
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col antialiased">
+    <div className="min-h-screen bg-slate-50 flex flex-col antialiased text-slate-900">
       {/* Toast Feedback Notification */}
       {toast && (
         <Toast
