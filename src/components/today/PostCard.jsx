@@ -163,26 +163,26 @@ export default function PostCard({
 
   return (
     <article className={`bg-white rounded-2xl border transition-all overflow-hidden ${
-      isPosted ? 'border-emerald-300 ring-2 ring-emerald-500/20 shadow-sm' : 'border-gray-200 shadow-sm hover:border-gray-300'
+      isPosted ? 'border-emerald-300 ring-2 ring-emerald-500/20 shadow-sm' : 'border-slate-200 shadow-sm hover:border-slate-300'
     }`}>
       {/* Post Header: Time slot + Style Tag + Posted Status */}
-      <div className="flex items-center justify-between px-4 py-3 bg-gray-50/90 border-b border-gray-100">
+      <div className="flex items-center justify-between px-4 py-3 bg-slate-50/80 border-b border-slate-100">
         <div className="flex items-center gap-2">
-          <span className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
-            <Clock className="w-4 h-4" />
+          <span className="w-7 h-7 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center font-bold text-xs">
+            <Clock className="w-3.5 h-3.5" />
           </span>
           <div>
             <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-sm font-extrabold text-gray-900 leading-tight">
+              <span className="text-sm font-extrabold text-slate-900 leading-tight">
                 {post.time}
               </span>
               {post.product.category && (
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
                   {post.product.category}
                 </span>
               )}
             </div>
-            <div className="text-xs text-gray-500 font-medium">{post.label}</div>
+            <div className="text-xs text-slate-400 font-medium">{post.label}</div>
           </div>
         </div>
 
@@ -191,19 +191,19 @@ export default function PostCard({
           <div className="relative">
             <button
               onClick={() => setIsStyleMenuOpen(!isStyleMenuOpen)}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold text-gray-700 bg-white border border-gray-200 hover:border-emerald-500 transition shadow-2xs"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 bg-white border border-slate-200 hover:border-slate-400 transition shadow-2xs"
               title="Change Post Style Layout"
             >
-              <Palette className="w-3.5 h-3.5 text-emerald-600" />
+              <Palette className="w-3.5 h-3.5 text-slate-500" />
               <span className="max-w-[85px] truncate">{currentStyleObj.name.split('/')[0]}</span>
             </button>
 
             {isStyleMenuOpen && (
               <div 
-                className="absolute right-0 top-full mt-1.5 w-56 bg-white rounded-xl shadow-xl border border-gray-200 p-1.5 z-30 animate-fade-in"
+                className="absolute right-0 top-full mt-1.5 w-56 bg-white rounded-xl shadow-xl border border-slate-200 p-1.5 z-30 animate-fade-in"
                 onClick={() => setIsStyleMenuOpen(false)}
               >
-                <div className="text-[10px] font-extrabold text-gray-400 px-2 py-1 uppercase tracking-wider">
+                <div className="text-[10px] font-extrabold text-slate-400 px-2 py-1 uppercase tracking-wider">
                   Select Post Layout Style
                 </div>
                 {POST_STYLES.map((style) => (
@@ -212,12 +212,12 @@ export default function PostCard({
                     onClick={() => setCurrentStyle(style.id)}
                     className={`w-full text-left p-2 rounded-lg text-xs transition flex flex-col ${
                       currentStyle === style.id
-                        ? 'bg-emerald-50 text-emerald-800 font-bold'
-                        : 'text-gray-700 hover:bg-gray-50 font-medium'
+                        ? 'bg-slate-900 text-white font-bold'
+                        : 'text-slate-700 hover:bg-slate-50 font-medium'
                     }`}
                   >
                     <span>{style.name}</span>
-                    <span className="text-[10px] text-gray-400 font-normal">{style.desc}</span>
+                    <span className={`text-[10px] font-normal ${currentStyle === style.id ? 'text-slate-300' : 'text-slate-400'}`}>{style.desc}</span>
                   </button>
                 ))}
               </div>
@@ -230,7 +230,7 @@ export default function PostCard({
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
               isPosted
                 ? 'bg-emerald-600 text-white shadow-sm'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200'
             }`}
             title="Click to toggle posted status"
           >
@@ -250,19 +250,19 @@ export default function PostCard({
       <div className="p-4 space-y-3.5">
         {/* Color Palette Switcher: Option A vs Option B */}
         <div className="flex items-center justify-between gap-2 px-0.5">
-          <span className="text-[11px] font-black text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
-            <Palette className="w-3.5 h-3.5 text-gray-400" />
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+            <Palette className="w-3.5 h-3.5 text-slate-400" />
             <span>Theme:</span>
           </span>
 
-          <div className="inline-flex items-center p-0.5 bg-gray-100 rounded-lg border border-gray-200 shadow-2xs">
+          <div className="inline-flex items-center p-0.5 bg-slate-100 rounded-lg border border-slate-200">
             <button
               type="button"
               onClick={() => setPostPalette('emerald')}
-              className={`px-2 py-1 rounded-md text-[11px] font-black transition-all flex items-center gap-1.5 ${
+              className={`px-2 py-1 rounded-md text-[11px] font-bold transition-all flex items-center gap-1.5 ${
                 activePalette === 'emerald'
-                  ? 'bg-white text-emerald-950 shadow-xs border border-emerald-300'
-                  : 'text-gray-500 hover:text-gray-900'
+                  ? 'bg-white text-slate-900 shadow-xs border border-slate-200'
+                  : 'text-slate-500 hover:text-slate-900'
               }`}
               title="Emerald & Gold Palette"
             >
@@ -272,10 +272,10 @@ export default function PostCard({
             <button
               type="button"
               onClick={() => setPostPalette('slate')}
-              className={`px-2 py-1 rounded-md text-[11px] font-black transition-all flex items-center gap-1.5 ${
+              className={`px-2 py-1 rounded-md text-[11px] font-bold transition-all flex items-center gap-1.5 ${
                 activePalette === 'slate'
-                  ? 'bg-white text-slate-950 shadow-xs border border-slate-400'
-                  : 'text-gray-500 hover:text-gray-900'
+                  ? 'bg-white text-slate-900 shadow-xs border border-slate-200'
+                  : 'text-slate-500 hover:text-slate-900'
               }`}
               title="Luxury Slate & Gold Palette"
             >
@@ -286,11 +286,11 @@ export default function PostCard({
         </div>
 
         {/* Rendered Canvas Preview */}
-        <div className="relative group bg-gray-100 rounded-xl overflow-hidden border border-gray-200 aspect-[4/5] sm:aspect-[9/16] max-h-[380px] flex items-center justify-center">
+        <div className="relative group bg-slate-900/5 rounded-2xl overflow-hidden border border-slate-200/80 aspect-[4/5] sm:aspect-[9/16] max-h-[380px] flex items-center justify-center">
           {isRendering ? (
             <div className="flex flex-col items-center justify-center gap-2 p-6 text-center">
-              <div className="w-8 h-8 border-3 border-emerald-600 border-t-transparent rounded-full animate-spin" />
-              <p className="text-xs font-semibold text-gray-500">Creating branded post...</p>
+              <div className="w-8 h-8 border-3 border-slate-800 border-t-transparent rounded-full animate-spin" />
+              <p className="text-xs font-semibold text-slate-500">Creating branded post...</p>
             </div>
           ) : renderedImageUrl ? (
             <>
@@ -316,15 +316,15 @@ export default function PostCard({
 
         {/* Bundle Duo Companion Banner if in bundle style */}
         {(currentStyle === 'product_bundles' || currentStyle === 'bundle_offer') && companion && (
-          <div className="bg-rose-50 border border-rose-200 rounded-xl p-2.5 flex items-center justify-between gap-2 text-xs">
+          <div className="bg-amber-50/60 border border-amber-200/70 rounded-xl p-2.5 flex items-center justify-between gap-2 text-xs">
             <div className="flex items-center gap-1.5 min-w-0">
-              <span className="text-[10px] font-black text-rose-700 bg-white border border-rose-200 px-1.5 py-0.5 rounded-md flex-shrink-0">2-IN-1</span>
+              <span className="text-[10px] font-bold text-amber-800 bg-white border border-amber-200 px-1.5 py-0.5 rounded-md flex-shrink-0">2-IN-1</span>
               <div className="truncate">
-                <span className="font-bold text-rose-950">Paired with: </span>
-                <span className="font-semibold text-rose-800">{companion.name}</span>
+                <span className="font-bold text-slate-900">Paired with: </span>
+                <span className="font-semibold text-slate-700">{companion.name}</span>
               </div>
             </div>
-            <span className="font-extrabold text-rose-700 bg-white px-2 py-0.5 rounded-md border border-rose-200 flex-shrink-0">
+            <span className="font-bold text-slate-900 bg-white px-2 py-0.5 rounded-md border border-slate-200 flex-shrink-0">
               KES {Number(companion.price).toLocaleString()}
             </span>
           </div>
@@ -332,14 +332,14 @@ export default function PostCard({
 
         {/* Multi-Photo WhatsApp Album Switcher */}
         {hasRefPhotos && (
-          <div className="bg-emerald-50/90 border border-emerald-200 rounded-xl p-2.5 flex items-center justify-between gap-2">
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-2.5 flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               <span className="text-base">📸</span>
               <div>
-                <div className="text-xs font-bold text-emerald-950">
+                <div className="text-xs font-bold text-slate-900">
                   Share with {post.product.photos.length - 1} Reference Photos
                 </div>
-                <div className="text-[10px] text-emerald-700">
+                <div className="text-[10px] text-slate-500">
                   Texture swatch &amp; packaging sent in 1 tap to WhatsApp
                 </div>
               </div>
@@ -351,7 +351,7 @@ export default function PostCard({
                 onChange={(e) => setIncludeReferences(e.target.checked)}
                 className="sr-only peer"
               />
-              <div className="w-9 h-5 bg-gray-300 peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-600"></div>
+              <div className="w-9 h-5 bg-slate-300 peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-600"></div>
             </label>
           </div>
         )}
@@ -361,46 +361,46 @@ export default function PostCard({
           <div>
             {post.product.category && (
               <div className="flex items-center gap-1.5 mb-1">
-                <span className="text-[10px] font-extrabold text-emerald-700 uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
+                <span className="text-[10px] font-bold text-slate-700 uppercase tracking-wider bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
                   {post.product.category}
                 </span>
                 {post.product.size && (
-                  <span className="text-[10px] font-semibold text-gray-500">
+                  <span className="text-[10px] font-medium text-slate-400">
                     • {post.product.size}
                   </span>
                 )}
               </div>
             )}
-            <h3 className="text-base font-bold text-gray-900 leading-snug">
+            <h3 className="text-base font-extrabold text-slate-900 leading-snug">
               {post.product.name}
             </h3>
-            <p className="text-xs text-gray-600 mt-0.5 line-clamp-1">
+            <p className="text-xs text-slate-500 mt-0.5 line-clamp-1">
               {post.product.benefit_line}
             </p>
           </div>
-          <span className="inline-block bg-slate-900 text-white font-extrabold text-sm px-2.5 py-1 rounded-lg flex-shrink-0">
+          <span className="inline-block bg-slate-950 text-white font-extrabold text-sm px-2.5 py-1 rounded-lg flex-shrink-0 shadow-xs">
             KES {Number(post.product.price).toLocaleString()}
           </span>
         </div>
 
         {/* Caption Bar with Swahili / English Toggle */}
         <div className="flex items-center justify-between gap-2 pt-0.5">
-          <span className="text-[11px] font-black text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
-            <Languages className="w-3.5 h-3.5 text-emerald-600" />
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+            <Languages className="w-3.5 h-3.5 text-slate-500" />
             <span>Caption:</span>
           </span>
 
-          <div className="inline-flex items-center p-0.5 bg-gray-100 rounded-lg border border-gray-200 shadow-2xs">
+          <div className="inline-flex items-center p-0.5 bg-slate-100 rounded-lg border border-slate-200">
             <button
               type="button"
               onClick={() => {
                 setCardLang('swahili');
                 onShowToast('✓ Caption switched to Kiswahili! 🇰🇪', 'info');
               }}
-              className={`px-2 py-0.5 rounded-md text-[11px] font-black transition-all flex items-center gap-1 ${
+              className={`px-2 py-0.5 rounded-md text-[11px] font-bold transition-all flex items-center gap-1 ${
                 activeCaptionLang === 'swahili'
-                  ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-slate-900 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
               title="Swahili (Kiswahili) Caption"
             >
@@ -412,10 +412,10 @@ export default function PostCard({
                 setCardLang('english');
                 onShowToast('✓ Caption switched to English!', 'info');
               }}
-              className={`px-2 py-0.5 rounded-md text-[11px] font-black transition-all flex items-center gap-1 ${
+              className={`px-2 py-0.5 rounded-md text-[11px] font-bold transition-all flex items-center gap-1 ${
                 activeCaptionLang === 'english'
-                  ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-slate-900 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
               title="English Caption"
             >
@@ -425,7 +425,7 @@ export default function PostCard({
         </div>
 
         {/* Caption Snippet */}
-        <div className="bg-gray-50 rounded-xl p-3 border border-gray-200 text-xs text-gray-700 leading-relaxed font-mono whitespace-pre-wrap max-h-24 overflow-y-auto">
+        <div className="bg-slate-50 rounded-xl p-3 border border-slate-200 text-xs text-slate-700 leading-relaxed font-mono whitespace-pre-wrap max-h-24 overflow-y-auto">
           {caption}
         </div>
 
@@ -434,7 +434,7 @@ export default function PostCard({
           <button
             onClick={handleShare}
             disabled={isRendering || isSharing}
-            className="col-span-4 bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-bold py-3 px-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition disabled:opacity-50 text-sm"
+            className="col-span-4 bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-bold py-3 px-3 rounded-xl flex items-center justify-center gap-2 shadow-xs transition disabled:opacity-50 text-sm"
             style={{ minHeight: '48px' }}
           >
             <WhatsAppIcon className="w-5 h-5 fill-white flex-shrink-0" />
@@ -450,21 +450,21 @@ export default function PostCard({
           <button
             onClick={handleDownloadOnly}
             disabled={isRendering}
-            className="col-span-1 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-700 font-bold py-3 px-1.5 rounded-xl flex flex-col items-center justify-center gap-0.5 border border-gray-300 transition text-[10px]"
+            className="col-span-1 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 font-bold py-3 px-1.5 rounded-xl flex flex-col items-center justify-center gap-0.5 border border-slate-200 transition text-[10px]"
             title="Download flyer image only"
             style={{ minHeight: '48px' }}
           >
-            <Download className="w-4 h-4 text-gray-600" />
+            <Download className="w-4 h-4 text-slate-600" />
             <span>Save</span>
           </button>
 
           <button
             onClick={handleCopyCaption}
-            className="col-span-1 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-gray-800 font-bold py-3 px-1.5 rounded-xl flex flex-col items-center justify-center gap-0.5 border border-gray-300 transition text-[10px]"
+            className="col-span-1 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 font-bold py-3 px-1.5 rounded-xl flex flex-col items-center justify-center gap-0.5 border border-slate-200 transition text-[10px]"
             title="Copy Caption to clipboard"
             style={{ minHeight: '48px' }}
           >
-            <Copy className="w-4 h-4 text-gray-600" />
+            <Copy className="w-4 h-4 text-slate-600" />
             <span>Copy</span>
           </button>
         </div>

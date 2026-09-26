@@ -348,48 +348,35 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
         </div>
       </header>
  
-      {/* Live Demand & Scarcity Ticker (High Conversion / CRO) */}
-      <div className="bg-gradient-to-r from-amber-500 via-rose-500 to-amber-600 text-slate-950 py-1.5 px-4 text-[11px] font-black shadow-xs flex items-center justify-between gap-2 overflow-hidden sticky top-[53px] z-20">
-        <div className="flex items-center gap-1.5 truncate">
-          <Flame className="w-3.5 h-3.5 fill-slate-950 text-slate-950 animate-pulse flex-shrink-0" />
-          <span className="truncate">
-            🔥 HIGH DEMAND: 28 shoppers active • Only 2–4 pieces remaining per item!
-          </span>
-        </div>
-        <div className="hidden sm:flex items-center gap-2 text-[10px] uppercase tracking-wider flex-shrink-0 text-slate-900 font-extrabold">
-          <span>• Same-Day Dispatch</span>
-          <span>• Lipa na M-Pesa</span>
-        </div>
-      </div>
-
-      {/* Same-Day Nairobi Dispatch Countdown Urgency Bar */}
-      <div className="bg-slate-950 text-amber-300 py-1 px-4 text-[11px] font-bold flex items-center justify-between gap-2 shadow-inner border-b border-slate-800 sticky top-[82px] z-20">
-        <div className="flex items-center gap-1.5 truncate">
-          <Clock className="w-3.5 h-3.5 text-amber-400 animate-pulse flex-shrink-0" />
-          <span className="truncate text-[10px] text-amber-200">
-            Nairobi Same-Day Rider Dispatch Closes In:
-          </span>
-        </div>
-        <div className="font-mono font-black text-[11px] text-white bg-slate-900 px-2 py-0.5 rounded-md border border-amber-400/40 tracking-wider flex-shrink-0">
-          {String(countdown.hours).padStart(2, '0')}h : {String(countdown.minutes).padStart(2, '0')}m : {String(countdown.seconds).padStart(2, '0')}s
+      {/* Calm, Reassuring Storefront Dispatch & Guarantees Bar (Non-sticky to keep products front & center) */}
+      <div className="bg-slate-900 text-slate-200 py-2 px-4 border-b border-slate-800">
+        <div className="max-w-md mx-auto flex items-center justify-between gap-2 text-[11px]">
+          <div className="flex items-center gap-1.5 truncate text-slate-300">
+            <Truck className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+            <span className="truncate font-semibold">Nairobi Same-Day Dispatch &bull; Lipa na M-Pesa</span>
+          </div>
+          <div className="flex items-center gap-1.5 text-[10px] font-mono text-amber-300 bg-slate-800/90 px-2 py-0.5 rounded-md flex-shrink-0 border border-slate-700/80">
+            <Clock className="w-3 h-3 text-amber-400 flex-shrink-0" />
+            <span>Order cut-off: {String(countdown.hours).padStart(2, '0')}h {String(countdown.minutes).padStart(2, '0')}m</span>
+          </div>
         </div>
       </div>
 
       {/* Main Catalog Discovery */}
       <main className="max-w-md mx-auto px-4 pt-3 space-y-3">
         {/* Trust & Peace of Mind Pillars */}
-        <div className="grid grid-cols-3 gap-1.5 py-1.5 px-2 bg-white/95 backdrop-blur-xs rounded-2xl border border-gray-200 text-[10px] font-extrabold text-gray-700 shadow-2xs">
+        <div className="grid grid-cols-3 gap-1.5 py-1.5 px-2 bg-white rounded-2xl border border-slate-200 text-[10px] font-bold text-slate-700 shadow-2xs">
           <div className="flex items-center justify-center gap-1 text-center">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
             <span className="truncate">100% Original</span>
           </div>
-          <div className="flex items-center justify-center gap-1 text-center border-x border-gray-200">
-            <Truck className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-            <span className="truncate">Same-Day CBD</span>
+          <div className="flex items-center justify-center gap-1 text-center border-x border-slate-200">
+            <Store className="w-3.5 h-3.5 text-slate-700 flex-shrink-0" />
+            <span className="truncate">Jamia Mall Shop</span>
           </div>
           <div className="flex items-center justify-center gap-1 text-center">
-            <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
-            <span className="truncate">M-Pesa on Delivery</span>
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+            <span className="truncate">Countrywide Parcel</span>
           </div>
         </div>
         {/* Smart Search Bar with On-Demand Floating Suggestions */}
@@ -569,14 +556,14 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition flex items-center gap-1.5 ${
                   selectedCategory === cat
-                    ? 'bg-emerald-800 text-white shadow-md'
-                    : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-100'
+                    ? 'bg-slate-900 text-white shadow-xs'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'
                 }`}
               >
                 <span>{icon}</span>
                 <span>{cat}</span>
-                <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-black ${
-                  selectedCategory === cat ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'
+                <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+                  selectedCategory === cat ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
                 }`}>
                   {count}
                 </span>
@@ -593,8 +580,8 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               onClick={() => setPriceFilter('all')}
               className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition ${
                 priceFilter === 'all'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                  ? 'bg-slate-900 text-white'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
               }`}
             >
               All
@@ -603,8 +590,8 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               onClick={() => setPriceFilter('under1500')}
               className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition ${
                 priceFilter === 'under1500'
-                  ? 'bg-emerald-700 text-white'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                  ? 'bg-slate-900 text-white'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
               }`}
             >
               &lt; 1.5K
@@ -613,8 +600,8 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               onClick={() => setPriceFilter('under3000')}
               className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition ${
                 priceFilter === 'under3000'
-                  ? 'bg-emerald-700 text-white'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                  ? 'bg-slate-900 text-white'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
               }`}
             >
               1.5K–3K
@@ -623,33 +610,32 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               onClick={() => setPriceFilter(priceFilter === 'offers' ? 'all' : 'offers')}
               className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition ${
                 priceFilter === 'offers'
-                  ? 'bg-emerald-700 text-white'
-                  : 'bg-white text-emerald-800 border border-emerald-200 hover:bg-emerald-50'
+                  ? 'bg-slate-900 text-white'
+                  : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'
               }`}
             >
               Special Offers
             </button>
             <button
               onClick={() => setPriceFilter(priceFilter === 'few_left' ? 'all' : 'few_left')}
-              className={`px-2.5 py-1 rounded-lg text-xs font-black whitespace-nowrap transition flex items-center gap-1 ${
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold whitespace-nowrap transition flex items-center gap-1 ${
                 priceFilter === 'few_left'
-                  ? 'bg-rose-600 text-white shadow-xs'
-                  : 'bg-rose-50 text-rose-800 border border-rose-200 hover:bg-rose-100'
+                  ? 'bg-slate-900 text-white'
+                  : 'bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100'
               }`}
             >
-              <Flame className="w-3 h-3 fill-current text-rose-500" />
               <span>Few Left</span>
             </button>
           </div>
 
           {/* Visual Mode Switcher (Grid vs List) */}
-          <div className="flex items-center bg-gray-200/80 p-0.5 rounded-xl flex-shrink-0">
+          <div className="flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200 flex-shrink-0">
             <button
               onClick={() => setViewMode('grid')}
               className={`p-1.5 rounded-lg transition ${
                 viewMode === 'grid'
-                  ? 'bg-white text-emerald-800 shadow-xs'
-                  : 'text-gray-500 hover:text-gray-900'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-400 hover:text-slate-700'
               }`}
               title="Visual 2-Column Grid (Recognize by bottle/packaging)"
             >
@@ -659,8 +645,8 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               onClick={() => setViewMode('list')}
               className={`p-1.5 rounded-lg transition ${
                 viewMode === 'list'
-                  ? 'bg-white text-emerald-800 shadow-xs'
-                  : 'text-gray-500 hover:text-gray-900'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-400 hover:text-slate-700'
               }`}
               title="Detailed List View"
             >
@@ -758,11 +744,11 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                   className={`bg-white rounded-2xl overflow-hidden border transition-all cursor-pointer relative group flex flex-col justify-between shadow-xs hover:shadow-md ${
                     isSelected
                       ? 'border-emerald-500 ring-2 ring-emerald-500/20'
-                      : 'border-gray-200 hover:border-emerald-400'
+                      : 'border-slate-200 hover:border-slate-300'
                   }`}
                 >
-                  {/* HERO PRODUCT PHOTO (70% OF CARD) */}
-                  <div className="w-full aspect-square bg-gradient-to-b from-gray-50 to-white relative flex items-center justify-center p-2 overflow-hidden border-b border-gray-100">
+                  {/* HERO PRODUCT PHOTO */}
+                  <div className="w-full aspect-square bg-slate-50 relative flex items-center justify-center p-2 overflow-hidden border-b border-slate-100">
                     <img
                       src={product.photo}
                       alt={product.name}
@@ -775,62 +761,41 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                     />
 
                     {/* Floating Price Tag on Image (Instant Visual Recognition) */}
-                    <div className="absolute bottom-2 left-2 bg-slate-950/90 text-white font-black text-xs px-2 py-0.5 rounded-lg shadow-md backdrop-blur-xs flex items-center gap-1.5 flex-wrap">
+                    <div className="absolute bottom-2 left-2 bg-slate-950/90 text-white font-black text-xs px-2 py-0.5 rounded-lg shadow-xs backdrop-blur-xs flex items-center gap-1.5 flex-wrap">
                       <span>KES {Number(product.price).toLocaleString()}</span>
                       {regularPrice && regularPrice > product.price && (
-                        <span className="line-through text-gray-400 text-[10px] font-bold">
+                        <span className="line-through text-slate-400 text-[10px] font-medium">
                           KES {Number(regularPrice).toLocaleString()}
                         </span>
                       )}
                     </div>
 
-                    {/* Badge: Offer / Video / Category / Savings */}
+                    {/* Badge: Offer / Category / Savings */}
                     <div className="absolute top-2 left-2 flex flex-col gap-1 items-start z-10">
                       {savings ? (
-                        <span className="bg-rose-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-md shadow-xs">
+                        <span className="bg-amber-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md shadow-2xs">
                           Save KES {savings.toLocaleString()}
                         </span>
                       ) : product.video ? (
-                        <span className="bg-purple-700 text-white text-[9px] font-black px-1.5 py-0.5 rounded-md shadow-xs flex items-center gap-0.5">
+                        <span className="bg-slate-900 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md shadow-2xs flex items-center gap-0.5">
                           <Play className="w-2.5 h-2.5 fill-current" />
                           <span>Video</span>
                         </span>
                       ) : product.badge ? (
-                        <span className="bg-emerald-700 text-white text-[9px] font-black px-1.5 py-0.5 rounded-md shadow-xs">
+                        <span className="bg-slate-900 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md shadow-2xs">
                           {product.badge}
                         </span>
                       ) : null}
                     </div>
 
-                    {/* Top-Right: Share Product Link & Multi-Photo Counter */}
-                    <div className="absolute top-2 right-2 flex items-center gap-1 z-10">
-                      {product.photos && new Set(product.photos).size > 1 && (
-                        <span className="bg-black/60 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md backdrop-blur-2xs">
-                          📷 {new Set(product.photos).size}
-                        </span>
-                      )}
-                      <button
-                        type="button"
-                        onClick={(e) => handleShareProduct(e, product)}
-                        className="bg-black/60 hover:bg-black/80 text-white p-1 rounded-md backdrop-blur-2xs transition active:scale-90"
-                        title="Copy direct product link"
-                      >
-                        {copiedProdId === product.id ? (
-                          <Check className="w-3 h-3 text-emerald-400 stroke-[3px]" />
-                        ) : (
-                          <Share2 className="w-3 h-3 text-white" />
-                        )}
-                      </button>
-                    </div>
-
-                    {/* Quick Add To Order Bag Toggle */}
+                    {/* Top-Right: Quick Add To Bag Toggle */}
                     <button
                       type="button"
                       onClick={(e) => handleToggleBag(e, product.id)}
-                      className={`absolute bottom-2 right-2 px-2 py-1 rounded-lg flex items-center gap-1 text-[10px] font-black transition shadow-md ${
+                      className={`absolute top-2 right-2 px-2 py-1 rounded-lg flex items-center gap-1 text-[10px] font-bold transition shadow-xs z-10 ${
                         isSelected
                           ? 'bg-emerald-600 text-white'
-                          : 'bg-white/95 text-gray-800 hover:bg-emerald-50 hover:text-emerald-800'
+                          : 'bg-white/95 text-slate-700 hover:text-slate-900 border border-slate-200/80 hover:bg-white'
                       }`}
                       title={isSelected ? "In your bag" : "Add to order bag"}
                     >
@@ -841,7 +806,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                         </>
                       ) : (
                         <>
-                          <Plus className="w-3 h-3 stroke-[3px]" />
+                          <Plus className="w-3 h-3 stroke-[2.5px]" />
                           <span>+ Bag</span>
                         </>
                       )}
@@ -851,32 +816,30 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                   {/* Clean Visual Card Info */}
                   <div className="p-2.5 flex flex-col justify-between flex-1 space-y-2">
                     <div>
-                      <div className="text-[10px] font-semibold text-emerald-800 uppercase tracking-wider">
+                      <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
                         {product.category || 'Beauty Care'}
                       </div>
-                      <h2 className="text-xs font-bold text-gray-900 leading-snug line-clamp-2 mt-0.5 group-hover:text-emerald-700 transition">
+                      <h2 className="text-xs font-bold text-slate-900 leading-snug line-clamp-2 mt-0.5 group-hover:text-slate-700 transition">
                         {product.name}
                       </h2>
                       {search && product._matchReasons && product._matchReasons.length > 0 && (
                         <div className="flex items-center gap-1 flex-wrap mt-1">
                           {product._matchReasons.map((reason, idx) => (
-                            <span key={idx} className="bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-semibold px-1.5 py-0.5 rounded-md">
+                            <span key={idx} className="bg-slate-100 text-slate-700 border border-slate-200 text-[10px] font-medium px-1.5 py-0.5 rounded-md">
                               {reason}
                             </span>
                           ))}
                         </div>
                       )}
 
-                      {/* Scarcity & Social Proof Rating */}
-                      <div className="flex items-center justify-between gap-1 pt-1.5 mt-1 border-t border-gray-100">
-                        <span className="inline-flex items-center gap-1 text-[10px] font-black text-rose-700 bg-rose-50 border border-rose-200/80 px-1.5 py-0.5 rounded-md">
-                          <Flame className="w-3 h-3 text-rose-600 fill-current animate-pulse flex-shrink-0" />
-                          <span>Only {remaining} left!</span>
+                      {/* Stock & Rating */}
+                      <div className="flex items-center justify-between gap-1 pt-1.5 mt-1 border-t border-slate-100 text-[10px]">
+                        <span className="font-semibold text-amber-800">
+                          🔥 {remaining} left
                         </span>
-                        <span className="text-[10px] text-gray-500 font-extrabold flex items-center gap-0.5">
+                        <span className="text-slate-400 font-medium flex items-center gap-0.5">
                           <span className="text-amber-500">★</span>
                           <span>{socialProof.rating}</span>
-                          <span className="text-gray-400 font-normal">({socialProof.orders})</span>
                         </span>
                       </div>
                     </div>
@@ -885,7 +848,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                     <button
                       type="button"
                       onClick={(e) => handleSingleOrder(e, product)}
-                      className="w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-bold py-2 px-2.5 rounded-xl flex items-center justify-center gap-1.5 text-xs shadow-xs transition transform active:scale-95"
+                      className="w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-bold py-2.5 px-2.5 rounded-xl flex items-center justify-center gap-1.5 text-xs shadow-xs transition transform active:scale-95"
                     >
                       <WhatsAppIcon className="w-3.5 h-3.5 fill-white flex-shrink-0" />
                       <span>Order on WhatsApp</span>
@@ -1155,8 +1118,8 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
         onClearCart={handleClearCart}
       />
 
-      {/* Live Social Proof Ticker (FOMO Engine) */}
-      <LiveSocialProofTicker products={inStockProducts} />
+      {/* Live Social Proof Ticker (Polite & won't obstruct order bag) */}
+      <LiveSocialProofTicker products={inStockProducts} hasCartItems={totalCartCount > 0} />
 
       {/* Quick Catalog Toast for Link Copying & Add To Bag */}
       {catalogToast && (

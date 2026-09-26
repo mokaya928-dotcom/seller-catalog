@@ -22,13 +22,13 @@ const CUSTOMER_NAMES = [
   'Cynthia J.', 'Esther N.', 'Patricia A.', 'Grace W.'
 ];
 
-export default function LiveSocialProofTicker({ products = [] }) {
+export default function LiveSocialProofTicker({ products = [], hasCartItems = false }) {
   const [currentNotification, setCurrentNotification] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
-    if (isDismissed || !products || products.length === 0) return;
+    if (isDismissed || hasCartItems || !products || products.length === 0) return;
 
     const inStock = products.filter(p => p.in_stock);
     if (inStock.length === 0) return;
@@ -55,24 +55,24 @@ export default function LiveSocialProofTicker({ products = [] }) {
       // Hide after 5 seconds
       hideTimeoutId = setTimeout(() => {
         setIsVisible(false);
-      }, 5500);
+      }, 5000);
     };
 
-    // First appearance after 3.5s
+    // First appearance after 8s
     timeoutId = setTimeout(() => {
       showRandomOrder();
-      // Then rotate every 16 seconds
-      const intervalId = setInterval(showRandomOrder, 16000);
+      // Then rotate every 25 seconds
+      const intervalId = setInterval(showRandomOrder, 25000);
       return () => clearInterval(intervalId);
-    }, 3500);
+    }, 8000);
 
     return () => {
       clearTimeout(timeoutId);
       clearTimeout(hideTimeoutId);
     };
-  }, [products, isDismissed]);
+  }, [products, isDismissed, hasCartItems]);
 
-  if (!currentNotification || !isVisible || isDismissed) {
+  if (!currentNotification || !isVisible || isDismissed || hasCartItems) {
     return null;
   }
 

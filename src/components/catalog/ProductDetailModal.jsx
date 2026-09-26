@@ -338,42 +338,23 @@ export default function ProductDetailModal({ product, seller, onClose, onAddToLi
               )}
             </div>
 
-            {/* LIVE STOCK SCARCITY METER (HIGH CONVERSION / FOMO) */}
-            <div className="bg-gradient-to-r from-amber-50 via-rose-50 to-amber-50 border border-amber-200/90 rounded-2xl p-3 space-y-2 shadow-2xs animate-fade-in">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="p-1 rounded-lg bg-amber-500 text-white font-black shadow-xs">
-                    <Flame className="w-3.5 h-3.5 fill-current animate-pulse text-white" />
-                  </span>
-                  <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="text-xs font-black text-rose-950">
-                      Only {remaining} {remaining === 1 ? 'piece' : 'pieces'} remaining!
-                    </span>
-                    <span className="text-[10px] font-black uppercase tracking-wider text-rose-700 bg-rose-100 px-2 py-0.2 rounded-full border border-rose-200">
-                      Selling Fast
-                    </span>
-                  </div>
+            {/* Stock Availability Status */}
+            <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-3 space-y-1.5 shadow-2xs">
+              <div className="flex items-center justify-between text-xs">
+                <div className="flex items-center gap-1.5 font-bold text-amber-950">
+                  <Flame className="w-4 h-4 text-amber-600 fill-current" />
+                  <span>Only {remaining} {remaining === 1 ? 'piece' : 'pieces'} in stock</span>
                 </div>
-                <span className="text-[11px] font-extrabold text-amber-900 bg-amber-100/70 px-2 py-0.5 rounded-md">
-                  ⚡ {socialProof.orders} ordered this week
+                <span className="text-[11px] font-semibold text-slate-500">
+                  ★ {socialProof.rating} ({socialProof.orders} orders)
                 </span>
               </div>
-
-              {/* Urgency Progress Bar */}
-              <div className="w-full bg-amber-200/60 h-2 rounded-full overflow-hidden">
-                <div 
-                  className="bg-gradient-to-r from-amber-500 to-rose-600 h-full rounded-full transition-all duration-700"
-                  style={{ width: `${Math.max(30, 100 - (remaining * 15))}%` }}
-                />
-              </div>
-
-              <div className="flex items-center justify-between text-[10px] text-gray-600 font-bold pt-0.5">
-                <span>🔥 High Demand in Kenya</span>
-                <span className="text-rose-700 font-black">Reserve 1 now before sold out</span>
-              </div>
+              <p className="text-[11px] text-amber-900/90 font-medium">
+                Available for same-day Nairobi CBD pickup or express delivery across Kenya
+              </p>
             </div>
 
-            <p className="text-xs font-semibold text-gray-700 bg-gray-50 border border-gray-200/80 p-3 rounded-2xl leading-relaxed">
+            <p className="text-xs font-semibold text-slate-700 bg-slate-50 border border-slate-200/80 p-3 rounded-2xl leading-relaxed">
               {product.benefit_line}
             </p>
           </div>
@@ -463,27 +444,27 @@ export default function ProductDetailModal({ product, seller, onClose, onAddToLi
         </div>
 
         {/* Sticky Action Footer */}
-        <div className="p-4 border-t border-gray-100 bg-white shadow-xl flex items-center gap-2">
+        <div className="p-4 border-t border-slate-100 bg-white shadow-xl flex items-center gap-2">
           {onAddToList && (
             <button
               type="button"
               onClick={() => onAddToList(product.id)}
-              className={`p-3.5 rounded-2xl border font-bold text-xs transition flex items-center justify-center gap-1.5 ${
+              className={`py-3.5 px-4 rounded-2xl border font-bold text-xs transition flex items-center justify-center gap-1.5 ${
                 isSelected
-                  ? 'bg-emerald-50 border-emerald-600 text-emerald-800'
-                  : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
+                  ? 'bg-emerald-50 border-emerald-500 text-emerald-800'
+                  : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
               }`}
               title="Add to order list"
             >
               {isSelected ? (
                 <>
                   <Check className="w-4 h-4 stroke-[3px] text-emerald-600" />
-                  <span className="font-black">In Bag</span>
+                  <span className="font-bold">In Bag</span>
                 </>
               ) : (
                 <>
-                  <ShoppingBag className="w-4 h-4 text-gray-600" />
-                  <span className="whitespace-nowrap px-1 font-bold">+ Bag</span>
+                  <ShoppingBag className="w-4 h-4 text-slate-600" />
+                  <span className="whitespace-nowrap font-bold">+ Add to Bag</span>
                 </>
               )}
             </button>
@@ -492,11 +473,11 @@ export default function ProductDetailModal({ product, seller, onClose, onAddToLi
           <button
             type="button"
             onClick={handleDirectOrder}
-            className="flex-1 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#20ba5a] hover:to-[#0f7a6d] active:scale-98 text-white font-black py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 text-xs shadow-lg transition"
+            className="flex-1 bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-bold py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 text-xs shadow-md transition"
             style={{ minHeight: '48px' }}
           >
             <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
-            <span>Reserve 1 of {remaining} Remaining (WhatsApp)</span>
+            <span>Order on WhatsApp</span>
           </button>
         </div>
       </div>

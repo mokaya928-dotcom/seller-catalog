@@ -284,11 +284,11 @@ export default function WeekView({
       {/* Week Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-black text-gray-900 tracking-tight flex items-center gap-1.5">
-            <CalendarDays className="w-5 h-5 text-emerald-600" />
+          <h2 className="text-base font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+            <CalendarDays className="w-5 h-5 text-slate-700" />
             <span>7-Day Post Calendar</span>
           </h2>
-          <p className="text-xs text-gray-500 font-medium">
+          <p className="text-xs text-slate-500 font-medium mt-0.5">
             Preview, swap products &amp; customize upcoming status flyers
           </p>
         </div>
@@ -296,14 +296,14 @@ export default function WeekView({
         {activeDay.isToday ? (
           <button
             onClick={onGoToToday}
-            className="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg hover:bg-emerald-200 transition"
+            className="text-[11px] font-bold bg-slate-900 hover:bg-slate-800 text-white px-3 py-1.5 rounded-xl shadow-xs transition"
           >
             Today's Studio ➔
           </button>
         ) : (
           <button
             onClick={() => setSelectedDateStr(todayDateStr)}
-            className="text-[11px] font-bold bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg hover:bg-gray-200 transition"
+            className="text-[11px] font-bold bg-white text-slate-700 border border-slate-200 px-3 py-1.5 rounded-xl hover:bg-slate-50 shadow-xs transition"
           >
             Jump to Today
           </button>
@@ -311,7 +311,7 @@ export default function WeekView({
       </div>
 
       {/* 7-Day Horizontal Date Strip */}
-      <div className="bg-white p-2 rounded-2xl border border-gray-200 shadow-sm">
+      <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-xs">
         <div className="grid grid-cols-7 gap-1">
           {weekDays.map((day) => {
             const isSelected = day.dateStr === selectedDateStr;
@@ -321,13 +321,13 @@ export default function WeekView({
                 onClick={() => setSelectedDateStr(day.dateStr)}
                 className={`py-2 px-1 rounded-xl flex flex-col items-center justify-center transition relative ${
                   isSelected
-                    ? 'bg-emerald-600 text-white font-extrabold shadow-sm'
+                    ? 'bg-slate-950 text-white font-extrabold shadow-sm'
                     : day.isToday
-                    ? 'bg-emerald-50 text-emerald-900 font-bold border border-emerald-200'
-                    : 'bg-transparent text-gray-600 hover:bg-gray-50 font-medium'
+                    ? 'bg-slate-100 text-slate-900 font-bold border border-slate-300'
+                    : 'bg-transparent text-slate-600 hover:bg-slate-50 font-medium'
                 }`}
               >
-                <span className={`text-[10px] uppercase tracking-wider ${isSelected ? 'text-emerald-100' : 'text-gray-400'}`}>
+                <span className={`text-[10px] uppercase tracking-wider ${isSelected ? 'text-slate-300' : 'text-slate-400'}`}>
                   {day.dayShort}
                 </span>
                 <span className="text-base font-black leading-tight">
@@ -335,7 +335,7 @@ export default function WeekView({
                 </span>
                 {day.isToday && (
                   <span className={`text-[9px] font-black uppercase tracking-tighter mt-0.5 ${
-                    isSelected ? 'text-emerald-200' : 'text-emerald-600'
+                    isSelected ? 'text-amber-400' : 'text-slate-900'
                   }`}>
                     Today
                   </span>
@@ -347,18 +347,18 @@ export default function WeekView({
       </div>
 
       {/* Selected Day Status Bar */}
-      <div className="bg-gradient-to-r from-emerald-900 to-emerald-800 text-white p-3.5 rounded-2xl shadow-sm flex items-center justify-between">
+      <div className="bg-slate-950 text-white p-4 rounded-2xl shadow-sm border border-slate-800 flex items-center justify-between">
         <div>
-          <div className="text-[11px] font-semibold text-emerald-200 uppercase tracking-wider">
+          <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
             {activeDay.isToday ? 'Today’s Drops' : `${activeDay.dayShort} Drops`}
           </div>
-          <div className="text-sm font-black text-white">
+          <div className="text-sm font-extrabold text-white mt-0.5">
             {activeDay.fullDate}
           </div>
-          <div className="text-[11px] text-emerald-200 mt-0.5 flex items-center gap-2">
+          <div className="text-[11px] text-slate-400 mt-1 flex items-center gap-2">
             <span>{activeCount} Active Flyers</span>
             <span>•</span>
-            <span className="text-emerald-300 font-bold">{postedCount} Posted</span>
+            <span className="text-emerald-400 font-bold">{postedCount} Posted</span>
           </div>
         </div>
 
@@ -366,7 +366,7 @@ export default function WeekView({
           {hasDayOverrides && (
             <button
               onClick={handleResetDay}
-              className="p-2 bg-emerald-950/60 hover:bg-emerald-950 text-emerald-200 rounded-xl transition text-xs flex items-center gap-1"
+              className="p-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl transition text-xs flex items-center gap-1 border border-slate-700"
               title="Reset day overrides"
             >
               <RotateCcw className="w-3.5 h-3.5" />
@@ -376,7 +376,7 @@ export default function WeekView({
           <button
             onClick={handleBulkDownloadDay}
             disabled={isBulkDownloading || activeCount === 0}
-            className="bg-amber-400 hover:bg-amber-300 text-emerald-950 font-black text-xs px-3 py-2 rounded-xl flex items-center gap-1.5 shadow transition disabled:opacity-50"
+            className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-xs transition disabled:opacity-50"
           >
             <Download className="w-3.5 h-3.5" />
             <span>{isBulkDownloading ? 'Zipping...' : 'Day .ZIP'}</span>
@@ -392,23 +392,23 @@ export default function WeekView({
       )}
 
       {/* Caption Language Bar in Week View */}
-      <div className="bg-white p-2.5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between gap-2">
-        <div className="flex items-center gap-1.5 text-xs font-bold text-gray-700 uppercase tracking-wider">
-          <Languages className="w-3.5 h-3.5 text-emerald-600" />
+      <div className="bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+        <div className="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
+          <Languages className="w-3.5 h-3.5 text-slate-500" />
           <span>Captions:</span>
         </div>
 
-        <div className="inline-flex items-center p-0.5 bg-gray-100 rounded-xl border border-gray-200 shadow-2xs">
+        <div className="inline-flex items-center p-0.5 bg-slate-100 rounded-xl border border-slate-200">
           <button
             type="button"
             onClick={() => {
               setWeekCaptionLang('swahili');
               onShowToast('✓ Switched week captions to Kiswahili! 🇰🇪', 'info');
             }}
-            className={`px-3 py-1 rounded-lg text-xs font-black transition-all flex items-center gap-1 ${
+            className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
               weekCaptionLang === 'swahili'
-                ? 'bg-emerald-600 text-white shadow-xs'
-                : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-slate-900 text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
             title="Kiswahili captions"
           >
@@ -420,10 +420,10 @@ export default function WeekView({
               setWeekCaptionLang('english');
               onShowToast('✓ Switched week captions to English!', 'info');
             }}
-            className={`px-3 py-1 rounded-lg text-xs font-black transition-all flex items-center gap-1 ${
+            className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
               weekCaptionLang === 'english'
-                ? 'bg-emerald-600 text-white shadow-xs'
-                : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-slate-900 text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
             title="English captions"
           >
@@ -472,29 +472,29 @@ export default function WeekView({
           return (
             <div
               key={post.id}
-              className={`bg-white rounded-2xl border transition-all overflow-hidden p-3.5 shadow-sm ${
+              className={`bg-white rounded-2xl border transition-all overflow-hidden p-3.5 shadow-xs ${
                 isPosted
                   ? 'border-emerald-300 ring-2 ring-emerald-500/10'
                   : isOverridden
                   ? 'border-amber-300 ring-2 ring-amber-500/10'
-                  : 'border-gray-200 hover:border-gray-300'
+                  : 'border-slate-200 hover:border-slate-300'
               }`}
             >
               {/* Slot Header */}
               <div className="flex items-center justify-between mb-2.5">
                 <div className="flex items-center gap-2">
-                  <span className="bg-emerald-100 text-emerald-800 text-[11px] font-black px-2 py-0.5 rounded-lg flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
+                  <span className="bg-slate-100 text-slate-700 text-[11px] font-bold px-2 py-0.5 rounded-lg flex items-center gap-1 border border-slate-200">
+                    <Clock className="w-3 h-3 text-slate-500" />
                     <span>{post.time}</span>
                   </span>
-                  <span className="text-xs font-bold text-gray-700 truncate max-w-[170px]">
+                  <span className="text-xs font-semibold text-slate-500 truncate max-w-[170px]">
                     {post.label}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-1">
                   {isOverridden && (
-                    <span className="text-[10px] font-extrabold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">
+                    <span className="text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-full">
                       Custom Swapped
                     </span>
                   )}
@@ -502,11 +502,11 @@ export default function WeekView({
                     onClick={(e) => handleTogglePosted(post.slotId, e)}
                     className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 transition ${
                       isPosted
-                        ? 'bg-emerald-100 text-emerald-800 font-extrabold'
-                        : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                        ? 'bg-emerald-50 text-emerald-800 border border-emerald-200 font-extrabold'
+                        : 'bg-slate-100 text-slate-500 hover:bg-slate-200 border border-slate-200'
                     }`}
                   >
-                    <CheckCircle2 className={`w-3 h-3 ${isPosted ? 'text-emerald-600' : 'text-gray-400'}`} />
+                    <CheckCircle2 className={`w-3 h-3 ${isPosted ? 'text-emerald-600' : 'text-slate-400'}`} />
                     <span>{isPosted ? 'Posted' : 'Pending'}</span>
                   </button>
                 </div>
@@ -514,28 +514,28 @@ export default function WeekView({
 
               {/* Product Info Row */}
               <div className="flex items-center gap-3">
-                <div className="w-16 h-16 rounded-xl bg-gray-50 border border-gray-100 overflow-hidden flex-shrink-0 relative">
+                <div className="w-16 h-16 rounded-xl bg-slate-50 border border-slate-100 overflow-hidden flex-shrink-0 relative">
                   <img
                     src={post.product.photo || (post.product.photos && post.product.photos[0]) || '/products/bbk-vaseline-lip.jpg'}
                     alt={post.product.name}
                     className="w-full h-full object-contain p-1"
                   />
                   {post.product.badge && (
-                    <span className="absolute top-0.5 left-0.5 bg-amber-500 text-emerald-950 font-black text-[8px] px-1 rounded">
+                    <span className="absolute top-0.5 left-0.5 bg-slate-900 text-white font-bold text-[8px] px-1 rounded">
                       {post.product.badge.replace(/_/g, ' ')}
                     </span>
                   )}
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-extrabold text-xs text-gray-900 leading-snug line-clamp-2">
+                  <h3 className="font-extrabold text-xs text-slate-900 leading-snug line-clamp-2">
                     {post.product.name}
                   </h3>
                   <div className="flex items-center gap-2 mt-1">
-                    <span className="text-sm font-black text-emerald-700">
+                    <span className="text-sm font-extrabold text-slate-900">
                       KES {Number(post.product.price || 0).toLocaleString()}
                     </span>
-                    <span className="text-[10px] text-gray-400 font-medium">
+                    <span className="text-[10px] text-slate-400 font-medium">
                       {post.product.category}
                     </span>
                   </div>
@@ -543,33 +543,33 @@ export default function WeekView({
               </div>
 
               {/* Caption Snippet */}
-              <div className="mt-2.5 bg-gray-50 rounded-xl p-2.5 border border-gray-200 text-[11px] text-gray-700 font-mono whitespace-pre-wrap max-h-16 overflow-y-auto leading-relaxed">
+              <div className="mt-2.5 bg-slate-50 rounded-xl p-2.5 border border-slate-200 text-[11px] text-slate-700 font-mono whitespace-pre-wrap max-h-16 overflow-y-auto leading-relaxed">
                 {getPostCaption(post)}
               </div>
 
               {/* Action Buttons Row */}
-              <div className="grid grid-cols-5 gap-1.5 mt-2.5 pt-2 border-t border-gray-100">
+              <div className="grid grid-cols-5 gap-1.5 mt-2.5 pt-2 border-t border-slate-100">
                 <button
                   onClick={() => handlePreviewPost(post)}
-                  className="bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-gray-800 font-bold py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 transition"
+                  className="bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 border border-slate-200 font-bold py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 transition shadow-2xs"
                   title="Preview Flyer"
                 >
-                  <Eye className="w-3.5 h-3.5 text-gray-600" />
+                  <Eye className="w-3.5 h-3.5 text-slate-500" />
                   <span>Preview</span>
                 </button>
 
                 <button
                   onClick={() => handleOpenSwap(post.slotId)}
-                  className="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 transition"
+                  className="bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 border border-slate-200 font-bold py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 transition shadow-2xs"
                   title="Swap product in this slot"
                 >
-                  <RefreshCw className="w-3.5 h-3.5 text-emerald-600" />
+                  <RefreshCw className="w-3.5 h-3.5 text-slate-600" />
                   <span>Swap</span>
                 </button>
 
                 <button
                   onClick={() => handleToggleSkip(post.slotId, false)}
-                  className="bg-gray-50 hover:bg-rose-50 text-gray-600 hover:text-rose-700 font-bold py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 transition"
+                  className="bg-white hover:bg-rose-50 text-slate-500 hover:text-rose-700 border border-slate-200 font-bold py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 transition"
                   title="Skip this slot"
                 >
                   <X className="w-3.5 h-3.5" />
@@ -578,16 +578,16 @@ export default function WeekView({
 
                 <button
                   onClick={() => handleCopyPostCaption(post)}
-                  className="bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-gray-800 font-bold py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 transition"
+                  className="bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 border border-slate-200 font-bold py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 transition shadow-2xs"
                   title="Copy Caption"
                 >
-                  <Copy className="w-3.5 h-3.5 text-gray-600" />
+                  <Copy className="w-3.5 h-3.5 text-slate-500" />
                   <span>Copy</span>
                 </button>
 
                 <button
                   onClick={() => handleSharePost(post)}
-                  className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-black py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 shadow-sm transition"
+                  className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-2 px-1 rounded-xl text-[10px] flex flex-col items-center justify-center gap-0.5 shadow-xs transition"
                   title="Share to WhatsApp"
                 >
                   <WhatsAppIcon className="w-3.5 h-3.5 fill-white" />
