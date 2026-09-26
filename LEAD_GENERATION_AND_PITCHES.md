@@ -429,3 +429,37 @@ When searching Google Maps, filter by location name to pull up hundreds of activ
 
 **3. "How much does it cost?"**
 > *"No expensive monthly charges. Just a one-time setup fee of KES [5,000 / 10,000] where we build your store, upload your stock, and connect your WhatsApp order button. After that, it's yours."*
+
+---
+
+### Script 7: WhatsApp Group Admin & Status Seller Pitch (High Conversion)
+**When to use:** Messaging someone who runs a sales WhatsApp group or posts heavily on Status.
+
+#### Step 1: The Hook (NO LINKS)
+> "Hey [Name / Admin]! Hope your sales are moving well today.
+> 
+> Quick one—just to be clear from the jump: **this is NOT a website**.
+> 
+> It’s a permanent catalog shop for your stock.
+> 
+> I noticed you run your sales through your WhatsApp group and Status. The biggest headache with that is:
+> 1. When you drop 30–50 photos in the group, people complain their phone memory is full or they mute/exit the group.
+> 2. On WhatsApp Status, everything disappears after 24 hours, so buyers keep asking: *'Uko na hii bado? How much is this?'* and you have to dig through your phone gallery.
+> 
+> With this catalog, your products **never leave unless you delete them yourself**. You just pin one link in the group description. Customers can browse everything with prices 24/7, tap order, and it lands right in your DM.
+> 
+> Plus, you can repeatedly repost those same products to your Status with **different poster templates, fresh captions, and colors** in 1 tap without shooting new photos.
+> 
+> I put together a quick 20-second sample showing how your group items look. Cool if I send you the preview link?"
+
+#### Step 2: The Delivery (Send ONLY after they reply "Yes / Sure / Nitumie")
+> "Awesome, check it out here:
+> 👉 [Insert your Live Preview Link]
+> 
+> Open it right on your phone:
+> - **Zero Group Spam:** Instead of flooding your group with 50 photos every morning, you pin this single link in the group description. Members tap it and see your full current stock with prices.
+> - **Direct WhatsApp Order:** When someone wants to buy, they tap 'Order via WhatsApp' and the exact item name, size, and price lands directly in your private chat.
+> - **Instant Flyer Generator:** Tap the flyer/share button on any product—you can instantly switch poster templates, change color themes, and get fresh captions to repost to your WhatsApp Status without hiring a graphic designer.
+> 
+> Take a quick scroll and let me know what you think!"
+

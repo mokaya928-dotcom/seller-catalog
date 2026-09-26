@@ -284,13 +284,18 @@ export const scheduleService = {
         }
       }
 
-      // Strategic style assignment across 5 high-converting templates:
+      // Strategic style assignment across 10 high-converting templates:
       const defaultRotations = [
-        'unified_brand',    // Slot 1: Brand Master
-        'flash_sale',       // Slot 2: 24-Hr Flash Sale
-        'customer_reviews', // Slot 3: Verified Customer Review
-        'product_bundles',  // Slot 4: 2-in-1 Routine Combo
-        'restock_alerts'    // Slot 5: Fresh Batch Restock Alert
+        'unified_brand',     // Slot 1: Brand Master (Default)
+        'luxury_editorial',  // Slot 2: Luxury Vogue Editorial
+        'flash_sale',        // Slot 3: 24-Hr Flash Sale
+        'minimalist_clean',  // Slot 4: Studio Minimalist
+        'neon_bold',         // Slot 5: Neon Streetwear Drop
+        'customer_reviews',  // Slot 6: Verified Customer Review
+        'polaroid_snap',     // Slot 7: Polaroid Instant Snap
+        'restock_alerts',    // Slot 8: Fresh Batch Restock Alert
+        'product_bundles',   // Slot 9: 2-in-1 Routine Combo
+        'clearance_deal'     // Slot 10: Clearance Starburst Deal
       ];
 
       let assignedStyle = slotOverride.style;
@@ -304,6 +309,10 @@ export const scheduleService = {
           assignedStyle = 'product_bundles';
         } else if (rawBadge.includes('review') || rawBadge.includes('top seller')) {
           assignedStyle = 'customer_reviews';
+        } else if (rawBadge.includes('luxury') || rawBadge.includes('premium')) {
+          assignedStyle = 'luxury_editorial';
+        } else if (rawBadge.includes('clearance') || rawBadge.includes('deal')) {
+          assignedStyle = 'clearance_deal';
         } else {
           assignedStyle = defaultRotations[index % defaultRotations.length];
         }
@@ -532,6 +541,84 @@ export const scheduleService = {
         `📲 *Kuagiza Sasa:*\n` +
         `WhatsApp / Piga: *${phone}*\n` +
         `🟢 Lipa na M-Pesa • Tunakutumia popote ulipo Kenya haraka sana!`;
+    }
+
+    // ------------------------------------
+    // STYLE: LUXURY VOGUE EDITORIAL
+    // ------------------------------------
+    if (style === 'luxury_editorial' || style === 'editorial' || style === 'vogue') {
+      return `✨ *THE SIGNATURE EDIT — HADHI YA JUU & ORIGINAL 100%* ✨\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `💰 Special Price: *${formattedPrice}*\n` +
+        `✦ ${product.benefit_line || 'Formulation safi ya kiwango cha juu, matokeo ya kuvutia.'} ✦\n\n` +
+        `👑 *Kwa wateja wanaopenda vitu original vyenye hadhi na muonekano nadhifu.*\n` +
+        `📍 Inapatikana: *${shop}* (${location})\n\n` +
+        `📲 *VIP Concierge Ordering:*\n` +
+        `WhatsApp / Piga: *${phone}*\n` +
+        `🟢 Lipa na M-Pesa. Dispatched siku hiyo hiyo kwa Boda / Parcel!`;
+    }
+
+    // ------------------------------------
+    // STYLE: NEON STREETWEAR DROP
+    // ------------------------------------
+    if (style === 'neon_bold' || style === 'streetwear' || style === 'neon') {
+      return `⚡ *HIGH DEMAND STREET DROP — FRESH RELEASE LEO!* ⚡\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `💰 Bei: *${formattedPrice} tu!*\n` +
+        `✔ ${product.benefit_line || '100% Genuine product, high demand item!'}\n` +
+        `🔥 *Fast moving item — mzigo unashuka kwa kasi sana leo!*\n\n` +
+        `📍 Dukani: *${shop}* (${location})\n\n` +
+        `📲 *Gusa WhatsApp Kujipatia Yako Sasa Hivi:*\n` +
+        `WhatsApp / Piga: *${phone}*\n` +
+        `⚡ Boda express delivery ndani ya Nairobi & parcels kote nchini!`;
+    }
+
+    // ------------------------------------
+    // STYLE: STUDIO MINIMALIST
+    // ------------------------------------
+    if (style === 'minimalist_clean' || style === 'minimal' || style === 'studio_clean') {
+      return `🌿 *STUDIO COLLECTION — CLEAN & PURE QUALITY* 🌿\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `💰 Bei: *${formattedPrice}*\n` +
+        `✔ ${product.benefit_line || 'Formulation safi na salama kabisa kwa matumizi ya kila siku.'}\n` +
+        `✔ Sealed & 100% certified authentic.\n\n` +
+        `📍 Inapatikana: *${shop}* (${location})\n\n` +
+        `📲 *Kuagiza Direct Kupitia WhatsApp:*\n` +
+        `WhatsApp / Call: *${phone}*\n` +
+        `🟢 Lipa na M-Pesa • Tunakutumia popote ulipo Kenya bila kuchelewa!`;
+    }
+
+    // ------------------------------------
+    // STYLE: POLAROID INSTANT SNAP
+    // ------------------------------------
+    if (style === 'polaroid_snap' || style === 'polaroid' || style === 'retro_snap') {
+      return `📸 *TODAY'S FAVORITE PICK — CHAGUO MAALUM LA LEO!* 📸\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `💰 Bei: *${formattedPrice} tu!*\n` +
+        `✔ ${product.benefit_line || 'Matokeo safi sana, wateja wengi wanaipenda sana hii.'}\n` +
+        `🤍 *Kila mtu anayeichukua anarudi kushukuru — usipitwe nayo leo!*\n\n` +
+        `📍 *${shop}* (${location})\n\n` +
+        `📲 *Piga screenshot ya picha hii uitume kwa WhatsApp kuweka oda:*\n` +
+        `WhatsApp / Piga: *${phone}*\n` +
+        `🟢 Lipa na M-Pesa • Delivery ya haraka na ya uhakika!`;
+    }
+
+    // ------------------------------------
+    // STYLE: CLEARANCE STARBURST DEAL
+    // ------------------------------------
+    if (style === 'clearance_deal' || style === 'hot_deal' || style === 'supermarket') {
+      const orig = Math.round((Number(product.price) * 1.35) / 50) * 50;
+      const sav = orig - Number(product.price);
+      return `🔥 *CRAZY CLEARANCE DEAL — BEI YA OFA YA KUTUPA LEO!* 🔥\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `❌ Bei ya kawaida: ~KES ${orig.toLocaleString()}~\n` +
+        `💥 *Sasa chukua na: ${formattedPrice} tu!* (Una-save KES ${sav.toLocaleString()} papo hapo!)\n\n` +
+        `✔ Original 100% • Bidhaa safi kabisa.\n` +
+        `⚠️ *Hii bei ni ya leo pekee kabla stock haijaisha — wahi haraka!*\n\n` +
+        `📍 *${shop}* (${location})\n\n` +
+        `📲 *Wahi Oda Yako Sasa Hivi:*\n` +
+        `WhatsApp / Piga: *${phone}*\n` +
+        `🟢 Lipa na M-Pesa Buy Goods • Delivery popote Kenya!`;
     }
 
     // ------------------------------------
@@ -777,6 +864,84 @@ export const scheduleService = {
         `📲 *To Order:*\n` +
         `WhatsApp / Call: *${phone}*\n` +
         `🟢 Lipa na M-Pesa • Delivery available across Kenya!`;
+    }
+
+    // ------------------------------------
+    // STYLE: LUXURY VOGUE EDITORIAL
+    // ------------------------------------
+    if (style === 'luxury_editorial' || style === 'editorial' || style === 'vogue') {
+      return `✨ *THE SIGNATURE EDIT — AUTHENTIC LUXURY & REFINED QUALITY* ✨\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `💰 Curated Price: *${formattedPrice}*\n` +
+        `✦ ${product.benefit_line || 'Hand-selected premium formulation • Guaranteed authentic'} ✦\n\n` +
+        `👑 *Exclusively available for clients who value 100% genuine formulations and refined results.*\n` +
+        `📍 Location: *${shop}* (${location})\n\n` +
+        `📲 *VIP Concierge Ordering:*\n` +
+        `WhatsApp / Call: *${phone}*\n` +
+        `🟢 Lipa na M-Pesa Buy Goods Till. Same-day Nairobi courier & nationwide dispatch!`;
+    }
+
+    // ------------------------------------
+    // STYLE: NEON STREETWEAR DROP
+    // ------------------------------------
+    if (style === 'neon_bold' || style === 'streetwear' || style === 'neon') {
+      return `⚡ *HIGH-DEMAND STREET DROP — OFFICIAL STORE RELEASE!* ⚡\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `💰 Price: *${formattedPrice} only!*\n` +
+        `✔ ${product.benefit_line || '100% verified original stock'}\n` +
+        `🔥 *Fast-moving release — high demand in store today!*\n\n` +
+        `📍 Pick up at: *${shop}* (${location})\n\n` +
+        `📲 *Tap WhatsApp to Cop Yours:* \n` +
+        `WhatsApp: *${phone}*\n` +
+        `⚡ Express Boda dispatch across Nairobi & countrywide parcels!`;
+    }
+
+    // ------------------------------------
+    // STYLE: STUDIO MINIMALIST
+    // ------------------------------------
+    if (style === 'minimalist_clean' || style === 'minimal' || style === 'studio_clean') {
+      return `🌿 *STUDIO COLLECTION — CLEAN & PURE FORMULATION* 🌿\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `💰 Price: *${formattedPrice}*\n` +
+        `✔ ${product.benefit_line || '100% Authentic Quality • Gentle on skin'}\n` +
+        `✔ Sealed & certified authentic directly from verified suppliers.\n\n` +
+        `📍 Available at *${shop}* (${location})\n\n` +
+        `📲 *Order Directly via WhatsApp:*\n` +
+        `WhatsApp / Call: *${phone}*\n` +
+        `🟢 Lipa na M-Pesa. Dispatched promptly countrywide!`;
+    }
+
+    // ------------------------------------
+    // STYLE: POLAROID INSTANT SNAP
+    // ------------------------------------
+    if (style === 'polaroid_snap' || style === 'polaroid' || style === 'retro_snap') {
+      return `📸 *TODAY'S HANDPICKED FAVORITE!* 📸\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `💰 Price: *${formattedPrice} only!*\n` +
+        `🤍 *“${product.benefit_line || 'Absolute must-have for everyday glow!'}”*\n\n` +
+        `✨ Hand-selected by our store team for today's status feature.\n` +
+        `📍 *${shop}* (${location})\n\n` +
+        `📲 *Screenshot this photo & send to WhatsApp to order:*\n` +
+        `WhatsApp / Call: *${phone}*\n` +
+        `🟢 Lipa na M-Pesa • Same-day Nairobi & countrywide delivery!`;
+    }
+
+    // ------------------------------------
+    // STYLE: CLEARANCE STARBURST DEAL
+    // ------------------------------------
+    if (style === 'clearance_deal' || style === 'hot_deal' || style === 'supermarket') {
+      const orig = Math.round((Number(product.price) * 1.35) / 50) * 50;
+      const sav = orig - Number(product.price);
+      return `🔥 *CRAZY CLEARANCE DEAL — MEGA VALUE SAVINGS TODAY!* 🔥\n\n` +
+        `*${product.name}*${sizeStr}\n` +
+        `❌ Regular Price: ~KES ${orig.toLocaleString()}~\n` +
+        `💥 *Now Only: ${formattedPrice}!* (You Save KES ${sav.toLocaleString()} instantly!)\n\n` +
+        `✔ 100% Genuine Original Quality\n` +
+        `⚠️ *Clearance stock is limited — first come, first served!*\n\n` +
+        `📍 Available at *${shop}* (${location})\n\n` +
+        `📲 *Claim Yours Before It Sells Out:*\n` +
+        `WhatsApp / Call: *${phone}*\n` +
+        `🟢 Lipa na M-Pesa Buy Goods • Countrywide delivery!`;
     }
 
     // ------------------------------------

@@ -165,9 +165,9 @@ export default function TodayView({
       product: match,
       companionProduct: null,
       allProducts: allProducts,
-      style: 'price_focus',
+      style: 'unified_brand',
       aspectRatio: ratio,
-      caption: scheduleService.generateCaption(match, seller, 'price_focus', null, null, globalCaptionLang)
+      caption: scheduleService.generateCaption(match, seller, 'unified_brand', null, null, globalCaptionLang)
     };
 
     setCustomQueuedProducts((prev) => [newPost, ...prev]);
@@ -197,9 +197,9 @@ export default function TodayView({
         product: created,
         companionProduct: null,
         allProducts: [created, ...allProducts],
-        style: 'price_focus',
+        style: 'unified_brand',
         aspectRatio: ratio,
-        caption: scheduleService.generateCaption(created, seller, 'price_focus', null, null, globalCaptionLang)
+        caption: scheduleService.generateCaption(created, seller, 'unified_brand', null, null, globalCaptionLang)
       };
 
       setCustomQueuedProducts((prev) => [newPost, ...prev]);

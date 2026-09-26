@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Share2, Copy, CheckCircle, Clock, Eye, Download, Check, Palette, Languages, Sparkles } from 'lucide-react';
+import { 
+  Share2, Copy, CheckCircle, Clock, Eye, Download, Check, 
+  Palette, Languages, Sparkles, LayoutTemplate, Flame, Zap, 
+  Camera, Star, Layers, Tag, Maximize2, ShieldCheck 
+} from 'lucide-react';
 import { canvasRenderer, POST_STYLES } from '../../services/canvasRenderer';
 import { shareService } from '../../services/shareService';
 import { scheduleService } from '../../services/scheduleService';
@@ -31,7 +35,7 @@ export default function PostCard({
     setSelectedPhotoIndex(0);
   }, [post.product.id]);
 
-  const [currentStyle, setCurrentStyle] = useState(post.style || 'price_focus');
+  const [currentStyle, setCurrentStyle] = useState(post.style || 'unified_brand');
   const [postPalette, setPostPalette] = useState(post.palette || null);
   const [cardLang, setCardLang] = useState(null); // null means inherit globalCaptionLang
   const [includeReferences, setIncludeReferences] = useState(hasRefPhotos);
@@ -320,30 +324,50 @@ export default function PostCard({
               className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 bg-white border border-slate-200 hover:border-slate-400 transition shadow-2xs"
               title="Change Post Style Layout"
             >
-              <Palette className="w-3.5 h-3.5 text-slate-500" />
-              <span className="max-w-[85px] truncate">{currentStyleObj.name.split('/')[0]}</span>
+              <LayoutTemplate className="w-3.5 h-3.5 text-emerald-600" />
+              <span className="max-w-[95px] truncate">{currentStyleObj.name.split('(')[0].trim()}</span>
             </button>
 
             {isStyleMenuOpen && (
               <div 
-                className="absolute right-0 top-full mt-1.5 w-56 bg-white rounded-xl shadow-xl border border-slate-200 p-1.5 z-30 animate-fade-in"
+                className="absolute right-0 top-full mt-1.5 w-64 max-h-80 overflow-y-auto bg-white rounded-xl shadow-xl border border-slate-200 p-1.5 z-30 animate-fade-in scrollbar-thin"
                 onClick={() => setIsStyleMenuOpen(false)}
               >
                 <div className="text-[10px] font-extrabold text-slate-400 px-2 py-1 uppercase tracking-wider">
-                  Select Post Layout Style
+                  Select Flyer Format ({POST_STYLES.length} Designs)
                 </div>
                 {POST_STYLES.map((style) => (
                   <button
                     key={style.id}
-                    onClick={() => setCurrentStyle(style.id)}
-                    className={`w-full text-left p-2 rounded-lg text-xs transition flex flex-col ${
+                    onClick={() => {
+                      setCurrentStyle(style.id);
+                      onShowToast(`✓ Layout format changed to ${style.name}!`, 'success');
+                    }}
+                    className={`w-full text-left p-2 rounded-lg text-xs transition flex flex-col cursor-pointer ${
                       currentStyle === style.id
                         ? 'bg-slate-900 text-white font-bold'
                         : 'text-slate-700 hover:bg-slate-50 font-medium'
                     }`}
                   >
-                    <span>{style.name}</span>
-                    <span className={`text-[10px] font-normal ${currentStyle === style.id ? 'text-slate-300' : 'text-slate-400'}`}>{style.desc}</span>
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="flex items-center gap-1.5">
+                        <span
+                          className="w-2 h-2 rounded-full flex-shrink-0"
+                          style={{ backgroundColor: style.accentColor || '#10b981' }}
+                        />
+                        <span>{style.name}</span>
+                      </span>
+                      {style.tag && (
+                        <span className={`text-[9px] font-extrabold px-1.5 py-0.2 rounded ${
+                          currentStyle === style.id ? 'bg-white/20 text-emerald-300' : 'bg-slate-100 text-slate-500'
+                        }`}>
+                          {style.tag}
+                        </span>
+                      )}
+                    </div>
+                    <span className={`text-[10px] font-normal mt-0.5 ${currentStyle === style.id ? 'text-slate-300' : 'text-slate-400'}`}>
+                      {style.desc}
+                    </span>
                   </button>
                 ))}
               </div>
@@ -408,6 +432,56 @@ export default function PostCard({
               <span className="w-2.5 h-2.5 rounded-full bg-[#0f172a] border border-[#f59e0b]" />
               <span>Luxury Slate</span>
             </button>
+          </div>
+        </div>
+
+        {/* 10 Flyer Design Formats Carousel (1-Tap Instant Layout Switcher) */}
+        <div className="space-y-1.5 bg-slate-50/80 p-2.5 rounded-xl border border-slate-200/90">
+          <div className="flex items-center justify-between px-0.5 text-xs">
+            <span className="font-bold text-slate-700 flex items-center gap-1.5">
+              <LayoutTemplate className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Flyer Design Format ({POST_STYLES.length} Templates):</span>
+            </span>
+            <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
+              {currentStyleObj.name.split('(')[0].trim()}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-thin">
+            {POST_STYLES.map((style) => {
+              const isSelected = currentStyle === style.id;
+              return (
+                <button
+                  key={style.id}
+                  type="button"
+                  onClick={() => {
+                    setCurrentStyle(style.id);
+                    onShowToast(`✓ Switched layout to ${style.name}!`, 'success');
+                  }}
+                  className={`flex-shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 border text-left cursor-pointer ${
+                    isSelected
+                      ? 'bg-slate-900 text-white border-slate-900 shadow-xs ring-2 ring-emerald-500/40'
+                      : 'bg-white text-slate-700 hover:bg-slate-100 border-slate-200 hover:border-slate-300'
+                  }`}
+                  title={`${style.name}: ${style.desc}`}
+                >
+                  <span
+                    className="w-2 h-2 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: style.accentColor || '#10b981' }}
+                  />
+                  <span className="whitespace-nowrap">{style.name.split('(')[0].trim()}</span>
+                  {style.tag && (
+                    <span
+                      className={`text-[9px] font-extrabold px-1.5 py-0.2 rounded ${
+                        isSelected ? 'bg-white/20 text-emerald-300' : 'bg-slate-100 text-slate-500'
+                      }`}
+                    >
+                      {style.tag}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -727,6 +801,53 @@ export default function PostCard({
                   <span className="text-xs">Preparing poster...</span>
                 </div>
               )}
+            </div>
+
+            {/* 10 Flyer Design Formats Carousel inside Preview Modal */}
+            <div className="w-full pt-2 bg-white/5 rounded-xl p-2.5 border border-white/10 mt-1">
+              <div className="flex items-center justify-between pb-1.5 text-white">
+                <div className="flex items-center gap-1.5 text-[11px] font-bold text-gray-200">
+                  <LayoutTemplate className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Choose Flyer Format ({POST_STYLES.length} Designs):</span>
+                </div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  {currentStyleObj.name.split('(')[0].trim()}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-thin">
+                {POST_STYLES.map((style) => {
+                  const isSelected = currentStyle === style.id;
+                  return (
+                    <button
+                      key={style.id}
+                      type="button"
+                      onClick={() => {
+                        setCurrentStyle(style.id);
+                        onShowToast(`✓ Layout format changed to ${style.name}!`, 'success');
+                      }}
+                      className={`flex-shrink-0 px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1.5 border text-left cursor-pointer ${
+                        isSelected
+                          ? 'bg-emerald-600 text-white border-emerald-500 ring-2 ring-emerald-400/40'
+                          : 'bg-white/10 text-gray-200 hover:bg-white/20 border-white/15'
+                      }`}
+                      title={`${style.name}: ${style.desc}`}
+                    >
+                      <span
+                        className="w-2 h-2 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: style.accentColor || '#10b981' }}
+                      />
+                      <span className="whitespace-nowrap">{style.name.split('(')[0].trim()}</span>
+                      {style.tag && (
+                        <span className={`text-[9px] font-extrabold px-1 py-0.1 rounded ${
+                          isSelected ? 'bg-black/30 text-emerald-200' : 'bg-white/15 text-gray-300'
+                        }`}>
+                          {style.tag}
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Attached Reference Photos in Preview - Click any to change poster! */}

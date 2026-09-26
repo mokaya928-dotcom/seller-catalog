@@ -16,12 +16,13 @@ import {
   RotateCcw,
   AlertCircle,
   Package,
-  Languages
+  Languages,
+  LayoutTemplate
 } from 'lucide-react';
 import { scheduleService, isBeautyCategory, getCategoryGroup } from '../../services/scheduleService';
 import { storageService } from '../../services/storageService';
 import { shareService } from '../../services/shareService';
-import { canvasRenderer } from '../../services/canvasRenderer';
+import { canvasRenderer, POST_STYLES } from '../../services/canvasRenderer';
 import WhatsAppIcon from '../common/WhatsAppIcon';
 import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
 
@@ -62,12 +63,12 @@ export default function WeekView({
     }
   }, [seller?.language]);
 
-  // Helper to get formatted caption in current language
-  const getPostCaption = (post, lang = weekCaptionLang) => {
+  // Helper to get formatted caption in current language and style
+  const getPostCaption = (post, lang = weekCaptionLang, styleOverride = null) => {
     return scheduleService.generateCaption(
       post.product,
       seller,
-      post.style || 'price_focus',
+      styleOverride || post.style || 'unified_brand',
       post.companionProduct || null,
       selectedDateStr,
       lang
@@ -159,7 +160,7 @@ export default function WeekView({
   };
 
   const [previewPhotoIndex, setPreviewPhotoIndex] = useState(0);
-
+  const [previewStyle, setPreviewStyle] = useState('unified_brand');
 
   const previewPhotos = useMemo(() => {
     if (!previewPost?.product) return [];
@@ -170,6 +171,8 @@ export default function WeekView({
   const handlePreviewPost = async (post, photoIdx = 0) => {
     setPreviewPost(post);
     setPreviewPhotoIndex(photoIdx);
+    const initialStyle = post.style || 'unified_brand';
+    setPreviewStyle(initialStyle);
     setIsPreviewLoading(true);
     try {
       const allP = getProductPhotosPool(post.product, post.companionProduct);
@@ -179,7 +182,7 @@ export default function WeekView({
         { ...post.product, photo: chosenPhoto },
         seller,
         ratio,
-        post.style || 'unified_brand',
+        initialStyle,
         post.companionProduct || null,
         palette
       );
@@ -204,7 +207,7 @@ export default function WeekView({
         { ...previewPost.product, photo: chosenPhoto },
         seller,
         ratio,
-        previewPost.style || 'unified_brand',
+        previewStyle,
         previewPost.companionProduct || null,
         palette
       );
@@ -218,13 +221,40 @@ export default function WeekView({
     }
   };
 
+  // Switch preview style layout dynamically
+  const handleSwitchPreviewStyle = async (newStyle) => {
+    if (!previewPost) return;
+    setPreviewStyle(newStyle);
+    setIsPreviewLoading(true);
+    try {
+      const chosenPhoto = previewPhotos[previewPhotoIndex] || previewPost.product.photo;
+      const palette = previewPost.palette || seller.palette || 'emerald';
+      const dataUrl = await canvasRenderer.renderPost(
+        { ...previewPost.product, photo: chosenPhoto },
+        seller,
+        ratio,
+        newStyle,
+        previewPost.companionProduct || null,
+        palette
+      );
+      setPreviewImageUrl(dataUrl);
+      const styleName = POST_STYLES.find((s) => s.id === newStyle)?.name || newStyle;
+      onShowToast(`✓ Format switched to ${styleName}!`, 'success');
+    } catch (err) {
+      console.error('Failed to switch preview style', err);
+      onShowToast('Could not render layout variant', 'error');
+    } finally {
+      setIsPreviewLoading(false);
+    }
+  };
+
   // Save flyer variation from modal
   const handleSavePreviewPoster = () => {
     if (!previewImageUrl || !previewPost) return;
     const blob = canvasRenderer.dataURLToBlob(previewImageUrl);
     const safeName = previewPost.product.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
     const photoSuffix = previewPhotos.length > 1 ? `-ref${previewPhotoIndex + 1}` : '';
-    const filename = `${safeName}${photoSuffix}-${selectedDateStr}.png`;
+    const filename = `${safeName}${photoSuffix}-${previewStyle}-${selectedDateStr}.png`;
     shareService.downloadPosterOnly({ blob, filename });
     onShowToast(`✓ Poster variation #${previewPhotoIndex + 1} saved!`, 'success');
   };
@@ -248,14 +278,14 @@ export default function WeekView({
           { ...previewPost.product, photo: previewPhotos[i] },
           seller,
           ratio,
-          previewPost.style || 'unified_brand',
+          previewStyle,
           previewPost.companionProduct || null,
           palette
         );
         const blob = canvasRenderer.dataURLToBlob(dataUrl);
         if (blob) {
           posterBlobs.push(blob);
-          posterFilenames.push(`${safeName}-poster-${i + 1}-${selectedDateStr}.png`);
+          posterFilenames.push(`${safeName}-poster-${i + 1}-${previewStyle}-${selectedDateStr}.png`);
         }
       }
 
@@ -886,6 +916,50 @@ export default function WeekView({
               )}
             </div>
 
+            {/* 10 Flyer Design Formats Carousel inside WeekView Preview Modal */}
+            <div className="w-full pt-2 bg-white/5 rounded-xl p-2.5 border border-white/10 mt-1">
+              <div className="flex items-center justify-between pb-1.5 text-white">
+                <div className="flex items-center gap-1.5 text-[11px] font-bold text-gray-200">
+                  <LayoutTemplate className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Choose Flyer Format ({POST_STYLES.length} Designs):</span>
+                </div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  {POST_STYLES.find(s => s.id === previewStyle)?.name.split('(')[0].trim() || 'Brand Master'}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-thin">
+                {POST_STYLES.map((style) => {
+                  const isSelected = previewStyle === style.id;
+                  return (
+                    <button
+                      key={style.id}
+                      type="button"
+                      onClick={() => handleSwitchPreviewStyle(style.id)}
+                      className={`flex-shrink-0 px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1.5 border text-left cursor-pointer ${
+                        isSelected
+                          ? 'bg-emerald-600 text-white border-emerald-500 ring-2 ring-emerald-400/40'
+                          : 'bg-white/10 text-gray-200 hover:bg-white/20 border-white/15'
+                      }`}
+                      title={`${style.name}: ${style.desc}`}
+                    >
+                      <span
+                        className="w-2 h-2 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: style.accentColor || '#10b981' }}
+                      />
+                      <span className="whitespace-nowrap">{style.name.split('(')[0].trim()}</span>
+                      {style.tag && (
+                        <span className={`text-[9px] font-extrabold px-1 py-0.1 rounded ${
+                          isSelected ? 'bg-black/30 text-emerald-200' : 'bg-white/15 text-gray-300'
+                        }`}>
+                          {style.tag}
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             {/* Reference Photos: Tap any to redesign preview poster */}
             {previewPhotos.length > 0 && (
               <div className="w-full pt-2 bg-white/5 rounded-xl p-2.5 border border-white/10 mt-1">
@@ -1002,7 +1076,7 @@ export default function WeekView({
                 </div>
               </div>
               <div className="bg-black/40 rounded-xl p-2.5 border border-white/10 text-[10px] text-gray-300 font-mono whitespace-pre-wrap max-h-16 overflow-y-auto leading-relaxed">
-                {getPostCaption(previewPost)}
+                {getPostCaption(previewPost, weekCaptionLang, previewStyle)}
               </div>
             </div>
 
@@ -1019,7 +1093,7 @@ export default function WeekView({
               </button>
 
               <button
-                onClick={() => handleCopyPostCaption(previewPost)}
+                onClick={() => handleCopyPostCaption({ ...previewPost, style: previewStyle })}
                 className="bg-white/10 hover:bg-white/20 active:bg-white/30 text-white font-bold py-3 px-3 rounded-xl flex items-center justify-center gap-1 text-xs border border-white/15 transition"
                 title="Copy Caption"
               >
@@ -1031,6 +1105,7 @@ export default function WeekView({
                 onClick={() => {
                   const postWithActivePhoto = {
                     ...previewPost,
+                    style: previewStyle,
                     product: {
                       ...previewPost.product,
                       photo: previewPhotos[previewPhotoIndex] || previewPost.product.photo
