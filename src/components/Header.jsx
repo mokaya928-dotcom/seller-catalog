@@ -1,5 +1,5 @@
 import React from 'react';
-import { Settings, Smartphone, Users, MapPin, ShoppingBag, ShieldCheck, Download, Lock, Camera } from 'lucide-react';
+import { Settings, Smartphone, Users, MapPin, ShoppingBag, ShieldCheck, Download, Lock } from 'lucide-react';
 
 export default function Header({ seller, ratio, onRatioChange, onPaletteChange, onOpenSettings, onOpenCatalog, onOpenCreatePoster, onLock, pwa }) {
   // Format today's date cleanly (e.g., "Thu 24 Sept")
@@ -53,19 +53,6 @@ export default function Header({ seller, ratio, onRatioChange, onPaletteChange, 
 
           {/* Action Hub */}
           <div className="flex items-center gap-1.5 flex-shrink-0">
-            {/* Quick Create Poster */}
-            {onOpenCreatePoster && (
-              <button
-                type="button"
-                onClick={onOpenCreatePoster}
-                className="px-2.5 py-1.5 rounded-lg text-xs font-bold text-white bg-white/10 hover:bg-white/20 active:bg-white/30 border border-white/15 transition flex items-center gap-1.5 shadow-2xs cursor-pointer active:scale-95"
-                title="Create New Poster (Upload / Snap)"
-              >
-                <Camera className="w-3.5 h-3.5 text-amber-300 stroke-[2.2px]" />
-                <span className="hidden xs:inline">+ Poster</span>
-              </button>
-            )}
-
             {/* Customer Storefront View Link */}
             {onOpenCatalog && (
               <button

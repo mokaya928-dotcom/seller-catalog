@@ -54,12 +54,21 @@ These sellers deal with two massive headaches every single day:
 
 ---
 
-### Step 3: The Close (When they like the preview)
-> "Glad you like it! I can upload your first 20–30 products, set up your shop branding, and connect your WhatsApp order button today so you don't have to lift a finger.
+### Step 3: The Close (When they like the preview - The KES 1,000 Impulse Buy)
+> "Glad you like it! I don't charge crazy agency fees. 
 > 
-> We do everything for a one-time setup fee of KES [5,000 / 10,000]—zero monthly subscriptions or recurring fees.
+> I can set up your store, upload your first 20 products, and connect your WhatsApp order number today for just **KES 1,000 flat**.
 > 
-> Should I set it up for your group today?"
+> That’s literally less than the profit from selling just ONE pair of shoes or a dress.
+> 
+> Send me 15 photos of your top items right now and I'll have your link ready in 30 minutes. Sawa?"
+
+---
+
+### The "Zero-Risk / Show Me First" Closer (For Hesitant Sellers)
+If someone says *"Sina pesa sahii"* or hesitates:
+> *"No problem at all boss! Let's do this: Send me 5 photos of your stock right now. I'll set up YOUR shop link for free so you can test it on your phone. If you love how it works, you send the KES 1,000. If you don't like it, you owe me zero. Deal?"*
+*(Once they see their shop name and their own stock live, they pay on the spot).*
 
 ---
 

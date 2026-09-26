@@ -275,37 +275,6 @@ export default function TodayView({
         onShowToast={onShowToast}
       />
 
-      {/* 2. Instant Poster Studio Action Card */}
-      <div className="bg-slate-900 text-white rounded-2xl p-4 shadow-sm border border-slate-800 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3 min-w-0">
-          <div className="w-10 h-10 rounded-xl bg-white/10 text-amber-300 flex items-center justify-center flex-shrink-0">
-            <Camera className="w-5 h-5 stroke-[2.2px]" />
-          </div>
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-white">
-                Create New Poster
-              </span>
-              <span className="text-[9px] font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 px-1.5 py-0.2 rounded border border-amber-400/30">
-                Snap / Upload
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-300 truncate mt-0.5">
-              Upload product photo or snap camera for an instant flyer
-            </p>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => setIsNewProductModalOpen(true)}
-          className="bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs px-3.5 py-2 rounded-xl shadow-xs transition flex items-center gap-1.5 flex-shrink-0 active:scale-95 cursor-pointer whitespace-nowrap"
-        >
-          <Sparkles className="w-3.5 h-3.5 fill-slate-950 text-slate-950" />
-          <span>+ Create Poster</span>
-        </button>
-      </div>
-
       {/* Category Selection Bar: NEVER MIX CATEGORIES! */}
       <div className="bg-white rounded-2xl p-3 border border-slate-200/90 shadow-xs space-y-2">
         <div className="flex items-center justify-between">
@@ -494,14 +463,6 @@ export default function TodayView({
               </>
             )}
           </button>
-        </div>
-
-        {/* Category Guard & 24hr Auto-Regeneration Explainer */}
-        <div className="bg-slate-50 rounded-xl p-2.5 border border-slate-200 text-[11px] text-slate-600 flex items-start gap-2">
-          <RefreshCw className="w-3.5 h-3.5 text-slate-500 flex-shrink-0 mt-0.5" />
-          <span>
-            <strong>Category-Pure Posting:</strong> Posts stay strictly within your selected category so products like bedding or clothes never mix with your beauty drops.
-          </span>
         </div>
       </div>
 

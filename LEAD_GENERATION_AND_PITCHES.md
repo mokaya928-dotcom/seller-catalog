@@ -428,7 +428,7 @@ When searching Google Maps, filter by location name to pull up hundreds of activ
 > *"Zero computer needed. You run 100% of it directly from your smartphone. Adding a product takes 20 seconds: snap photo, type price, save. Done."*
 
 **3. "How much does it cost?"**
-> *"No expensive monthly charges. Just a one-time setup fee of KES [5,000 / 10,000] where we build your store, upload your stock, and connect your WhatsApp order button. After that, it's yours."*
+> *"No expensive agency charges. Just a one-time setup fee of KES 1,000 flat—that's literally less than the profit of selling just ONE pair of shoes or dress. We build your catalog, upload your stock, and connect your WhatsApp order button. After that, it's 100% yours forever with zero monthly fees."*
 
 ---
 
