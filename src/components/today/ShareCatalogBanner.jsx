@@ -10,10 +10,10 @@ export default function ShareCatalogBanner({ seller, onOpenPreview, onShowToast 
   // Clean public customer storefront URL with explicit catalog view
   const catalogUrl = `${window.location.origin}/?view=catalog`;
 
-  const promoMessage = `Habari! Karibu *${seller.shop_name || 'The Beauty Bar Kenya'}*!\n\n` +
-    `Angalia bidhaa zetu zote zilizopo kwa sasa na bei zake hapa kwenye catalogue yetu:\n` +
+  const promoMessage = `Hello! Welcome to *${seller.shop_name || 'The Beauty Bar Kenya'}*!\n\n` +
+    `Browse all our available products and prices in our online catalogue:\n` +
     `👉 ${catalogUrl}\n\n` +
-    `Gusa bidhaa yoyote kuagiza moja kwa moja kupitia WhatsApp! Delivery inapatikana nchi nzima. Karibu sana!`;
+    `Tap any item to order directly via WhatsApp! Countrywide delivery available. You are warmly welcome!`;
 
   const handleCopyLinkOnly = async () => {
     const success = await shareService.copyText(catalogUrl);

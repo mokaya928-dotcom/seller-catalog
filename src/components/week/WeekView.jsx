@@ -23,6 +23,7 @@ import { storageService } from '../../services/storageService';
 import { shareService } from '../../services/shareService';
 import { canvasRenderer } from '../../services/canvasRenderer';
 import WhatsAppIcon from '../common/WhatsAppIcon';
+import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
 
 export default function WeekView({
   products,
@@ -157,14 +158,25 @@ export default function WeekView({
     }
   };
 
+  const [previewPhotoIndex, setPreviewPhotoIndex] = useState(0);
+
+
+  const previewPhotos = useMemo(() => {
+    if (!previewPost?.product) return [];
+    return getProductPhotosPool(previewPost.product, previewPost.companionProduct);
+  }, [previewPost]);
+
   // Preview flyer modal
-  const handlePreviewPost = async (post) => {
+  const handlePreviewPost = async (post, photoIdx = 0) => {
     setPreviewPost(post);
+    setPreviewPhotoIndex(photoIdx);
     setIsPreviewLoading(true);
     try {
+      const allP = getProductPhotosPool(post.product, post.companionProduct);
+      const chosenPhoto = allP[photoIdx] || post.product.photo;
       const palette = post.palette || seller.palette || 'emerald';
       const dataUrl = await canvasRenderer.renderPost(
-        post.product,
+        { ...post.product, photo: chosenPhoto },
         seller,
         ratio,
         post.style || 'unified_brand',
@@ -177,6 +189,142 @@ export default function WeekView({
       onShowToast('Could not render preview', 'error');
     } finally {
       setIsPreviewLoading(false);
+    }
+  };
+
+  // Switch preview photo dynamically to redesign flyer
+  const handleSwitchPreviewPhoto = async (index) => {
+    if (!previewPost) return;
+    setPreviewPhotoIndex(index);
+    setIsPreviewLoading(true);
+    try {
+      const chosenPhoto = previewPhotos[index] || previewPost.product.photo;
+      const palette = previewPost.palette || seller.palette || 'emerald';
+      const dataUrl = await canvasRenderer.renderPost(
+        { ...previewPost.product, photo: chosenPhoto },
+        seller,
+        ratio,
+        previewPost.style || 'unified_brand',
+        previewPost.companionProduct || null,
+        palette
+      );
+      setPreviewImageUrl(dataUrl);
+      onShowToast(`✓ Poster redesigned with Reference Photo #${index + 1}!`, 'success');
+    } catch (err) {
+      console.error('Failed to switch preview photo', err);
+      onShowToast('Could not render photo variant', 'error');
+    } finally {
+      setIsPreviewLoading(false);
+    }
+  };
+
+  // Save flyer variation from modal
+  const handleSavePreviewPoster = () => {
+    if (!previewImageUrl || !previewPost) return;
+    const blob = canvasRenderer.dataURLToBlob(previewImageUrl);
+    const safeName = previewPost.product.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+    const photoSuffix = previewPhotos.length > 1 ? `-ref${previewPhotoIndex + 1}` : '';
+    const filename = `${safeName}${photoSuffix}-${selectedDateStr}.png`;
+    shareService.downloadPosterOnly({ blob, filename });
+    onShowToast(`✓ Poster variation #${previewPhotoIndex + 1} saved!`, 'success');
+  };
+
+  const [isBatchPreviewLoading, setIsBatchPreviewLoading] = useState(false);
+
+  // Share all designed posters for preview post to WhatsApp
+  const handleShareAllPreviewPosters = async () => {
+    if (!previewPost || isBatchPreviewLoading) return;
+    setIsBatchPreviewLoading(true);
+    onShowToast(`🎨 Designing all ${previewPhotos.length} posters for WhatsApp...`, 'info');
+
+    try {
+      const posterBlobs = [];
+      const posterFilenames = [];
+      const safeName = previewPost.product.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+      const palette = previewPost.palette || seller.palette || 'emerald';
+
+      for (let i = 0; i < previewPhotos.length; i++) {
+        const dataUrl = await canvasRenderer.renderPost(
+          { ...previewPost.product, photo: previewPhotos[i] },
+          seller,
+          ratio,
+          previewPost.style || 'unified_brand',
+          previewPost.companionProduct || null,
+          palette
+        );
+        const blob = canvasRenderer.dataURLToBlob(dataUrl);
+        if (blob) {
+          posterBlobs.push(blob);
+          posterFilenames.push(`${safeName}-poster-${i + 1}-${selectedDateStr}.png`);
+        }
+      }
+
+      if (posterBlobs.length === 0) throw new Error('No posters generated');
+      const activeCaption = getPostCaption(previewPost);
+
+      const result = await shareService.sharePost({
+        blob: posterBlobs[0],
+        blobs: posterBlobs.slice(1),
+        caption: activeCaption,
+        filename: posterFilenames[0],
+        filenames: posterFilenames.slice(1)
+      });
+
+      if (result.success) {
+        await storageService.setPostShared(selectedDateStr, previewPost.slotId, true);
+        const updated = await storageService.getPostedStatus(selectedDateStr);
+        setDayPostedMap(updated);
+        onShowToast(`✓ All ${posterBlobs.length} branded posters shared to WhatsApp!`, 'success');
+      }
+    } catch (err) {
+      console.error('Failed to share all preview posters', err);
+      onShowToast('Could not share all posters', 'error');
+    } finally {
+      setIsBatchPreviewLoading(false);
+    }
+  };
+
+  // Download all preview posters as a zip
+  const handleDownloadAllPreviewPosters = async () => {
+    if (!previewPost || isBatchPreviewLoading) return;
+    setIsBatchPreviewLoading(true);
+    onShowToast(`📦 Packaging all ${previewPhotos.length} posters into ZIP...`, 'info');
+
+    try {
+      const posterBlobs = [];
+      const posterFilenames = [];
+      const safeName = previewPost.product.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+      const palette = previewPost.palette || seller.palette || 'emerald';
+
+      for (let i = 0; i < previewPhotos.length; i++) {
+        const dataUrl = await canvasRenderer.renderPost(
+          { ...previewPost.product, photo: previewPhotos[i] },
+          seller,
+          ratio,
+          previewPost.style || 'unified_brand',
+          previewPost.companionProduct || null,
+          palette
+        );
+        const blob = canvasRenderer.dataURLToBlob(dataUrl);
+        if (blob) {
+          posterBlobs.push(blob);
+          posterFilenames.push(`${safeName}-poster-${i + 1}-${selectedDateStr}.png`);
+        }
+      }
+
+      const activeCaption = getPostCaption(previewPost);
+      await shareService.downloadProductPostersZip({
+        blobs: posterBlobs,
+        filenames: posterFilenames,
+        caption: activeCaption,
+        zipName: `${safeName}-all-${previewPhotos.length}-posters.zip`
+      });
+      onShowToast(`✓ All ${previewPhotos.length} posters saved as .zip!`, 'success');
+    } catch (err) {
+      console.error('Failed to download all preview posters', err);
+      onShowToast('Could not download all posters', 'error');
+    } finally {
+      setIsBatchPreviewLoading(false);
     }
   };
 
@@ -516,9 +664,13 @@ export default function WeekView({
               <div className="flex items-center gap-3">
                 <div className="w-16 h-16 rounded-xl bg-slate-50 border border-slate-100 overflow-hidden flex-shrink-0 relative">
                   <img
-                    src={post.product.photo || (post.product.photos && post.product.photos[0]) || '/products/bbk-vaseline-lip.jpg'}
+                    src={getOptimizedImageUrl(post.product.photo || (post.product.photos && post.product.photos[0]) || '/products/bbk-vaseline-lip.jpg')}
                     alt={post.product.name}
                     className="w-full h-full object-contain p-1"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                    }}
                   />
                   {post.product.badge && (
                     <span className="absolute top-0.5 left-0.5 bg-slate-900 text-white font-bold text-[8px] px-1 rounded">
@@ -711,20 +863,111 @@ export default function WeekView({
               </button>
             </div>
 
-            <div className="flex-1 w-full flex items-center justify-center overflow-hidden min-h-[300px]">
-              {isPreviewLoading ? (
-                <div className="flex flex-col items-center justify-center gap-2 text-white/70">
-                  <div className="w-8 h-8 border-3 border-emerald-500 border-t-transparent rounded-full animate-spin" />
-                  <span className="text-xs font-semibold">Generating Flyer...</span>
+            <div className="flex-1 w-full flex items-center justify-center overflow-hidden min-h-[300px] relative">
+              {isPreviewLoading && (
+                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-gray-950/75 backdrop-blur-xs rounded-xl">
+                  <div className="w-8 h-8 border-3 border-emerald-400 border-t-transparent rounded-full animate-spin" />
+                  <span className="text-emerald-300 text-xs font-bold mt-2">
+                    Designing flyer with Photo #{previewPhotoIndex + 1}...
+                  </span>
                 </div>
-              ) : previewImageUrl ? (
+              )}
+              {previewImageUrl ? (
                 <img 
                   src={previewImageUrl} 
                   alt="Status Flyer" 
-                  className="max-h-[65vh] w-auto object-contain rounded-xl shadow-2xl" 
+                  className="max-h-[62vh] w-auto object-contain rounded-xl shadow-2xl" 
                 />
-              ) : null}
+              ) : (
+                <div className="flex flex-col items-center justify-center gap-2 text-white/70 p-8">
+                  <div className="w-8 h-8 border-3 border-emerald-500 border-t-transparent rounded-full animate-spin" />
+                  <span className="text-xs font-semibold">Generating Flyer...</span>
+                </div>
+              )}
             </div>
+
+            {/* Reference Photos: Tap any to redesign preview poster */}
+            {previewPhotos.length > 0 && (
+              <div className="w-full pt-2 bg-white/5 rounded-xl p-2.5 border border-white/10 mt-1">
+                <div className="flex items-center justify-between pb-1.5 text-white">
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold text-gray-200">
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Design Poster from Photos ({previewPhotos.length}):</span>
+                  </div>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    Photo #{previewPhotoIndex + 1} in Poster
+                  </span>
+                </div>
+                <p className="text-[10px] text-gray-400 pb-2">
+                  Tap any reference below to instantly redesign the poster with that angle:
+                </p>
+                <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin">
+                  {previewPhotos.map((url, i) => {
+                    const isSelected = previewPhotoIndex === i;
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => handleSwitchPreviewPhoto(i)}
+                        className={`relative rounded-xl overflow-hidden flex-shrink-0 transition-all p-1 border text-left group cursor-pointer ${
+                          isSelected
+                            ? 'ring-2 ring-emerald-400 border-emerald-400 scale-105 bg-emerald-950/40 shadow-lg'
+                            : 'border-white/20 hover:border-white/40 bg-black/40 opacity-70 hover:opacity-100'
+                        }`}
+                        title={`Click to design flyer with Photo #${i + 1}`}
+                      >
+                        <div className="w-13 h-13 rounded-lg overflow-hidden bg-black/30 flex items-center justify-center">
+                          <img 
+                            src={getOptimizedImageUrl(url)} 
+                            alt="" 
+                            className="w-full h-full object-contain p-0.5"
+                            onError={(e) => {
+                              e.currentTarget.onerror = null;
+                              e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                            }}
+                          />
+                        </div>
+                        <div className={`text-[9px] font-bold text-center py-0.5 mt-0.5 rounded ${
+                          isSelected ? 'bg-emerald-500 text-slate-950 font-extrabold' : 'text-gray-400'
+                        }`}>
+                          {i === 0 ? 'Main' : `Ref #${i}`}
+                        </div>
+                        {isSelected && (
+                          <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-emerald-500 text-slate-950 rounded-full flex items-center justify-center text-[10px] font-bold shadow-xs">
+                            ✓
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Batch Actions inside WeekView Preview Modal for Boss */}
+                <div className="flex items-center gap-2 pt-2 border-t border-white/10 mt-1">
+                  <button
+                    type="button"
+                    onClick={handleShareAllPreviewPosters}
+                    disabled={isBatchPreviewLoading}
+                    className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 text-xs transition active:scale-95 disabled:opacity-50"
+                    title={`Post all ${previewPhotos.length} designed posters together to WhatsApp`}
+                  >
+                    <WhatsAppIcon className="w-3.5 h-3.5 fill-white flex-shrink-0" />
+                    <span className="truncate">{isBatchPreviewLoading ? `Designing ${previewPhotos.length} posters...` : `Post All ${previewPhotos.length} to WhatsApp`}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleDownloadAllPreviewPosters}
+                    disabled={isBatchPreviewLoading}
+                    className="bg-white/10 hover:bg-white/20 text-white font-bold py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 text-xs border border-white/20 transition active:scale-95 disabled:opacity-50 flex-shrink-0"
+                    title={`Save all ${previewPhotos.length} posters as a ZIP bundle`}
+                  >
+                    <Download className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Save All ({previewPhotos.length}) .zip</span>
+                  </button>
+                </div>
+              </div>
+            )}
 
             {/* Caption in Preview Modal */}
             <div className="w-full pt-2">
@@ -765,6 +1008,17 @@ export default function WeekView({
 
             <div className="w-full pt-3 flex gap-2">
               <button
+                type="button"
+                onClick={handleSavePreviewPoster}
+                disabled={isPreviewLoading}
+                className="bg-white/10 hover:bg-white/20 active:bg-white/30 text-white font-bold py-3 px-3.5 rounded-xl flex items-center justify-center gap-1 text-xs border border-white/15 transition active:scale-95 flex-shrink-0"
+                title="Save this specific flyer variation"
+              >
+                <Download className="w-4 h-4 text-emerald-400" />
+                <span>Save</span>
+              </button>
+
+              <button
                 onClick={() => handleCopyPostCaption(previewPost)}
                 className="bg-white/10 hover:bg-white/20 active:bg-white/30 text-white font-bold py-3 px-3 rounded-xl flex items-center justify-center gap-1 text-xs border border-white/15 transition"
                 title="Copy Caption"
@@ -774,7 +1028,16 @@ export default function WeekView({
               </button>
 
               <button
-                onClick={() => handleSharePost(previewPost)}
+                onClick={() => {
+                  const postWithActivePhoto = {
+                    ...previewPost,
+                    product: {
+                      ...previewPost.product,
+                      photo: previewPhotos[previewPhotoIndex] || previewPost.product.photo
+                    }
+                  };
+                  handleSharePost(postWithActivePhoto);
+                }}
                 className="flex-1 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-xs shadow-lg transition"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-white" />

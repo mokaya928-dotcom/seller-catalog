@@ -6,6 +6,7 @@ import {
 import WhatsAppIcon from '../common/WhatsAppIcon';
 import { shareService } from '../../services/shareService';
 import { EVENT_TYPES } from '../../services/analyticsService';
+import { getOptimizedImageUrl } from '../../utils/imageUtils';
 
 const DELIVERY_OPTIONS = [
   {
@@ -183,9 +184,13 @@ export default function CheckoutDrawer({
                   >
                     <div className="w-14 h-14 rounded-xl bg-white border border-gray-200 overflow-hidden flex-shrink-0 flex items-center justify-center p-1">
                       <img 
-                        src={product.photo} 
+                        src={getOptimizedImageUrl(product.photo)} 
                         alt={product.name} 
                         className="w-full h-full object-contain"
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                        }}
                       />
                     </div>
 

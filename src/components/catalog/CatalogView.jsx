@@ -14,6 +14,7 @@ import PwaInstallBanner from '../common/PwaInstallBanner';
 import { shareService } from '../../services/shareService';
 import { executeSmartSearch, SMART_PRESETS } from '../../services/smartSearch';
 import { getProductRemaining, getProductRegularPrice, getProductSocialProof } from '../../services/scheduleService';
+import { getOptimizedImageUrl } from '../../utils/imageUtils';
 
 export default function CatalogView({ seller, products, onExitToSeller, onOpenSeller, isPreview = false, pwa }) {
   const [search, setSearch] = useState('');
@@ -750,7 +751,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                   {/* HERO PRODUCT PHOTO */}
                   <div className="w-full aspect-square bg-slate-50 relative flex items-center justify-center p-2 overflow-hidden border-b border-slate-100">
                     <img
-                      src={product.photo}
+                      src={getOptimizedImageUrl(product.photo)}
                       alt={product.name}
                       loading="lazy"
                       onError={(e) => {
@@ -883,7 +884,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                   <div className="flex gap-3.5">
                     <div className="w-24 h-24 rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden flex-shrink-0 relative flex items-center justify-center p-1 shadow-2xs">
                       <img
-                        src={product.photo}
+                        src={getOptimizedImageUrl(product.photo)}
                         alt={product.name}
                         loading="lazy"
                         onError={(e) => {

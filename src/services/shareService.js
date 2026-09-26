@@ -45,8 +45,19 @@ export const shareService = {
    * Helper to fetch an image URL and convert to Blob
    */
   async urlToBlob(url) {
+    if (!url) return null;
     try {
-      const response = await fetch(url);
+      let fetchUrl = url;
+      const isHttp = typeof url === 'string' && (url.startsWith('http://') || url.startsWith('https://'));
+      const isSameOrigin = typeof window !== 'undefined' && isHttp && url.startsWith(window.location.origin);
+      if (isHttp && !isSameOrigin && !url.includes('images.weserv.nl')) {
+        fetchUrl = `https://images.weserv.nl/?url=${encodeURIComponent(url)}`;
+      }
+      const response = await fetch(fetchUrl);
+      if (!response.ok && fetchUrl !== url) {
+        const fallbackResp = await fetch(url);
+        return await fallbackResp.blob();
+      }
       return await response.blob();
     } catch (e) {
       console.warn('Failed to fetch blob from url', url, e);
@@ -168,6 +179,29 @@ export const shareService = {
     link.click();
     document.body.removeChild(link);
     setTimeout(() => URL.revokeObjectURL(url), 2000);
+    return true;
+  },
+
+  /**
+   * Generic blob download helper
+   */
+  downloadBlob(blob, filename = 'download.zip') {
+    return this.downloadPosterOnly({ blob, filename });
+  },
+
+  /**
+   * Package multiple designed poster variations into a zip archive with caption
+   */
+  async downloadProductPostersZip({ blobs = [], filenames = [], caption = '', zipName = 'product-posters.zip' }) {
+    const zip = new JSZip();
+    blobs.forEach((blob, idx) => {
+      zip.file(filenames[idx] || `poster-${idx + 1}.png`, blob);
+    });
+    if (caption) {
+      zip.file('whatsapp-caption.txt', caption);
+    }
+    const zipBlob = await zip.generateAsync({ type: 'blob' });
+    this.downloadPosterOnly({ blob: zipBlob, filename: zipName });
     return true;
   },
 

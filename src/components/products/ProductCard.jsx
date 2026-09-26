@@ -1,6 +1,7 @@
 import React from 'react';
 import { Edit2, Star, Trash2, Eye, Zap, Flame } from 'lucide-react';
 import { getProductRemaining, getProductRegularPrice } from '../../services/scheduleService';
+import { getOptimizedImageUrl } from '../../utils/imageUtils';
 
 export default function ProductCard({
   product,
@@ -25,9 +26,13 @@ export default function ProductCard({
           title="Click to preview full product details"
         >
           <img
-            src={product.photo}
+            src={getOptimizedImageUrl(product.photo)}
             alt={product.name}
             className="w-full h-full object-contain group-hover:scale-105 transition"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+            }}
           />
           {product.featured && (
             <div className="absolute top-1 left-1 bg-amber-400 text-amber-950 p-0.5 rounded-md shadow-xs">

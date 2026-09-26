@@ -7,6 +7,7 @@ import {
 import { shareService } from '../../services/shareService';
 import { getProductRemaining, getProductRegularPrice, getProductSocialProof } from '../../services/scheduleService';
 import WhatsAppIcon from '../common/WhatsAppIcon';
+import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
 
 export default function ProductDetailModal({ product, seller, onClose, onAddToList, isSelected }) {
   const [activeTab, setActiveTab] = useState('about'); // 'about' | 'ingredients' | 'how_to_use'
@@ -18,12 +19,10 @@ export default function ProductDetailModal({ product, seller, onClose, onAddToLi
   const socialProof = getProductSocialProof(product);
   const savings = regularPrice && regularPrice > product.price ? regularPrice - product.price : null;
 
-  // Extract all photos and strictly eliminate identical duplicate URLs
-  const rawPhotos = Array.isArray(product.photos) && product.photos.length > 0
-    ? product.photos
-    : (product.photo ? [product.photo] : ['/products/bbk-vaseline-lip.jpg']);
-
-  const photosList = Array.from(new Set(rawPhotos.filter(Boolean)));
+  // Extract all photos guaranteed to have multiple angles/references for all products
+  const photosList = React.useMemo(() => {
+    return getProductPhotosPool(product);
+  }, [product]);
 
   const [activeMedia, setActiveMedia] = useState({
     type: 'photo', // 'photo' | 'video'
@@ -181,11 +180,15 @@ export default function ProductDetailModal({ product, seller, onClose, onAddToLi
                   title="Tap to view full high-resolution image"
                 >
                   <img
-                    src={photosList[activeMedia.index] || product.photo}
+                    src={getOptimizedImageUrl(photosList[activeMedia.index] || product.photo)}
                     alt={`${product.name} view ${activeMedia.index + 1}`}
                     className={`max-h-64 w-auto object-contain drop-shadow-md rounded-2xl transition-transform duration-300 ${
                       isMacroZoom ? 'scale-175 cursor-zoom-out' : 'group-hover:scale-[1.02]'
                     }`}
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                    }}
                   />
                   
                   {/* Fullscreen Magnify button */}
@@ -275,7 +278,15 @@ export default function ProductDetailModal({ product, seller, onClose, onAddToLi
                           : 'border-gray-200 hover:border-gray-400 opacity-80 hover:opacity-100'
                       }`}
                     >
-                      <img src={picUrl} alt="" className="w-full h-full object-contain" />
+                      <img 
+                        src={getOptimizedImageUrl(picUrl)} 
+                        alt="" 
+                        className="w-full h-full object-contain"
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                        }}
+                      />
                       <span className="absolute bottom-0 inset-x-0 bg-black/70 text-white text-[9px] font-extrabold text-center py-0.2">
                         {label}
                       </span>
@@ -501,9 +512,13 @@ export default function ProductDetailModal({ product, seller, onClose, onAddToLi
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={photosList[activeMedia.index] || product.photo}
+              src={getOptimizedImageUrl(photosList[activeMedia.index] || product.photo)}
               alt={product.name}
               className="max-h-[80vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+              }}
             />
 
             {photosList.length > 1 && (
@@ -540,7 +555,15 @@ export default function ProductDetailModal({ product, seller, onClose, onAddToLi
                     activeMedia.type === 'photo' && activeMedia.index === idx ? 'border-emerald-500 scale-105' : 'border-white/30 opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <img src={p} alt="" className="w-full h-full object-cover" />
+                  <img 
+                    src={getOptimizedImageUrl(p)} 
+                    alt="" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                    }}
+                  />
                 </button>
               ))}
             </div>

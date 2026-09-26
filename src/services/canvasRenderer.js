@@ -19,18 +19,88 @@
  * - WhatsApp number & Lipa na M-Pesa till clearly stated in footer.
  */
 
-function loadImage(src) {
+function loadImage(src, timeoutMs = 8000) {
   return new Promise((resolve) => {
     if (!src) return resolve(null);
+
+    let targetSrc = src;
+    const isHttp = typeof src === 'string' && (src.startsWith('http://') || src.startsWith('https://'));
+    const isSameOrigin = typeof window !== 'undefined' && isHttp && src.startsWith(window.location.origin);
+
+    if (isHttp && !isSameOrigin && !src.includes('images.weserv.nl')) {
+      targetSrc = `https://images.weserv.nl/?url=${encodeURIComponent(src)}`;
+    }
+
+    let settled = false;
+    const timer = setTimeout(() => {
+      if (!settled) {
+        settled = true;
+        console.warn(`Image load timed out: ${src}`);
+        resolve(null);
+      }
+    }, timeoutMs);
+
+    const finish = (result) => {
+      if (!settled) {
+        settled = true;
+        clearTimeout(timer);
+        resolve(result);
+      }
+    };
+
     const img = new Image();
     img.crossOrigin = 'anonymous';
-    img.onload = () => resolve(img);
+
+    img.onload = () => finish(img);
+
     img.onerror = () => {
+      // If CORS proxy failed, attempt direct load as fallback
+      if (targetSrc !== src && !settled) {
+        const directImg = new Image();
+        directImg.crossOrigin = 'anonymous';
+        directImg.onload = () => finish(directImg);
+        directImg.onerror = () => {
+          console.warn(`Failed to load image: ${src}`);
+          finish(null);
+        };
+        directImg.src = src;
+        return;
+      }
       console.warn(`Failed to load image at: ${src}`);
-      resolve(null);
+      finish(null);
     };
-    img.src = src;
+
+    img.src = targetSrc;
   });
+}
+
+/**
+ * Robust image loader for canvas: Loads candidate photo,
+ * and if unavailable falls back to alternate photos so the flyer never has an empty void.
+ */
+async function loadProductImage(product, primarySrc) {
+  const candidate = primarySrc || product?.photo || product?.image_url;
+  let img = await loadImage(candidate);
+  if (img) return img;
+
+  // Fallback 1: Try alternate photos in product.photos
+  if (Array.isArray(product?.photos)) {
+    for (const alt of product.photos) {
+      if (alt && alt !== candidate) {
+        img = await loadImage(alt);
+        if (img) return img;
+      }
+    }
+  }
+
+  // Fallback 2: Try product.image_url
+  if (product?.image_url && product.image_url !== candidate) {
+    img = await loadImage(product.image_url);
+    if (img) return img;
+  }
+
+  // Fallback 3: Reliable local fallback image
+  return await loadImage('/products/bbk-vaseline-lip.jpg');
 }
 
 function roundRect(ctx, x, y, width, height, radius) {
@@ -469,7 +539,7 @@ export const canvasRenderer = {
     }
 
     // Hero Image
-    const heroImg = await loadImage(product.photo);
+    const heroImg = await loadProductImage(product, product.photo);
     if (heroImg) {
       const bounds = getProductBounds(heroImg);
       const pad = isStatus ? 35 : 20;
@@ -595,7 +665,7 @@ export const canvasRenderer = {
     ctx.fillText('FLASH SALE • TODAY ONLY', boxX + boxWidth - flashW / 2 - 22, boxY + 47);
 
     // Hero Image
-    const heroImg = await loadImage(product.photo);
+    const heroImg = await loadProductImage(product, product.photo);
     if (heroImg) {
       const bounds = getProductBounds(heroImg);
       const pad = isStatus ? 35 : 20;
@@ -760,7 +830,7 @@ export const canvasRenderer = {
     ctx.fillText('RATED 4.9 / 5.0', boxX + boxWidth - starW / 2 - 22, boxY + 47);
 
     // Hero Image
-    const heroImg = await loadImage(product.photo);
+    const heroImg = await loadProductImage(product, product.photo);
     if (heroImg) {
       const bounds = getProductBounds(heroImg);
       const pad = isStatus ? 35 : 20;
@@ -929,8 +999,8 @@ export const canvasRenderer = {
     ctx.fillText('BUNDLE & SAVE', boxX + boxWidth - bW / 2 - 22, boxY + 47);
 
     // Load Images (Main + Companion)
-    const heroImg = await loadImage(product.photo);
-    const compImg = companionProduct ? await loadImage(companionProduct.photo) : null;
+    const heroImg = await loadProductImage(product, product.photo);
+    const compImg = companionProduct ? await loadProductImage(companionProduct, companionProduct.photo) : null;
 
     if (heroImg && compImg) {
       const sideW = Math.round((boxWidth - 140) / 2);
@@ -1129,7 +1199,7 @@ export const canvasRenderer = {
     ctx.fillText('JUST RESTOCKED', boxX + boxWidth - restockW / 2 - 22, boxY + 47);
 
     // Hero Image
-    const heroImg = await loadImage(product.photo);
+    const heroImg = await loadProductImage(product, product.photo);
     if (heroImg) {
       const bounds = getProductBounds(heroImg);
       const pad = isStatus ? 35 : 20;
