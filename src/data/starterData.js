@@ -94,6 +94,410 @@ export const GLOWND_SELLER = {
 
 export const CURATED_PRODUCTS = [
   {
+    "id": "prod_shoein_minimal_black",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "Minimal Slip-On Leather Sneaker Black",
+    "size": "EU 40 - 45",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png"
+    ],
+    "price": 4800,
+    "regular_price": 5500,
+    "benefit_line": "Low-profile pure leather with flexible vulcanized sole",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Bestseller 🔥",
+    "category": "Sneakers & Kicks",
+    "ingredients": "Premium Calfskin Leather, Cushioned Memory Foam Insole, Rubber Outsole",
+    "how_to_use": "Perfect for smart-casual office wear, chinos, and weekend denim.",
+    "highlights": [
+      "Pure Leather",
+      "Slip-On Comfort",
+      "Nairobi Same-Day Delivery",
+      "All Sizes Available"
+    ],
+    "description": "Sleek low-profile leather slip-on sneaker by Storeez at Shoe-In Kenya. Built with ultra-soft calfskin leather and cushioned insole for all-day city walking without fatigue."
+  },
+  {
+    "id": "prod_shoein_minimal_white",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "Minimal Lace-Up Leather Sneaker White",
+    "size": "EU 40 - 45",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png"
+    ],
+    "price": 4800,
+    "regular_price": 5500,
+    "benefit_line": "Crisp white minimalist silhouette for clean luxury aesthetics",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Trending 👟",
+    "category": "Sneakers & Kicks",
+    "ingredients": "Full-Grain White Leather, Breathable Cotton Lining, Durable Grip Sole",
+    "how_to_use": "Pairs seamlessly with linen trousers, denim, and casual suits.",
+    "highlights": [
+      "Full-Grain Leather",
+      "Easy to Clean",
+      "Crisp Clean Look",
+      "Sizes 40-45"
+    ],
+    "description": "The ultimate everyday wardrobe essential. Crisp white leather low-top sneaker featuring clean stitching, reinforced heel counter, and comfortable interior padding."
+  },
+  {
+    "id": "prod_shoein_zopo_tan",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "Zopo Low-Top Suede Sneaker Tan Brown",
+    "size": "EU 40 - 45",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg"
+    ],
+    "price": 4800,
+    "regular_price": 5400,
+    "benefit_line": "Rich velvety suede finish with contrast white rubber sole",
+    "in_stock": true,
+    "featured": true,
+    "badge": "New Arrival 🌟",
+    "category": "Sneakers & Kicks",
+    "ingredients": "Soft Brushed Suede, Reinforced Lace Eyestay, Padded Collar",
+    "how_to_use": "Best worn with earthy tones, khakis, and dark denim.",
+    "highlights": [
+      "Brushed Suede",
+      "Shock-Absorbing Sole",
+      "Streetwear Essential"
+    ],
+    "description": "Zopo low-top sneaker in premium tan brown suede. Engineered with shock-absorbing cupsole and padded tongue for superior everyday support."
+  },
+  {
+    "id": "prod_shoein_zopo_black",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "Zopo Low-Top Suede Sneaker Black",
+    "size": "EU 40 - 45",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "price": 4800,
+    "regular_price": 5400,
+    "benefit_line": "Monochrome stealth profile with premium tactile suede",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Restocked 📦",
+    "category": "Sneakers & Kicks",
+    "ingredients": "Midnight Black Suede, White Contrast Cupsole, Anti-Slip Tread",
+    "how_to_use": "Versatile styling from casual Fridays to evening hangouts.",
+    "highlights": [
+      "Stealth Black",
+      "Contrast Sole",
+      "Sizes 40-45"
+    ],
+    "description": "Sleek black suede Zopo low-top sneaker with clean white contrast sole and minimalist lacing system. A staple for urban streetwear."
+  },
+  {
+    "id": "prod_shoein_san_marina_grey",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "San Marina Leather Sneaker Light Grey",
+    "size": "EU 40 - 45",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
+    ],
+    "price": 4800,
+    "regular_price": 5500,
+    "benefit_line": "Sophisticated neutral light grey Italian-inspired low-top",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Editor's Pick 🏆",
+    "category": "Sneakers & Kicks",
+    "ingredients": "Supple Nubuck & Smooth Leather, Antibacterial Insole, Gum Outsole",
+    "how_to_use": "Elevates tailored joggers, shorts, and light summer trousers.",
+    "highlights": [
+      "Light Grey Nubuck",
+      "Italian Styling",
+      "Breathable Interior"
+    ],
+    "description": "San Marina leather sneaker in subtle light grey. Offers a streamlined silhouette with tonal stitching and textured side accents."
+  },
+  {
+    "id": "prod_shoein_spezia_grey",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "Adidas Handball Spezia Heritage Grey",
+    "size": "EU 41 - 45",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/sambasapezia.webp",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/sambasapezia.webp"
+    ],
+    "price": 4200,
+    "regular_price": 4800,
+    "benefit_line": "Classic retro terrace aesthetic with suede T-toe overlay",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Retro Classic ⚡",
+    "category": "Sneakers & Kicks",
+    "ingredients": "Soft Suede Upper, Classic Gum Rubber Outsole, 3-Stripes Detail",
+    "how_to_use": "Pairs with straight-leg denim, cargo pants, and vintage tees.",
+    "highlights": [
+      "Terrace Heritage",
+      "Iconic Gum Sole",
+      "Nairobi Express Delivery"
+    ],
+    "description": "Adidas Handball Spezia in heritage grey suede with classic gum rubber sole. The vintage silhouette currently dominating streetwear culture."
+  },
+  {
+    "id": "prod_shoein_nb_530",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "New Balance 530 Retro Dad Runner",
+    "size": "EU 40 - 45",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/noke.webp",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/noke.webp"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Ultra-breathable mesh with ABZORB cushioning technology",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Viral Kicks 🚀",
+    "category": "Sneakers & Kicks",
+    "ingredients": "Air Mesh, Synthetic Leather Overlays, ABZORB Midsole Cushion",
+    "how_to_use": "Supreme comfort for daily workouts, walking, and street style.",
+    "highlights": [
+      "ABZORB Comfort",
+      "Super Lightweight",
+      "TikTok Viral Kicks"
+    ],
+    "description": "The viral New Balance 530 running sneaker in crisp white with silver accents. Unmatched all-day walking cushion with nostalgic Y2K styling."
+  },
+  {
+    "id": "prod_shoein_jf_woven_loafer",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "John Foster Woven Vamp Loafer Black & Brown",
+    "size": "EU 40 - 45",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png"
+    ],
+    "price": 5500,
+    "regular_price": 6500,
+    "benefit_line": "Handcrafted intricate woven leather vamp with penny strap",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Official Luxury 👑",
+    "category": "Men's Footwear",
+    "ingredients": "100% Genuine Full-Grain Leather, Leather Sole with Anti-Slip Grip",
+    "how_to_use": "Executive boardroom wear, corporate events, and wedding attire.",
+    "highlights": [
+      "Hand-Woven Vamp",
+      "100% Pure Leather",
+      "Moi Avenue In-Store Pickup"
+    ],
+    "description": "John Foster dual-tone woven vamp loafer in polished black and rich mahogany brown. Features an artisanal hand-woven front panel and structured heel for executive elegance."
+  },
+  {
+    "id": "prod_shoein_jf_classic_loafer",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "John Foster Classic Slip-On Loafer Black",
+    "size": "EU 40 - 46",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png"
+    ],
+    "price": 5500,
+    "regular_price": 6500,
+    "benefit_line": "Timeless stitched apron toe in high-shine formal calfskin",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Executive 👔",
+    "category": "Men's Footwear",
+    "ingredients": "Polished Calf Leather, Ergonomic Arch Support, Stacked Heel",
+    "how_to_use": "Essential for business suits, formal meetings, and Sunday best.",
+    "highlights": [
+      "Formal Calfskin",
+      "Stitched Apron Toe",
+      "Sizes 40-46 Available"
+    ],
+    "description": "John Foster Classic Slip-On Loafer in deep black leather. Features clean hand-finished stitching, durable stacked heel, and premium cushioned arch support."
+  },
+  {
+    "id": "prod_shoein_jf_horsebit",
+    "seller_id": "seller_shoe_in_kenya",
+    "name": "John Foster Polished Horsebit Loafer Black",
+    "size": "EU 40 - 45",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "price": 5500,
+    "regular_price": 6500,
+    "benefit_line": "Gold-tone horsebit buckle hardware over premium black leather",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Gentleman's Choice ✨",
+    "category": "Men's Footwear",
+    "ingredients": "Glossy Full-Grain Leather, Brass Horsebit Ornament, Leather Lining",
+    "how_to_use": "Elevates smart-casual outfits, blazer combinations, and formal dinners.",
+    "highlights": [
+      "Gold Horsebit Buckle",
+      "High-Shine Finish",
+      "Same-Day Nairobi Boda"
+    ],
+    "description": "The distinguished John Foster Horsebit Loafer in rich black leather with polished gold hardware. A classic footwear icon designed for Kenyan gentlemen who dress with confidence."
+  },
+  {
+    "id": "prod_glow_brighten_calm_duo",
+    "seller_id": "seller_glow_secret",
+    "name": "Brighten & Calm Duo (REVASE Rice + Anua Azelaic Acid 10+)",
+    "size": "2-Piece Set",
+    "photo": "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/Brighten_Calm_Duo.webp?v=1790597712",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/Brighten_Calm_Duo.webp?v=1790597712"
+    ],
+    "price": 5500,
+    "regular_price": 6200,
+    "benefit_line": "Fades hyperpigmentation & calms redness with clinical Korean actives",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Duo Combo 📦",
+    "category": "Korean Skincare & Serums",
+    "ingredients": "10% Azelaic Acid, Tranexamic Acid, Fermented Rice Water, Centella Asiatica",
+    "how_to_use": "Apply Anua Azelaic Serum after cleansing, follow with REVASE Rice Moisturizer morning and evening.",
+    "highlights": [
+      "Dark Spot Eraser",
+      "Calms Acne & Redness",
+      "100% Authentic Korean",
+      "Best Value Bundle"
+    ],
+    "description": "The viral brightening power combo! Pairs REVASE Rice + Tranexamic brightening moisturizer with Anua Azelaic Acid 10+ serum to clear stubborn dark marks, even out skin tone, and restore a luminous glass-skin glow."
+  },
+  {
+    "id": "prod_glow_cosrx_peptide_cream",
+    "seller_id": "seller_glow_secret",
+    "name": "COSRX The 6 Peptide Bakuchiol Plump Bounce Cream",
+    "size": "50ml",
+    "photo": "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/COSRX_The_Blue_Peptide_Bakuchiol_Plump_Bounce_Cream.webp?v=1790255745",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/COSRX_The_Blue_Peptide_Bakuchiol_Plump_Bounce_Cream.webp?v=1790255745"
+    ],
+    "price": 3800,
+    "regular_price": 4300,
+    "benefit_line": "6 Peptides + natural Bakuchiol for intense collagen bounce & firmness",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Anti-Aging 💧",
+    "category": "Korean Skincare & Serums",
+    "ingredients": "6 Multi-Peptide Complex, Bakuchiol (Natural Retinol Alternative), Squalane",
+    "how_to_use": "Smooth a dime-sized amount over face and neck as the final moisturising step.",
+    "highlights": [
+      "Collagen Booster",
+      "Gentle Retinol Alternative",
+      "Deep Hydration",
+      "Safe for Sensitive Skin"
+    ],
+    "description": "COSRX's breakthrough anti-aging bounce cream! Packed with 6 targeted peptides and plant-based Bakuchiol to visibly firm fine lines, restore youthful elasticity, and give skin an instant plump texture."
+  },
+  {
+    "id": "prod_glow_anua_rice_milk",
+    "seller_id": "seller_glow_secret",
+    "name": "Anua Rice 70 Intensive Ceramide Moisturizing Milk",
+    "size": "150ml",
+    "photo": "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/Anua_70_rice_70_cerramide_150ML.webp?v=1790336908",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/Anua_70_rice_70_cerramide_150ML.webp?v=1790336908"
+    ],
+    "price": 2800,
+    "regular_price": 3200,
+    "benefit_line": "70% Rice Bran Water + Ceramides for milky glass skin hydration",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Viral Glass Skin ✨",
+    "category": "Korean Skincare & Serums",
+    "ingredients": "70% Rice Bran Extract, 5 Essential Ceramides, Niacinamide, Hyaluronic Acid",
+    "how_to_use": "Apply 2-3 pumps onto palms and pat into skin after toner. Absorbs with zero greasy residue.",
+    "highlights": [
+      "70% Rice Water",
+      "Barrier Repair",
+      "Lightweight Milky Glow"
+    ],
+    "description": "Anua's viral Milky Toner-Lotion hybrid! Formulated with 70% pure Korean rice bran extract and multi-ceramides to repair damaged moisture barriers, brighten dull texture, and leave skin soft as silk."
+  },
+  {
+    "id": "prod_glow_cosrx_peptide_serum",
+    "seller_id": "seller_glow_secret",
+    "name": "COSRX Blue Peptide Bakuchiol Plump Glow Serum",
+    "size": "50ml",
+    "photo": "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/Cosrx_-_Blue_Peptide_Bakuchiol_Plump_Glow_Serum.webp?v=1790320840",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/Cosrx_-_Blue_Peptide_Bakuchiol_Plump_Glow_Serum.webp?v=1790320840"
+    ],
+    "price": 3700,
+    "regular_price": 4200,
+    "benefit_line": "Fast-absorbing blue peptide elixir for pore tightening & radiant glow",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Release 🌟",
+    "category": "Korean Skincare & Serums",
+    "ingredients": "Copper Tripeptide-1, Bakuchiol, Azulene, Hyaluronic Acid",
+    "how_to_use": "Dispense 3-4 drops directly onto clean face and gently press until absorbed.",
+    "highlights": [
+      "Pore Tightening",
+      "Natural Blue Azulene",
+      "Non-Sticky Finish"
+    ],
+    "description": "COSRX high-potency blue peptide serum. Blends soothing azulene with firming copper peptides and bakuchiol to tighten enlarged pores, refine rough skin texture, and infuse youthful luminosity."
+  },
+  {
+    "id": "prod_glow_iunik_beta_glucan",
+    "seller_id": "seller_glow_secret",
+    "name": "iUNIK Beta-Glucan Power Moisture Serum (20% More Hydrating Than HA)",
+    "size": "50ml",
+    "photo": "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/iunik-beta-glucan-power-moisture-serum-50ml_2_1.webp?v=1790246623",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/iunik-beta-glucan-power-moisture-serum-50ml_2_1.webp?v=1790246623"
+    ],
+    "price": 2650,
+    "regular_price": 3000,
+    "benefit_line": "Pure 98% Beta-Glucan holding 20% more moisture than hyaluronic acid",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Deep Hydration 💧",
+    "category": "Korean Skincare & Serums",
+    "ingredients": "98% Third-Generation Fermented Beta-Glucan",
+    "how_to_use": "Apply morning and night after toner. Instantly locks in moisture without heaviness.",
+    "highlights": [
+      "98% Beta Glucan",
+      "Superior to Hyaluronic Acid",
+      "Soothes Irritation"
+    ],
+    "description": "The gold standard in barrier hydration! iUNIK Beta-Glucan Power Serum contains 98% pure beta-glucan to hold moisture 20% better than hyaluronic acid, calming stressed, irritated, or compromised skin."
+  },
+  {
+    "id": "prod_glow_abib_eye_patches",
+    "seller_id": "seller_glow_secret",
+    "name": "Abib Glutathione Kojic Acid Vita Jelly Eye Patches",
+    "size": "60 Patches (90g)",
+    "photo": "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/Glutathione_Kojic_Acid_Eye_Patch_Vita_Jelly.webp?v=1790154307",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0546/1996/3565/files/Glutathione_Kojic_Acid_Eye_Patch_Vita_Jelly.webp?v=1790154307"
+    ],
+    "price": 2650,
+    "regular_price": 3100,
+    "benefit_line": "Fades dark circles & depuffs tired eyes with glutathione jelly",
+    "in_stock": true,
+    "featured": true,
+    "badge": "TikTok Viral 👀",
+    "category": "Korean Skincare & Serums",
+    "ingredients": "Pure Glutathione, Kojic Acid, Vitamin C Derivative, Niacinamide, Caffeine",
+    "how_to_use": "Apply hydrogel patches under eyes for 20 minutes before skincare or makeup. Pat remaining serum in.",
+    "highlights": [
+      "Erases Dark Under-Eyes",
+      "Depuffs in 15 Mins",
+      "60 Hydrogel Patches"
+    ],
+    "description": "Instant remedy for tired, dark under-eyes! Abib Vita Jelly patches deliver concentrated glutathione and kojic acid to brighten stubborn dark circles, reduce morning puffiness, and smooth under-eye fine lines."
+  },
+  {
     "id": "prod_bbk_elf_brightening",
     "seller_id": "seller_beauty_bar_kenya",
     "name": "e.l.f. C-Bright Brightening Face Primer (2% Vit C)",
@@ -2839,2655 +3243,2446 @@ export const CURATED_PRODUCTS = [
     "companion_id": "prod_bbk_elf_brightening"
   },
   {
-    "id": "prod_moh_bomber_jacket",
-    "seller_id": "seller_moh_037",
-    "name": "Unisex Vintage Warm Fleece Bomber Jacket",
-    "size": "M, L, XL, XXL",
-    "photo": "/products/moh-bomber-jacket.jpg",
+    "id": "prod_glownd_1022",
+    "seller_id": "seller_glownd",
+    "name": "The Valenne Statement Bag - Cream",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_1022.png",
     "photos": [
-      "/products/moh-bomber-jacket.jpg",
-      "/products/moh-mens-polo.jpg",
-      "/products/moh-khaki-pants.jpg"
+      "/products/glownd/glownd_1022.png",
+      "https://glownd.com/wp-content/uploads/2026/09/2b58b2bf-26f6-4b2c-9523-3ba87c992a92.png",
+      "https://glownd.com/wp-content/uploads/2026/09/a3a99ed1-54ba-49fb-a414-fa7a336d7728.png",
+      "https://glownd.com/wp-content/uploads/2026/09/c4d5f7aa-80a6-45a9-bdf4-bf4d3828e197.png"
     ],
-    "companion_id": "prod_moh_khaki_pants",
-    "price": 2200,
-    "regular_price": 2800,
-    "benefit_line": "Windproof urban street style with warm quilted inner lining",
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
     "in_stock": true,
     "featured": true,
-    "badge": "New Arrival 🧥",
-    "category": "Classic Clothes",
-    "description": "Classic warm unisex bomber jacket perfect for cold Kakamega evenings and daily streetwear. Heavy brass zipper, reinforced ribbed cuffs and collar, with double side pockets.",
+    "badge": "Bestseller 🔥",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Premium The Valenne Statement Bag - Cream. High quality structured craftsmanship, durable hardware, and elegant finish for everyday and occasion wear.",
     "highlights": [
-      "Wind & Cold Resistant",
-      "Premium Heavy Fabric",
-      "Unisex Fit",
-      "All Sizes Available"
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
     ]
   },
   {
-    "id": "prod_moh_womens_dress",
-    "seller_id": "seller_moh_037",
-    "name": "Women's Elegant Ribbed Bodycon Midi Dress",
-    "size": "Free Size (6-14)",
-    "photo": "/products/moh-womens-dress.jpg",
+    "id": "prod_glownd_1018",
+    "seller_id": "seller_glownd",
+    "name": "Vexa Mini Luxury Croc Bag - Red",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_1018.png",
     "photos": [
-      "/products/moh-womens-dress.jpg",
-      "/products/moh-bomber-jacket.jpg"
+      "/products/glownd/glownd_1018.png",
+      "https://glownd.com/wp-content/uploads/2026/09/1efacf88-383b-4e7e-ad1a-b96da07ea88f.png",
+      "https://glownd.com/wp-content/uploads/2026/09/c3456a3e-7500-40a6-9a5c-e91e1652a3f7.png",
+      "https://glownd.com/wp-content/uploads/2026/09/95821f5e-b02e-4b06-9358-d05f14034b8c.png"
     ],
-    "companion_id": "prod_moh_bomber_jacket",
-    "price": 1650,
-    "regular_price": 2200,
-    "benefit_line": "Flattering stretch ribbed fabric suitable for church, work or dinner",
-    "in_stock": true,
-    "featured": true,
-    "badge": "Trending Dress 👗",
-    "category": "Classic Clothes",
-    "description": "Turn heads with this versatile ribbed knit midi dress. Hugs your curves comfortably with high-grade stretch cotton that never fades or loses shape. Elegant round neck and modest length.",
-    "highlights": [
-      "Stretches to Fit 6-14",
-      "Breathable Cotton Ribbed",
-      "Non-See-Through",
-      "Countrywide Dispatch"
-    ]
-  },
-  {
-    "id": "prod_moh_mens_polo",
-    "seller_id": "seller_moh_037",
-    "name": "Men's Classic Pure Pique Cotton Polo T-Shirt",
-    "size": "M, L, XL",
-    "photo": "/products/moh-mens-polo.jpg",
-    "photos": [
-      "/products/moh-mens-polo.jpg",
-      "/products/moh-khaki-pants.jpg"
-    ],
-    "companion_id": "prod_moh_khaki_pants",
-    "price": 1200,
-    "regular_price": 1600,
-    "benefit_line": "100% breathable pique cotton with embroidered chest emblem",
-    "in_stock": true,
-    "featured": true,
-    "badge": "Men's Classic 👔",
-    "category": "Classic Clothes",
-    "description": "Elevate your casual smart look with this timeless pique polo. Pairs perfectly with khakis or jeans. Color-fast dye guaranteed not to shrink or fade in wash.",
-    "highlights": [
-      "100% Pure Pique Cotton",
-      "Reinforced Collar",
-      "Classic Smart Fit",
-      "Available in 5 Colors"
-    ]
-  },
-  {
-    "id": "prod_moh_khaki_pants",
-    "seller_id": "seller_moh_037",
-    "name": "Men's Slim-Fit Stretch Chino Khaki Trousers",
-    "size": "Waist 30-38",
-    "photo": "/products/moh-khaki-pants.jpg",
-    "photos": [
-      "/products/moh-khaki-pants.jpg",
-      "/products/moh-mens-polo.jpg"
-    ],
-    "companion_id": "prod_moh_mens_polo",
-    "price": 1500,
-    "regular_price": 2000,
-    "benefit_line": "Smart office & casual khaki with 2% elastane stretch for all-day comfort",
-    "in_stock": true,
-    "featured": false,
-    "badge": "Best Value 👖",
-    "category": "Classic Clothes",
-    "description": "The ultimate daily trouser for the modern Kenyan gentleman. Tailored slim fit with subtle stretch that lets you move freely. Wrinkle-resistant cotton blend that stays crisp from 8am to 8pm.",
-    "highlights": [
-      "Comfort Stretch Fabric",
-      "Wrinkle Resistant",
-      "Deep Front & Back Pockets",
-      "Waist 30 to 38"
-    ]
-  },
-  {
-    "id": "prod_moh_duvet_set",
-    "seller_id": "seller_moh_037",
-    "name": "Heavy Fiber 4-Piece Duvet Bedding Set (6x6 Bed)",
-    "size": "6x6 King",
-    "photo": "/products/moh-duvet-set.jpg",
-    "photos": [
-      "/products/moh-duvet-set.jpg",
-      "/products/moh-curtains.jpg",
-      "/products/moh-fluffy-carpet.jpg"
-    ],
-    "companion_id": "prod_moh_curtains",
-    "price": 2800,
-    "regular_price": 3500,
-    "benefit_line": "Warm 400GSM micro-fiber duvet + bedsheet + 2 matching pillowcases",
-    "in_stock": true,
-    "featured": true,
-    "badge": "Best Seller 🛏️",
-    "category": "Household & Bedding",
-    "description": "Transform your bedroom with this luxury 4-piece duvet set from Owira's Collection. Includes 1 warm heavy-fiber duvet, 1 fitted bedsheet, and 2 luxury pillowcases. Fade-proof, machine-washable cotton blend.",
-    "highlights": [
-      "4-Piece Complete Set",
-      "Warm 400GSM Fiber",
-      "Fits 6x6 Bed",
-      "Countrywide Delivery"
-    ]
-  },
-  {
-    "id": "prod_moh_fluffy_carpet",
-    "seller_id": "seller_moh_037",
-    "name": "Living Room Microfiber Anti-Slip Fluffy Carpet (5x7)",
-    "size": "5x7 Feet",
-    "photo": "/products/moh-fluffy-carpet.jpg",
-    "photos": [
-      "/products/moh-fluffy-carpet.jpg",
-      "/products/moh-curtains.jpg"
-    ],
-    "companion_id": "prod_moh_curtains",
-    "price": 4500,
-    "regular_price": 5500,
-    "benefit_line": "Ultra-soft deep shag pile with rubber dotted non-slip backing",
-    "in_stock": true,
-    "featured": true,
-    "badge": "Household Lux 🛋️",
-    "category": "Household & Bedding",
-    "description": "Luxurious fluffy living room carpet that makes any room feel like a 5-star hotel. High density 4cm microfiber fur that feels heavenly on bare feet. Safe rubber backing prevents sliding on tiled floors.",
-    "highlights": [
-      "Super Soft Shag Pile",
-      "Non-Slip Rubber Backing",
-      "Easy to Vacuum & Wash",
-      "5x7 Large Size"
-    ]
-  },
-  {
-    "id": "prod_moh_curtains",
-    "seller_id": "seller_moh_037",
-    "name": "Luxury Velvet Eyelet Blackout Curtains (Pair 2x3m)",
-    "size": "Pair (2 Panels)",
-    "photo": "/products/moh-curtains.jpg",
-    "photos": [
-      "/products/moh-curtains.jpg",
-      "/products/moh-duvet-set.jpg"
-    ],
-    "companion_id": "prod_moh_duvet_set",
-    "price": 3200,
+    "price": 3500,
     "regular_price": 4000,
-    "benefit_line": "Blocks 90% sunlight & noise with heavy silver ring eyelets",
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
     "in_stock": true,
-    "featured": false,
-    "badge": "Curtain Pair 🪟",
-    "category": "Household & Bedding",
-    "description": "Heavyweight thermal insulated velvet curtains for living room or bedroom. Blocks harsh morning sun, keeps rooms cool, and provides 100% privacy. Ready to hang with stainless steel eyelet rings.",
+    "featured": true,
+    "badge": "Bestseller 🔥",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Croc Bags",
+    "description": "Make a statement with the Vexa Mini Luxury Croc Bag - Red, a chic and eye-catching mini handbag featuring a glossy crocodile-textured finish, structured silhouette, elegant top handle, and polished silver clasp. Perfect for elevating everyday outfits, date nights, brunches, parties, and special occasions.",
     "highlights": [
-      "Includes 2 Full Panels",
-      "90% Light Blockout",
-      "Heavy Velvet Texture",
-      "Stainless Eyelets"
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
     ]
   },
   {
-    "id": "prod_moh_thermal_flask",
-    "seller_id": "seller_moh_037",
-    "name": "Double-Wall Stainless Steel Vacuum Thermal Flask (2L)",
-    "size": "2.0 Litres",
-    "photo": "/products/moh-thermal-flask.jpg",
+    "id": "prod_glownd_1013",
+    "seller_id": "seller_glownd",
+    "name": "Vexa Mini Luxury Croc Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_1013.png",
     "photos": [
-      "/products/moh-thermal-flask.jpg"
+      "/products/glownd/glownd_1013.png",
+      "https://glownd.com/wp-content/uploads/2026/09/18a4de74-ac31-4b6c-844f-5786db2f78a5.png",
+      "https://glownd.com/wp-content/uploads/2026/09/8b7ff850-f984-46fc-a33e-c1f04de039c2.png",
+      "https://glownd.com/wp-content/uploads/2026/09/581ba0a1-fecf-4301-8366-ccee0ab2637c.png",
+      "https://glownd.com/wp-content/uploads/2026/09/330fb2cf-2424-4a48-bb8d-3c1f1ae3058a.png"
     ],
-    "companion_id": "prod_moh_duvet_set",
-    "price": 1800,
-    "regular_price": 2400,
-    "benefit_line": "Keeps chai or water piping hot for 24 hours guaranteed",
-    "in_stock": true,
-    "featured": false,
-    "badge": "Kitchen Essential ☕",
-    "category": "Household & Kitchen",
-    "description": "Unbreakable double-wall 304 food-grade stainless steel vacuum flask. Holds 2 full litres of tea or hot water for family use. Press-button dispenser lid with silicone leak-proof seal.",
+    "price": 3500,
+    "regular_price": 4000,
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
+    "in_stock": false,
+    "featured": true,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Croc Bags",
+    "description": "The Vexa Mini Luxury Croc Bag - Black is a sleek and sophisticated statement bag featuring a glossy croc-textured finish, structured silhouette, elegant top handle, and polished metal clasp. Perfect for elevating everyday outfits, date nights, dinners, and special occasions.",
     "highlights": [
-      "24-Hour Hot Retention",
-      "Unbreakable Stainless Steel",
-      "Push-Button Dispenser",
-      "2L Large Family Size"
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
     ]
   },
   {
-      "id": "prod_glownd_1022",
-      "seller_id": "seller_glownd",
-      "name": "The Valenne Statement Bag - Cream",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_1022.png",
-      "photos": [
-          "/products/glownd/glownd_1022.png",
-          "https://glownd.com/wp-content/uploads/2026/09/2b58b2bf-26f6-4b2c-9523-3ba87c992a92.png",
-          "https://glownd.com/wp-content/uploads/2026/09/a3a99ed1-54ba-49fb-a414-fa7a336d7728.png",
-          "https://glownd.com/wp-content/uploads/2026/09/c4d5f7aa-80a6-45a9-bdf4-bf4d3828e197.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": true,
-      "badge": "Bestseller 🔥",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Premium The Valenne Statement Bag - Cream. High quality structured craftsmanship, durable hardware, and elegant finish for everyday and occasion wear.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_1018",
-      "seller_id": "seller_glownd",
-      "name": "Vexa Mini Luxury Croc Bag - Red",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_1018.png",
-      "photos": [
-          "/products/glownd/glownd_1018.png",
-          "https://glownd.com/wp-content/uploads/2026/09/1efacf88-383b-4e7e-ad1a-b96da07ea88f.png",
-          "https://glownd.com/wp-content/uploads/2026/09/c3456a3e-7500-40a6-9a5c-e91e1652a3f7.png",
-          "https://glownd.com/wp-content/uploads/2026/09/95821f5e-b02e-4b06-9358-d05f14034b8c.png"
-      ],
-      "price": 3500,
-      "regular_price": 4000,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": true,
-      "featured": true,
-      "badge": "Bestseller 🔥",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Croc Bags",
-      "description": "Make a statement with the Vexa Mini Luxury Croc Bag - Red, a chic and eye-catching mini handbag featuring a glossy crocodile-textured finish, structured silhouette, elegant top handle, and polished silver clasp. Perfect for elevating everyday outfits, date nights, brunches, parties, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_1013",
-      "seller_id": "seller_glownd",
-      "name": "Vexa Mini Luxury Croc Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_1013.png",
-      "photos": [
-          "/products/glownd/glownd_1013.png",
-          "https://glownd.com/wp-content/uploads/2026/09/18a4de74-ac31-4b6c-844f-5786db2f78a5.png",
-          "https://glownd.com/wp-content/uploads/2026/09/8b7ff850-f984-46fc-a33e-c1f04de039c2.png",
-          "https://glownd.com/wp-content/uploads/2026/09/581ba0a1-fecf-4301-8366-ccee0ab2637c.png",
-          "https://glownd.com/wp-content/uploads/2026/09/330fb2cf-2424-4a48-bb8d-3c1f1ae3058a.png"
-      ],
-      "price": 3500,
-      "regular_price": 4000,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": false,
-      "featured": true,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Croc Bags",
-      "description": "The Vexa Mini Luxury Croc Bag - Black is a sleek and sophisticated statement bag featuring a glossy croc-textured finish, structured silhouette, elegant top handle, and polished metal clasp. Perfect for elevating everyday outfits, date nights, dinners, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_1009",
-      "seller_id": "seller_glownd",
-      "name": "Vexa Mini Luxury Croc Bag - Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_1009.png",
-      "photos": [
-          "/products/glownd/glownd_1009.png",
-          "https://glownd.com/wp-content/uploads/2026/09/635e8c71-b252-49f3-b2c7-017d4bb302be.png",
-          "https://glownd.com/wp-content/uploads/2026/09/86d9d24e-d035-45b8-a296-3953a5d33357.png",
-          "https://glownd.com/wp-content/uploads/2026/09/467b1903-402e-444a-a64b-1f1868be930d.png"
-      ],
-      "price": 3500,
-      "regular_price": 4000,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": true,
-      "featured": true,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Croc Bags",
-      "description": "Elevate your everyday style with the Vexa Mini Luxury Croc Bag - Brown, a chic and sophisticated mini handbag featuring a glossy crocodile-textured finish, structured silhouette, elegant top handle, and polished clasp detail. Its compact design makes it perfect for carrying your essentials while adding an effortlessly luxe touch to any outfit. Ideal for brunches, date nights, events, dinners, and stylish everyday looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_1001",
-      "seller_id": "seller_glownd",
-      "name": "Vienne C-Clasp Shoulder Bag - Black Smooth",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_1001.png",
-      "photos": [
-          "/products/glownd/glownd_1001.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f274b67a-cf53-4982-9cb4-8f93f693e9af.png",
-          "https://glownd.com/wp-content/uploads/2026/09/c32ec622-00f8-4256-b415-39b278f6bc6d.png",
-          "https://glownd.com/wp-content/uploads/2026/09/fc77bd23-7a1e-402c-bfc4-7d48f6204037.png",
-          "https://glownd.com/wp-content/uploads/2026/09/b0283b00-0f09-42af-99d5-96d674fc90cf.png"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": true,
-      "badge": "Bestseller 🔥",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "The black smooth Vienne C-Clasp Shoulder Bag Is a sleek and elegant shoulder bag featuring a smooth, refined finish, structured silhouette, and statement C-shaped clasp. A timeless accessory designed to elevate both everyday and occasion-ready looks. Comes beautifully boxed.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch",
-          "Comes Beautifully Boxed"
-      ]
-  },
-  {
-      "id": "prod_glownd_995",
-      "seller_id": "seller_glownd",
-      "name": "Vienne C-Clasp Shoulder Bag - Black Pebbled",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_995.png",
-      "photos": [
-          "/products/glownd/glownd_995.png",
-          "https://glownd.com/wp-content/uploads/2026/09/6b7a385b-8a0b-4698-808e-bb5e4ad03659.png",
-          "https://glownd.com/wp-content/uploads/2026/09/ccd72a6a-fa17-48ee-9830-0b10ac339470.png",
-          "https://glownd.com/wp-content/uploads/2026/09/c8ab9814-ebd9-40cb-bd4e-1504d5660853.png",
-          "https://glownd.com/wp-content/uploads/2026/09/65c6dfbd-e9a8-4993-a82b-4059c48bf5d3.png"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": true,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "The Vienne C-Clasp Shoulder Bag - Black Pebbled is a timeless statement piece featuring a structured silhouette, elegant flap design, and distinctive C-shaped clasp. Its rich pebbled texture adds depth and sophistication, while the classic black shade makes it effortlessly versatile. Perfect for everyday outings, brunches, dinners, date nights, parties, and special occasions. Comes beautifully boxed, making it a stylish gift choice.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch",
-          "Comes Beautifully Boxed"
-      ]
-  },
-  {
-      "id": "prod_glownd_989",
-      "seller_id": "seller_glownd",
-      "name": "Selene Mini Crossbody Bag - Lilac Purple",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_989.png",
-      "photos": [
-          "/products/glownd/glownd_989.png",
-          "https://glownd.com/wp-content/uploads/2026/09/932857a7-3586-48c2-9f88-5bd846971391.png",
-          "https://glownd.com/wp-content/uploads/2026/09/08c45da3-a9fc-440b-a5b2-002fa9b22498.png",
-          "https://glownd.com/wp-content/uploads/2026/09/bf537f1f-17b0-4895-8d3b-969ef34e766e.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f0818e35-9fb2-47f1-bc25-363cf048d5c4.png"
-      ],
-      "price": 1800,
-      "regular_price": 2000,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "Selene Mini Crossbody Bag - Lilac Purple is a chic and compact handbag designed for effortless everyday style. Featuring a soft lilac purple finish, quilted detailing, gold-tone hardware, a ruched top handle, and a detachable chain strap, this mini crossbody bag adds a feminine and trendy touch to any outfit.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_984",
-      "seller_id": "seller_glownd",
-      "name": "Selene Mini Crossbody Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_984.png",
-      "photos": [
-          "/products/glownd/glownd_984.png",
-          "https://glownd.com/wp-content/uploads/2026/09/21f0bcd0-56c0-4f5e-8070-8dc8c040d061.png",
-          "https://glownd.com/wp-content/uploads/2026/09/d58c4dcd-708f-4044-aa65-699298ff7a06.png",
-          "https://glownd.com/wp-content/uploads/2026/09/e2879ab5-80a6-4dbb-93a6-be8f62d28c13.png",
-          "https://glownd.com/wp-content/uploads/2026/09/ab32c3cf-7ad6-4d45-aae2-6fb78c2df245.png"
-      ],
-      "price": 1800,
-      "regular_price": 2000,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The Selene Mini Crossbody Bag - Black is a chic and compact handbag featuring a stylish quilted design, structured silhouette, gold-tone hardware, and a unique ruched top handle. Perfect for adding an elegant touch to both everyday and dressy looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_980",
-      "seller_id": "seller_glownd",
-      "name": "Dahlia Quilted Structured Handbag - Grey",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_980.png",
-      "photos": [
-          "/products/glownd/glownd_980.png",
-          "https://glownd.com/wp-content/uploads/2026/09/326e2595-3115-4286-8673-88090fc7d77e.png",
-          "https://glownd.com/wp-content/uploads/2026/09/42a44b4e-c1c0-402c-8772-9f1cd3fbf4ba.png",
-          "https://glownd.com/wp-content/uploads/2026/09/a19686cf-feda-4bae-9e5a-1f19ddf05ddc.png"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Elevate your everyday style with the Dahlia Quilted Structured Handbag in Grey. Featuring a sophisticated quilted design, structured silhouette, elegant top handles, and stylish hardware details, this versatile handbag is perfect for work, brunch, shopping, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_977",
-      "seller_id": "seller_glownd",
-      "name": "Dahlia Quilted Structured Handbag - Red",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_977.png",
-      "photos": [
-          "/products/glownd/glownd_977.png",
-          "https://glownd.com/wp-content/uploads/2026/09/43302e76-2993-4b93-b281-bdd4d82410da.png",
-          "https://glownd.com/wp-content/uploads/2026/09/b1c90481-379e-49a6-8aa0-9463a5ddf919.png"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Dahlia Quilted Structured Handbag - Red combines timeless elegance with modern style. Featuring a chic quilted design, structured shape, top handles, and statement charm, this compact medium handbag is perfect for everyday wear, work, brunch, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_973",
-      "seller_id": "seller_glownd",
-      "name": "Kylie Luxury Handbag - Nude",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_973.png",
-      "photos": [
-          "/products/glownd/glownd_973.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f1bb5318-0029-4a65-9045-ea53d50151b6.png",
-          "https://glownd.com/wp-content/uploads/2026/09/770bba9c-e220-477f-85d9-9a1a5d0319b3.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f1270acf-94a2-464f-889a-6fc167310af5.png"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Kylie Luxury Handbag - Nude is a chic structured handbag designed for effortless elegance. Featuring a sophisticated nude finish, textured design, stylish top handles, gold-tone hardware, and a versatile shoulder strap, it's the perfect accessory for work, brunch, shopping, dinners, and special occasions. A timeless neutral handbag that instantly elevates any outfit.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_970",
-      "seller_id": "seller_glownd",
-      "name": "Kylie Luxury Handbag - Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_970.png",
-      "photos": [
-          "/products/glownd/glownd_970.png",
-          "https://glownd.com/wp-content/uploads/2026/09/cfe77223-d21c-494f-b64e-7e8ad2a6f6eb.png",
-          "https://glownd.com/wp-content/uploads/2026/09/478b6b33-9ed0-43c8-9749-222d735bc153.png"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Kylie Luxury Handbag - Brown is a classy structured handbag featuring a rich brown textured finish, elegant gold-tone hardware, and a spacious interior. Perfect for work, casual outings, dinners, events, and stylish everyday looks. A timeless luxury-inspired handbag and beautiful gift choice.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_966",
-      "seller_id": "seller_glownd",
-      "name": "Kylie Luxury Handbag - White",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_966.png",
-      "photos": [
-          "/products/glownd/glownd_966.png",
-          "https://glownd.com/wp-content/uploads/2026/09/271f1dbf-7056-4386-b80d-0bcea03f4c13.png",
-          "https://glownd.com/wp-content/uploads/2026/09/53692021-f381-404f-b6b9-4841d5191451.png"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Elevate your everyday style with the Kylie Luxury Handbag - White, a sophisticated statement bag designed for effortless elegance. Its structured silhouette, refined gold-tone hardware, and timeless white finish make it the perfect accessory for both everyday outfits and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_962",
-      "seller_id": "seller_glownd",
-      "name": "Kylie Luxury Handbag - Peach",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_962.png",
-      "photos": [
-          "/products/glownd/glownd_962.png",
-          "https://glownd.com/wp-content/uploads/2026/09/2ab118f3-35b8-46c5-96e3-40f1467a83ef.png",
-          "https://glownd.com/wp-content/uploads/2026/09/55aefc17-e1e3-40ba-bef0-6d641867857c.png",
-          "https://glownd.com/wp-content/uploads/2026/09/8523071e-76a8-4961-b2c2-c2558d8522bb.png"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Kylie Luxury Handbag - Peach is an elegant structured handbag designed to add a sophisticated touch to any outfit. Featuring a beautiful peach tone, polished gold-tone hardware, and a timeless top-handle design, this luxury-inspired handbag is perfect for everyday styling, work, brunch, special occasions, and evening looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_957",
-      "seller_id": "seller_glownd",
-      "name": "Kylie Luxury Handbag - Green",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_957.png",
-      "photos": [
-          "/products/glownd/glownd_957.png",
-          "https://glownd.com/wp-content/uploads/2026/09/a2bf21eb-a845-4d36-b8ed-b9b7aca1d7db.png",
-          "https://glownd.com/wp-content/uploads/2026/09/43906cc1-be01-4e05-9f40-ca8b909b39d5.png",
-          "https://glownd.com/wp-content/uploads/2026/09/4b34a6ee-6631-4302-81c5-1e44c7afe822.jpeg"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Make a statement with the Kylie Luxury Handbag - Green, a sophisticated structured handbag designed to elevate your everyday and occasion looks. Featuring a rich green finish, elegant gold-tone hardware, and a classic top-handle silhouette, it's the perfect blend of timeless style and modern luxury.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_953",
-      "seller_id": "seller_glownd",
-      "name": "Kylie Luxury Handbag - Blue",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_953.jpeg",
-      "photos": [
-          "/products/glownd/glownd_953.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/5f1166c6-91c8-4839-9be0-e98cbb67b14d.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/28ed8202-3ccc-491f-98f8-1666139569a2.png"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Kylie Luxury Handbag - Blue is a sophisticated structured handbag designed to elevate your everyday and occasion looks. Featuring a timeless silhouette, elegant gold-tone hardware, and a refined blue finish, this luxury-inspired handbag adds effortless polish to any outfit.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_939",
-      "seller_id": "seller_glownd",
-      "name": "Celine Vivienne Luxury Handbag - Orange",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_939.png",
-      "photos": [
-          "/products/glownd/glownd_939.png",
-          "https://glownd.com/wp-content/uploads/2026/09/d93baf04-a470-450b-a89e-ceffdc512db5.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f4afed55-6d06-4ab8-9d7f-6e6066e5c3ee.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/3818dce2-7a73-47e5-a4eb-525c96bef893.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/f344c605-e9c6-418e-97cf-300bf0c2c485.png"
-      ],
-      "price": 5500,
-      "regular_price": 6300,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Make a statement with the Celine Vivienne Luxury Handbag - Orange. Featuring a structured design, elegant top handle, gold-tone hardware and a vibrant orange finish, this stylish handbag adds sophistication and colour to any outfit. Perfect for everyday styling, special occasions and for gifting someone special.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_938",
-      "seller_id": "seller_glownd",
-      "name": "Celine Vivienne Luxury Handbag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_938.png",
-      "photos": [
-          "/products/glownd/glownd_938.png",
-          "https://glownd.com/wp-content/uploads/2026/09/013be229-dae4-4b9c-83b6-09ee64ec8b84.png",
-          "https://glownd.com/wp-content/uploads/2026/09/d67fa78a-bd52-4aa7-9354-59923102c86c.png",
-          "https://glownd.com/wp-content/uploads/2026/09/a6264e12-782e-438c-ac81-0ea351de8222.png",
-          "https://glownd.com/wp-content/uploads/2026/09/a850f17b-c71a-4956-b213-863b02a9f08c.png",
-          "https://glownd.com/wp-content/uploads/2026/09/afb0a419-9284-4f18-8571-9584da7df76a.png"
-      ],
-      "price": 5500,
-      "regular_price": 6300,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": true,
-      "badge": "Bestseller 🔥",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Celine Vivienne Luxury Handbag - Black combines timeless elegance with a sophisticated structured design. Featuring a sleek black finish, elegant top handle, and gold-tone hardware, it's a versatile luxury handbag perfect for everyday styling, office looks, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_933",
-      "seller_id": "seller_glownd",
-      "name": "Celine Vivienne Luxury Handbag - Red",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_933.png",
-      "photos": [
-          "/products/glownd/glownd_933.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f1544aef-acc7-4793-8424-4005f619c2e0.png",
-          "https://glownd.com/wp-content/uploads/2026/09/23d7dfab-3939-4ba9-9c9a-a16afca3c4da.png",
-          "https://glownd.com/wp-content/uploads/2026/09/img_6892.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/3d10f36a-08c5-49b7-a7a4-5b2dc3b0c19d.png"
-      ],
-      "price": 5500,
-      "regular_price": 6300,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Celine Vivienne Luxury Handbag - Red combines timeless elegance with a bold, sophisticated finish. Featuring a structured silhouette, refined gold-tone hardware, and a vibrant red colour, it's the perfect statement handbag for everyday styling, special occasions, and elegant outings.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_927",
-      "seller_id": "seller_glownd",
-      "name": "Celine Vivienne Luxury Handbag - Purple",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_927.png",
-      "photos": [
-          "/products/glownd/glownd_927.png",
-          "https://glownd.com/wp-content/uploads/2026/09/3f9cfc62-cfde-46aa-9c01-3c82240414c9.png",
-          "https://glownd.com/wp-content/uploads/2026/09/feaa5308-7431-4a86-a428-70043897f410.png",
-          "https://glownd.com/wp-content/uploads/2026/09/0e91b0fd-aa51-4129-adeb-9ea46859333d.png",
-          "https://glownd.com/wp-content/uploads/2026/09/1607c2a9-940f-42a4-a962-46227dbd2a71.png"
-      ],
-      "price": 5500,
-      "regular_price": 6300,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Elevate your style with the Celine Vivienne Luxury Handbag in Purple, a sophisticated structured handbag designed for timeless elegance. Featuring a polished gold-tone clasp, refined textured finish, top handle, and detachable shoulder strap, it's perfect for both everyday luxury and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_921",
-      "seller_id": "seller_glownd",
-      "name": "Nova Minimalist Tote Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_921.jpeg",
-      "photos": [
-          "/products/glownd/glownd_921.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/b31f7523-c101-4b85-a773-5e420fa6d3ce.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/373c6175-2089-45c8-aa01-60c8515ad45b.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/7915e5b9-2c06-4b04-a11b-11fb92b7ece5.png",
-          "https://glownd.com/wp-content/uploads/2026/09/8437997b-bc1a-4512-8779-1621217cb5c3.png"
-      ],
-      "price": 3000,
-      "regular_price": 3400,
-      "benefit_line": "Spacious everyday tote with minimalist finish & comfortable shoulder drop",
-      "in_stock": true,
-      "featured": true,
-      "badge": "Bestseller 🔥",
-      "category": "Handbags & Bags",
-      "sub_category": "Tote Bags",
-      "description": "The Nova Minimalist Tote Bag - Black is a sleek, versatile everyday bag designed for effortless style. Its clean, modern design makes it easy to pair with casual, office, and elevated looks. Perfect for work, shopping, brunch, travel, or everyday outings.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_916",
-      "seller_id": "seller_glownd",
-      "name": "Nova Minimalist Tote Bag - Cream",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_916.jpeg",
-      "photos": [
-          "/products/glownd/glownd_916.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/1ca1ddfa-9fae-4c60-8d88-770f80dd93e7.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/ef9b874e-d3b0-4134-b465-894f2e6323bc.png",
-          "https://glownd.com/wp-content/uploads/2026/09/e4e26223-c204-431f-95d9-3f9ed7afdf81.png",
-          "https://glownd.com/wp-content/uploads/2026/09/e766fc3c-9866-47f1-869f-5e5b3d4994ef.jpeg"
-      ],
-      "price": 3000,
-      "regular_price": 3400,
-      "benefit_line": "Spacious everyday tote with minimalist finish & comfortable shoulder drop",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Tote Bags",
-      "description": "The Nova Minimalist Tote Bag - Cream combines clean, elegant design with everyday practicality. Its soft cream tone, subtle texture, and spacious tote silhouette make it a versatile choice for work, shopping, brunch, travel, and casual everyday looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_912",
-      "seller_id": "seller_glownd",
-      "name": "Nova Minimalist Tote Bag - Coffee Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_912.jpeg",
-      "photos": [
-          "/products/glownd/glownd_912.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/56501c77-d4b6-4cbb-9a5a-1452e6d7e6db.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/768e8e97-84ec-4ea6-916c-85aedcb96279.png",
-          "https://glownd.com/wp-content/uploads/2026/09/2e007886-9abb-4ef8-ba70-45acc598d830.png"
-      ],
-      "price": 3000,
-      "regular_price": 3400,
-      "benefit_line": "Spacious everyday tote with minimalist finish & comfortable shoulder drop",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Tote Bags",
-      "description": "The Nova Minimalist Tote Bag - Coffee Brown combines timeless style with everyday practicality. Its sleek silhouette, rich brown finish, long handles, and spacious design make it perfect for work, shopping, brunch, travel, and casual outings. A versatile everyday tote that adds effortless elegance to any look.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_908",
-      "seller_id": "seller_glownd",
-      "name": "Nova Minimalist Tote Bag - Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_908.jpeg",
-      "photos": [
-          "/products/glownd/glownd_908.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/778ed8b9-c076-425e-ace6-c153e3335d29.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/bf94267d-3344-47c4-bf63-398ab8b39818.png",
-          "https://glownd.com/wp-content/uploads/2026/09/c9e4a906-8e0e-48da-aae4-6bcb413bd3f5.png"
-      ],
-      "price": 3000,
-      "regular_price": 3400,
-      "benefit_line": "Spacious everyday tote with minimalist finish & comfortable shoulder drop",
-      "in_stock": true,
-      "featured": false,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Tote Bags",
-      "description": "Elevate your everyday style with the Nova Minimalist Tote Bag in Brown. Featuring a sleek, spacious design and warm brown finish, this versatile tote is perfect for work, shopping, casual outings, and everyday essentials.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_903",
-      "seller_id": "seller_glownd",
-      "name": "The Valenne Statement Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_903.png",
-      "photos": [
-          "/products/glownd/glownd_903.png",
-          "https://glownd.com/wp-content/uploads/2026/09/5a664b92-2c13-4f28-b3cf-20218c224afc.png",
-          "https://glownd.com/wp-content/uploads/2026/09/65b93868-a3ac-46cc-a2ef-0bb057a87428.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/ab79e8e1-45f0-4293-b36c-608c7ab7178e.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": true,
-      "badge": "New Arrival ✨",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Valenne Statement Bag - Black is a chic and versatile handbag designed to elevate any outfit. Its timeless black finish makes it perfect for everyday styling, brunch dates, dinners, events, and special occasions. A sophisticated choice for yourself or as a stylish gift.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_897",
-      "seller_id": "seller_glownd",
-      "name": "The Valenne Statement Bag - Beige",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_897.png",
-      "photos": [
-          "/products/glownd/glownd_897.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f2cb6d9e-1614-4653-b139-30e70e115376.png",
-          "https://glownd.com/wp-content/uploads/2026/09/e04dd8d3-39e8-48ec-aa07-ef2c3ce1e946.png",
-          "https://glownd.com/wp-content/uploads/2026/09/25f3cdb6-504b-4e9d-b5b5-a3bdfddde6c0.png",
-          "https://glownd.com/wp-content/uploads/2026/09/3a11c380-c378-4e76-8d3a-2d473f2ba9b3.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Valenne Statement Bag - Beige is an effortlessly chic handbag designed to add a polished touch to any outfit. Featuring a sleek envelope-style flap, elegant gold-tone hardware and a refined top handle, it's the perfect everyday accessory for both casual and dressy looks. A beautiful choice for gifting, too. 🤎",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_881",
-      "seller_id": "seller_glownd",
-      "name": "Cherry Muse Petal Bag Charm",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_881.jpeg",
-      "photos": [
-          "/products/glownd/glownd_881.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/4eaac1fd-7dfe-4e14-8991-5b8ce433a59a-1.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/a98a5ee9-4dd4-4276-a88b-f5afbbfca053-1.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/194fa46c-1c2d-4227-926f-0551e746c50d.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/85ae4751-7891-4369-8ab7-80f690fc9758-1.png",
-          "https://glownd.com/wp-content/uploads/2026/09/27b86523-c51e-42a6-aade-475240ca002d-1.png"
-      ],
-      "price": 1000,
-      "regular_price": 1100,
-      "benefit_line": "Designer floral petal charm to personalize your favorite handbag",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Bag Accessories",
-      "description": "Add a touch of playful elegance to your favourite bag with our Cherry Muse Petal Bag Charm. Featuring glossy cherry accents, delicate green leaves, and polished gold-tone detailing, this charming accessory is designed to instantly elevate your everyday bag. Clip it onto your handbag, shoulder bag, tote, or crossbody for a fun yet sophisticated finish.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_877",
-      "seller_id": "seller_glownd",
-      "name": "Clear Luxe Infinity Bag - Silver",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_877.png",
-      "photos": [
-          "/products/glownd/glownd_877.png",
-          "https://glownd.com/wp-content/uploads/2026/09/1b7a3b05-7273-4dac-84d4-c9bed048a742.png",
-          "https://glownd.com/wp-content/uploads/2026/09/4c97d061-f6ad-4fb6-bae7-258eb8130f5c.png",
-          "https://glownd.com/wp-content/uploads/2026/09/399349ee-932c-4a70-9366-a7b86bfcc6a5.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Clear Luxe Infinity Bag - Silver is a sophisticated statement handbag featuring a structured transparent body, textured silver flap, elegant gold-tone hardware, and a distinctive infinity-inspired clasp. Designed with both a top handle and detachable shoulder strap, this versatile clear silver handbag is perfect for brunches, date nights, dinners, parties, weddings, birthdays, special events, and stylish everyday outings.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_873",
-      "seller_id": "seller_glownd",
-      "name": "Clear Luxe Infinity Bag - White & Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_873.png",
-      "photos": [
-          "/products/glownd/glownd_873.png",
-          "https://glownd.com/wp-content/uploads/2026/09/20bc0a25-d7c6-4bc5-b54a-d97d99e05aef.png",
-          "https://glownd.com/wp-content/uploads/2026/09/ac1ea48e-6a32-475e-92f1-6717fa2c8742.png",
-          "https://glownd.com/wp-content/uploads/2026/09/02f2115d-c609-41c0-8a4f-c6bcb731d02a.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Clear Luxe Infinity Bag - White & Black features a sophisticated clear body paired with a textured white flap, white handles and elegant gold-tone hardware. Its chic structured design makes it perfect for brunches, date nights, dinners, parties, events, shopping and everyday outings, adding a polished statement to any outfit.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_870",
-      "seller_id": "seller_glownd",
-      "name": "Clear Luxe Infinity Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_870.png",
-      "photos": [
-          "/products/glownd/glownd_870.png",
-          "https://glownd.com/wp-content/uploads/2026/09/2b555a29-1261-4d99-99d9-4d6dada3f54c.png",
-          "https://glownd.com/wp-content/uploads/2026/09/1707bbe0-b8cf-43ae-812d-d395c8fc8c6b.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Clear Luxe Infinity Bag - Black is a stylish transparent black handbag designed for a modern, effortlessly chic look. Featuring a sleek infinity-inspired design, this versatile clear bag is perfect for everyday outfits, events, and fashion-forward styling.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_865",
-      "seller_id": "seller_glownd",
-      "name": "Clear Luxe Infinity Bag - Pink",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_865.jpeg",
-      "photos": [
-          "/products/glownd/glownd_865.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/af978455-98d3-4804-9bd0-0b430f0e69d7.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/43b2bd74-4eb4-4fc4-8506-85d2681a0fa1.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f6b8a3b0-a4c9-4900-a7c7-28f23581c739.jpeg"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Clear Luxe Infinity Bag - Pink is a chic statement handbag featuring a structured silhouette, clear panel detailing, and an elegant infinity-inspired clasp. The soft pink finish adds a feminine touch, making it perfect for elevating both everyday and dressy looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_857",
-      "seller_id": "seller_glownd",
-      "name": "Croc Effect Transparent T Bag - Mint Green",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_857.png",
-      "photos": [
-          "/products/glownd/glownd_857.png",
-          "https://glownd.com/wp-content/uploads/2026/09/8317d7c2-c46c-4069-a163-cde8f160dcff.png",
-          "https://glownd.com/wp-content/uploads/2026/09/df726668-3d93-4670-8609-1f7b12767689.png",
-          "https://glownd.com/wp-content/uploads/2026/09/ef92455f-d938-45f8-a36c-96c2fc3d140a.png",
-          "https://glownd.com/wp-content/uploads/2026/09/7a3863a6-a2f7-4132-bd61-fbed4f7b8566.png",
-          "https://glownd.com/wp-content/uploads/2026/09/69cfac23-ab52-40b8-b7d8-8cb9d996881c.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": true,
-      "featured": true,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Croc Bags",
-      "description": "The Croc Effect Transparent T Bag -Mint Green is a chic and modern statement bag featuring a mint green croc-effect finish, transparent body, and elegant gold-tone detailing. Perfect for brunches, dinners, shopping, parties, and stylish everyday outings. A beautiful accessory to pair with neutral, denim or pastel looks and a lovely gift for any fashion lover.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_852",
-      "seller_id": "seller_glownd",
-      "name": "Croc Effect Transparent T Bag - Cream",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_852.png",
-      "photos": [
-          "/products/glownd/glownd_852.png",
-          "https://glownd.com/wp-content/uploads/2026/09/6597df91-6d91-4bcb-a911-9cf73abf386c.png",
-          "https://glownd.com/wp-content/uploads/2026/09/408e0843-b2a6-46e4-b651-6c100604c52a.png",
-          "https://glownd.com/wp-content/uploads/2026/09/56027d4e-c6fc-491c-81e4-16432bf6defd.png",
-          "https://glownd.com/wp-content/uploads/2026/09/07890365-5ce0-4eb3-a23b-8a9c6097b34d.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Croc Bags",
-      "description": "The Croc Effect Transparent T Bag - Cream is a chic and sophisticated statement bag featuring a creamy croc-effect finish, clear transparent body, and elegant gold-tone hardware. A versatile accessory that effortlessly elevates any look.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_848",
-      "seller_id": "seller_glownd",
-      "name": "Croc Effect Transparent T Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_848.png",
-      "photos": [
-          "/products/glownd/glownd_848.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f2524ecd-ceab-4d91-a5bc-e038e2936ab6.png",
-          "https://glownd.com/wp-content/uploads/2026/09/b5af879e-7b99-454b-ae09-f1d5dd84b339.png",
-          "https://glownd.com/wp-content/uploads/2026/09/75041b33-69a2-4f98-a610-0f54f33b6418.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Croc Bags",
-      "description": "The Croc Effect Transparent T Bag - Black is a chic statement handbag featuring a glossy croc-effect finish, transparent body, elegant gold hardware, and a bold T-shaped clasp. Perfect for adding a polished touch to both everyday and dressy looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_826",
-      "seller_id": "seller_glownd",
-      "name": "V-Detail Mini Top Handle Crossbody Bag - White",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_826.png",
-      "photos": [
-          "/products/glownd/glownd_826.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f6614a14-219e-4dd7-b7e3-fb71d596d2d2.png",
-          "https://glownd.com/wp-content/uploads/2026/09/b7d89ad4-04e0-4e68-920e-44dc58bef280.png",
-          "https://glownd.com/wp-content/uploads/2026/09/2830cf75-55b5-4581-b356-c0b773aa3466.png",
-          "https://glownd.com/wp-content/uploads/2026/09/1ed23947-f9b4-44ba-b267-e5d1053f528b.png",
-          "https://glownd.com/wp-content/uploads/2026/09/1441b575-100a-485e-a63e-b10cdc9f5175.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": true,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The V-Detail Mini Top Handle Crossbody Bag - White is a chic and versatile mini handbag featuring a structured silhouette, crisp white finish, statement V-shaped detail, top handle, and adjustable crossbody strap. Its timeless design makes it perfect for everyday wear, special occasions, and effortlessly elevating both casual and dressy outfits.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_825",
-      "seller_id": "seller_glownd",
-      "name": "V-Detail Mini Top Handle Crossbody Bag - Pink",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_825.png",
-      "photos": [
-          "/products/glownd/glownd_825.png",
-          "https://glownd.com/wp-content/uploads/2026/09/a7b03816-9ddc-46b8-bdc4-27c9e40de581.png",
-          "https://glownd.com/wp-content/uploads/2026/09/c36ac22c-c74c-4d1a-b884-9770b4ce0bac.png",
-          "https://glownd.com/wp-content/uploads/2026/09/99e9b31a-f345-4b47-8fe2-7bf8645c19c8.png",
-          "https://glownd.com/wp-content/uploads/2026/09/4726fae1-9766-4118-87cf-d30967387523.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The V-Detail Mini Top Handle Crossbody Bag - Pink combines feminine style with everyday versatility. Featuring a structured mini design, vibrant pink finish, statement V-shaped detail, top handle, and adjustable crossbody strap, it's perfect for carrying your essentials while adding a stylish pop of colour to any outfit.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_824",
-      "seller_id": "seller_glownd",
-      "name": "V-Detail Mini Top Handle Crossbody Bag - Red",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_824.png",
-      "photos": [
-          "/products/glownd/glownd_824.png",
-          "https://glownd.com/wp-content/uploads/2026/09/4a5e9799-fc05-480c-a396-12d69c80d1ea.png",
-          "https://glownd.com/wp-content/uploads/2026/09/7901a084-f58c-4f87-aa86-1f142b53e235.png",
-          "https://glownd.com/wp-content/uploads/2026/09/a0c7bd97-81ff-487b-b3f7-c350f6aac568.png",
-          "https://glownd.com/wp-content/uploads/2026/09/671d3d0a-1208-4703-b3f2-ff1a691d940c.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The V-Detail Mini Top Handle Crossbody Bag - Red is a bold and elegant mini handbag featuring a structured silhouette, vibrant red finish, statement silver-tone V detail, top handle, and adjustable crossbody strap. Stylish and versatile, it's perfect for carrying your everyday essentials while adding a pop of colour to any outfit.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_823",
-      "seller_id": "seller_glownd",
-      "name": "V-Detail Mini Top Handle Crossbody Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_823.png",
-      "photos": [
-          "/products/glownd/glownd_823.png",
-          "https://glownd.com/wp-content/uploads/2026/09/d9b19072-468a-4d99-88ec-f58ccb316c50.png",
-          "https://glownd.com/wp-content/uploads/2026/09/f77ac593-b95f-41ae-a685-5933ff5af6a0.png",
-          "https://glownd.com/wp-content/uploads/2026/09/3d328433-8d3c-46e5-a95a-9ae660442772.png",
-          "https://glownd.com/wp-content/uploads/2026/09/aeaee53e-445b-44cd-b927-ca66e6751d61.png",
-          "https://glownd.com/wp-content/uploads/2026/09/45c6eb56-ea0a-481b-81e6-94b460ca01f2.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The V-Detail Mini Top Handle Crossbody Bag - Black combines elegant design with everyday versatility. Featuring a structured mini shape, sleek black finish, statement silver-tone V detail, top handle, and adjustable crossbody strap, it's the perfect accessory for carrying your essentials in style. A timeless addition to any wardrobe, this bag pairs beautifully with both casual and dressy outfits.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_815",
-      "seller_id": "seller_glownd",
-      "name": "Razor Mini Box Crossbody Bag - White",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_815.jpeg",
-      "photos": [
-          "/products/glownd/glownd_815.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/img_6263.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/img_6261.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/img_6266.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/img_6264.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/09/img_6267.jpeg"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "A chic white mini box crossbody bag featuring a structured design, silver-tone hardware, razor-inspired zip detailing and versatile top-handle and crossbody styling. Perfect for carrying your essentials while adding a polished touch to any look.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_807",
-      "seller_id": "seller_glownd",
-      "name": "Razor Mini Box Crossbody Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_807.png",
-      "photos": [
-          "/products/glownd/glownd_807.png",
-          "https://glownd.com/wp-content/uploads/2026/09/93c15ca3-4e2e-4fd0-a34b-9b96725631f1.png",
-          "https://glownd.com/wp-content/uploads/2026/09/539c2d9f-9521-45ba-8ace-7b7c342eae44.png",
-          "https://glownd.com/wp-content/uploads/2026/09/e3623901-888d-475a-847e-42851b89df40.png",
-          "https://glownd.com/wp-content/uploads/2026/09/cbe5ff0b-a043-4618-a0c7-a3b6c129e18b.png",
-          "https://glownd.com/wp-content/uploads/2026/09/3754839f-d7c1-4ab4-bfa4-641eff025d75.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The Razor Mini Box Crossbody Bag - Black is a sleek and stylish compact handbag designed for effortless everyday wear. Featuring a structured boxy silhouette, textured finish, silver-tone hardware, statement razor-inspired zip detailing, and a chain strap, this black crossbody bag adds a chic edge to any outfit while keeping your essentials close and organised.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_806",
-      "seller_id": "seller_glownd",
-      "name": "Razor Mini Box Crossbody Bag - Pink",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_806.png",
-      "photos": [
-          "/products/glownd/glownd_806.png",
-          "https://glownd.com/wp-content/uploads/2026/09/8583a3bc-4fce-4b59-95cd-232526482ceb.png",
-          "https://glownd.com/wp-content/uploads/2026/09/05bba2a4-48eb-4cc9-93b7-a89a909b824a.png",
-          "https://glownd.com/wp-content/uploads/2026/09/4b6dcf33-a48d-4f88-9ab3-018197f5b4c8.png",
-          "https://glownd.com/wp-content/uploads/2026/09/cf86e80b-ba5e-47ff-992f-6e11cf7428e0.png",
-          "https://glownd.com/wp-content/uploads/2026/09/16ce0c5b-d6fe-4fee-a74c-b2ed020ab680.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The Pink Razor Mini Box Crossbody bag is a chic and compact pink mini box crossbody bag featuring stylish razor-inspired zip detailing, a convenient top handle, silver-tone hardware, and a chain strap. Perfect for adding a feminine touch to both casual and dressy looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_794",
-      "seller_id": "seller_glownd",
-      "name": "Shirt-Style Collared Crossbody Bag - Blue",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_794.jpeg",
-      "photos": [
-          "/products/glownd/glownd_794.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/9ed36268-51c6-4d73-a0ac-ca1341c7b9d1.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/9a405e77-3535-45ab-94dc-f6668d35419b.png",
-          "https://glownd.com/wp-content/uploads/2026/08/5e15a342-616e-410a-afce-ffd1ba110134.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/5f8193d1-c16c-47e0-b22f-f81f58785fb2.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "Shirt-Style Collared Crossbody Bag - Blue A stylish blue crossbody bag featuring a unique shirt-inspired design, pointed collar detailing, button accents, and a front pocket for a chic finish. Perfect for everyday outings, brunches, shopping trips, dates, and casual occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_789",
-      "seller_id": "seller_glownd",
-      "name": "Shirt-Style Collared Crossbody Bag - Lime Green",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_789.png",
-      "photos": [
-          "/products/glownd/glownd_789.png",
-          "https://glownd.com/wp-content/uploads/2026/08/e8ba5f35-0c49-49b7-8f3b-9ecabcdeda29.png",
-          "https://glownd.com/wp-content/uploads/2026/08/3a857045-7dca-48f7-bfde-94c6240286b8.png",
-          "https://glownd.com/wp-content/uploads/2026/08/ef7e2784-bf61-4c2d-8d4e-ca8c9158379b.png",
-          "https://glownd.com/wp-content/uploads/2026/08/274a3715-02f7-4a1d-adc5-6ecabf735593.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The Shirt-Style Collared Crossbody Bag - Lime Green is a trendy mini bag designed with a playful shirt-inspired silhouette. Featuring a structured collared front, button-style detailing, a convenient front pocket, top handles, and an adjustable crossbody strap, this vibrant lime green bag adds a fresh pop of colour to any outfit. Perfect for casual outings, brunch dates, shopping trips, and stylish everyday looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_783",
-      "seller_id": "seller_glownd",
-      "name": "Shirt-Style Collared Crossbody Bag - Pink",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_783.png",
-      "photos": [
-          "/products/glownd/glownd_783.png",
-          "https://glownd.com/wp-content/uploads/2026/08/c3f02d76-8198-4025-ab29-2a4d4c379b17.png",
-          "https://glownd.com/wp-content/uploads/2026/08/94680dde-12ba-4f7e-a754-542fd1c6360f.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/dca2459f-b729-4de2-b582-a81386ad8b24.png",
-          "https://glownd.com/wp-content/uploads/2026/08/e6a7331f-b6fa-4b51-9c34-552c205f4d37.png",
-          "https://glownd.com/wp-content/uploads/2026/08/85524431-ced0-4144-adad-8722119a9e87.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The Pink Shirt-Style Collared Crossbody Bag Add a playful yet polished touch to your look with this stylish pink shirt-style collared crossbody bag. Featuring a structured silhouette, statement collar, button detailing, front pocket, and an adjustable crossbody strap, it's a chic everyday bag for casual outings, brunch dates, shopping trips, and weekend plans.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_778",
-      "seller_id": "seller_glownd",
-      "name": "Shirt-Style Collared Crossbody Bag - Chocolate Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_778.png",
-      "photos": [
-          "/products/glownd/glownd_778.png",
-          "https://glownd.com/wp-content/uploads/2026/08/b5c3da71-7832-400e-b936-983b684ae90f.png",
-          "https://glownd.com/wp-content/uploads/2026/08/32ea09de-9e94-42d6-ab0e-ecf61965c177.png",
-          "https://glownd.com/wp-content/uploads/2026/08/29034193-fc0e-40e3-a91e-0fd13e313f5b.png",
-          "https://glownd.com/wp-content/uploads/2026/08/728b7f57-a676-4834-ac74-f1f25bda116f.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "Elevate your everyday style with the Shirt-Style Collared Crossbody Bag - Chocolate Brown, featuring a structured silhouette, shirt-inspired collar, button details, and a practical front pocket. With both top handles and a detachable crossbody strap, it's perfect for everyday outings, brunch, shopping, and casual occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_777",
-      "seller_id": "seller_glownd",
-      "name": "Shirt-Style Collared Crossbody Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_777.png",
-      "photos": [
-          "/products/glownd/glownd_777.png",
-          "https://glownd.com/wp-content/uploads/2026/08/c98949ea-0a0d-4150-a66e-8539f7c41830.png",
-          "https://glownd.com/wp-content/uploads/2026/08/fad4ef2f-9c84-438d-939e-2855dd5b4692.png",
-          "https://glownd.com/wp-content/uploads/2026/08/8ba85624-3de9-4220-8314-777035191dbb.png",
-          "https://glownd.com/wp-content/uploads/2026/08/17c1a320-2767-403d-a7eb-a44a9d62823f.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "A chic and versatile Shirt-Style Collared Crossbody Bag in Black, featuring a structured silhouette, statement collar detail, front button accents, and a convenient front pocket. Complete with top handles and an adjustable crossbody strap, it's perfect for everyday outings, brunch dates, shopping, and casual evenings.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_770",
-      "seller_id": "seller_glownd",
-      "name": "Amélie Dome Bag - Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_770.png",
-      "photos": [
-          "/products/glownd/glownd_770.png",
-          "https://glownd.com/wp-content/uploads/2026/08/8c18d55a-ab80-4b9f-b4ed-1c150ed99ee2.png",
-          "https://glownd.com/wp-content/uploads/2026/08/63be83a9-6bac-4028-badc-fbfd6fe2aaf4.png",
-          "https://glownd.com/wp-content/uploads/2026/08/79f7d4fc-dee2-4a0c-a818-48f547517038.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/444f3f91-e651-47fc-a3c8-d772497589ee.jpeg"
-      ],
-      "price": 3500,
-      "regular_price": 4000,
-      "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Dome Handbags",
-      "description": "The Amélie Dome Bag - Brown is a chic and versatile handbag featuring a structured dome silhouette, elegant brown accents, gold-tone hardware, and a sophisticated patterned finish. With top handles and a detachable shoulder strap, it's perfect for everyday outings, brunch dates, work, shopping, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_766",
-      "seller_id": "seller_glownd",
-      "name": "Amélie Dome Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_766.jpeg",
-      "photos": [
-          "/products/glownd/glownd_766.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/a357b9d1-524b-44fd-9956-7d38c5c2c5ee.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/45d82871-00e6-4bad-bcea-84ece690e050.png",
-          "https://glownd.com/wp-content/uploads/2026/08/2af57ba3-5b82-42e6-80f9-6dd1ab9b347b.png",
-          "https://glownd.com/wp-content/uploads/2026/08/4e514b82-b3dc-4de2-8211-e93c38f248ed.png",
-          "https://glownd.com/wp-content/uploads/2026/08/a592a677-6c87-480c-8621-664902d60288.png"
-      ],
-      "price": 3500,
-      "regular_price": 4000,
-      "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Dome Handbags",
-      "description": "The Amélie Dome Bag - Black is a chic and versatile structured handbag featuring a classic dome silhouette, elegant gold-tone hardware, black detailing, and a detachable shoulder strap. Perfect for everyday outings, brunch dates, dinners, shopping, and stylish occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_760",
-      "seller_id": "seller_glownd",
-      "name": "Amélie Dome Bag - Ivory Cream",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_760.png",
-      "photos": [
-          "/products/glownd/glownd_760.png",
-          "https://glownd.com/wp-content/uploads/2026/08/00c1ad6b-ff20-43eb-82c8-f1aecd33f2eb.png",
-          "https://glownd.com/wp-content/uploads/2026/08/02e3ba7f-5b61-4105-a02f-4a91f06f5b16.png",
-          "https://glownd.com/wp-content/uploads/2026/08/cc811b59-ae37-426f-8f50-e81a692a3791.png",
-          "https://glownd.com/wp-content/uploads/2026/08/aa201137-8548-4ee4-8604-6beba6dc9969.png"
-      ],
-      "price": 3500,
-      "regular_price": 4000,
-      "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Dome Handbags",
-      "description": "The Amélie Dome Bag - Ivory Cream is an elegant structured handbag designed to elevate everyday and occasion looks. Featuring a classic dome shape, ivory cream finish, red piping, gold-tone hardware, top handles, and a detachable shoulder strap, it's the perfect accessory for adding a polished and feminine touch to any outfit.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_755",
-      "seller_id": "seller_glownd",
-      "name": "Valentina Pearl Dome Bag - Soft Grey",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_755.png",
-      "photos": [
-          "/products/glownd/glownd_755.png",
-          "https://glownd.com/wp-content/uploads/2026/08/84c6e1a7-d8df-435d-bb43-85b4c652383d.png",
-          "https://glownd.com/wp-content/uploads/2026/08/71d8749b-a808-40b4-836f-7c3306fac6ef.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/39646748-f35d-40f1-ba09-16881d231c61.png",
-          "https://glownd.com/wp-content/uploads/2026/08/5aef6567-3f8a-4c22-986e-4437d1b44e0e.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/efa0c7d0-d7ce-4949-ab50-8e94b5081ac9.png"
-      ],
-      "price": 3000,
-      "regular_price": 3400,
-      "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Dome Handbags",
-      "description": "The Valentine Pearl Dome Bag - Soft Grey is an elegant everyday handbag featuring a structured dome silhouette, soft grey finish, gold-tone hardware, and a detachable shoulder strap. Perfect for adding a polished touch to both casual and dressy outfits.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_744",
-      "seller_id": "seller_glownd",
-      "name": "Valentina Pearl Dome Bag - Soft Pink",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_744.png",
-      "photos": [
-          "/products/glownd/glownd_744.png",
-          "https://glownd.com/wp-content/uploads/2026/08/0c9e3376-d0e2-4b90-9a63-8a729d682b7e.png",
-          "https://glownd.com/wp-content/uploads/2026/08/4f42d9dc-e9b5-4ae9-9c3a-f1dc11875b8e.png",
-          "https://glownd.com/wp-content/uploads/2026/08/20d55969-463b-4b7f-a79e-12712fdc6b8b.png",
-          "https://glownd.com/wp-content/uploads/2026/08/12250543-e616-4128-94f8-66b6753d91be.png"
-      ],
-      "price": 3000,
-      "regular_price": 3400,
-      "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Dome Handbags",
-      "description": "Add a touch of feminine elegance to any outfit with the Valentine Pearl Dome Bag - Soft Pink. Featuring a structured dome silhouette, delicate textured detailing, polished gold-tone hardware, sturdy top handles and a detachable shoulder strap, this versatile pink handbag is perfect for everyday styling, brunch dates, dinners, special occasions and gifting. Pair it with neutrals, denim or elegant evening looks for an effortlessly chic finish.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_743",
-      "seller_id": "seller_glownd",
-      "name": "Roselle Grace Dome Bag - Blush Pink",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_743.png",
-      "photos": [
-          "/products/glownd/glownd_743.png",
-          "https://glownd.com/wp-content/uploads/2026/08/9c7574dc-c721-4572-9f50-610a3f961f62.png",
-          "https://glownd.com/wp-content/uploads/2026/08/10f7ed77-6558-41c5-afdf-5c2914a681b7.png"
-      ],
-      "price": 5000,
-      "regular_price": 5700,
-      "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Dome Handbags",
-      "description": "The Roselle Grace Dome Bag Blush Pink is a chic, structured handbag featuring a feminine dome silhouette, elegant gold-tone hardware, and a soft blush-pink finish. Perfect for everyday outings, brunches, dates, dinners, and special occasions. Style it with dresses, tailored outfits, jeans, or neutral tones for an effortlessly polished look. It also makes a beautiful gift for birthdays, anniversaries, graduations, or any special woman in your life. 🎀",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_740",
-      "seller_id": "seller_glownd",
-      "name": "Alora Structured Shoulder Bag - Mocha Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_740.png",
-      "photos": [
-          "/products/glownd/glownd_740.png",
-          "https://glownd.com/wp-content/uploads/2026/08/bf18fad9-eda7-47ab-ae36-5968156bf60e.png",
-          "https://glownd.com/wp-content/uploads/2026/08/3d836395-c8e4-4b66-8481-9687b5c6e137.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": true,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "The Alora Structured Shoulder Bag - Mocha Brown is a versatile accessory for brunches, date nights, dinners, shopping days, office looks, and special occasions. Style it with cream, white, black, denim, beige, or earthy tones for an effortlessly polished look. Its timeless design also makes it a beautiful gift for birthdays, anniversaries, graduations, or any special occasion.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_737",
-      "seller_id": "seller_glownd",
-      "name": "Alora Structured Shoulder Bag - Burgundy",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_737.png",
-      "photos": [
-          "/products/glownd/glownd_737.png",
-          "https://glownd.com/wp-content/uploads/2026/08/215ccfec-d6d8-4487-aff3-9955d03bd8ce.png",
-          "https://glownd.com/wp-content/uploads/2026/08/bcb2b5a0-4994-4454-8e5e-328ad04ccd41.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "The Alora Structured Shoulder Bag - Burgundy is a sophisticated everyday bag featuring a structured silhouette, elegant flap closure, gold-tone statement hardware, and a rich burgundy finish. Perfect for elevating both casual and dressy outfits.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_734",
-      "seller_id": "seller_glownd",
-      "name": "Alora Structured Shoulder Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_734.png",
-      "photos": [
-          "/products/glownd/glownd_734.png",
-          "https://glownd.com/wp-content/uploads/2026/08/b6ef89e3-b3f5-40c2-b8f2-1ed5eb29768b.png",
-          "https://glownd.com/wp-content/uploads/2026/08/c072eb8e-392e-40dc-b70e-1c6a37114a08.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Elevate your everyday style with the Black Alora Structured Shoulder Bag. Featuring a sleek structured silhouette, curved flap design, elegant gold-tone hardware and a long shoulder strap, this sophisticated black bag is perfect for adding a polished touch to both casual and dressy outfits.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_731",
-      "seller_id": "seller_glownd",
-      "name": "Coke Heart Mini Top-Handle Bag - Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_731.png",
-      "photos": [
-          "/products/glownd/glownd_731.png",
-          "https://glownd.com/wp-content/uploads/2026/08/b3c3ebf7-fdc7-490c-bda1-8d55a102caff.png",
-          "https://glownd.com/wp-content/uploads/2026/08/3c5be02f-186d-4bd6-9e0d-cff73f0f3965.png",
-          "https://glownd.com/wp-content/uploads/2026/08/f5d5ee48-05a6-440b-bbfd-322e8cce76e6-1.jpeg"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Add timeless elegance to your look with the Coke Heart Mini Top-Handle Bag - Brown. Featuring a structured design, chic top handle, elegant gold-tone hardware, and a rich brown finish, this classy handbag is perfect for dates, dinners, weddings, brunches, parties, and special occasions. It comes beautifully packaged in a box, making it a perfect gift for anyone special.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_724",
-      "seller_id": "seller_glownd",
-      "name": "Coke Heart Mini Top-Handle Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_724.png",
-      "photos": [
-          "/products/glownd/glownd_724.png",
-          "https://glownd.com/wp-content/uploads/2026/08/86c776fd-4cf8-4bba-9efc-87841b1770c1.png",
-          "https://glownd.com/wp-content/uploads/2026/08/688e889b-a912-4448-9866-aca82e946285.png",
-          "https://glownd.com/wp-content/uploads/2026/08/f5d5ee48-05a6-440b-bbfd-322e8cce76e6.jpeg"
-      ],
-      "price": 4500,
-      "regular_price": 5100,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Meet the Coke Heart Mini Top-Handle Bag - Black, a chic and elegant mini handbag featuring a sleek structured design, polished gold-tone hardware, and a stylish top handle. Compact yet sophisticated, it's perfect for dinners, date nights, brunches, parties, events, and special occasions. Beautifully packaged in a box, it also makes a perfect gift for someone special.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_723",
-      "seller_id": "seller_glownd",
-      "name": "Modern Snake Print Crossbody Chain Bag - Peach",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_723.png",
-      "photos": [
-          "/products/glownd/glownd_723.png",
-          "https://glownd.com/wp-content/uploads/2026/08/74582f83-96f2-4492-908f-404b20cdbd70.png",
-          "https://glownd.com/wp-content/uploads/2026/08/5c65a98d-04b3-43f2-93b2-c0b8bae264ce.png",
-          "https://glownd.com/wp-content/uploads/2026/08/e543f8cd-7e68-4446-a21d-a52fdd34a0bd.png",
-          "https://glownd.com/wp-content/uploads/2026/08/7b02df74-01d3-48e0-9d3f-8f69c6492912.jpeg"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "Add a touch of sophisticated style to any outfit with the Modern Snake Print Crossbody Chain Bag - Peach. Featuring a textured snake-print finish, structured silhouette, statement buckle detail and sleek chain strap, this elegant women's handbag is perfect for brunches, date nights, dinners, parties and stylish everyday looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_718",
-      "seller_id": "seller_glownd",
-      "name": "Modern Snake Print Crossbody Chain Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_718.png",
-      "photos": [
-          "/products/glownd/glownd_718.png",
-          "https://glownd.com/wp-content/uploads/2026/08/15fe680e-8fc7-4c1d-b555-986074d4f377.png",
-          "https://glownd.com/wp-content/uploads/2026/08/448b59dc-b46d-4318-9457-6da046a08d01.png",
-          "https://glownd.com/wp-content/uploads/2026/08/34835dc8-3c4c-47bb-b14b-b01b99cfb1bb.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The Modern Snake Print Crossbody Chain Bag - Black is a chic statement bag featuring a textured snake-print finish, sleek black design, a bold horseshoe-style clasp, and a stylish gunmetal chain strap. Perfect for adding a polished touch to everyday outfits, dinner dates, brunches, parties, and evening occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_711",
-      "seller_id": "seller_glownd",
-      "name": "Modern Snake Print Crossbody Chain Bag - Red",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_711.png",
-      "photos": [
-          "/products/glownd/glownd_711.png",
-          "https://glownd.com/wp-content/uploads/2026/08/7f241f4a-fddd-441a-b724-309ca6e9032a.png",
-          "https://glownd.com/wp-content/uploads/2026/08/d7f90902-f2b2-4284-b175-43ad0837bccb.png",
-          "https://glownd.com/wp-content/uploads/2026/08/4042f90f-267e-4891-ae64-a94739d4a6d8.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "Make a statement with the Modern Snake Print Crossbody Chain Bag - Red. Featuring a bold textured snake-print finish, structured silhouette, sleek black detailing and a striking statement clasp, this stylish crossbody bag adds an elegant touch to any outfit. The chain strap makes it easy to wear from day to night.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_710",
-      "seller_id": "seller_glownd",
-      "name": "Sienna Buckle Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_710.png",
-      "photos": [
-          "/products/glownd/glownd_710.png",
-          "https://glownd.com/wp-content/uploads/2026/08/0286c82d-72b5-4c91-9764-c54a197a04ec.png",
-          "https://glownd.com/wp-content/uploads/2026/08/9148ec9a-f38e-4d33-a690-1dc1d801b6c2.png",
-          "https://glownd.com/wp-content/uploads/2026/08/bb7c23f9-4e7b-4e51-8aa8-e008d38aaad7.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Sienna Buckle Bag - Black is a sophisticated everyday handbag featuring a sleek black finish, croc-embossed texture, elegant gold-tone buckle detailing, and a structured silhouette. Perfect for elevating casual, office, dinner, and evening looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_706",
-      "seller_id": "seller_glownd",
-      "name": "Sienna Buckle Bag - Ivory",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_706.png",
-      "photos": [
-          "/products/glownd/glownd_706.png",
-          "https://glownd.com/wp-content/uploads/2026/08/e1bb5a3c-ee44-4d5f-8fd9-ba6e09e488b7.png",
-          "https://glownd.com/wp-content/uploads/2026/08/d61f3c67-8d2b-4645-b151-271fa065f9df.png",
-          "https://glownd.com/wp-content/uploads/2026/08/ad9c93b3-970f-423c-ad46-03512a2272da.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Sienna Buckle Bag - Ivory is an elegant structured handbag featuring a soft ivory finish, crocodile-textured detailing, and a statement gold-tone buckle framed with delicate chain accents. Its versatile design is perfect for brunches, date nights, dinners, weddings, birthdays, graduations, parties, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_697",
-      "seller_id": "seller_glownd",
-      "name": "Chic Clasp Crossbody Bag - White",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_697.png",
-      "photos": [
-          "/products/glownd/glownd_697.png",
-          "https://glownd.com/wp-content/uploads/2026/08/bedb2f0b-60a6-451a-8902-3021a563b597.png",
-          "https://glownd.com/wp-content/uploads/2026/08/3e54c253-d08f-423c-a688-29711b9c4797.png",
-          "https://glownd.com/wp-content/uploads/2026/08/b59bf806-0ebd-472f-bea3-78e19eee1159.png",
-          "https://glownd.com/wp-content/uploads/2026/08/8217977e-924f-47c2-bda0-0776d56aab51-1.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The White Chic Clasp Crossbody Bag is an elegant, versatile accessory featuring a crisp white finish, structured design, and distinctive C-shaped gold clasp. Perfect for elevating your look at brunches, weddings, date nights, dinners, birthdays, graduations, parties, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_693",
-      "seller_id": "seller_glownd",
-      "name": "Chic Clasp Crossbody Bag - Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_693.png",
-      "photos": [
-          "/products/glownd/glownd_693.png",
-          "https://glownd.com/wp-content/uploads/2026/08/22824968-3586-4bea-ac39-5cd1a4ec2d9b-3.png",
-          "https://glownd.com/wp-content/uploads/2026/08/5c2c68f8-86ac-4fc8-9db4-dd3e3b104518.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/aee06090-7b55-4027-a777-44fc4dbfee4b.jpeg"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The Brown Chic Clasp Crossbody Bag is a timeless and elegant everyday accessory featuring a rich brown finish, structured silhouette, and distinctive C-shaped gold clasp. Perfect for adding a polished touch to casual and dressy outfits, from brunches and shopping days to dinners, weddings, birthdays, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_687",
-      "seller_id": "seller_glownd",
-      "name": "Chic Clasp Crossbody Bag - Red",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_687.png",
-      "photos": [
-          "/products/glownd/glownd_687.png",
-          "https://glownd.com/wp-content/uploads/2026/08/58d55a19-a6fb-4a44-92bf-71ce8f4899e6.png",
-          "https://glownd.com/wp-content/uploads/2026/08/1d54be26-f4e2-45ab-85d2-d277e977d531.png",
-          "https://glownd.com/wp-content/uploads/2026/08/87a6d580-e6e9-404a-ad97-ed76f5ba7e83-1.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The Red Chic Clasp Crossbody Bag is a stylish statement accessory featuring a rich red finish, structured silhouette, and distinctive C-shaped gold clasp. Perfect for adding a chic pop of colour to your look for brunches, date nights, dinners, weddings, parties, birthdays, shopping days, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_682",
-      "seller_id": "seller_glownd",
-      "name": "Chic Clasp Crossbody Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_682.png",
-      "photos": [
-          "/products/glownd/glownd_682.png",
-          "https://glownd.com/wp-content/uploads/2026/08/ec4fddae-369f-4695-b8cd-296e8f5cc9a4.png",
-          "https://glownd.com/wp-content/uploads/2026/08/8031f505-6460-47de-855a-b13a7687c196-1-1.png",
-          "https://glownd.com/wp-content/uploads/2026/08/8296dfca-cc36-40dd-8a42-9a53350cfa5e.png",
-          "https://glownd.com/wp-content/uploads/2026/08/e879057e-b1ac-44b2-b5cf-1dc9e6dd0ea2.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Crossbody Bags",
-      "description": "The Chic Clasp Crossbody Bag - Black is a stylish everyday bag featuring a sleek structured design, distinctive C-shaped front clasp, and elegant gold-tone hardware. Its versatile black finish makes it perfect for both casual and dressy looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_675",
-      "seller_id": "seller_glownd",
-      "name": "Monogram Chain Shoulder Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_675.png",
-      "photos": [
-          "/products/glownd/glownd_675.png",
-          "https://glownd.com/wp-content/uploads/2026/08/4ccbd1fd-869b-492e-a577-bc04bc2a825e.png",
-          "https://glownd.com/wp-content/uploads/2026/08/2622f1cb-b581-4a34-98e5-b8a3dc71d6d0.png",
-          "https://glownd.com/wp-content/uploads/2026/08/80b7b30c-0059-4e22-b090-0a3371171de7-1.png",
-          "https://glownd.com/wp-content/uploads/2026/08/611270a2-7f81-4827-8b2f-8bc14f2cd1f9.png",
-          "https://glownd.com/wp-content/uploads/2026/08/1bd11a56-e3c6-4ee0-82e5-d7eaa3c1d73d.png"
-      ],
-      "price": 2800,
-      "regular_price": 3200,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "The Black Monogram Chain Shoulder Bag is a stylish everyday accessory featuring a sleek black monogram design, elegant gold-tone chain detailing, and a signature round clasp. Compact yet practical, it adds a chic, polished touch to both casual and dressy outfits.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_668",
-      "seller_id": "seller_glownd",
-      "name": "Monogram Chain Shoulder Bag - White",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_668.png",
-      "photos": [
-          "/products/glownd/glownd_668.png",
-          "https://glownd.com/wp-content/uploads/2026/08/14809d62-43ec-46b1-aa84-1140ed93cdf3.png",
-          "https://glownd.com/wp-content/uploads/2026/08/0d5fe711-574b-4179-bc97-f2a728d4a026.png",
-          "https://glownd.com/wp-content/uploads/2026/08/f832130c-cf2d-46e1-820e-58339b7f8bb7.png",
-          "https://glownd.com/wp-content/uploads/2026/08/2764db70-0d49-42f6-93e5-5deb30174165.png",
-          "https://glownd.com/wp-content/uploads/2026/08/bf89fec9-4485-42b3-b720-3fe86a147812.png"
-      ],
-      "price": 2800,
-      "regular_price": 3200,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Elevate your everyday style with our White Monogram Chain Shoulder Bag, featuring a chic monogram pattern, elegant gold-tone chain detailing, and a versatile design. Perfect for everyday wear, brunch dates, shopping, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_660",
-      "seller_id": "seller_glownd",
-      "name": "Monogram Chain Shoulder Bag - Pink",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_660.png",
-      "photos": [
-          "/products/glownd/glownd_660.png",
-          "https://glownd.com/wp-content/uploads/2026/08/a4851007-0c83-4563-a16c-7a8fe30adf07.png",
-          "https://glownd.com/wp-content/uploads/2026/08/0455d17f-72c0-49ee-a905-409bbb4bc391.png",
-          "https://glownd.com/wp-content/uploads/2026/08/c6204d6e-b079-4c6a-9f70-5ca65361ee53.png",
-          "https://glownd.com/wp-content/uploads/2026/08/6f7c4782-97be-4347-b65a-5106d254ee76.png",
-          "https://glownd.com/wp-content/uploads/2026/08/6882c690-c3a7-4413-8a76-f02f8ab257d6.png"
-      ],
-      "price": 2800,
-      "regular_price": 3200,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Add a feminine touch to your everyday style with this Pink Monogram Chain Shoulder Bag. Featuring a stylish monogram pattern, elegant gold-tone chain detailing, and a versatile design, it's perfect for casual outings, brunch dates, shopping, and everyday wear.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_652",
-      "seller_id": "seller_glownd",
-      "name": "Monogram Chain Shoulder Bag - Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_652.png",
-      "photos": [
-          "/products/glownd/glownd_652.png",
-          "https://glownd.com/wp-content/uploads/2026/08/7e4dbdb7-6f64-4a7c-9bea-6ff5827053fa-1.png",
-          "https://glownd.com/wp-content/uploads/2026/08/1ec735cd-bd8a-4bb1-ba60-d855ecc64352.png",
-          "https://glownd.com/wp-content/uploads/2026/08/42ad3c86-6266-4d7d-ac78-624c73865f10.png",
-          "https://glownd.com/wp-content/uploads/2026/08/ef225a67-eb55-4636-868b-5b37d6e10f20.png",
-          "https://glownd.com/wp-content/uploads/2026/08/746f053b-946a-4a0a-972f-818647045437.png"
-      ],
-      "price": 2800,
-      "regular_price": 3200,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Brown Monogram Chain Shoulder Bag - A chic and versatile shoulder bag featuring a stylish monogram design, elegant gold-tone chain detailing, and a structured yet relaxed silhouette. Perfect for adding a polished touch to everyday and evening outfits.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_637",
-      "seller_id": "seller_glownd",
-      "name": "Luxe Baguette Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_637.png",
-      "photos": [
-          "/products/glownd/glownd_637.png",
-          "https://glownd.com/wp-content/uploads/2026/08/b48ecddb-20a8-4c91-89af-67ad8d777458.png",
-          "https://glownd.com/wp-content/uploads/2026/08/92a3044c-147b-4ca8-aac4-76e3368069c4.png",
-          "https://glownd.com/wp-content/uploads/2026/08/aa1ceb85-c5b6-4fd6-8b20-660c4d043b25.png",
-          "https://glownd.com/wp-content/uploads/2026/08/10b61686-4ceb-40b3-84ff-79c4688a0c0b.png",
-          "https://glownd.com/wp-content/uploads/2026/08/e584f3d4-51d0-47fa-a161-f7669ff4a7b7.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Baguette Bags",
-      "description": "Elevate your everyday style with the Black Luxe Baguette Bag, featuring a sleek croc-embossed finish, structured silhouette, and elegant gold-tone clasp. A chic statement piece for both casual and dressy looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_636",
-      "seller_id": "seller_glownd",
-      "name": "Luxe Baguette Bag - Cream",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_636.png",
-      "photos": [
-          "/products/glownd/glownd_636.png",
-          "https://glownd.com/wp-content/uploads/2026/08/bdfca959-4adb-4a12-bfd0-8c818ac2f7f4.png",
-          "https://glownd.com/wp-content/uploads/2026/08/d3b49b3c-9165-4104-955b-9be4d8f60040.png",
-          "https://glownd.com/wp-content/uploads/2026/08/c958d52c-c42b-46d2-b73c-76991075c21e.png",
-          "https://glownd.com/wp-content/uploads/2026/08/a325efbb-8efb-47fc-90fc-3d008fc74cf3.png",
-          "https://glownd.com/wp-content/uploads/2026/08/8ea83095-f2e5-4319-a4d8-a19ebc4f08f7.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Baguette Bags",
-      "description": "The Cream Luxe Baguette Bag is a chic and versatile shoulder bag featuring a soft cream finish, croc-textured design, structured silhouette, and elegant gold-tone clasp. Perfect for adding a sophisticated touch to any outfit.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_630",
-      "seller_id": "seller_glownd",
-      "name": "Luxe Baguette Bag - Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_630.png",
-      "photos": [
-          "/products/glownd/glownd_630.png",
-          "https://glownd.com/wp-content/uploads/2026/08/28508f12-5a56-431d-8bb8-6f77b47f3ddd.png",
-          "https://glownd.com/wp-content/uploads/2026/08/f1351daf-29db-4926-b7c8-622e4a30f454.png",
-          "https://glownd.com/wp-content/uploads/2026/08/7f7eda84-f464-44fc-8c0d-b4e484261e51.png",
-          "https://glownd.com/wp-content/uploads/2026/08/55eaca98-043b-4e8d-a37c-7f888e54e0a4.png",
-          "https://glownd.com/wp-content/uploads/2026/08/3ddb8ff6-b93b-4c08-9df8-ee71346be300.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Baguette Bags",
-      "description": "The Brown Luxe Baguette Bag is a chic and timeless shoulder bag featuring a rich brown finish, elegant textured design, structured silhouette, and polished gold-tone clasp. Perfect for elevating everyday, casual, office, and evening looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_624",
-      "seller_id": "seller_glownd",
-      "name": "Luxe Baguette Bag - Lilac",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_624.png",
-      "photos": [
-          "/products/glownd/glownd_624.png",
-          "https://glownd.com/wp-content/uploads/2026/08/5b1aa273-c78d-4f5d-98bb-d8210ff084f8.png",
-          "https://glownd.com/wp-content/uploads/2026/08/55b607a9-0904-426c-bd7f-ff409b36e342.png",
-          "https://glownd.com/wp-content/uploads/2026/08/853acb32-cd9c-4b96-be66-5c0389918f87.png",
-          "https://glownd.com/wp-content/uploads/2026/08/1dea17a9-4d56-41f3-8170-1b674e765b59.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Baguette Bags",
-      "description": "The Lilac Luxe Baguette Bag is a stylish statement handbag featuring a beautiful lilac finish, textured embossed design, structured baguette shape, and elegant gold-tone hardware. Perfect for everyday outfits, brunch dates, dinners, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_617",
-      "seller_id": "seller_glownd",
-      "name": "Croc-Embossed Shoulder Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_617.png",
-      "photos": [
-          "/products/glownd/glownd_617.png",
-          "https://glownd.com/wp-content/uploads/2026/08/ade3cccd-095b-4bfd-8588-fd034b5bdae7.png",
-          "https://glownd.com/wp-content/uploads/2026/08/53d42751-002c-4163-901f-cc20d3a8e2be-1.png",
-          "https://glownd.com/wp-content/uploads/2026/08/0fff6025-7155-40d2-9738-890f622350f6.png",
-          "https://glownd.com/wp-content/uploads/2026/08/504d4e88-64a7-4ddb-967e-435e514af02a.png",
-          "https://glownd.com/wp-content/uploads/2026/08/8493f322-98f2-4380-812e-6fe83bb910c9.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Black Croc-Embossed Shoulder Bag - A sleek and stylish black shoulder bag featuring a textured croc-embossed finish, structured silhouette, and adjustable strap. Perfect for elevating everyday outfits, workwear, dinners, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_599",
-      "seller_id": "seller_glownd",
-      "name": "Croc-Embossed Shoulder Bag - White & Brown",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_599.png",
-      "photos": [
-          "/products/glownd/glownd_599.png",
-          "https://glownd.com/wp-content/uploads/2026/08/02645955-acdf-4e74-a8b7-1b09a9d81dab.png",
-          "https://glownd.com/wp-content/uploads/2026/08/56eb87b2-9021-45d8-8cb9-81374932c92e.png",
-          "https://glownd.com/wp-content/uploads/2026/08/463a3a68-db76-494e-a97f-1c7107009613.png",
-          "https://glownd.com/wp-content/uploads/2026/08/e3ae3734-e7e5-4ef8-a1ad-96a017e489e4.png",
-          "https://glownd.com/wp-content/uploads/2026/08/4e1c06d9-027b-4c15-b4fa-2ae099b54db1.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "The White & Brown Croc-Embossed Shoulder Bag combines a chic two-tone design with a luxurious crocodile-inspired texture and elegant brown detailing. A versatile statement piece for everyday and dressy looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_598",
-      "seller_id": "seller_glownd",
-      "name": "Croc-Embossed Shoulder Bag - Beige",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_598.png",
-      "photos": [
-          "/products/glownd/glownd_598.png",
-          "https://glownd.com/wp-content/uploads/2026/08/9f33d912-5908-4c63-b38b-dafc66a4f378.png",
-          "https://glownd.com/wp-content/uploads/2026/08/0769e5f4-edf9-4d1c-8045-fb70ae6daeba.png",
-          "https://glownd.com/wp-content/uploads/2026/08/64a93bae-06e4-4e31-a829-159f31406b49.png",
-          "https://glownd.com/wp-content/uploads/2026/08/d0671faf-e691-4ffa-bdd4-7caaff9ec7e0.png",
-          "https://glownd.com/wp-content/uploads/2026/08/1f992915-644d-41e9-992d-5dfa3a3a8eee.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Elevate your everyday style with the Beige Croc-Embossed Shoulder Bag, featuring a sophisticated structured design, elegant brown trim, and a luxurious crocodile-inspired texture. Its versatile neutral tone makes it perfect for casual, work, brunch, and evening looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_588",
-      "seller_id": "seller_glownd",
-      "name": "Croc- Embossed Shoulder Bag - Black & White",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_588.png",
-      "photos": [
-          "/products/glownd/glownd_588.png",
-          "https://glownd.com/wp-content/uploads/2026/08/a336df41-cba1-4320-990d-36f1ceda104d.png",
-          "https://glownd.com/wp-content/uploads/2026/08/393ef1d0-9d4b-4d1f-8bf5-087d02945ecc.png",
-          "https://glownd.com/wp-content/uploads/2026/08/5f8b760b-24c8-4a95-a384-14490babe65b.png",
-          "https://glownd.com/wp-content/uploads/2026/08/eb41057b-8025-4068-99e8-0f3320236c0a.png"
-      ],
-      "price": 4000,
-      "regular_price": 4600,
-      "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Elevate your everyday style with the Black & White Croc-Embossed Bag, a chic two-tone statement bag featuring a textured crocodile-inspired finish, structured silhouette, and elegant gold-tone hardware. Perfect for adding a polished touch to both casual and dressy outfits.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Glossy Croc Texture",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_574",
-      "seller_id": "seller_glownd",
-      "name": "Sparkle Mini Baguette Shoulder Bag - Gold",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_574.png",
-      "photos": [
-          "/products/glownd/glownd_574.png",
-          "https://glownd.com/wp-content/uploads/2026/08/43b135f9-b440-4c25-9ae0-ab5ade9adc77.png",
-          "https://glownd.com/wp-content/uploads/2026/08/bb588212-0232-405f-9f71-ade08b126055.png",
-          "https://glownd.com/wp-content/uploads/2026/08/da8e3d02-b4b5-438c-abc3-bde6b63164a8.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Add a touch of effortless glamour to your look with the Gold Sparkle Mini Baguette Shoulder Bag. Featuring a soft champagne-gold shimmer, elegant curved silhouette, delicate silver chain detailing, and charming pearl accents, this compact bag is perfect for elevating both casual and dressy outfit",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_573",
-      "seller_id": "seller_glownd",
-      "name": "Sparkle Mini Baguette Shoulder Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_573.png",
-      "photos": [
-          "/products/glownd/glownd_573.png",
-          "https://glownd.com/wp-content/uploads/2026/08/5a9bfe88-d528-48ae-99e0-332e0fe4b87d.png",
-          "https://glownd.com/wp-content/uploads/2026/08/2565cea4-baca-47bc-bd2f-8abd83834f5a.png",
-          "https://glownd.com/wp-content/uploads/2026/08/32411908-d48d-4e0a-97ad-e6cd1730afa1.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/dd778b47-2d95-4e49-b342-b13a40f0668f.jpeg"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "The Black Sparkle Mini Baguette Shoulder Bag is a chic, compact accessory featuring a shimmering black finish, curved baguette silhouette, silver chain detailing, and a stylish charm accent. Perfect for adding a touch of sparkle to your look for date nights, parties, dinners, birthdays, events, and evening outings.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_572",
-      "seller_id": "seller_glownd",
-      "name": "Sparkle Mini Baguette Shoulder Bag - Silver",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_572.png",
-      "photos": [
-          "/products/glownd/glownd_572.png",
-          "https://glownd.com/wp-content/uploads/2026/08/3d748db9-8fc9-4402-86bb-c574d7aed140.png",
-          "https://glownd.com/wp-content/uploads/2026/08/51e44c6b-dede-4a28-b0bd-534bf4300809.png",
-          "https://glownd.com/wp-content/uploads/2026/08/cd5f7808-c486-4a19-951e-1c0751533e07.png"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Add a touch of sparkle to your look with the Silver Sparkle Mini Baguette Shoulder Bag. Designed with a shimmering silver finish, compact baguette shape, statement chain details, and a versatile shoulder strap, it's the perfect accessory for parties, date nights, dinners, events, and stylish evenings out.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_571",
-      "seller_id": "seller_glownd",
-      "name": "Sparkle Mini Baguette Shoulder Bag - Pink",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_571.jpeg",
-      "photos": [
-          "/products/glownd/glownd_571.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/d01e5e39-1ef6-4432-91ec-fd3a273f54b2.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/c12b11ad-cf20-49b8-84b1-5d4bfe9bb002.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/f8114a49-8ff8-4705-9715-f643244b6e01.jpeg"
-      ],
-      "price": 2500,
-      "regular_price": 2800,
-      "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Shoulder Bags",
-      "description": "Add a pretty touch of sparkle to your outfit with the Pink Sparkle Mini Baguette Shoulder Bag. Featuring a soft pink shimmer, compact baguette shape, and eye-catching silver details, it's perfect for brunches, date nights, parties, and special occasions.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_566",
-      "seller_id": "seller_glownd",
-      "name": "Mini Denim Top Handle Bag - Army Green",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_566.png",
-      "photos": [
-          "/products/glownd/glownd_566.png",
-          "https://glownd.com/wp-content/uploads/2026/08/2c221f7c-63f0-4f6f-8d8a-8532889fbc4e.png",
-          "https://glownd.com/wp-content/uploads/2026/08/ce6fd338-bfef-473c-8abe-cad899e3eda4.png",
-          "https://glownd.com/wp-content/uploads/2026/08/028ada85-9ee1-41b8-99c1-975eb2851f64.png"
-      ],
-      "price": 3500,
-      "regular_price": 4000,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Add a stylish touch to your everyday looks with the Army Green Mini Denim Top Handle Bag. Featuring a structured mini silhouette, textured denim finish, curved flap, and distinctive knotted rope handles, this versatile bag is perfect for casual outings, brunch, shopping, dates, and everyday styling.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_558",
-      "seller_id": "seller_glownd",
-      "name": "Mini Denim Top Handle Bag - Light Blue",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_558.jpeg",
-      "photos": [
-          "/products/glownd/glownd_558.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/b4cd8c15-3841-456f-a316-7fd9b4db0327.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/c547e015-e773-4021-a11a-fce11b2535cc.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/874095be-481d-46ba-843f-ec44e09d13f6.jpeg"
-      ],
-      "price": 3500,
-      "regular_price": 4000,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "The Light Blue Mini Denim Top Handle Bag is a chic and versatile accessory featuring a structured silhouette, curved flap and unique knotted handle. Its soft light-blue denim finish adds a fresh, casual touch to everyday outfits.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
-  },
-  {
-      "id": "prod_glownd_557",
-      "seller_id": "seller_glownd",
-      "name": "Mini Denim Top Handle Bag - Black",
-      "size": "Standard",
-      "photo": "/products/glownd/glownd_557.jpeg",
-      "photos": [
-          "/products/glownd/glownd_557.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/0b37df69-8f99-4bee-bfe6-dd3f0cb465e5.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/a810f05b-466b-4ea7-9c15-a632787db166.jpeg",
-          "https://glownd.com/wp-content/uploads/2026/08/a37713db-e3d3-429c-aa44-28fee0259993.jpeg"
-      ],
-      "price": 3500,
-      "regular_price": 4000,
-      "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
-      "in_stock": true,
-      "featured": false,
-      "badge": "Trending 👜",
-      "category": "Handbags & Bags",
-      "sub_category": "Luxury Handbags",
-      "description": "Black Mini Denim Top Handle Bag is a chic, compact accessory featuring a sleek black finish, structured shape, curved flap, and stylish knotted handle. Complete with a detachable shoulder strap, it's perfect for everyday outings, brunch, shopping, dinners, and casual looks.",
-      "highlights": [
-          "Premium Craftsmanship",
-          "Structured Silhouette",
-          "Lipa na M-Pesa Available",
-          "Countrywide Fast Dispatch"
-      ]
+    "id": "prod_glownd_1009",
+    "seller_id": "seller_glownd",
+    "name": "Vexa Mini Luxury Croc Bag - Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_1009.png",
+    "photos": [
+      "/products/glownd/glownd_1009.png",
+      "https://glownd.com/wp-content/uploads/2026/09/635e8c71-b252-49f3-b2c7-017d4bb302be.png",
+      "https://glownd.com/wp-content/uploads/2026/09/86d9d24e-d035-45b8-a296-3953a5d33357.png",
+      "https://glownd.com/wp-content/uploads/2026/09/467b1903-402e-444a-a64b-1f1868be930d.png"
+    ],
+    "price": 3500,
+    "regular_price": 4000,
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
+    "in_stock": true,
+    "featured": true,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Croc Bags",
+    "description": "Elevate your everyday style with the Vexa Mini Luxury Croc Bag - Brown, a chic and sophisticated mini handbag featuring a glossy crocodile-textured finish, structured silhouette, elegant top handle, and polished clasp detail. Its compact design makes it perfect for carrying your essentials while adding an effortlessly luxe touch to any outfit. Ideal for brunches, date nights, events, dinners, and stylish everyday looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_1001",
+    "seller_id": "seller_glownd",
+    "name": "Vienne C-Clasp Shoulder Bag - Black Smooth",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_1001.png",
+    "photos": [
+      "/products/glownd/glownd_1001.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f274b67a-cf53-4982-9cb4-8f93f693e9af.png",
+      "https://glownd.com/wp-content/uploads/2026/09/c32ec622-00f8-4256-b415-39b278f6bc6d.png",
+      "https://glownd.com/wp-content/uploads/2026/09/fc77bd23-7a1e-402c-bfc4-7d48f6204037.png",
+      "https://glownd.com/wp-content/uploads/2026/09/b0283b00-0f09-42af-99d5-96d674fc90cf.png"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Bestseller 🔥",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "The black smooth Vienne C-Clasp Shoulder Bag Is a sleek and elegant shoulder bag featuring a smooth, refined finish, structured silhouette, and statement C-shaped clasp. A timeless accessory designed to elevate both everyday and occasion-ready looks. Comes beautifully boxed.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch",
+      "Comes Beautifully Boxed"
+    ]
+  },
+  {
+    "id": "prod_glownd_995",
+    "seller_id": "seller_glownd",
+    "name": "Vienne C-Clasp Shoulder Bag - Black Pebbled",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_995.png",
+    "photos": [
+      "/products/glownd/glownd_995.png",
+      "https://glownd.com/wp-content/uploads/2026/09/6b7a385b-8a0b-4698-808e-bb5e4ad03659.png",
+      "https://glownd.com/wp-content/uploads/2026/09/ccd72a6a-fa17-48ee-9830-0b10ac339470.png",
+      "https://glownd.com/wp-content/uploads/2026/09/c8ab9814-ebd9-40cb-bd4e-1504d5660853.png",
+      "https://glownd.com/wp-content/uploads/2026/09/65c6dfbd-e9a8-4993-a82b-4059c48bf5d3.png"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": true,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "The Vienne C-Clasp Shoulder Bag - Black Pebbled is a timeless statement piece featuring a structured silhouette, elegant flap design, and distinctive C-shaped clasp. Its rich pebbled texture adds depth and sophistication, while the classic black shade makes it effortlessly versatile. Perfect for everyday outings, brunches, dinners, date nights, parties, and special occasions. Comes beautifully boxed, making it a stylish gift choice.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch",
+      "Comes Beautifully Boxed"
+    ]
+  },
+  {
+    "id": "prod_glownd_989",
+    "seller_id": "seller_glownd",
+    "name": "Selene Mini Crossbody Bag - Lilac Purple",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_989.png",
+    "photos": [
+      "/products/glownd/glownd_989.png",
+      "https://glownd.com/wp-content/uploads/2026/09/932857a7-3586-48c2-9f88-5bd846971391.png",
+      "https://glownd.com/wp-content/uploads/2026/09/08c45da3-a9fc-440b-a5b2-002fa9b22498.png",
+      "https://glownd.com/wp-content/uploads/2026/09/bf537f1f-17b0-4895-8d3b-969ef34e766e.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f0818e35-9fb2-47f1-bc25-363cf048d5c4.png"
+    ],
+    "price": 1800,
+    "regular_price": 2000,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "Selene Mini Crossbody Bag - Lilac Purple is a chic and compact handbag designed for effortless everyday style. Featuring a soft lilac purple finish, quilted detailing, gold-tone hardware, a ruched top handle, and a detachable chain strap, this mini crossbody bag adds a feminine and trendy touch to any outfit.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_984",
+    "seller_id": "seller_glownd",
+    "name": "Selene Mini Crossbody Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_984.png",
+    "photos": [
+      "/products/glownd/glownd_984.png",
+      "https://glownd.com/wp-content/uploads/2026/09/21f0bcd0-56c0-4f5e-8070-8dc8c040d061.png",
+      "https://glownd.com/wp-content/uploads/2026/09/d58c4dcd-708f-4044-aa65-699298ff7a06.png",
+      "https://glownd.com/wp-content/uploads/2026/09/e2879ab5-80a6-4dbb-93a6-be8f62d28c13.png",
+      "https://glownd.com/wp-content/uploads/2026/09/ab32c3cf-7ad6-4d45-aae2-6fb78c2df245.png"
+    ],
+    "price": 1800,
+    "regular_price": 2000,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The Selene Mini Crossbody Bag - Black is a chic and compact handbag featuring a stylish quilted design, structured silhouette, gold-tone hardware, and a unique ruched top handle. Perfect for adding an elegant touch to both everyday and dressy looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_980",
+    "seller_id": "seller_glownd",
+    "name": "Dahlia Quilted Structured Handbag - Grey",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_980.png",
+    "photos": [
+      "/products/glownd/glownd_980.png",
+      "https://glownd.com/wp-content/uploads/2026/09/326e2595-3115-4286-8673-88090fc7d77e.png",
+      "https://glownd.com/wp-content/uploads/2026/09/42a44b4e-c1c0-402c-8772-9f1cd3fbf4ba.png",
+      "https://glownd.com/wp-content/uploads/2026/09/a19686cf-feda-4bae-9e5a-1f19ddf05ddc.png"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Elevate your everyday style with the Dahlia Quilted Structured Handbag in Grey. Featuring a sophisticated quilted design, structured silhouette, elegant top handles, and stylish hardware details, this versatile handbag is perfect for work, brunch, shopping, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_977",
+    "seller_id": "seller_glownd",
+    "name": "Dahlia Quilted Structured Handbag - Red",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_977.png",
+    "photos": [
+      "/products/glownd/glownd_977.png",
+      "https://glownd.com/wp-content/uploads/2026/09/43302e76-2993-4b93-b281-bdd4d82410da.png",
+      "https://glownd.com/wp-content/uploads/2026/09/b1c90481-379e-49a6-8aa0-9463a5ddf919.png"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Dahlia Quilted Structured Handbag - Red combines timeless elegance with modern style. Featuring a chic quilted design, structured shape, top handles, and statement charm, this compact medium handbag is perfect for everyday wear, work, brunch, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_973",
+    "seller_id": "seller_glownd",
+    "name": "Kylie Luxury Handbag - Nude",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_973.png",
+    "photos": [
+      "/products/glownd/glownd_973.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f1bb5318-0029-4a65-9045-ea53d50151b6.png",
+      "https://glownd.com/wp-content/uploads/2026/09/770bba9c-e220-477f-85d9-9a1a5d0319b3.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f1270acf-94a2-464f-889a-6fc167310af5.png"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Kylie Luxury Handbag - Nude is a chic structured handbag designed for effortless elegance. Featuring a sophisticated nude finish, textured design, stylish top handles, gold-tone hardware, and a versatile shoulder strap, it's the perfect accessory for work, brunch, shopping, dinners, and special occasions. A timeless neutral handbag that instantly elevates any outfit.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_970",
+    "seller_id": "seller_glownd",
+    "name": "Kylie Luxury Handbag - Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_970.png",
+    "photos": [
+      "/products/glownd/glownd_970.png",
+      "https://glownd.com/wp-content/uploads/2026/09/cfe77223-d21c-494f-b64e-7e8ad2a6f6eb.png",
+      "https://glownd.com/wp-content/uploads/2026/09/478b6b33-9ed0-43c8-9749-222d735bc153.png"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Kylie Luxury Handbag - Brown is a classy structured handbag featuring a rich brown textured finish, elegant gold-tone hardware, and a spacious interior. Perfect for work, casual outings, dinners, events, and stylish everyday looks. A timeless luxury-inspired handbag and beautiful gift choice.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_966",
+    "seller_id": "seller_glownd",
+    "name": "Kylie Luxury Handbag - White",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_966.png",
+    "photos": [
+      "/products/glownd/glownd_966.png",
+      "https://glownd.com/wp-content/uploads/2026/09/271f1dbf-7056-4386-b80d-0bcea03f4c13.png",
+      "https://glownd.com/wp-content/uploads/2026/09/53692021-f381-404f-b6b9-4841d5191451.png"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Elevate your everyday style with the Kylie Luxury Handbag - White, a sophisticated statement bag designed for effortless elegance. Its structured silhouette, refined gold-tone hardware, and timeless white finish make it the perfect accessory for both everyday outfits and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_962",
+    "seller_id": "seller_glownd",
+    "name": "Kylie Luxury Handbag - Peach",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_962.png",
+    "photos": [
+      "/products/glownd/glownd_962.png",
+      "https://glownd.com/wp-content/uploads/2026/09/2ab118f3-35b8-46c5-96e3-40f1467a83ef.png",
+      "https://glownd.com/wp-content/uploads/2026/09/55aefc17-e1e3-40ba-bef0-6d641867857c.png",
+      "https://glownd.com/wp-content/uploads/2026/09/8523071e-76a8-4961-b2c2-c2558d8522bb.png"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Kylie Luxury Handbag - Peach is an elegant structured handbag designed to add a sophisticated touch to any outfit. Featuring a beautiful peach tone, polished gold-tone hardware, and a timeless top-handle design, this luxury-inspired handbag is perfect for everyday styling, work, brunch, special occasions, and evening looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_957",
+    "seller_id": "seller_glownd",
+    "name": "Kylie Luxury Handbag - Green",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_957.png",
+    "photos": [
+      "/products/glownd/glownd_957.png",
+      "https://glownd.com/wp-content/uploads/2026/09/a2bf21eb-a845-4d36-b8ed-b9b7aca1d7db.png",
+      "https://glownd.com/wp-content/uploads/2026/09/43906cc1-be01-4e05-9f40-ca8b909b39d5.png",
+      "https://glownd.com/wp-content/uploads/2026/09/4b34a6ee-6631-4302-81c5-1e44c7afe822.jpeg"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Make a statement with the Kylie Luxury Handbag - Green, a sophisticated structured handbag designed to elevate your everyday and occasion looks. Featuring a rich green finish, elegant gold-tone hardware, and a classic top-handle silhouette, it's the perfect blend of timeless style and modern luxury.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_953",
+    "seller_id": "seller_glownd",
+    "name": "Kylie Luxury Handbag - Blue",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_953.jpeg",
+    "photos": [
+      "/products/glownd/glownd_953.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/5f1166c6-91c8-4839-9be0-e98cbb67b14d.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/28ed8202-3ccc-491f-98f8-1666139569a2.png"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Kylie Luxury Handbag - Blue is a sophisticated structured handbag designed to elevate your everyday and occasion looks. Featuring a timeless silhouette, elegant gold-tone hardware, and a refined blue finish, this luxury-inspired handbag adds effortless polish to any outfit.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_939",
+    "seller_id": "seller_glownd",
+    "name": "Celine Vivienne Luxury Handbag - Orange",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_939.png",
+    "photos": [
+      "/products/glownd/glownd_939.png",
+      "https://glownd.com/wp-content/uploads/2026/09/d93baf04-a470-450b-a89e-ceffdc512db5.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f4afed55-6d06-4ab8-9d7f-6e6066e5c3ee.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/3818dce2-7a73-47e5-a4eb-525c96bef893.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/f344c605-e9c6-418e-97cf-300bf0c2c485.png"
+    ],
+    "price": 5500,
+    "regular_price": 6300,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Make a statement with the Celine Vivienne Luxury Handbag - Orange. Featuring a structured design, elegant top handle, gold-tone hardware and a vibrant orange finish, this stylish handbag adds sophistication and colour to any outfit. Perfect for everyday styling, special occasions and for gifting someone special.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_938",
+    "seller_id": "seller_glownd",
+    "name": "Celine Vivienne Luxury Handbag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_938.png",
+    "photos": [
+      "/products/glownd/glownd_938.png",
+      "https://glownd.com/wp-content/uploads/2026/09/013be229-dae4-4b9c-83b6-09ee64ec8b84.png",
+      "https://glownd.com/wp-content/uploads/2026/09/d67fa78a-bd52-4aa7-9354-59923102c86c.png",
+      "https://glownd.com/wp-content/uploads/2026/09/a6264e12-782e-438c-ac81-0ea351de8222.png",
+      "https://glownd.com/wp-content/uploads/2026/09/a850f17b-c71a-4956-b213-863b02a9f08c.png",
+      "https://glownd.com/wp-content/uploads/2026/09/afb0a419-9284-4f18-8571-9584da7df76a.png"
+    ],
+    "price": 5500,
+    "regular_price": 6300,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Bestseller 🔥",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Celine Vivienne Luxury Handbag - Black combines timeless elegance with a sophisticated structured design. Featuring a sleek black finish, elegant top handle, and gold-tone hardware, it's a versatile luxury handbag perfect for everyday styling, office looks, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_933",
+    "seller_id": "seller_glownd",
+    "name": "Celine Vivienne Luxury Handbag - Red",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_933.png",
+    "photos": [
+      "/products/glownd/glownd_933.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f1544aef-acc7-4793-8424-4005f619c2e0.png",
+      "https://glownd.com/wp-content/uploads/2026/09/23d7dfab-3939-4ba9-9c9a-a16afca3c4da.png",
+      "https://glownd.com/wp-content/uploads/2026/09/img_6892.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/3d10f36a-08c5-49b7-a7a4-5b2dc3b0c19d.png"
+    ],
+    "price": 5500,
+    "regular_price": 6300,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Celine Vivienne Luxury Handbag - Red combines timeless elegance with a bold, sophisticated finish. Featuring a structured silhouette, refined gold-tone hardware, and a vibrant red colour, it's the perfect statement handbag for everyday styling, special occasions, and elegant outings.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_927",
+    "seller_id": "seller_glownd",
+    "name": "Celine Vivienne Luxury Handbag - Purple",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_927.png",
+    "photos": [
+      "/products/glownd/glownd_927.png",
+      "https://glownd.com/wp-content/uploads/2026/09/3f9cfc62-cfde-46aa-9c01-3c82240414c9.png",
+      "https://glownd.com/wp-content/uploads/2026/09/feaa5308-7431-4a86-a428-70043897f410.png",
+      "https://glownd.com/wp-content/uploads/2026/09/0e91b0fd-aa51-4129-adeb-9ea46859333d.png",
+      "https://glownd.com/wp-content/uploads/2026/09/1607c2a9-940f-42a4-a962-46227dbd2a71.png"
+    ],
+    "price": 5500,
+    "regular_price": 6300,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Elevate your style with the Celine Vivienne Luxury Handbag in Purple, a sophisticated structured handbag designed for timeless elegance. Featuring a polished gold-tone clasp, refined textured finish, top handle, and detachable shoulder strap, it's perfect for both everyday luxury and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_921",
+    "seller_id": "seller_glownd",
+    "name": "Nova Minimalist Tote Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_921.jpeg",
+    "photos": [
+      "/products/glownd/glownd_921.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/b31f7523-c101-4b85-a773-5e420fa6d3ce.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/373c6175-2089-45c8-aa01-60c8515ad45b.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/7915e5b9-2c06-4b04-a11b-11fb92b7ece5.png",
+      "https://glownd.com/wp-content/uploads/2026/09/8437997b-bc1a-4512-8779-1621217cb5c3.png"
+    ],
+    "price": 3000,
+    "regular_price": 3400,
+    "benefit_line": "Spacious everyday tote with minimalist finish & comfortable shoulder drop",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Bestseller 🔥",
+    "category": "Handbags & Bags",
+    "sub_category": "Tote Bags",
+    "description": "The Nova Minimalist Tote Bag - Black is a sleek, versatile everyday bag designed for effortless style. Its clean, modern design makes it easy to pair with casual, office, and elevated looks. Perfect for work, shopping, brunch, travel, or everyday outings.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_916",
+    "seller_id": "seller_glownd",
+    "name": "Nova Minimalist Tote Bag - Cream",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_916.jpeg",
+    "photos": [
+      "/products/glownd/glownd_916.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/1ca1ddfa-9fae-4c60-8d88-770f80dd93e7.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/ef9b874e-d3b0-4134-b465-894f2e6323bc.png",
+      "https://glownd.com/wp-content/uploads/2026/09/e4e26223-c204-431f-95d9-3f9ed7afdf81.png",
+      "https://glownd.com/wp-content/uploads/2026/09/e766fc3c-9866-47f1-869f-5e5b3d4994ef.jpeg"
+    ],
+    "price": 3000,
+    "regular_price": 3400,
+    "benefit_line": "Spacious everyday tote with minimalist finish & comfortable shoulder drop",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Tote Bags",
+    "description": "The Nova Minimalist Tote Bag - Cream combines clean, elegant design with everyday practicality. Its soft cream tone, subtle texture, and spacious tote silhouette make it a versatile choice for work, shopping, brunch, travel, and casual everyday looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_912",
+    "seller_id": "seller_glownd",
+    "name": "Nova Minimalist Tote Bag - Coffee Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_912.jpeg",
+    "photos": [
+      "/products/glownd/glownd_912.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/56501c77-d4b6-4cbb-9a5a-1452e6d7e6db.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/768e8e97-84ec-4ea6-916c-85aedcb96279.png",
+      "https://glownd.com/wp-content/uploads/2026/09/2e007886-9abb-4ef8-ba70-45acc598d830.png"
+    ],
+    "price": 3000,
+    "regular_price": 3400,
+    "benefit_line": "Spacious everyday tote with minimalist finish & comfortable shoulder drop",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Tote Bags",
+    "description": "The Nova Minimalist Tote Bag - Coffee Brown combines timeless style with everyday practicality. Its sleek silhouette, rich brown finish, long handles, and spacious design make it perfect for work, shopping, brunch, travel, and casual outings. A versatile everyday tote that adds effortless elegance to any look.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_908",
+    "seller_id": "seller_glownd",
+    "name": "Nova Minimalist Tote Bag - Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_908.jpeg",
+    "photos": [
+      "/products/glownd/glownd_908.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/778ed8b9-c076-425e-ace6-c153e3335d29.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/bf94267d-3344-47c4-bf63-398ab8b39818.png",
+      "https://glownd.com/wp-content/uploads/2026/09/c9e4a906-8e0e-48da-aae4-6bcb413bd3f5.png"
+    ],
+    "price": 3000,
+    "regular_price": 3400,
+    "benefit_line": "Spacious everyday tote with minimalist finish & comfortable shoulder drop",
+    "in_stock": true,
+    "featured": false,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Tote Bags",
+    "description": "Elevate your everyday style with the Nova Minimalist Tote Bag in Brown. Featuring a sleek, spacious design and warm brown finish, this versatile tote is perfect for work, shopping, casual outings, and everyday essentials.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_903",
+    "seller_id": "seller_glownd",
+    "name": "The Valenne Statement Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_903.png",
+    "photos": [
+      "/products/glownd/glownd_903.png",
+      "https://glownd.com/wp-content/uploads/2026/09/5a664b92-2c13-4f28-b3cf-20218c224afc.png",
+      "https://glownd.com/wp-content/uploads/2026/09/65b93868-a3ac-46cc-a2ef-0bb057a87428.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/ab79e8e1-45f0-4293-b36c-608c7ab7178e.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": true,
+    "badge": "New Arrival ✨",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Valenne Statement Bag - Black is a chic and versatile handbag designed to elevate any outfit. Its timeless black finish makes it perfect for everyday styling, brunch dates, dinners, events, and special occasions. A sophisticated choice for yourself or as a stylish gift.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_897",
+    "seller_id": "seller_glownd",
+    "name": "The Valenne Statement Bag - Beige",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_897.png",
+    "photos": [
+      "/products/glownd/glownd_897.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f2cb6d9e-1614-4653-b139-30e70e115376.png",
+      "https://glownd.com/wp-content/uploads/2026/09/e04dd8d3-39e8-48ec-aa07-ef2c3ce1e946.png",
+      "https://glownd.com/wp-content/uploads/2026/09/25f3cdb6-504b-4e9d-b5b5-a3bdfddde6c0.png",
+      "https://glownd.com/wp-content/uploads/2026/09/3a11c380-c378-4e76-8d3a-2d473f2ba9b3.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Valenne Statement Bag - Beige is an effortlessly chic handbag designed to add a polished touch to any outfit. Featuring a sleek envelope-style flap, elegant gold-tone hardware and a refined top handle, it's the perfect everyday accessory for both casual and dressy looks. A beautiful choice for gifting, too. 🤎",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_881",
+    "seller_id": "seller_glownd",
+    "name": "Cherry Muse Petal Bag Charm",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_881.jpeg",
+    "photos": [
+      "/products/glownd/glownd_881.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/4eaac1fd-7dfe-4e14-8991-5b8ce433a59a-1.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/a98a5ee9-4dd4-4276-a88b-f5afbbfca053-1.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/194fa46c-1c2d-4227-926f-0551e746c50d.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/85ae4751-7891-4369-8ab7-80f690fc9758-1.png",
+      "https://glownd.com/wp-content/uploads/2026/09/27b86523-c51e-42a6-aade-475240ca002d-1.png"
+    ],
+    "price": 1000,
+    "regular_price": 1100,
+    "benefit_line": "Designer floral petal charm to personalize your favorite handbag",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Bag Accessories",
+    "description": "Add a touch of playful elegance to your favourite bag with our Cherry Muse Petal Bag Charm. Featuring glossy cherry accents, delicate green leaves, and polished gold-tone detailing, this charming accessory is designed to instantly elevate your everyday bag. Clip it onto your handbag, shoulder bag, tote, or crossbody for a fun yet sophisticated finish.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_877",
+    "seller_id": "seller_glownd",
+    "name": "Clear Luxe Infinity Bag - Silver",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_877.png",
+    "photos": [
+      "/products/glownd/glownd_877.png",
+      "https://glownd.com/wp-content/uploads/2026/09/1b7a3b05-7273-4dac-84d4-c9bed048a742.png",
+      "https://glownd.com/wp-content/uploads/2026/09/4c97d061-f6ad-4fb6-bae7-258eb8130f5c.png",
+      "https://glownd.com/wp-content/uploads/2026/09/399349ee-932c-4a70-9366-a7b86bfcc6a5.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Clear Luxe Infinity Bag - Silver is a sophisticated statement handbag featuring a structured transparent body, textured silver flap, elegant gold-tone hardware, and a distinctive infinity-inspired clasp. Designed with both a top handle and detachable shoulder strap, this versatile clear silver handbag is perfect for brunches, date nights, dinners, parties, weddings, birthdays, special events, and stylish everyday outings.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_873",
+    "seller_id": "seller_glownd",
+    "name": "Clear Luxe Infinity Bag - White & Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_873.png",
+    "photos": [
+      "/products/glownd/glownd_873.png",
+      "https://glownd.com/wp-content/uploads/2026/09/20bc0a25-d7c6-4bc5-b54a-d97d99e05aef.png",
+      "https://glownd.com/wp-content/uploads/2026/09/ac1ea48e-6a32-475e-92f1-6717fa2c8742.png",
+      "https://glownd.com/wp-content/uploads/2026/09/02f2115d-c609-41c0-8a4f-c6bcb731d02a.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Clear Luxe Infinity Bag - White & Black features a sophisticated clear body paired with a textured white flap, white handles and elegant gold-tone hardware. Its chic structured design makes it perfect for brunches, date nights, dinners, parties, events, shopping and everyday outings, adding a polished statement to any outfit.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_870",
+    "seller_id": "seller_glownd",
+    "name": "Clear Luxe Infinity Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_870.png",
+    "photos": [
+      "/products/glownd/glownd_870.png",
+      "https://glownd.com/wp-content/uploads/2026/09/2b555a29-1261-4d99-99d9-4d6dada3f54c.png",
+      "https://glownd.com/wp-content/uploads/2026/09/1707bbe0-b8cf-43ae-812d-d395c8fc8c6b.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Clear Luxe Infinity Bag - Black is a stylish transparent black handbag designed for a modern, effortlessly chic look. Featuring a sleek infinity-inspired design, this versatile clear bag is perfect for everyday outfits, events, and fashion-forward styling.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_865",
+    "seller_id": "seller_glownd",
+    "name": "Clear Luxe Infinity Bag - Pink",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_865.jpeg",
+    "photos": [
+      "/products/glownd/glownd_865.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/af978455-98d3-4804-9bd0-0b430f0e69d7.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/43b2bd74-4eb4-4fc4-8506-85d2681a0fa1.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f6b8a3b0-a4c9-4900-a7c7-28f23581c739.jpeg"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Clear Luxe Infinity Bag - Pink is a chic statement handbag featuring a structured silhouette, clear panel detailing, and an elegant infinity-inspired clasp. The soft pink finish adds a feminine touch, making it perfect for elevating both everyday and dressy looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_857",
+    "seller_id": "seller_glownd",
+    "name": "Croc Effect Transparent T Bag - Mint Green",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_857.png",
+    "photos": [
+      "/products/glownd/glownd_857.png",
+      "https://glownd.com/wp-content/uploads/2026/09/8317d7c2-c46c-4069-a163-cde8f160dcff.png",
+      "https://glownd.com/wp-content/uploads/2026/09/df726668-3d93-4670-8609-1f7b12767689.png",
+      "https://glownd.com/wp-content/uploads/2026/09/ef92455f-d938-45f8-a36c-96c2fc3d140a.png",
+      "https://glownd.com/wp-content/uploads/2026/09/7a3863a6-a2f7-4132-bd61-fbed4f7b8566.png",
+      "https://glownd.com/wp-content/uploads/2026/09/69cfac23-ab52-40b8-b7d8-8cb9d996881c.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Croc Bags",
+    "description": "The Croc Effect Transparent T Bag -Mint Green is a chic and modern statement bag featuring a mint green croc-effect finish, transparent body, and elegant gold-tone detailing. Perfect for brunches, dinners, shopping, parties, and stylish everyday outings. A beautiful accessory to pair with neutral, denim or pastel looks and a lovely gift for any fashion lover.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_852",
+    "seller_id": "seller_glownd",
+    "name": "Croc Effect Transparent T Bag - Cream",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_852.png",
+    "photos": [
+      "/products/glownd/glownd_852.png",
+      "https://glownd.com/wp-content/uploads/2026/09/6597df91-6d91-4bcb-a911-9cf73abf386c.png",
+      "https://glownd.com/wp-content/uploads/2026/09/408e0843-b2a6-46e4-b651-6c100604c52a.png",
+      "https://glownd.com/wp-content/uploads/2026/09/56027d4e-c6fc-491c-81e4-16432bf6defd.png",
+      "https://glownd.com/wp-content/uploads/2026/09/07890365-5ce0-4eb3-a23b-8a9c6097b34d.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Croc Bags",
+    "description": "The Croc Effect Transparent T Bag - Cream is a chic and sophisticated statement bag featuring a creamy croc-effect finish, clear transparent body, and elegant gold-tone hardware. A versatile accessory that effortlessly elevates any look.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_848",
+    "seller_id": "seller_glownd",
+    "name": "Croc Effect Transparent T Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_848.png",
+    "photos": [
+      "/products/glownd/glownd_848.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f2524ecd-ceab-4d91-a5bc-e038e2936ab6.png",
+      "https://glownd.com/wp-content/uploads/2026/09/b5af879e-7b99-454b-ae09-f1d5dd84b339.png",
+      "https://glownd.com/wp-content/uploads/2026/09/75041b33-69a2-4f98-a610-0f54f33b6418.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Croc Bags",
+    "description": "The Croc Effect Transparent T Bag - Black is a chic statement handbag featuring a glossy croc-effect finish, transparent body, elegant gold hardware, and a bold T-shaped clasp. Perfect for adding a polished touch to both everyday and dressy looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_826",
+    "seller_id": "seller_glownd",
+    "name": "V-Detail Mini Top Handle Crossbody Bag - White",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_826.png",
+    "photos": [
+      "/products/glownd/glownd_826.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f6614a14-219e-4dd7-b7e3-fb71d596d2d2.png",
+      "https://glownd.com/wp-content/uploads/2026/09/b7d89ad4-04e0-4e68-920e-44dc58bef280.png",
+      "https://glownd.com/wp-content/uploads/2026/09/2830cf75-55b5-4581-b356-c0b773aa3466.png",
+      "https://glownd.com/wp-content/uploads/2026/09/1ed23947-f9b4-44ba-b267-e5d1053f528b.png",
+      "https://glownd.com/wp-content/uploads/2026/09/1441b575-100a-485e-a63e-b10cdc9f5175.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The V-Detail Mini Top Handle Crossbody Bag - White is a chic and versatile mini handbag featuring a structured silhouette, crisp white finish, statement V-shaped detail, top handle, and adjustable crossbody strap. Its timeless design makes it perfect for everyday wear, special occasions, and effortlessly elevating both casual and dressy outfits.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_825",
+    "seller_id": "seller_glownd",
+    "name": "V-Detail Mini Top Handle Crossbody Bag - Pink",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_825.png",
+    "photos": [
+      "/products/glownd/glownd_825.png",
+      "https://glownd.com/wp-content/uploads/2026/09/a7b03816-9ddc-46b8-bdc4-27c9e40de581.png",
+      "https://glownd.com/wp-content/uploads/2026/09/c36ac22c-c74c-4d1a-b884-9770b4ce0bac.png",
+      "https://glownd.com/wp-content/uploads/2026/09/99e9b31a-f345-4b47-8fe2-7bf8645c19c8.png",
+      "https://glownd.com/wp-content/uploads/2026/09/4726fae1-9766-4118-87cf-d30967387523.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The V-Detail Mini Top Handle Crossbody Bag - Pink combines feminine style with everyday versatility. Featuring a structured mini design, vibrant pink finish, statement V-shaped detail, top handle, and adjustable crossbody strap, it's perfect for carrying your essentials while adding a stylish pop of colour to any outfit.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_824",
+    "seller_id": "seller_glownd",
+    "name": "V-Detail Mini Top Handle Crossbody Bag - Red",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_824.png",
+    "photos": [
+      "/products/glownd/glownd_824.png",
+      "https://glownd.com/wp-content/uploads/2026/09/4a5e9799-fc05-480c-a396-12d69c80d1ea.png",
+      "https://glownd.com/wp-content/uploads/2026/09/7901a084-f58c-4f87-aa86-1f142b53e235.png",
+      "https://glownd.com/wp-content/uploads/2026/09/a0c7bd97-81ff-487b-b3f7-c350f6aac568.png",
+      "https://glownd.com/wp-content/uploads/2026/09/671d3d0a-1208-4703-b3f2-ff1a691d940c.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The V-Detail Mini Top Handle Crossbody Bag - Red is a bold and elegant mini handbag featuring a structured silhouette, vibrant red finish, statement silver-tone V detail, top handle, and adjustable crossbody strap. Stylish and versatile, it's perfect for carrying your everyday essentials while adding a pop of colour to any outfit.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_823",
+    "seller_id": "seller_glownd",
+    "name": "V-Detail Mini Top Handle Crossbody Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_823.png",
+    "photos": [
+      "/products/glownd/glownd_823.png",
+      "https://glownd.com/wp-content/uploads/2026/09/d9b19072-468a-4d99-88ec-f58ccb316c50.png",
+      "https://glownd.com/wp-content/uploads/2026/09/f77ac593-b95f-41ae-a685-5933ff5af6a0.png",
+      "https://glownd.com/wp-content/uploads/2026/09/3d328433-8d3c-46e5-a95a-9ae660442772.png",
+      "https://glownd.com/wp-content/uploads/2026/09/aeaee53e-445b-44cd-b927-ca66e6751d61.png",
+      "https://glownd.com/wp-content/uploads/2026/09/45c6eb56-ea0a-481b-81e6-94b460ca01f2.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The V-Detail Mini Top Handle Crossbody Bag - Black combines elegant design with everyday versatility. Featuring a structured mini shape, sleek black finish, statement silver-tone V detail, top handle, and adjustable crossbody strap, it's the perfect accessory for carrying your essentials in style. A timeless addition to any wardrobe, this bag pairs beautifully with both casual and dressy outfits.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_815",
+    "seller_id": "seller_glownd",
+    "name": "Razor Mini Box Crossbody Bag - White",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_815.jpeg",
+    "photos": [
+      "/products/glownd/glownd_815.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/img_6263.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/img_6261.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/img_6266.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/img_6264.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/09/img_6267.jpeg"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "A chic white mini box crossbody bag featuring a structured design, silver-tone hardware, razor-inspired zip detailing and versatile top-handle and crossbody styling. Perfect for carrying your essentials while adding a polished touch to any look.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_807",
+    "seller_id": "seller_glownd",
+    "name": "Razor Mini Box Crossbody Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_807.png",
+    "photos": [
+      "/products/glownd/glownd_807.png",
+      "https://glownd.com/wp-content/uploads/2026/09/93c15ca3-4e2e-4fd0-a34b-9b96725631f1.png",
+      "https://glownd.com/wp-content/uploads/2026/09/539c2d9f-9521-45ba-8ace-7b7c342eae44.png",
+      "https://glownd.com/wp-content/uploads/2026/09/e3623901-888d-475a-847e-42851b89df40.png",
+      "https://glownd.com/wp-content/uploads/2026/09/cbe5ff0b-a043-4618-a0c7-a3b6c129e18b.png",
+      "https://glownd.com/wp-content/uploads/2026/09/3754839f-d7c1-4ab4-bfa4-641eff025d75.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The Razor Mini Box Crossbody Bag - Black is a sleek and stylish compact handbag designed for effortless everyday wear. Featuring a structured boxy silhouette, textured finish, silver-tone hardware, statement razor-inspired zip detailing, and a chain strap, this black crossbody bag adds a chic edge to any outfit while keeping your essentials close and organised.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_806",
+    "seller_id": "seller_glownd",
+    "name": "Razor Mini Box Crossbody Bag - Pink",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_806.png",
+    "photos": [
+      "/products/glownd/glownd_806.png",
+      "https://glownd.com/wp-content/uploads/2026/09/8583a3bc-4fce-4b59-95cd-232526482ceb.png",
+      "https://glownd.com/wp-content/uploads/2026/09/05bba2a4-48eb-4cc9-93b7-a89a909b824a.png",
+      "https://glownd.com/wp-content/uploads/2026/09/4b6dcf33-a48d-4f88-9ab3-018197f5b4c8.png",
+      "https://glownd.com/wp-content/uploads/2026/09/cf86e80b-ba5e-47ff-992f-6e11cf7428e0.png",
+      "https://glownd.com/wp-content/uploads/2026/09/16ce0c5b-d6fe-4fee-a74c-b2ed020ab680.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The Pink Razor Mini Box Crossbody bag is a chic and compact pink mini box crossbody bag featuring stylish razor-inspired zip detailing, a convenient top handle, silver-tone hardware, and a chain strap. Perfect for adding a feminine touch to both casual and dressy looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_794",
+    "seller_id": "seller_glownd",
+    "name": "Shirt-Style Collared Crossbody Bag - Blue",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_794.jpeg",
+    "photos": [
+      "/products/glownd/glownd_794.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/9ed36268-51c6-4d73-a0ac-ca1341c7b9d1.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/9a405e77-3535-45ab-94dc-f6668d35419b.png",
+      "https://glownd.com/wp-content/uploads/2026/08/5e15a342-616e-410a-afce-ffd1ba110134.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/5f8193d1-c16c-47e0-b22f-f81f58785fb2.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "Shirt-Style Collared Crossbody Bag - Blue A stylish blue crossbody bag featuring a unique shirt-inspired design, pointed collar detailing, button accents, and a front pocket for a chic finish. Perfect for everyday outings, brunches, shopping trips, dates, and casual occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_789",
+    "seller_id": "seller_glownd",
+    "name": "Shirt-Style Collared Crossbody Bag - Lime Green",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_789.png",
+    "photos": [
+      "/products/glownd/glownd_789.png",
+      "https://glownd.com/wp-content/uploads/2026/08/e8ba5f35-0c49-49b7-8f3b-9ecabcdeda29.png",
+      "https://glownd.com/wp-content/uploads/2026/08/3a857045-7dca-48f7-bfde-94c6240286b8.png",
+      "https://glownd.com/wp-content/uploads/2026/08/ef7e2784-bf61-4c2d-8d4e-ca8c9158379b.png",
+      "https://glownd.com/wp-content/uploads/2026/08/274a3715-02f7-4a1d-adc5-6ecabf735593.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The Shirt-Style Collared Crossbody Bag - Lime Green is a trendy mini bag designed with a playful shirt-inspired silhouette. Featuring a structured collared front, button-style detailing, a convenient front pocket, top handles, and an adjustable crossbody strap, this vibrant lime green bag adds a fresh pop of colour to any outfit. Perfect for casual outings, brunch dates, shopping trips, and stylish everyday looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_783",
+    "seller_id": "seller_glownd",
+    "name": "Shirt-Style Collared Crossbody Bag - Pink",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_783.png",
+    "photos": [
+      "/products/glownd/glownd_783.png",
+      "https://glownd.com/wp-content/uploads/2026/08/c3f02d76-8198-4025-ab29-2a4d4c379b17.png",
+      "https://glownd.com/wp-content/uploads/2026/08/94680dde-12ba-4f7e-a754-542fd1c6360f.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/dca2459f-b729-4de2-b582-a81386ad8b24.png",
+      "https://glownd.com/wp-content/uploads/2026/08/e6a7331f-b6fa-4b51-9c34-552c205f4d37.png",
+      "https://glownd.com/wp-content/uploads/2026/08/85524431-ced0-4144-adad-8722119a9e87.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The Pink Shirt-Style Collared Crossbody Bag Add a playful yet polished touch to your look with this stylish pink shirt-style collared crossbody bag. Featuring a structured silhouette, statement collar, button detailing, front pocket, and an adjustable crossbody strap, it's a chic everyday bag for casual outings, brunch dates, shopping trips, and weekend plans.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_778",
+    "seller_id": "seller_glownd",
+    "name": "Shirt-Style Collared Crossbody Bag - Chocolate Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_778.png",
+    "photos": [
+      "/products/glownd/glownd_778.png",
+      "https://glownd.com/wp-content/uploads/2026/08/b5c3da71-7832-400e-b936-983b684ae90f.png",
+      "https://glownd.com/wp-content/uploads/2026/08/32ea09de-9e94-42d6-ab0e-ecf61965c177.png",
+      "https://glownd.com/wp-content/uploads/2026/08/29034193-fc0e-40e3-a91e-0fd13e313f5b.png",
+      "https://glownd.com/wp-content/uploads/2026/08/728b7f57-a676-4834-ac74-f1f25bda116f.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "Elevate your everyday style with the Shirt-Style Collared Crossbody Bag - Chocolate Brown, featuring a structured silhouette, shirt-inspired collar, button details, and a practical front pocket. With both top handles and a detachable crossbody strap, it's perfect for everyday outings, brunch, shopping, and casual occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_777",
+    "seller_id": "seller_glownd",
+    "name": "Shirt-Style Collared Crossbody Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_777.png",
+    "photos": [
+      "/products/glownd/glownd_777.png",
+      "https://glownd.com/wp-content/uploads/2026/08/c98949ea-0a0d-4150-a66e-8539f7c41830.png",
+      "https://glownd.com/wp-content/uploads/2026/08/fad4ef2f-9c84-438d-939e-2855dd5b4692.png",
+      "https://glownd.com/wp-content/uploads/2026/08/8ba85624-3de9-4220-8314-777035191dbb.png",
+      "https://glownd.com/wp-content/uploads/2026/08/17c1a320-2767-403d-a7eb-a44a9d62823f.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "A chic and versatile Shirt-Style Collared Crossbody Bag in Black, featuring a structured silhouette, statement collar detail, front button accents, and a convenient front pocket. Complete with top handles and an adjustable crossbody strap, it's perfect for everyday outings, brunch dates, shopping, and casual evenings.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_770",
+    "seller_id": "seller_glownd",
+    "name": "Amélie Dome Bag - Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_770.png",
+    "photos": [
+      "/products/glownd/glownd_770.png",
+      "https://glownd.com/wp-content/uploads/2026/08/8c18d55a-ab80-4b9f-b4ed-1c150ed99ee2.png",
+      "https://glownd.com/wp-content/uploads/2026/08/63be83a9-6bac-4028-badc-fbfd6fe2aaf4.png",
+      "https://glownd.com/wp-content/uploads/2026/08/79f7d4fc-dee2-4a0c-a818-48f547517038.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/444f3f91-e651-47fc-a3c8-d772497589ee.jpeg"
+    ],
+    "price": 3500,
+    "regular_price": 4000,
+    "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Dome Handbags",
+    "description": "The Amélie Dome Bag - Brown is a chic and versatile handbag featuring a structured dome silhouette, elegant brown accents, gold-tone hardware, and a sophisticated patterned finish. With top handles and a detachable shoulder strap, it's perfect for everyday outings, brunch dates, work, shopping, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_766",
+    "seller_id": "seller_glownd",
+    "name": "Amélie Dome Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_766.jpeg",
+    "photos": [
+      "/products/glownd/glownd_766.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/a357b9d1-524b-44fd-9956-7d38c5c2c5ee.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/45d82871-00e6-4bad-bcea-84ece690e050.png",
+      "https://glownd.com/wp-content/uploads/2026/08/2af57ba3-5b82-42e6-80f9-6dd1ab9b347b.png",
+      "https://glownd.com/wp-content/uploads/2026/08/4e514b82-b3dc-4de2-8211-e93c38f248ed.png",
+      "https://glownd.com/wp-content/uploads/2026/08/a592a677-6c87-480c-8621-664902d60288.png"
+    ],
+    "price": 3500,
+    "regular_price": 4000,
+    "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Dome Handbags",
+    "description": "The Amélie Dome Bag - Black is a chic and versatile structured handbag featuring a classic dome silhouette, elegant gold-tone hardware, black detailing, and a detachable shoulder strap. Perfect for everyday outings, brunch dates, dinners, shopping, and stylish occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_760",
+    "seller_id": "seller_glownd",
+    "name": "Amélie Dome Bag - Ivory Cream",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_760.png",
+    "photos": [
+      "/products/glownd/glownd_760.png",
+      "https://glownd.com/wp-content/uploads/2026/08/00c1ad6b-ff20-43eb-82c8-f1aecd33f2eb.png",
+      "https://glownd.com/wp-content/uploads/2026/08/02e3ba7f-5b61-4105-a02f-4a91f06f5b16.png",
+      "https://glownd.com/wp-content/uploads/2026/08/cc811b59-ae37-426f-8f50-e81a692a3791.png",
+      "https://glownd.com/wp-content/uploads/2026/08/aa201137-8548-4ee4-8604-6beba6dc9969.png"
+    ],
+    "price": 3500,
+    "regular_price": 4000,
+    "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Dome Handbags",
+    "description": "The Amélie Dome Bag - Ivory Cream is an elegant structured handbag designed to elevate everyday and occasion looks. Featuring a classic dome shape, ivory cream finish, red piping, gold-tone hardware, top handles, and a detachable shoulder strap, it's the perfect accessory for adding a polished and feminine touch to any outfit.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_755",
+    "seller_id": "seller_glownd",
+    "name": "Valentina Pearl Dome Bag - Soft Grey",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_755.png",
+    "photos": [
+      "/products/glownd/glownd_755.png",
+      "https://glownd.com/wp-content/uploads/2026/08/84c6e1a7-d8df-435d-bb43-85b4c652383d.png",
+      "https://glownd.com/wp-content/uploads/2026/08/71d8749b-a808-40b4-836f-7c3306fac6ef.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/39646748-f35d-40f1-ba09-16881d231c61.png",
+      "https://glownd.com/wp-content/uploads/2026/08/5aef6567-3f8a-4c22-986e-4437d1b44e0e.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/efa0c7d0-d7ce-4949-ab50-8e94b5081ac9.png"
+    ],
+    "price": 3000,
+    "regular_price": 3400,
+    "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Dome Handbags",
+    "description": "The Valentine Pearl Dome Bag - Soft Grey is an elegant everyday handbag featuring a structured dome silhouette, soft grey finish, gold-tone hardware, and a detachable shoulder strap. Perfect for adding a polished touch to both casual and dressy outfits.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_744",
+    "seller_id": "seller_glownd",
+    "name": "Valentina Pearl Dome Bag - Soft Pink",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_744.png",
+    "photos": [
+      "/products/glownd/glownd_744.png",
+      "https://glownd.com/wp-content/uploads/2026/08/0c9e3376-d0e2-4b90-9a63-8a729d682b7e.png",
+      "https://glownd.com/wp-content/uploads/2026/08/4f42d9dc-e9b5-4ae9-9c3a-f1dc11875b8e.png",
+      "https://glownd.com/wp-content/uploads/2026/08/20d55969-463b-4b7f-a79e-12712fdc6b8b.png",
+      "https://glownd.com/wp-content/uploads/2026/08/12250543-e616-4128-94f8-66b6753d91be.png"
+    ],
+    "price": 3000,
+    "regular_price": 3400,
+    "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Dome Handbags",
+    "description": "Add a touch of feminine elegance to any outfit with the Valentine Pearl Dome Bag - Soft Pink. Featuring a structured dome silhouette, delicate textured detailing, polished gold-tone hardware, sturdy top handles and a detachable shoulder strap, this versatile pink handbag is perfect for everyday styling, brunch dates, dinners, special occasions and gifting. Pair it with neutrals, denim or elegant evening looks for an effortlessly chic finish.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_743",
+    "seller_id": "seller_glownd",
+    "name": "Roselle Grace Dome Bag - Blush Pink",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_743.png",
+    "photos": [
+      "/products/glownd/glownd_743.png",
+      "https://glownd.com/wp-content/uploads/2026/08/9c7574dc-c721-4572-9f50-610a3f961f62.png",
+      "https://glownd.com/wp-content/uploads/2026/08/10f7ed77-6558-41c5-afdf-5c2914a681b7.png"
+    ],
+    "price": 5000,
+    "regular_price": 5700,
+    "benefit_line": "Timeless dome silhouette with sturdy top handles & refined finish",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Dome Handbags",
+    "description": "The Roselle Grace Dome Bag Blush Pink is a chic, structured handbag featuring a feminine dome silhouette, elegant gold-tone hardware, and a soft blush-pink finish. Perfect for everyday outings, brunches, dates, dinners, and special occasions. Style it with dresses, tailored outfits, jeans, or neutral tones for an effortlessly polished look. It also makes a beautiful gift for birthdays, anniversaries, graduations, or any special woman in your life. 🎀",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_740",
+    "seller_id": "seller_glownd",
+    "name": "Alora Structured Shoulder Bag - Mocha Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_740.png",
+    "photos": [
+      "/products/glownd/glownd_740.png",
+      "https://glownd.com/wp-content/uploads/2026/08/bf18fad9-eda7-47ab-ae36-5968156bf60e.png",
+      "https://glownd.com/wp-content/uploads/2026/08/3d836395-c8e4-4b66-8481-9687b5c6e137.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "The Alora Structured Shoulder Bag - Mocha Brown is a versatile accessory for brunches, date nights, dinners, shopping days, office looks, and special occasions. Style it with cream, white, black, denim, beige, or earthy tones for an effortlessly polished look. Its timeless design also makes it a beautiful gift for birthdays, anniversaries, graduations, or any special occasion.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_737",
+    "seller_id": "seller_glownd",
+    "name": "Alora Structured Shoulder Bag - Burgundy",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_737.png",
+    "photos": [
+      "/products/glownd/glownd_737.png",
+      "https://glownd.com/wp-content/uploads/2026/08/215ccfec-d6d8-4487-aff3-9955d03bd8ce.png",
+      "https://glownd.com/wp-content/uploads/2026/08/bcb2b5a0-4994-4454-8e5e-328ad04ccd41.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "The Alora Structured Shoulder Bag - Burgundy is a sophisticated everyday bag featuring a structured silhouette, elegant flap closure, gold-tone statement hardware, and a rich burgundy finish. Perfect for elevating both casual and dressy outfits.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_734",
+    "seller_id": "seller_glownd",
+    "name": "Alora Structured Shoulder Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_734.png",
+    "photos": [
+      "/products/glownd/glownd_734.png",
+      "https://glownd.com/wp-content/uploads/2026/08/b6ef89e3-b3f5-40c2-b8f2-1ed5eb29768b.png",
+      "https://glownd.com/wp-content/uploads/2026/08/c072eb8e-392e-40dc-b70e-1c6a37114a08.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Elevate your everyday style with the Black Alora Structured Shoulder Bag. Featuring a sleek structured silhouette, curved flap design, elegant gold-tone hardware and a long shoulder strap, this sophisticated black bag is perfect for adding a polished touch to both casual and dressy outfits.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_731",
+    "seller_id": "seller_glownd",
+    "name": "Coke Heart Mini Top-Handle Bag - Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_731.png",
+    "photos": [
+      "/products/glownd/glownd_731.png",
+      "https://glownd.com/wp-content/uploads/2026/08/b3c3ebf7-fdc7-490c-bda1-8d55a102caff.png",
+      "https://glownd.com/wp-content/uploads/2026/08/3c5be02f-186d-4bd6-9e0d-cff73f0f3965.png",
+      "https://glownd.com/wp-content/uploads/2026/08/f5d5ee48-05a6-440b-bbfd-322e8cce76e6-1.jpeg"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Add timeless elegance to your look with the Coke Heart Mini Top-Handle Bag - Brown. Featuring a structured design, chic top handle, elegant gold-tone hardware, and a rich brown finish, this classy handbag is perfect for dates, dinners, weddings, brunches, parties, and special occasions. It comes beautifully packaged in a box, making it a perfect gift for anyone special.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_724",
+    "seller_id": "seller_glownd",
+    "name": "Coke Heart Mini Top-Handle Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_724.png",
+    "photos": [
+      "/products/glownd/glownd_724.png",
+      "https://glownd.com/wp-content/uploads/2026/08/86c776fd-4cf8-4bba-9efc-87841b1770c1.png",
+      "https://glownd.com/wp-content/uploads/2026/08/688e889b-a912-4448-9866-aca82e946285.png",
+      "https://glownd.com/wp-content/uploads/2026/08/f5d5ee48-05a6-440b-bbfd-322e8cce76e6.jpeg"
+    ],
+    "price": 4500,
+    "regular_price": 5100,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Meet the Coke Heart Mini Top-Handle Bag - Black, a chic and elegant mini handbag featuring a sleek structured design, polished gold-tone hardware, and a stylish top handle. Compact yet sophisticated, it's perfect for dinners, date nights, brunches, parties, events, and special occasions. Beautifully packaged in a box, it also makes a perfect gift for someone special.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_723",
+    "seller_id": "seller_glownd",
+    "name": "Modern Snake Print Crossbody Chain Bag - Peach",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_723.png",
+    "photos": [
+      "/products/glownd/glownd_723.png",
+      "https://glownd.com/wp-content/uploads/2026/08/74582f83-96f2-4492-908f-404b20cdbd70.png",
+      "https://glownd.com/wp-content/uploads/2026/08/5c65a98d-04b3-43f2-93b2-c0b8bae264ce.png",
+      "https://glownd.com/wp-content/uploads/2026/08/e543f8cd-7e68-4446-a21d-a52fdd34a0bd.png",
+      "https://glownd.com/wp-content/uploads/2026/08/7b02df74-01d3-48e0-9d3f-8f69c6492912.jpeg"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "Add a touch of sophisticated style to any outfit with the Modern Snake Print Crossbody Chain Bag - Peach. Featuring a textured snake-print finish, structured silhouette, statement buckle detail and sleek chain strap, this elegant women's handbag is perfect for brunches, date nights, dinners, parties and stylish everyday looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_718",
+    "seller_id": "seller_glownd",
+    "name": "Modern Snake Print Crossbody Chain Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_718.png",
+    "photos": [
+      "/products/glownd/glownd_718.png",
+      "https://glownd.com/wp-content/uploads/2026/08/15fe680e-8fc7-4c1d-b555-986074d4f377.png",
+      "https://glownd.com/wp-content/uploads/2026/08/448b59dc-b46d-4318-9457-6da046a08d01.png",
+      "https://glownd.com/wp-content/uploads/2026/08/34835dc8-3c4c-47bb-b14b-b01b99cfb1bb.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The Modern Snake Print Crossbody Chain Bag - Black is a chic statement bag featuring a textured snake-print finish, sleek black design, a bold horseshoe-style clasp, and a stylish gunmetal chain strap. Perfect for adding a polished touch to everyday outfits, dinner dates, brunches, parties, and evening occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_711",
+    "seller_id": "seller_glownd",
+    "name": "Modern Snake Print Crossbody Chain Bag - Red",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_711.png",
+    "photos": [
+      "/products/glownd/glownd_711.png",
+      "https://glownd.com/wp-content/uploads/2026/08/7f241f4a-fddd-441a-b724-309ca6e9032a.png",
+      "https://glownd.com/wp-content/uploads/2026/08/d7f90902-f2b2-4284-b175-43ad0837bccb.png",
+      "https://glownd.com/wp-content/uploads/2026/08/4042f90f-267e-4891-ae64-a94739d4a6d8.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "Make a statement with the Modern Snake Print Crossbody Chain Bag - Red. Featuring a bold textured snake-print finish, structured silhouette, sleek black detailing and a striking statement clasp, this stylish crossbody bag adds an elegant touch to any outfit. The chain strap makes it easy to wear from day to night.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_710",
+    "seller_id": "seller_glownd",
+    "name": "Sienna Buckle Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_710.png",
+    "photos": [
+      "/products/glownd/glownd_710.png",
+      "https://glownd.com/wp-content/uploads/2026/08/0286c82d-72b5-4c91-9764-c54a197a04ec.png",
+      "https://glownd.com/wp-content/uploads/2026/08/9148ec9a-f38e-4d33-a690-1dc1d801b6c2.png",
+      "https://glownd.com/wp-content/uploads/2026/08/bb7c23f9-4e7b-4e51-8aa8-e008d38aaad7.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Sienna Buckle Bag - Black is a sophisticated everyday handbag featuring a sleek black finish, croc-embossed texture, elegant gold-tone buckle detailing, and a structured silhouette. Perfect for elevating casual, office, dinner, and evening looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_706",
+    "seller_id": "seller_glownd",
+    "name": "Sienna Buckle Bag - Ivory",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_706.png",
+    "photos": [
+      "/products/glownd/glownd_706.png",
+      "https://glownd.com/wp-content/uploads/2026/08/e1bb5a3c-ee44-4d5f-8fd9-ba6e09e488b7.png",
+      "https://glownd.com/wp-content/uploads/2026/08/d61f3c67-8d2b-4645-b151-271fa065f9df.png",
+      "https://glownd.com/wp-content/uploads/2026/08/ad9c93b3-970f-423c-ad46-03512a2272da.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Sienna Buckle Bag - Ivory is an elegant structured handbag featuring a soft ivory finish, crocodile-textured detailing, and a statement gold-tone buckle framed with delicate chain accents. Its versatile design is perfect for brunches, date nights, dinners, weddings, birthdays, graduations, parties, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_697",
+    "seller_id": "seller_glownd",
+    "name": "Chic Clasp Crossbody Bag - White",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_697.png",
+    "photos": [
+      "/products/glownd/glownd_697.png",
+      "https://glownd.com/wp-content/uploads/2026/08/bedb2f0b-60a6-451a-8902-3021a563b597.png",
+      "https://glownd.com/wp-content/uploads/2026/08/3e54c253-d08f-423c-a688-29711b9c4797.png",
+      "https://glownd.com/wp-content/uploads/2026/08/b59bf806-0ebd-472f-bea3-78e19eee1159.png",
+      "https://glownd.com/wp-content/uploads/2026/08/8217977e-924f-47c2-bda0-0776d56aab51-1.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The White Chic Clasp Crossbody Bag is an elegant, versatile accessory featuring a crisp white finish, structured design, and distinctive C-shaped gold clasp. Perfect for elevating your look at brunches, weddings, date nights, dinners, birthdays, graduations, parties, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_693",
+    "seller_id": "seller_glownd",
+    "name": "Chic Clasp Crossbody Bag - Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_693.png",
+    "photos": [
+      "/products/glownd/glownd_693.png",
+      "https://glownd.com/wp-content/uploads/2026/08/22824968-3586-4bea-ac39-5cd1a4ec2d9b-3.png",
+      "https://glownd.com/wp-content/uploads/2026/08/5c2c68f8-86ac-4fc8-9db4-dd3e3b104518.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/aee06090-7b55-4027-a777-44fc4dbfee4b.jpeg"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The Brown Chic Clasp Crossbody Bag is a timeless and elegant everyday accessory featuring a rich brown finish, structured silhouette, and distinctive C-shaped gold clasp. Perfect for adding a polished touch to casual and dressy outfits, from brunches and shopping days to dinners, weddings, birthdays, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_687",
+    "seller_id": "seller_glownd",
+    "name": "Chic Clasp Crossbody Bag - Red",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_687.png",
+    "photos": [
+      "/products/glownd/glownd_687.png",
+      "https://glownd.com/wp-content/uploads/2026/08/58d55a19-a6fb-4a44-92bf-71ce8f4899e6.png",
+      "https://glownd.com/wp-content/uploads/2026/08/1d54be26-f4e2-45ab-85d2-d277e977d531.png",
+      "https://glownd.com/wp-content/uploads/2026/08/87a6d580-e6e9-404a-ad97-ed76f5ba7e83-1.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The Red Chic Clasp Crossbody Bag is a stylish statement accessory featuring a rich red finish, structured silhouette, and distinctive C-shaped gold clasp. Perfect for adding a chic pop of colour to your look for brunches, date nights, dinners, weddings, parties, birthdays, shopping days, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_682",
+    "seller_id": "seller_glownd",
+    "name": "Chic Clasp Crossbody Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_682.png",
+    "photos": [
+      "/products/glownd/glownd_682.png",
+      "https://glownd.com/wp-content/uploads/2026/08/ec4fddae-369f-4695-b8cd-296e8f5cc9a4.png",
+      "https://glownd.com/wp-content/uploads/2026/08/8031f505-6460-47de-855a-b13a7687c196-1-1.png",
+      "https://glownd.com/wp-content/uploads/2026/08/8296dfca-cc36-40dd-8a42-9a53350cfa5e.png",
+      "https://glownd.com/wp-content/uploads/2026/08/e879057e-b1ac-44b2-b5cf-1dc9e6dd0ea2.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Versatile hands-free crossbody with adjustable strap & secure closure",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Crossbody Bags",
+    "description": "The Chic Clasp Crossbody Bag - Black is a stylish everyday bag featuring a sleek structured design, distinctive C-shaped front clasp, and elegant gold-tone hardware. Its versatile black finish makes it perfect for both casual and dressy looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_675",
+    "seller_id": "seller_glownd",
+    "name": "Monogram Chain Shoulder Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_675.png",
+    "photos": [
+      "/products/glownd/glownd_675.png",
+      "https://glownd.com/wp-content/uploads/2026/08/4ccbd1fd-869b-492e-a577-bc04bc2a825e.png",
+      "https://glownd.com/wp-content/uploads/2026/08/2622f1cb-b581-4a34-98e5-b8a3dc71d6d0.png",
+      "https://glownd.com/wp-content/uploads/2026/08/80b7b30c-0059-4e22-b090-0a3371171de7-1.png",
+      "https://glownd.com/wp-content/uploads/2026/08/611270a2-7f81-4827-8b2f-8bc14f2cd1f9.png",
+      "https://glownd.com/wp-content/uploads/2026/08/1bd11a56-e3c6-4ee0-82e5-d7eaa3c1d73d.png"
+    ],
+    "price": 2800,
+    "regular_price": 3200,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "The Black Monogram Chain Shoulder Bag is a stylish everyday accessory featuring a sleek black monogram design, elegant gold-tone chain detailing, and a signature round clasp. Compact yet practical, it adds a chic, polished touch to both casual and dressy outfits.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_668",
+    "seller_id": "seller_glownd",
+    "name": "Monogram Chain Shoulder Bag - White",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_668.png",
+    "photos": [
+      "/products/glownd/glownd_668.png",
+      "https://glownd.com/wp-content/uploads/2026/08/14809d62-43ec-46b1-aa84-1140ed93cdf3.png",
+      "https://glownd.com/wp-content/uploads/2026/08/0d5fe711-574b-4179-bc97-f2a728d4a026.png",
+      "https://glownd.com/wp-content/uploads/2026/08/f832130c-cf2d-46e1-820e-58339b7f8bb7.png",
+      "https://glownd.com/wp-content/uploads/2026/08/2764db70-0d49-42f6-93e5-5deb30174165.png",
+      "https://glownd.com/wp-content/uploads/2026/08/bf89fec9-4485-42b3-b720-3fe86a147812.png"
+    ],
+    "price": 2800,
+    "regular_price": 3200,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Elevate your everyday style with our White Monogram Chain Shoulder Bag, featuring a chic monogram pattern, elegant gold-tone chain detailing, and a versatile design. Perfect for everyday wear, brunch dates, shopping, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_660",
+    "seller_id": "seller_glownd",
+    "name": "Monogram Chain Shoulder Bag - Pink",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_660.png",
+    "photos": [
+      "/products/glownd/glownd_660.png",
+      "https://glownd.com/wp-content/uploads/2026/08/a4851007-0c83-4563-a16c-7a8fe30adf07.png",
+      "https://glownd.com/wp-content/uploads/2026/08/0455d17f-72c0-49ee-a905-409bbb4bc391.png",
+      "https://glownd.com/wp-content/uploads/2026/08/c6204d6e-b079-4c6a-9f70-5ca65361ee53.png",
+      "https://glownd.com/wp-content/uploads/2026/08/6f7c4782-97be-4347-b65a-5106d254ee76.png",
+      "https://glownd.com/wp-content/uploads/2026/08/6882c690-c3a7-4413-8a76-f02f8ab257d6.png"
+    ],
+    "price": 2800,
+    "regular_price": 3200,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Add a feminine touch to your everyday style with this Pink Monogram Chain Shoulder Bag. Featuring a stylish monogram pattern, elegant gold-tone chain detailing, and a versatile design, it's perfect for casual outings, brunch dates, shopping, and everyday wear.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_652",
+    "seller_id": "seller_glownd",
+    "name": "Monogram Chain Shoulder Bag - Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_652.png",
+    "photos": [
+      "/products/glownd/glownd_652.png",
+      "https://glownd.com/wp-content/uploads/2026/08/7e4dbdb7-6f64-4a7c-9bea-6ff5827053fa-1.png",
+      "https://glownd.com/wp-content/uploads/2026/08/1ec735cd-bd8a-4bb1-ba60-d855ecc64352.png",
+      "https://glownd.com/wp-content/uploads/2026/08/42ad3c86-6266-4d7d-ac78-624c73865f10.png",
+      "https://glownd.com/wp-content/uploads/2026/08/ef225a67-eb55-4636-868b-5b37d6e10f20.png",
+      "https://glownd.com/wp-content/uploads/2026/08/746f053b-946a-4a0a-972f-818647045437.png"
+    ],
+    "price": 2800,
+    "regular_price": 3200,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Brown Monogram Chain Shoulder Bag - A chic and versatile shoulder bag featuring a stylish monogram design, elegant gold-tone chain detailing, and a structured yet relaxed silhouette. Perfect for adding a polished touch to everyday and evening outfits.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_637",
+    "seller_id": "seller_glownd",
+    "name": "Luxe Baguette Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_637.png",
+    "photos": [
+      "/products/glownd/glownd_637.png",
+      "https://glownd.com/wp-content/uploads/2026/08/b48ecddb-20a8-4c91-89af-67ad8d777458.png",
+      "https://glownd.com/wp-content/uploads/2026/08/92a3044c-147b-4ca8-aac4-76e3368069c4.png",
+      "https://glownd.com/wp-content/uploads/2026/08/aa1ceb85-c5b6-4fd6-8b20-660c4d043b25.png",
+      "https://glownd.com/wp-content/uploads/2026/08/10b61686-4ceb-40b3-84ff-79c4688a0c0b.png",
+      "https://glownd.com/wp-content/uploads/2026/08/e584f3d4-51d0-47fa-a161-f7669ff4a7b7.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Baguette Bags",
+    "description": "Elevate your everyday style with the Black Luxe Baguette Bag, featuring a sleek croc-embossed finish, structured silhouette, and elegant gold-tone clasp. A chic statement piece for both casual and dressy looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_636",
+    "seller_id": "seller_glownd",
+    "name": "Luxe Baguette Bag - Cream",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_636.png",
+    "photos": [
+      "/products/glownd/glownd_636.png",
+      "https://glownd.com/wp-content/uploads/2026/08/bdfca959-4adb-4a12-bfd0-8c818ac2f7f4.png",
+      "https://glownd.com/wp-content/uploads/2026/08/d3b49b3c-9165-4104-955b-9be4d8f60040.png",
+      "https://glownd.com/wp-content/uploads/2026/08/c958d52c-c42b-46d2-b73c-76991075c21e.png",
+      "https://glownd.com/wp-content/uploads/2026/08/a325efbb-8efb-47fc-90fc-3d008fc74cf3.png",
+      "https://glownd.com/wp-content/uploads/2026/08/8ea83095-f2e5-4319-a4d8-a19ebc4f08f7.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Baguette Bags",
+    "description": "The Cream Luxe Baguette Bag is a chic and versatile shoulder bag featuring a soft cream finish, croc-textured design, structured silhouette, and elegant gold-tone clasp. Perfect for adding a sophisticated touch to any outfit.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_630",
+    "seller_id": "seller_glownd",
+    "name": "Luxe Baguette Bag - Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_630.png",
+    "photos": [
+      "/products/glownd/glownd_630.png",
+      "https://glownd.com/wp-content/uploads/2026/08/28508f12-5a56-431d-8bb8-6f77b47f3ddd.png",
+      "https://glownd.com/wp-content/uploads/2026/08/f1351daf-29db-4926-b7c8-622e4a30f454.png",
+      "https://glownd.com/wp-content/uploads/2026/08/7f7eda84-f464-44fc-8c0d-b4e484261e51.png",
+      "https://glownd.com/wp-content/uploads/2026/08/55eaca98-043b-4e8d-a37c-7f888e54e0a4.png",
+      "https://glownd.com/wp-content/uploads/2026/08/3ddb8ff6-b93b-4c08-9df8-ee71346be300.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Baguette Bags",
+    "description": "The Brown Luxe Baguette Bag is a chic and timeless shoulder bag featuring a rich brown finish, elegant textured design, structured silhouette, and polished gold-tone clasp. Perfect for elevating everyday, casual, office, and evening looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_624",
+    "seller_id": "seller_glownd",
+    "name": "Luxe Baguette Bag - Lilac",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_624.png",
+    "photos": [
+      "/products/glownd/glownd_624.png",
+      "https://glownd.com/wp-content/uploads/2026/08/5b1aa273-c78d-4f5d-98bb-d8210ff084f8.png",
+      "https://glownd.com/wp-content/uploads/2026/08/55b607a9-0904-426c-bd7f-ff409b36e342.png",
+      "https://glownd.com/wp-content/uploads/2026/08/853acb32-cd9c-4b96-be66-5c0389918f87.png",
+      "https://glownd.com/wp-content/uploads/2026/08/1dea17a9-4d56-41f3-8170-1b674e765b59.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Baguette Bags",
+    "description": "The Lilac Luxe Baguette Bag is a stylish statement handbag featuring a beautiful lilac finish, textured embossed design, structured baguette shape, and elegant gold-tone hardware. Perfect for everyday outfits, brunch dates, dinners, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_617",
+    "seller_id": "seller_glownd",
+    "name": "Croc-Embossed Shoulder Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_617.png",
+    "photos": [
+      "/products/glownd/glownd_617.png",
+      "https://glownd.com/wp-content/uploads/2026/08/ade3cccd-095b-4bfd-8588-fd034b5bdae7.png",
+      "https://glownd.com/wp-content/uploads/2026/08/53d42751-002c-4163-901f-cc20d3a8e2be-1.png",
+      "https://glownd.com/wp-content/uploads/2026/08/0fff6025-7155-40d2-9738-890f622350f6.png",
+      "https://glownd.com/wp-content/uploads/2026/08/504d4e88-64a7-4ddb-967e-435e514af02a.png",
+      "https://glownd.com/wp-content/uploads/2026/08/8493f322-98f2-4380-812e-6fe83bb910c9.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Black Croc-Embossed Shoulder Bag - A sleek and stylish black shoulder bag featuring a textured croc-embossed finish, structured silhouette, and adjustable strap. Perfect for elevating everyday outfits, workwear, dinners, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_599",
+    "seller_id": "seller_glownd",
+    "name": "Croc-Embossed Shoulder Bag - White & Brown",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_599.png",
+    "photos": [
+      "/products/glownd/glownd_599.png",
+      "https://glownd.com/wp-content/uploads/2026/08/02645955-acdf-4e74-a8b7-1b09a9d81dab.png",
+      "https://glownd.com/wp-content/uploads/2026/08/56eb87b2-9021-45d8-8cb9-81374932c92e.png",
+      "https://glownd.com/wp-content/uploads/2026/08/463a3a68-db76-494e-a97f-1c7107009613.png",
+      "https://glownd.com/wp-content/uploads/2026/08/e3ae3734-e7e5-4ef8-a1ad-96a017e489e4.png",
+      "https://glownd.com/wp-content/uploads/2026/08/4e1c06d9-027b-4c15-b4fa-2ae099b54db1.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "The White & Brown Croc-Embossed Shoulder Bag combines a chic two-tone design with a luxurious crocodile-inspired texture and elegant brown detailing. A versatile statement piece for everyday and dressy looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_598",
+    "seller_id": "seller_glownd",
+    "name": "Croc-Embossed Shoulder Bag - Beige",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_598.png",
+    "photos": [
+      "/products/glownd/glownd_598.png",
+      "https://glownd.com/wp-content/uploads/2026/08/9f33d912-5908-4c63-b38b-dafc66a4f378.png",
+      "https://glownd.com/wp-content/uploads/2026/08/0769e5f4-edf9-4d1c-8045-fb70ae6daeba.png",
+      "https://glownd.com/wp-content/uploads/2026/08/64a93bae-06e4-4e31-a829-159f31406b49.png",
+      "https://glownd.com/wp-content/uploads/2026/08/d0671faf-e691-4ffa-bdd4-7caaff9ec7e0.png",
+      "https://glownd.com/wp-content/uploads/2026/08/1f992915-644d-41e9-992d-5dfa3a3a8eee.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Elevate your everyday style with the Beige Croc-Embossed Shoulder Bag, featuring a sophisticated structured design, elegant brown trim, and a luxurious crocodile-inspired texture. Its versatile neutral tone makes it perfect for casual, work, brunch, and evening looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_588",
+    "seller_id": "seller_glownd",
+    "name": "Croc- Embossed Shoulder Bag - Black & White",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_588.png",
+    "photos": [
+      "/products/glownd/glownd_588.png",
+      "https://glownd.com/wp-content/uploads/2026/08/a336df41-cba1-4320-990d-36f1ceda104d.png",
+      "https://glownd.com/wp-content/uploads/2026/08/393ef1d0-9d4b-4d1f-8bf5-087d02945ecc.png",
+      "https://glownd.com/wp-content/uploads/2026/08/5f8b760b-24c8-4a95-a384-14490babe65b.png",
+      "https://glownd.com/wp-content/uploads/2026/08/eb41057b-8025-4068-99e8-0f3320236c0a.png"
+    ],
+    "price": 4000,
+    "regular_price": 4600,
+    "benefit_line": "Glossy crocodile-embossed texture with structured silhouette & premium clasp",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Elevate your everyday style with the Black & White Croc-Embossed Bag, a chic two-tone statement bag featuring a textured crocodile-inspired finish, structured silhouette, and elegant gold-tone hardware. Perfect for adding a polished touch to both casual and dressy outfits.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Glossy Croc Texture",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_574",
+    "seller_id": "seller_glownd",
+    "name": "Sparkle Mini Baguette Shoulder Bag - Gold",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_574.png",
+    "photos": [
+      "/products/glownd/glownd_574.png",
+      "https://glownd.com/wp-content/uploads/2026/08/43b135f9-b440-4c25-9ae0-ab5ade9adc77.png",
+      "https://glownd.com/wp-content/uploads/2026/08/bb588212-0232-405f-9f71-ade08b126055.png",
+      "https://glownd.com/wp-content/uploads/2026/08/da8e3d02-b4b5-438c-abc3-bde6b63164a8.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Add a touch of effortless glamour to your look with the Gold Sparkle Mini Baguette Shoulder Bag. Featuring a soft champagne-gold shimmer, elegant curved silhouette, delicate silver chain detailing, and charming pearl accents, this compact bag is perfect for elevating both casual and dressy outfit",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_573",
+    "seller_id": "seller_glownd",
+    "name": "Sparkle Mini Baguette Shoulder Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_573.png",
+    "photos": [
+      "/products/glownd/glownd_573.png",
+      "https://glownd.com/wp-content/uploads/2026/08/5a9bfe88-d528-48ae-99e0-332e0fe4b87d.png",
+      "https://glownd.com/wp-content/uploads/2026/08/2565cea4-baca-47bc-bd2f-8abd83834f5a.png",
+      "https://glownd.com/wp-content/uploads/2026/08/32411908-d48d-4e0a-97ad-e6cd1730afa1.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/dd778b47-2d95-4e49-b342-b13a40f0668f.jpeg"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "The Black Sparkle Mini Baguette Shoulder Bag is a chic, compact accessory featuring a shimmering black finish, curved baguette silhouette, silver chain detailing, and a stylish charm accent. Perfect for adding a touch of sparkle to your look for date nights, parties, dinners, birthdays, events, and evening outings.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_572",
+    "seller_id": "seller_glownd",
+    "name": "Sparkle Mini Baguette Shoulder Bag - Silver",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_572.png",
+    "photos": [
+      "/products/glownd/glownd_572.png",
+      "https://glownd.com/wp-content/uploads/2026/08/3d748db9-8fc9-4402-86bb-c574d7aed140.png",
+      "https://glownd.com/wp-content/uploads/2026/08/51e44c6b-dede-4a28-b0bd-534bf4300809.png",
+      "https://glownd.com/wp-content/uploads/2026/08/cd5f7808-c486-4a19-951e-1c0751533e07.png"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Add a touch of sparkle to your look with the Silver Sparkle Mini Baguette Shoulder Bag. Designed with a shimmering silver finish, compact baguette shape, statement chain details, and a versatile shoulder strap, it's the perfect accessory for parties, date nights, dinners, events, and stylish evenings out.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_571",
+    "seller_id": "seller_glownd",
+    "name": "Sparkle Mini Baguette Shoulder Bag - Pink",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_571.jpeg",
+    "photos": [
+      "/products/glownd/glownd_571.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/d01e5e39-1ef6-4432-91ec-fd3a273f54b2.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/c12b11ad-cf20-49b8-84b1-5d4bfe9bb002.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/f8114a49-8ff8-4705-9715-f643244b6e01.jpeg"
+    ],
+    "price": 2500,
+    "regular_price": 2800,
+    "benefit_line": "Chic shoulder bag designed to effortlessly elevate day-to-night outfits",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Shoulder Bags",
+    "description": "Add a pretty touch of sparkle to your outfit with the Pink Sparkle Mini Baguette Shoulder Bag. Featuring a soft pink shimmer, compact baguette shape, and eye-catching silver details, it's perfect for brunches, date nights, parties, and special occasions.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_566",
+    "seller_id": "seller_glownd",
+    "name": "Mini Denim Top Handle Bag - Army Green",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_566.png",
+    "photos": [
+      "/products/glownd/glownd_566.png",
+      "https://glownd.com/wp-content/uploads/2026/08/2c221f7c-63f0-4f6f-8d8a-8532889fbc4e.png",
+      "https://glownd.com/wp-content/uploads/2026/08/ce6fd338-bfef-473c-8abe-cad899e3eda4.png",
+      "https://glownd.com/wp-content/uploads/2026/08/028ada85-9ee1-41b8-99c1-975eb2851f64.png"
+    ],
+    "price": 3500,
+    "regular_price": 4000,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Add a stylish touch to your everyday looks with the Army Green Mini Denim Top Handle Bag. Featuring a structured mini silhouette, textured denim finish, curved flap, and distinctive knotted rope handles, this versatile bag is perfect for casual outings, brunch, shopping, dates, and everyday styling.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_558",
+    "seller_id": "seller_glownd",
+    "name": "Mini Denim Top Handle Bag - Light Blue",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_558.jpeg",
+    "photos": [
+      "/products/glownd/glownd_558.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/b4cd8c15-3841-456f-a316-7fd9b4db0327.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/c547e015-e773-4021-a11a-fce11b2535cc.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/874095be-481d-46ba-843f-ec44e09d13f6.jpeg"
+    ],
+    "price": 3500,
+    "regular_price": 4000,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "The Light Blue Mini Denim Top Handle Bag is a chic and versatile accessory featuring a structured silhouette, curved flap and unique knotted handle. Its soft light-blue denim finish adds a fresh, casual touch to everyday outfits.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
+  },
+  {
+    "id": "prod_glownd_557",
+    "seller_id": "seller_glownd",
+    "name": "Mini Denim Top Handle Bag - Black",
+    "size": "Standard",
+    "photo": "/products/glownd/glownd_557.jpeg",
+    "photos": [
+      "/products/glownd/glownd_557.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/0b37df69-8f99-4bee-bfe6-dd3f0cb465e5.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/a810f05b-466b-4ea7-9c15-a632787db166.jpeg",
+      "https://glownd.com/wp-content/uploads/2026/08/a37713db-e3d3-429c-aa44-28fee0259993.jpeg"
+    ],
+    "price": 3500,
+    "regular_price": 4000,
+    "benefit_line": "Elegantly crafted handbag with timeless appeal and versatile styling",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Trending 👜",
+    "category": "Handbags & Bags",
+    "sub_category": "Luxury Handbags",
+    "description": "Black Mini Denim Top Handle Bag is a chic, compact accessory featuring a sleek black finish, structured shape, curved flap, and stylish knotted handle. Complete with a detachable shoulder strap, it's perfect for everyday outings, brunch, shopping, dinners, and casual looks.",
+    "highlights": [
+      "Premium Craftsmanship",
+      "Structured Silhouette",
+      "Lipa na M-Pesa Available",
+      "Countrywide Fast Dispatch"
+    ]
   }
 ];
 

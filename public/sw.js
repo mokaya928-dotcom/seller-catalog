@@ -3,7 +3,7 @@
  * Provides 100% offline flyer generation, catalog browsing, and instant loading
  */
 
-const VERSION = 'v3';
+const VERSION = 'v4';
 const CACHE_STATIC = `dailypost-static-${VERSION}`;
 const CACHE_MEDIA = `dailypost-media-${VERSION}`;
 const CACHE_FONTS = `dailypost-fonts-${VERSION}`;
