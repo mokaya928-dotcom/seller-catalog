@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
+import { initAppTheme } from './services/themeService';
+
+// Initialize token-based design system (data-theme on :root)
+initAppTheme();
 
 // Unregister service workers in development mode to prevent stale caching & blank screens
 if ('serviceWorker' in navigator) {

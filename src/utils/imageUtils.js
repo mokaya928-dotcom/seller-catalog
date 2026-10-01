@@ -82,32 +82,14 @@ export const DEFAULT_FALLBACK_PHOTOS = [
 ];
 
 /**
- * Returns at least 3 photos for any product in the entire catalog.
+ * Returns authentic photos belonging strictly to this product.
+ * Never pollutes single-product flyer pools with unrelated companion or category items.
  */
-export function getProductPhotosPool(product, companion = null) {
-  if (!product) return DEFAULT_FALLBACK_PHOTOS;
+export function getProductPhotosPool(product) {
+  if (!product) return [];
   const list = Array.isArray(product.photos) && product.photos.length > 0
     ? product.photos
     : (product.photo ? [product.photo] : (product.image_url ? [product.image_url] : []));
   const unique = Array.from(new Set(list.filter(Boolean)));
-
-  if (unique.length < 3) {
-    if (companion?.photo && !unique.includes(companion.photo)) {
-      unique.push(companion.photo);
-    }
-    const catPool = CATEGORY_COMPANIONS[product.category] || DEFAULT_FALLBACK_PHOTOS;
-    for (const photo of catPool) {
-      if (unique.length >= 3) break;
-      if (!unique.includes(photo)) {
-        unique.push(photo);
-      }
-    }
-    for (const photo of DEFAULT_FALLBACK_PHOTOS) {
-      if (unique.length >= 3) break;
-      if (!unique.includes(photo)) {
-        unique.push(photo);
-      }
-    }
-  }
-  return unique;
+  return unique.length > 0 ? unique : (product.photo ? [product.photo] : []);
 }

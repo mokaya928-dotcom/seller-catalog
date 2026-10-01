@@ -1,0 +1,271 @@
+/**
+ * Token-based Design Systems: Airbnb & Apple
+ * Extracted from design-systems/airbnb-design.md and design-systems/apple-design.md
+ * Never use hardcoded colors, fonts, radii, or spacing in theme-aware components.
+ */
+
+:root,
+:root[data-theme="airbnb"] {
+  /* Brand & Accent */
+  --theme-color-primary: #ff385c;
+  --theme-color-primary-active: #e00b41;
+  --theme-color-primary-disabled: #ffd1da;
+  --theme-color-primary-subtle: rgba(255, 56, 92, 0.08);
+  --theme-color-on-primary: #ffffff;
+  --theme-color-accent: #460479; /* Airbnb Luxe purple */
+  --theme-color-accent-subtle: #ffd1da;
+
+  /* Surfaces & Canvas */
+  --theme-color-canvas: #ffffff;
+  --theme-color-surface: #ffffff;
+  --theme-color-surface-soft: #f7f7f7;
+  --theme-color-surface-card: #ffffff;
+  --theme-color-surface-strong: #f2f2f2;
+
+  /* Text & Ink */
+  --theme-color-ink: #222222;
+  --theme-color-body: #3f3f3f;
+  --theme-color-muted: #6a6a6a;
+  --theme-color-muted-soft: #929292;
+  --theme-color-rating: #222222;
+
+  /* Hairlines & Borders */
+  --theme-color-border-hairline: #dddddd;
+  --theme-color-border-soft: #ebebeb;
+  --theme-color-border-strong: #c1c1c1;
+
+  /* Typography */
+  --theme-font-family: 'Airbnb Cereal VF', Circular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --theme-font-display: 'Airbnb Cereal VF', Circular, -apple-system, sans-serif;
+  --theme-font-weight-display: 600;
+  --theme-font-weight-bold: 700;
+  --theme-letter-spacing-display: -0.015em;
+  --theme-letter-spacing-tag: 0.32px;
+  --theme-text-transform-tag: uppercase;
+
+  /* Spacing Scale (4px base) */
+  --theme-spacing-xxs: 2px;
+  --theme-spacing-xs: 4px;
+  --theme-spacing-sm: 8px;
+  --theme-spacing-md: 12px;
+  --theme-spacing-base: 16px;
+  --theme-spacing-lg: 24px;
+  --theme-spacing-xl: 32px;
+  --theme-spacing-xxl: 48px;
+  --theme-spacing-section: 64px;
+
+  /* Component Spacing & Layout */
+  --theme-card-padding: 16px;
+  --theme-grid-gap: 16px;
+  --theme-section-padding-y: 48px;
+
+  /* Corner Radius */
+  --theme-radius-none: 0px;
+  --theme-radius-xs: 4px;
+  --theme-radius-sm: 8px;
+  --theme-radius-md: 14px;
+  --theme-radius-lg: 20px;
+  --theme-radius-xl: 32px;
+  --theme-radius-full: 9999px;
+
+  /* Component Radii */
+  --theme-radius-card: 14px;
+  --theme-radius-button: 8px;
+  --theme-radius-pill: 9999px;
+  --theme-radius-badge: 9999px;
+  --theme-radius-search: 9999px;
+  --theme-radius-photo: 14px;
+
+  /* Shadows (Single signature Airbnb shadow tier) */
+  --theme-shadow-card: none;
+  --theme-shadow-card-hover: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0;
+  --theme-shadow-dropdown: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0;
+  --theme-shadow-badge: rgba(0, 0, 0, 0.08) 0 2px 4px 0;
+  --theme-shadow-orb: 0 2px 8px rgba(255, 56, 92, 0.35);
+
+  /* Header & Navigation */
+  --theme-header-bg: #ffffff;
+  --theme-header-backdrop: none;
+  --theme-header-border: 1px solid var(--theme-color-border-hairline);
+  --theme-header-text: #222222;
+  --theme-header-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+
+  /* Footer */
+  --theme-footer-bg: #ffffff;
+  --theme-footer-text: #222222;
+  --theme-footer-muted: #6a6a6a;
+  --theme-footer-border: 1px solid var(--theme-color-border-hairline);
+
+  /* Price Badge */
+  --theme-price-badge-bg: #ffffff;
+  --theme-price-badge-text: #222222;
+  --theme-price-badge-border: 1px solid var(--theme-color-border-hairline);
+  --theme-price-badge-radius: 8px;
+
+  /* Layout Density */
+  --theme-layout-density: "dense";
+  --theme-hero-display: none;
+}
+
+:root[data-theme="apple"] {
+  /* Brand & Accent */
+  --theme-color-primary: #0071e3;
+  --theme-color-primary-active: #0077ed;
+  --theme-color-primary-disabled: #80b8f1;
+  --theme-color-primary-subtle: rgba(0, 113, 227, 0.08);
+  --theme-color-on-primary: #ffffff;
+  --theme-color-accent: #1d1d1f;
+  --theme-color-accent-subtle: #e8f2ff;
+
+  /* Surfaces & Canvas */
+  --theme-color-canvas: #ffffff;
+  --theme-color-surface: #f5f5f7;
+  --theme-color-surface-soft: #f5f5f7;
+  --theme-color-surface-card: #f5f5f7;
+  --theme-color-surface-strong: #e8e8ed;
+
+  /* Text & Ink */
+  --theme-color-ink: #1d1d1f;
+  --theme-color-body: #515154;
+  --theme-color-muted: #86868b;
+  --theme-color-muted-soft: #a1a1a6;
+  --theme-color-rating: #1d1d1f;
+
+  /* Hairlines & Borders */
+  --theme-color-border-hairline: #d2d2d7;
+  --theme-color-border-soft: #e5e5ea;
+  --theme-color-border-strong: #86868b;
+
+  /* Typography */
+  --theme-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
+  --theme-font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  --theme-font-weight-display: 700;
+  --theme-font-weight-bold: 700;
+  --theme-letter-spacing-display: -0.025em;
+  --theme-letter-spacing-tag: 0.6px;
+  --theme-text-transform-tag: uppercase;
+
+  /* Spacing Scale (Airy & expansive) */
+  --theme-spacing-xxs: 2px;
+  --theme-spacing-xs: 4px;
+  --theme-spacing-sm: 8px;
+  --theme-spacing-md: 12px;
+  --theme-spacing-base: 16px;
+  --theme-spacing-lg: 24px;
+  --theme-spacing-xl: 32px;
+  --theme-spacing-xxl: 48px;
+  --theme-spacing-section: 80px;
+
+  /* Component Spacing & Layout */
+  --theme-card-padding: 24px;
+  --theme-grid-gap: 24px;
+  --theme-section-padding-y: 64px;
+
+  /* Corner Radius (Apple squircle curvature) */
+  --theme-radius-none: 0px;
+  --theme-radius-xs: 6px;
+  --theme-radius-sm: 10px;
+  --theme-radius-md: 18px;
+  --theme-radius-lg: 24px;
+  --theme-radius-xl: 36px;
+  --theme-radius-full: 980px;
+
+  /* Component Radii */
+  --theme-radius-card: 20px;
+  --theme-radius-button: 980px;
+  --theme-radius-pill: 980px;
+  --theme-radius-badge: 980px;
+  --theme-radius-search: 12px;
+  --theme-radius-photo: 16px;
+
+  /* Shadows (Diffused, ambient, high-end studio glass) */
+  --theme-shadow-card: 0 2px 10px rgba(0, 0, 0, 0.03);
+  --theme-shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
+  --theme-shadow-dropdown: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --theme-shadow-badge: none;
+  --theme-shadow-orb: 0 4px 16px rgba(0, 113, 227, 0.3);
+
+  /* Header & Navigation (Frosted translucent material) */
+  --theme-header-bg: rgba(255, 255, 255, 0.82);
+  --theme-header-backdrop: blur(20px) saturate(180%);
+  --theme-header-border: 1px solid rgba(0, 0, 0, 0.08);
+  --theme-header-text: #1d1d1f;
+  --theme-header-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+
+  /* Footer (Subtle studio band) */
+  --theme-footer-bg: #f5f5f7;
+  --theme-footer-text: #515154;
+  --theme-footer-muted: #86868b;
+  --theme-footer-border: 1px solid #e5e5ea;
+
+  /* Price Badge */
+  --theme-price-badge-bg: rgba(0, 0, 0, 0.05);
+  --theme-price-badge-text: #1d1d1f;
+  --theme-price-badge-border: 1px solid transparent;
+  --theme-price-badge-radius: 980px;
+
+  /* Layout Density */
+  --theme-layout-density: "hero";
+  --theme-hero-display: block;
+}
+
+/* Theme-level utility classes applying custom variables directly */
+.theme-root {
+  background-color: var(--theme-color-canvas);
+  color: var(--theme-color-ink);
+  font-family: var(--theme-font-family);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.theme-card {
+  background-color: var(--theme-color-surface-card);
+  border-radius: var(--theme-radius-card);
+  border: 1px solid var(--theme-color-border-hairline);
+  box-shadow: var(--theme-shadow-card);
+  padding: var(--theme-card-padding);
+  transition: box-shadow 0.25s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-card:hover {
+  box-shadow: var(--theme-shadow-card-hover);
+}
+
+.theme-btn-primary {
+  background-color: var(--theme-color-primary);
+  color: var(--theme-color-on-primary);
+  border-radius: var(--theme-radius-button);
+  font-family: var(--theme-font-family);
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.theme-btn-primary:hover {
+  background-color: var(--theme-color-primary-active);
+}
+
+.theme-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.theme-btn-secondary {
+  background-color: var(--theme-color-surface-soft);
+  color: var(--theme-color-ink);
+  border-radius: var(--theme-radius-button);
+  border: 1px solid var(--theme-color-border-hairline);
+  font-family: var(--theme-font-family);
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-btn-secondary:hover {
+  background-color: var(--theme-color-surface-strong);
+}
+
+.theme-price-badge {
+  background-color: var(--theme-price-badge-bg);
+  color: var(--theme-price-badge-text);
+  border: var(--theme-price-badge-border);
+  border-radius: var(--theme-price-badge-radius);
+  font-family: var(--theme-font-family);
+  font-weight: 700;
+}

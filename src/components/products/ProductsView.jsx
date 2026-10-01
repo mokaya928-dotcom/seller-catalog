@@ -2,12 +2,13 @@ import React, { useState, useMemo } from 'react';
 import { Plus, Search, PackageCheck, Sparkles, Zap, FileSpreadsheet } from 'lucide-react';
 import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
-import ProductDetailModal from '../catalog/ProductDetailModal';
+import ProductPosterPreviewModal from './ProductPosterPreviewModal';
 import { executeSmartSearch } from '../../services/smartSearch';
 
 export default function ProductsView({
   products,
   seller,
+  ratio = 'status',
   onAddProduct,
   onUpdateProduct,
   onDeleteProduct,
@@ -304,12 +305,14 @@ export default function ProductsView({
         />
       )}
 
-      {/* Product Detail Preview Drawer */}
+      {/* Product Designed Poster Preview Modal */}
       {previewProduct && seller && (
-        <ProductDetailModal
+        <ProductPosterPreviewModal
           product={previewProduct}
           seller={seller}
+          initialRatio={ratio}
           onClose={() => setPreviewProduct(null)}
+          onShowToast={onShowToast}
         />
       )}
     </div>

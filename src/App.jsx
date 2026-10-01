@@ -17,9 +17,17 @@ import { scheduleService } from './services/scheduleService';
 import { notificationService } from './services/notificationService';
 import { DEFAULT_SELLER } from './data/starterData';
 import { usePwaInstall } from './hooks/usePwaInstall';
+import { parseDemoConfigFromUrl, resolveSellerConfig } from './services/configService';
 
 export default function App() {
   const pwa = usePwaInstall();
+  
+  // Ephemeral 10-Second Pitch Demo Link Parser (?demo=1&shop=...&phone=...&till=...&color=...)
+  const demoSellerConfig = useMemo(() => {
+    return parseDemoConfigFromUrl();
+  }, []);
+
+  const [isDemoPreview, setIsDemoPreview] = useState(Boolean(demoSellerConfig));
   
   // The app is built for the store owner. Customers access via shared ?view=catalog link!
   const getInitialView = () => {
@@ -33,12 +41,15 @@ export default function App() {
 
   const [viewMode, setViewMode] = useState(getInitialView); // 'catalog' | 'seller'
   const [isUnlocked, setIsUnlocked] = useState(() => {
+    if (demoSellerConfig) return true;
     return sessionStorage.getItem('seller_unlocked') === 'true';
   });
   const [isPreview, setIsPreview] = useState(false);
   const [activeTab, setActiveTab] = useState('today');
   const [ratio, setRatio] = useState('status'); // 'status' (9:16) or 'group' (4:5)
-  const [seller, setSeller] = useState(DEFAULT_SELLER);
+  const [seller, setSeller] = useState(() => {
+    return demoSellerConfig || DEFAULT_SELLER;
+  });
   const [products, setProducts] = useState([]);
   const [postedMap, setPostedMap] = useState({});
   const [todayOverrides, setTodayOverrides] = useState({});
@@ -97,7 +108,9 @@ export default function App() {
           storageService.getPostedStatus(todayDateStr),
           storageService.getDayOverrides(todayDateStr)
         ]);
-        setSeller(loadedSeller);
+        if (!demoSellerConfig) {
+          setSeller(loadedSeller);
+        }
         setProducts(loadedProducts);
         setPostedMap(loadedPosted);
         setTodayOverrides(loadedOverrides || {});
@@ -109,7 +122,27 @@ export default function App() {
       }
     }
     loadData();
-  }, [todayDateStr, showToast]);
+  }, [todayDateStr, showToast, demoSellerConfig]);
+
+  const handleSaveDemoToStore = async () => {
+    try {
+      const toSave = { ...seller, isDemoPreview: false };
+      await storageService.updateSeller(toSave);
+      setIsDemoPreview(false);
+      window.history.replaceState({}, '', window.location.pathname);
+      showToast(`Saved "${seller.shop_name}" as your active store!`, 'success');
+    } catch (e) {
+      showToast('Failed to save store profile', 'error');
+    }
+  };
+
+  const handleExitDemo = async () => {
+    setIsDemoPreview(false);
+    window.history.replaceState({}, '', window.location.pathname);
+    const persisted = await storageService.getSeller();
+    setSeller(persisted);
+    showToast('Exited demo preview mode', 'info');
+  };
 
   // Real-time synchronization: live updates across seller and customer phones
   useEffect(() => {
@@ -313,14 +346,44 @@ export default function App() {
   // -----------------------------------------------------------
   if (viewMode === 'catalog') {
     return (
-      <CatalogView
-        seller={seller}
-        products={products}
-        isPreview={isPreview}
-        onExitToSeller={handleExitCatalog}
-        onOpenSeller={handleOpenSeller}
-        pwa={pwa}
-      />
+      <div className="flex flex-col min-h-screen">
+        {isDemoPreview && (
+          <div className="bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white px-3 py-2 text-xs font-bold flex items-center justify-between shadow-md sticky top-0 z-50">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="bg-amber-950/60 text-amber-200 border border-amber-400/30 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-black flex-shrink-0">
+                Demo Pitch Link
+              </span>
+              <span className="truncate text-[11px] sm:text-xs">
+                Previewing as <strong>{seller.shop_name}</strong> (Till: {seller.mpesa_till}) • Ephemeral Preview
+              </span>
+            </div>
+            <div className="flex items-center gap-1.5 flex-shrink-0 ml-2">
+              <button
+                type="button"
+                onClick={handleSaveDemoToStore}
+                className="bg-white text-amber-900 hover:bg-amber-50 px-2.5 py-1 rounded-lg text-[11px] font-black transition shadow-xs"
+              >
+                Save Store
+              </button>
+              <button
+                type="button"
+                onClick={handleExitDemo}
+                className="text-amber-100 hover:text-white px-2 py-1 text-[11px] font-semibold"
+              >
+                Exit
+              </button>
+            </div>
+          </div>
+        )}
+        <CatalogView
+          seller={seller}
+          products={products}
+          isPreview={isPreview}
+          onExitToSeller={handleExitCatalog}
+          onOpenSeller={handleOpenSeller}
+          pwa={pwa}
+        />
+      </div>
     );
   }
 
@@ -342,6 +405,34 @@ export default function App() {
   // -----------------------------------------------------------
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col antialiased text-slate-900">
+      {isDemoPreview && (
+        <div className="bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white px-3 py-2 text-xs font-bold flex items-center justify-between shadow-md sticky top-0 z-50">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="bg-amber-950/60 text-amber-200 border border-amber-400/30 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-black flex-shrink-0">
+              Demo Pitch Link
+            </span>
+            <span className="truncate text-[11px] sm:text-xs">
+              Previewing for <strong>{seller.shop_name}</strong> (Till: {seller.mpesa_till}) • Ephemeral Preview
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5 flex-shrink-0 ml-2">
+            <button
+              type="button"
+              onClick={handleSaveDemoToStore}
+              className="bg-white text-amber-900 hover:bg-amber-50 px-2.5 py-1 rounded-lg text-[11px] font-black transition shadow-xs"
+            >
+              Save Store
+            </button>
+            <button
+              type="button"
+              onClick={handleExitDemo}
+              className="text-amber-100 hover:text-white px-2 py-1 text-[11px] font-semibold"
+            >
+              Exit
+            </button>
+          </div>
+        </div>
+      )}
       {/* Toast Feedback Notification */}
       {toast && (
         <Toast
@@ -406,6 +497,7 @@ export default function App() {
           <ProductsView
             products={products}
             seller={seller}
+            ratio={ratio}
             onAddProduct={handleAddProduct}
             onUpdateProduct={handleUpdateProduct}
             onDeleteProduct={handleDeleteProduct}

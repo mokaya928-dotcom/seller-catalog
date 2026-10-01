@@ -27,8 +27,10 @@ import {
   SwatchGalleryView,
   LayoutSelectorModal
 } from './CatalogLayoutTemplates';
+import { useTheme } from '../../hooks/useTheme';
 
 export default function CatalogView({ seller, products, onExitToSeller, onOpenSeller, isPreview = false, pwa }) {
+  const { theme, isAirbnb, isApple, toggleTheme } = useTheme();
   const [search, setSearch] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchRef = useRef(null);
@@ -326,42 +328,88 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
         </div>
       )}
 
-      {/* Sleek, Compact Luxury Branded Header */}
+      {/* Sleek, Token-Themed Storefront Header */}
       <header 
-        className={`text-white shadow-md relative overflow-hidden transition-all duration-300 border-b sticky top-0 z-30 ${
-          isSlate 
-            ? 'bg-gradient-to-r from-slate-950 via-[#0f172a] to-slate-900 border-slate-800' 
-            : 'bg-gradient-to-r from-emerald-950 via-[#064e3b] to-emerald-900 border-emerald-800/80'
-        }`}
+        className="shadow-xs relative overflow-hidden transition-all duration-300 sticky top-0 z-30"
+        style={{
+          backgroundColor: 'var(--theme-header-bg)',
+          backdropFilter: 'var(--theme-header-backdrop)',
+          WebkitBackdropFilter: 'var(--theme-header-backdrop)',
+          borderBottom: 'var(--theme-header-border)',
+          boxShadow: 'var(--theme-header-shadow)',
+          fontFamily: 'var(--theme-font-family)',
+          color: 'var(--theme-header-text)'
+        }}
       >
         <div className="max-w-md mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
           <div className="min-w-0">
             <h1 
-              className="text-xl sm:text-2xl font-black tracking-tight leading-none text-white truncate drop-shadow-sm"
+              className="text-xl sm:text-2xl font-black tracking-tight leading-none truncate"
               style={{ 
-                fontFamily: brandFontFamily,
-                letterSpacing: '0.02em'
+                fontFamily: 'var(--theme-font-display)',
+                letterSpacing: 'var(--theme-letter-spacing-display)',
+                color: 'var(--theme-header-text)'
               }}
             >
               {seller.shop_name || 'The Beauty Bar Kenya'}
             </h1>
-            <p className="text-xs text-emerald-100/85 font-medium flex items-center gap-1 truncate mt-1">
-              <MapPin className="w-3 h-3 text-amber-300 flex-shrink-0" />
+            <p 
+              className="text-xs font-medium flex items-center gap-1 truncate mt-1"
+              style={{ color: 'var(--theme-color-muted)' }}
+            >
+              <MapPin className="w-3 h-3 flex-shrink-0" style={{ color: 'var(--theme-color-primary)' }} />
               <span className="truncate">{seller.location || 'Jamia Mall, Nairobi CBD'}</span>
             </p>
           </div>
 
           <div className="flex items-center gap-2 flex-shrink-0">
+            {/* Token Theme Switcher: Airbnb ↔ Apple */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="px-2 py-1.5 text-[11px] font-extrabold border transition flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-2xs"
+              style={{
+                backgroundColor: 'var(--theme-color-surface-soft)',
+                borderColor: 'var(--theme-color-border-hairline)',
+                color: 'var(--theme-color-ink)',
+                borderRadius: 'var(--theme-radius-badge)'
+              }}
+              title={`Active Design System: ${isAirbnb ? 'Airbnb (Rausch)' : 'Apple (SF Pro)'}. Click to switch.`}
+              aria-label="Toggle Design System"
+            >
+              <span 
+                className="w-2.5 h-2.5 rounded-full shadow-2xs flex-shrink-0"
+                style={{
+                  backgroundColor: isAirbnb ? '#ff385c' : '#0071e3'
+                }}
+              />
+              <span className="font-mono text-[10px] uppercase tracking-wider hidden xs:inline">
+                {isAirbnb ? 'Airbnb' : 'Apple'}
+              </span>
+            </button>
+
             {/* Quick Bag / Cart Button */}
             <button
               type="button"
               onClick={() => setIsCheckoutOpen(true)}
-              className="relative bg-white/15 hover:bg-white/25 active:bg-white/35 text-white p-2 rounded-xl transition border border-white/20 active:scale-95 flex items-center justify-center"
+              className="relative p-2 transition border active:scale-95 flex items-center justify-center"
+              style={{
+                backgroundColor: 'var(--theme-color-surface-soft)',
+                borderColor: 'var(--theme-color-border-hairline)',
+                color: 'var(--theme-color-ink)',
+                borderRadius: 'var(--theme-radius-button)'
+              }}
               title="Open Order Bag"
             >
-              <ShoppingBag className="w-4 h-4 text-white" />
+              <ShoppingBag className="w-4 h-4" />
               {totalCartCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-amber-400 text-slate-950 font-black text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center shadow-md animate-pulse">
+                <span 
+                  className="absolute -top-1.5 -right-1.5 font-black text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center shadow-md animate-pulse"
+                  style={{
+                    backgroundColor: 'var(--theme-color-primary)',
+                    color: 'var(--theme-color-on-primary)'
+                  }}
+                >
                   {totalCartCount}
                 </span>
               )}
@@ -372,10 +420,16 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               <button
                 type="button"
                 onClick={pwa.promptInstall}
-                className="bg-amber-400/20 hover:bg-amber-400/30 text-amber-200 hover:text-white border border-amber-400/40 font-bold px-2.5 py-1.5 rounded-xl shadow-xs flex items-center gap-1.5 transition active:scale-95 text-xs"
+                className="border font-bold px-2.5 py-1.5 shadow-xs flex items-center gap-1.5 transition active:scale-95 text-xs"
+                style={{
+                  backgroundColor: 'var(--theme-color-surface-soft)',
+                  borderColor: 'var(--theme-color-border-hairline)',
+                  color: 'var(--theme-color-primary)',
+                  borderRadius: 'var(--theme-radius-button)'
+                }}
                 title="Install Store App for fast offline shopping"
               >
-                <Download className="w-3.5 h-3.5 stroke-[2.4px] text-amber-300" />
+                <Download className="w-3.5 h-3.5 stroke-[2.4px]" />
                 <span className="hidden xs:inline text-[11px] font-black uppercase tracking-wider">Install</span>
               </button>
             )}
@@ -385,15 +439,32 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               href={`https://wa.me/${cleanPhone}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-emerald-950 hover:bg-emerald-50 active:bg-emerald-100 font-extrabold px-3 py-1.5 rounded-xl shadow-md flex items-center gap-2 flex-shrink-0 transition transform active:scale-95 border border-emerald-100"
+              className="font-extrabold px-3 py-1.5 shadow-xs flex items-center gap-2 flex-shrink-0 transition transform active:scale-95 border"
+              style={{
+                backgroundColor: 'var(--theme-color-surface-card)',
+                borderColor: 'var(--theme-color-border-hairline)',
+                color: 'var(--theme-color-ink)',
+                borderRadius: 'var(--theme-radius-button)'
+              }}
               title="Chat with shop on WhatsApp"
             >
-              <div className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center shadow-xs">
+              <div 
+                className="w-6 h-6 text-white flex items-center justify-center shadow-xs"
+                style={{
+                  backgroundColor: '#25D366',
+                  borderRadius: 'var(--theme-radius-xs)'
+                }}
+              >
                 <WhatsAppIcon className="w-3.5 h-3.5 fill-white flex-shrink-0" />
               </div>
               <div className="flex flex-col text-left leading-none">
-                <span className="text-[8px] font-extrabold text-emerald-700 uppercase tracking-wider">Chat</span>
-                <span className="text-xs font-black text-gray-950 tracking-tight mt-0.5">WhatsApp</span>
+                <span 
+                  className="text-[8px] font-extrabold uppercase tracking-wider"
+                  style={{ color: 'var(--theme-color-primary)' }}
+                >
+                  Chat
+                </span>
+                <span className="text-xs font-black tracking-tight mt-0.5">WhatsApp</span>
               </div>
             </a>
           </div>
@@ -711,6 +782,43 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
           </div>
         </div>
 
+        {/* 10 Layout Formats Horizontal Pill Strip */}
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none -mx-1 px-1">
+          <button
+            type="button"
+            onClick={() => setIsLayoutModalOpen(true)}
+            className="flex items-center gap-1 px-2 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider bg-emerald-50 text-emerald-800 border border-emerald-200/80 hover:bg-emerald-100 transition flex-shrink-0"
+          >
+            <span>🎨 Layouts (10)</span>
+          </button>
+
+          {CATALOG_LAYOUTS.map((tpl) => {
+            const Icon = tpl.icon;
+            const isActive = viewMode === tpl.id;
+
+            return (
+              <button
+                key={tpl.id}
+                type="button"
+                onClick={() => handleSelectLayout(tpl.id)}
+                className={`flex items-center gap-1 px-2.5 py-1 rounded-xl text-[10px] font-bold whitespace-nowrap transition flex-shrink-0 ${
+                  isActive
+                    ? 'bg-slate-900 text-white shadow-xs'
+                    : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
+                }`}
+              >
+                <Icon className="w-3 h-3" />
+                <span>{tpl.shortName}</span>
+                {tpl.id === 'grid' && (
+                  <span className="text-[8px] bg-emerald-500/20 text-emerald-400 px-1 rounded font-black">
+                    Default
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
         {/* Clean Items Counter */}
         <div className="flex items-center justify-between text-[11px] font-medium text-slate-500 px-1 pt-1">
           <span>{filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'} available</span>
@@ -778,137 +886,348 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
           </div>
         ) : viewMode === 'grid' ? (
           /* ======================================================== */
-          /* VISUAL RECOGNITION 2-COLUMN GRID (PRIMARY DEFAULT)       */
-          /* Big photos, large prices, minimal text, instant scanning */
+          /* THEME-AWARE GRID VIEW (AIRBNB DENSE GRID & APPLE HERO)   */
           /* ======================================================== */
-          <div className="grid grid-cols-2 gap-3">
-            {filteredProducts.map((product) => {
-              const isSelected = Boolean(cart[product.id]);
-              const remaining = getProductRemaining(product);
-              const regularPrice = getProductRegularPrice(product);
-              const socialProof = getProductSocialProof(product);
-              const savings = regularPrice && regularPrice > product.price ? regularPrice - product.price : null;
+          <div className="space-y-4">
+            {/* Apple Theme: Single Hero Product Showcase with generous whitespace */}
+            {isApple && !search && selectedCategory === 'All' && filteredProducts.length > 0 && (() => {
+              const heroProduct = filteredProducts.find(p => p.featured) || filteredProducts[0];
+              const isHeroSelected = Boolean(cart[heroProduct.id]);
+              const heroRegularPrice = getProductRegularPrice(heroProduct);
+              const heroRemaining = getProductRemaining(heroProduct);
 
               return (
-                <article
-                  key={product.id}
-                  onClick={() => setViewingProduct(product)}
-                  className={`bg-white rounded-2xl overflow-hidden border transition-all cursor-pointer relative group flex flex-col justify-between shadow-xs hover:shadow-md ${
-                    isSelected
-                      ? 'border-emerald-500 ring-2 ring-emerald-500/20'
-                      : 'border-slate-200 hover:border-slate-300'
-                  }`}
+                <section
+                  className="p-5 border transition-all cursor-pointer relative group"
+                  style={{
+                    backgroundColor: 'var(--theme-color-surface-card)',
+                    borderRadius: 'var(--theme-radius-card)',
+                    borderColor: 'var(--theme-color-border-hairline)',
+                    boxShadow: 'var(--theme-shadow-card)',
+                    fontFamily: 'var(--theme-font-family)'
+                  }}
+                  onClick={() => setViewingProduct(heroProduct)}
                 >
-                  {/* HERO PRODUCT PHOTO */}
-                  <div className="w-full aspect-square bg-slate-50 relative flex items-center justify-center p-2 overflow-hidden border-b border-slate-100">
+                  <div className="flex items-center justify-between mb-2">
+                    <span 
+                      className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-0.5"
+                      style={{
+                        backgroundColor: 'var(--theme-color-surface-soft)',
+                        color: 'var(--theme-color-primary)',
+                        borderRadius: 'var(--theme-radius-badge)'
+                      }}
+                    >
+                      {heroProduct.badge || 'Hero Spotlight'}
+                    </span>
+                    <span 
+                      className="text-[11px] font-semibold"
+                      style={{ color: 'var(--theme-color-muted)' }}
+                    >
+                      Apple Studio Feature
+                    </span>
+                  </div>
+
+                  <div 
+                    className="w-full aspect-[4/3] max-h-60 mx-auto flex items-center justify-center p-3 overflow-hidden my-3"
+                    style={{
+                      backgroundColor: 'var(--theme-color-surface-soft)',
+                      borderRadius: 'var(--theme-radius-photo)'
+                    }}
+                  >
                     <img
-                      src={getOptimizedImageUrl(product.photo)}
-                      alt={product.name}
-                      loading="lazy"
+                      src={getOptimizedImageUrl(heroProduct.photo)}
+                      alt={heroProduct.name}
+                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-500"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = '/products/bbk-vaseline-lip.jpg';
                       }}
-                      className="w-full h-full object-contain group-hover:scale-105 transition duration-300 transform"
                     />
-
-                    {/* Floating Price Tag on Image (Instant Visual Recognition) */}
-                    <div className="absolute bottom-2 left-2 bg-slate-950/90 text-white font-black text-xs px-2 py-0.5 rounded-lg shadow-xs backdrop-blur-xs flex items-center gap-1.5 flex-wrap">
-                      <span>KES {Number(product.price).toLocaleString()}</span>
-                      {regularPrice && regularPrice > product.price && (
-                        <span className="line-through text-slate-400 text-[10px] font-medium">
-                          KES {Number(regularPrice).toLocaleString()}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Badge: Offer / Category / Savings */}
-                    <div className="absolute top-2 left-2 flex flex-col gap-1 items-start z-10">
-                      {savings ? (
-                        <span className="bg-amber-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md shadow-2xs">
-                          Save KES {savings.toLocaleString()}
-                        </span>
-                      ) : product.video ? (
-                        <span className="bg-slate-900 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md shadow-2xs flex items-center gap-0.5">
-                          <Play className="w-2.5 h-2.5 fill-current" />
-                          <span>Video</span>
-                        </span>
-                      ) : product.badge ? (
-                        <span className="bg-slate-900 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md shadow-2xs">
-                          {product.badge}
-                        </span>
-                      ) : null}
-                    </div>
-
-                    {/* Top-Right: Quick Add To Bag Toggle */}
-                    <button
-                      type="button"
-                      onClick={(e) => handleToggleBag(e, product.id)}
-                      className={`absolute top-2 right-2 px-2 py-1 rounded-lg flex items-center gap-1 text-[10px] font-bold transition shadow-xs z-10 ${
-                        isSelected
-                          ? 'bg-emerald-600 text-white'
-                          : 'bg-white/95 text-slate-700 hover:text-slate-900 border border-slate-200/80 hover:bg-white'
-                      }`}
-                      title={isSelected ? "In your bag" : "Add to order bag"}
-                    >
-                      {isSelected ? (
-                        <>
-                          <Check className="w-3 h-3 stroke-[3px]" />
-                          <span>In Bag</span>
-                        </>
-                      ) : (
-                        <>
-                          <Plus className="w-3 h-3 stroke-[2.5px]" />
-                          <span>+ Bag</span>
-                        </>
-                      )}
-                    </button>
                   </div>
 
-                  {/* Clean Visual Card Info */}
-                  <div className="p-2.5 flex flex-col justify-between flex-1 space-y-2">
-                    <div>
-                      <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
-                        {product.category || 'Beauty Care'}
-                      </div>
-                      <h2 className="text-xs font-bold text-slate-900 leading-snug line-clamp-2 mt-0.5 group-hover:text-slate-700 transition">
-                        {product.name}
-                      </h2>
-                      {search && product._matchReasons && product._matchReasons.length > 0 && (
-                        <div className="flex items-center gap-1 flex-wrap mt-1">
-                          {product._matchReasons.map((reason, idx) => (
-                            <span key={idx} className="bg-slate-100 text-slate-700 border border-slate-200 text-[10px] font-medium px-1.5 py-0.5 rounded-md">
-                              {reason}
-                            </span>
-                          ))}
-                        </div>
-                      )}
+                  <div className="space-y-1.5 mt-2">
+                    <h2 
+                      className="text-lg font-black leading-tight truncate"
+                      style={{
+                        color: 'var(--theme-color-ink)',
+                        fontFamily: 'var(--theme-font-display)',
+                        letterSpacing: 'var(--theme-letter-spacing-display)'
+                      }}
+                    >
+                      {heroProduct.name}
+                    </h2>
+                    <p 
+                      className="text-xs line-clamp-2 leading-relaxed"
+                      style={{ color: 'var(--theme-color-body)' }}
+                    >
+                      {heroProduct.benefit_line}
+                    </p>
 
-                      {/* Stock & Rating */}
-                      <div className="flex items-center justify-between gap-1 pt-1.5 mt-1 border-t border-slate-100 text-[10px]">
-                        <span className="font-semibold text-amber-800">
-                          🔥 {remaining} left
+                    <div className="flex items-baseline justify-between pt-2">
+                      <div className="flex items-baseline gap-2">
+                        <span 
+                          className="text-base font-black"
+                          style={{ color: 'var(--theme-color-ink)' }}
+                        >
+                          KES {Number(heroProduct.price).toLocaleString()}
                         </span>
-                        <span className="text-slate-400 font-medium flex items-center gap-0.5">
-                          <span className="text-amber-500">★</span>
-                          <span>{socialProof.rating}</span>
-                        </span>
+                        {heroRegularPrice && heroRegularPrice > heroProduct.price && (
+                          <span 
+                            className="text-xs line-through"
+                            style={{ color: 'var(--theme-color-muted)' }}
+                          >
+                            KES {Number(heroRegularPrice).toLocaleString()}
+                          </span>
+                        )}
                       </div>
+                      {heroRemaining !== null && (
+                        <span 
+                          className="text-[10px] font-bold px-2 py-0.5"
+                          style={{
+                            backgroundColor: 'var(--theme-color-surface-soft)',
+                            color: 'var(--theme-color-primary)',
+                            borderRadius: 'var(--theme-radius-badge)'
+                          }}
+                        >
+                          🔥 {heroRemaining} left
+                        </span>
+                      )}
                     </div>
 
-                    {/* 1-Tap WhatsApp Direct Button */}
-                    <button
-                      type="button"
-                      onClick={(e) => handleSingleOrder(e, product)}
-                      className="w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-bold py-2.5 px-2.5 rounded-xl flex items-center justify-center gap-1.5 text-xs shadow-xs transition transform active:scale-95"
+                    <div 
+                      className="flex items-center gap-2 pt-3"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      <WhatsAppIcon className="w-3.5 h-3.5 fill-white flex-shrink-0" />
-                      <span>Order on WhatsApp</span>
-                    </button>
+                      <button
+                        type="button"
+                        onClick={(e) => handleSingleOrder(e, heroProduct)}
+                        className="flex-1 py-2.5 px-3 text-xs font-bold flex items-center justify-center gap-1.5 transition active:scale-95 shadow-xs cursor-pointer"
+                        style={{
+                          backgroundColor: 'var(--theme-color-primary)',
+                          color: 'var(--theme-color-on-primary)',
+                          borderRadius: 'var(--theme-radius-button)'
+                        }}
+                      >
+                        <WhatsAppIcon className="w-3.5 h-3.5 fill-white" />
+                        <span>Order on WhatsApp</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={(e) => handleToggleBag(e, heroProduct.id)}
+                        className="py-2.5 px-3 text-xs font-bold flex items-center justify-center gap-1.5 border transition active:scale-95 cursor-pointer"
+                        style={{
+                          backgroundColor: isHeroSelected ? 'var(--theme-color-surface-soft)' : 'var(--theme-color-surface-card)',
+                          borderColor: 'var(--theme-color-border-hairline)',
+                          color: 'var(--theme-color-ink)',
+                          borderRadius: 'var(--theme-radius-button)'
+                        }}
+                      >
+                        {isHeroSelected ? (
+                          <>
+                            <Check className="w-3.5 h-3.5 stroke-[3px]" style={{ color: 'var(--theme-color-primary)' }} />
+                            <span>In Bag</span>
+                          </>
+                        ) : (
+                          <>
+                            <Plus className="w-3.5 h-3.5 stroke-[2.5px]" />
+                            <span>+ Bag</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
                   </div>
-                </article>
+                </section>
               );
-            })}
+            })()}
+
+            {/* Grid Cards (Airbnb dense grid or Apple showcase tiles) */}
+            <div 
+              className="grid grid-cols-2"
+              style={{ gap: 'var(--theme-grid-gap)' }}
+            >
+              {filteredProducts.map((product) => {
+                const isSelected = Boolean(cart[product.id]);
+                const remaining = getProductRemaining(product);
+                const regularPrice = getProductRegularPrice(product);
+                const socialProof = getProductSocialProof(product);
+                const savings = regularPrice && regularPrice > product.price ? regularPrice - product.price : null;
+
+                return (
+                  <article
+                    key={product.id}
+                    onClick={() => setViewingProduct(product)}
+                    className="overflow-hidden border transition-all duration-200 cursor-pointer relative group flex flex-col justify-between theme-card"
+                    style={{
+                      backgroundColor: 'var(--theme-color-surface-card)',
+                      borderRadius: 'var(--theme-radius-card)',
+                      borderColor: isSelected ? 'var(--theme-color-primary)' : 'var(--theme-color-border-hairline)',
+                      boxShadow: 'var(--theme-shadow-card)',
+                      fontFamily: 'var(--theme-font-family)'
+                    }}
+                  >
+                    {/* PRODUCT PHOTO */}
+                    <div 
+                      className="w-full aspect-square relative flex items-center justify-center p-2 overflow-hidden border-b"
+                      style={{
+                        backgroundColor: 'var(--theme-color-surface-soft)',
+                        borderColor: 'var(--theme-color-border-hairline)'
+                      }}
+                    >
+                      <img
+                        src={getOptimizedImageUrl(product.photo)}
+                        alt={product.name}
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = '/products/bbk-vaseline-lip.jpg';
+                        }}
+                        className="w-full h-full object-contain group-hover:scale-105 transition duration-300 transform"
+                      />
+
+                      {/* Floating Price Tag on Image */}
+                      <div 
+                        className="absolute bottom-2 left-2 text-xs px-2 py-0.5 font-black shadow-xs flex items-center gap-1.5 flex-wrap"
+                        style={{
+                          backgroundColor: 'var(--theme-price-badge-bg)',
+                          color: 'var(--theme-price-badge-text)',
+                          border: 'var(--theme-price-badge-border)',
+                          borderRadius: 'var(--theme-price-badge-radius)',
+                          fontFamily: 'var(--theme-font-family)'
+                        }}
+                      >
+                        <span>KES {Number(product.price).toLocaleString()}</span>
+                        {regularPrice && regularPrice > product.price && (
+                          <span 
+                            className="line-through text-[10px] font-medium"
+                            style={{ color: 'var(--theme-color-muted)' }}
+                          >
+                            KES {Number(regularPrice).toLocaleString()}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Badge: Guest favorite / Offer / Category */}
+                      <div className="absolute top-2 left-2 flex flex-col gap-1 items-start z-10">
+                        {savings ? (
+                          <span 
+                            className="text-[9px] font-bold px-2 py-0.5 shadow-2xs border"
+                            style={{
+                              backgroundColor: 'var(--theme-color-surface-card)',
+                              color: 'var(--theme-color-primary)',
+                              borderColor: 'var(--theme-color-border-hairline)',
+                              borderRadius: 'var(--theme-radius-badge)'
+                            }}
+                          >
+                            Save KES {savings.toLocaleString()}
+                          </span>
+                        ) : product.badge ? (
+                          <span 
+                            className="text-[9px] font-bold px-2 py-0.5 shadow-2xs border"
+                            style={{
+                              backgroundColor: 'var(--theme-color-surface-card)',
+                              color: 'var(--theme-color-ink)',
+                              borderColor: 'var(--theme-color-border-hairline)',
+                              borderRadius: 'var(--theme-radius-badge)',
+                              boxShadow: 'var(--theme-shadow-badge)'
+                            }}
+                          >
+                            {isAirbnb && product.featured ? 'Guest favorite' : product.badge}
+                          </span>
+                        ) : null}
+                      </div>
+
+                      {/* Top-Right: Quick Add To Bag Toggle */}
+                      <button
+                        type="button"
+                        onClick={(e) => handleToggleBag(e, product.id)}
+                        className="absolute top-2 right-2 px-2 py-1 flex items-center gap-1 text-[10px] font-bold transition shadow-xs z-10 border"
+                        style={{
+                          backgroundColor: isSelected ? 'var(--theme-color-primary)' : 'var(--theme-color-surface-card)',
+                          color: isSelected ? 'var(--theme-color-on-primary)' : 'var(--theme-color-ink)',
+                          borderColor: 'var(--theme-color-border-hairline)',
+                          borderRadius: 'var(--theme-radius-button)'
+                        }}
+                        title={isSelected ? "In your bag" : "Add to order bag"}
+                      >
+                        {isSelected ? (
+                          <>
+                            <Check className="w-3 h-3 stroke-[3px]" />
+                            <span>In Bag</span>
+                          </>
+                        ) : (
+                          <>
+                            <Plus className="w-3 h-3 stroke-[2.5px]" />
+                            <span>+ Bag</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+
+                    {/* Card Info */}
+                    <div 
+                      className="flex flex-col justify-between flex-1 space-y-2"
+                      style={{ padding: 'var(--theme-card-padding)' }}
+                    >
+                      <div>
+                        <div 
+                          className="text-[10px] font-bold uppercase tracking-wider"
+                          style={{ color: 'var(--theme-color-muted)' }}
+                        >
+                          {product.category || 'Beauty Care'}
+                        </div>
+                        <h2 
+                          className="text-xs font-bold leading-snug line-clamp-2 mt-0.5 transition"
+                          style={{
+                            color: 'var(--theme-color-ink)',
+                            fontFamily: 'var(--theme-font-display)'
+                          }}
+                        >
+                          {product.name}
+                        </h2>
+
+                        {/* Stock & Rating */}
+                        <div 
+                          className="flex items-center justify-between gap-1 pt-1.5 mt-1 border-t text-[10px]"
+                          style={{ borderColor: 'var(--theme-color-border-hairline)' }}
+                        >
+                          {remaining !== null && (
+                            <span 
+                              className="font-bold"
+                              style={{ color: 'var(--theme-color-primary)' }}
+                            >
+                              🔥 {remaining} left
+                            </span>
+                          )}
+                          <span 
+                            className="font-medium flex items-center gap-0.5"
+                            style={{ color: 'var(--theme-color-muted)' }}
+                          >
+                            <span style={{ color: 'var(--theme-color-rating)' }}>★</span>
+                            <span style={{ color: 'var(--theme-color-ink)' }}>{socialProof.rating}</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* 1-Tap Direct CTA */}
+                      <button
+                        type="button"
+                        onClick={(e) => handleSingleOrder(e, product)}
+                        className="w-full font-bold py-2.5 px-2.5 flex items-center justify-center gap-1.5 text-xs shadow-xs transition transform active:scale-95 cursor-pointer"
+                        style={{
+                          backgroundColor: 'var(--theme-color-primary)',
+                          color: 'var(--theme-color-on-primary)',
+                          borderRadius: 'var(--theme-radius-button)'
+                        }}
+                      >
+                        <WhatsAppIcon className="w-3.5 h-3.5 fill-white flex-shrink-0" />
+                        <span>Order on WhatsApp</span>
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         ) : viewMode === 'luxury_lookbook' ? (
           <LuxuryLookbookView
@@ -1156,41 +1475,82 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
         )}
       </main>
 
-      {/* Public Footer with Discreet Merchant Entrance */}
-      <footer className="max-w-md mx-auto px-4 mt-12 mb-8 text-center text-xs text-gray-500 space-y-2">
-        <div className="h-px bg-gray-200 w-24 mx-auto mb-4" />
-        <p className="font-bold text-gray-700">
-          {seller.shop_name || 'The Beauty Bar Kenya'}
-        </p>
-        <p className="text-[11px] text-gray-400">
-          {seller.location || 'Jamia Mall, Shop F47, Nairobi'} • Delivery Across Kenya
-        </p>
-        <p className="text-[10px] text-gray-400">
-          Direct WhatsApp Storefront • Instant Ordering
-        </p>
+      {/* Public Footer themed with token variables */}
+      <footer 
+        className="w-full mt-12 mb-8 py-8 px-4 text-center text-xs space-y-2 border-t"
+        style={{
+          backgroundColor: 'var(--theme-footer-bg)',
+          color: 'var(--theme-footer-text)',
+          borderColor: 'var(--theme-color-border-hairline)',
+          fontFamily: 'var(--theme-font-family)'
+        }}
+      >
+        <div className="max-w-md mx-auto space-y-2">
+          <div 
+            className="h-px w-24 mx-auto mb-4" 
+            style={{ backgroundColor: 'var(--theme-color-border-hairline)' }}
+          />
+          <p 
+            className="font-bold text-sm"
+            style={{ color: 'var(--theme-footer-text)' }}
+          >
+            {seller.shop_name || 'The Beauty Bar Kenya'}
+          </p>
+          <p 
+            className="text-[11px]"
+            style={{ color: 'var(--theme-footer-muted)' }}
+          >
+            {seller.location || 'Jamia Mall, Shop F47, Nairobi'} • Delivery Across Kenya
+          </p>
+          <p 
+            className="text-[10px]"
+            style={{ color: 'var(--theme-footer-muted)' }}
+          >
+            Direct WhatsApp Storefront • Instant Ordering
+          </p>
 
-        {seller.mpesa_till && (
-          <div className="pt-1">
-            <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-900 border border-emerald-200/80 px-3 py-1 rounded-full text-[11px] font-bold">
-              <span>Lipa na M-Pesa Till:</span>
-              <span className="font-mono font-black text-emerald-800">{seller.mpesa_till}</span>
-            </span>
-          </div>
-        )}
+          {seller.mpesa_till && (
+            <div className="pt-1">
+              <span 
+                className="inline-flex items-center gap-1.5 border px-3 py-1 text-[11px] font-bold"
+                style={{
+                  backgroundColor: 'var(--theme-color-surface-soft)',
+                  borderColor: 'var(--theme-color-border-hairline)',
+                  color: 'var(--theme-color-ink)',
+                  borderRadius: 'var(--theme-radius-badge)'
+                }}
+              >
+                <span>Lipa na M-Pesa Till:</span>
+                <span 
+                  className="font-mono font-black"
+                  style={{ color: 'var(--theme-color-primary)' }}
+                >
+                  {seller.mpesa_till}
+                </span>
+              </span>
+            </div>
+          )}
 
-        {/* PWA Install Button for Customers */}
-        {pwa && !pwa.isInstalled && (
-          <div className="pt-2">
-            <button
-              type="button"
-              onClick={pwa.promptInstall}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 px-3.5 py-1.5 rounded-full transition shadow-2xs active:scale-95 cursor-pointer"
-            >
-              <Download className="w-3.5 h-3.5 text-emerald-700" />
-              <span>Install {seller.shop_name || 'Beauty Bar'} App</span>
-            </button>
-          </div>
-        )}
+          {/* PWA Install Button for Customers */}
+          {pwa && !pwa.isInstalled && (
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={pwa.promptInstall}
+                className="inline-flex items-center gap-1.5 text-xs font-bold border px-3.5 py-1.5 transition shadow-2xs active:scale-95 cursor-pointer"
+                style={{
+                  backgroundColor: 'var(--theme-color-surface-card)',
+                  borderColor: 'var(--theme-color-border-hairline)',
+                  color: 'var(--theme-color-primary)',
+                  borderRadius: 'var(--theme-radius-button)'
+                }}
+              >
+                <Download className="w-3.5 h-3.5 stroke-[2.2px]" />
+                <span>Install {seller.shop_name || 'Beauty Bar'} App</span>
+              </button>
+            </div>
+          )}
+        </div>
       </footer>
 
       {/* Floating PWA Install Banner */}

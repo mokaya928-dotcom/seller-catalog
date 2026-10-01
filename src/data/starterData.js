@@ -100,9 +100,7 @@ export const CURATED_PRODUCTS = [
     "size": "21g",
     "photo": "/products/bbk-elf-brightening.webp",
     "photos": [
-      "/products/bbk-elf-brightening.webp",
-      "/products/bbk-elf-poreless.webp",
-      "/products/bbk-lagirl-kit.webp"
+      "/products/bbk-elf-brightening.webp"
     ],
     "companion_id": "prod_bbk_lagirl_kit",
     "video": "/products/bbk-elf-brightening.mp4",
@@ -130,9 +128,7 @@ export const CURATED_PRODUCTS = [
     "size": "21g",
     "photo": "/products/bbk-elf-poreless.webp",
     "photos": [
-      "/products/bbk-elf-poreless.webp",
-      "/products/bbk-elf-brightening.webp",
-      "/products/bbk-lagirl-kit.webp"
+      "/products/bbk-elf-poreless.webp"
     ],
     "companion_id": "prod_bbk_lagirl_kit",
     "video": "/products/bbk-elf-poreless.mp4",
