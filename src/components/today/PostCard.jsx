@@ -264,7 +264,7 @@ export default function PostCard({
               <img
                 src={renderedImageUrl}
                 alt={post.product.name}
-                className="w-full h-full object-contain cursor-pointer"
+                className="w-full h-full object-contain cursor-pointer rounded-2xl"
                 onClick={() => setIsPreviewOpen(true)}
               />
               <button

@@ -227,7 +227,7 @@ function drawCenteredTitleAndBenefit(ctx, title, benefit, centerX, startY, maxWi
  */
 function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, fill = '#064e3b', outline = '#f59e0b', kicker = '✦ SPECIAL OFFER PRICE • IN STOCK ✦', kickerColor = '#f59e0b', price = 'KES 1,850', wasPrice = null) {
   const x = Math.round(centerX - width / 2);
-  const cornerRadius = isStatus ? 36 : 28;
+  const cornerRadius = Math.round(height / 2);
 
   // Outer glow
   ctx.save();
@@ -294,7 +294,7 @@ function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, f
  */
 function drawAuthenticFooter(ctx, width, height, footerH, isStatus, config, palette, ctaHeader = 'ORDER ON WHATSAPP:') {
   const footerY = height - footerH;
-  const footerRadius = isStatus ? 36 : 28;
+  const footerRadius = isStatus ? 48 : 38;
 
   ctx.save();
   ctx.fillStyle = palette.mpesaBg || '#080c14';
@@ -397,12 +397,13 @@ async function renderEditorialMaison(product, seller, ratio = 'status', paletteO
   const boxY = headerH + (isStatus ? 25 : 15);
   const boxHeight = isStatus ? 1080 : 680;
 
+  const cardRadius = isStatus ? 60 : 48;
   ctx.fillStyle = '#141419';
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.fill();
   ctx.strokeStyle = 'rgba(212, 175, 55, 0.45)';
   ctx.lineWidth = 2.5;
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.stroke();
 
   // Top-left Leather / Material Pill
@@ -410,11 +411,11 @@ async function renderEditorialMaison(product, seller, ratio = 'status', paletteO
   ctx.font = `700 14px ${fontFam}`;
   const badgeW = Math.max(160, Math.round(ctx.measureText(materialBadge).width + 36));
   ctx.fillStyle = 'rgba(212, 175, 55, 0.2)';
-  roundRect(ctx, boxX + 24, boxY + 22, badgeW, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 22, badgeW, 42, 21);
   ctx.fill();
   ctx.strokeStyle = '#d4af37';
   ctx.lineWidth = 1.5;
-  roundRect(ctx, boxX + 24, boxY + 22, badgeW, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 22, badgeW, 42, 21);
   ctx.stroke();
   ctx.fillStyle = '#fef3c7';
   ctx.textAlign = 'center';
@@ -442,10 +443,13 @@ async function renderEditorialMaison(product, seller, ratio = 'status', paletteO
     const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
     const dw = Math.round(bounds.sWidth * scale);
     const dh = Math.round(bounds.sHeight * scale);
-    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
-      boxX + Math.round((boxWidth - dw) / 2),
-      boxY + 20 + Math.round((boxHeight - 20 - dh) / 2),
-      dw, dh);
+    const imgX = boxX + Math.round((boxWidth - dw) / 2);
+    const imgY = boxY + 20 + Math.round((boxHeight - 20 - dh) / 2);
+    ctx.save();
+    roundRect(ctx, imgX, imgY, dw, dh, isStatus ? 36 : 28);
+    ctx.clip();
+    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, imgX, imgY, dw, dh);
+    ctx.restore();
   }
 
   // 3. Centered Title & Benefit
@@ -521,19 +525,20 @@ async function renderGlossStudio(product, seller, ratio = 'status', paletteOverr
   const boxY = headerH + (isStatus ? 25 : 15);
   const boxHeight = isStatus ? 1080 : 680;
 
+  const cardRadius = isStatus ? 60 : 48;
   ctx.fillStyle = '#12121c';
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.fill();
 
   ctx.strokeStyle = '#ec4899';
   ctx.lineWidth = 3;
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.stroke();
 
   // Top Formulation Pill
   const formulationBadge = product.badge || 'PRO FORMULA';
   ctx.fillStyle = '#ec4899';
-  roundRect(ctx, boxX + 24, boxY + 22, 190, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 22, 190, 42, 21);
   ctx.fill();
   ctx.fillStyle = '#ffffff';
   ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -560,10 +565,13 @@ async function renderGlossStudio(product, seller, ratio = 'status', paletteOverr
     const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
     const dw = Math.round(bounds.sWidth * scale);
     const dh = Math.round(bounds.sHeight * scale);
-    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
-      boxX + Math.round((boxWidth - dw) / 2),
-      boxY + 20 + Math.round((boxHeight - 20 - dh) / 2),
-      dw, dh);
+    const imgX = boxX + Math.round((boxWidth - dw) / 2);
+    const imgY = boxY + 20 + Math.round((boxHeight - 20 - dh) / 2);
+    ctx.save();
+    roundRect(ctx, imgX, imgY, dw, dh, isStatus ? 36 : 28);
+    ctx.clip();
+    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, imgX, imgY, dw, dh);
+    ctx.restore();
   }
 
   // 3. Centered Title & Benefit
@@ -636,15 +644,16 @@ async function renderPastelBoutique(product, seller, ratio = 'status', paletteOv
   const boxY = headerH + (isStatus ? 25 : 15);
   const boxHeight = isStatus ? 1080 : 680;
 
-  drawArchCard(ctx, boxX, boxY, boxWidth, boxHeight, 28, '#ffffff', '#f472b6', 3);
+  const cardRadius = isStatus ? 60 : 48;
+  drawArchCard(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius, '#ffffff', '#f472b6', 3);
 
   // Top-Left Hydration Pill
   ctx.fillStyle = '#fdf2f8';
-  roundRect(ctx, boxX + 24, boxY + 24, 210, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 24, 210, 42, 21);
   ctx.fill();
   ctx.strokeStyle = '#f472b6';
   ctx.lineWidth = 1.5;
-  roundRect(ctx, boxX + 24, boxY + 24, 210, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 24, 210, 42, 21);
   ctx.stroke();
   ctx.fillStyle = '#be185d';
   ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -664,10 +673,13 @@ async function renderPastelBoutique(product, seller, ratio = 'status', paletteOv
     const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
     const dw = Math.round(bounds.sWidth * scale);
     const dh = Math.round(bounds.sHeight * scale);
-    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
-      boxX + Math.round((boxWidth - dw) / 2),
-      boxY + 20 + Math.round((boxHeight - 20 - dh) / 2),
-      dw, dh);
+    const imgX = boxX + Math.round((boxWidth - dw) / 2);
+    const imgY = boxY + 20 + Math.round((boxHeight - 20 - dh) / 2);
+    ctx.save();
+    roundRect(ctx, imgX, imgY, dw, dh, isStatus ? 36 : 28);
+    ctx.clip();
+    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, imgX, imgY, dw, dh);
+    ctx.restore();
   }
 
   // 3. Centered Title & Benefit
@@ -740,15 +752,16 @@ async function renderBotanicalSpa(product, seller, ratio = 'status', paletteOver
   const boxY = headerH + (isStatus ? 25 : 15);
   const boxHeight = isStatus ? 1080 : 680;
 
-  drawArchCard(ctx, boxX, boxY, boxWidth, boxHeight, 28, '#ffffff', '#86efac', 3);
+  const cardRadius = isStatus ? 60 : 48;
+  drawArchCard(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius, '#ffffff', '#86efac', 3);
 
   // Top-Left Natural Extracts Pill
   ctx.fillStyle = '#dcfce7';
-  roundRect(ctx, boxX + 24, boxY + 24, 210, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 24, 210, 42, 21);
   ctx.fill();
   ctx.strokeStyle = '#22c55e';
   ctx.lineWidth = 1.5;
-  roundRect(ctx, boxX + 24, boxY + 24, 210, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 24, 210, 42, 21);
   ctx.stroke();
   ctx.fillStyle = '#15803d';
   ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -768,10 +781,13 @@ async function renderBotanicalSpa(product, seller, ratio = 'status', paletteOver
     const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
     const dw = Math.round(bounds.sWidth * scale);
     const dh = Math.round(bounds.sHeight * scale);
-    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
-      boxX + Math.round((boxWidth - dw) / 2),
-      boxY + 20 + Math.round((boxHeight - 20 - dh) / 2),
-      dw, dh);
+    const imgX = boxX + Math.round((boxWidth - dw) / 2);
+    const imgY = boxY + 20 + Math.round((boxHeight - 20 - dh) / 2);
+    ctx.save();
+    roundRect(ctx, imgX, imgY, dw, dh, isStatus ? 36 : 28);
+    ctx.clip();
+    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, imgX, imgY, dw, dh);
+    ctx.restore();
   }
 
   // 3. Centered Title & Benefit
@@ -844,13 +860,14 @@ async function renderClinicalApothecary(product, seller, ratio = 'status', palet
   const boxY = headerH + (isStatus ? 25 : 15);
   const boxHeight = isStatus ? 1080 : 680;
 
+  const cardRadius = isStatus ? 60 : 48;
   ctx.fillStyle = '#ffffff';
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.fill();
 
   ctx.strokeStyle = '#0284c7';
   ctx.lineWidth = 2.5;
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.stroke();
 
   // Corner Crosshairs on Image Box
@@ -859,11 +876,11 @@ async function renderClinicalApothecary(product, seller, ratio = 'status', palet
   // Active Ingredient Tag Top-Left
   const activeBadge = product.badge || 'ACTIVE CONCENTRATE';
   ctx.fillStyle = '#e0f2fe';
-  roundRect(ctx, boxX + 24, boxY + 22, 210, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 22, 210, 42, 21);
   ctx.fill();
   ctx.strokeStyle = '#0284c7';
   ctx.lineWidth = 1.5;
-  roundRect(ctx, boxX + 24, boxY + 22, 210, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 22, 210, 42, 21);
   ctx.stroke();
   ctx.fillStyle = '#0369a1';
   ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -880,10 +897,13 @@ async function renderClinicalApothecary(product, seller, ratio = 'status', palet
     const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
     const dw = Math.round(bounds.sWidth * scale);
     const dh = Math.round(bounds.sHeight * scale);
-    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
-      boxX + Math.round((boxWidth - dw) / 2),
-      boxY + 20 + Math.round((boxHeight - 40 - dh) / 2),
-      dw, dh);
+    const imgX = boxX + Math.round((boxWidth - dw) / 2);
+    const imgY = boxY + 20 + Math.round((boxHeight - 40 - dh) / 2);
+    ctx.save();
+    roundRect(ctx, imgX, imgY, dw, dh, isStatus ? 36 : 28);
+    ctx.clip();
+    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, imgX, imgY, dw, dh);
+    ctx.restore();
   }
 
   // 3-Metric Clinical Specification Inset Banner on Hero Card Bottom
@@ -892,12 +912,13 @@ async function renderClinicalApothecary(product, seller, ratio = 'status', palet
   const specW = boxWidth - 60;
   const specX = boxX + 30;
 
+  const specRadius = Math.round(specH / 2);
   ctx.fillStyle = '#f1f5f9';
-  roundRect(ctx, specX, specY, specW, specH, 12);
+  roundRect(ctx, specX, specY, specW, specH, specRadius);
   ctx.fill();
   ctx.strokeStyle = '#cbd5e1';
   ctx.lineWidth = 1.5;
-  roundRect(ctx, specX, specY, specW, specH, 12);
+  roundRect(ctx, specX, specY, specW, specH, specRadius);
   ctx.stroke();
 
   ctx.fillStyle = '#0369a1';
@@ -975,13 +996,14 @@ async function renderLookbookAtelier(product, seller, ratio = 'status', paletteO
   const boxY = headerH + (isStatus ? 25 : 15);
   const boxHeight = isStatus ? 1080 : 680;
 
+  const cardRadius = isStatus ? 60 : 48;
   ctx.fillStyle = '#27272a';
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.fill();
 
   ctx.strokeStyle = '#e4e4e7';
   ctx.lineWidth = 2.5;
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.stroke();
 
   // Corner Crosshairs on Lookbook Card
@@ -989,7 +1011,7 @@ async function renderLookbookAtelier(product, seller, ratio = 'status', paletteO
 
   // Top Category Pill
   ctx.fillStyle = '#3f3f46';
-  roundRect(ctx, boxX + 24, boxY + 22, 200, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 22, 200, 42, 21);
   ctx.fill();
   ctx.fillStyle = '#fafafa';
   ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -1007,10 +1029,13 @@ async function renderLookbookAtelier(product, seller, ratio = 'status', paletteO
     const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
     const dw = Math.round(bounds.sWidth * scale);
     const dh = Math.round(bounds.sHeight * scale);
-    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
-      boxX + Math.round((boxWidth - dw) / 2),
-      boxY + 20 + Math.round((boxHeight - 40 - dh) / 2),
-      dw, dh);
+    const imgX = boxX + Math.round((boxWidth - dw) / 2);
+    const imgY = boxY + 20 + Math.round((boxHeight - 40 - dh) / 2);
+    ctx.save();
+    roundRect(ctx, imgX, imgY, dw, dh, isStatus ? 36 : 28);
+    ctx.clip();
+    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, imgX, imgY, dw, dh);
+    ctx.restore();
   }
 
   // Horizontal Size Selector Strip Inset on Bottom of Card
@@ -1091,13 +1116,14 @@ async function renderWarmLiving(product, seller, ratio = 'status', paletteOverri
   const boxY = headerH + (isStatus ? 25 : 15);
   const boxHeight = isStatus ? 1080 : 680;
 
+  const cardRadius = isStatus ? 60 : 48;
   ctx.fillStyle = '#ffffff';
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.fill();
 
   ctx.strokeStyle = '#fed7aa';
   ctx.lineWidth = 3;
-  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+  roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
   ctx.stroke();
 
   // Authentic Washi Tape at Top-Center of Card
@@ -1106,11 +1132,11 @@ async function renderWarmLiving(product, seller, ratio = 'status', paletteOverri
   // Home Dimension/Quality Tag Top-Left
   const dimensionBadge = product.size || product.badge || 'HOME ESSENTIAL';
   ctx.fillStyle = '#ffedd5';
-  roundRect(ctx, boxX + 24, boxY + 22, 220, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 22, 220, 42, 21);
   ctx.fill();
   ctx.strokeStyle = '#f97316';
   ctx.lineWidth = 1.5;
-  roundRect(ctx, boxX + 24, boxY + 22, 220, 42, 12);
+  roundRect(ctx, boxX + 24, boxY + 22, 220, 42, 21);
   ctx.stroke();
   ctx.fillStyle = '#c2410c';
   ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -1127,10 +1153,13 @@ async function renderWarmLiving(product, seller, ratio = 'status', paletteOverri
     const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
     const dw = Math.round(bounds.sWidth * scale);
     const dh = Math.round(bounds.sHeight * scale);
-    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
-      boxX + Math.round((boxWidth - dw) / 2),
-      boxY + 20 + Math.round((boxHeight - 20 - dh) / 2),
-      dw, dh);
+    const imgX = boxX + Math.round((boxWidth - dw) / 2);
+    const imgY = boxY + 20 + Math.round((boxHeight - 20 - dh) / 2);
+    ctx.save();
+    roundRect(ctx, imgX, imgY, dw, dh, isStatus ? 36 : 28);
+    ctx.clip();
+    ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, imgX, imgY, dw, dh);
+    ctx.restore();
   }
 
   // 3. Centered Title & Benefit

@@ -433,7 +433,7 @@ function getCategorySizeText(product) {
 function drawSharedHeader(ctx, width, headerH, isStatus, palette, shopName, location, subtitle, brandFont = null) {
   const bandColor = palette.band || palette.primary || '#064e3b';
   const stripeColor = palette.stripe || palette.accent || '#f59e0b';
-  const bottomRadius = isStatus ? 36 : 28;
+  const bottomRadius = isStatus ? 48 : 38;
 
   // 1. Header band background with smooth rounded bottom corners
   ctx.save();
@@ -474,7 +474,7 @@ function drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone,
   const footerY = height - footerH;
   const bandColor = palette.band || palette.primary || '#064e3b';
   const stripeColor = palette.stripe || palette.accent || '#f59e0b';
-  const topRadius = isStatus ? 36 : 28;
+  const topRadius = isStatus ? 48 : 38;
 
   // 1. Footer band background with smooth rounded top corners
   ctx.save();
@@ -534,7 +534,7 @@ function drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone,
   ctx.fillText(mpesaText, width / 2, mpesaY + (isStatus ? 30 : 24));
 }
 
-function drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius = 48) {
+function drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius = 60) {
   ctx.save();
   ctx.fillStyle = '#ffffff';
   ctx.shadowColor = 'rgba(15, 23, 42, 0.08)';
@@ -632,7 +632,8 @@ function drawCenteredTitleAndBenefit(ctx, title, benefit, centerX, startY, maxWi
  */
 function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, fill = '#064e3b', outline = '#f59e0b', kicker = 'SPECIAL OFFER PRICE • IN STOCK', kickerColor = '#f59e0b', price = 'KES 1,850', wasPrice = null) {
   const x = Math.round(centerX - width / 2);
-  const cornerRadius = isStatus ? 36 : 28;
+  // Full smooth modern pill capsule shape - completely eliminates sharp boxy corners
+  const cornerRadius = Math.round(height / 2);
 
   // Box fill (--price-bg) with subtle shadow
   ctx.save();
@@ -843,7 +844,7 @@ export const canvasRenderer = {
     const boxX = isStatus ? 60 : Math.round((width - boxWidth) / 2);
     const boxY = headerH + (isStatus ? 25 : 14);
     const boxHeight = isStatus ? 1080 : 720;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
     drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Corner badges: Size tag top-left (--badge variable) - True smooth pill shape
@@ -929,20 +930,24 @@ export const canvasRenderer = {
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 15 : 6) + Math.round((boxHeight - (isStatus ? 15 : 6) - dh) / 2);
 
-      // Clip strictly inside the rounded card so no square corners or backgrounds ever peek out
+      // Clip strictly inside the rounded card AND clip the photo itself with smooth rounded corners
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
+      ctx.save();
+      roundRect(ctx, bx, by, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
       ctx.restore();
     } else {
       // Graceful styled card placeholder in the box so it is NEVER blank
       ctx.fillStyle = '#f8fafc';
-      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, 28);
+      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, isStatus ? 40 : 30);
       ctx.fill();
       ctx.strokeStyle = '#cbd5e1';
       ctx.lineWidth = 2;
-      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, 28);
+      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, isStatus ? 40 : 30);
       ctx.stroke();
 
       ctx.fillStyle = '#475569';
@@ -1043,7 +1048,7 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
     drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Size / Category pill top-left
@@ -1082,7 +1087,11 @@ export const canvasRenderer = {
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
+      ctx.save();
+      roundRect(ctx, bx, by, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
       ctx.restore();
     }
 
@@ -1187,7 +1196,7 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
     drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Size / Category pill top-left
@@ -1226,7 +1235,11 @@ export const canvasRenderer = {
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
+      ctx.save();
+      roundRect(ctx, bx, by, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
       ctx.restore();
     }
 
@@ -1352,7 +1365,7 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
     drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Top-Left Category Pill
@@ -1386,15 +1399,18 @@ export const canvasRenderer = {
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
 
-      // Left Image (Main)
+      // Left Image (Main) with smooth rounded corners
       const b1 = getProductBounds(heroImg);
       const scale1 = Math.min((sideW - 30) / b1.sWidth, (sideH - 30) / b1.sHeight);
       const dw1 = Math.round(b1.sWidth * scale1);
       const dh1 = Math.round(b1.sHeight * scale1);
-      ctx.drawImage(heroImg, b1.sx, b1.sy, b1.sWidth, b1.sHeight,
-        boxX + 40 + Math.round((sideW - dw1) / 2),
-        boxY + 70 + Math.round((sideH - dh1) / 2),
-        dw1, dh1);
+      const img1X = boxX + 40 + Math.round((sideW - dw1) / 2);
+      const img1Y = boxY + 70 + Math.round((sideH - dh1) / 2);
+      ctx.save();
+      roundRect(ctx, img1X, img1Y, dw1, dh1, isStatus ? 28 : 20);
+      ctx.clip();
+      ctx.drawImage(heroImg, b1.sx, b1.sy, b1.sWidth, b1.sHeight, img1X, img1Y, dw1, dh1);
+      ctx.restore();
 
       // Center PLUS Badge
       const plusCx = boxX + boxWidth / 2;
@@ -1412,15 +1428,18 @@ export const canvasRenderer = {
       ctx.textAlign = 'center';
       ctx.fillText('+', plusCx, plusCy + (isStatus ? 10 : 8));
 
-      // Right Image (Companion)
+      // Right Image (Companion) with smooth rounded corners
       const b2 = getProductBounds(compImg);
       const scale2 = Math.min((sideW - 30) / b2.sWidth, (sideH - 30) / b2.sHeight);
       const dw2 = Math.round(b2.sWidth * scale2);
       const dh2 = Math.round(b2.sHeight * scale2);
-      ctx.drawImage(compImg, b2.sx, b2.sy, b2.sWidth, b2.sHeight,
-        boxX + boxWidth - 40 - sideW + Math.round((sideW - dw2) / 2),
-        boxY + 70 + Math.round((sideH - dh2) / 2),
-        dw2, dh2);
+      const img2X = boxX + boxWidth - 40 - sideW + Math.round((sideW - dw2) / 2);
+      const img2Y = boxY + 70 + Math.round((sideH - dh2) / 2);
+      ctx.save();
+      roundRect(ctx, img2X, img2Y, dw2, dh2, isStatus ? 28 : 20);
+      ctx.clip();
+      ctx.drawImage(compImg, b2.sx, b2.sy, b2.sWidth, b2.sHeight, img2X, img2Y, dw2, dh2);
+      ctx.restore();
 
       // Dual labels below each image - Smooth pill tags
       const lblY = boxY + 80 + sideH;
@@ -1448,14 +1467,17 @@ export const canvasRenderer = {
       const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
       const dw = Math.round(bounds.sWidth * scale);
       const dh = Math.round(bounds.sHeight * scale);
+      const imgBx = boxX + Math.round((boxWidth - dw) / 2);
+      const imgBy = boxY + 60 + Math.round((maxH - dh) / 2);
 
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
-      ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
-        boxX + Math.round((boxWidth - dw) / 2),
-        boxY + 60 + Math.round((maxH - dh) / 2),
-        dw, dh);
+      ctx.save();
+      roundRect(ctx, imgBx, imgBy, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
+      ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, imgBx, imgBy, dw, dh);
+      ctx.restore();
       ctx.restore();
     }
 
@@ -1561,7 +1583,7 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
     drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Size / Category pill top-left
@@ -1600,7 +1622,11 @@ export const canvasRenderer = {
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
+      ctx.save();
+      roundRect(ctx, bx, by, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
       ctx.restore();
     }
 
@@ -1696,7 +1722,7 @@ export const canvasRenderer = {
 
     // 1. Luxury Editorial Masthead
     const headerH = isStatus ? 170 : 135;
-    const headerRadius = isStatus ? 36 : 28;
+    const headerRadius = isStatus ? 48 : 38;
     ctx.save();
     ctx.fillStyle = '#080c14';
     roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
@@ -1727,7 +1753,7 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
 
     ctx.save();
     ctx.fillStyle = '#101624';
@@ -1779,7 +1805,8 @@ export const canvasRenderer = {
       aura.addColorStop(0.7, 'rgba(212, 175, 55, 0.04)');
       aura.addColorStop(1, 'rgba(212, 175, 55, 0)');
       ctx.fillStyle = aura;
-      ctx.fillRect(boxX + 10, boxY + 10, boxWidth - 20, boxHeight - 20);
+      roundRect(ctx, boxX + 10, boxY + 10, boxWidth - 20, boxHeight - 20, cardRadius - 6);
+      ctx.fill();
 
       const bounds = getProductBounds(heroImg);
       const padW = isStatus ? 70 : 50;
@@ -1795,7 +1822,11 @@ export const canvasRenderer = {
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
+      ctx.save();
+      roundRect(ctx, bx, by, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
       ctx.restore();
     }
 
@@ -1836,7 +1867,7 @@ export const canvasRenderer = {
     // 5. Luxury Footer
     const footerH = isStatus ? 300 : 250;
     const footerY = height - footerH;
-    const footerRadius = isStatus ? 36 : 28;
+    const footerRadius = isStatus ? 48 : 38;
 
     ctx.save();
     ctx.fillStyle = '#080c14';
@@ -1913,7 +1944,7 @@ export const canvasRenderer = {
 
     // 1. Top Header Bar
     const headerH = isStatus ? 170 : 135;
-    const headerRadius = isStatus ? 36 : 28;
+    const headerRadius = isStatus ? 48 : 38;
     ctx.save();
     ctx.fillStyle = '#09090b';
     roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
@@ -1944,7 +1975,7 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
 
     ctx.save();
     ctx.fillStyle = '#141418';
@@ -1995,7 +2026,11 @@ export const canvasRenderer = {
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
+      ctx.save();
+      roundRect(ctx, bx, by, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
       ctx.restore();
     }
 
@@ -2036,7 +2071,7 @@ export const canvasRenderer = {
     // 5. Footer
     const footerH = isStatus ? 300 : 250;
     const footerY = height - footerH;
-    const footerRadius = isStatus ? 36 : 28;
+    const footerRadius = isStatus ? 48 : 38;
 
     ctx.save();
     ctx.fillStyle = '#141418';
@@ -2113,7 +2148,7 @@ export const canvasRenderer = {
 
     // 1. Header
     const headerH = isStatus ? 170 : 135;
-    const headerRadius = isStatus ? 36 : 28;
+    const headerRadius = isStatus ? 48 : 38;
     ctx.save();
     ctx.fillStyle = '#0f172a';
     roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
@@ -2144,7 +2179,7 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
     drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Top-Left Pill - Smooth pill
@@ -2183,7 +2218,11 @@ export const canvasRenderer = {
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
+      ctx.save();
+      roundRect(ctx, bx, by, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
       ctx.restore();
     }
 
@@ -2264,7 +2303,7 @@ export const canvasRenderer = {
 
     // 1. Boutique Header
     const headerH = isStatus ? 170 : 135;
-    const headerRadius = isStatus ? 36 : 28;
+    const headerRadius = isStatus ? 48 : 38;
     ctx.save();
     ctx.fillStyle = '#451a03';
     roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
@@ -2295,7 +2334,7 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
 
     ctx.save();
     ctx.fillStyle = '#ffffff';
@@ -2350,7 +2389,11 @@ export const canvasRenderer = {
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
+      ctx.save();
+      roundRect(ctx, bx, by, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
       ctx.restore();
     }
 
@@ -2433,7 +2476,7 @@ export const canvasRenderer = {
 
     // 1. Top Header Bar
     const headerH = isStatus ? 170 : 135;
-    const headerRadius = isStatus ? 36 : 28;
+    const headerRadius = isStatus ? 48 : 38;
     ctx.save();
     ctx.fillStyle = '#881337';
     roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
@@ -2464,7 +2507,7 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
 
     ctx.save();
     ctx.fillStyle = '#ffffff';
@@ -2515,7 +2558,11 @@ export const canvasRenderer = {
       ctx.save();
       roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
       ctx.clip();
+      ctx.save();
+      roundRect(ctx, bx, by, dw, dh, isStatus ? 36 : 28);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
       ctx.restore();
     }
 
@@ -2658,7 +2705,7 @@ export const canvasRenderer = {
     const boxWidth = width - 130;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 880 : 540;
-    const cardRadius = isStatus ? 48 : 38;
+    const cardRadius = isStatus ? 60 : 48;
 
     ctx.fillStyle = '#1e293b';
     roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
@@ -2682,14 +2729,17 @@ export const canvasRenderer = {
           const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
           const dw = Math.round(bounds.sWidth * scale);
           const dh = Math.round(bounds.sHeight * scale);
+          const photoX = boxX + Math.round((boxWidth - dw) / 2);
+          const photoY = boxY + Math.round((boxHeight - dh) / 2);
 
           ctx.save();
           roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
           ctx.clip();
-          ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
-            boxX + Math.round((boxWidth - dw) / 2),
-            boxY + Math.round((boxHeight - dh) / 2),
-            dw, dh);
+          ctx.save();
+          roundRect(ctx, photoX, photoY, dw, dh, isStatus ? 36 : 28);
+          ctx.clip();
+          ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, photoX, photoY, dw, dh);
+          ctx.restore();
           ctx.restore();
           drawnPhoto = true;
         }
@@ -2730,7 +2780,7 @@ export const canvasRenderer = {
     const offerH = isStatus ? 110 : 88;
     const offerX = (width - offerW) / 2;
     const offerY = benefitY + (isStatus ? 24 : 16);
-    const plaqueRadius = isStatus ? 36 : 28;
+    const plaqueRadius = Math.round(offerH / 2);
 
     ctx.fillStyle = '#1e293b';
     roundRect(ctx, offerX, offerY, offerW, offerH, plaqueRadius);

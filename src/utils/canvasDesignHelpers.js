@@ -22,9 +22,13 @@ export function roundRect(ctx, x, y, width, height, radius = 0) {
   bl = Math.max(0, Math.min(bl, maxR));
 
   if (typeof ctx.roundRect === 'function') {
-    ctx.beginPath();
-    ctx.roundRect(x, y, width, height, [tl, tr, br, bl]);
-    return;
+    try {
+      ctx.beginPath();
+      ctx.roundRect(x, y, width, height, [tl, tr, br, bl]);
+      return;
+    } catch (_) {
+      // Fall through to manual arc fallback below
+    }
   }
 
   ctx.beginPath();
