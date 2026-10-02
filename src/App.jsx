@@ -72,10 +72,20 @@ export default function App() {
     return () => window.removeEventListener('dailypost_schedule_changed', handleScheduleChange);
   }, []);
 
-  const handleOpenCreatePoster = () => {
+  // History-aware modal handlers
+  const handleOpenCreatePoster = useCallback(() => {
     setActiveTab('today');
     setIsInstantPosterModalOpen(true);
-  };
+    window.history.pushState({ modal: 'instant_poster' }, '');
+  }, []);
+
+  const handleCloseInstantPoster = useCallback(() => {
+    if (window.history.state && window.history.state.modal === 'instant_poster') {
+      window.history.back();
+    } else {
+      setIsInstantPosterModalOpen(false);
+    }
+  }, []);
 
   // Today's date string in YYYY-MM-DD
   const todayDateStr = useMemo(() => {
@@ -198,7 +208,7 @@ export default function App() {
   }, [viewMode, seller.shop_name]);
 
   const [postLimit, setPostLimit] = useState(5);
-  const [postingCategory, setPostingCategory] = useState('beauty');
+  const [postingCategory, setPostingCategory] = useState('all');
 
   // Generate daily posts based on products, seller, today's date, aspect ratio, postLimit, postingCategory, todayOverrides, and customSchedule
   const dailyPosts = useMemo(() => {
@@ -318,20 +328,67 @@ export default function App() {
   const handleOpenCatalog = () => {
     setIsPreview(true);
     setViewMode('catalog');
-    window.history.pushState(null, '', '?view=catalog');
+    window.history.pushState({ view: 'catalog' }, '', '?view=catalog');
   };
 
   const handleExitCatalog = () => {
     setIsPreview(false);
     setViewMode('seller');
-    window.history.pushState(null, '', window.location.pathname);
+    window.history.pushState({ view: 'seller', tab: activeTab }, '', window.location.pathname);
   };
 
   const handleOpenSeller = () => {
     setIsPreview(false);
     setViewMode('seller');
-    window.history.pushState(null, '', window.location.pathname);
+    window.history.pushState({ view: 'seller', tab: activeTab }, '', window.location.pathname);
   };
+
+  // History-aware Navigation tab switcher
+  const handleTabChange = useCallback((newTab) => {
+    if (newTab === activeTab) return;
+    setActiveTab(newTab);
+    window.history.pushState({ tab: newTab, view: 'seller' }, '');
+  }, [activeTab]);
+
+  // History-aware Modal openers & closers
+  const handleOpenSettings = useCallback(() => {
+    setIsSettingsOpen(true);
+    window.history.pushState({ modal: 'settings' }, '');
+  }, []);
+
+  const handleCloseSettings = useCallback(() => {
+    if (window.history.state && window.history.state.modal === 'settings') {
+      window.history.back();
+    } else {
+      setIsSettingsOpen(false);
+    }
+  }, []);
+
+  const handleOpenTimeSchedule = useCallback(() => {
+    setIsTimeScheduleOpen(true);
+    window.history.pushState({ modal: 'time_schedule' }, '');
+  }, []);
+
+  const handleCloseTimeSchedule = useCallback(() => {
+    if (window.history.state && window.history.state.modal === 'time_schedule') {
+      window.history.back();
+    } else {
+      setIsTimeScheduleOpen(false);
+    }
+  }, []);
+
+  const handleOpenBulkModal = useCallback(() => {
+    setIsBulkModalOpen(true);
+    window.history.pushState({ modal: 'bulk_upload' }, '');
+  }, []);
+
+  const handleCloseBulkModal = useCallback(() => {
+    if (window.history.state && window.history.state.modal === 'bulk_upload') {
+      window.history.back();
+    } else {
+      setIsBulkModalOpen(false);
+    }
+  }, []);
 
   // Lock Studio session
   const handleLock = () => {
@@ -342,19 +399,55 @@ export default function App() {
 
   // Browser Back/Forward navigation listener
   useEffect(() => {
-    const handlePopState = () => {
+    // Baseline state initialization
+    if (!window.history.state) {
+      const searchParams = new URLSearchParams(window.location.search);
+      const isCatalog = searchParams.get('view') === 'catalog' || window.location.hash.includes('catalog');
+      window.history.replaceState({ tab: 'today', view: isCatalog ? 'catalog' : 'seller' }, '');
+    }
+
+    const handlePopState = (e) => {
+      // 1. If any seller modal in App is currently open, close that modal first!
+      if (isSettingsOpen) {
+        setIsSettingsOpen(false);
+        return;
+      }
+      if (isTimeScheduleOpen) {
+        setIsTimeScheduleOpen(false);
+        return;
+      }
+      if (isBulkModalOpen) {
+        setIsBulkModalOpen(false);
+        return;
+      }
+      if (isInstantPosterModalOpen) {
+        setIsInstantPosterModalOpen(false);
+        return;
+      }
+
+      // 2. Check URL search params for catalog vs seller
       const searchParams = new URLSearchParams(window.location.search);
       const view = searchParams.get('view');
-      if (view === 'catalog' || window.location.hash.includes('catalog')) {
+      const isCatalog = view === 'catalog' || window.location.hash.includes('catalog');
+
+      if (isCatalog) {
         setViewMode('catalog');
       } else {
-        setViewMode('seller');
-        setIsPreview(false);
+        if (viewMode === 'catalog') {
+          // Gracefully return from catalog view to seller studio without leaving domain
+          setViewMode('seller');
+          setIsPreview(false);
+        } else if (e.state && e.state.tab) {
+          setActiveTab(e.state.tab);
+        } else if (activeTab !== 'today') {
+          setActiveTab('today');
+        }
       }
     };
+
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+  }, [isSettingsOpen, isTimeScheduleOpen, isBulkModalOpen, isInstantPosterModalOpen, viewMode, activeTab]);
 
   // Count unposted items for today's badge
   const pendingCount = dailyPosts.filter((p) => !postedMap[p.slotId]).length;

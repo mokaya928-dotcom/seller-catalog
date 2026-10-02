@@ -222,6 +222,28 @@ export const STATIC_PALETTES = {
     mpesaText: '#ffffff',
     cardBorder: '#e2e8f0',
     priceColor: '#f4c2d1'
+  },
+  warm_amber: {
+    id: 'warm_amber',
+    name: 'Warm Terracotta & Sand',
+    label: 'Warm Terracotta & Sand',
+    band: '#9a3412',
+    stripe: '#fbbf24',
+    priceBg: '#9a3412',
+    badge: '#7c2d12',
+    subtext: '#c2410c',
+    primary: '#9a3412',
+    accent: '#fbbf24',
+    accentBorder: '#fbbf24',
+    headerSubtext: '#fef3c7',
+    locationText: '#fed7aa',
+    benefitText: '#c2410c',
+    footerSubtext: '#fed7aa',
+    mpesaBg: '#9a3412',
+    mpesaBorder: '#fbbf24',
+    mpesaText: '#ffffff',
+    cardBorder: '#e2e8f0',
+    priceColor: '#fbbf24'
   }
 };
 
@@ -233,16 +255,18 @@ STATIC_PALETTES.dusty_rose = STATIC_PALETTES.dusty_rose_charcoal;
 STATIC_PALETTES.rose = STATIC_PALETTES.dusty_rose_charcoal;
 STATIC_PALETTES.deep_teal = STATIC_PALETTES.deep_teal_gold;
 STATIC_PALETTES.forest = STATIC_PALETTES.forest_amber;
+STATIC_PALETTES.terracotta = STATIC_PALETTES.warm_amber;
 
 /**
- * 5 Locked Theme Palettes for 1-Tap Poster & Storefront Switching
+ * 6 Locked Theme Palettes for 1-Tap Poster & Storefront Switching
  */
 export const PRIMARY_PALETTES = [
   { id: 'forest_amber', label: 'Forest Green & Amber', shortLabel: 'Forest & Amber', band: '#064e3b', stripe: '#f59e0b', aliases: ['emerald', 'forest_amber', 'forest', 'green'] },
   { id: 'deep_teal_gold', label: 'Deep Teal & Gold', shortLabel: 'Teal & Gold', band: '#0e5e6f', stripe: '#e5a93b', aliases: ['teal', 'deep_teal_gold', 'deep_teal'] },
   { id: 'midnight_navy_amber', label: 'Midnight Navy & Amber', shortLabel: 'Navy & Amber', band: '#0f172a', stripe: '#d97706', aliases: ['slate', 'midnight_navy_amber', 'navy', 'midnight_navy'] },
   { id: 'burgundy_gold', label: 'Burgundy & Gold', shortLabel: 'Burgundy & Gold', band: '#5b1425', stripe: '#eab308', aliases: ['burgundy_gold', 'burgundy', 'wine'] },
-  { id: 'dusty_rose_charcoal', label: 'Dusty Rose & Charcoal', shortLabel: 'Rose & Slate', band: '#88304e', stripe: '#f4c2d1', aliases: ['dusty_rose_charcoal', 'dusty_rose', 'rose'] }
+  { id: 'dusty_rose_charcoal', label: 'Dusty Rose & Charcoal', shortLabel: 'Rose & Slate', band: '#88304e', stripe: '#f4c2d1', aliases: ['dusty_rose_charcoal', 'dusty_rose', 'rose'] },
+  { id: 'warm_amber', label: 'Warm Terracotta & Sand', shortLabel: 'Terracotta & Sand', band: '#9a3412', stripe: '#fbbf24', aliases: ['warm_amber', 'terracotta', 'amber'] }
 ];
 
 /**

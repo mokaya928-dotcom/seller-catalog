@@ -5,12 +5,12 @@
  * - Gracefully falls back to browser localStorage for offline support or local development.
  * - Zero UI breaking changes.
  */
-import { DEFAULT_SELLER, STARTER_PRODUCTS, BEAUTY_BAR_SELLER, CURATED_PRODUCTS, GLOW_HOUSE_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS } from '../data/starterData';
+import { DEFAULT_SELLER, STARTER_PRODUCTS, BEAUTY_BAR_SELLER, CURATED_PRODUCTS, GLOW_HOUSE_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS, OREWA_SELLER } from '../data/starterData';
 import { supabase, isSupabaseConfigured } from './supabaseClient';
 
 const KEYS = {
   SELLER: 'dailypost_seller_v11',
-  PRODUCTS: 'dailypost_products_v13',
+  PRODUCTS: 'dailypost_products_v14',
   POSTS_PREFIX: 'dailypost_posts_v11_',
   POSTED_STATUS_PREFIX: 'dailypost_posted_v11_',
   OVERRIDES_PREFIX: 'dailypost_overrides_v11_'
@@ -149,9 +149,9 @@ export const storageService = {
       const stored = localStorage.getItem(KEYS.PRODUCTS);
       if (stored) {
         const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
+        if (Array.isArray(parsed) && parsed.length >= 100) {
           const hasLegacyDuplicates = parsed.some((p) => p.name && (p.name.includes('Loafer Dark-tan') || p.name.includes('Horsebit Loafer Dark-tan')));
-          if (hasBenable || missingShoes || hasLegacyDuplicates) {
+          if (hasLegacyDuplicates) {
             localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(STARTER_PRODUCTS));
             return STARTER_PRODUCTS;
           }
@@ -509,6 +509,10 @@ export const storageService = {
       localStorage.setItem(KEYS.SELLER, JSON.stringify(SHOE_IN_SELLER));
       localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(SHOE_IN_PRODUCTS));
       return { seller: SHOE_IN_SELLER, products: SHOE_IN_PRODUCTS };
+    }
+    if (presetName === 'orewa' || presetName === 'orewa_limited') {
+      localStorage.setItem(KEYS.SELLER, JSON.stringify(OREWA_SELLER));
+      return { seller: OREWA_SELLER, products: await this.getProducts() };
     }
     // Glow House Kakamega
     localStorage.setItem(KEYS.SELLER, JSON.stringify(GLOW_HOUSE_SELLER));

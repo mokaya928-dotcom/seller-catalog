@@ -57,24 +57,27 @@ export default function TodayView({
 
   // Compute category breakdown
   const categoryStats = useMemo(() => {
+    let shoes = 0;
+    let bags = 0;
     let beauty = 0;
     let household = 0;
     let clothes = 0;
-    let bags = 0;
     const catCounts = {};
 
     inStockProducts.forEach((p) => {
       const cat = p.category || 'Beauty Care';
       catCounts[cat] = (catCounts[cat] || 0) + 1;
       const group = getCategoryGroup(cat);
-      if (group === 'bags') bags++;
+      if (group === 'shoes') shoes++;
+      else if (group === 'bags') bags++;
       else if (group === 'household') household++;
       else if (group === 'clothes') clothes++;
-      else if (isBeautyCategory(cat)) beauty++;
+      else beauty++;
     });
 
     return {
       all: inStockProducts.length,
+      shoes,
       bags,
       beauty,
       household,
@@ -86,27 +89,21 @@ export default function TodayView({
   // Dynamic Category Selector Tabs
   const categoryTabs = useMemo(() => {
     const tabs = [
+      { id: 'shoes', label: "Shoes & Footwear", icon: '👞', count: categoryStats.shoes },
       { id: 'bags', label: 'Handbags & Bags', icon: '👜', count: categoryStats.bags },
-      { id: 'beauty', label: 'Beauty Posts', icon: '🌸', count: categoryStats.beauty },
+      { id: 'beauty', label: 'Beauty & Skincare', icon: '🌸', count: categoryStats.beauty },
       { id: 'household', label: 'Household & Bedding', icon: '🛏️', count: categoryStats.household },
       { id: 'clothes', label: 'Clothes & Fashion', icon: '👗', count: categoryStats.clothes },
-      { id: 'Makeup & Prep', label: 'Make Up', icon: '👑', count: categoryStats.catCounts['Makeup & Prep'] || 0 },
-      { id: 'Lip Care', label: 'Lip Care', icon: '💄', count: categoryStats.catCounts['Lip Care'] || 0 },
-      { id: 'Bath & Body', label: 'Bath & Body', icon: '🛁', count: categoryStats.catCounts['Bath & Body'] || 0 },
-      { id: 'Skincare & Face', label: 'Skincare', icon: '🧴', count: (categoryStats.catCounts['Skincare & Face'] || 0) + (categoryStats.catCounts['Skincare'] || 0) },
-      { id: 'Serums & Actives', label: 'Serums', icon: '🧪', count: categoryStats.catCounts['Serums & Actives'] || 0 },
-      { id: 'Sunscreen & SPF', label: 'SPF', icon: '☀️', count: categoryStats.catCounts['Sunscreen & SPF'] || 0 }
-    ].filter(t => t.count > 0 || t.id === 'bags' || t.id === 'beauty' || t.id === 'household' || t.id === 'clothes');
-
-    tabs.push({ id: 'all', label: 'All Products (Grouped)', icon: '🛍️', count: categoryStats.all });
+      { id: 'all', label: 'All Products (Grouped)', icon: '🛍️', count: categoryStats.all }
+    ];
 
     return tabs;
   }, [categoryStats]);
 
   const activeCategoryCount = useMemo(() => {
     const found = categoryTabs.find(t => t.id === postingCategory);
-    return found ? found.count : categoryStats.beauty;
-  }, [categoryTabs, postingCategory, categoryStats.beauty]);
+    return found ? found.count : categoryStats.all;
+  }, [categoryTabs, postingCategory, categoryStats.all]);
 
   const totalPosts = posts.length + customQueuedProducts.length;
   const postedCount = posts.filter((p) => postedMap[p.slotId]).length;

@@ -32,35 +32,27 @@ function getProductDayHash(dateStr, productId) {
  * Check if a product category belongs to Beauty & Personal Care
  */
 export function isBeautyCategory(category) {
-  if (!category) return true;
-  const lower = category.toLowerCase().trim();
-  if (
-    lower.includes('bag') ||
-    lower.includes('handbag') ||
-    lower.includes('tote') ||
-    lower.includes('crossbody') ||
-    lower.includes('clutch') ||
-    lower.includes('household') ||
-    lower.includes('bedding') ||
-    lower.includes('kitchen') ||
-    lower.includes('clothes') ||
-    lower.includes('clothing') ||
-    lower.includes('fashion') ||
-    lower.includes('dress') ||
-    lower.includes('curtain') ||
-    lower.includes('carpet')
-  ) {
-    return false;
-  }
-  return true;
+  return getCategoryGroup(category) === 'beauty';
 }
 
 /**
- * Get the macro group for any product category: 'bags' | 'beauty' | 'household' | 'clothes'
+ * Get the macro group for any product category: 'shoes' | 'bags' | 'beauty' | 'household' | 'clothes'
  */
 export function getCategoryGroup(category) {
   if (!category) return 'beauty';
   const lower = category.toLowerCase().trim();
+  if (
+    lower.includes('shoe') ||
+    lower.includes('loafer') ||
+    lower.includes('footwear') ||
+    lower.includes('sneaker') ||
+    lower.includes('boot') ||
+    lower.includes('kicks') ||
+    lower.includes('slide') ||
+    lower.includes('sandal')
+  ) {
+    return 'shoes';
+  }
   if (
     lower.includes('bag') ||
     lower.includes('handbag') ||
@@ -72,24 +64,32 @@ export function getCategoryGroup(category) {
   ) {
     return 'bags';
   }
-  if (lower.includes('household') || lower.includes('bedding') || lower.includes('kitchen') || lower.includes('curtain') || lower.includes('carpet')) {
+  if (
+    lower.includes('household') ||
+    lower.includes('bedding') ||
+    lower.includes('kitchen') ||
+    lower.includes('curtain') ||
+    lower.includes('carpet') ||
+    lower.includes('duvet') ||
+    lower.includes('sheet') ||
+    lower.includes('pillow') ||
+    lower.includes('home')
+  ) {
     return 'household';
   }
   if (
-    lower.includes('clothes') ||
-    lower.includes('clothing') ||
+    lower.includes('cloth') ||
     lower.includes('fashion') ||
     lower.includes('dress') ||
     lower.includes('wear') ||
-    lower.includes('shoe') ||
-    lower.includes('sneaker') ||
     lower.includes('jacket') ||
     lower.includes('hoodie') ||
     lower.includes('polo') ||
     lower.includes('shirt') ||
     lower.includes('trouser') ||
     lower.includes('jean') ||
-    lower.includes('apparel')
+    lower.includes('apparel') ||
+    lower.includes('outfit')
   ) {
     return 'clothes';
   }
@@ -193,7 +193,9 @@ export const scheduleService = {
     // -----------------------------------------------------------
     // CATEGORY FILTERING: NEVER MIX CATEGORIES TOGETHER!
     // -----------------------------------------------------------
-    if (categoryFilter === 'bags') {
+    if (categoryFilter === 'shoes') {
+      availableProducts = availableProducts.filter((p) => getCategoryGroup(p.category) === 'shoes');
+    } else if (categoryFilter === 'bags') {
       availableProducts = availableProducts.filter((p) => getCategoryGroup(p.category) === 'bags');
     } else if (categoryFilter === 'beauty') {
       availableProducts = availableProducts.filter((p) => isBeautyCategory(p.category));
@@ -202,9 +204,9 @@ export const scheduleService = {
     } else if (categoryFilter === 'clothes') {
       availableProducts = availableProducts.filter((p) => getCategoryGroup(p.category) === 'clothes');
     } else if (categoryFilter && categoryFilter !== 'all') {
-      availableProducts = availableProducts.filter((p) => p.category === categoryFilter);
+      availableProducts = availableProducts.filter((p) => p.category === categoryFilter || getCategoryGroup(p.category) === categoryFilter);
     } else if (categoryFilter === 'all') {
-      // Group by category so they are never randomly mixed
+      // Group by category so they are structured cleanly
       availableProducts = [...availableProducts].sort((a, b) => {
         const groupA = getCategoryGroup(a.category);
         const groupB = getCategoryGroup(b.category);

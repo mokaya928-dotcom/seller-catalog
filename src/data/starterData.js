@@ -9210,6 +9210,214 @@ export const CURATED_PRODUCTS = [
       "Lipa na M-Pesa Available",
       "Countrywide Fast Dispatch"
     ]
+  },
+  {
+    "id": "prod_moh_bomber_jacket",
+    "seller_id": "seller_beauty_bar_kenya",
+    "name": "Unisex Vintage Warm Fleece Bomber Jacket",
+    "size": "M, L, XL, XXL",
+    "photo": "/products/moh-bomber-jacket.jpg",
+    "photos": [
+      "/products/moh-bomber-jacket.jpg",
+      "/products/moh-mens-polo.jpg",
+      "/products/moh-khaki-pants.jpg"
+    ],
+    "companion_id": "prod_moh_khaki_pants",
+    "price": 2200,
+    "regular_price": 2800,
+    "benefit_line": "Windproof urban street style with warm quilted inner lining",
+    "in_stock": true,
+    "featured": true,
+    "badge": "New Arrival",
+    "category": "Clothes & Fashion",
+    "description": "Classic warm unisex bomber jacket perfect for cold evenings and daily streetwear. Heavy brass zipper, reinforced ribbed cuffs and collar, with double side pockets.",
+    "highlights": [
+      "Wind & Cold Resistant",
+      "Premium Heavy Fabric",
+      "Unisex Fit",
+      "All Sizes Available"
+    ]
+  },
+  {
+    "id": "prod_moh_womens_dress",
+    "seller_id": "seller_beauty_bar_kenya",
+    "name": "Women's Elegant Ribbed Bodycon Midi Dress",
+    "size": "Free Size (6-14)",
+    "photo": "/products/moh-womens-dress.jpg",
+    "photos": [
+      "/products/moh-womens-dress.jpg",
+      "/products/moh-bomber-jacket.jpg"
+    ],
+    "companion_id": "prod_moh_bomber_jacket",
+    "price": 1650,
+    "regular_price": 2200,
+    "benefit_line": "Flattering stretch ribbed fabric suitable for church, work or dinner",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Trending Dress",
+    "category": "Clothes & Fashion",
+    "description": "Turn heads with this versatile ribbed knit midi dress. Hugs your curves comfortably with high-grade stretch cotton that never fades or loses shape. Elegant round neck and modest length.",
+    "highlights": [
+      "Stretches to Fit 6-14",
+      "Breathable Cotton Ribbed",
+      "Non-See-Through",
+      "Countrywide Dispatch"
+    ]
+  },
+  {
+    "id": "prod_moh_mens_polo",
+    "seller_id": "seller_beauty_bar_kenya",
+    "name": "Men's Classic Pure Pique Cotton Polo T-Shirt",
+    "size": "M, L, XL",
+    "photo": "/products/moh-mens-polo.jpg",
+    "photos": [
+      "/products/moh-mens-polo.jpg",
+      "/products/moh-khaki-pants.jpg"
+    ],
+    "companion_id": "prod_moh_khaki_pants",
+    "price": 1200,
+    "regular_price": 1600,
+    "benefit_line": "100% breathable pique cotton with embroidered chest emblem",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Men's Classic",
+    "category": "Clothes & Fashion",
+    "description": "Elevate your casual smart look with this timeless pique polo. Pairs perfectly with khakis or jeans. Color-fast dye guaranteed not to shrink or fade in wash.",
+    "highlights": [
+      "100% Pure Pique Cotton",
+      "Reinforced Collar",
+      "Classic Smart Fit",
+      "Available in 5 Colors"
+    ]
+  },
+  {
+    "id": "prod_moh_khaki_pants",
+    "seller_id": "seller_beauty_bar_kenya",
+    "name": "Men's Slim-Fit Stretch Chino Khaki Trousers",
+    "size": "Waist 30-38",
+    "photo": "/products/moh-khaki-pants.jpg",
+    "photos": [
+      "/products/moh-khaki-pants.jpg",
+      "/products/moh-mens-polo.jpg"
+    ],
+    "companion_id": "prod_moh_mens_polo",
+    "price": 1500,
+    "regular_price": 2000,
+    "benefit_line": "Smart office & casual khaki with 2% elastane stretch for all-day comfort",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Best Value",
+    "category": "Clothes & Fashion",
+    "description": "The ultimate daily trouser for the modern Kenyan gentleman. Tailored slim fit with subtle stretch that lets you move freely. Wrinkle-resistant cotton blend that stays crisp from 8am to 8pm.",
+    "highlights": [
+      "Comfort Stretch Fabric",
+      "Wrinkle Resistant",
+      "Deep Front & Back Pockets",
+      "Waist 30 to 38"
+    ]
+  },
+  {
+    "id": "prod_moh_duvet_set",
+    "seller_id": "seller_beauty_bar_kenya",
+    "name": "Heavy Fiber 4-Piece Duvet Bedding Set (6x6 Bed)",
+    "size": "6x6 King",
+    "photo": "/products/moh-duvet-set.jpg",
+    "photos": [
+      "/products/moh-duvet-set.jpg",
+      "/products/moh-curtains.jpg",
+      "/products/moh-fluffy-carpet.jpg"
+    ],
+    "companion_id": "prod_moh_curtains",
+    "price": 2800,
+    "regular_price": 3500,
+    "benefit_line": "Warm 400GSM micro-fiber duvet + bedsheet + 2 matching pillowcases",
+    "in_stock": true,
+    "featured": true,
+    "badge": "Best Seller",
+    "category": "Household & Bedding",
+    "description": "Transform your bedroom with this luxury 4-piece duvet set. Includes 1 warm heavy-fiber duvet, 1 fitted bedsheet, and 2 luxury pillowcases. Fade-proof, machine-washable cotton blend.",
+    "highlights": [
+      "4-Piece Complete Set",
+      "Warm 400GSM Fiber",
+      "Fits 6x6 Bed",
+      "Countrywide Delivery"
+    ]
+  },
+  {
+    "id": "prod_moh_fluffy_carpet",
+    "seller_id": "seller_beauty_bar_kenya",
+    "name": "Living Room Microfiber Anti-Slip Fluffy Carpet (5x7)",
+    "size": "5x7 Feet",
+    "photo": "/products/moh-fluffy-carpet.jpg",
+    "photos": [
+      "/products/moh-fluffy-carpet.jpg",
+      "/products/moh-curtains.jpg"
+    ],
+    "companion_id": "prod_moh_curtains",
+    "price": 4500,
+    "regular_price": 5500,
+    "benefit_line": "Ultra-soft deep shag pile with rubber dotted non-slip backing",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Home Comfort",
+    "category": "Household & Bedding",
+    "description": "Sink your feet into pure luxury. High-pile microfiber fluffy carpet with non-slip dotted bottom safe for tiled floors. Does not shed or trap odors. Easy to vacuum and wash.",
+    "highlights": [
+      "Deep Shag Microfiber",
+      "Anti-Slip Dotted Backing",
+      "5x7 Living Room Size",
+      "Non-Shedding"
+    ]
+  },
+  {
+    "id": "prod_moh_curtains",
+    "seller_id": "seller_beauty_bar_kenya",
+    "name": "Luxury Thermal Blackout Eyelet Window Curtains (2-Pack)",
+    "size": "2 Panels (Each 2.5m drop)",
+    "photo": "/products/moh-curtains.jpg",
+    "photos": [
+      "/products/moh-curtains.jpg",
+      "/products/moh-duvet-set.jpg"
+    ],
+    "companion_id": "prod_moh_duvet_set",
+    "price": 3200,
+    "regular_price": 4000,
+    "benefit_line": "Heavy jacquard weave blocking 90% sunlight & outside noise",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Top Quality",
+    "category": "Household & Bedding",
+    "description": "Block harsh morning sunlight and reduce street noise with these premium heavy blackout curtains. Rust-free metal eyelet rings slide effortlessly on standard curtain rods.",
+    "highlights": [
+      "90% Light Blockout",
+      "Heavy Jacquard Fabric",
+      "Metal Eyelet Rings Included",
+      "Standard 2-Window Pack"
+    ]
+  },
+  {
+    "id": "prod_moh_thermal_flask",
+    "seller_id": "seller_beauty_bar_kenya",
+    "name": "Double-Wall Stainless Steel Vacuum Thermal Flask 1.5L",
+    "size": "1.5 Liters",
+    "photo": "/products/moh-thermal-flask.jpg",
+    "photos": [
+      "/products/moh-thermal-flask.jpg"
+    ],
+    "price": 1400,
+    "regular_price": 1800,
+    "benefit_line": "Keeps chai or coffee boiling hot for 24 hours guaranteed",
+    "in_stock": true,
+    "featured": false,
+    "badge": "Kitchen Essential",
+    "category": "Household & Bedding",
+    "description": "Never drink cold tea again. Double-wall insulated 304 food-grade stainless steel flask maintains boiling temperature for 24 hours. Leak-proof push-button spout.",
+    "highlights": [
+      "24-Hour Heat Retention",
+      "1.5 Liter Capacity",
+      "Food-Grade Stainless Steel",
+      "Leak-Proof Seal"
+    ]
   }
 ];
 

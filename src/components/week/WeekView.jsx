@@ -190,9 +190,9 @@ export default function WeekView({
   const handleSwitchPreviewStyle = async (newStyle) => {
     if (!previewPost) return;
     setPreviewStyle(newStyle);
-    setIsPreviewLoading(true);
     try {
-      const palette = previewPost.palette || seller.palette || 'emerald';
+      const styleObj = POST_STYLES.find((s) => s.id === newStyle);
+      const palette = styleObj?.paletteId || newStyle || previewPost.palette || seller.palette || 'forest_amber';
       const dataUrl = await canvasRenderer.renderPost(
         previewPost.product,
         seller,
@@ -202,8 +202,8 @@ export default function WeekView({
         palette
       );
       setPreviewImageUrl(dataUrl);
-      const styleName = POST_STYLES.find((s) => s.id === newStyle)?.name || newStyle;
-      onShowToast(`✓ Format switched to ${styleName}!`, 'success');
+      const styleName = styleObj?.name || newStyle;
+      onShowToast(`✓ Flyer theme switched to ${styleName}!`, 'success');
     } catch (err) {
       console.error('Failed to switch preview style', err);
       onShowToast('Could not render layout variant', 'error');
@@ -785,10 +785,10 @@ export default function WeekView({
               <div className="flex items-center justify-between pb-1.5 text-white">
                 <div className="flex items-center gap-1.5 text-[11px] font-bold text-gray-200">
                   <LayoutTemplate className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Choose Flyer Format ({POST_STYLES.length} Designs):</span>
+                  <span>Choose Flyer Theme ({POST_STYLES.length} Palettes):</span>
                 </div>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  {POST_STYLES.find(s => s.id === previewStyle)?.name.split('(')[0].trim() || 'Brand Master'}
+                  {POST_STYLES.find(s => s.id === previewStyle)?.name.split('(')[0].trim() || 'Forest Green'}
                 </span>
               </div>
               <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-thin">

@@ -337,160 +337,64 @@ function drawDefensiveBenefit(ctx, text, centerX, y, maxWidth, initialSize = 22,
 
 
 
-export const POST_STYLES = [
+export const POST_DESIGNS = [
   {
-    id: 'unified_brand',
-    name: 'Brand Master (Default)',
+    id: 'retail_classic',
+    name: 'Retail Classic',
     tag: 'Flagship',
     badgeText: 'AUTHENTIC ORIGINAL',
-    desc: 'Clean unified retail layout with category tag & offer pill',
+    desc: 'High-impact retail frame, bold price tag, Lipa na M-Pesa verified footer',
     icon: 'ShieldCheck',
     accentColor: '#064e3b'
   },
   {
-    id: 'luxury_editorial',
-    name: 'Luxury Vogue Editorial',
-    tag: 'High Fashion',
-    badgeText: 'SIGNATURE EDIT',
-    desc: 'Deep obsidian & champagne gold frame with luxury serif typography',
+    id: 'editorial_luxury',
+    name: 'Editorial Luxury',
+    tag: 'Boutique',
+    badgeText: 'BOUTIQUE EDITION',
+    desc: 'Sophisticated arch framing, serif branding, minimalist luxury aesthetic',
     icon: 'Sparkles',
-    accentColor: '#d4af37'
+    accentColor: '#5b1425'
   },
   {
-    id: 'flash_sale',
-    name: '24H Flash Sale',
-    tag: 'Urgency',
-    badgeText: 'FLASH SALE • TODAY ONLY',
-    desc: 'High-urgency banner, strikethrough price & instant savings badge',
-    icon: 'Flame',
-    accentColor: '#ef4444'
-  },
-  {
-    id: 'minimalist_clean',
-    name: 'Studio Minimalist',
-    tag: 'Clean Aesthetic',
-    badgeText: 'STUDIO EDITION',
-    desc: 'Airy white aesthetic, generous negative space & floating drop shadow',
-    icon: 'Maximize2',
-    accentColor: '#334155'
-  },
-  {
-    id: 'neon_bold',
-    name: 'Neon Streetwear Drop',
-    tag: 'High Energy',
-    badgeText: 'STREET DROP',
-    desc: 'Jet black background with glowing electric neon & bold street typography',
-    icon: 'Zap',
-    accentColor: '#10b981'
-  },
-  {
-    id: 'customer_reviews',
-    name: 'Verified Customer Review',
-    tag: 'Social Proof',
-    badgeText: 'RATED 4.9 / 5.0',
-    desc: '5-star gold rating bar, quote bubble & verified buyer social proof',
+    id: 'clean_minimalist',
+    name: 'Clean Minimalist',
+    tag: 'Modern',
+    badgeText: 'PURE COLLECTION',
+    desc: 'Sleek whitespace, crisp typography, clean focus on product details',
     icon: 'Star',
-    accentColor: '#f59e0b'
-  },
-  {
-    id: 'polaroid_snap',
-    name: 'Polaroid Instant Snap',
-    tag: 'Lifestyle',
-    badgeText: 'DAILY PICK ✨',
-    desc: 'Warm parchment Polaroid photo frame with handwritten lifestyle notes',
-    icon: 'Camera',
-    accentColor: '#b45309'
-  },
-  {
-    id: 'restock_alerts',
-    name: 'Fresh Restock Alert',
-    tag: 'Scarcity',
-    badgeText: 'JUST RESTOCKED',
-    desc: 'Fresh shipment announcement with limited stock urgency meter',
-    icon: 'PackageCheck',
-    accentColor: '#0284c7'
-  },
-  {
-    id: 'product_bundles',
-    name: 'Routine Combo Bundle',
-    tag: '2-in-1 Value',
-    badgeText: 'BUNDLE & SAVE',
-    desc: '2-in-1 combo routine pairing two items with package savings',
-    icon: 'Layers',
-    accentColor: '#8b5cf6'
-  },
-  {
-    id: 'clearance_deal',
-    name: 'Clearance Starburst Deal',
-    tag: 'Hot Discount',
-    badgeText: 'HOT DEAL • SAVE BIG',
-    desc: 'Vibrant retail starburst clearance badge with maximum price contrast',
-    icon: 'Tag',
-    accentColor: '#dc2626'
-  },
-  {
-    id: 'editorial_maison',
-    name: 'Maison Luxury Editorial',
-    tag: 'Handbags & Luxury',
-    badgeText: 'PARISIAN EDIT',
-    desc: 'Deep obsidian & cognac luxury frame, gold rules, high-fashion typography',
-    icon: 'Sparkles',
-    accentColor: '#d4af37'
-  },
-  {
-    id: 'gloss_studio',
-    name: 'Gloss Studio',
-    tag: 'Makeup & Beauty',
-    badgeText: 'STUDIO GLOW',
-    desc: 'High-contrast studio, vibrant accent glow, formulation highlights',
-    icon: 'Sparkles',
-    accentColor: '#ec4899'
-  },
-  {
-    id: 'pastel_boutique',
-    name: 'Pastel Boutique',
-    tag: 'Lip Care & Pastels',
-    badgeText: 'HYDRATION ESSENTIAL',
-    desc: 'Soft pastel warmth, playful pill badges, organic hydration focus',
-    icon: 'Sparkles',
-    accentColor: '#fb7185'
-  },
-  {
-    id: 'botanical_spa',
-    name: 'Botanical Spa',
-    tag: 'Bath & Body',
-    badgeText: '100% ORGANIC BOTANICAL',
-    desc: 'Eucalyptus & sage spa tones, botanical ingredients badge',
-    icon: 'ShieldCheck',
-    accentColor: '#059669'
-  },
-  {
-    id: 'clinical_apothecary',
-    name: 'Clinical Apothecary',
-    tag: 'Skincare & Serums',
-    badgeText: 'DERMATOLOGICALLY TESTED',
-    desc: 'Lab-clean aesthetic, active ingredient grid, clinical trust markers',
-    icon: 'ShieldCheck',
-    accentColor: '#0284c7'
-  },
-  {
-    id: 'lookbook_atelier',
-    name: 'Atelier Lookbook',
-    tag: 'Fashion & Apparel',
-    badgeText: 'NEW COLLECTION',
-    desc: 'Modern streetwear lookbook, prominent size strip (S-XL), bold layout',
-    icon: 'Zap',
     accentColor: '#0f172a'
   },
   {
-    id: 'warm_living',
-    name: 'Warm Living',
-    tag: 'Home & Bedding',
-    badgeText: 'HOME COMFORT',
-    desc: 'Warm terracotta & amber tones, dimensions tag, delivery guarantee',
-    icon: 'Tag',
-    accentColor: '#ea580c'
+    id: 'boutique_showcase',
+    name: 'Boutique Showcase',
+    tag: 'Trending',
+    badgeText: 'TOP SELLER',
+    desc: 'Warm framed showcase with badge and benefit highlights',
+    icon: 'PackageCheck',
+    accentColor: '#0e5e6f'
+  },
+  {
+    id: 'product_bundles',
+    name: 'Routine Duo Bundle',
+    tag: '2-in-1',
+    badgeText: 'BUNDLE & SAVE',
+    desc: 'Side-by-side duo pairing two items with package savings',
+    icon: 'Layers',
+    accentColor: '#10b981'
   }
+];
+
+// Backwards-compatibility alias so any references to POST_STYLES resolve properly
+export const POST_STYLES = POST_DESIGNS;
+
+export const POST_MOODS = [
+  { id: 'standard', name: 'Standard / Clean', icon: '🛍️', badge: null, desc: 'Clean product presentation' },
+  { id: 'flash_sale', name: 'Flash Sale', icon: '⚡', badge: 'FLASH SALE • TODAY ONLY', desc: 'Urgent 24-hr limited discount' },
+  { id: 'bestseller', name: 'Bestseller', icon: '🔥', badge: 'BESTSELLER • TOP RATED', desc: 'High social proof & 5-star rating' },
+  { id: 'new_arrival', name: 'New Drop', icon: '✨', badge: 'NEW ARRIVAL • FRESH DROP', desc: 'Fresh unpacked delivery' },
+  { id: 'limited_stock', name: 'Limited Stock', icon: '🏷️', badge: 'LIMITED STOCK • ONLY FEW LEFT', desc: 'High scarcity alert' },
+  { id: 'premium_choice', name: 'Premium Choice', icon: '💎', badge: 'PREMIUM QUALITY • 100% ORIGINAL', desc: 'Luxury verified quality' }
 ];
 
 export const UNIFIED_PALETTES = STATIC_PALETTES;
@@ -501,17 +405,19 @@ function resolvePalette(seller, override) {
 }
 
 function getCategorySizeText(product) {
-  const isClothes = product.category && (
-    product.category.toLowerCase().includes('clothes') ||
-    product.category.toLowerCase().includes('clothing') ||
-    product.category.toLowerCase().includes('fashion') ||
-    product.category.toLowerCase().includes('dress')
-  );
-  const isHousehold = product.category && (
-    product.category.toLowerCase().includes('household') ||
-    product.category.toLowerCase().includes('bedding') ||
-    product.category.toLowerCase().includes('kitchen')
-  );
+  const cat = (product.category || '').toLowerCase();
+  const isShoes = cat.includes('shoe') || cat.includes('footwear') || cat.includes('sneaker') || cat.includes('loafer') || cat.includes('boot') || cat.includes('kicks');
+  const isClothes = cat.includes('clothes') || cat.includes('clothing') || cat.includes('fashion') || cat.includes('dress') || cat.includes('wear');
+  const isHousehold = cat.includes('household') || cat.includes('bedding') || cat.includes('kitchen') || cat.includes('curtain') || cat.includes('duvet');
+
+  if (isShoes) {
+    if (product.sizes) return `SIZES: ${String(product.sizes).toUpperCase()}`;
+    if (product.size) {
+      const s = String(product.size).toUpperCase();
+      return s.startsWith('EU') || s.startsWith('SIZE') ? s : `SIZES: ${s}`;
+    }
+    return 'SIZES: EU 40-45';
+  }
 
   if (product.sizes) return `SIZES: ${String(product.sizes).toUpperCase()}`;
   if (product.size) {
@@ -773,9 +679,10 @@ function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, f
 
 export const canvasRenderer = {
   /**
-   * Main render entry point - Dispatches dynamically to the chosen flyer style
+   * Main render entry point - Dispatches dynamically to the chosen flyer design layout,
+   * applying the selected color palette and mood badge cleanly without visual collisions.
    */
-  async renderPost(product, seller, ratio = 'status', style = 'unified_brand', companionProduct = null, paletteOverride = null) {
+  async renderPost(product, seller, ratio = 'status', style = 'retail_classic', companionProduct = null, paletteOverride = null, moodOverride = null) {
     const config = resolveSellerConfig(seller);
     const cleanProduct = normalizeProductText(product) || product;
     const cleanCompanion = companionProduct ? (normalizeProductText(companionProduct) || companionProduct) : null;
@@ -799,29 +706,57 @@ export const canvasRenderer = {
 
     const s = String(style || '').toLowerCase().trim();
 
-    // Harmonious palette resolution for this product unless explicitly overridden
-    const harmoniousPal = getHarmoniousPaletteForProduct(cleanProduct);
+    // Palette resolution:
+    // 1. Explicit paletteOverride from the in-preview color adjuster
+    // 2. Harmonious category detection or seller default brand palette
     let resolvedPalette = paletteOverride;
-    if (!resolvedPalette && (STATIC_PALETTES[s] || PRIMARY_PALETTES.some(p => p.id === s || (p.aliases && p.aliases.includes(s))))) {
-      resolvedPalette = s;
-    }
     if (!resolvedPalette) {
-      resolvedPalette = harmoniousPal || config.palette || 'forest_amber';
+      const styleMatch = PRIMARY_PALETTES.find(p => p.id === s || (p.aliases && p.aliases.includes(s)));
+      if (styleMatch) {
+        resolvedPalette = styleMatch.id;
+      } else if (STATIC_PALETTES[s]) {
+        resolvedPalette = s;
+      } else {
+        const harmoniousPal = getHarmoniousPaletteForProduct(cleanProduct);
+        resolvedPalette = harmoniousPal || config.palette || 'forest_amber';
+      }
     }
+
+    const activeMood = moodOverride || cleanProduct.selectedMood || cleanProduct.mood || null;
 
     // Special companion duo bundle layout
     if ((s === 'product_bundles' || s === 'bundle_offer') && cleanCompanion) {
       return this.renderProductBundlePost(cleanProduct, cleanCompanion, config, ratio, resolvedPalette);
     }
 
-    // Locked Architecture Single Master Layout: Always render the locked design on pure white canvas
-    return this.renderUnifiedPost(cleanProduct, config, ratio, s, resolvedPalette);
+    // Editorial Luxury
+    if (s === 'editorial_luxury' || s === 'luxury_editorial') {
+      return this.renderLuxuryEditorialPost(cleanProduct, config, ratio, resolvedPalette);
+    }
+
+    // Clean Minimalist
+    if (s === 'clean_minimalist' || s === 'minimalist') {
+      return this.renderMinimalistPost(cleanProduct, config, ratio, resolvedPalette);
+    }
+
+    // Boutique Showcase
+    if (s === 'boutique_showcase' || s === 'polaroid') {
+      return this.renderPolaroidPost(cleanProduct, config, ratio, resolvedPalette);
+    }
+
+    // Flash sale standalone format
+    if (s === 'flash_sale') {
+      return this.renderFlashSalePost(cleanProduct, config, ratio, resolvedPalette);
+    }
+
+    // Retail Classic / Unified Brand Flagship:
+    return this.renderUnifiedPost(cleanProduct, config, ratio, s, resolvedPalette, activeMood);
   },
 
   /**
    * 1. Brand Master Flyer ('unified_brand') - Flagship Main Design
    */
-  async renderUnifiedPost(product, seller, ratio = 'status', overrideStyle = null, paletteOverride = null) {
+  async renderUnifiedPost(product, seller, ratio = 'status', overrideStyle = null, paletteOverride = null, moodOverride = null) {
     const isStatus = ratio === 'status';
     const width = 1080;
     const height = isStatus ? 1920 : 1350;
@@ -858,8 +793,8 @@ export const canvasRenderer = {
     ctx.fillStyle = '#f8fafc';
     ctx.fillRect(0, 0, width, height);
 
-    // 1. Top Header Bar (170px for status / 135px for group)
-    const headerH = isStatus ? 170 : 135;
+    // 1. Top Header Bar (170px for status / 125px for 4:5)
+    const headerH = isStatus ? 170 : 125;
     
     // Category-smart header kicker (Plain bold sans-serif text, NO emojis)
     let headerKicker = 'PREMIUM QUALITY • VERIFIED SELECTION';
@@ -878,42 +813,71 @@ export const canvasRenderer = {
 
     drawSharedHeader(ctx, width, headerH, isStatus, palette, shopName, headerLocation, headerKicker, config.brand_font);
 
-    // 2. The Main Product Showcase Card (ONE LARGE RECTANGLE!)
-    const boxX = 60;
-    const boxWidth = width - 120; // 960px
-    const boxY = headerH + (isStatus ? 25 : 15); // 195px / 150px
-    const boxHeight = isStatus ? 1080 : 680;
+    // 2. The Main Product Showcase Card
+    // In status (9:16, 1080x1920): 960px x 1080px (vertical box)
+    // In 4:5 (1080x1350): Tighter width (820px) and taller height (720px) centered at boxX = 130px.
+    // This eliminates vast empty horizontal margins and lets the product object expand 20% larger!
+    const boxWidth = isStatus ? (width - 120) : 820;
+    const boxX = isStatus ? 60 : Math.round((width - boxWidth) / 2);
+    const boxY = headerH + (isStatus ? 25 : 14);
+    const boxHeight = isStatus ? 1080 : 720;
     drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, 28);
 
     // Corner badges: Size tag top-left (--badge variable)
-    ctx.font = '800 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    const catBadgeW = Math.max(160, Math.round(ctx.measureText(sizeText).width + 36));
+    const badgePadTop = isStatus ? 22 : 14;
+    const badgePadSide = isStatus ? 24 : 16;
+    const badgeH = isStatus ? 42 : 36;
+    ctx.font = `800 ${isStatus ? 15 : 13}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+    const catBadgeW = Math.max(isStatus ? 160 : 130, Math.round(ctx.measureText(sizeText).width + (isStatus ? 36 : 26)));
     ctx.fillStyle = badgeColor;
-    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 12);
+    roundRect(ctx, boxX + badgePadSide, boxY + badgePadTop, catBadgeW, badgeH, 12);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
-    ctx.fillText(sizeText, boxX + 24 + catBadgeW / 2, boxY + 47);
+    ctx.fillText(sizeText, boxX + badgePadSide + catBadgeW / 2, boxY + badgePadTop + (isStatus ? 25 : 22));
 
-    // Promo badge top-right: dynamic width to prevent overflow; drops risky "100% Authentic" claims on bags
-    let rawBadge = product.badge || product.promo_tag || '';
-    if (!rawBadge) {
-      if (overrideStyle === 'flash_sale') rawBadge = 'FLASH SALE • TODAY ONLY';
-      else if (overrideStyle === 'restock_alerts') rawBadge = 'JUST RESTOCKED';
-      else if (overrideStyle === 'customer_reviews') rawBadge = '5-STAR RATED';
-      else if (overrideStyle === 'clearance_deal') rawBadge = 'CLEARANCE SALE';
+    // Promo badge top-right: dynamic width & color based on selected mood
+    const activeMood = moodOverride || product.selectedMood || product.mood || null;
+    let rawBadge = '';
+    let badgeBgColor = stripe;
+
+    if (activeMood === 'flash_sale') {
+      rawBadge = 'FLASH SALE • TODAY ONLY';
+      badgeBgColor = '#dc2626';
+    } else if (activeMood === 'bestseller') {
+      rawBadge = 'BESTSELLER • TOP RATED';
+      badgeBgColor = '#d97706';
+    } else if (activeMood === 'new_arrival') {
+      rawBadge = 'NEW ARRIVAL • FRESH DROP';
+      badgeBgColor = '#059669';
+    } else if (activeMood === 'limited_stock') {
+      rawBadge = 'LIMITED STOCK • ONLY FEW LEFT';
+      badgeBgColor = '#e11d48';
+    } else if (activeMood === 'premium_choice') {
+      rawBadge = 'PREMIUM QUALITY • ORIGINAL';
+      badgeBgColor = '#0f172a';
+    } else if (activeMood === 'standard') {
+      rawBadge = '';
+    } else {
+      rawBadge = product.badge || product.promo_tag || '';
+      if (!rawBadge) {
+        if (overrideStyle === 'flash_sale') { rawBadge = 'FLASH SALE • TODAY ONLY'; badgeBgColor = '#dc2626'; }
+        else if (overrideStyle === 'restock_alerts') { rawBadge = 'JUST RESTOCKED'; badgeBgColor = '#059669'; }
+        else if (overrideStyle === 'customer_reviews') { rawBadge = '5-STAR RATED'; badgeBgColor = '#d97706'; }
+        else if (overrideStyle === 'clearance_deal') { rawBadge = 'CLEARANCE SALE'; badgeBgColor = '#dc2626'; }
+      }
     }
 
     if (rawBadge) {
       const badgeTxt = sanitizeBadgeText(rawBadge, product.category);
       if (badgeTxt) {
-        ctx.fillStyle = (badgeTxt.includes('SALE') || badgeTxt.includes('CLEARANCE')) ? '#dc2626' : stripe;
-        const bW = Math.max(160, Math.round(ctx.measureText(badgeTxt).width + 36));
-        roundRect(ctx, boxX + boxWidth - bW - 24, boxY + 22, bW, 42, 12);
+        ctx.fillStyle = badgeBgColor;
+        const bW = Math.max(isStatus ? 160 : 130, Math.round(ctx.measureText(badgeTxt).width + (isStatus ? 36 : 26)));
+        roundRect(ctx, boxX + boxWidth - bW - badgePadSide, boxY + badgePadTop, bW, badgeH, 12);
         ctx.fill();
         ctx.fillStyle = '#ffffff';
-        ctx.font = '900 14px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-        ctx.fillText(badgeTxt, boxX + boxWidth - bW / 2 - 24, boxY + 47);
+        ctx.font = `900 ${isStatus ? 14 : 12}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+        ctx.fillText(badgeTxt, boxX + boxWidth - bW / 2 - badgePadSide, boxY + badgePadTop + (isStatus ? 25 : 22));
       }
     }
 
@@ -928,8 +892,9 @@ export const canvasRenderer = {
 
     if (heroImg) {
       const bounds = getProductBounds(heroImg);
-      const padW = isStatus ? 70 : 50;
-      const padH = isStatus ? 90 : 60;
+      // In 4:5, use tight padding so the object fills the box boldly without excessive empty space
+      const padW = isStatus ? 70 : 28;
+      const padH = isStatus ? 90 : 28;
       const maxW = boxWidth - padW;
       const maxH = boxHeight - padH;
       const safeW = Math.max(bounds.sWidth, 1);
@@ -938,7 +903,7 @@ export const canvasRenderer = {
       const dw = Math.round(safeW * scale);
       const dh = Math.round(safeH * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
-      const by = boxY + (isStatus ? 15 : 10) + Math.round((boxHeight - (isStatus ? 15 : 10) - dh) / 2);
+      const by = boxY + (isStatus ? 15 : 6) + Math.round((boxHeight - (isStatus ? 15 : 6) - dh) / 2);
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
     } else {
       // Graceful styled card placeholder in the box so it is NEVER blank
@@ -960,7 +925,7 @@ export const canvasRenderer = {
     }
 
     // 3. Product Title & One-Line Description (Centered, bold sans-serif, no emojis)
-    const titleStartY = boxY + boxHeight + (isStatus ? 40 : 26);
+    const titleStartY = boxY + boxHeight + (isStatus ? 40 : 20);
     const rawBenefit = product.benefit_line || product.description || 'Verified Quality • In Stock Across Kenya';
     const cleanBenefit = stripTofuEmojis(decodeHtmlEntities(rawBenefit));
 
@@ -970,15 +935,15 @@ export const canvasRenderer = {
       cleanBenefit,
       width / 2,
       titleStartY,
-      boxWidth,
+      isStatus ? boxWidth : 900,
       isStatus,
       palette.titleText || '#0f172a',
       subtextColor
     );
 
     // 4. Dedicated Offer POP Rectangle (Centered, --price-bg and --stripe variables)
-    const offerW = isStatus ? 580 : 480;
-    const offerH = isStatus ? 116 : 92;
+    const offerW = isStatus ? 580 : 450;
+    const offerH = isStatus ? 116 : 82;
     let kickerText = 'SPECIAL OFFER PRICE • IN STOCK';
     if (overrideStyle === 'flash_sale') kickerText = 'FLASH DEAL PRICE • SAVE BIG';
     else if (overrideStyle === 'restock_alerts') kickerText = 'JUST RESTOCKED • IN STOCK';
@@ -1000,7 +965,7 @@ export const canvasRenderer = {
     );
 
     // 5. Bottom WhatsApp Footer Panel (Centered, double accent stripes, Lipa na M-Pesa)
-    const footerH = isStatus ? 300 : 250;
+    const footerH = isStatus ? 300 : 215;
     drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone, config.mpesa_till, 'ORDER / INQUIRE ON WHATSAPP:');
 
     return canvas.toDataURL('image/png');

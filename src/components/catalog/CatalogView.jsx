@@ -63,6 +63,53 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   const [viewingProduct, setViewingProduct] = useState(null); // Active product in modal
   const [posterProduct, setPosterProduct] = useState(null); // { product, photo } for poster preview
 
+  // Modal History Handlers to prevent back button from exiting app
+  const handleOpenProduct = (product) => {
+    setViewingProduct(product);
+    window.history.pushState({ modal: 'catalog_viewing_product', prodId: product.id }, '');
+  };
+
+  const handleCloseProduct = () => {
+    if (window.history.state && window.history.state.modal === 'catalog_viewing_product') {
+      window.history.back();
+    } else {
+      setViewingProduct(null);
+    }
+  };
+
+  const handleOpenCheckout = () => {
+    setIsCheckoutOpen(true);
+    window.history.pushState({ modal: 'catalog_checkout' }, '');
+  };
+
+  const handleCloseCheckout = () => {
+    if (window.history.state && window.history.state.modal === 'catalog_checkout') {
+      window.history.back();
+    } else {
+      setIsCheckoutOpen(false);
+    }
+  };
+
+  // Traps browser Back button so it closes modals instead of kicking user out of the site!
+  useEffect(() => {
+    const handlePopState = () => {
+      if (posterProduct) {
+        setPosterProduct(null);
+        return;
+      }
+      if (viewingProduct) {
+        setViewingProduct(null);
+        return;
+      }
+      if (isCheckoutOpen) {
+        setIsCheckoutOpen(false);
+        return;
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [posterProduct, viewingProduct, isCheckoutOpen]);
+
   // Return to top visibility state
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -263,7 +310,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
             {/* Quick Bag / Cart Button */}
             <button
               type="button"
-              onClick={() => setIsCheckoutOpen(true)}
+              onClick={handleOpenCheckout}
               className="relative p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 transition active:scale-95 flex items-center justify-center cursor-pointer"
               title="Open Order Bag"
             >
@@ -496,7 +543,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               return (
                 <article
                   key={product.id}
-                  onClick={() => setViewingProduct(product)}
+                  onClick={() => handleOpenProduct(product)}
                   className="bg-white rounded-2xl p-3 border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex gap-3 group active:scale-[0.99]"
                 >
                   {/* Product Photo */}
@@ -646,7 +693,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               return (
                 <article
                   key={product.id}
-                  onClick={() => setViewingProduct(product)}
+                  onClick={() => handleOpenProduct(product)}
                   className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between group active:scale-[0.99]"
                 >
                   {/* Product Photo */}
@@ -853,7 +900,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
             </div>
 
             <button
-              onClick={() => setIsCheckoutOpen(true)}
+              onClick={handleOpenCheckout}
               className="bg-gradient-to-r from-emerald-600 to-[#25D366] hover:from-emerald-700 hover:to-[#20ba5a] active:scale-95 text-white font-black py-3 px-5 rounded-2xl flex items-center gap-2 text-xs shadow-md transition cursor-pointer"
               style={{ minHeight: '48px' }}
             >
@@ -867,7 +914,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
       {/* Slide-Up WhatsApp Checkout Drawer */}
       <CheckoutDrawer
         isOpen={isCheckoutOpen}
-        onClose={() => setIsCheckoutOpen(false)}
+        onClose={handleCloseCheckout}
         cart={cart}
         products={inStockProducts}
         seller={seller}
@@ -889,7 +936,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
         <ProductDetailModal
           product={viewingProduct}
           seller={seller}
-          onClose={() => setViewingProduct(null)}
+          onClose={handleCloseProduct}
           onAddToList={(id) => handleToggleBag(null, id)}
           isSelected={Boolean(cart[viewingProduct.id])}
           onOpenPoster={(prod, photo) => setPosterProduct({ product: prod, photo })}
