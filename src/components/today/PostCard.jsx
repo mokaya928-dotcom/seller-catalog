@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Share2, Copy, CheckCircle, Clock, Eye, Download, Check, 
   Palette, Languages, Sparkles, LayoutTemplate, Flame, Zap, 
-  Camera, Star, Layers, Tag, Maximize2, ShieldCheck 
+  Camera, Star, Layers, Tag, Maximize2, ShieldCheck, Image as ImageIcon 
 } from 'lucide-react';
 import { canvasRenderer, POST_STYLES } from '../../services/canvasRenderer';
 import { PRIMARY_PALETTES } from '../../services/configService';
@@ -27,7 +27,8 @@ export default function PostCard({
     return getProductPhotosPool(post.product, companion);
   }, [post.product, companion]);
 
-  const activePhoto = post.product.photo || allPhotos[0];
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
+  const activePhoto = allPhotos[selectedPhotoIndex] || post.product.photo || allPhotos[0];
 
   const [currentStyle, setCurrentStyle] = useState(post.style || 'unified_brand');
   const [postPalette, setPostPalette] = useState(post.palette || null);
@@ -305,6 +306,49 @@ export default function PostCard({
           </div>
         </div>
 
+        {/* Multi-Photo Angle Selector (for shoes, bags, skincare) */}
+        {allPhotos.length > 1 && (
+          <div className="space-y-1.5 bg-slate-50/80 p-2.5 rounded-xl border border-slate-200/90">
+            <div className="flex items-center justify-between px-0.5 text-xs">
+              <span className="font-bold text-slate-700 flex items-center gap-1.5 text-[11px]">
+                <ImageIcon className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Select Photo for Poster ({allPhotos.length} Angles):</span>
+              </span>
+              <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
+                Angle {selectedPhotoIndex + 1}
+              </span>
+            </div>
+            <div className="flex items-center gap-2 overflow-x-auto pb-0.5 scrollbar-thin">
+              {allPhotos.map((photoUrl, idx) => {
+                const isSelected = selectedPhotoIndex === idx;
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setSelectedPhotoIndex(idx)}
+                    className={`w-11 h-11 rounded-lg overflow-hidden border-2 bg-slate-900 flex-shrink-0 transition-all cursor-pointer ${
+                      isSelected
+                        ? 'border-emerald-500 ring-2 ring-emerald-500/40 scale-105 shadow-sm'
+                        : 'border-slate-200 opacity-60 hover:opacity-100 hover:border-slate-400'
+                    }`}
+                    title={`Render Photo Angle ${idx + 1} on Poster`}
+                  >
+                    <img
+                      src={getOptimizedImageUrl(photoUrl)}
+                      alt={`Angle ${idx + 1}`}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                      }}
+                    />
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* 10 Flyer Design Formats Carousel (1-Tap Instant Layout Switcher) */}
         <div className="space-y-1.5 bg-slate-50/80 p-2.5 rounded-xl border border-slate-200/90">
           <div className="flex items-center justify-between px-0.5 text-xs">
@@ -554,6 +598,47 @@ export default function PostCard({
                 </div>
               )}
             </div>
+
+            {/* Multi-Photo Angle Selector inside Preview Modal */}
+            {allPhotos.length > 1 && (
+              <div className="w-full pt-1.5 bg-white/5 rounded-xl p-2 border border-white/10 mt-1">
+                <div className="flex items-center justify-between pb-1 text-white">
+                  <div className="flex items-center gap-1.5 text-[10px] font-bold text-gray-200">
+                    <ImageIcon className="w-3 h-3 text-emerald-400" />
+                    <span>Photo Angle ({allPhotos.length} Angles):</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-emerald-400">
+                    Angle {selectedPhotoIndex + 1}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-thin">
+                  {allPhotos.map((photoUrl, idx) => {
+                    const isSelected = selectedPhotoIndex === idx;
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setSelectedPhotoIndex(idx)}
+                        className={`w-9 h-9 rounded-lg overflow-hidden border-2 bg-black flex-shrink-0 transition-all cursor-pointer ${
+                          isSelected ? 'border-emerald-400 ring-2 ring-emerald-400/40 scale-105' : 'border-white/20 opacity-60 hover:opacity-100'
+                        }`}
+                        title={`Select Photo Angle ${idx + 1}`}
+                      >
+                        <img
+                          src={getOptimizedImageUrl(photoUrl)}
+                          alt={`Angle ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                          }}
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* 10 Flyer Design Formats Carousel inside Preview Modal */}
             <div className="w-full pt-2 bg-white/5 rounded-xl p-2.5 border border-white/10 mt-1">
