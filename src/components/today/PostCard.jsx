@@ -63,7 +63,8 @@ export default function PostCard({
 
     const productToRender = {
       ...post.product,
-      photo: activePhoto
+      photo: activePhoto,
+      selectedPhoto: activePhoto
     };
 
     canvasRenderer

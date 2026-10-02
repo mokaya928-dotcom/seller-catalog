@@ -37,16 +37,24 @@ import {
   drawEditorialBorder
 } from '../utils/canvasDesignHelpers.js';
 
-function loadImage(src, timeoutMs = 8000) {
+const memoryImageCache = new Map();
+
+function loadImage(src, timeoutMs = 12000) {
   return new Promise((resolve) => {
     if (!src) return resolve(null);
+
+    // Immediate return from memory cache
+    if (memoryImageCache.has(src)) {
+      return resolve(memoryImageCache.get(src));
+    }
 
     let targetSrc = src;
     const isHttp = typeof src === 'string' && (src.startsWith('http://') || src.startsWith('https://'));
     const isSameOrigin = typeof window !== 'undefined' && isHttp && src.startsWith(window.location.origin);
 
-    if (isHttp && !isSameOrigin && !src.includes('images.weserv.nl')) {
-      targetSrc = `https://images.weserv.nl/?url=${encodeURIComponent(src)}`;
+    // Fast image proxy with optimal dimensions to prevent downloading multi-megabyte raw files
+    if (isHttp && !isSameOrigin && !src.includes('images.weserv.nl') && !src.includes('wsrv.nl')) {
+      targetSrc = `https://images.weserv.nl/?url=${encodeURIComponent(src)}&w=900&q=88`;
     }
 
     let settled = false;
@@ -62,6 +70,9 @@ function loadImage(src, timeoutMs = 8000) {
       if (!settled) {
         settled = true;
         clearTimeout(timer);
+        if (result) {
+          memoryImageCache.set(src, result);
+        }
         resolve(result);
       }
     };
@@ -72,7 +83,28 @@ function loadImage(src, timeoutMs = 8000) {
     img.onload = () => finish(img);
 
     img.onerror = () => {
-      // If CORS proxy failed, attempt direct load as fallback
+      // Fallback 1: Try alternate proxy wsrv.nl
+      if (targetSrc.includes('images.weserv.nl') && !settled) {
+        const altProxy = `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=900&q=88`;
+        const altImg = new Image();
+        altImg.crossOrigin = 'anonymous';
+        altImg.onload = () => finish(altImg);
+        altImg.onerror = () => {
+          // Fallback 2: Direct load
+          const directImg = new Image();
+          directImg.crossOrigin = 'anonymous';
+          directImg.onload = () => finish(directImg);
+          directImg.onerror = () => {
+            console.warn(`Failed to load image: ${src}`);
+            finish(null);
+          };
+          directImg.src = src;
+        };
+        altImg.src = altProxy;
+        return;
+      }
+
+      // If already tried or direct, finish with null
       if (targetSrc !== src && !settled) {
         const directImg = new Image();
         directImg.crossOrigin = 'anonymous';
@@ -84,7 +116,6 @@ function loadImage(src, timeoutMs = 8000) {
         directImg.src = src;
         return;
       }
-      console.warn(`Failed to load image at: ${src}`);
       finish(null);
     };
 
@@ -583,16 +614,16 @@ function drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone,
 function drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius = 28) {
   ctx.save();
   ctx.fillStyle = '#ffffff';
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.05)';
-  ctx.shadowBlur = 20;
-  ctx.shadowOffsetY = 4;
+  ctx.shadowColor = 'rgba(15, 23, 42, 0.09)';
+  ctx.shadowBlur = 24;
+  ctx.shadowOffsetY = 6;
   roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius);
   ctx.fill();
   ctx.restore();
 
-  // Locked specification: white rounded-rectangle glass card with soft shadow and thin border
-  ctx.strokeStyle = '#f1f5f9';
-  ctx.lineWidth = 1.5;
+  // Crisp, clearly visible rounded-rectangle card framing the product with structure and vibe
+  ctx.strokeStyle = '#e2e8f0';
+  ctx.lineWidth = 3;
   roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius);
   ctx.stroke();
 }
@@ -823,8 +854,8 @@ export const canvasRenderer = {
     const sizeText = getCategorySizeText(product);
     const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-    // Base background: Pure crisp clean white (#ffffff). Strictly never dark, never grey. No outer grey border.
-    ctx.fillStyle = '#ffffff';
+    // Base background: Very light clean off-white (#f8fafc) conforming to locked specification
+    ctx.fillStyle = '#f8fafc';
     ctx.fillRect(0, 0, width, height);
 
     // 1. Top Header Bar (170px for status / 135px for group)
@@ -886,21 +917,46 @@ export const canvasRenderer = {
       }
     }
 
-    // Hero Product Image - Supports user-chosen photo angle via product.selectedPhoto
-    const targetPhoto = product.selectedPhoto || product.photo || (Array.isArray(product.photos) && product.photos[0]);
-    const heroImg = await loadProductImage(product, targetPhoto);
+    // Hero Product Image - Prioritize product.photo (angle selection) then selectedPhoto
+    const targetPhoto = product.photo || product.selectedPhoto || (Array.isArray(product.photos) && product.photos[0]);
+    let heroImg = await loadProductImage(product, targetPhoto);
+
+    // If initial candidate failed, attempt fallback to first photo in gallery
+    if (!heroImg && Array.isArray(product.photos) && product.photos[0] && product.photos[0] !== targetPhoto) {
+      heroImg = await loadProductImage(product, product.photos[0]);
+    }
+
     if (heroImg) {
       const bounds = getProductBounds(heroImg);
       const padW = isStatus ? 70 : 50;
       const padH = isStatus ? 90 : 60;
       const maxW = boxWidth - padW;
       const maxH = boxHeight - padH;
-      const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
-      const dw = Math.round(bounds.sWidth * scale);
-      const dh = Math.round(bounds.sHeight * scale);
+      const safeW = Math.max(bounds.sWidth, 1);
+      const safeH = Math.max(bounds.sHeight, 1);
+      const scale = Math.min(maxW / safeW, maxH / safeH);
+      const dw = Math.round(safeW * scale);
+      const dh = Math.round(safeH * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 15 : 10) + Math.round((boxHeight - (isStatus ? 15 : 10) - dh) / 2);
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+    } else {
+      // Graceful styled card placeholder in the box so it is NEVER blank
+      ctx.fillStyle = '#f8fafc';
+      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, 20);
+      ctx.fill();
+      ctx.strokeStyle = '#cbd5e1';
+      ctx.lineWidth = 2;
+      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, 20);
+      ctx.stroke();
+
+      ctx.fillStyle = '#475569';
+      ctx.font = `800 ${isStatus ? 26 : 18}px system-ui, -apple-system, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.fillText(product.name || 'PRODUCT SHOWCASE', width / 2, boxY + boxHeight / 2 - 8);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = `600 ${isStatus ? 18 : 14}px system-ui, -apple-system, sans-serif`;
+      ctx.fillText('Tap Angle Below to Preview Photo', width / 2, boxY + boxHeight / 2 + 26);
     }
 
     // 3. Product Title & One-Line Description (Centered, bold sans-serif, no emojis)

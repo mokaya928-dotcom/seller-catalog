@@ -93,6 +93,8 @@ export const GLOWND_SELLER = {
   delivery_info: 'Nairobi Same-Day Boda & Countrywide Parcels via Fargo / G4S'
 };
 
+export const OREWA_PRODUCTS = [];
+
 export const OREWA_SELLER = {
   id: 'seller_orewa_limited',
   shop_name: 'Orewa Limited',
@@ -110,12 +112,6 @@ export const OREWA_SELLER = {
   website: 'https://orewa.co.ke'
 };
 
-export const OREWA_PRODUCTS = OREWA_RAW_PRODUCTS.map((p) => ({
-  ...p,
-  seller_id: 'seller_orewa_limited',
-  in_stock: true,
-  featured: p.badge === 'BESTSELLER' || p.badge === 'TOP RATED'
-}));
 
 export const SHOE_IN_SELLER = {
   id: 'seller_shoe_in_kenya',

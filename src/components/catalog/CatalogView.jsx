@@ -10,7 +10,7 @@ import CheckoutDrawer from './CheckoutDrawer';
 import WhatsAppIcon from '../common/WhatsAppIcon';
 import PwaInstallBanner from '../common/PwaInstallBanner';
 import { shareService } from '../../services/shareService';
-import { executeSmartSearch } from '../../services/smartSearch';
+import { executeSmartSearch, normalizeCategory } from '../../services/smartSearch';
 import { getProductRemaining, getProductRegularPrice, getProductSocialProof } from '../../services/scheduleService';
 import { getOptimizedImageUrl } from '../../utils/imageUtils';
 
@@ -101,7 +101,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   const categoryStats = useMemo(() => {
     const counts = { All: inStockProducts.length };
     inStockProducts.forEach((p) => {
-      const cat = p.category || 'Beauty Care';
+      const cat = normalizeCategory(p.category);
       counts[cat] = (counts[cat] || 0) + 1;
     });
 
@@ -112,22 +112,21 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
     return counts;
   }, [inStockProducts]);
 
-  // Priority category ordering
+  // Priority selling category ordering for presentations (fits every merchant's niche)
   const CATEGORY_ORDER = [
     'All',
     'All Shoes & Kicks',
     'Sneakers & Kicks',
     "Men's Footwear",
     'Handbags & Bags',
-    'Makeup & Prep',
     'Lip Care',
-    'Bath & Body',
-    'Sunscreen & SPF',
+    'Makeup & Prep',
     'Skincare & Face',
     'Serums & Actives',
-    'Classic Clothes',
-    'Household & Bedding',
-    'Household & Kitchen'
+    'Bath & Body',
+    'Sunscreen & SPF',
+    'Fashion & Outfits',
+    'Bedding & Home'
   ];
 
   const categories = useMemo(() => {
@@ -150,16 +149,14 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
       case 'Sneakers & Kicks': return '👟';
       case "Men's Footwear": return '👞';
       case 'Handbags & Bags': return '👜';
-      case 'Makeup & Prep': return '👑';
       case 'Lip Care': return '💄';
-      case 'Bath & Body': return '🌸';
-      case 'Sunscreen & SPF': return '☀️';
+      case 'Makeup & Prep': return '👑';
       case 'Skincare & Face': return '🧴';
       case 'Serums & Actives': return '🧪';
-      case 'Classic Clothes': return '👗';
-      case 'Household & Bedding': return '🛏️';
-      case 'Household & Kitchen': return '☕';
-      case 'Hair & Wellness': return '🌿';
+      case 'Bath & Body': return '🌸';
+      case 'Sunscreen & SPF': return '☀️';
+      case 'Fashion & Outfits': return '👗';
+      case 'Bedding & Home': return '🛏️';
       default: return '🛍️';
     }
   };
@@ -536,7 +533,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                     <div>
                       <div className="flex items-center justify-between gap-1">
                         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate">
-                          {product.category || 'Beauty Care'}
+                          {normalizeCategory(product.category)}
                         </span>
                         {product.size && (
                           <span className="text-[10px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded">
@@ -734,7 +731,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                   <div className="p-3 flex flex-col justify-between flex-1 gap-2">
                     <div>
                       <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
-                        {product.category || 'Beauty Care'}
+                        {normalizeCategory(product.category)}
                       </span>
                       <h2 className="text-xs font-bold text-slate-900 leading-snug line-clamp-2 mt-0.5 group-hover:text-emerald-700 transition-colors">
                         {product.name}

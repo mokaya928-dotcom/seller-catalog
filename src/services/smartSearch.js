@@ -25,6 +25,16 @@ export const SMART_PRESETS = [
   { id: 'clothes', label: 'Dresses & Clothes', query: 'dress clothes', icon: '👗', color: 'pink' }
 ];
 
+// Standardized category normalization for unified single-catalogue presentation
+export function normalizeCategory(cat) {
+  if (!cat) return 'Skincare & Face';
+  const c = cat.trim();
+  if (c === 'Skincare' || c === 'Korean Skincare & Serums' || c === 'Korean Skincare') return 'Skincare & Face';
+  if (c === 'Classic Clothes' || c === 'Clothes' || c === 'Fashion') return 'Fashion & Outfits';
+  if (c === 'Household & Bedding' || c === 'Household & Kitchen' || c === 'Household') return 'Bedding & Home';
+  return c;
+}
+
 // Canonical beauty and retail vocabulary for spell checking & fuzzy suggestions
 const VOCABULARY = [
   'smart', 'search', 'sunscreen', 'primer', 'vaseline', 'cerave', 'maybelline',
@@ -363,6 +373,7 @@ export function executeSmartSearch(products = [], rawQuery = '', options = {}) {
 
     // 2. Category Check
     let matchesCategory = false;
+    const prodCat = normalizeCategory(product.category);
     if (selectedCategory === 'All') {
       matchesCategory = true;
     } else if (
@@ -371,9 +382,9 @@ export function executeSmartSearch(products = [], rawQuery = '', options = {}) {
       selectedCategory.toLowerCase() === 'all shoes' ||
       selectedCategory.toLowerCase() === 'all shoes & kicks'
     ) {
-      matchesCategory = (product.category === 'Sneakers & Kicks' || product.category === "Men's Footwear");
+      matchesCategory = (prodCat === 'Sneakers & Kicks' || prodCat === "Men's Footwear");
     } else {
-      matchesCategory = (product.category || 'Beauty Care').toLowerCase() === selectedCategory.toLowerCase();
+      matchesCategory = prodCat.toLowerCase() === selectedCategory.toLowerCase();
     }
 
     if (!matchesCategory) continue;
