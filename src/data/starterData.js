@@ -3620,7 +3620,7 @@ export const CURATED_PRODUCTS = [
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
-    "id": "prod_shoein_billionaire_woven_cap_toe_derby_",
+    "id": "prod_shoein_billionaire_woven_cap_toe_derby__135",
     "seller_id": "seller_beauty_bar_kenya",
     "name": "Billionaire Woven Cap Toe Derby Brown",
     "size": "EU 40 - 45",
@@ -3646,7 +3646,7 @@ export const CURATED_PRODUCTS = [
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
-    "id": "prod_shoein_billionaire_woven_cap_toe_derby_",
+    "id": "prod_shoein_billionaire_woven_cap_toe_derby__136",
     "seller_id": "seller_beauty_bar_kenya",
     "name": "Billionaire Woven Cap Toe Derby Black",
     "size": "EU 40 - 45",
@@ -3776,7 +3776,7 @@ export const CURATED_PRODUCTS = [
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
-    "id": "prod_shoein_john_foster_croc_penny_loafers_b",
+    "id": "prod_shoein_john_foster_croc_penny_loafers_b_141",
     "seller_id": "seller_beauty_bar_kenya",
     "name": "John Foster Croc Penny Loafers Brown",
     "size": "EU 40 - 45",
@@ -4114,7 +4114,7 @@ export const CURATED_PRODUCTS = [
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
-    "id": "prod_shoein_luxury_croc_double_monk_strap_sh",
+    "id": "prod_shoein_luxury_croc_double_monk_strap_sh_154",
     "seller_id": "seller_beauty_bar_kenya",
     "name": "Luxury Croc Double Monk Strap Shoes – Black",
     "size": "EU 40 - 45",

@@ -5,7 +5,7 @@ import {
   Camera, Star, Layers, Tag, Maximize2, ShieldCheck, Image as ImageIcon 
 } from 'lucide-react';
 import { canvasRenderer, POST_STYLES } from '../../services/canvasRenderer';
-import { PRIMARY_PALETTES } from '../../services/configService';
+import { PRIMARY_PALETTES, getHarmoniousPaletteForProduct } from '../../services/configService';
 import { shareService } from '../../services/shareService';
 import { scheduleService } from '../../services/scheduleService';
 import WhatsAppIcon from '../common/WhatsAppIcon';
@@ -40,8 +40,8 @@ export default function PostCard({
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [isStyleMenuOpen, setIsStyleMenuOpen] = useState(false);
 
-  // Active palette: per-post override or global seller palette
-  const activePalette = postPalette || seller.palette || 'emerald';
+  // Active palette: per-post override or assigned post palette or harmonious detection
+  const activePalette = postPalette || post.palette || getHarmoniousPaletteForProduct(post.product) || seller.palette || 'forest_amber';
 
   // Active caption language: per-card override or global setting
   const activeCaptionLang = cardLang || globalCaptionLang || (seller?.language === 'swahili' ? 'swahili' : 'english');

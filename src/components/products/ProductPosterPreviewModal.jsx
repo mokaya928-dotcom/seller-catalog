@@ -5,7 +5,7 @@ import {
   Smartphone, Layers, RefreshCw, Image as ImageIcon 
 } from 'lucide-react';
 import { canvasRenderer, POST_STYLES } from '../../services/canvasRenderer';
-import { PRIMARY_PALETTES } from '../../services/configService';
+import { PRIMARY_PALETTES, getHarmoniousPaletteForProduct } from '../../services/configService';
 import { shareService } from '../../services/shareService';
 import { scheduleService } from '../../services/scheduleService';
 import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
@@ -26,7 +26,9 @@ export default function ProductPosterPreviewModal({
   });
 
   const [currentRatio, setCurrentRatio] = useState(initialRatio || 'status'); // 'status' (9:16) or 'group' (4:5)
-  const [currentPalette, setCurrentPalette] = useState(seller?.palette || 'forest_amber');
+  const [currentPalette, setCurrentPalette] = useState(() => {
+    return getHarmoniousPaletteForProduct(product) || seller?.palette || 'forest_amber';
+  });
   const [captionLang, setCaptionLang] = useState(
     seller?.language === 'swahili' ? 'swahili' : 'english'
   );

@@ -361,12 +361,9 @@ async function renderEditorialMaison(product, seller, ratio = 'status', paletteO
   const fontFam = SUPPORTED_BRAND_FONTS[config.brand_font]?.cssFamily || '"Playfair Display", Georgia, serif';
   const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-  // Noir Obsidian Background
-  ctx.fillStyle = '#0a0a0c';
+  // Base Background: Pure Clean White (#ffffff)
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
-
-  // Double Editorial Margin Frame with Corner Accents
-  drawEditorialBorder(ctx, width, height, isStatus ? 24 : 16, '#d4af37', true);
 
   // Editorial Masthead
   const headerH = isStatus ? 170 : 135;
@@ -603,14 +600,9 @@ async function renderPastelBoutique(product, seller, ratio = 'status', paletteOv
   const palette = resolvePalette(config, paletteOverride);
   const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-  // Soft Warm Pastel Blush Canvas
-  ctx.fillStyle = '#fdf4f5';
+  // Base Background: Pure Clean White (#ffffff)
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
-
-  // Pastel Border Frame
-  ctx.strokeStyle = '#fbcfe8';
-  ctx.lineWidth = 14;
-  ctx.strokeRect(7, 7, width - 14, height - 14);
 
   // Boutique Header
   const headerH = isStatus ? 170 : 135;
@@ -712,13 +704,9 @@ async function renderBotanicalSpa(product, seller, ratio = 'status', paletteOver
   const palette = resolvePalette(config, paletteOverride);
   const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-  // Calming Eucalyptus Sage Green Background
-  ctx.fillStyle = '#f0fdf4';
+  // Base Background: Pure Clean White (#ffffff)
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
-
-  ctx.strokeStyle = '#bbf7d0';
-  ctx.lineWidth = 14;
-  ctx.strokeRect(7, 7, width - 14, height - 14);
 
   // Spa Header
   const headerH = isStatus ? 170 : 135;
@@ -820,13 +808,9 @@ async function renderClinicalApothecary(product, seller, ratio = 'status', palet
   const palette = resolvePalette(config, paletteOverride);
   const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-  // Crisp Clinical White/Ice Slate Background
-  ctx.fillStyle = '#f8fafc';
+  // Base Background: Pure Clean White (#ffffff)
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
-
-  ctx.strokeStyle = '#cbd5e1';
-  ctx.lineWidth = 14;
-  ctx.strokeRect(7, 7, width - 14, height - 14);
 
   // Technical Header
   const headerH = isStatus ? 170 : 135;
@@ -955,13 +939,9 @@ async function renderLookbookAtelier(product, seller, ratio = 'status', paletteO
   const palette = resolvePalette(config, paletteOverride);
   const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-  // Neutral Atelier Background
-  ctx.fillStyle = '#18181b';
+  // Base Background: Pure Clean White (#ffffff)
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
-
-  ctx.strokeStyle = '#e4e4e7';
-  ctx.lineWidth = 14;
-  ctx.strokeRect(7, 7, width - 14, height - 14);
 
   // Header
   const headerH = isStatus ? 170 : 135;
@@ -1075,13 +1055,9 @@ async function renderWarmLiving(product, seller, ratio = 'status', paletteOverri
   const palette = resolvePalette(config, paletteOverride);
   const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-  // Warm Cozy Beige Background
-  ctx.fillStyle = '#fbf8f5';
+  // Base Background: Pure Clean White (#ffffff)
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
-
-  ctx.strokeStyle = '#e7e0d8';
-  ctx.lineWidth = 14;
-  ctx.strokeRect(7, 7, width - 14, height - 14);
 
   // Practical Header
   const headerH = isStatus ? 170 : 135;
