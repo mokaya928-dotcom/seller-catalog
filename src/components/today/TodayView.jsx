@@ -33,10 +33,33 @@ export default function TodayView({
   const [bulkProgressText, setBulkProgressText] = useState('');
   const [isNewProductModalOpen, setIsNewProductModalOpen] = useState(false);
 
+  const handleOpenNewProductModal = () => {
+    setIsNewProductModalOpen(true);
+    window.history.pushState({ modal: 'new_product_modal' }, '');
+  };
+
+  const handleCloseNewProductModal = () => {
+    if (window.history.state && window.history.state.modal === 'new_product_modal') {
+      window.history.back();
+    } else {
+      setIsNewProductModalOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (isNewProductModalOpen) {
+        setIsNewProductModalOpen(false);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [isNewProductModalOpen]);
+
   // Sync external open request (e.g. from Header + Poster button)
   useEffect(() => {
     if (isInstantPosterOpen) {
-      setIsNewProductModalOpen(true);
+      handleOpenNewProductModal();
       if (onCloseInstantPoster) onCloseInstantPoster();
     }
   }, [isInstantPosterOpen, onCloseInstantPoster]);

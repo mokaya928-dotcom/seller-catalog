@@ -90,15 +90,31 @@ export default function ProductsView({
 
   const handleOpenAdd = () => {
     setModalState({ isOpen: true, product: null });
+    window.history.pushState({ modal: 'product_modal' }, '');
   };
 
   const handleOpenEdit = (product) => {
     setModalState({ isOpen: true, product });
+    window.history.pushState({ modal: 'product_modal', id: product.id }, '');
   };
 
   const handleCloseModal = () => {
-    setModalState({ isOpen: false, product: null });
+    if (window.history.state && window.history.state.modal === 'product_modal') {
+      window.history.back();
+    } else {
+      setModalState({ isOpen: false, product: null });
+    }
   };
+
+  React.useEffect(() => {
+    const handlePopState = () => {
+      if (modalState.isOpen) {
+        setModalState({ isOpen: false, product: null });
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [modalState.isOpen]);
 
   const handleSaveProduct = async (productData) => {
     if (modalState.product) {

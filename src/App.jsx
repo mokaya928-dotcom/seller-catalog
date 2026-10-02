@@ -568,7 +568,7 @@ export default function App() {
         ratio={ratio}
         onRatioChange={setRatio}
         onPaletteChange={handlePaletteChange}
-        onOpenSettings={() => setIsSettingsOpen(true)}
+        onOpenSettings={handleOpenSettings}
         onOpenCatalog={handleOpenCatalog}
         onOpenCreatePoster={handleOpenCreatePoster}
         onLock={handleLock}
@@ -596,8 +596,8 @@ export default function App() {
             instantProduct={instantProduct}
             onClearInstantProduct={() => setInstantProduct(null)}
             isInstantPosterOpen={isInstantPosterModalOpen}
-            onCloseInstantPoster={() => setIsInstantPosterModalOpen(false)}
-            onOpenTimeSchedule={() => setIsTimeScheduleOpen(true)}
+            onCloseInstantPoster={handleCloseInstantPoster}
+            onOpenTimeSchedule={handleOpenTimeSchedule}
           />
         )}
 
@@ -608,7 +608,7 @@ export default function App() {
             ratio={ratio}
             todayDateStr={todayDateStr}
             postingCategory={postingCategory}
-            onGoToToday={() => setActiveTab('today')}
+            onGoToToday={() => handleTabChange('today')}
             onShowToast={showToast}
           />
         )}
@@ -623,7 +623,7 @@ export default function App() {
             onDeleteProduct={handleDeleteProduct}
             onShowToast={showToast}
             onGenerateImmediate={handleGenerateImmediate}
-            onOpenBulkModal={() => setIsBulkModalOpen(true)}
+            onOpenBulkModal={handleOpenBulkModal}
           />
         )}
       </main>
@@ -631,7 +631,7 @@ export default function App() {
       {/* Bottom Navigation */}
       <Navigation
         activeTab={activeTab}
-        onTabChange={setActiveTab}
+        onTabChange={handleTabChange}
         pendingPostCount={pendingCount}
       />
 
@@ -639,12 +639,12 @@ export default function App() {
       {isSettingsOpen && (
         <SettingsModal
           seller={seller}
-          onClose={() => setIsSettingsOpen(false)}
+          onClose={handleCloseSettings}
           onSave={handleSaveSettings}
           onResetDefaults={handleResetDefaults}
           pwa={pwa}
-          onOpenBulkModal={() => setIsBulkModalOpen(true)}
-          onOpenTimeSchedule={() => setIsTimeScheduleOpen(true)}
+          onOpenBulkModal={handleOpenBulkModal}
+          onOpenTimeSchedule={handleOpenTimeSchedule}
           onLoadPreset={handleLoadStorePreset}
         />
       )}
@@ -652,7 +652,7 @@ export default function App() {
       {/* Time Slot Customizer & Alarms Modal */}
       <TimeSlotScheduleModal
         isOpen={isTimeScheduleOpen}
-        onClose={() => setIsTimeScheduleOpen(false)}
+        onClose={handleCloseTimeSchedule}
         seller={seller}
         onScheduleUpdated={(newSchedule) => {
           setCustomSchedule(newSchedule);
@@ -664,7 +664,7 @@ export default function App() {
       {/* Bulk CSV / Excel Upload & Store Backup Modal */}
       <BulkUploadModal
         isOpen={isBulkModalOpen}
-        onClose={() => setIsBulkModalOpen(false)}
+        onClose={handleCloseBulkModal}
         products={products}
         seller={seller}
         todayOverrides={todayOverrides}
