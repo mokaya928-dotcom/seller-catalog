@@ -102,6 +102,25 @@ export default function App() {
   useEffect(() => {
     async function loadData() {
       try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const sellerParam = (urlParams.get('seller') || urlParams.get('store') || '').toLowerCase();
+
+        if (sellerParam === 'orewa' || sellerParam === 'orewa_limited' || urlParams.get('orewa') !== null) {
+          const loaded = await storageService.loadPreset('orewa');
+          const [loadedPosted, loadedOverrides] = await Promise.all([
+            storageService.getPostedStatus(todayDateStr),
+            storageService.getDayOverrides(todayDateStr)
+          ]);
+          setSeller(loaded.seller);
+          setProducts(loaded.products);
+          setPostedMap(loadedPosted);
+          setTodayOverrides(loadedOverrides || {});
+          setIsUnlocked(true);
+          sessionStorage.setItem('seller_unlocked', 'true');
+          showToast('✨ Welcome to Orewa Limited (orewa.co.ke) Daily Posters & Storefront!', 'success');
+          return;
+        }
+
         const [loadedSeller, loadedProducts, loadedPosted, loadedOverrides] = await Promise.all([
           storageService.getSeller(),
           storageService.getProducts(),

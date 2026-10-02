@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Check, RotateCcw, ShieldCheck, Store, MapPin, CreditCard, Sparkles, Download, CheckCircle2, Smartphone, Lock, Eye, EyeOff, FileSpreadsheet, Database, Clock, BellRing } from 'lucide-react';
-import { BEAUTY_BAR_SELLER, GLOW_HOUSE_SELLER, HALAL_BEAUTY_SELLER, MOH_037_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS } from '../../data/starterData';
+import { BEAUTY_BAR_SELLER, GLOW_HOUSE_SELLER, HALAL_BEAUTY_SELLER, MOH_037_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS, OREWA_SELLER } from '../../data/starterData';
 
 const BRAND_PALETTES = [
   { name: 'Glownd Pink', hex: '#fa31df', dark: '#be185d' },
@@ -89,6 +89,20 @@ export default function SettingsModal({ seller, onClose, onSave, onResetDefaults
               <span>Load Shop Preset</span>
             </label>
             <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={async () => {
+                  applyPreset(OREWA_SELLER);
+                  if (onLoadPreset) {
+                    await onLoadPreset('orewa');
+                    onClose();
+                  }
+                }}
+                className="p-2.5 rounded-xl border border-teal-500/50 bg-[#0e5e6f] text-[11px] font-black text-amber-300 hover:bg-[#0b4b59] transition text-center shadow-sm col-span-2 flex items-center justify-center gap-2 cursor-pointer ring-1 ring-amber-400/40"
+              >
+                <span>✨</span>
+                <span>Orewa Limited (orewa.co.ke | Skincare & Beauty Kenya)</span>
+              </button>
               <button
                 type="button"
                 onClick={async () => {

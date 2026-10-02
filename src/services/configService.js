@@ -27,6 +27,24 @@ export const BEAUTY_BAR_SELLER_CONFIG = {
 
 export const DEFAULT_SELLER_CONFIG = BEAUTY_BAR_SELLER_CONFIG;
 
+// Canonical Seller #002: Orewa Limited (orewa.co.ke)
+export const OREWA_SELLER_CONFIG = {
+  id: 'seller_orewa_limited',
+  shop_name: 'Orewa Limited',
+  location: 'Nairobi CBD • 2-hr Express Delivery | Countrywide Dispatch',
+  phone: '+254 118 926 934',
+  phone_raw: '254118926934',
+  brand_color: '#0e5e6f',
+  brand_secondary: '#e5a93b',
+  palette: 'deep_teal_gold',
+  brand_font: 'Outfit',
+  language: 'kenyan_mix',
+  mpesa_till: '118926',
+  mpesa_type: 'Buy Goods Till',
+  delivery_info: 'Same-day 2-hr delivery in Nairobi • Fast countrywide dispatch • Pay on Delivery available',
+  website: 'https://orewa.co.ke'
+};
+
 // Preset Palettes conforming to the LOCKED single template architecture
 export const STATIC_PALETTES = {
   forest_amber: {
@@ -538,6 +556,14 @@ export function parseDemoConfigFromUrl(search = (typeof window !== 'undefined' ?
 
   try {
     const params = new URLSearchParams(search);
+    const sellerParam = (params.get('seller') || params.get('store') || '').toLowerCase();
+    if (sellerParam === 'orewa' || sellerParam === 'orewa_limited' || params.get('orewa') !== null) {
+      return resolveSellerConfig({
+        ...OREWA_SELLER_CONFIG,
+        isDemoPreview: true
+      });
+    }
+
     const isDemo = params.get('demo') === '1' || params.get('demo') === 'true';
     const shop = params.get('shop');
     const phone = params.get('phone');
