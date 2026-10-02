@@ -16,7 +16,30 @@ import { getOptimizedImageUrl } from '../../utils/imageUtils';
 
 export default function CatalogView({ seller, products, onExitToSeller, onOpenSeller, isPreview = false, pwa }) {
   const [search, setSearch] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const searchParams = new URLSearchParams(window.location.search);
+      const catParam = searchParams.get('category');
+      const shopParam = (searchParams.get('shop') || searchParams.get('store') || '').toLowerCase();
+      if (catParam) return catParam;
+      if (shopParam === 'shoes' || shopParam === 'shoe' || shopParam === 'kicks' || shopParam === 'sneakers') {
+        return 'Sneakers & Kicks';
+      }
+    }
+    return 'All';
+  });
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const catParam = searchParams.get('category');
+    const shopParam = (searchParams.get('shop') || searchParams.get('store') || '').toLowerCase();
+    if (catParam) {
+      setSelectedCategory(catParam);
+    } else if (shopParam === 'shoes' || shopParam === 'shoe' || shopParam === 'kicks' || shopParam === 'sneakers') {
+      setSelectedCategory('Sneakers & Kicks');
+    }
+  }, []);
+
   const [priceFilter, setPriceFilter] = useState('all'); // 'all' | 'under1500' | 'under3000' | 'offers'
   const [sortBy, setSortBy] = useState('featured'); // 'featured' | 'price_asc' | 'price_desc' | 'name_asc'
   const [layoutMode, setLayoutMode] = useState(() => {
@@ -57,29 +80,10 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
 
   const cleanPhone = (seller.phone_raw || seller.phone || '254728222211').replace(/[^0-9]/g, '');
 
-  const isShoesStore = (seller?.id === 'seller_shoe_in_kenya') || 
-                       Boolean(seller?.shop_name && seller.shop_name.toLowerCase().includes('shoe'));
-
   // Show in-stock products in public catalogue, accessible for everyone
   const inStockProducts = useMemo(() => {
-    const pool = (products || []).filter((p) => p.in_stock !== false);
-    if (isShoesStore) {
-      const shoesOnly = pool.filter(p => p.seller_id === 'seller_shoe_in_kenya' || p.category === 'Sneakers & Kicks' || p.category === "Men's Footwear");
-      return shoesOnly.length > 0 ? shoesOnly : pool;
-    }
-    const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
-    if (searchParams && searchParams.get('brand_only') === '1') {
-      if (seller?.id === 'seller_beauty_bar_kenya') {
-        const beautyOnly = pool.filter(p => p.seller_id === 'seller_beauty_bar_kenya' || p.seller_id === 'seller_glow_secret');
-        return beautyOnly.length > 0 ? beautyOnly : pool;
-      }
-      if (seller?.id === 'seller_glownd') {
-        const bagsOnly = pool.filter(p => p.seller_id === 'seller_glownd');
-        return bagsOnly.length > 0 ? bagsOnly : pool;
-      }
-    }
-    return pool;
-  }, [products, seller, isShoesStore]);
+    return (products || []).filter((p) => p.in_stock !== false);
+  }, [products]);
 
   // Deep Linking: Auto-open product modal if URL has ?prod=... or ?view=catalog&prod=...
   useEffect(() => {

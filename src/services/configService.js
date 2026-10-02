@@ -207,16 +207,61 @@ export const STATIC_PALETTES = {
   }
 };
 
+// Aliases for convenient shorthand lookups
+STATIC_PALETTES.navy = STATIC_PALETTES.midnight_navy_amber;
+STATIC_PALETTES.midnight_navy = STATIC_PALETTES.midnight_navy_amber;
+STATIC_PALETTES.burgundy = STATIC_PALETTES.burgundy_gold;
+STATIC_PALETTES.dusty_rose = STATIC_PALETTES.dusty_rose_charcoal;
+STATIC_PALETTES.rose = STATIC_PALETTES.dusty_rose_charcoal;
+STATIC_PALETTES.deep_teal = STATIC_PALETTES.deep_teal_gold;
+STATIC_PALETTES.forest = STATIC_PALETTES.forest_amber;
+
 /**
  * 5 Locked Theme Palettes for 1-Tap Poster & Storefront Switching
  */
 export const PRIMARY_PALETTES = [
-  { id: 'forest_amber', label: 'Forest Green & Amber', shortLabel: 'Forest & Amber', band: '#064e3b', stripe: '#f59e0b', aliases: ['emerald', 'forest_amber'] },
-  { id: 'deep_teal_gold', label: 'Deep Teal & Gold', shortLabel: 'Teal & Gold', band: '#0e5e6f', stripe: '#e5a93b', aliases: ['teal', 'deep_teal_gold'] },
-  { id: 'midnight_navy_amber', label: 'Midnight Navy & Amber', shortLabel: 'Navy & Amber', band: '#0f172a', stripe: '#d97706', aliases: ['slate', 'midnight_navy_amber'] },
-  { id: 'burgundy_gold', label: 'Burgundy & Gold', shortLabel: 'Burgundy & Gold', band: '#5b1425', stripe: '#eab308', aliases: ['burgundy_gold'] },
-  { id: 'dusty_rose_charcoal', label: 'Dusty Rose & Charcoal', shortLabel: 'Rose & Slate', band: '#88304e', stripe: '#f4c2d1', aliases: ['dusty_rose_charcoal'] }
+  { id: 'forest_amber', label: 'Forest Green & Amber', shortLabel: 'Forest & Amber', band: '#064e3b', stripe: '#f59e0b', aliases: ['emerald', 'forest_amber', 'forest', 'green'] },
+  { id: 'deep_teal_gold', label: 'Deep Teal & Gold', shortLabel: 'Teal & Gold', band: '#0e5e6f', stripe: '#e5a93b', aliases: ['teal', 'deep_teal_gold', 'deep_teal'] },
+  { id: 'midnight_navy_amber', label: 'Midnight Navy & Amber', shortLabel: 'Navy & Amber', band: '#0f172a', stripe: '#d97706', aliases: ['slate', 'midnight_navy_amber', 'navy', 'midnight_navy'] },
+  { id: 'burgundy_gold', label: 'Burgundy & Gold', shortLabel: 'Burgundy & Gold', band: '#5b1425', stripe: '#eab308', aliases: ['burgundy_gold', 'burgundy', 'wine'] },
+  { id: 'dusty_rose_charcoal', label: 'Dusty Rose & Charcoal', shortLabel: 'Rose & Slate', band: '#88304e', stripe: '#f4c2d1', aliases: ['dusty_rose_charcoal', 'dusty_rose', 'rose'] }
 ];
+
+/**
+ * Harmonizes a product to one of the 5 locked theme palettes based on dominant category and keywords:
+ * 1. Deep teal + gold: Dove, body care, cleansers, serums, lotions, bath & body
+ * 2. Midnight navy + amber: Handbags, bags, bedding, shoes, loafers, sneakers, footwear
+ * 3. Burgundy + gold: Lipsticks, glosses, lip care, makeup, cosmetics, perfumes
+ * 4. Dusty rose + charcoal: Pink and soft products, blush, strawberry, feminine care
+ * 5. Forest green + amber: Default flagship premium lane
+ */
+export function getHarmoniousPaletteForProduct(product) {
+  if (!product) return 'forest_amber';
+  const text = `${product.name || ''} ${product.category || ''} ${product.description || ''} ${product.benefit_line || ''} ${product.badge || ''}`.toLowerCase();
+
+  // 1. Pink & soft products -> dusty_rose_charcoal
+  if (text.includes('pink') || text.includes('rose') || text.includes('blush') || text.includes('soft') || text.includes('strawberry') || text.includes('glow serum') || text.includes('peaches') || text.includes('feminine')) {
+    return 'dusty_rose_charcoal';
+  }
+
+  // 2. Lipsticks, glosses, cosmetics, perfumes -> burgundy_gold
+  if (text.includes('lip') || text.includes('gloss') || text.includes('lipstick') || text.includes('velvet') || text.includes('tint') || text.includes('burgundy') || text.includes('wine') || text.includes('cherry') || text.includes('makeup') || text.includes('palette') || text.includes('mascara') || text.includes('perfume') || text.includes('fragrance')) {
+    return 'burgundy_gold';
+  }
+
+  // 3. Dove, body care, cleansers, serums, lotions, bath & body -> deep_teal_gold
+  if (text.includes('dove') || text.includes('body care') || text.includes('body wash') || text.includes('lotion') || text.includes('hyaluronic') || text.includes('niacinamide') || text.includes('cleanser') || text.includes('teal') || text.includes('moisturizer') || text.includes('shower gel') || text.includes('serum') || text.includes('face wash') || text.includes('scrub')) {
+    return 'deep_teal_gold';
+  }
+
+  // 4. Bags, bedding, shoes, sneakers, leather goods -> midnight_navy_amber
+  if (text.includes('bag') || text.includes('bedding') || text.includes('shoe') || text.includes('sneaker') || text.includes('duvet') || text.includes('sheet') || text.includes('tote') || text.includes('backpack') || text.includes('loafer') || text.includes('kicks') || text.includes('footwear') || text.includes('leather') || text.includes('handbag') || text.includes('heel') || text.includes('boot')) {
+    return 'midnight_navy_amber';
+  }
+
+  // 5. Default flagship premium lane
+  return 'forest_amber';
+}
 
 /**
  * Curated Registry of Supported Brand Fonts

@@ -19,7 +19,7 @@
  * - WhatsApp number & Lipa na M-Pesa till clearly stated in footer.
  */
 
-import { resolveSellerConfig, resolvePalette as dynamicResolvePalette, ensureBrandFontLoaded, SUPPORTED_BRAND_FONTS, STATIC_PALETTES, PRIMARY_PALETTES } from './configService.js';
+import { resolveSellerConfig, resolvePalette as dynamicResolvePalette, ensureBrandFontLoaded, SUPPORTED_BRAND_FONTS, STATIC_PALETTES, PRIMARY_PALETTES, getHarmoniousPaletteForProduct } from './configService.js';
 import { decodeHtmlEntities, normalizeProductText, validateProductForRender, stripTofuEmojis, sanitizeBadgeText } from '../utils/textUtils.js';
 import { CATEGORY_SKIN_RENDERERS, detectCategorySkin } from './categorySkinRenderer.js';
 import {
@@ -583,15 +583,16 @@ function drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone,
 function drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius = 28) {
   ctx.save();
   ctx.fillStyle = '#ffffff';
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.08)';
-  ctx.shadowBlur = 24;
-  ctx.shadowOffsetY = 6;
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.05)';
+  ctx.shadowBlur = 20;
+  ctx.shadowOffsetY = 4;
   roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius);
   ctx.fill();
   ctx.restore();
 
-  ctx.strokeStyle = '#e2e8f0';
-  ctx.lineWidth = 3;
+  // Locked specification: white rounded-rectangle glass card with soft shadow and thin border
+  ctx.strokeStyle = '#f1f5f9';
+  ctx.lineWidth = 1.5;
   roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius);
   ctx.stroke();
 }
@@ -767,49 +768,23 @@ export const canvasRenderer = {
 
     const s = String(style || '').toLowerCase().trim();
 
-    // 1. Direct Category Skin dispatch
-    if (CATEGORY_SKIN_RENDERERS[s]) {
-      return CATEGORY_SKIN_RENDERERS[s](cleanProduct, config, ratio, paletteOverride);
+    // Harmonious palette resolution for this product unless explicitly overridden
+    const harmoniousPal = getHarmoniousPaletteForProduct(cleanProduct);
+    let resolvedPalette = paletteOverride;
+    if (!resolvedPalette && (STATIC_PALETTES[s] || PRIMARY_PALETTES.some(p => p.id === s || (p.aliases && p.aliases.includes(s))))) {
+      resolvedPalette = s;
+    }
+    if (!resolvedPalette) {
+      resolvedPalette = harmoniousPal || config.palette || 'forest_amber';
     }
 
-    // 2. Intelligent Auto Category Skin Detection
-    if (s === 'auto' || s === 'category_smart') {
-      const autoSkin = detectCategorySkin(cleanProduct.category);
-      if (autoSkin && CATEGORY_SKIN_RENDERERS[autoSkin]) {
-        return CATEGORY_SKIN_RENDERERS[autoSkin](cleanProduct, config, ratio, paletteOverride);
-      }
+    // Special companion duo bundle layout
+    if ((s === 'product_bundles' || s === 'bundle_offer') && cleanCompanion) {
+      return this.renderProductBundlePost(cleanProduct, cleanCompanion, config, ratio, resolvedPalette);
     }
 
-    if (s === 'flash_sale' || s === 'price_drop') {
-      return this.renderFlashSalePost(cleanProduct, config, ratio, paletteOverride);
-    }
-    if (s === 'customer_reviews' || s === 'review_spotlight') {
-      return this.renderCustomerReviewPost(cleanProduct, config, ratio, paletteOverride);
-    }
-    if (s === 'product_bundles' || s === 'bundle_offer') {
-      return this.renderProductBundlePost(cleanProduct, cleanCompanion, config, ratio, paletteOverride);
-    }
-    if (s === 'restock_alerts' || s === 'restocked' || s === 'back_in_stock' || s === 'limited_stock') {
-      return this.renderRestockAlertPost(cleanProduct, config, ratio, paletteOverride);
-    }
-    if (s === 'luxury_editorial' || s === 'editorial' || s === 'vogue') {
-      return this.renderLuxuryEditorialPost(cleanProduct, config, ratio, paletteOverride);
-    }
-    if (s === 'neon_bold' || s === 'streetwear' || s === 'neon') {
-      return this.renderNeonBoldPost(cleanProduct, config, ratio, paletteOverride);
-    }
-    if (s === 'minimalist_clean' || s === 'minimal' || s === 'studio_clean') {
-      return this.renderMinimalistPost(cleanProduct, config, ratio, paletteOverride);
-    }
-    if (s === 'polaroid_snap' || s === 'polaroid' || s === 'retro_snap') {
-      return this.renderPolaroidPost(cleanProduct, config, ratio, paletteOverride);
-    }
-    if (s === 'clearance_deal' || s === 'hot_deal' || s === 'supermarket') {
-      return this.renderClearanceDealPost(cleanProduct, config, ratio, paletteOverride);
-    }
-
-    // Default Brand Master layout ('unified_brand')
-    return this.renderUnifiedPost(cleanProduct, config, ratio, style, paletteOverride);
+    // Locked Architecture Single Master Layout: Always render the locked design on pure white canvas
+    return this.renderUnifiedPost(cleanProduct, config, ratio, s, resolvedPalette);
   },
 
   /**
@@ -848,12 +823,9 @@ export const canvasRenderer = {
     const sizeText = getCategorySizeText(product);
     const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-    // Base background & frame: White / very light (#F8FAFC). Never dark.
-    ctx.fillStyle = '#f8fafc';
+    // Base background: Pure crisp clean white (#ffffff). Strictly never dark, never grey. No outer grey border.
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = '#e2e8f0';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Top Header Bar (170px for status / 135px for group)
     const headerH = isStatus ? 170 : 135;
@@ -893,10 +865,18 @@ export const canvasRenderer = {
     ctx.fillText(sizeText, boxX + 24 + catBadgeW / 2, boxY + 47);
 
     // Promo badge top-right: dynamic width to prevent overflow; drops risky "100% Authentic" claims on bags
-    if (product.badge || product.promo_tag) {
-      const badgeTxt = sanitizeBadgeText(product.badge || product.promo_tag, product.category);
+    let rawBadge = product.badge || product.promo_tag || '';
+    if (!rawBadge) {
+      if (overrideStyle === 'flash_sale') rawBadge = 'FLASH SALE • TODAY ONLY';
+      else if (overrideStyle === 'restock_alerts') rawBadge = 'JUST RESTOCKED';
+      else if (overrideStyle === 'customer_reviews') rawBadge = '5-STAR RATED';
+      else if (overrideStyle === 'clearance_deal') rawBadge = 'CLEARANCE SALE';
+    }
+
+    if (rawBadge) {
+      const badgeTxt = sanitizeBadgeText(rawBadge, product.category);
       if (badgeTxt) {
-        ctx.fillStyle = badgeTxt.includes('SALE') ? '#dc2626' : stripe;
+        ctx.fillStyle = (badgeTxt.includes('SALE') || badgeTxt.includes('CLEARANCE')) ? '#dc2626' : stripe;
         const bW = Math.max(160, Math.round(ctx.measureText(badgeTxt).width + 36));
         roundRect(ctx, boxX + boxWidth - bW - 24, boxY + 22, bW, 42, 12);
         ctx.fill();
@@ -943,6 +923,12 @@ export const canvasRenderer = {
     // 4. Dedicated Offer POP Rectangle (Centered, --price-bg and --stripe variables)
     const offerW = isStatus ? 580 : 480;
     const offerH = isStatus ? 116 : 92;
+    let kickerText = 'SPECIAL OFFER PRICE • IN STOCK';
+    if (overrideStyle === 'flash_sale') kickerText = 'FLASH DEAL PRICE • SAVE BIG';
+    else if (overrideStyle === 'restock_alerts') kickerText = 'JUST RESTOCKED • IN STOCK';
+    else if (overrideStyle === 'customer_reviews') kickerText = 'TOP-RATED FAVORITE • IN STOCK';
+    else if (overrideStyle === 'clearance_deal') kickerText = 'CLEARANCE PRICE • IN STOCK';
+
     drawSharedOfferPopRectangle(
       ctx,
       width / 2,
@@ -952,7 +938,7 @@ export const canvasRenderer = {
       isStatus,
       priceBg,
       stripe,
-      'SPECIAL OFFER PRICE • IN STOCK',
+      kickerText,
       stripe,
       formattedPrice
     );
@@ -993,12 +979,9 @@ export const canvasRenderer = {
       : Math.round((priceNum * 1.3) / 50) * 50;
     const savings = Math.max(300, regPrice - priceNum);
 
-    // Base background & frame
-    ctx.fillStyle = '#f8fafc';
+    // Base background: Pure clean white (#ffffff)
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = '#e2e8f0';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Top Header Bar
     const headerH = isStatus ? 170 : 135;
@@ -1133,12 +1116,9 @@ export const canvasRenderer = {
     const sizeText = getCategorySizeText(product);
     const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-    // Base background & frame
-    ctx.fillStyle = '#f8fafc';
+    // Base background: Pure clean white (#ffffff)
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = '#e2e8f0';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Top Header Bar
     const headerH = isStatus ? 170 : 135;
@@ -1294,12 +1274,9 @@ export const canvasRenderer = {
     const savings = Math.max(400, Math.round((combinedTotal * 0.15) / 50) * 50);
     const bundlePrice = combinedTotal - savings;
 
-    // Base background & frame
-    ctx.fillStyle = '#f8fafc';
+    // Base background: Pure clean white (#ffffff)
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = '#e2e8f0';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Top Header Bar
     const headerH = isStatus ? 165 : 135;
@@ -1492,12 +1469,9 @@ export const canvasRenderer = {
     const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
     const remainingCount = product.remaining || product.stock_qty || 4;
 
-    // Base background & frame
-    ctx.fillStyle = '#f8fafc';
+    // Base background: Pure clean white (#ffffff)
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = '#e2e8f0';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Top Header Bar
     const headerH = isStatus ? 165 : 135;
@@ -1630,14 +1604,9 @@ export const canvasRenderer = {
     const sizeText = getCategorySizeText(product);
     const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-    // Deep Obsidian / Noir Background
-    ctx.fillStyle = '#080c14';
+    // Base background: Pure clean white (#ffffff)
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-
-    // Subtle gold outer frame
-    ctx.strokeStyle = 'rgba(212, 175, 55, 0.45)';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Luxury Editorial Masthead
     const headerH = isStatus ? 170 : 135;
@@ -1832,14 +1801,9 @@ export const canvasRenderer = {
     const sizeText = getCategorySizeText(product);
     const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-    // Pure Matte Jet Black Background
-    ctx.fillStyle = '#09090b';
+    // Base background: Pure clean white (#ffffff)
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-
-    // Neon Frame
-    ctx.strokeStyle = '#10b981';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Top Header Bar
     const headerH = isStatus ? 170 : 135;
@@ -2017,12 +1981,9 @@ export const canvasRenderer = {
     const sizeText = getCategorySizeText(product);
     const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-    // Base background & frame
-    ctx.fillStyle = '#f8fafc';
+    // Base background: Pure clean white (#ffffff)
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = '#e2e8f0';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Header
     const headerH = isStatus ? 170 : 135;
@@ -2158,14 +2119,9 @@ export const canvasRenderer = {
     const sizeText = getCategorySizeText(product);
     const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-    // Warm paper background
-    ctx.fillStyle = '#f6f2ec';
+    // Base background: Pure clean white (#ffffff)
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-
-    // Outer frame
-    ctx.strokeStyle = '#e7e0d6';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Boutique Header
     const headerH = isStatus ? 170 : 135;
@@ -2319,12 +2275,9 @@ export const canvasRenderer = {
     const originalPrice = Math.round((priceNum * 1.35) / 50) * 50;
     const savings = originalPrice - priceNum;
 
-    // Base background & frame
-    ctx.fillStyle = '#f8fafc';
+    // Base background: Pure clean white (#ffffff)
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = '#fca5a5';
-    ctx.lineWidth = 14;
-    ctx.strokeRect(7, 7, width - 14, height - 14);
 
     // 1. Top Header Bar
     const headerH = isStatus ? 170 : 135;
@@ -2515,13 +2468,9 @@ export const canvasRenderer = {
     const location = config.location;
     const palette = dynamicResolvePalette(seller);
 
-    // Deep Brand Slate Base
-    ctx.fillStyle = '#0f172a';
+    // Pure White Base
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
-
-    ctx.strokeStyle = '#d4af37';
-    ctx.lineWidth = 4;
-    ctx.strokeRect(20, 20, width - 40, height - 40);
 
     // 1. Header
     const headerH = isStatus ? 170 : 140;

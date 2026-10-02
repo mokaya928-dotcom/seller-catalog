@@ -365,8 +365,10 @@ export function executeSmartSearch(products = [], rawQuery = '', options = {}) {
     let matchesCategory = false;
     if (selectedCategory === 'All') {
       matchesCategory = true;
+    } else if (selectedCategory.toLowerCase() === 'shoes' || selectedCategory.toLowerCase() === 'footwear') {
+      matchesCategory = (product.category === 'Sneakers & Kicks' || product.category === "Men's Footwear");
     } else {
-      matchesCategory = (product.category || 'Beauty Care') === selectedCategory;
+      matchesCategory = (product.category || 'Beauty Care').toLowerCase() === selectedCategory.toLowerCase();
     }
 
     if (!matchesCategory) continue;

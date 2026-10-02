@@ -6,6 +6,7 @@
  */
 import { TIME_SLOTS } from '../data/starterData.js';
 import { POST_STYLES } from './canvasRenderer.js';
+import { getHarmoniousPaletteForProduct } from './configService.js';
 
 function getDateSeed(dateStr) {
   const str = dateStr || new Date().toISOString().split('T')[0];
@@ -284,19 +285,10 @@ export const scheduleService = {
         }
       }
 
-      // Strategic style assignment across 10 high-converting templates:
-      const defaultRotations = [
-        'unified_brand',     // Slot 1: Brand Master (Default)
-        'luxury_editorial',  // Slot 2: Luxury Vogue Editorial
-        'flash_sale',        // Slot 3: 24-Hr Flash Sale
-        'minimalist_clean',  // Slot 4: Studio Minimalist
-        'neon_bold',         // Slot 5: Neon Streetwear Drop
-        'customer_reviews',  // Slot 6: Verified Customer Review
-        'polaroid_snap',     // Slot 7: Polaroid Instant Snap
-        'restock_alerts',    // Slot 8: Fresh Batch Restock Alert
-        'product_bundles',   // Slot 9: 2-in-1 Routine Combo
-        'clearance_deal'     // Slot 10: Clearance Starburst Deal
-      ];
+      // Locked architecture: Every post defaults to 'unified_brand'
+      // Color theme is harmonized automatically to the product's dominant category
+      const harmoniousPal = getHarmoniousPaletteForProduct(product);
+      const assignedPalette = slotOverride.palette || harmoniousPal;
 
       let assignedStyle = slotOverride.style;
       if (!assignedStyle) {
@@ -309,12 +301,8 @@ export const scheduleService = {
           assignedStyle = 'product_bundles';
         } else if (rawBadge.includes('review') || rawBadge.includes('top seller')) {
           assignedStyle = 'customer_reviews';
-        } else if (rawBadge.includes('luxury') || rawBadge.includes('premium')) {
-          assignedStyle = 'luxury_editorial';
-        } else if (rawBadge.includes('clearance') || rawBadge.includes('deal')) {
-          assignedStyle = 'clearance_deal';
         } else {
-          assignedStyle = defaultRotations[index % defaultRotations.length];
+          assignedStyle = 'unified_brand';
         }
       }
       const companion = this.getCompanionProduct(product, availableProducts);
@@ -333,9 +321,10 @@ export const scheduleService = {
         companionProduct: companion,
         allProducts: availableProducts,
         style: assignedStyle,
+        palette: assignedPalette,
         aspectRatio: ratio,
         isSkipped,
-        isOverridden: !!(slotOverride.productId || slotOverride.style),
+        isOverridden: !!(slotOverride.productId || slotOverride.style || slotOverride.palette),
         caption: this.generateCaption(product, seller, assignedStyle, companion, dateStr, 'english'),
         captionSwahili: this.generateCaption(product, seller, assignedStyle, companion, dateStr, 'swahili')
       });

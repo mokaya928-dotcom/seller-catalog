@@ -10,7 +10,7 @@ import { supabase, isSupabaseConfigured } from './supabaseClient';
 
 const KEYS = {
   SELLER: 'dailypost_seller_v11',
-  PRODUCTS: 'dailypost_products_v11',
+  PRODUCTS: 'dailypost_products_v12',
   POSTS_PREFIX: 'dailypost_posts_v11_',
   POSTED_STATUS_PREFIX: 'dailypost_posted_v11_',
   OVERRIDES_PREFIX: 'dailypost_overrides_v11_'
@@ -151,7 +151,8 @@ export const storageService = {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length > 0) {
           const hasBenable = parsed.some((p) => String(p?.id || '').startsWith('prod_benable_'));
-          if (hasBenable) {
+          const missingShoes = !parsed.some((p) => p.category === 'Sneakers & Kicks' || p.category === "Men's Footwear");
+          if (hasBenable || missingShoes || parsed.length < STARTER_PRODUCTS.length) {
             localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(STARTER_PRODUCTS));
             return STARTER_PRODUCTS;
           }
