@@ -1,0 +1,12 @@
+.grok-changes
+dist
+.git
+.github
+node_modules
+canva
+THIS IS WHAT I WANTED
+palette_variations
+PRODUCTS
+*.py
+*.md
+*.txt
