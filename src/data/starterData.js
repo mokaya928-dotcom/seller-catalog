@@ -1,3 +1,4 @@
+import OREWA_RAW_PRODUCTS from './orewaProducts.json';
 /**
  * Starter Data for Beauty Bar Kenya & Kenyan Beauty Sellers
  * Real live products fetched directly from https://thebeautybarkenya.com/
@@ -92,6 +93,30 @@ export const GLOWND_SELLER = {
   delivery_info: 'Nairobi Same-Day Boda & Countrywide Parcels via Fargo / G4S'
 };
 
+export const OREWA_SELLER = {
+  id: 'seller_orewa_limited',
+  shop_name: 'Orewa Limited',
+  location: 'Nairobi CBD • 2-hr Express Delivery | Countrywide Dispatch',
+  phone: '+254 118 926 934',
+  phone_raw: '254118926934',
+  brand_color: '#0e5e6f',
+  brand_secondary: '#e5a93b',
+  palette: 'deep_teal_gold',
+  brand_font: 'Outfit',
+  language: 'kenyan_mix',
+  mpesa_till: '118926',
+  mpesa_type: 'Buy Goods Till',
+  delivery_info: 'Same-day 2-hr delivery in Nairobi • Fast countrywide dispatch • Pay on Delivery available',
+  website: 'https://orewa.co.ke'
+};
+
+export const OREWA_PRODUCTS = OREWA_RAW_PRODUCTS.map((p) => ({
+  ...p,
+  seller_id: 'seller_orewa_limited',
+  in_stock: true,
+  featured: p.badge === 'BESTSELLER' || p.badge === 'TOP RATED'
+}));
+
 export const SHOE_IN_SELLER = {
   id: 'seller_shoe_in_kenya',
   shop_name: 'Shoe-In Kenya | Kicks & Loafers',
@@ -116,7 +141,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -142,7 +171,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -168,7 +201,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -194,7 +231,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -246,7 +288,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -272,7 +318,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -298,7 +348,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/MAR.png",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/MAR.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/MAR.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -324,7 +378,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -350,7 +408,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -376,7 +438,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -402,7 +468,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -428,7 +498,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Black.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Black.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Black.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -454,7 +528,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -480,7 +558,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -506,7 +588,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -532,7 +618,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -558,7 +648,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopowhite.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopowhite.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopowhite.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -584,7 +678,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopokahki.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopokahki.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopokahki.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -610,7 +708,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopoblue.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopoblue.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopoblue.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -636,7 +738,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/sambasapezia.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/sambasapezia.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/sambasapezia.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4200,
     "regular_price": 5000,
@@ -662,7 +768,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/noke.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/noke.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sneakers/noke.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4000,
     "regular_price": 4700,
@@ -688,7 +798,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/White%20smooth%20leather%20sneaker.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/White%20smooth%20leather%20sneaker.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/White%20smooth%20leather%20sneaker.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -714,7 +828,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/White%20textured%20sneaker.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/White%20textured%20sneaker.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/White%20textured%20sneaker.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -740,7 +858,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/zara.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/zara.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/zara.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/zara1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -766,7 +889,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/Aldo%20White%20Leather%20Green%20Lining.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/Aldo%20White%20Leather%20Green%20Lining.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/Aldo%20White%20Leather%20Green%20Lining.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4798,
     "regular_price": 5700,
@@ -792,7 +919,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/black-aldo.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/black-aldo.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/black-aldo.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4794,
     "regular_price": 5700,
@@ -818,7 +949,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/Aldo%20White%20%26%20Navy.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/Aldo%20White%20%26%20Navy.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/Aldo%20White%20%26%20Navy.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4797,
     "regular_price": 5700,
@@ -844,7 +979,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-plain%20white.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-plain%20white.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-plain%20white.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -870,7 +1009,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-textered-white.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-textered-white.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-textered-white.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -896,7 +1039,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/also-black-13.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/also-black-13.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/also-black-13.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4799,
     "regular_price": 5700,
@@ -922,7 +1069,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-12-grey.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-12-grey.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-12-grey.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -948,7 +1099,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo%20white-11.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo%20white-11.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo%20white-11.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -974,7 +1129,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822123896-3200f52e-58ee-4df9-9c49-b2e4956e0316.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822123896-3200f52e-58ee-4df9-9c49-b2e4956e0316.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822123896-3200f52e-58ee-4df9-9c49-b2e4956e0316.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4200,
     "regular_price": 5000,
@@ -1000,7 +1159,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822270352-4df484ec-2668-4ca9-862c-a0f0ca8c1352.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822270352-4df484ec-2668-4ca9-862c-a0f0ca8c1352.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822270352-4df484ec-2668-4ca9-862c-a0f0ca8c1352.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4200,
     "regular_price": 5000,
@@ -1026,7 +1189,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822305349-33b55034-0e4c-4dce-9aeb-ed62e57f0582.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822305349-33b55034-0e4c-4dce-9aeb-ed62e57f0582.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822305349-33b55034-0e4c-4dce-9aeb-ed62e57f0582.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4200,
     "regular_price": 5000,
@@ -1052,7 +1219,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822332429-58920aed-5da2-4cb1-b6f3-c62c7b2e0725.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822332429-58920aed-5da2-4cb1-b6f3-c62c7b2e0725.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822332429-58920aed-5da2-4cb1-b6f3-c62c7b2e0725.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
     "price": 4200,
     "regular_price": 5000,
@@ -1130,7 +1301,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkdark.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkdark.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkdark.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1156,7 +1331,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkblack.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkblack.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkblack.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1182,7 +1361,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster1.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster1.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1208,7 +1391,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster2.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster2.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1234,7 +1421,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster3.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster3.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster3.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1260,7 +1451,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco1.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco1.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1286,7 +1481,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco2.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco2.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1468,7 +1667,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/John%20Foster%20Brogue%20Oxford%20Dark%20Brown%20.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/John%20Foster%20Brogue%20Oxford%20Dark%20Brown%20.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/John%20Foster%20Brogue%20Oxford%20Dark%20Brown%20.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1494,7 +1697,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Textured%20Oxford%20Dark%20Brown.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Textured%20Oxford%20Dark%20Brown.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Textured%20Oxford%20Dark%20Brown.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1520,7 +1727,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clark%20download.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clark%20download.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clark%20download.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1546,7 +1757,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clarcks%20england.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clarcks%20england.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clarcks%20england.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1572,7 +1787,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/official/clarkdarktan.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/official/clarkdarktan.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/official/clarkdarktan.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1598,7 +1817,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare300.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare300.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare300.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -1624,7 +1847,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionaire200.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionaire200.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionaire200.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1650,7 +1877,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare1.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare1.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1676,7 +1907,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini1.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini1.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -1702,7 +1937,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -1728,7 +1967,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/clark.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/clark.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/clark.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1754,7 +1997,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20pebble%20leather%20Derby%20(white%20sole).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20pebble%20leather%20Derby%20(white%20sole).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20pebble%20leather%20Derby%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20pebble%20leather%20Derby%20(white%20sole",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5495,
     "regular_price": 6500,
@@ -1780,7 +2028,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20medallion%20Oxford%20(white%20sole).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20medallion%20Oxford%20(white%20sole).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20medallion%20Oxford%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20medallion%20Oxford%20(white%20sole",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1806,7 +2059,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.40.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.40.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.40.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.39.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1832,7 +2090,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.33.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.33.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.33.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1858,7 +2120,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-17%20at%2014.28.56.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-17%20at%2014.28.56.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-17%20at%2014.28.56.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-17%20at%2014.28.56%20(1",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1884,7 +2151,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-29%20at%2010.36.32.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-29%20at%2010.36.32.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-29%20at%2010.36.32.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1910,7 +2181,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-07-01%20at%2011.43.47.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-07-01%20at%2011.43.47.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-07-01%20at%2011.43.47.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-29%20at%2010.36.32.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1936,7 +2212,15 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.02%20(1).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.02%20(1).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.02%20(1).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.02%20(1",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.01.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.02.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5499,
     "regular_price": 6500,
@@ -1962,7 +2246,14 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.18%20(1).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.18%20(1).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.18%20(1).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.18%20(1",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.04.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1988,7 +2279,13 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.04.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.04.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.04.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.18%20(1",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2014,7 +2311,13 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.45.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.45.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.45.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.37%20(1",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2040,7 +2343,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.47.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.47.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.47.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2066,7 +2374,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/black%202.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/black%202.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/black%202.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/brown1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2092,7 +2405,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/richwanaz.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/richwanaz.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/richwanaz.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/richwanaz1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5499,
     "regular_price": 6500,
@@ -2170,7 +2488,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/john%20foster%20red%20sole.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/john%20foster%20red%20sole.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/john%20foster%20red%20sole.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5495,
     "regular_price": 6500,
@@ -2196,7 +2518,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbl.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbl.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbl.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5497,
     "regular_price": 6500,
@@ -2222,7 +2548,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsdrk.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsdrk.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsdrk.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2248,7 +2578,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbr3.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbr3.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbr3.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2274,7 +2608,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbu.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbu.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbu.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5496,
     "regular_price": 6500,
@@ -2300,7 +2638,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs2brown.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs2brown.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs2brown.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5497,
     "regular_price": 6500,
@@ -2326,7 +2668,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs1.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs1.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2352,7 +2698,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Black%20Wingtip%20Brogue.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Black%20Wingtip%20Brogue.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Black%20Wingtip%20Brogue.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5496,
     "regular_price": 6500,
@@ -2378,7 +2728,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Brown%20Cap%20Toe%20Oxford.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Brown%20Cap%20Toe%20Oxford.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Brown%20Cap%20Toe%20Oxford.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5196,
     "regular_price": 6100,
@@ -2404,7 +2758,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-4.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-4.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-4.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-2.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2430,7 +2789,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/0fficial-1.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/0fficial-1.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/0fficial-1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-5.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2456,7 +2820,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779957835025-9f3653cc-5d07-490a-b177-a39c057080fa.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779957835025-9f3653cc-5d07-490a-b177-a39c057080fa.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779957835025-9f3653cc-5d07-490a-b177-a39c057080fa.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2482,7 +2850,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745339188-ecf8d645-b040-4290-ba83-d76c62f91ace.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745339188-ecf8d645-b040-4290-ba83-d76c62f91ace.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745339188-ecf8d645-b040-4290-ba83-d76c62f91ace.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2534,7 +2906,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745043648-338e054c-5133-4571-afb5-0f1ea43a99db.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745043648-338e054c-5133-4571-afb5-0f1ea43a99db.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745043648-338e054c-5133-4571-afb5-0f1ea43a99db.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2560,7 +2936,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745010158-4b71f8ba-cdd2-4f47-8bea-dba322f772de.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745010158-4b71f8ba-cdd2-4f47-8bea-dba322f772de.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745010158-4b71f8ba-cdd2-4f47-8bea-dba322f772de.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2586,7 +2966,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744979277-fb4d6cbd-91e9-4ef4-af49-e82430262a66.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744979277-fb4d6cbd-91e9-4ef4-af49-e82430262a66.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744979277-fb4d6cbd-91e9-4ef4-af49-e82430262a66.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2612,7 +2996,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744934002-59aba241-338a-40d2-ab15-b55f1eb4f53a.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744934002-59aba241-338a-40d2-ab15-b55f1eb4f53a.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744934002-59aba241-338a-40d2-ab15-b55f1eb4f53a.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2638,7 +3026,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744902154-a7b562ea-d580-4903-b0f3-eb39a00af366.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744902154-a7b562ea-d580-4903-b0f3-eb39a00af366.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744902154-a7b562ea-d580-4903-b0f3-eb39a00af366.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2664,7 +3056,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744866508-acbe119e-56bf-48c6-bd48-a685ad871258.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744866508-acbe119e-56bf-48c6-bd48-a685ad871258.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744866508-acbe119e-56bf-48c6-bd48-a685ad871258.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2690,7 +3086,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744827347-f46c3c2e-3668-4469-9f5b-a87877a13ef9.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744827347-f46c3c2e-3668-4469-9f5b-a87877a13ef9.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744827347-f46c3c2e-3668-4469-9f5b-a87877a13ef9.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2742,7 +3142,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788490764-8675c03f-c465-4c57-b4f4-9ed860f4d4cd.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788490764-8675c03f-c465-4c57-b4f4-9ed860f4d4cd.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788490764-8675c03f-c465-4c57-b4f4-9ed860f4d4cd.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2768,7 +3172,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788364884-bb572c99-86c3-4703-b420-65936affe3e6.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788364884-bb572c99-86c3-4703-b420-65936affe3e6.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788364884-bb572c99-86c3-4703-b420-65936affe3e6.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2794,7 +3202,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443240561-1b3070a2-0f66-4308-9dca-9164d29957ce.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443240561-1b3070a2-0f66-4308-9dca-9164d29957ce.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443240561-1b3070a2-0f66-4308-9dca-9164d29957ce.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5549,
     "regular_price": 6500,
@@ -2820,7 +3232,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443350536-103cc7f2-40ae-41d3-a0cb-76486d88d37f.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443350536-103cc7f2-40ae-41d3-a0cb-76486d88d37f.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443350536-103cc7f2-40ae-41d3-a0cb-76486d88d37f.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5499,
     "regular_price": 6500,
@@ -2846,7 +3262,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/double-monk.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/double-monk.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/double-monk.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5499,
     "regular_price": 6500,
@@ -2872,7 +3292,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443303121-61504ded-d1ca-403d-9939-d71c4f067ee4.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443303121-61504ded-d1ca-403d-9939-d71c4f067ee4.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443303121-61504ded-d1ca-403d-9939-d71c4f067ee4.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2898,7 +3322,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Taupe.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Taupe.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Taupe.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2924,7 +3352,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/whiteblack.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/whiteblack.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/whiteblack.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4798,
     "regular_price": 5700,
@@ -2950,7 +3382,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/cream.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/cream.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/cream.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -2976,7 +3412,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/green.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/green.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/green.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -3002,7 +3442,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/blue.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/blue.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/blue.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -3028,7 +3472,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/black.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/black.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/black.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -3054,7 +3502,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/brown.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/brown.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/brown.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -3080,7 +3532,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/white.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/white.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/white.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -3106,7 +3562,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20perforated%20penny%20loafer%20(white%20sole).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20perforated%20penny%20loafer%20(white%20sole).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20perforated%20penny%20loafer%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20perforated%20penny%20loafer%20(white%20sole",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3132,7 +3593,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/ark%20Brown%20perforated%20penny%20loafer%20(white%20sole).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/ark%20Brown%20perforated%20penny%20loafer%20(white%20sole).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/ark%20Brown%20perforated%20penny%20loafer%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/ark%20Brown%20perforated%20penny%20loafer%20(white%20sole",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3158,7 +3624,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20crocodile%20cap-toe%20Oxford%20(white%20sole",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5496,
     "regular_price": 6500,
@@ -3184,7 +3655,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20crocodile%20cap-toe%20Oxford%20(white%20sole",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3210,7 +3686,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20medallion%20Oxford%20(white%20sole).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20medallion%20Oxford%20(white%20sole).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20medallion%20Oxford%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20medallion%20Oxford%20(white%20sole",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3236,7 +3717,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20scale-texture%20Wingtip%20Derby%20(white%20sole).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20scale-texture%20Wingtip%20Derby%20(white%20sole).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20scale-texture%20Wingtip%20Derby%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20scale-texture%20Wingtip%20Derby%20(white%20sole",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3262,7 +3748,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20woven%20Wingtip%20Derby%20(white%20sole).webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20woven%20Wingtip%20Derby%20(white%20sole).webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20woven%20Wingtip%20Derby%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20woven%20Wingtip%20Derby%20(white%20sole",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3288,7 +3779,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Olive%20suede%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Olive%20suede%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Olive%20suede%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3314,7 +3809,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Dark%20Brown%20suede%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Dark%20Brown%20suede%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Dark%20Brown%20suede%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3340,7 +3839,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20suede%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20suede%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20suede%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3366,7 +3869,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20suede%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20suede%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20suede%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3392,7 +3899,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan%20suede%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan%20suede%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan%20suede%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3418,7 +3929,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20pebble%20leather%20penny%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20pebble%20leather%20penny%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20pebble%20leather%20penny%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3444,7 +3959,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20pebble%20leather%20penny%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20pebble%20leather%20penny%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20pebble%20leather%20penny%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3470,7 +3989,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Grey%20pebble%20leather%20penny%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Grey%20pebble%20leather%20penny%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Grey%20pebble%20leather%20penny%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3496,7 +4019,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Green%20pebble%20leather%20penny%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Green%20pebble%20leather%20penny%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Green%20pebble%20leather%20penny%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3522,7 +4049,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan_Cognac%20pebble%20leather%20penny%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan_Cognac%20pebble%20leather%20penny%20loafer.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan_Cognac%20pebble%20leather%20penny%20loafer.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -3548,7 +4079,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Jnmc.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Jnmc.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Jnmc.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -3574,7 +4109,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/jn%20sneaker.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/jn%20sneaker.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/jn%20sneaker.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -3600,7 +4139,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-4.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-4.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-4.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-2.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3626,7 +4170,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Billionaire-woven-casual-1.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Billionaire-woven-casual-1.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Billionaire-woven-casual-1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/-5.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3652,7 +4201,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/-woven-casual.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/-woven-casual.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/-woven-casual.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3678,7 +4232,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-5.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-5.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-5.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3704,7 +4262,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-6.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-6.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-6.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3730,7 +4292,12 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-7.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-7.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-7.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-8.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3756,7 +4323,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-2.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-2.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-2.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3782,7 +4353,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-3.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-3.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-3.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3808,7 +4383,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-10.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-10.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-10.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3834,7 +4413,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-4.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-4.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-4.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3860,7 +4443,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-1.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-1.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-1.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3886,7 +4473,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-9.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-9.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-9.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3912,7 +4503,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826901567-54af7d68-f893-47c2-acf3-fd0152a8d542.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826901567-54af7d68-f893-47c2-acf3-fd0152a8d542.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826901567-54af7d68-f893-47c2-acf3-fd0152a8d542.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5200,
     "regular_price": 6100,
@@ -3938,7 +4533,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826951107-fac50e08-cf3d-47c5-af4a-39a018dcfb6f.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826951107-fac50e08-cf3d-47c5-af4a-39a018dcfb6f.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826951107-fac50e08-cf3d-47c5-af4a-39a018dcfb6f.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5200,
     "regular_price": 6100,
@@ -3990,7 +4589,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779827045362-26371b6d-0983-4ee7-b410-ca81dc3cf9b2.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779827045362-26371b6d-0983-4ee7-b410-ca81dc3cf9b2.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779827045362-26371b6d-0983-4ee7-b410-ca81dc3cf9b2.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 5200,
     "regular_price": 6100,
@@ -4016,7 +4619,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744779314-2d68174a-23ee-4650-8c27-fdeb346c0bd8.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744779314-2d68174a-23ee-4650-8c27-fdeb346c0bd8.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744779314-2d68174a-23ee-4650-8c27-fdeb346c0bd8.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 3200,
     "regular_price": 3800,
@@ -4042,7 +4649,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744741938-94c98a44-e7e2-44c5-a3a5-685699412705.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744741938-94c98a44-e7e2-44c5-a3a5-685699412705.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744741938-94c98a44-e7e2-44c5-a3a5-685699412705.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 3200,
     "regular_price": 3800,
@@ -4068,7 +4679,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744710408-937a3c5a-3396-4147-97ef-53bc8f9882e9.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744710408-937a3c5a-3396-4147-97ef-53bc8f9882e9.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744710408-937a3c5a-3396-4147-97ef-53bc8f9882e9.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -4146,7 +4761,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454282563-84af74a6-e2bd-4913-8f6d-d9e4c7193621.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454282563-84af74a6-e2bd-4913-8f6d-d9e4c7193621.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454282563-84af74a6-e2bd-4913-8f6d-d9e4c7193621.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -4172,7 +4791,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/aldo-white-sneaker.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/aldo-white-sneaker.webp"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/aldo-white-sneaker.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -4198,7 +4821,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454349875-8c7e8448-6f01-4edb-aa3b-dafe739ab7d7.png",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454349875-8c7e8448-6f01-4edb-aa3b-dafe739ab7d7.png"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454349875-8c7e8448-6f01-4edb-aa3b-dafe739ab7d7.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -4224,7 +4851,11 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454493091-ad7ba7ba-3ff1-466b-82a9-8dd05d7ad687.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454493091-ad7ba7ba-3ff1-466b-82a9-8dd05d7ad687.webp"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454493091-ad7ba7ba-3ff1-466b-82a9-8dd05d7ad687.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
     ],
     "price": 4800,
     "regular_price": 5700,

@@ -23,7 +23,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
       const shopParam = (searchParams.get('shop') || searchParams.get('store') || '').toLowerCase();
       if (catParam) return catParam;
       if (shopParam === 'shoes' || shopParam === 'shoe' || shopParam === 'kicks' || shopParam === 'sneakers') {
-        return 'Sneakers & Kicks';
+        return 'All Shoes & Kicks';
       }
     }
     return 'All';
@@ -36,7 +36,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
     if (catParam) {
       setSelectedCategory(catParam);
     } else if (shopParam === 'shoes' || shopParam === 'shoe' || shopParam === 'kicks' || shopParam === 'sneakers') {
-      setSelectedCategory('Sneakers & Kicks');
+      setSelectedCategory('All Shoes & Kicks');
     }
   }, []);
 
@@ -104,12 +104,18 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
       const cat = p.category || 'Beauty Care';
       counts[cat] = (counts[cat] || 0) + 1;
     });
+
+    const shoeCount = (counts['Sneakers & Kicks'] || 0) + (counts["Men's Footwear"] || 0);
+    if (shoeCount > 0) {
+      counts['All Shoes & Kicks'] = shoeCount;
+    }
     return counts;
   }, [inStockProducts]);
 
   // Priority category ordering
   const CATEGORY_ORDER = [
     'All',
+    'All Shoes & Kicks',
     'Sneakers & Kicks',
     "Men's Footwear",
     'Handbags & Bags',
@@ -140,6 +146,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   const getCategoryIcon = (cat) => {
     switch (cat) {
       case 'All': return '✨';
+      case 'All Shoes & Kicks': return '👟';
       case 'Sneakers & Kicks': return '👟';
       case "Men's Footwear": return '👞';
       case 'Handbags & Bags': return '👜';

@@ -4,7 +4,7 @@ const path = require('path');
 const { CURATED_PRODUCTS, BEAUTY_BAR_SELLER } = require('../src/data/starterData.js');
 
 const shoes = CURATED_PRODUCTS.filter(p => p.category === 'Sneakers & Kicks' || p.category === "Men's Footwear");
-console.log(`Generating preview_shoes_catalogue.html with ${shoes.length} authentic shoes and category switching...`);
+console.log(`Generating preview_shoes_catalogue.html with ${shoes.length} authentic shoes and full gallery controls...`);
 
 const htmlContent = `<!DOCTYPE html>
 <html lang="en">
@@ -21,10 +21,6 @@ const htmlContent = `<!DOCTYPE html>
     .font-brand { font-family: 'Cinzel', serif; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    @keyframes pulse-subtle {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.95; transform: scale(0.98); }
-    }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-900 min-h-screen antialiased">
@@ -93,8 +89,8 @@ const htmlContent = `<!DOCTYPE html>
       <!-- Category Filter Pills -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar pt-0.5">
         <button onclick="setCategory('All')" id="cat-All" class="cat-pill px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition flex items-center gap-1.5 bg-slate-900 text-white shadow-xs">
-          <span>✨</span>
-          <span>All Shoes</span>
+          <span>👟</span>
+          <span>All Shoes & Kicks</span>
           <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-white/20 text-white" id="count-all">159</span>
         </button>
         <button onclick="setCategory('Sneakers & Kicks')" id="cat-Sneakers" class="cat-pill px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition flex items-center gap-1.5 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50">
@@ -143,7 +139,7 @@ const htmlContent = `<!DOCTYPE html>
       <!-- Product Count Banner -->
       <div class="flex items-center justify-between text-[11px] font-semibold text-slate-500 px-0.5">
         <span id="results-count">Showing 159 products</span>
-        <span class="text-emerald-700 font-bold">100% Genuine Leather & Kicks</span>
+        <span class="text-emerald-700 font-bold">100% Multi-Photo High-Res Displays</span>
       </div>
 
       <!-- Product Showcase Container -->
@@ -183,14 +179,24 @@ const htmlContent = `<!DOCTYPE html>
       </div>
     </div>
 
-    <!-- Product Detail Modal -->
+    <!-- Product Detail Modal with Interactive 5-Photo Gallery -->
     <div id="product-modal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
       <div class="w-full max-w-sm bg-white rounded-3xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
-        <div class="relative bg-slate-100 flex items-center justify-center">
+        <div class="relative bg-slate-100 flex items-center justify-center min-h-[260px] group">
           <img id="modal-img" src="" alt="" class="w-full h-64 object-contain" />
+          
+          <!-- Prev / Next photo buttons -->
+          <button id="modal-prev-btn" onclick="prevModalPhoto(event)" class="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-800 shadow-md flex items-center justify-center font-bold text-base transition active:scale-90">‹</button>
+          <button id="modal-next-btn" onclick="nextModalPhoto(event)" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-800 shadow-md flex items-center justify-center font-bold text-base transition active:scale-90">›</button>
+          
           <button onclick="closeProductModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center font-bold text-sm">✕</button>
           <div id="modal-badge" class="absolute bottom-3 left-3 bg-slate-900/90 text-amber-300 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider"></div>
+          <span id="modal-photo-indicator" class="absolute top-3 left-3 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-full"></span>
         </div>
+
+        <!-- Thumbnail Gallery Strip -->
+        <div id="modal-thumbs" class="flex items-center gap-1.5 p-2 overflow-x-auto bg-slate-100/70 border-y border-slate-200 no-scrollbar"></div>
+
         <div class="p-4 overflow-y-auto flex-1 space-y-3">
           <div class="flex items-start justify-between gap-2">
             <div>
@@ -248,6 +254,7 @@ const htmlContent = `<!DOCTYPE html>
     let currentLayout = 'grid';
     let cart = {}; // { [id]: qty }
     let activeModalProduct = null;
+    let modalPhotoIndex = 0;
 
     function renderProducts() {
       const container = document.getElementById('products-container');
@@ -292,6 +299,7 @@ const htmlContent = `<!DOCTYPE html>
         container.innerHTML = filtered.map(p => {
           const inCart = Boolean(cart[p.id]);
           const savings = p.regular_price && p.regular_price > p.price ? p.regular_price - p.price : 0;
+          const photoCount = p.photos && p.photos.length > 1 ? p.photos.length : 1;
           return \`
             <div class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col justify-between">
               <div class="relative aspect-square bg-slate-100 overflow-hidden cursor-pointer" onclick="openProductModal('\${p.id}')">
@@ -303,6 +311,7 @@ const htmlContent = `<!DOCTYPE html>
                   onerror="this.src='/products/orange-soap.svg'"
                 />
                 \${p.badge ? \`<span class="absolute top-2 left-2 bg-slate-900/90 text-amber-300 text-[9px] font-black px-2 py-0.5 rounded-full shadow-xs">\${p.badge}</span>\` : ''}
+                \${photoCount > 1 ? \`<span class="absolute bottom-2 right-2 bg-black/60 backdrop-blur-xs text-white text-[8px] font-bold px-1.5 py-0.5 rounded-md flex items-center gap-0.5">📸 \${photoCount}</span>\` : ''}
                 \${savings > 0 ? \`<span class="absolute top-2 right-2 bg-emerald-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-md shadow-xs">Save KES \${savings.toLocaleString()}</span>\` : ''}
               </div>
 
@@ -352,6 +361,7 @@ const htmlContent = `<!DOCTYPE html>
         container.innerHTML = filtered.map(p => {
           const inCart = Boolean(cart[p.id]);
           const savings = p.regular_price && p.regular_price > p.price ? p.regular_price - p.price : 0;
+          const photoCount = p.photos && p.photos.length > 1 ? p.photos.length : 1;
           return \`
             <div class="bg-white rounded-2xl border border-slate-200 p-2.5 shadow-xs hover:shadow-md transition flex items-center gap-3">
               <div class="relative w-24 h-24 rounded-xl bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" onclick="openProductModal('\${p.id}')">
@@ -363,6 +373,7 @@ const htmlContent = `<!DOCTYPE html>
                   onerror="this.src='/products/orange-soap.svg'"
                 />
                 \${p.badge ? \`<span class="absolute top-1 left-1 bg-slate-900/90 text-amber-300 text-[8px] font-black px-1.5 py-0.2 rounded shadow-xs">\${p.badge}</span>\` : ''}
+                \${photoCount > 1 ? \`<span class="absolute bottom-1 right-1 bg-black/60 text-white text-[7px] font-bold px-1 rounded">📸 \${photoCount}</span>\` : ''}
               </div>
 
               <div class="flex-1 min-w-0 flex flex-col justify-between h-24 py-0.5">
@@ -560,11 +571,72 @@ const htmlContent = `<!DOCTYPE html>
       window.open(\`https://wa.me/254728222211?text=\${text}\`, '_blank');
     }
 
+    function renderModalPhotos() {
+      if (!activeModalProduct) return;
+      const photos = (activeModalProduct.photos && activeModalProduct.photos.length > 0)
+        ? activeModalProduct.photos 
+        : [activeModalProduct.photo];
+      
+      const currentSrc = photos[modalPhotoIndex] || activeModalProduct.photo;
+      document.getElementById('modal-img').src = currentSrc;
+      
+      const prevBtn = document.getElementById('modal-prev-btn');
+      const nextBtn = document.getElementById('modal-next-btn');
+      const indicator = document.getElementById('modal-photo-indicator');
+
+      if (photos.length > 1) {
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+        indicator.innerText = \`\${modalPhotoIndex + 1} / \${photos.length}\`;
+        indicator.classList.remove('hidden');
+      } else {
+        prevBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+        indicator.classList.add('hidden');
+      }
+
+      const thumbs = document.getElementById('modal-thumbs');
+      if (photos.length > 1) {
+        thumbs.classList.remove('hidden');
+        thumbs.innerHTML = photos.map((src, i) => \`
+          <img 
+            src="\${src}" 
+            onclick="selectModalPhoto(\${i})" 
+            class="w-12 h-12 rounded-xl object-cover cursor-pointer border-2 transition flex-shrink-0 \${i === modalPhotoIndex ? 'border-emerald-600 scale-105 shadow-xs' : 'border-transparent opacity-60 hover:opacity-100'}" 
+          />
+        \`).join('');
+      } else {
+        thumbs.classList.add('hidden');
+      }
+    }
+
+    function selectModalPhoto(idx) {
+      modalPhotoIndex = idx;
+      renderModalPhotos();
+    }
+
+    function prevModalPhoto(e) {
+      if (e) e.stopPropagation();
+      const photos = (activeModalProduct.photos && activeModalProduct.photos.length > 0) ? activeModalProduct.photos : [activeModalProduct.photo];
+      modalPhotoIndex = (modalPhotoIndex - 1 + photos.length) % photos.length;
+      renderModalPhotos();
+    }
+
+    function nextModalPhoto(e) {
+      if (e) e.stopPropagation();
+      const photos = (activeModalProduct.photos && activeModalProduct.photos.length > 0) ? activeModalProduct.photos : [activeModalProduct.photo];
+      modalPhotoIndex = (modalPhotoIndex + 1) % photos.length;
+      renderModalPhotos();
+    }
+
     function openProductModal(id) {
       const p = SHOES_DATA.find(x => x.id === id);
       if (!p) return;
       activeModalProduct = p;
-      document.getElementById('modal-img').src = p.photo;
+      modalPhotoIndex = 0;
+
+      renderModalPhotos();
+
       document.getElementById('modal-title').innerText = p.name;
       document.getElementById('modal-cat').innerText = p.category;
       document.getElementById('modal-price').innerText = 'KES ' + p.price.toLocaleString();
@@ -618,4 +690,4 @@ const htmlContent = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(__dirname, '../preview_shoes_catalogue.html'), htmlContent, 'utf8');
-console.log('Successfully generated preview_shoes_catalogue.html with all 159 shoes and layout controls!');
+console.log('Successfully updated preview_shoes_catalogue.html with full gallery controls!');
