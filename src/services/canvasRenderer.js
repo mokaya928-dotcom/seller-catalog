@@ -433,16 +433,24 @@ function getCategorySizeText(product) {
 function drawSharedHeader(ctx, width, headerH, isStatus, palette, shopName, location, subtitle, brandFont = null) {
   const bandColor = palette.band || palette.primary || '#064e3b';
   const stripeColor = palette.stripe || palette.accent || '#f59e0b';
+  const bottomRadius = isStatus ? 36 : 28;
 
-  // 1. Header band background (--band)
+  // 1. Header band background with smooth rounded bottom corners
+  ctx.save();
   ctx.fillStyle = bandColor;
-  ctx.fillRect(0, 0, width, headerH);
+  roundRect(ctx, 0, 0, width, headerH, { bl: bottomRadius, br: bottomRadius });
+  ctx.fill();
 
-  // 2. Double-stripe look: thin accent stripe lines above and below (--stripe)
+  // 2. Double-stripe look: thin accent stripe at top, and curved stripe following bottom edge
   const stripeThickness = 6;
   ctx.fillStyle = stripeColor;
   ctx.fillRect(0, 0, width, stripeThickness);
-  ctx.fillRect(0, headerH - stripeThickness, width, stripeThickness);
+
+  ctx.strokeStyle = stripeColor;
+  ctx.lineWidth = stripeThickness;
+  roundRect(ctx, 0, -stripeThickness, width, headerH + stripeThickness, { bl: bottomRadius, br: bottomRadius });
+  ctx.stroke();
+  ctx.restore();
 
   // 3. Subtitle / Kicker (Bold Sans-Serif, no emojis)
   const cleanSubtitle = stripTofuEmojis(subtitle || 'PREMIUM QUALITY • VERIFIED SELECTION');
@@ -466,16 +474,24 @@ function drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone,
   const footerY = height - footerH;
   const bandColor = palette.band || palette.primary || '#064e3b';
   const stripeColor = palette.stripe || palette.accent || '#f59e0b';
+  const topRadius = isStatus ? 36 : 28;
 
-  // 1. Footer band background (--band)
+  // 1. Footer band background with smooth rounded top corners
+  ctx.save();
   ctx.fillStyle = bandColor;
-  ctx.fillRect(0, footerY, width, footerH);
+  roundRect(ctx, 0, footerY, width, footerH, { tl: topRadius, tr: topRadius });
+  ctx.fill();
 
-  // 2. Double-stripe look: thin accent stripe lines above and below (--stripe)
+  // 2. Double-stripe look: curved accent stripe along top edge and straight line at bottom
   const stripeThickness = 6;
+  ctx.strokeStyle = stripeColor;
+  ctx.lineWidth = stripeThickness;
+  roundRect(ctx, 0, footerY, width, footerH + stripeThickness, { tl: topRadius, tr: topRadius });
+  ctx.stroke();
+
   ctx.fillStyle = stripeColor;
-  ctx.fillRect(0, footerY, width, stripeThickness);
   ctx.fillRect(0, height - stripeThickness, width, stripeThickness);
+  ctx.restore();
 
   // 3. CTA Header (Bold Sans-Serif, no emojis)
   const cleanCta = stripTofuEmojis(ctaHeader || 'ORDER / INQUIRE ON WHATSAPP:');
@@ -494,19 +510,20 @@ function drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone,
   ctx.font = `700 ${isStatus ? 20 : 15}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
   ctx.fillText('Screenshot this post to order • Countrywide Delivery', width / 2, footerY + (isStatus ? 174 : 124));
 
-  // 6. M-Pesa Pill with accent border
+  // 6. M-Pesa Pill with accent border - Full smooth pill
   const mpesaW = isStatus ? 760 : 660;
   const mpesaH = isStatus ? 48 : 38;
   const mpesaX = (width - mpesaW) / 2;
   const mpesaY = footerY + (isStatus ? 212 : 150);
+  const mpesaRadius = Math.round(mpesaH / 2);
 
   ctx.fillStyle = palette.mpesaBg || bandColor;
-  roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
+  roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, mpesaRadius);
   ctx.fill();
 
   ctx.strokeStyle = stripeColor;
   ctx.lineWidth = 2.5;
-  roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
+  roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, mpesaRadius);
   ctx.stroke();
 
   ctx.fillStyle = palette.mpesaText || '#ffffff';
@@ -517,17 +534,17 @@ function drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone,
   ctx.fillText(mpesaText, width / 2, mpesaY + (isStatus ? 30 : 24));
 }
 
-function drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius = 28) {
+function drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius = 48) {
   ctx.save();
   ctx.fillStyle = '#ffffff';
-  ctx.shadowColor = 'rgba(15, 23, 42, 0.09)';
-  ctx.shadowBlur = 24;
-  ctx.shadowOffsetY = 6;
+  ctx.shadowColor = 'rgba(15, 23, 42, 0.08)';
+  ctx.shadowBlur = 32;
+  ctx.shadowOffsetY = 8;
   roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius);
   ctx.fill();
   ctx.restore();
 
-  // Crisp, clearly visible rounded-rectangle card framing the product with structure and vibe
+  // Crisp, clearly visible rounded-rectangle card framing the product with generous modern curves
   ctx.strokeStyle = '#e2e8f0';
   ctx.lineWidth = 3;
   roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cornerRadius);
@@ -615,14 +632,19 @@ function drawCenteredTitleAndBenefit(ctx, title, benefit, centerX, startY, maxWi
  */
 function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, fill = '#064e3b', outline = '#f59e0b', kicker = 'SPECIAL OFFER PRICE • IN STOCK', kickerColor = '#f59e0b', price = 'KES 1,850', wasPrice = null) {
   const x = Math.round(centerX - width / 2);
-  const cornerRadius = 22;
+  const cornerRadius = isStatus ? 36 : 28;
 
-  // Box fill (--price-bg)
+  // Box fill (--price-bg) with subtle shadow
+  ctx.save();
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.12)';
+  ctx.shadowBlur = 18;
+  ctx.shadowOffsetY = 6;
   ctx.fillStyle = fill;
   roundRect(ctx, x, y, width, height, cornerRadius);
   ctx.fill();
+  ctx.restore();
 
-  // Accent outline (--stripe) - No neon/glow effects
+  // Accent outline (--stripe) - Crisp smooth modern curve
   ctx.strokeStyle = outline;
   ctx.lineWidth = 3.5;
   roundRect(ctx, x, y, width, height, cornerRadius);
@@ -821,16 +843,18 @@ export const canvasRenderer = {
     const boxX = isStatus ? 60 : Math.round((width - boxWidth) / 2);
     const boxY = headerH + (isStatus ? 25 : 14);
     const boxHeight = isStatus ? 1080 : 720;
-    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    const cardRadius = isStatus ? 48 : 38;
+    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
-    // Corner badges: Size tag top-left (--badge variable)
+    // Corner badges: Size tag top-left (--badge variable) - True smooth pill shape
     const badgePadTop = isStatus ? 22 : 14;
     const badgePadSide = isStatus ? 24 : 16;
     const badgeH = isStatus ? 42 : 36;
+    const badgeRadius = Math.round(badgeH / 2);
     ctx.font = `800 ${isStatus ? 15 : 13}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
     const catBadgeW = Math.max(isStatus ? 160 : 130, Math.round(ctx.measureText(sizeText).width + (isStatus ? 36 : 26)));
     ctx.fillStyle = badgeColor;
-    roundRect(ctx, boxX + badgePadSide, boxY + badgePadTop, catBadgeW, badgeH, 12);
+    roundRect(ctx, boxX + badgePadSide, boxY + badgePadTop, catBadgeW, badgeH, badgeRadius);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
@@ -873,7 +897,7 @@ export const canvasRenderer = {
       if (badgeTxt) {
         ctx.fillStyle = badgeBgColor;
         const bW = Math.max(isStatus ? 160 : 130, Math.round(ctx.measureText(badgeTxt).width + (isStatus ? 36 : 26)));
-        roundRect(ctx, boxX + boxWidth - bW - badgePadSide, boxY + badgePadTop, bW, badgeH, 12);
+        roundRect(ctx, boxX + boxWidth - bW - badgePadSide, boxY + badgePadTop, bW, badgeH, badgeRadius);
         ctx.fill();
         ctx.fillStyle = '#ffffff';
         ctx.font = `900 ${isStatus ? 14 : 12}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
@@ -904,15 +928,21 @@ export const canvasRenderer = {
       const dh = Math.round(safeH * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 15 : 6) + Math.round((boxHeight - (isStatus ? 15 : 6) - dh) / 2);
+
+      // Clip strictly inside the rounded card so no square corners or backgrounds ever peek out
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
     } else {
       // Graceful styled card placeholder in the box so it is NEVER blank
       ctx.fillStyle = '#f8fafc';
-      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, 20);
+      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, 28);
       ctx.fill();
       ctx.strokeStyle = '#cbd5e1';
       ctx.lineWidth = 2;
-      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, 20);
+      roundRect(ctx, boxX + 40, boxY + 60, boxWidth - 80, boxHeight - 120, 28);
       ctx.stroke();
 
       ctx.fillStyle = '#475569';
@@ -1013,13 +1043,14 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    const cardRadius = isStatus ? 48 : 38;
+    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Size / Category pill top-left
     ctx.font = '800 15px system-ui, -apple-system, sans-serif';
     const catBadgeW = Math.max(160, Math.round(ctx.measureText(sizeText).width + 36));
     ctx.fillStyle = palette.primary;
-    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
@@ -1028,7 +1059,7 @@ export const canvasRenderer = {
     // Top-Right Flash Sale Pill
     const flashTagW = isStatus ? 240 : 190;
     ctx.fillStyle = '#dc2626';
-    roundRect(ctx, boxX + boxWidth - flashTagW - 24, boxY + 22, flashTagW, 42, 12);
+    roundRect(ctx, boxX + boxWidth - flashTagW - 24, boxY + 22, flashTagW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.font = '900 14px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
@@ -1047,7 +1078,12 @@ export const canvasRenderer = {
       const dh = Math.round(bounds.sHeight * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 20 : 12) + Math.round((maxH - dh) / 2);
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
     }
 
     // Urgency countdown bar at bottom of hero card
@@ -1055,12 +1091,13 @@ export const canvasRenderer = {
     const ribH = isStatus ? 50 : 38;
     const ribX = boxX + (boxWidth - ribW) / 2;
     const ribY = boxY + boxHeight - ribH - (isStatus ? 20 : 12);
+    const ribRadius = Math.round(ribH / 2);
     ctx.fillStyle = '#fef2f2';
-    roundRect(ctx, ribX, ribY, ribW, ribH, 14);
+    roundRect(ctx, ribX, ribY, ribW, ribH, ribRadius);
     ctx.fill();
     ctx.strokeStyle = '#ef4444';
     ctx.lineWidth = 2;
-    roundRect(ctx, ribX, ribY, ribW, ribH, 14);
+    roundRect(ctx, ribX, ribY, ribW, ribH, ribRadius);
     ctx.stroke();
 
     ctx.fillStyle = '#dc2626';
@@ -1150,13 +1187,14 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    const cardRadius = isStatus ? 48 : 38;
+    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Size / Category pill top-left
     ctx.font = '800 15px system-ui, -apple-system, sans-serif';
     const catBadgeW = Math.max(160, Math.round(ctx.measureText(sizeText).width + 36));
     ctx.fillStyle = palette.primary;
-    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
@@ -1165,7 +1203,7 @@ export const canvasRenderer = {
     // Top-Right Gold 5-Star Rating Badge
     const rateTagW = isStatus ? 240 : 190;
     ctx.fillStyle = '#f59e0b';
-    roundRect(ctx, boxX + boxWidth - rateTagW - 24, boxY + 22, rateTagW, 42, 12);
+    roundRect(ctx, boxX + boxWidth - rateTagW - 24, boxY + 22, rateTagW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -1184,7 +1222,12 @@ export const canvasRenderer = {
       const dh = Math.round(bounds.sHeight * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 20 : 12) + Math.round((maxH - dh) / 2);
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
     }
 
     // Frosted Testimonial Quote Bubble at bottom of hero card
@@ -1192,14 +1235,15 @@ export const canvasRenderer = {
     const qH = isStatus ? 120 : 85;
     const qX = boxX + (boxWidth - qW) / 2;
     const qY = boxY + boxHeight - qH - (isStatus ? 20 : 12);
+    const qRadius = isStatus ? 28 : 20;
 
     ctx.save();
     ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
-    roundRect(ctx, qX, qY, qW, qH, 18);
+    roundRect(ctx, qX, qY, qW, qH, qRadius);
     ctx.fill();
     ctx.strokeStyle = '#f59e0b';
     ctx.lineWidth = 2;
-    roundRect(ctx, qX, qY, qW, qH, 18);
+    roundRect(ctx, qX, qY, qW, qH, qRadius);
     ctx.stroke();
     ctx.restore();
 
@@ -1308,13 +1352,14 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    const cardRadius = isStatus ? 48 : 38;
+    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Top-Left Category Pill
     ctx.font = '800 15px system-ui, -apple-system, sans-serif';
     const catBadgeW = 200;
     ctx.fillStyle = palette.primary;
-    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
@@ -1323,7 +1368,7 @@ export const canvasRenderer = {
     // Top-Right Bundle Savings Pill
     const bW = 200;
     ctx.fillStyle = '#10b981';
-    roundRect(ctx, boxX + boxWidth - bW - 24, boxY + 22, bW, 42, 12);
+    roundRect(ctx, boxX + boxWidth - bW - 24, boxY + 22, bW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -1336,6 +1381,10 @@ export const canvasRenderer = {
     if (heroImg && compImg) {
       const sideW = Math.round((boxWidth - 140) / 2);
       const sideH = isStatus ? 720 : 420;
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
 
       // Left Image (Main)
       const b1 = getProductBounds(heroImg);
@@ -1373,22 +1422,25 @@ export const canvasRenderer = {
         boxY + 70 + Math.round((sideH - dh2) / 2),
         dw2, dh2);
 
-      // Dual labels below each image
+      // Dual labels below each image - Smooth pill tags
       const lblY = boxY + 80 + sideH;
       const lblH = isStatus ? 40 : 32;
+      const lblRadius = Math.round(lblH / 2);
 
       ctx.fillStyle = '#f1f5f9';
-      roundRect(ctx, boxX + 40, lblY, sideW, lblH, 10);
+      roundRect(ctx, boxX + 40, lblY, sideW, lblH, lblRadius);
       ctx.fill();
       ctx.fillStyle = '#0f172a';
       ctx.font = `800 ${isStatus ? 15 : 12}px system-ui, -apple-system, sans-serif`;
       ctx.fillText(`1. ${product.name.slice(0, 24)}`, boxX + 40 + sideW / 2, lblY + lblH / 2 + 5);
 
       ctx.fillStyle = '#f1f5f9';
-      roundRect(ctx, boxX + boxWidth - 40 - sideW, lblY, sideW, lblH, 10);
+      roundRect(ctx, boxX + boxWidth - 40 - sideW, lblY, sideW, lblH, lblRadius);
       ctx.fill();
       ctx.fillStyle = '#0f172a';
       ctx.fillText(`2. ${companionProduct.name.slice(0, 24)}`, boxX + boxWidth - 40 - sideW / 2, lblY + lblH / 2 + 5);
+
+      ctx.restore();
     } else if (heroImg) {
       const bounds = getProductBounds(heroImg);
       const maxW = boxWidth - 80;
@@ -1396,24 +1448,30 @@ export const canvasRenderer = {
       const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
       const dw = Math.round(bounds.sWidth * scale);
       const dh = Math.round(bounds.sHeight * scale);
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
         boxX + Math.round((boxWidth - dw) / 2),
         boxY + 60 + Math.round((maxH - dh) / 2),
         dw, dh);
+      ctx.restore();
     }
 
-    // Savings ribbon at bottom of card
+    // Savings ribbon at bottom of card - Smooth pill shape
     const ribW = boxWidth - (isStatus ? 100 : 60);
     const ribH = isStatus ? 50 : 38;
     const ribX = boxX + (boxWidth - ribW) / 2;
     const ribY = boxY + boxHeight - ribH - (isStatus ? 20 : 12);
+    const ribRadius = Math.round(ribH / 2);
 
     ctx.fillStyle = '#ecfdf5';
-    roundRect(ctx, ribX, ribY, ribW, ribH, 14);
+    roundRect(ctx, ribX, ribY, ribW, ribH, ribRadius);
     ctx.fill();
     ctx.strokeStyle = '#10b981';
     ctx.lineWidth = 2;
-    roundRect(ctx, ribX, ribY, ribW, ribH, 14);
+    roundRect(ctx, ribX, ribY, ribW, ribH, ribRadius);
     ctx.stroke();
 
     ctx.fillStyle = '#065f46';
@@ -1503,13 +1561,14 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    const cardRadius = isStatus ? 48 : 38;
+    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
     // Size / Category pill top-left
     ctx.font = '800 15px system-ui, -apple-system, sans-serif';
     const catBadgeW = Math.max(160, Math.round(ctx.measureText(sizeText).width + 36));
     ctx.fillStyle = palette.primary;
-    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
@@ -1518,7 +1577,7 @@ export const canvasRenderer = {
     // Top-Right Restock Badge
     const restockTagW = isStatus ? 220 : 180;
     ctx.fillStyle = '#059669';
-    roundRect(ctx, boxX + boxWidth - restockTagW - 24, boxY + 22, restockTagW, 42, 12);
+    roundRect(ctx, boxX + boxWidth - restockTagW - 24, boxY + 22, restockTagW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -1537,21 +1596,27 @@ export const canvasRenderer = {
       const dh = Math.round(bounds.sHeight * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 20 : 12) + Math.round((maxH - dh) / 2);
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
     }
 
-    // Scarcity Meter ribbon at bottom of card
+    // Scarcity Meter ribbon at bottom of card - Smooth pill shape
     const ribW = boxWidth - (isStatus ? 100 : 60);
     const ribH = isStatus ? 50 : 38;
     const ribX = boxX + (boxWidth - ribW) / 2;
     const ribY = boxY + boxHeight - ribH - (isStatus ? 20 : 12);
+    const ribRadius = Math.round(ribH / 2);
 
     ctx.fillStyle = '#fef3c7';
-    roundRect(ctx, ribX, ribY, ribW, ribH, 14);
+    roundRect(ctx, ribX, ribY, ribW, ribH, ribRadius);
     ctx.fill();
     ctx.strokeStyle = '#f59e0b';
     ctx.lineWidth = 2;
-    roundRect(ctx, ribX, ribY, ribW, ribH, 14);
+    roundRect(ctx, ribX, ribY, ribW, ribH, ribRadius);
     ctx.stroke();
 
     ctx.fillStyle = '#b45309';
@@ -1631,11 +1696,18 @@ export const canvasRenderer = {
 
     // 1. Luxury Editorial Masthead
     const headerH = isStatus ? 170 : 135;
+    const headerRadius = isStatus ? 36 : 28;
+    ctx.save();
     ctx.fillStyle = '#080c14';
-    ctx.fillRect(0, 0, width, headerH);
+    roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
+    ctx.fill();
     ctx.fillStyle = '#d4af37';
     ctx.fillRect(0, 0, width, 8);
-    ctx.fillRect(0, headerH - 8, width, 8);
+    ctx.strokeStyle = '#d4af37';
+    ctx.lineWidth = 8;
+    roundRect(ctx, 0, -8, width, headerH + 8, { bl: headerRadius, br: headerRadius });
+    ctx.stroke();
+    ctx.restore();
 
     ctx.fillStyle = '#d4af37';
     ctx.textAlign = 'center';
@@ -1655,43 +1727,44 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
+    const cardRadius = isStatus ? 48 : 38;
 
     ctx.save();
     ctx.fillStyle = '#101624';
     ctx.shadowColor = 'rgba(212, 175, 55, 0.2)';
     ctx.shadowBlur = 28;
     ctx.shadowOffsetY = 6;
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.fill();
     ctx.restore();
 
     ctx.strokeStyle = '#d4af37';
     ctx.lineWidth = 3;
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.stroke();
 
-    // Top-Left Signature Edit Badge
+    // Top-Left Signature Edit Badge - Smooth pill
     ctx.font = `700 13px ${luxuryFontFam}`;
     const sigBadgeW = 190;
     ctx.fillStyle = 'rgba(212, 175, 55, 0.18)';
-    roundRect(ctx, boxX + 24, boxY + 22, sigBadgeW, 40, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, sigBadgeW, 40, 20);
     ctx.fill();
     ctx.strokeStyle = '#d4af37';
     ctx.lineWidth = 1.5;
-    roundRect(ctx, boxX + 24, boxY + 22, sigBadgeW, 40, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, sigBadgeW, 40, 20);
     ctx.stroke();
     ctx.fillStyle = '#fef3c7';
     ctx.textAlign = 'center';
     ctx.fillText('SIGNATURE EDIT', boxX + 24 + sigBadgeW / 2, boxY + 47);
 
-    // Top-Right Authentic Badge
+    // Top-Right Authentic Badge - Smooth pill
     const authW = 180;
     ctx.fillStyle = 'rgba(212, 175, 55, 0.18)';
-    roundRect(ctx, boxX + boxWidth - authW - 24, boxY + 22, authW, 40, 12);
+    roundRect(ctx, boxX + boxWidth - authW - 24, boxY + 22, authW, 40, 20);
     ctx.fill();
     ctx.strokeStyle = '#d4af37';
     ctx.lineWidth = 1.5;
-    roundRect(ctx, boxX + boxWidth - authW - 24, boxY + 22, authW, 40, 12);
+    roundRect(ctx, boxX + boxWidth - authW - 24, boxY + 22, authW, 40, 20);
     ctx.stroke();
     ctx.fillStyle = '#fef3c7';
     ctx.fillText('100% AUTHENTIC', boxX + boxWidth - authW / 2 - 24, boxY + 47);
@@ -1718,7 +1791,12 @@ export const canvasRenderer = {
       const dh = Math.round(bounds.sHeight * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 15 : 10) + Math.round((boxHeight - (isStatus ? 15 : 10) - dh) / 2);
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
     }
 
     // 3. Product Title & Benefit (Centered!)
@@ -1758,11 +1836,17 @@ export const canvasRenderer = {
     // 5. Luxury Footer
     const footerH = isStatus ? 300 : 250;
     const footerY = height - footerH;
+    const footerRadius = isStatus ? 36 : 28;
 
+    ctx.save();
     ctx.fillStyle = '#080c14';
-    ctx.fillRect(0, footerY, width, footerH);
-    ctx.fillStyle = '#d4af37';
-    ctx.fillRect(0, footerY, width, 8);
+    roundRect(ctx, 0, footerY, width, footerH, { tl: footerRadius, tr: footerRadius });
+    ctx.fill();
+    ctx.strokeStyle = '#d4af37';
+    ctx.lineWidth = 8;
+    roundRect(ctx, 0, footerY, width, footerH + 8, { tl: footerRadius, tr: footerRadius });
+    ctx.stroke();
+    ctx.restore();
 
     ctx.fillStyle = '#d4af37';
     ctx.font = `800 ${isStatus ? 20 : 16}px system-ui, -apple-system, sans-serif`;
@@ -1781,13 +1865,14 @@ export const canvasRenderer = {
     const mpesaH = isStatus ? 48 : 38;
     const mpesaX = (width - mpesaW) / 2;
     const mpesaY = footerY + (isStatus ? 212 : 150);
+    const mpesaRadius = Math.round(mpesaH / 2);
 
     ctx.fillStyle = '#101624';
-    roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
+    roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, mpesaRadius);
     ctx.fill();
     ctx.strokeStyle = '#d4af37';
     ctx.lineWidth = 2;
-    roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
+    roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, mpesaRadius);
     ctx.stroke();
 
     ctx.fillStyle = '#fef3c7';
@@ -1828,11 +1913,18 @@ export const canvasRenderer = {
 
     // 1. Top Header Bar
     const headerH = isStatus ? 170 : 135;
+    const headerRadius = isStatus ? 36 : 28;
+    ctx.save();
     ctx.fillStyle = '#09090b';
-    ctx.fillRect(0, 0, width, headerH);
+    roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
+    ctx.fill();
     ctx.fillStyle = '#10b981';
     ctx.fillRect(0, 0, width, 8);
-    ctx.fillRect(0, headerH - 8, width, 8);
+    ctx.strokeStyle = '#10b981';
+    ctx.lineWidth = 8;
+    roundRect(ctx, 0, -8, width, headerH + 8, { bl: headerRadius, br: headerRadius });
+    ctx.stroke();
+    ctx.restore();
 
     ctx.fillStyle = '#10b981';
     ctx.textAlign = 'center';
@@ -1852,34 +1944,35 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
+    const cardRadius = isStatus ? 48 : 38;
 
     ctx.save();
     ctx.fillStyle = '#141418';
     ctx.shadowColor = '#10b981';
     ctx.shadowBlur = 24;
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.fill();
     ctx.restore();
 
     ctx.strokeStyle = '#10b981';
     ctx.lineWidth = 3;
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.stroke();
 
-    // Top-Left Neon Street Tag
+    // Top-Left Neon Street Tag - Smooth pill
     ctx.fillStyle = '#10b981';
     const tagW = Math.max(170, Math.round(ctx.measureText(sizeText).width + 36));
-    roundRect(ctx, boxX + 24, boxY + 22, tagW, 42, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, tagW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#000000';
     ctx.font = '900 14px system-ui, -apple-system, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(`STREET // ${sizeText}`, boxX + 24 + tagW / 2, boxY + 47);
 
-    // Top-Right Cyber Yellow Tag
+    // Top-Right Cyber Yellow Tag - Smooth pill
     const rightTagW = 180;
     ctx.fillStyle = '#facc15';
-    roundRect(ctx, boxX + boxWidth - rightTagW - 24, boxY + 22, rightTagW, 42, 12);
+    roundRect(ctx, boxX + boxWidth - rightTagW - 24, boxY + 22, rightTagW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#000000';
     ctx.font = '900 13px system-ui, -apple-system, sans-serif';
@@ -1898,7 +1991,12 @@ export const canvasRenderer = {
       const dh = Math.round(bounds.sHeight * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 15 : 10) + Math.round((boxHeight - (isStatus ? 15 : 10) - dh) / 2);
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
     }
 
     // 3. Product Title & Benefit (Centered!)
@@ -1938,11 +2036,17 @@ export const canvasRenderer = {
     // 5. Footer
     const footerH = isStatus ? 300 : 250;
     const footerY = height - footerH;
+    const footerRadius = isStatus ? 36 : 28;
 
+    ctx.save();
     ctx.fillStyle = '#141418';
-    ctx.fillRect(0, footerY, width, footerH);
-    ctx.fillStyle = '#10b981';
-    ctx.fillRect(0, footerY, width, 8);
+    roundRect(ctx, 0, footerY, width, footerH, { tl: footerRadius, tr: footerRadius });
+    ctx.fill();
+    ctx.strokeStyle = '#10b981';
+    ctx.lineWidth = 8;
+    roundRect(ctx, 0, footerY, width, footerH + 8, { tl: footerRadius, tr: footerRadius });
+    ctx.stroke();
+    ctx.restore();
 
     ctx.fillStyle = '#10b981';
     ctx.font = `900 ${isStatus ? 22 : 17}px system-ui, -apple-system, sans-serif`;
@@ -1961,13 +2065,14 @@ export const canvasRenderer = {
     const mpesaH = isStatus ? 48 : 38;
     const mpesaX = (width - mpesaW) / 2;
     const mpesaY = footerY + (isStatus ? 212 : 150);
+    const mpesaRadius = Math.round(mpesaH / 2);
 
     ctx.fillStyle = '#09090b';
-    roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
+    roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, mpesaRadius);
     ctx.fill();
     ctx.strokeStyle = '#10b981';
     ctx.lineWidth = 2;
-    roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
+    roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, mpesaRadius);
     ctx.stroke();
 
     ctx.fillStyle = '#10b981';
@@ -2008,11 +2113,18 @@ export const canvasRenderer = {
 
     // 1. Header
     const headerH = isStatus ? 170 : 135;
+    const headerRadius = isStatus ? 36 : 28;
+    ctx.save();
     ctx.fillStyle = '#0f172a';
-    ctx.fillRect(0, 0, width, headerH);
+    roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
+    ctx.fill();
     ctx.fillStyle = '#d97706';
     ctx.fillRect(0, 0, width, 8);
-    ctx.fillRect(0, headerH - 8, width, 8);
+    ctx.strokeStyle = '#d97706';
+    ctx.lineWidth = 8;
+    roundRect(ctx, 0, -8, width, headerH + 8, { bl: headerRadius, br: headerRadius });
+    ctx.stroke();
+    ctx.restore();
 
     ctx.fillStyle = '#fef3c7';
     ctx.textAlign = 'center';
@@ -2032,22 +2144,23 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
-    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    const cardRadius = isStatus ? 48 : 38;
+    drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
 
-    // Top-Left Pill
+    // Top-Left Pill - Smooth pill
     ctx.font = '800 15px system-ui, -apple-system, sans-serif';
     const catBadgeW = Math.max(160, Math.round(ctx.measureText(sizeText).width + 36));
     ctx.fillStyle = '#0f172a';
-    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
     ctx.fillText(sizeText, boxX + 24 + catBadgeW / 2, boxY + 47);
 
-    // Top-Right Badge
+    // Top-Right Badge - Smooth pill
     const rightTagW = 190;
     ctx.fillStyle = '#334155';
-    roundRect(ctx, boxX + boxWidth - rightTagW - 24, boxY + 22, rightTagW, 42, 12);
+    roundRect(ctx, boxX + boxWidth - rightTagW - 24, boxY + 22, rightTagW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -2066,7 +2179,12 @@ export const canvasRenderer = {
       const dh = Math.round(bounds.sHeight * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 15 : 10) + Math.round((boxHeight - (isStatus ? 15 : 10) - dh) / 2);
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
     }
 
     // 3. Product Title & Benefit (Centered!)
@@ -2146,11 +2264,18 @@ export const canvasRenderer = {
 
     // 1. Boutique Header
     const headerH = isStatus ? 170 : 135;
+    const headerRadius = isStatus ? 36 : 28;
+    ctx.save();
     ctx.fillStyle = '#451a03';
-    ctx.fillRect(0, 0, width, headerH);
+    roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
+    ctx.fill();
     ctx.fillStyle = '#b45309';
     ctx.fillRect(0, 0, width, 8);
-    ctx.fillRect(0, headerH - 8, width, 8);
+    ctx.strokeStyle = '#b45309';
+    ctx.lineWidth = 8;
+    roundRect(ctx, 0, -8, width, headerH + 8, { bl: headerRadius, br: headerRadius });
+    ctx.stroke();
+    ctx.restore();
 
     ctx.fillStyle = '#fde68a';
     ctx.textAlign = 'center';
@@ -2170,38 +2295,39 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
+    const cardRadius = isStatus ? 48 : 38;
 
     ctx.save();
     ctx.fillStyle = '#ffffff';
     ctx.shadowColor = 'rgba(69, 26, 3, 0.16)';
     ctx.shadowBlur = 28;
     ctx.shadowOffsetY = 6;
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.fill();
     ctx.restore();
 
     ctx.strokeStyle = '#e7e0d6';
     ctx.lineWidth = 3;
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.stroke();
 
     // Washi Tape at Top-Center of Card
     drawWashiTape(ctx, width / 2, boxY, isStatus ? 210 : 160, 36, -0.025, 'rgba(217, 195, 170, 0.92)', 'rgba(180, 150, 120, 0.45)');
 
-    // Top-Left Category Pill
+    // Top-Left Category Pill - Smooth pill
     ctx.font = '800 15px system-ui, -apple-system, sans-serif';
     const catBadgeW = Math.max(160, Math.round(ctx.measureText(sizeText).width + 36));
     ctx.fillStyle = '#b45309';
-    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
     ctx.fillText(sizeText, boxX + 24 + catBadgeW / 2, boxY + 47);
 
-    // Top-Right Pill
+    // Top-Right Pill - Smooth pill
     const tagW = 180;
     ctx.fillStyle = '#78350f';
-    roundRect(ctx, boxX + boxWidth - tagW - 24, boxY + 22, tagW, 42, 12);
+    roundRect(ctx, boxX + boxWidth - tagW - 24, boxY + 22, tagW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -2220,7 +2346,12 @@ export const canvasRenderer = {
       const dh = Math.round(bounds.sHeight * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 15 : 10) + Math.round((boxHeight - (isStatus ? 15 : 10) - dh) / 2);
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
     }
 
     // 3. Product Title & Benefit (Centered!)
@@ -2302,11 +2433,18 @@ export const canvasRenderer = {
 
     // 1. Top Header Bar
     const headerH = isStatus ? 170 : 135;
+    const headerRadius = isStatus ? 36 : 28;
+    ctx.save();
     ctx.fillStyle = '#881337';
-    ctx.fillRect(0, 0, width, headerH);
+    roundRect(ctx, 0, 0, width, headerH, { bl: headerRadius, br: headerRadius });
+    ctx.fill();
     ctx.fillStyle = '#facc15';
     ctx.fillRect(0, 0, width, 8);
-    ctx.fillRect(0, headerH - 8, width, 8);
+    ctx.strokeStyle = '#facc15';
+    ctx.lineWidth = 8;
+    roundRect(ctx, 0, -8, width, headerH + 8, { bl: headerRadius, br: headerRadius });
+    ctx.stroke();
+    ctx.restore();
 
     ctx.fillStyle = '#facc15';
     ctx.textAlign = 'center';
@@ -2326,34 +2464,35 @@ export const canvasRenderer = {
     const boxWidth = width - 120;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 1080 : 680;
+    const cardRadius = isStatus ? 48 : 38;
 
     ctx.save();
     ctx.fillStyle = '#ffffff';
     ctx.shadowColor = 'rgba(136, 19, 55, 0.2)';
     ctx.shadowBlur = 28;
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.fill();
     ctx.restore();
 
     ctx.strokeStyle = '#dc2626';
     ctx.lineWidth = 3;
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 28);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.stroke();
 
-    // Top-Left Pill
+    // Top-Left Pill - Smooth pill
     ctx.font = '900 15px system-ui, -apple-system, sans-serif';
     const catBadgeW = Math.max(170, Math.round(ctx.measureText(sizeText).width + 36));
     ctx.fillStyle = '#881337';
-    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 12);
+    roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
     ctx.fillText(sizeText, boxX + 24 + catBadgeW / 2, boxY + 47);
 
-    // Top-Right Hot Deal Pill
+    // Top-Right Hot Deal Pill - Smooth pill
     const hotTagW = 190;
     ctx.fillStyle = '#facc15';
-    roundRect(ctx, boxX + boxWidth - hotTagW - 24, boxY + 22, hotTagW, 42, 12);
+    roundRect(ctx, boxX + boxWidth - hotTagW - 24, boxY + 22, hotTagW, 42, 21);
     ctx.fill();
     ctx.fillStyle = '#881337';
     ctx.font = '900 14px system-ui, -apple-system, sans-serif';
@@ -2372,20 +2511,26 @@ export const canvasRenderer = {
       const dh = Math.round(bounds.sHeight * scale);
       const bx = boxX + Math.round((boxWidth - dw) / 2);
       const by = boxY + (isStatus ? 20 : 12) + Math.round((maxH - dh) / 2);
+
+      ctx.save();
+      roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+      ctx.clip();
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
+      ctx.restore();
     }
 
-    // Clearance countdown / urgency ribbon at bottom of card
+    // Clearance countdown / urgency ribbon at bottom of card - Smooth pill shape
     const ribW = boxWidth - (isStatus ? 100 : 60);
     const ribH = isStatus ? 50 : 38;
     const ribX = boxX + (boxWidth - ribW) / 2;
     const ribY = boxY + boxHeight - ribH - (isStatus ? 20 : 12);
+    const ribRadius = Math.round(ribH / 2);
     ctx.fillStyle = '#fef2f2';
-    roundRect(ctx, ribX, ribY, ribW, ribH, 14);
+    roundRect(ctx, ribX, ribY, ribW, ribH, ribRadius);
     ctx.fill();
     ctx.strokeStyle = '#ef4444';
     ctx.lineWidth = 2;
-    roundRect(ctx, ribX, ribY, ribW, ribH, 14);
+    roundRect(ctx, ribX, ribY, ribW, ribH, ribRadius);
     ctx.stroke();
 
     ctx.fillStyle = '#dc2626';
@@ -2513,13 +2658,14 @@ export const canvasRenderer = {
     const boxWidth = width - 130;
     const boxY = headerH + (isStatus ? 25 : 15);
     const boxHeight = isStatus ? 880 : 540;
+    const cardRadius = isStatus ? 48 : 38;
 
     ctx.fillStyle = '#1e293b';
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 22);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.fill();
     ctx.strokeStyle = 'rgba(212, 175, 55, 0.4)';
     ctx.lineWidth = 2;
-    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, 22);
+    roundRect(ctx, boxX, boxY, boxWidth, boxHeight, cardRadius);
     ctx.stroke();
 
     // Try to load photo if exists, else graceful crest
@@ -2536,10 +2682,15 @@ export const canvasRenderer = {
           const scale = Math.min(maxW / bounds.sWidth, maxH / bounds.sHeight);
           const dw = Math.round(bounds.sWidth * scale);
           const dh = Math.round(bounds.sHeight * scale);
+
+          ctx.save();
+          roundRect(ctx, boxX + 4, boxY + 4, boxWidth - 8, boxHeight - 8, cardRadius - 4);
+          ctx.clip();
           ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight,
             boxX + Math.round((boxWidth - dw) / 2),
             boxY + Math.round((boxHeight - dh) / 2),
             dw, dh);
+          ctx.restore();
           drawnPhoto = true;
         }
       } catch (_) {}
@@ -2574,18 +2725,19 @@ export const canvasRenderer = {
     const benefitText = decodeHtmlEntities(product?.benefit_line || '100% Verified Quality • Fast Same-Day Dispatch Across Kenya');
     drawDefensiveBenefit(ctx, `✦ ${benefitText} ✦`, width / 2, benefitY, boxWidth - 40, isStatus ? 18 : 14, 12, '#d4af37');
 
-    // 4. Price Plaque
+    // 4. Price Plaque - Smooth container
     const offerW = isStatus ? 580 : 480;
     const offerH = isStatus ? 110 : 88;
     const offerX = (width - offerW) / 2;
     const offerY = benefitY + (isStatus ? 24 : 16);
+    const plaqueRadius = isStatus ? 36 : 28;
 
     ctx.fillStyle = '#1e293b';
-    roundRect(ctx, offerX, offerY, offerW, offerH, 18);
+    roundRect(ctx, offerX, offerY, offerW, offerH, plaqueRadius);
     ctx.fill();
     ctx.strokeStyle = '#d4af37';
     ctx.lineWidth = 2.5;
-    roundRect(ctx, offerX, offerY, offerW, offerH, 18);
+    roundRect(ctx, offerX, offerY, offerW, offerH, plaqueRadius);
     ctx.stroke();
 
     const priceNum = Number(product?.price || 0);

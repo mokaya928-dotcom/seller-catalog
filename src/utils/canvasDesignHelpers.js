@@ -5,18 +5,46 @@
 
 import { decodeHtmlEntities } from './textUtils.js';
 
-export function roundRect(ctx, x, y, width, height, radius) {
-  const r = Math.min(radius, width / 2, height / 2);
+export function roundRect(ctx, x, y, width, height, radius = 0) {
+  let tl = 0, tr = 0, br = 0, bl = 0;
+  if (typeof radius === 'number') {
+    tl = tr = br = bl = radius;
+  } else if (typeof radius === 'object' && radius !== null) {
+    tl = radius.tl ?? radius.topLeft ?? 0;
+    tr = radius.tr ?? radius.topRight ?? 0;
+    br = radius.br ?? radius.bottomRight ?? 0;
+    bl = radius.bl ?? radius.bottomLeft ?? 0;
+  }
+  const maxR = Math.min(width / 2, height / 2);
+  tl = Math.max(0, Math.min(tl, maxR));
+  tr = Math.max(0, Math.min(tr, maxR));
+  br = Math.max(0, Math.min(br, maxR));
+  bl = Math.max(0, Math.min(bl, maxR));
+
+  if (typeof ctx.roundRect === 'function') {
+    ctx.beginPath();
+    ctx.roundRect(x, y, width, height, [tl, tr, br, bl]);
+    return;
+  }
+
   ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + width - r, y);
-  ctx.quadraticCurveTo(x + width, y, x + width, y + r);
-  ctx.lineTo(x + width, y + height - r);
-  ctx.quadraticCurveTo(x + width, y + height, x + width - r, y + height);
-  ctx.lineTo(x + r, y + height);
-  ctx.quadraticCurveTo(x, y + height, x, y + height - r);
-  ctx.lineTo(x, y + r);
-  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.moveTo(x + tl, y);
+  ctx.lineTo(x + width - tr, y);
+  if (tr > 0) ctx.arcTo(x + width, y, x + width, y + tr, tr);
+  else ctx.lineTo(x + width, y);
+
+  ctx.lineTo(x + width, y + height - br);
+  if (br > 0) ctx.arcTo(x + width, y + height, x + width - br, y + height, br);
+  else ctx.lineTo(x + width, y + height);
+
+  ctx.lineTo(x + bl, y + height);
+  if (bl > 0) ctx.arcTo(x, y + height, x, y + height - bl, bl);
+  else ctx.lineTo(x, y + height);
+
+  ctx.lineTo(x, y + tl);
+  if (tl > 0) ctx.arcTo(x, y, x + tl, y, tl);
+  else ctx.lineTo(x, y);
+
   ctx.closePath();
 }
 
