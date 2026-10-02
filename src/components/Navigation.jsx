@@ -33,8 +33,9 @@ export default function Navigation({ activeTab, onTabChange, pendingPostCount = 
           return (
             <button
               key={tab.id}
+              type="button"
               onClick={() => onTabChange(tab.id)}
-              className={`flex-1 py-2 px-1 flex flex-col items-center justify-center gap-1 rounded-xl transition-all relative ${
+              className={`flex-1 py-2 px-1 flex flex-col items-center justify-center gap-1 rounded-xl transition-all relative cursor-pointer active:scale-95 ${
                 isActive
                   ? 'text-emerald-700 font-extrabold'
                   : 'text-gray-500 hover:text-gray-900 font-medium'

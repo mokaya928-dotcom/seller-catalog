@@ -615,7 +615,7 @@ export default function TodayView({
         {/* 1-Click Action Button */}
         <button
           type="button"
-          onClick={() => setIsNewProductModalOpen(true)}
+          onClick={handleOpenNewProductModal}
           className="w-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-black py-3.5 px-4 rounded-2xl shadow-lg transition active:scale-[0.98] text-xs flex items-center justify-center gap-2 border border-amber-300 relative group"
         >
           <Sparkles className="w-4 h-4 fill-slate-950 group-hover:rotate-12 transition-transform" />
@@ -629,7 +629,7 @@ export default function TodayView({
             value=""
             onChange={(e) => {
               if (e.target.value === '__NEW_PRODUCT__') {
-                setIsNewProductModalOpen(true);
+                handleOpenNewProductModal();
               } else if (e.target.value) {
                 handleQuickAdd(e.target.value);
               }
@@ -663,7 +663,7 @@ export default function TodayView({
               ? 'Classic Clothes'
               : postingCategory
           }
-          onClose={() => setIsNewProductModalOpen(false)}
+          onClose={handleCloseNewProductModal}
           onSave={handleAddNewProductAndGenerate}
           onSaveAndGenerate={handleAddNewProductAndGenerate}
         />
