@@ -5,6 +5,7 @@ import {
   Camera, Star, Layers, Tag, Maximize2, ShieldCheck 
 } from 'lucide-react';
 import { canvasRenderer, POST_STYLES } from '../../services/canvasRenderer';
+import { PRIMARY_PALETTES } from '../../services/configService';
 import { shareService } from '../../services/shareService';
 import { scheduleService } from '../../services/scheduleService';
 import WhatsAppIcon from '../common/WhatsAppIcon';
@@ -266,40 +267,41 @@ export default function PostCard({
 
       {/* Main Card Content */}
       <div className="p-4 space-y-3.5">
-        {/* Color Palette Switcher: Option A vs Option B */}
-        <div className="flex items-center justify-between gap-2 px-0.5">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-            <Palette className="w-3.5 h-3.5 text-slate-400" />
-            <span>Theme:</span>
-          </span>
+        {/* Color Palette Switcher: 5 Locked Architectural Palettes */}
+        <div className="space-y-1.5 bg-slate-50/80 p-2.5 rounded-xl border border-slate-200/90">
+          <div className="flex items-center justify-between px-0.5 text-xs">
+            <span className="font-bold text-slate-700 flex items-center gap-1.5">
+              <Palette className="w-3.5 h-3.5 text-amber-600" />
+              <span>Theme Palette (5 Locked):</span>
+            </span>
+            <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
+              {PRIMARY_PALETTES.find(p => p.id === activePalette || (p.aliases && p.aliases.includes(activePalette)))?.shortLabel || 'Custom'}
+            </span>
+          </div>
 
-          <div className="inline-flex items-center p-0.5 bg-slate-100 rounded-lg border border-slate-200">
-            <button
-              type="button"
-              onClick={() => setPostPalette('emerald')}
-              className={`px-2 py-1 rounded-md text-[11px] font-bold transition-all flex items-center gap-1.5 ${
-                activePalette === 'emerald'
-                  ? 'bg-white text-slate-900 shadow-xs border border-slate-200'
-                  : 'text-slate-500 hover:text-slate-900'
-              }`}
-              title="Emerald & Gold Palette"
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#064e3b] border border-[#f59e0b]" />
-              <span>Emerald &amp; Gold</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setPostPalette('slate')}
-              className={`px-2 py-1 rounded-md text-[11px] font-bold transition-all flex items-center gap-1.5 ${
-                activePalette === 'slate'
-                  ? 'bg-white text-slate-900 shadow-xs border border-slate-200'
-                  : 'text-slate-500 hover:text-slate-900'
-              }`}
-              title="Luxury Slate & Gold Palette"
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#0f172a] border border-[#f59e0b]" />
-              <span>Luxury Slate</span>
-            </button>
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-thin">
+            {PRIMARY_PALETTES.map((pal) => {
+              const isSelected = activePalette === pal.id || (pal.aliases && pal.aliases.includes(activePalette));
+              return (
+                <button
+                  key={pal.id}
+                  type="button"
+                  onClick={() => setPostPalette(pal.id)}
+                  className={`flex-shrink-0 px-2.5 py-1.5 rounded-xl text-[11px] font-bold transition-all flex items-center gap-1.5 border text-left cursor-pointer ${
+                    isSelected
+                      ? 'bg-slate-900 text-white border-amber-400 ring-2 ring-amber-400/40 shadow-xs'
+                      : 'bg-white text-slate-700 hover:bg-slate-100 border-slate-200 hover:border-slate-300'
+                  }`}
+                  title={pal.label}
+                >
+                  <span
+                    className="w-2.5 h-2.5 rounded-full border flex-shrink-0"
+                    style={{ backgroundColor: pal.band, borderColor: pal.stripe }}
+                  />
+                  <span className="whitespace-nowrap">{pal.shortLabel}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
 

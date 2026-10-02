@@ -5,6 +5,7 @@ import {
   Smartphone, Layers, RefreshCw 
 } from 'lucide-react';
 import { canvasRenderer, POST_STYLES } from '../../services/canvasRenderer';
+import { PRIMARY_PALETTES } from '../../services/configService';
 import { shareService } from '../../services/shareService';
 import { scheduleService } from '../../services/scheduleService';
 import WhatsAppIcon from '../common/WhatsAppIcon';
@@ -236,9 +237,9 @@ export default function ProductPosterPreviewModal({
             </div>
           </div>
 
-          {/* Quick Controls Strip: Ratio & Palette */}
-          <div className="grid grid-cols-2 gap-2">
-            {/* Ratio Toggle */}
+          {/* Quick Controls Strip: Ratio & 5 Locked Palettes */}
+          <div className="space-y-2">
+            {/* Format Ratio Selector */}
             <div className="bg-slate-800/60 p-2 rounded-2xl border border-slate-700/70 flex items-center justify-between">
               <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider flex items-center gap-1">
                 <Smartphone className="w-3 h-3 text-slate-400" />
@@ -248,7 +249,7 @@ export default function ProductPosterPreviewModal({
                 <button
                   type="button"
                   onClick={() => setCurrentRatio('status')}
-                  className={`px-2 py-0.5 rounded-md text-[10px] font-black transition ${
+                  className={`px-2.5 py-0.5 rounded-md text-[10px] font-black transition cursor-pointer ${
                     currentRatio === 'status'
                       ? 'bg-emerald-600 text-white shadow-xs'
                       : 'text-slate-400 hover:text-white'
@@ -260,7 +261,7 @@ export default function ProductPosterPreviewModal({
                 <button
                   type="button"
                   onClick={() => setCurrentRatio('group')}
-                  className={`px-2 py-0.5 rounded-md text-[10px] font-black transition ${
+                  className={`px-2.5 py-0.5 rounded-md text-[10px] font-black transition cursor-pointer ${
                     currentRatio === 'group'
                       ? 'bg-emerald-600 text-white shadow-xs'
                       : 'text-slate-400 hover:text-white'
@@ -272,39 +273,40 @@ export default function ProductPosterPreviewModal({
               </div>
             </div>
 
-            {/* Theme Palette Toggle */}
-            <div className="bg-slate-800/60 p-2 rounded-2xl border border-slate-700/70 flex items-center justify-between">
-              <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider flex items-center gap-1">
-                <Palette className="w-3 h-3 text-slate-400" />
-                <span>Theme:</span>
-              </span>
-              <div className="inline-flex items-center p-0.5 bg-slate-900 rounded-lg border border-slate-700/80">
-                <button
-                  type="button"
-                  onClick={() => setCurrentPalette('emerald')}
-                  className={`px-2 py-0.5 rounded-md text-[10px] font-black transition flex items-center gap-1 ${
-                    currentPalette === 'emerald'
-                      ? 'bg-emerald-600 text-white shadow-xs'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                  title="Emerald & Gold Palette"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  <span>Emerald</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setCurrentPalette('slate')}
-                  className={`px-2 py-0.5 rounded-md text-[10px] font-black transition flex items-center gap-1 ${
-                    currentPalette === 'slate'
-                      ? 'bg-slate-700 text-white shadow-xs'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                  title="Luxury Slate & Gold Palette"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                  <span>Slate</span>
-                </button>
+            {/* 5 Locked Theme Palettes */}
+            <div className="bg-slate-800/60 p-2 rounded-2xl border border-slate-700/70 space-y-1.5">
+              <div className="flex items-center justify-between px-0.5">
+                <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                  <Palette className="w-3 h-3 text-slate-400" />
+                  <span>Theme Palette (5 Locked):</span>
+                </span>
+                <span className="text-[10px] font-bold text-amber-400">
+                  {PRIMARY_PALETTES.find(p => p.id === currentPalette || (p.aliases && p.aliases.includes(currentPalette)))?.shortLabel || 'Custom'}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-thin">
+                {PRIMARY_PALETTES.map((pal) => {
+                  const isSelected = currentPalette === pal.id || (pal.aliases && pal.aliases.includes(currentPalette));
+                  return (
+                    <button
+                      key={pal.id}
+                      type="button"
+                      onClick={() => setCurrentPalette(pal.id)}
+                      className={`px-2 py-1 rounded-xl text-[10px] font-black transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer border ${
+                        isSelected
+                          ? 'bg-slate-900 text-white border-amber-400 ring-1 ring-amber-400/50 shadow-xs'
+                          : 'bg-slate-900/60 text-slate-400 hover:text-white border-slate-700/70 hover:border-slate-600'
+                      }`}
+                      title={pal.label}
+                    >
+                      <span
+                        className="w-2.5 h-2.5 rounded-full border flex-shrink-0"
+                        style={{ backgroundColor: pal.band, borderColor: pal.stripe }}
+                      />
+                      <span>{pal.shortLabel}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>

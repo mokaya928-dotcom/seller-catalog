@@ -19,7 +19,7 @@
  * - WhatsApp number & Lipa na M-Pesa till clearly stated in footer.
  */
 
-import { resolveSellerConfig, resolvePalette as dynamicResolvePalette, ensureBrandFontLoaded, SUPPORTED_BRAND_FONTS, STATIC_PALETTES } from './configService.js';
+import { resolveSellerConfig, resolvePalette as dynamicResolvePalette, ensureBrandFontLoaded, SUPPORTED_BRAND_FONTS, STATIC_PALETTES, PRIMARY_PALETTES } from './configService.js';
 import { decodeHtmlEntities, normalizeProductText, validateProductForRender } from '../utils/textUtils.js';
 import { CATEGORY_SKIN_RENDERERS, detectCategorySkin } from './categorySkinRenderer.js';
 import {
@@ -463,6 +463,7 @@ export const POST_STYLES = [
 ];
 
 export const UNIFIED_PALETTES = STATIC_PALETTES;
+export const LOCKED_PALETTES = PRIMARY_PALETTES;
 
 function resolvePalette(seller, override) {
   return dynamicResolvePalette(seller, override);
