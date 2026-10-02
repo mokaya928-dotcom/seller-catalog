@@ -137,15 +137,16 @@ export const CURATED_PRODUCTS = [
 {
     "id": "prod_shoein_john_foster_woven_vamp_loafer_bl",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Woven Vamp Loafer Black & Brown",
+    "name": "John Foster Woven Vamp Loafer",
     "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -161,21 +162,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Woven Vamp Loafer Black & Brown. John Foster woven-vamp loafer in black and brown leather with a classic penny strap and textured finish. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Woven Vamp Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_classic_slip_on_loaf",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Classic Slip-On Loafer Black",
+    "name": "John Foster Classic Slip On Loafer",
     "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
+    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -191,21 +193,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Classic Slip-On Loafer Black. John Foster Classic Slip-On Loafer in Black leather, featuring a stitched apron toe and refined profile. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Classic Slip On Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_textured_strap_loafe",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Textured Strap Loafer Black",
+    "name": "John Foster Textured Strap Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -221,70 +224,47 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Textured Strap Loafer Black. John Foster Textured Strap Loafer in black leather with a textured strap across the vamp for understated style. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Textured Strap Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_horsebit_loafer_blac",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Horsebit Loafer Black",
+    "name": "John Foster Horsebit Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs2brown.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs1.webp"
+    ],
+    "colors": [
+      "Black",
+      "Dark-tan",
+      "Dark Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "John Foster Horsebit Loafer in black leather, a polished slip-on with metal horsebit accent for executive style.",
+    "benefit_line": "Available in Black, Dark-tan & Dark Brown • Handcrafted genuine leather",
     "in_stock": true,
     "featured": true,
-    "badge": "",
+    "badge": "3 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Black, Dark-tan, Dark Brown",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Horsebit Loafer Black. John Foster Horsebit Loafer in black leather, a polished slip-on with metal horsebit accent for executive style. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_john_foster_horsebit_loafer_dark",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Horsebit Loafer Dark-tan",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Horsebit Loafer in dark brown leather with metal horsebit ornament.",
-    "in_stock": true,
-    "featured": true,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "John Foster Horsebit Loafer Dark-tan. John Foster Horsebit Loafer in dark brown leather with metal horsebit ornament. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Horsebit Loafer. Available in Black, Dark-tan, Dark Brown. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_minimal_slip_on_leather_sneaker_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Minimal Slip-On Leather Sneaker Black",
+    "name": "Minimal Slip On Leather Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
     "photos": [
@@ -293,6 +273,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -308,51 +291,55 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Minimal Slip-On Leather Sneaker Black. Minimal Slip-On Leather Sneaker in Black by Storeez, sleek low-profile leather. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Minimal Slip On Leather Sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_marco_cardini_cap_toe_oxford_dar",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Marco Cardini Cap-Toe Oxford Dark Brown",
+    "name": "Marco Cardini Cap Toe Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/WhatsApp%20Image%202026-09-09%20at%2017.40.41.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/marco.webp"
+    ],
+    "colors": [
+      "Dark Brown",
+      "Brown"
     ],
     "price": 6000,
     "regular_price": 7100,
-    "benefit_line": "Dark brown Marco Cardini leather cap-toe Oxford with a polished closed-lace.",
+    "benefit_line": "Available in Dark Brown & Brown • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Dark Brown, Brown",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Cap-Toe Oxford Dark Brown. Dark brown Marco Cardini leather cap-toe Oxford with a polished closed-lace. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Cap Toe Oxford. Available in Dark Brown, Brown. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_brown_leather_cap_toe_brogue_oxf",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Brown Leather Cap-Toe Brogue Oxford",
+    "name": "Leather Cap Toe Brogue Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/MAR.png",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/MAR.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -368,21 +355,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Brown Leather Cap-Toe Brogue Oxford. Dark brown leather cap-toe brogue Oxford with classic perforated detailing. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Leather Cap Toe Brogue Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_santoni_horsebit_leather_loafer_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Santoni Horsebit Leather Loafer Black",
+    "name": "Santoni Horsebit Leather Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -398,21 +384,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Santoni Horsebit Leather Loafer Black. Santoni horsebit leather loafer in black with pebble-grain upper, metal horseb. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Santoni Horsebit Leather Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_santoni_leather_loafer_dark_brow",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Santoni Leather Loafer Dark Brown",
+    "name": "Santoni Leather Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg"
+    ],
+    "colors": [
+      "Dark Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -428,21 +413,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Santoni Leather Loafer Dark Brown. Santoni Leather Loafer in dark brown leather with contrast white midsole and. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Santoni Leather Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_black_striped_leather_loafer",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Black Striped Leather Loafer",
+    "name": "Striped Leather Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -458,21 +442,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Black Striped Leather Loafer. Black Striped Leather Loafer from Shoe-In: sleek black leather loafer with. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Striped Leather Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_perforated_leather_loafer",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Perforated Leather Loafer Black",
+    "name": "Clarks Perforated Leather Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Perforated%20Leather%20Loafer%20Black.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -488,21 +471,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks Perforated Leather Loafer Black. Polished black Clarks leather loafer with a perforated vamp, braided strap. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks Perforated Leather Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_billionaire_suede_loafer_black",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Billionaire Suede Loafer Black",
+    "name": "Billionaire Suede Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Black.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Black.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Black.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -518,13 +500,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Billionaire Suede Loafer Black. Billionaire Suede Loafer Black: a sleek penny loafer in black suede with stitc. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Billionaire Suede Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_minimal_leather_sneaker_white",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Minimal Leather Sneaker White",
+    "name": "Minimal Leather Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
     "photos": [
@@ -533,6 +515,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -548,13 +533,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Minimal Leather Sneaker White. Minimal Leather Sneaker in white - low-profile lace-up silhouette with smooth. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Minimal Leather Sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_zopo_low_top_sneaker_tan_brown",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Zopo Low-Top Sneaker Tan Brown",
+    "name": "Zopo Low Top Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
     "photos": [
@@ -562,59 +547,35 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopowhite.jpeg"
+    ],
+    "colors": [
+      "Brown",
+      "Black",
+      "White"
     ],
     "price": 4800,
     "regular_price": 5700,
-    "benefit_line": "Zopo Low-Top Sneaker in tan brown suede with white rubber sole and lace-up closure.",
+    "benefit_line": "Available in Brown, Black & White • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "3 COLORS AVAILABLE",
     "category": "Sneakers & Kicks",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Brown, Black, White",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Zopo Low-Top Sneaker Tan Brown. Zopo Low-Top Sneaker in tan brown suede with white rubber sole and lace-up closure. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_zopo_low_top_sneaker_black",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Zopo Low-Top Sneaker Black",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg"
-    ],
-    "price": 4800,
-    "regular_price": 5700,
-    "benefit_line": "Sleek black suede Zopo low-top sneaker with a clean white sole, minimalist.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Zopo Low-Top Sneaker Black. Sleek black suede Zopo low-top sneaker with a clean white sole, minimalist. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Zopo Low Top Sneaker. Available in Brown, Black, White. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_san_marina_leather_sneaker_light",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "San Marina Leather Sneaker Light Grey",
+    "name": "San Marina Leather Sneaker Light",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/san%20marinagrey.jpeg",
     "photos": [
@@ -623,6 +584,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "Grey"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -638,43 +602,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "San Marina Leather Sneaker Light Grey. San Marina leather sneaker in light grey offers a clean low-top silhouette. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_zopo_low_top_sneaker_white",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Zopo Low-Top Sneaker White",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopowhite.jpeg",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopowhite.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
-    ],
-    "price": 4800,
-    "regular_price": 5700,
-    "benefit_line": "Zopo Low-Top Sneaker White by Shoe-In: smooth leather upper, low-profile shape.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Zopo Low-Top Sneaker White. Zopo Low-Top Sneaker White by Shoe-In: smooth leather upper, low-profile shape. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "San Marina Leather Sneaker Light. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_zopo_low_top_sneaker_khaki",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Zopo Low-Top Sneaker Khaki",
+    "name": "Zopo Low Top Sneaker Khaki",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopokahki.jpeg",
     "photos": [
@@ -684,6 +618,7 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
+    "colors": [],
     "price": 4800,
     "regular_price": 5700,
     "benefit_line": "Khaki Zopo low-top sneaker in soft suede with brown accents and a white sole —.",
@@ -698,13 +633,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Zopo Low-Top Sneaker Khaki. Khaki Zopo low-top sneaker in soft suede with brown accents and a white sole —. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Zopo Low Top Sneaker Khaki. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_zopo_low_top_sneaker_navy_blue",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Zopo Low-Top Sneaker Navy Blue",
+    "name": "Zopo Low Top Sneaker Blue",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopoblue.jpeg",
     "photos": [
@@ -713,6 +648,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "Navy"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -728,7 +666,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Zopo Low-Top Sneaker Navy Blue. Zopo low-top sneaker in navy suede with white sole, clean minimalist profile. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Zopo Low Top Sneaker Blue. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
@@ -744,6 +682,7 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
+    "colors": [],
     "price": 4200,
     "regular_price": 5000,
     "benefit_line": "Adidas Handball Spezia is a Grey finish with suede construction boot selected.",
@@ -758,7 +697,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Adidas Handball Spezia. Adidas Handball Spezia is a Grey finish with suede construction boot selected. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Adidas Handball Spezia. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
@@ -774,6 +713,7 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
     ],
+    "colors": [],
     "price": 4000,
     "regular_price": 4700,
     "benefit_line": "New Balance 530 is a White finish with leather construction boot selected.",
@@ -788,13 +728,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "New Balance 530. New Balance 530 is a White finish with leather construction boot selected. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "New Balance 530. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_white_smooth_leather_sneaker",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "White smooth leather sneaker",
+    "name": "smooth leather sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/White%20smooth%20leather%20sneaker.webp",
     "photos": [
@@ -803,6 +743,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -818,13 +761,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "White smooth leather sneaker. White smooth leather sneaker with a clean low-top silhouette for smart-casual. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "smooth leather sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_white_textured_sneaker",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "White textured sneaker",
+    "name": "textured sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/White%20textured%20sneaker.webp",
     "photos": [
@@ -833,6 +776,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -848,13 +794,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "White textured sneaker. Clean white textured sneaker in leather from Aldo, featuring subtle stitch. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "textured sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_zara_black_leather_suede_casual_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Zara Black Leather & Suede Casual Sneaker",
+    "name": "Zara Leather Suede Casual Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/zara.webp",
     "photos": [
@@ -864,6 +810,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -879,13 +828,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Zara Black Leather & Suede Casual Sneaker. Zara Black Leather & Suede Casual Sneaker is a Black finish with leather const. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Zara Leather Suede Casual Sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_aldo_white_leather_green_lining_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Aldo White Leather Green Lining Sneaker",
+    "name": "Aldo Leather Green Lining Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/Aldo%20White%20Leather%20Green%20Lining.webp",
     "photos": [
@@ -894,6 +843,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4798,
     "regular_price": 5700,
@@ -909,13 +861,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Aldo White Leather Green Lining Sneaker. White Aldo leather sneaker with green lining detail and a clean low-top profil. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Aldo Leather Green Lining Sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_aldo_black_leather_sneaker",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Aldo Black Leather Sneaker",
+    "name": "Aldo Leather Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/black-aldo.webp",
     "photos": [
@@ -923,29 +875,34 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-plain%20white.webp"
+    ],
+    "colors": [
+      "Black",
+      "White"
     ],
     "price": 4794,
     "regular_price": 5700,
-    "benefit_line": "Aldo Black Leather Sneaker is a Black finish with leather construction boot.",
+    "benefit_line": "Available in Black & White • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Sneakers & Kicks",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Black, White",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Aldo Black Leather Sneaker. Aldo Black Leather Sneaker is a Black finish with leather construction boot. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Aldo Leather Sneaker. Available in Black, White. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_aldo_white_navy_premium_sneaker",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Aldo White & Navy Premium Sneaker",
+    "name": "Aldo Premium Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/Aldo%20White%20%26%20Navy.webp",
     "photos": [
@@ -953,59 +910,34 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/also-black-13.webp"
+    ],
+    "colors": [
+      "Navy",
+      "Black"
     ],
     "price": 4797,
     "regular_price": 5700,
-    "benefit_line": "Aldo White & Navy Premium Sneaker is a white finish with leather construction.",
+    "benefit_line": "Available in Navy & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Sneakers & Kicks",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Navy, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Aldo White & Navy Premium Sneaker. Aldo White & Navy Premium Sneaker is a white finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_aldo_white_leather_sneaker",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Aldo White Leather Sneaker",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-plain%20white.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-plain%20white.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
-    ],
-    "price": 4800,
-    "regular_price": 5700,
-    "benefit_line": "White Aldo leather sneaker with a clean minimal silhouette for smart-casual.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Aldo White Leather Sneaker. White Aldo leather sneaker with a clean minimal silhouette for smart-casual. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Aldo Premium Sneaker. Available in Navy, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_aldo_white_textured_sneaker",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Aldo White Textured Sneaker",
+    "name": "Aldo Textured Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-textered-white.webp",
     "photos": [
@@ -1014,6 +946,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -1029,43 +964,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Aldo White Textured Sneaker. Aldo White Textured Sneaker is a White finish with leather construction boot. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_aldo_black_premium_sneaker",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Aldo Black Premium Sneaker",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/also-black-13.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/also-black-13.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/black%20sneaker.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
-    ],
-    "price": 4799,
-    "regular_price": 5700,
-    "benefit_line": "Aldo Black Premium Sneaker is a Black finish with leather construction boot.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Aldo Black Premium Sneaker. Aldo Black Premium Sneaker is a Black finish with leather construction boot. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Aldo Textured Sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_aldo_grey_luxe_sneaker",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Aldo Grey Luxe Sneaker",
+    "name": "Aldo Luxe Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo-12-grey.webp",
     "photos": [
@@ -1074,6 +979,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "Grey"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -1089,13 +997,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Aldo Grey Luxe Sneaker. Aldo Grey Luxe Sneaker is a Grey finish with leather construction boot selecte. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Aldo Luxe Sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_aldo_white_premium_court_sneaker",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Aldo White Premium Court Sneaker",
+    "name": "Aldo Premium Court Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Sneakers/aldo%20white-11.webp",
     "photos": [
@@ -1104,6 +1012,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -1119,13 +1030,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Aldo White Premium Court Sneaker. Aldo White Premium Court Sneaker is a White finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Aldo Premium Court Sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_asics_gel_1130_white_red_runner",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "ASICS GEL-1130 White Red Runner",
+    "name": "ASICS GEL 1130 Red Runner",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822123896-3200f52e-58ee-4df9-9c49-b2e4956e0316.webp",
     "photos": [
@@ -1134,6 +1045,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4200,
     "regular_price": 5000,
@@ -1149,13 +1063,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "ASICS GEL-1130 White Red Runner. Bold retro runner featuring breathable white mesh with red sporty accents. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "ASICS GEL 1130 Red Runner. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_asics_gel_1130_white_green_runne",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "ASICS GEL-1130 White Green Runner",
+    "name": "ASICS GEL 1130 Green Runner",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822270352-4df484ec-2668-4ca9-862c-a0f0ca8c1352.webp",
     "photos": [
@@ -1164,6 +1078,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4200,
     "regular_price": 5000,
@@ -1179,13 +1096,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "ASICS GEL-1130 White Green Runner. Retro-inspired ASICS sneaker featuring white mesh construction with green spor. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "ASICS GEL 1130 Green Runner. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_asics_gel_1130_triple_black_runn",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "ASICS GEL-1130 Triple Black Runner",
+    "name": "ASICS GEL 1130 Triple Runner",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822305349-33b55034-0e4c-4dce-9aeb-ed62e57f0582.webp",
     "photos": [
@@ -1194,6 +1111,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 4200,
     "regular_price": 5000,
@@ -1209,13 +1129,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "ASICS GEL-1130 Triple Black Runner. Minimalist triple-black retro sneaker with breathable comfort and modern stree. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "ASICS GEL 1130 Triple Runner. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_asics_gel_1130_silver_grey_runne",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "ASICS GEL-1130 Silver Grey Runner",
+    "name": "ASICS GEL 1130 Silver Runner",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779822332429-58920aed-5da2-4cb1-b6f3-c62c7b2e0725.webp",
     "photos": [
@@ -1224,6 +1144,9 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/white%20sneaker.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20brown.jpeg",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/zopo%20black.jpeg"
+    ],
+    "colors": [
+      "Grey"
     ],
     "price": 4200,
     "regular_price": 5000,
@@ -1239,7 +1162,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "ASICS GEL-1130 Silver Grey Runner. Premium retro-inspired ASICS runner featuring breathable mesh, lightweight. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "ASICS GEL 1130 Silver Runner. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
@@ -1251,6 +1174,7 @@ export const CURATED_PRODUCTS = [
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sept%205/7981e405-027a-47c0-8e76-4dffc6be4d0d.jpeg"
     ],
+    "colors": [],
     "price": 6000,
     "regular_price": 7100,
     "benefit_line": "Marco Cardini leather Derby shoes with a classic lace-up silhouette designed.",
@@ -1265,17 +1189,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Leather Derby Shoes. Marco Cardini leather Derby shoes with a classic lace-up silhouette designed. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Leather Derby Shoes. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_marco_cardini_leather_cap_toe_ox",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Marco Cardini Leather Cap Toe Oxford Black Brown",
+    "name": "Marco Cardini Leather Cap Toe Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sept%205/03d13f39-cbb9-47f7-a22d-72f6550b777f.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/sept%205/03d13f39-cbb9-47f7-a22d-72f6550b777f.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -1291,81 +1218,55 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Leather Cap Toe Oxford Black Brown. Marco Cardini leather cap-toe Oxford in black and brown, combining a classic. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Leather Cap Toe Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_leather_cap_toe_derby_dar",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Leather Cap-Toe Derby Dark Brown",
+    "name": "Clarks Leather Cap Toe Derby",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkdark.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkdark.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkblack.jpeg"
+    ],
+    "colors": [
+      "Dark Brown",
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "Clarks Leather Cap-Toe Derby in dark brown combines smooth and pebbled leather.",
+    "benefit_line": "Available in Dark Brown & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Dark Brown, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks Leather Cap-Toe Derby Dark Brown. Clarks Leather Cap-Toe Derby in dark brown combines smooth and pebbled leather. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_clarks_leather_cap_toe_derby_bla",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Leather Cap-Toe Derby Black",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkblack.jpeg",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/clarkblack.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Clarks black leather cap-toe derby with lace-up closure, smooth cap-toe, textu.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Clarks Leather Cap-Toe Derby Black. Clarks black leather cap-toe derby with lace-up closure, smooth cap-toe, textu. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks Leather Cap Toe Derby. Available in Dark Brown, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_derby_brogue_brown",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Derby Brogue Brown",
+    "name": "John Foster Derby Brogue",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster1.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1381,81 +1282,57 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Derby Brogue Brown. Dark brown John Foster leather Derby brogue with classic perforation and an open-lacing Derby vamp. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Derby Brogue. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_brogue_oxford_black",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Brogue Oxford Black",
+    "name": "John Foster Brogue Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster2.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Black John Foster leather brogue Oxford with classic perforated detailing.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "John Foster Brogue Oxford Black. Black John Foster leather brogue Oxford with classic perforated detailing. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_john_foster_brogue_oxford_brown",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Brogue Oxford Brown",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster3.jpeg",
-    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/john%20foster3.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/John%20Foster%20Brogue%20Oxford%20Dark%20Brown%20.jpeg"
+    ],
+    "colors": [
+      "Black",
+      "Brown",
+      "Dark Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "Brown John Foster leather brogue Oxford with traditional perforated detailing.",
+    "benefit_line": "Available in Black, Brown & Dark Brown • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "3 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Black, Brown, Dark Brown",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Brogue Oxford Brown. Brown John Foster leather brogue Oxford with traditional perforated detailing. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Brogue Oxford. Available in Black, Brown, Dark Brown. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_ecco_croc_embossed_leather_loafe",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Ecco Croc-Embossed Leather Loafer Olive Green",
+    "name": "Ecco Croc Embossed Leather Loafer Green",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco1.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Olive"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1471,21 +1348,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Ecco Croc-Embossed Leather Loafer Olive Green. Ecco croc-embossed leather loafer in olive green; slip-on design with low-prof. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Ecco Croc Embossed Leather Loafer Green. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_ecco_leather_loafer_dark_brown",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Ecco Leather Loafer Dark Brown",
+    "name": "Ecco Leather Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco2.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/ecco2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Dark Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1501,17 +1379,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Ecco Leather Loafer Dark Brown. Dark Brown Ecco leather loafers with a moc-toe silhouette and black rubber. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Ecco Leather Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_marco_cardini_1buckle_loafer_bla",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Marco Cardini Buckle Loafer Black",
+    "name": "Marco Cardini Buckle Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack1.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack1.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -1527,17 +1408,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Buckle Loafer Black. Marco Cardin Buckle Loafer in black from Shoe-In, slip-on casual loafers with. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Buckle Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_marco_cardini_1metal_bit_loafer_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Marco Cardini Metal Bit Loafer Black",
+    "name": "Marco Cardini Metal Bit Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack2.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack2.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -1553,43 +1437,51 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Metal Bit Loafer Black. Polished black Marco Cardin metal-bit loafers with a streamlined profile and. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Metal Bit Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_marco_cardini_1textured_loafer_b",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Marco Cardini Textured Loafer Black",
+    "name": "Marco Cardini Textured Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack3.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack3.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack3.jpeg",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcobrown1.jpeg"
+    ],
+    "colors": [
+      "Black",
+      "Dark Brown"
     ],
     "price": 5800,
     "regular_price": 6800,
-    "benefit_line": "Marco Cardin Textured Loafer Black by Shoe-In has a textured upper, decorative.",
+    "benefit_line": "Available in Black & Dark Brown • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Black, Dark Brown",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Textured Loafer Black. Marco Cardin Textured Loafer Black by Shoe-In has a textured upper, decorative. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Textured Loafer. Available in Black, Dark Brown. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_marco_cardini_1penny_loafer_blac",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Marco Cardini Penny Loafer Black",
+    "name": "Marco Cardini Penny Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack4.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack4.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -1605,17 +1497,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Penny Loafer Black. Marco Cardin black penny loafer in leather with a smooth apron toe, classic. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Penny Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_marco_cardini_1formal_slip_on_bl",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Marco Cardini Formal Slip-On Black",
+    "name": "Marco Cardini Formal Slip On",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack5.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcoblack5.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -1631,77 +1526,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Formal Slip-On Black. Marco Cardin Formal Slip-On Black is a sleek leather slip-on with subtle toe. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_marco_cardini_1textured_loafer_d",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Marco Cardini Textured Loafer Dark Brown",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcobrown1.jpeg",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/marcobrown1.jpeg"
-    ],
-    "price": 5800,
-    "regular_price": 6800,
-    "benefit_line": "Marco Cardin Textured Loafer in dark brown leather—classic slip-on design with.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Marco Cardini Textured Loafer Dark Brown. Marco Cardin Textured Loafer in dark brown leather—classic slip-on design with. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_john_foster_brogue_oxford_dark_b",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Brogue Oxford Dark Brown",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/John%20Foster%20Brogue%20Oxford%20Dark%20Brown%20.jpeg",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/John%20Foster%20Brogue%20Oxford%20Dark%20Brown%20.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "John Foster brogue oxford in dark brown leather with wingtip brogue detailing.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "John Foster Brogue Oxford Dark Brown. John Foster brogue oxford in dark brown leather with wingtip brogue detailing. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Formal Slip On. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_textured_oxford_dark_brow",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Textured Oxford Dark Brown",
+    "name": "Clarks Textured Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Textured%20Oxford%20Dark%20Brown.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Clarks%20Textured%20Oxford%20Dark%20Brown.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Dark Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1717,21 +1557,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks Textured Oxford Dark Brown. Clarks Textured Oxford dark brown leather shoe with cap toe and pebble-texture. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks Textured Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_england_dark_brown_wingti",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks England Dark Brown Wingtip Brogue Oxford",
+    "name": "Clarks England Wingtip Brogue Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clark%20download.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clark%20download.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Dark Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1747,21 +1588,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks England Dark Brown Wingtip Brogue Oxford. Polished dark brown leather Clarks wingtip brogue oxford with classic broguing. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks England Wingtip Brogue Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_england_black_cap_toe_bro",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks England Black Cap-Toe Brogue Oxford",
+    "name": "Clarks England Cap Toe Brogue Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clarcks%20england.jpeg",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%208/clarcks%20england.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -1777,22 +1619,21 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks England Black Cap-Toe Brogue Oxford. Black leather cap-toe brogue Oxford with closed lacing, subtle perforations. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks England Cap Toe Brogue Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clark_classic_cap_toe_oxford_dre",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clark Classic Cap-Toe Oxford Dress Shoes",
+    "name": "Clark Classic Cap Toe Oxford Dress Shoes",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/official/clarkdarktan.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/official/clarkdarktan.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5500,
     "regular_price": 6500,
     "benefit_line": "Dark Brown Clark Cap-Toe Oxford dress shoes in leather with a polished toe.",
@@ -1807,21 +1648,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clark Classic Cap-Toe Oxford Dress Shoes. Dark Brown Clark Cap-Toe Oxford dress shoes in leather with a polished toe. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clark Classic Cap Toe Oxford Dress Shoes. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_heritage_wingtip_derby_tan_suede",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Heritage Wingtip Derby – Tan Suede",
+    "name": "Heritage Wingtip Derby Suede",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare300.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare300.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Tan"
     ],
     "price": 5800,
     "regular_price": 6800,
@@ -1837,67 +1679,42 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Heritage Wingtip Derby – Tan Suede. Billionaire Heritage Wingtip Derby – Tan Suede is a Tan finish with suede cons. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Heritage Wingtip Derby Suede. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_executive_cap_toe_oxford_burgund",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Executive Cap Toe Oxford – Burgundy",
+    "name": "Executive Cap Toe Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionaire200.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionaire200.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Burgundy Executive Cap Toe Oxford in leather with subtle perforated detailing.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Executive Cap Toe Oxford – Burgundy. Burgundy Executive Cap Toe Oxford in leather with subtle perforated detailing. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_executive_cap_toe_oxford_black",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Executive Cap Toe Oxford – Black",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare1.webp",
-    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/billionare1.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788364884-bb572c99-86c3-4703-b420-65936affe3e6.webp"
+    ],
+    "colors": [
+      "Burgundy",
+      "Black",
+      "Dark Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "Billionaire Executive Cap Toe Oxford – Black is a Black finish with leather.",
+    "benefit_line": "Available in Burgundy, Black & Dark Brown • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "3 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Burgundy, Black, Dark Brown",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Executive Cap Toe Oxford – Black. Billionaire Executive Cap Toe Oxford – Black is a Black finish with leather. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Executive Cap Toe Oxford. Available in Burgundy, Black, Dark Brown. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -1908,11 +1725,10 @@ export const CURATED_PRODUCTS = [
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini1.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini1.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5800,
     "regular_price": 6800,
     "benefit_line": "Marco Cardini leather Oxford with a classic cap toe and refined formal shape.",
@@ -1927,7 +1743,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Oxford Cap Toe. Marco Cardini leather Oxford with a classic cap toe and refined formal shape. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Oxford Cap Toe. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -1938,11 +1754,10 @@ export const CURATED_PRODUCTS = [
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/marco%20cardini.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5800,
     "regular_price": 6800,
     "benefit_line": "Marco Cardini cap-toe Derby shoe with a versatile lace-up profile for office.",
@@ -1957,22 +1772,21 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Marco Cardini Cap Toe Derby. Marco Cardini cap-toe Derby shoe with a versatile lace-up profile for office. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Marco Cardini Cap Toe Derby. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_leather_slip_on",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Leather Slip-On",
+    "name": "Clarks Leather Slip On",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/clark.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/clark.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5500,
     "regular_price": 6500,
     "benefit_line": "Clarks Leather Slip-On is a Black finish with leather construction loafer sele.",
@@ -1987,22 +1801,23 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks Leather Slip-On. Clarks Leather Slip-On is a Black finish with leather construction loafer sele. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks Leather Slip On. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_black_pebble_leather_derby_white",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Black pebble leather Derby (white sole",
+    "name": "pebble leather Derby ( sole",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20pebble%20leather%20Derby%20(white%20sole).webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20pebble%20leather%20Derby%20(white%20sole).webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20pebble%20leather%20Derby%20(white%20sole",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5495,
     "regular_price": 6500,
@@ -2018,38 +1833,42 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Black pebble leather Derby (white sole. John Foster Black pebble leather Derby (white sole is a Black finish with leat. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "pebble leather Derby ( sole. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_dark_brown_medallion_oxford_whit",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Dark Brown medallion Oxford (white sole)",
+    "name": "Executive Medallion Oxford (White Sole)",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20medallion%20Oxford%20(white%20sole).webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20medallion%20Oxford%20(white%20sole).webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20medallion%20Oxford%20(white%20sole",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20medallion%20Oxford%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20medallion%20Oxford%20(white%20sole"
+    ],
+    "colors": [
+      "Dark Brown",
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "John Foster Dark Brown medallion Oxford (white sole) is a TBrown finish with.",
+    "benefit_line": "Available in Dark Brown & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Dark Brown, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Dark Brown medallion Oxford (white sole). John Foster Dark Brown medallion Oxford (white sole) is a TBrown finish with. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Executive Medallion Oxford (White Sole). Available in Dark Brown, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -2061,11 +1880,10 @@ export const CURATED_PRODUCTS = [
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.40.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.39.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5500,
     "regular_price": 6500,
     "benefit_line": "John Foster double monk strap shoe with a clean twin-buckle silhouette for.",
@@ -2080,7 +1898,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Double Monk Shoe. John Foster double monk strap shoe with a clean twin-buckle silhouette for. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Double Monk Shoe. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -2091,11 +1909,10 @@ export const CURATED_PRODUCTS = [
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.33.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-24%20at%2014.19.33.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5500,
     "regular_price": 6500,
     "benefit_line": "John Foster Signature double monk shoe with twin-buckle styling and a refined.",
@@ -2110,7 +1927,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Signature Double Monk Shoe. John Foster Signature double monk shoe with twin-buckle styling and a refined. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Signature Double Monk Shoe. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -2122,11 +1939,10 @@ export const CURATED_PRODUCTS = [
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-17%20at%2014.28.56.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-17%20at%2014.28.56%20(1",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5500,
     "regular_price": 6500,
     "benefit_line": "John Foster Heritage Dress Boot is a Brown finish with leather construction.",
@@ -2141,22 +1957,21 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Heritage Dress Boot. John Foster Heritage Dress Boot is a Brown finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Heritage Dress Boot. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_billionaire_oxford",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Billionaire-Oxford",
+    "name": "Billionaire Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-29%20at%2010.36.32.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-29%20at%2010.36.32.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5500,
     "regular_price": 6500,
     "benefit_line": "Billionaire-Oxford is a Brown finish with leather construction brogue Oxford.",
@@ -2171,23 +1986,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Billionaire-Oxford. Billionaire-Oxford is a Brown finish with leather construction brogue Oxford. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Billionaire Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_billionaire_wingtip_oxford",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Billionaire-Wingtip Oxford",
+    "name": "Billionaire Wingtip Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-07-01%20at%2011.43.47.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-07-01%20at%2011.43.47.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-29%20at%2010.36.32.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5500,
     "regular_price": 6500,
     "benefit_line": "Billionaire-Oxford Billionaire-Wingtip Oxford is a Black|Brown finish with.",
@@ -2202,13 +2016,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Billionaire-Wingtip Oxford. Billionaire-Oxford Billionaire-Wingtip Oxford is a Black|Brown finish with. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Billionaire Wingtip Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_richwanaz_black_white_loafer",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Richwanaz Black & White Loafer",
+    "name": "Richwanaz Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.02%20(1).webp",
     "photos": [
@@ -2217,10 +2031,13 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.01.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.02.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.04.webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.18%20(1"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5499,
     "regular_price": 6500,
@@ -2236,13 +2053,13 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Richwanaz Black & White Loafer. Richwanaz Black & White Loafer is a Black finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Richwanaz Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_richwanaz_brown_horsebit_loafer",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Richwanaz Brown Horsebit Loafer",
+    "name": "Richwanaz Horsebit Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.18%20(1).webp",
     "photos": [
@@ -2250,10 +2067,11 @@ export const CURATED_PRODUCTS = [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.18%20(1",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.04.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2269,55 +2087,24 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Richwanaz Brown Horsebit Loafer. Richwanaz Brown Horsebit Loafer is a Tan and Brown finish with leather constru. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_richwanaz_black_loafer",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Richwanaz Black Loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.04.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.04.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.18%20(1",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Richwanaz Black Loafer is a Black finish with leather construction loafer sele.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Richwanaz Black Loafer. Richwanaz Black Loafer is a Black finish with leather construction loafer sele. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Richwanaz Horsebit Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_richwanaz_black_penny_loafer",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Richwanaz Black Penny Loafer",
+    "name": "Richwanaz Penny Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.45.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.45.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.37%20(1",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2333,7 +2120,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Richwanaz Black Penny Loafer. Richwanaz Black Penny Loafer is a Black finish with leather construction penny. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Richwanaz Penny Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -2345,11 +2132,10 @@ export const CURATED_PRODUCTS = [
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.47.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/WhatsApp%20Image%202026-06-19%20at%2018.49.46.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5500,
     "regular_price": 6500,
     "benefit_line": "Richwanaz Royal Blue Horsebit Loafer is a Blue finish with leather constructio.",
@@ -2364,7 +2150,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Richwanaz Royal Blue Horsebit Loafer. Richwanaz Royal Blue Horsebit Loafer is a Blue finish with leather constructio. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Richwanaz Royal Blue Horsebit Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -2376,10 +2162,12 @@ export const CURATED_PRODUCTS = [
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/black%202.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20products/brown1.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/billionare%20low%20cut.webp"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2395,7 +2183,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Billionaire Cap Toe Oxford. Billionaire Cap Toe Oxford is a Black finish with leather construction Oxford. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Billionaire Cap Toe Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -2407,11 +2195,10 @@ export const CURATED_PRODUCTS = [
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/richwanaz.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/richwanaz1.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
     ],
+    "colors": [],
     "price": 5499,
     "regular_price": 6500,
     "benefit_line": "Richwanaz Premium Leather Loafer is a Black and Brown finish with leather cons.",
@@ -2426,73 +2213,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Richwanaz Premium Leather Loafer. Richwanaz Premium Leather Loafer is a Black and Brown finish with leather cons. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_billionaire_brown_cap_toe_oxford",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Billionaire Brown Cap Toe Oxford",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/billionare%20low%20cut.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/billionare%20low%20cut.webp"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Billionaire Brown Cap Toe Oxford is a Brown finish with leather construction.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Billionaire Brown Cap Toe Oxford. Billionaire Brown Cap Toe Oxford is a Brown finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_marco_cardini_brown_cap_toe_oxfo",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Marco Cardini Brown Cap Toe Oxford",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/marco.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/marco.webp"
-    ],
-    "price": 5800,
-    "regular_price": 6800,
-    "benefit_line": "Marco Cardini Brown Cap Toe Oxford is a Brown finish with leather construction.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Marco Cardini Brown Cap Toe Oxford. Marco Cardini Brown Cap Toe Oxford is a Brown finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Richwanaz Premium Leather Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_black_penny_loafer_b",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Black Penny Loafer Black Penny Loafer",
+    "name": "John Foster Penny Loafer Penny Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/john%20foster%20red%20sole.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/john%20foster%20red%20sole.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5495,
     "regular_price": 6500,
@@ -2508,201 +2244,88 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Black Penny Loafer Black Penny Loafer. John Foster Black Penny Loafer Black Penny Loafer is a Black finish with leath. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Penny Loafer Penny Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_black_signature_loaf",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Black Signature Loafer",
+    "name": "John Foster Signature Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbl.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbl.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsdrk.webp"
+    ],
+    "colors": [
+      "Black",
+      "Burgundy"
     ],
     "price": 5497,
     "regular_price": 6500,
-    "benefit_line": "John Foster Black Signature Loafer is a Black finish with leather construction.",
+    "benefit_line": "Available in Black & Burgundy • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Black, Burgundy",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Black Signature Loafer. John Foster Black Signature Loafer is a Black finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_john_foster_burgundy_signature_l",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Burgundy Signature Loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsdrk.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsdrk.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Burgundy Signature Loafer is a Dark Tan finish with leather constr.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "John Foster Burgundy Signature Loafer. John Foster Burgundy Signature Loafer is a Dark Tan finish with leather constr. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Signature Loafer. Available in Black, Burgundy. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_burgundy_buckle_loaf",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Burgundy Buckle Loafer",
+    "name": "John Foster Buckle Loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbr3.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbr3.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbu.webp"
+    ],
+    "colors": [
+      "Burgundy",
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "John Foster Burgundy Buckle Loafer is a Dark Tan finish with leather construct.",
+    "benefit_line": "Available in Burgundy & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Burgundy, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Burgundy Buckle Loafer. John Foster Burgundy Buckle Loafer is a Dark Tan finish with leather construct. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_john_foster_black_buckle_loafer",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Black Buckle Loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbu.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfsbu.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5496,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Black Buckle Loafer is a Black finish with leather construction.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "John Foster Black Buckle Loafer. John Foster Black Buckle Loafer is a Black finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_john_foster_dark_brown_horsebit_",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Dark Brown Horsebit Loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs2brown.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs2brown.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5497,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Dark Brown Horsebit Loafer is a Dark Tan finish with leather const.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "John Foster Dark Brown Horsebit Loafer. John Foster Dark Brown Horsebit Loafer is a Dark Tan finish with leather const. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_john_foster_black_horsebit_loafe",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Black Horsebit Loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs1.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/jfs1.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Black Horsebit Loafer is a Black finish with leather construction.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "John Foster Black Horsebit Loafer. John Foster Black Horsebit Loafer is a Black finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Buckle Loafer. Available in Burgundy, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_black_wingtip_brogue",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Black Wingtip Brogue",
+    "name": "John Foster Wingtip Brogue",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Black%20Wingtip%20Brogue.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Black%20Wingtip%20Brogue.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5496,
     "regular_price": 6500,
@@ -2718,21 +2341,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Black Wingtip Brogue. John Foster Black Wingtip Brogue is a Black finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Wingtip Brogue. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_brown_cap_toe_oxford",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Brown Cap Toe Oxford",
+    "name": "John Foster Cap Toe Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Brown%20Cap%20Toe%20Oxford.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/John%20Foster%20Brown%20Cap%20Toe%20Oxford.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5196,
     "regular_price": 6100,
@@ -2748,83 +2372,57 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Brown Cap Toe Oxford. John Foster Brown Cap Toe Oxford is a Brown finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Cap Toe Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_executive_croc_oxford_bla",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Executive Croc Oxford Black",
+    "name": "Clarks Executive Croc Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-4.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-4.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-2.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Clarks Executive Croc Oxford Black is a Brown finish with leather construction.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Clarks Executive Croc Oxford Black. Clarks Executive Croc Oxford Black is a Brown finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_clarks_executive_croc_oxford_bro",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Executive Croc Oxford Brown",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/0fficial-1.webp",
-    "photos": [
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/0fficial-1.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-5.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/official-5.webp"
+    ],
+    "colors": [
+      "Black",
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "Clarks Executive Croc Oxford Brown is a Black finish with leather construction.",
+    "benefit_line": "Available in Black & Brown • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Black, Brown",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks Executive Croc Oxford Brown. Clarks Executive Croc Oxford Brown is a Black finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks Executive Croc Oxford. Available in Black, Brown. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_billionaire_premium_penny_loafer",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Billionaire Premium Penny Loafers – Brown",
+    "name": "Billionaire Premium Penny Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779957835025-9f3653cc-5d07-490a-b177-a39c057080fa.webp",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779957835025-9f3653cc-5d07-490a-b177-a39c057080fa.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2840,21 +2438,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Billionaire Premium Penny Loafers – Brown. Elegant brown penny loafers crafted for executive sophistication. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Billionaire Premium Penny Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_milano_luxury_wingtip_loafer_bla",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Milano Luxury Wingtip Loafer – Black",
+    "name": "Milano Luxury Wingtip Loafer",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745339188-ecf8d645-b040-4290-ba83-d76c62f91ace.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745339188-ecf8d645-b040-4290-ba83-d76c62f91ace.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2870,17 +2469,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Milano Luxury Wingtip Loafer – Black. Luxury black wingtip loafer blending classic elegance with modern comfort. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Milano Luxury Wingtip Loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_milano_woven_tassel_loafers_blac",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Milano Woven Tassel Loafers – Black",
+    "name": "Milano Woven Tassel Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745261924-95c2b980-4c41-4da8-8271-b4ee06aebaff.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745261924-95c2b980-4c41-4da8-8271-b4ee06aebaff.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2896,21 +2498,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Milano Woven Tassel Loafers – Black. Luxury woven tassel loafers designed for elegant smart casual wear. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Milano Woven Tassel Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_ecco_luxury_bit_loafers_brown",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "ECCO Luxury Bit Loafers – Brown",
+    "name": "ECCO Luxury Bit Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745043648-338e054c-5133-4571-afb5-0f1ea43a99db.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745043648-338e054c-5133-4571-afb5-0f1ea43a99db.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2926,21 +2529,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "ECCO Luxury Bit Loafers – Brown. Luxury brown bit loafers designed for premium executive styling. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "ECCO Luxury Bit Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_executive_slip_on_loafers",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Executive Slip-On Loafers – Black",
+    "name": "Clarks Executive Slip On Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745010158-4b71f8ba-cdd2-4f47-8bea-dba322f772de.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779745010158-4b71f8ba-cdd2-4f47-8bea-dba322f772de.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2956,21 +2560,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks Executive Slip-On Loafers – Black. Premium black slip-on loafers built for executive comfort and elegance. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks Executive Slip On Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_wingtip_derby_shoes_brown",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Wingtip Derby Shoes – Brown",
+    "name": "Clarks Wingtip Derby Shoes",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744979277-fb4d6cbd-91e9-4ef4-af49-e82430262a66.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744979277-fb4d6cbd-91e9-4ef4-af49-e82430262a66.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -2986,21 +2591,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks Wingtip Derby Shoes – Brown. Classic brown wingtip Derby shoes with premium brogue detailing. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks Wingtip Derby Shoes. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_comfort_slip_on_loafers_b",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Comfort Slip-On Loafers – Brown",
+    "name": "Clarks Comfort Slip On Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744934002-59aba241-338a-40d2-ab15-b55f1eb4f53a.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744934002-59aba241-338a-40d2-ab15-b55f1eb4f53a.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3016,21 +2622,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks Comfort Slip-On Loafers – Brown. Comfort-focused brown loafers crafted for effortless executive wear. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks Comfort Slip On Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_clarks_premium_penny_loafers_bla",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Clarks Premium Penny Loafers – Black",
+    "name": "Clarks Premium Penny Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744902154-a7b562ea-d580-4903-b0f3-eb39a00af366.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744902154-a7b562ea-d580-4903-b0f3-eb39a00af366.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3046,21 +2653,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Clarks Premium Penny Loafers – Black. Elegant black penny loafers designed for smart executive styling. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Clarks Premium Penny Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_ecco_executive_bit_loafers_black",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "ECCO Executive Bit Loafers – Black",
+    "name": "ECCO Executive Bit Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744866508-acbe119e-56bf-48c6-bd48-a685ad871258.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744866508-acbe119e-56bf-48c6-bd48-a685ad871258.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3076,21 +2684,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "ECCO Executive Bit Loafers – Black. Premium black bit loafers crafted for executive comfort and elegance. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "ECCO Executive Bit Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_premium_comfort_ecco_loafers_bro",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Premium Comfort ecco Loafers – Brown",
+    "name": "Premium Comfort ecco Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744827347-f46c3c2e-3668-4469-9f5b-a87877a13ef9.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744827347-f46c3c2e-3668-4469-9f5b-a87877a13ef9.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3106,17 +2715,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Premium Comfort ecco Loafers – Brown. Comfort-focused premium ecco loafers for smart casual elegance. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Premium Comfort ecco Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_wingtip_oxford_shoes",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Wingtip Oxford Shoes – Dark Brown",
+    "name": "John Foster Wingtip Oxford Shoes",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788644673-24536a9d-8703-4012-9ed7-97926e1d7d3d.webp",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788644673-24536a9d-8703-4012-9ed7-97926e1d7d3d.webp"
+    ],
+    "colors": [
+      "Dark Brown"
     ],
     "price": 5200,
     "regular_price": 6100,
@@ -3132,21 +2744,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Wingtip Oxford Shoes – Dark Brown. Dark brown John Foster wingtip Oxford shoes with brogue detailing for executiv. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Wingtip Oxford Shoes. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_premium_leather_brogue_oxford_br",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Premium Leather Brogue Oxford – Brown",
+    "name": "Premium Leather Brogue Oxford",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788490764-8675c03f-c465-4c57-b4f4-9ed860f4d4cd.jpeg",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788490764-8675c03f-c465-4c57-b4f4-9ed860f4d4cd.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3162,51 +2775,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Premium Leather Brogue Oxford – Brown. Elegant brogue Oxford shoes crafted with premium leather finishing. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_executive_cap_toe_oxford_dark_br",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Executive Cap Toe Oxford – Dark Brown",
-    "size": "EU 40 - 45",
-    "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788364884-bb572c99-86c3-4703-b420-65936affe3e6.webp",
-    "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788364884-bb572c99-86c3-4703-b420-65936affe3e6.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Timeless dark brown Oxford shoes crafted for executive formal styling.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Executive Cap Toe Oxford – Dark Brown. Timeless dark brown Oxford shoes crafted for executive formal styling. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Premium Leather Brogue Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_brown_leather_oxford_brogues",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Brown Leather Oxford Brogues",
+    "name": "Leather Oxford Brogues",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443240561-1b3070a2-0f66-4308-9dca-9164d29957ce.webp",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443240561-1b3070a2-0f66-4308-9dca-9164d29957ce.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5549,
     "regular_price": 6500,
@@ -3222,21 +2806,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Brown Leather Oxford Brogues. Classic Oxford brogues crafted from premium leather for executive sophisticati. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Leather Oxford Brogues. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_brown_luxury_penny_loafers",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Brown Luxury Penny Loafers",
+    "name": "Luxury Penny Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443350536-103cc7f2-40ae-41d3-a0cb-76486d88d37f.webp",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443350536-103cc7f2-40ae-41d3-a0cb-76486d88d37f.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5499,
     "regular_price": 6500,
@@ -3252,21 +2837,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Brown Luxury Penny Loafers. Premium brown leather loafers designed for smart casual elegance and refined. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Luxury Penny Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_black_double_monk_strap_leather_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Black Double Monk Strap Leather Shoes",
+    "name": "Double Monk Strap Leather Shoes",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/double-monk.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/Official/double-monk.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5499,
     "regular_price": 6500,
@@ -3282,21 +2868,22 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Black Double Monk Strap Leather Shoes. Black John Foster leather double monk strap shoes with twin buckles and a poli. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Double Monk Strap Leather Shoes. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_executive_black_penny_loafers",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Executive Black Penny Loafers",
+    "name": "Executive Penny Loafers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443303121-61504ded-d1ca-403d-9939-d71c4f067ee4.webp",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779443303121-61504ded-d1ca-403d-9939-d71c4f067ee4.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon5.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon4.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon%203.png",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon2.png"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3312,7 +2899,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Executive Black Penny Loafers. Luxury black leather penny loafers crafted for executive dressing, smart casua. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Executive Penny Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -3322,12 +2909,9 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Taupe.jpeg",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Taupe.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Billionaire%20Suede%20Loafer%20Taupe.jpeg"
     ],
+    "colors": [],
     "price": 5500,
     "regular_price": 6500,
     "benefit_line": "Billionaire Suede Loafer in taupe is a classic penny-strap slip-on with soft.",
@@ -3342,21 +2926,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Billionaire Suede Loafer Taupe. Billionaire Suede Loafer in taupe is a classic penny-strap slip-on with soft. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Billionaire Suede Loafer Taupe. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_premium_leather_low_top_white",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Premium Leather Low Top – White",
+    "name": "Premium Leather Low Top",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/whiteblack.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/whiteblack.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/whiteblack.webp"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4798,
     "regular_price": 5700,
@@ -3372,21 +2955,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Premium Leather Low Top – White. Clean white leather low-top sneaker with a minimal profile for smart-casual. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Premium Leather Low Top. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_premium_leather_low_top_light_gr",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Premium Leather Low Top – Light Grey",
+    "name": "Premium Leather Low Top Light",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/cream.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/cream.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/cream.webp"
+    ],
+    "colors": [
+      "Grey"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -3402,112 +2984,54 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Premium Leather Low Top – Light Grey. San-Marina Premium Leather Low Top – Light Grey is a Grey finish with leather. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Premium Leather Low Top Light. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_zopo_premium_minimal_sneaker_oli",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "ZOPO Premium Minimal Sneaker – Olive",
+    "name": "ZOPO Premium Minimal Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/green.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/green.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 4800,
-    "regular_price": 5700,
-    "benefit_line": "ZOPO Premium Minimal Sneaker – Olive is a Olive finish with suede construction.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "ZOPO Premium Minimal Sneaker – Olive. ZOPO Premium Minimal Sneaker – Olive is a Olive finish with suede construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_zopo_premium_minimal_sneaker_nav",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "ZOPO Premium Minimal Sneaker – Navy",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/blue.webp",
-    "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/blue.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 4800,
-    "regular_price": 5700,
-    "benefit_line": "ZOPO Premium Minimal Sneaker – Navy is a Navy finish with suede construction.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "ZOPO Premium Minimal Sneaker – Navy. ZOPO Premium Minimal Sneaker – Navy is a Navy finish with suede construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_zopo_premium_minimal_sneaker_bla",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "ZOPO Premium Minimal Sneaker – Black",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/black.webp",
-    "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/black.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/white.webp"
+    ],
+    "colors": [
+      "Olive",
+      "Navy",
+      "Black",
+      "White"
     ],
     "price": 4800,
     "regular_price": 5700,
-    "benefit_line": "ZOPO Premium Minimal Sneaker – Black is a Black finish with suede construction.",
+    "benefit_line": "Available in Olive, Navy, Black & White • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "4 COLORS AVAILABLE",
     "category": "Sneakers & Kicks",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Olive, Navy, Black, White",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "ZOPO Premium Minimal Sneaker – Black. ZOPO Premium Minimal Sneaker – Black is a Black finish with suede construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "ZOPO Premium Minimal Sneaker. Available in Olive, Navy, Black, White. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_zopo_premium_minimal_sneaker_cam",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "ZOPO Premium Minimal Sneaker – Camel",
+    "name": "ZOPO Premium Minimal Sneaker Camel",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/brown.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/brown.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/brown.webp"
     ],
+    "colors": [],
     "price": 4800,
     "regular_price": 5700,
     "benefit_line": "ZOPO Premium Minimal Sneaker – Camel is a Brown finish with suede construction.",
@@ -3522,207 +3046,87 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "ZOPO Premium Minimal Sneaker – Camel. ZOPO Premium Minimal Sneaker – Camel is a Brown finish with suede construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_zopo_premium_minimal_sneaker_whi",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "ZOPO Premium Minimal Sneaker – White",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/white.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20stock/white.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 4800,
-    "regular_price": 5700,
-    "benefit_line": "ZOPO Premium Minimal Sneaker – White is a White finish with leather constructi.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "ZOPO Premium Minimal Sneaker – White. ZOPO Premium Minimal Sneaker – White is a White finish with leather constructi. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "ZOPO Premium Minimal Sneaker Camel. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_dark_brown_perforated_penny_loaf",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Dark Brown perforated penny loafer (white sole)",
+    "name": "Executive Perforated Penny Loafer (White Sole)",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20perforated%20penny%20loafer%20(white%20sole).webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20perforated%20penny%20loafer%20(white%20sole).webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20perforated%20penny%20loafer%20(white%20sole",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Dark Brown perforated penny loafer (white sole) is a Brown finish.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Dark Brown perforated penny loafer (white sole). John Foster Dark Brown perforated penny loafer (white sole) is a Brown finish. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_black_perforated_penny_loafer_wh",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Black perforated penny loafer (white sole)",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/ark%20Brown%20perforated%20penny%20loafer%20(white%20sole).webp",
-    "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/ark%20Brown%20perforated%20penny%20loafer%20(white%20sole).webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/ark%20Brown%20perforated%20penny%20loafer%20(white%20sole",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/ark%20Brown%20perforated%20penny%20loafer%20(white%20sole"
+    ],
+    "colors": [
+      "Dark Brown",
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "John Foster Black perforated penny loafer (white sole) is a Black finish with.",
+    "benefit_line": "Available in Dark Brown & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Dark Brown, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Black perforated penny loafer (white sole). John Foster Black perforated penny loafer (white sole) is a Black finish with. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Executive Perforated Penny Loafer (White Sole). Available in Dark Brown, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_dark_brown_crocodile_cap_toe_oxf",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Dark Brown crocodile cap-toe Oxford (white sole)",
+    "name": "Crocodile Cap-Toe Oxford (White Sole)",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20crocodile%20cap-toe%20Oxford%20(white%20sole",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp",
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20crocodile%20cap-toe%20Oxford%20(white%20sole"
+    ],
+    "colors": [
+      "Dark Brown",
+      "Black"
     ],
     "price": 5496,
     "regular_price": 6500,
-    "benefit_line": "John Foster Dark Brown crocodile cap-toe Oxford (white sole) is a Brown finish.",
+    "benefit_line": "Available in Dark Brown & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Dark Brown, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Dark Brown crocodile cap-toe Oxford (white sole). John Foster Dark Brown crocodile cap-toe Oxford (white sole) is a Brown finish. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_black_crocodile_cap_toe_oxford_w",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Black crocodile cap-toe Oxford (white sole)",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20crocodile%20cap-toe%20Oxford%20(white%20sole).webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20crocodile%20cap-toe%20Oxford%20(white%20sole",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Black crocodile cap-toe Oxford (white sole) is a Black finish with.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Black crocodile cap-toe Oxford (white sole). John Foster Black crocodile cap-toe Oxford (white sole) is a Black finish with. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_black_medallion_oxford_white_sol",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Black medallion Oxford (white sole)",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20medallion%20Oxford%20(white%20sole).webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20medallion%20Oxford%20(white%20sole).webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20medallion%20Oxford%20(white%20sole",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Black medallion Oxford (white sole) is a Black finish with leather.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Black medallion Oxford (white sole). John Foster Black medallion Oxford (white sole) is a Black finish with leather. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Crocodile Cap-Toe Oxford (White Sole). Available in Dark Brown, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_dark_brown_scale_texture_wingtip",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Dark Brown scale-texture Wingtip Derby (white sole)",
+    "name": "scale texture Wingtip Derby ( sole)",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20scale-texture%20Wingtip%20Derby%20(white%20sole).webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20scale-texture%20Wingtip%20Derby%20(white%20sole).webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20scale-texture%20Wingtip%20Derby%20(white%20sole",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Dark%20Brown%20scale-texture%20Wingtip%20Derby%20(white%20sole"
+    ],
+    "colors": [
+      "Dark Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3738,22 +3142,21 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Dark Brown scale-texture Wingtip Derby (white sole). John Foster Dark Brown scale-texture Wingtip Derby (white sole) is a Brown. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "scale texture Wingtip Derby ( sole). Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_black_woven_wingtip_derby_white_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Black woven Wingtip Derby (white sole)",
+    "name": "woven Wingtip Derby ( sole)",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20woven%20Wingtip%20Derby%20(white%20sole).webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20woven%20Wingtip%20Derby%20(white%20sole).webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20woven%20Wingtip%20Derby%20(white%20sole",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/white%20sole/Black%20woven%20Wingtip%20Derby%20(white%20sole"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -3769,247 +3172,77 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Black woven Wingtip Derby (white sole). John Foster Black woven Wingtip Derby (white sole) is a Black finish with leat. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "woven Wingtip Derby ( sole). Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_olive_suede_loafer",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Olive suede loafer",
+    "name": "Classic Italian Suede Loafers",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Olive%20suede%20loafer.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Olive%20suede%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 6000,
-    "regular_price": 7100,
-    "benefit_line": "Olive suede loafer by Santoni with a white platform sole, tassel detail and.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Olive suede loafer. Olive suede loafer by Santoni with a white platform sole, tassel detail and. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_dark_brown_suede_loafer",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Dark Brown suede loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Dark%20Brown%20suede%20loafer.webp",
-    "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Dark%20Brown%20suede%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 6000,
-    "regular_price": 7100,
-    "benefit_line": "Santoni Dark Brown suede loafer is a Brown finish with suede construction loaf.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Dark Brown suede loafer. Santoni Dark Brown suede loafer is a Brown finish with suede construction loaf. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_navy_suede_loafer",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Navy suede loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20suede%20loafer.webp",
-    "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20suede%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 6000,
-    "regular_price": 7100,
-    "benefit_line": "Santoni Navy suede loafer is a Navy finish with suede construction loafer sele.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Navy suede loafer. Santoni Navy suede loafer is a Navy finish with suede construction loafer sele. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_black_suede_loafer",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Black suede loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20suede%20loafer.webp",
-    "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20suede%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan%20suede%20loafer.webp"
+    ],
+    "colors": [
+      "Olive",
+      "Dark Brown",
+      "Navy",
+      "Black",
+      "Tan"
     ],
     "price": 6000,
     "regular_price": 7100,
-    "benefit_line": "Santoni Black suede loafer is a Black finish with suede construction loafer.",
+    "benefit_line": "Available in Olive, Dark Brown, Navy, Black & Tan • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "5 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Olive, Dark Brown, Navy, Black, Tan",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Black suede loafer. Santoni Black suede loafer is a Black finish with suede construction loafer. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_tan_suede_loafer",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Tan suede loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan%20suede%20loafer.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan%20suede%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 6000,
-    "regular_price": 7100,
-    "benefit_line": "Santoni Tan suede loafer is a Tan finish with suede construction loafer select.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Tan suede loafer. Santoni Tan suede loafer is a Tan finish with suede construction loafer select. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Classic Italian Suede Loafers. Available in Olive, Dark Brown, Navy, Black, Tan. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_black_pebble_leather_penny_loafe",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Black pebble leather penny loafer",
+    "name": "Pebble Leather Penny Loafers",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20pebble%20leather%20penny%20loafer.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Black%20pebble%20leather%20penny%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 6000,
-    "regular_price": 7100,
-    "benefit_line": "Dior Black pebble leather penny loafer is a Black finish with leather construc.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Black pebble leather penny loafer. Dior Black pebble leather penny loafer is a Black finish with leather construc. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_navy_pebble_leather_penny_loafer",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Navy pebble leather penny loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20pebble%20leather%20penny%20loafer.webp",
-    "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Navy%20pebble%20leather%20penny%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Grey%20pebble%20leather%20penny%20loafer.webp"
+    ],
+    "colors": [
+      "Black",
+      "Navy",
+      "Grey"
     ],
     "price": 6000,
     "regular_price": 7100,
-    "benefit_line": "Dior Navy pebble leather penny loafer is a Navy finish with leather constructi.",
+    "benefit_line": "Available in Black, Navy & Grey • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "3 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Black, Navy, Grey",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Navy pebble leather penny loafer. Dior Navy pebble leather penny loafer is a Navy finish with leather constructi. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_grey_pebble_leather_penny_loafer",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Grey pebble leather penny loafer",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Grey%20pebble%20leather%20penny%20loafer.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Grey%20pebble%20leather%20penny%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 6000,
-    "regular_price": 7100,
-    "benefit_line": "Dior Grey pebble leather penny loafer is a Grey finish with leather constructi.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Grey pebble leather penny loafer. Dior Grey pebble leather penny loafer is a Grey finish with leather constructi. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Pebble Leather Penny Loafers. Available in Black, Navy, Grey. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
@@ -4019,12 +3252,9 @@ export const CURATED_PRODUCTS = [
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Green%20pebble%20leather%20penny%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Green%20pebble%20leather%20penny%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Green%20pebble%20leather%20penny%20loafer.webp"
     ],
+    "colors": [],
     "price": 6000,
     "regular_price": 7100,
     "benefit_line": "Dior Green pebble leather penny loafer is a GREEN finish with leather construc.",
@@ -4039,21 +3269,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Green pebble leather penny loafer. Dior Green pebble leather penny loafer is a GREEN finish with leather construc. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Green pebble leather penny loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_tan_cognac_pebble_leather_penny_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Tan/Cognac pebble leather penny loafer",
+    "name": "/ pebble leather penny loafer",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan_Cognac%20pebble%20leather%20penny%20loafer.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan_Cognac%20pebble%20leather%20penny%20loafer.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/new%20updates/Tan_Cognac%20pebble%20leather%20penny%20loafer.webp"
+    ],
+    "colors": [
+      "Tan"
     ],
     "price": 6000,
     "regular_price": 7100,
@@ -4069,21 +3298,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Tan/Cognac pebble leather penny loafer. Dior Tan/Cognac pebble leather penny loafer is a Tan finish with leather const. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "/ pebble leather penny loafer. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_croc_leather_sneaker",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Croc Leather Sneaker – Black",
+    "name": "John Foster Croc Leather Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Jnmc.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Jnmc.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Jnmc.webp"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -4099,21 +3327,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Croc Leather Sneaker – Black. John Foster Croc Leather Sneaker – Black is a Black finish with leather constr. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Croc Leather Sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_john_foster_brown_leather_bit_lo",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Brown Leather Bit Loafer Sneaker",
+    "name": "John Foster Leather Bit Loafer Sneaker",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/jn%20sneaker.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/jn%20sneaker.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/jn%20sneaker.webp"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -4129,144 +3356,87 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Brown Leather Bit Loafer Sneaker. John Foster Brown Leather Bit Loafer Sneaker is a Brown finish with leather. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Leather Bit Loafer Sneaker. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_billionaire_woven_cap_toe_derby_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Billionaire Woven Cap Toe Derby Grey",
+    "name": "Billionaire Woven Cap Toe Derby",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-4.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-4.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-2.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Billionaire Woven Cap Toe Derby Grey is a Grey/brown finish with leather/woven.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Billionaire Woven Cap Toe Derby Grey. Billionaire Woven Cap Toe Derby Grey is a Grey/brown finish with leather/woven. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_billionaire_woven_cap_toe_derby__135",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Billionaire Woven Cap Toe Derby Brown",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Billionaire-woven-casual-1.webp",
-    "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Billionaire-woven-casual-1.webp",
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/-5.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Billionaire Woven Cap Toe Derby Brown is a Brown finish with leather/woven.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Billionaire Woven Cap Toe Derby Brown. Billionaire Woven Cap Toe Derby Brown is a Brown finish with leather/woven. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_billionaire_woven_cap_toe_derby__136",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Billionaire Woven Cap Toe Derby Black",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/-woven-casual.webp",
-    "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/-woven-casual.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-1.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/Clarks-woven-casual-1.webp"
+    ],
+    "colors": [
+      "Grey",
+      "Brown",
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "Billionaire Woven Cap Toe Derby Black is a Black finish with leather/woven.",
+    "benefit_line": "Available in Grey, Brown & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "3 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Grey, Brown, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Billionaire Woven Cap Toe Derby Black. Billionaire Woven Cap Toe Derby Black is a Black finish with leather/woven. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Billionaire Woven Cap Toe Derby. Available in Grey, Brown, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_croc_penny_loafers_b",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Croc Penny Loafers Black",
+    "name": "John Foster Croc Penny Loafers",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-5.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-5.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-3.webp"
+    ],
+    "colors": [
+      "Black",
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "John Foster Croc Penny Loafers Black is a Black finish with leather constructi.",
+    "benefit_line": "Available in Black & Brown • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Black, Brown",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Croc Penny Loafers Black. John Foster Croc Penny Loafers Black is a Black finish with leather constructi. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Croc Penny Loafers. Available in Black, Brown. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_signature_loafers_bl",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Signature Loafers Black",
+    "name": "John Foster Signature Loafers",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-6.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-6.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-6.webp"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -4282,22 +3452,21 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Signature Loafers Black. Black John Foster Signature leather loafers with a clean slip-on profile for. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Signature Loafers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_croc_cap_toe_oxford_",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Croc Cap Toe Oxford Black",
+    "name": "John Foster Croc Cap Toe Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-7.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-7.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-8.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-8.webp"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -4313,21 +3482,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Croc Cap Toe Oxford Black. John Foster Croc Cap Toe Oxford Black is a Black finish with leather construct. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Croc Cap Toe Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_patent_cap_toe_oxfor",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Patent Cap Toe Oxford Black",
+    "name": "John Foster Patent Cap Toe Oxford",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-2.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-2.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-2.webp"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -4343,51 +3511,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Patent Cap Toe Oxford Black. John Foster Patent Cap Toe Oxford Black is a Black finish with leather constru. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_john_foster_croc_penny_loafers_b_141",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Croc Penny Loafers Brown",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-3.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-3.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Croc Penny Loafers Brown is a Brown finish with leather constructi.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "John Foster Croc Penny Loafers Brown. John Foster Croc Penny Loafers Brown is a Brown finish with leather constructi. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Patent Cap Toe Oxford. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_heritage_brogue_derb",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Heritage Brogue Derby Brown",
+    "name": "John Foster Heritage Brogue Derby",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-10.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-10.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-10.webp"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -4403,21 +3540,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Heritage Brogue Derby Brown. John Foster Heritage Brogue Derby Brown is a Brown finish with leather constru. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Heritage Brogue Derby. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_brown_brogue_derby_s",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Brown Brogue Derby Shoes",
+    "name": "John Foster Brogue Derby Shoes",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-4.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-4.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-4.webp"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 5500,
     "regular_price": 6500,
@@ -4433,168 +3569,83 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Brown Brogue Derby Shoes. John Foster Brown Brogue Derby Shoes is a Brown finish with leather constructi. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Brogue Derby Shoes. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_john_foster_brown_croc_tassel_lo",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Brown Croc Tassel Loafers",
+    "name": "John Foster Croc Tassel Loafers",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-1.webp",
     "photos": [
       "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-1.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-9.webp"
+    ],
+    "colors": [
+      "Brown",
+      "Black"
     ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "John Foster Brown Croc Tassel Loafers is a Brown finish with leather construct.",
+    "benefit_line": "Available in Brown & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Brown, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "John Foster Brown Croc Tassel Loafers. John Foster Brown Croc Tassel Loafers is a Brown finish with leather construct. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_john_foster_black_croc_tassel_lo",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "John Foster Black Croc Tassel Loafers",
-    "size": "EU 40 - 45",
-    "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-9.webp",
-    "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/casual-9.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "John Foster Black Croc Tassel Loafers is a Black finish with leather construct.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "John Foster Black Croc Tassel Loafers. John Foster Black Croc Tassel Loafers is a Black finish with leather construct. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "John Foster Croc Tassel Loafers. Available in Brown, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_cat_rugged_moc_casual_shoes_grey",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "CAT Rugged Moc Casual Shoes – Grey",
+    "name": "CAT Rugged Moc Casual Shoes",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826901567-54af7d68-f893-47c2-acf3-fd0152a8d542.webp",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826901567-54af7d68-f893-47c2-acf3-fd0152a8d542.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 5200,
-    "regular_price": 6100,
-    "benefit_line": "Modern grey CAT moc shoes crafted for rugged comfort and casual styling.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "CAT Rugged Moc Casual Shoes – Grey. Modern grey CAT moc shoes crafted for rugged comfort and casual styling. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_cat_rugged_moc_casual_shoes_dark",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "CAT Rugged Moc Casual Shoes – Dark Brown",
-    "size": "EU 40 - 45",
-    "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826951107-fac50e08-cf3d-47c5-af4a-39a018dcfb6f.webp",
-    "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779826951107-fac50e08-cf3d-47c5-af4a-39a018dcfb6f.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 5200,
-    "regular_price": 6100,
-    "benefit_line": "Durable dark brown CAT moc shoes with rugged everyday comfort.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "CAT Rugged Moc Casual Shoes – Dark Brown. Durable dark brown CAT moc shoes with rugged everyday comfort. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_cat_rugged_moc_casual_shoes_blac",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "CAT Rugged Moc Casual Shoes – Black",
-    "size": "EU 40 - 45",
-    "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779827005746-6ee62959-8fe1-4a73-b222-811a7631aaba.webp",
-    "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779827005746-6ee62959-8fe1-4a73-b222-811a7631aaba.webp"
     ],
+    "colors": [
+      "Grey",
+      "Dark Brown",
+      "Black"
+    ],
     "price": 5200,
     "regular_price": 6100,
-    "benefit_line": "Premium black CAT moc shoes designed for rugged comfort and everyday style.",
+    "benefit_line": "Available in Grey, Dark Brown & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "3 COLORS AVAILABLE",
     "category": "Sneakers & Kicks",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Grey, Dark Brown, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "CAT Rugged Moc Casual Shoes – Black. Premium black CAT moc shoes designed for rugged comfort and everyday style. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "CAT Rugged Moc Casual Shoes. Available in Grey, Dark Brown, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_cat_rugged_moc_casual_shoes_came",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "CAT Rugged Moc Casual Shoes – Camel",
+    "name": "CAT Rugged Moc Casual Shoes Camel",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779827045362-26371b6d-0983-4ee7-b410-ca81dc3cf9b2.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779827045362-26371b6d-0983-4ee7-b410-ca81dc3cf9b2.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779827045362-26371b6d-0983-4ee7-b410-ca81dc3cf9b2.webp"
     ],
+    "colors": [],
     "price": 5200,
     "regular_price": 6100,
     "benefit_line": "Rugged CAT moc shoes built for comfort, durability, and smart casual styling.",
@@ -4609,21 +3660,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "CAT Rugged Moc Casual Shoes – Camel. Rugged CAT moc shoes built for comfort, durability, and smart casual styling. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "CAT Rugged Moc Casual Shoes Camel. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_monogram_luxury_slides_black",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Monogram Luxury Slides – Black",
+    "name": "Monogram Luxury Slides",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744779314-2d68174a-23ee-4650-8c27-fdeb346c0bd8.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744779314-2d68174a-23ee-4650-8c27-fdeb346c0bd8.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744779314-2d68174a-23ee-4650-8c27-fdeb346c0bd8.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 3200,
     "regular_price": 3800,
@@ -4639,21 +3689,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Monogram Luxury Slides – Black. Luxury-inspired slides crafted for modern casual comfort. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Monogram Luxury Slides. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_luxury_comfort_sandals_black",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Luxury Comfort Sandals – Black",
+    "name": "Luxury Comfort Sandals",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744741938-94c98a44-e7e2-44c5-a3a5-685699412705.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744741938-94c98a44-e7e2-44c5-a3a5-685699412705.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744741938-94c98a44-e7e2-44c5-a3a5-685699412705.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 3200,
     "regular_price": 3800,
@@ -4669,21 +3718,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Luxury Comfort Sandals – Black. Premium comfort sandals designed for stylish everyday wear. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Luxury Comfort Sandals. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_aldo_minimal_leather_sneakers_bl",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "ALDO Minimal Leather Sneakers – Black",
+    "name": "ALDO Minimal Leather Sneakers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744710408-937a3c5a-3396-4147-97ef-53bc8f9882e9.jpeg",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744710408-937a3c5a-3396-4147-97ef-53bc8f9882e9.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779744710408-937a3c5a-3396-4147-97ef-53bc8f9882e9.jpeg"
+    ],
+    "colors": [
+      "Black"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -4699,103 +3747,82 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "ALDO Minimal Leather Sneakers – Black. Clean premium sneakers designed for smart casual everyday styling. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "ALDO Minimal Leather Sneakers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_luxury_croc_double_monk_strap_sh",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Luxury Croc Double Monk Strap Shoes – Brown",
+    "name": "Luxury Croc Double Monk Strap Shoes",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788609276-f024d7c6-9986-4097-8f19-a1e318342dec.webp",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788609276-f024d7c6-9986-4097-8f19-a1e318342dec.webp"
-    ],
-    "price": 5500,
-    "regular_price": 6500,
-    "benefit_line": "Brown double monk strap shoes with a croc-textured finish and twin-buckle desi.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Men's Footwear",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Luxury Croc Double Monk Strap Shoes – Brown. Brown double monk strap shoes with a croc-textured finish and twin-buckle desi. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
-  },
-  {
-    "id": "prod_shoein_luxury_croc_double_monk_strap_sh_154",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Luxury Croc Double Monk Strap Shoes – Black",
-    "size": "EU 40 - 45",
-    "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788547359-5d78692c-b00e-4ead-b927-82341ed3be5b.webp",
-    "photos": [
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788609276-f024d7c6-9986-4097-8f19-a1e318342dec.webp",
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779788547359-5d78692c-b00e-4ead-b927-82341ed3be5b.webp"
     ],
+    "colors": [
+      "Brown",
+      "Black"
+    ],
     "price": 5500,
     "regular_price": 6500,
-    "benefit_line": "Black double monk strap shoes with a croc-textured finish and twin-buckle desi.",
+    "benefit_line": "Available in Brown & Black • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Men's Footwear",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Brown, Black",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Luxury Croc Double Monk Strap Shoes – Black. Black double monk strap shoes with a croc-textured finish and twin-buckle desi. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Luxury Croc Double Monk Strap Shoes. Available in Brown, Black. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with tailored trousers, official suits, or smart-casual chinos for an elevated executive look."
   },
   {
     "id": "prod_shoein_dark_brown_luxe_minimal_sneakers",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Dark Brown Luxe Minimal Sneakers",
+    "name": "Luxe Minimal Sneakers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454282563-84af74a6-e2bd-4913-8f6d-d9e4c7193621.webp",
     "photos": [
       "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454282563-84af74a6-e2bd-4913-8f6d-d9e4c7193621.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454493091-ad7ba7ba-3ff1-466b-82a9-8dd05d7ad687.webp"
+    ],
+    "colors": [
+      "Dark Brown",
+      "Brown"
     ],
     "price": 4800,
     "regular_price": 5700,
-    "benefit_line": "Luxury dark brown minimalist sneakers designed for elevated smart-casual fashi.",
+    "benefit_line": "Available in Dark Brown & Brown • Handcrafted genuine leather",
     "in_stock": true,
     "featured": false,
-    "badge": "",
+    "badge": "2 COLORS AVAILABLE",
     "category": "Sneakers & Kicks",
     "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
     "highlights": [
-      "100% Genuine Materials",
+      "Available in Dark Brown, Brown",
       "Fast Nairobi Same-Day Dispatch",
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Dark Brown Luxe Minimal Sneakers. Luxury dark brown minimalist sneakers designed for elevated smart-casual fashi. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Luxe Minimal Sneakers. Available in Dark Brown, Brown. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_white_premium_casual_sneakers",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "White Premium Casual Sneakers",
+    "name": "Premium Casual Sneakers",
     "size": "EU 40 - 45",
     "photo": "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/aldo-white-sneaker.webp",
     "photos": [
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/aldo-white-sneaker.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/products/casuals/Casuals/aldo-white-sneaker.webp"
+    ],
+    "colors": [
+      "White"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -4811,21 +3838,20 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "White Premium Casual Sneakers. ALDO White Premium Casual Sneakers is a White finish with leather construction. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Premium Casual Sneakers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {
     "id": "prod_shoein_brown_elastic_strap_casual_sneak",
     "seller_id": "seller_beauty_bar_kenya",
-    "name": "Brown Elastic Strap Casual Sneakers",
+    "name": "Elastic Strap Casual Sneakers",
     "size": "EU 40 - 45",
     "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454349875-8c7e8448-6f01-4edb-aa3b-dafe739ab7d7.png",
     "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454349875-8c7e8448-6f01-4edb-aa3b-dafe739ab7d7.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
+      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454349875-8c7e8448-6f01-4edb-aa3b-dafe739ab7d7.png"
+    ],
+    "colors": [
+      "Brown"
     ],
     "price": 4800,
     "regular_price": 5700,
@@ -4841,37 +3867,7 @@ export const CURATED_PRODUCTS = [
       "Countrywide Parcels via Fargo / G4S",
       "Lipa na M-Pesa Available"
     ],
-    "description": "Brown Elastic Strap Casual Sneakers. Modern leather casual sneakers with elastic strap support and premium everyday. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
-    "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
-  },
-  {
-    "id": "prod_shoein_brown_luxe_minimal_sneakers",
-    "seller_id": "seller_beauty_bar_kenya",
-    "name": "Brown Luxe Minimal Sneakers",
-    "size": "EU 40 - 45",
-    "photo": "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454493091-ad7ba7ba-3ff1-466b-82a9-8dd05d7ad687.webp",
-    "photos": [
-      "https://klttgzmdoozxsvdahusz.supabase.co/storage/v1/object/public/product-images/products/1779454493091-ad7ba7ba-3ff1-466b-82a9-8dd05d7ad687.webp",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2014/slipon1.png",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni1.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2017/santoni2.jpeg",
-      "https://pub-a3a3034d346140c994f64090c1eb4c73.r2.dev/date%2011/Black%20Striped%20Leather%20Loafer.jpeg"
-    ],
-    "price": 4800,
-    "regular_price": 5700,
-    "benefit_line": "Premium brown minimalist sneakers crafted for smart casual dressing, weekend.",
-    "in_stock": true,
-    "featured": false,
-    "badge": "",
-    "category": "Sneakers & Kicks",
-    "ingredients": "Genuine Calfskin / High-Grade Suede, Cushioned Memory Foam Insole, Durable Rubber Sole",
-    "highlights": [
-      "100% Genuine Materials",
-      "Fast Nairobi Same-Day Dispatch",
-      "Countrywide Parcels via Fargo / G4S",
-      "Lipa na M-Pesa Available"
-    ],
-    "description": "Brown Luxe Minimal Sneakers. Premium brown minimalist sneakers crafted for smart casual dressing, weekend. Premium quality footwear offering superior durability, cloud-comfort cushioning, and modern style.",
+    "description": "Elastic Strap Casual Sneakers. Crafted from premium genuine leather with cushioned memory foam insole and durable outsole. Built for cloud-comfort and executive sophistication.",
     "how_to_use": "Pair with jeans, casual trousers, or shorts for effortless everyday comfort and style."
   },
   {

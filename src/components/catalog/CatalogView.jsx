@@ -523,6 +523,12 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                         {product.badge}
                       </span>
                     ) : null}
+                    {product.photos && product.photos.length > 1 && (
+                      <span className="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-slate-900/85 text-white backdrop-blur-xs text-[8px] font-black z-10 flex items-center gap-1 shadow-2xs">
+                        <span>📸</span>
+                        <span>{product.photos.length}</span>
+                      </span>
+                    )}
                   </div>
 
                   {/* Product Details */}
@@ -542,6 +548,17 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                       <h2 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug line-clamp-1 mt-0.5 group-hover:text-emerald-700 transition-colors">
                         {product.name}
                       </h2>
+
+                      {/* Color Variant Pills */}
+                      {product.colors && product.colors.length > 1 && (
+                        <div className="flex items-center gap-1 flex-wrap mt-1">
+                          {product.colors.map((c, i) => (
+                            <span key={i} className="text-[8px] font-extrabold px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200/80">
+                              {c}
+                            </span>
+                          ))}
+                        </div>
+                      )}
 
                       {/* Display Key Benefit Line Directly! */}
                       {product.benefit_line && (
@@ -690,6 +707,14 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                       )}
                     </button>
 
+                    {/* Photos Count Pill on bottom-left */}
+                    {product.photos && product.photos.length > 1 && (
+                      <span className="absolute bottom-2 left-2 px-1.5 py-0.5 rounded-md bg-slate-900/85 text-white backdrop-blur-xs text-[9px] font-black z-10 flex items-center gap-1 shadow-2xs">
+                        <span>📸</span>
+                        <span>{product.photos.length}</span>
+                      </span>
+                    )}
+
                     {/* Quick Poster Generator Button on bottom-right of image */}
                     <button
                       type="button"
@@ -714,6 +739,17 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                       <h2 className="text-xs font-bold text-slate-900 leading-snug line-clamp-2 mt-0.5 group-hover:text-emerald-700 transition-colors">
                         {product.name}
                       </h2>
+
+                      {/* Color Variant Pills */}
+                      {product.colors && product.colors.length > 1 && (
+                        <div className="flex items-center gap-1 flex-wrap mt-1">
+                          {product.colors.map((c, i) => (
+                            <span key={i} className="text-[8px] font-extrabold px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200/80">
+                              {c}
+                            </span>
+                          ))}
+                        </div>
+                      )}
 
                       {/* Pricing & Rating */}
                       <div className="flex items-baseline justify-between gap-1 mt-1.5 pt-1 border-t border-slate-100">
