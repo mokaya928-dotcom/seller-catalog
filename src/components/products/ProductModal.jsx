@@ -87,6 +87,29 @@ export default function ProductModal({
       ? (product.category || 'Skincare & Face')
       : (initialCategory || 'Skincare & Face')
   );
+  const [isCustomCategory, setIsCustomCategory] = useState(false);
+  const [customCategoryInput, setCustomCategoryInput] = useState('');
+
+  const PRESET_CATEGORIES = useMemo(() => new Set([
+    'Sneakers & Kicks', "Men's Footwear", 'Handbags & Bags',
+    'Skincare & Face', 'Bath & Body', 'Lip Care', 'Makeup & Prep',
+    'Serums & Actives', 'Korean Skincare & Serums', 'Sunscreen & SPF',
+    'Hair & Wellness', 'Household & Bedding', 'Household & Kitchen', 'Classic Clothes'
+  ]), []);
+
+  const customExistingCategories = useMemo(() => {
+    const list = new Set();
+    if (product?.category && !PRESET_CATEGORIES.has(product.category)) {
+      list.add(product.category);
+    }
+    (allProducts || []).forEach((p) => {
+      if (p.category && !PRESET_CATEGORIES.has(p.category)) {
+        list.add(p.category);
+      }
+    });
+    return Array.from(list);
+  }, [allProducts, product, PRESET_CATEGORIES]);
+
   const [isCompressing, setIsCompressing] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [autoFilledName, setAutoFilledName] = useState('');
@@ -287,7 +310,7 @@ export default function ProductModal({
       remaining: remaining !== '' ? Number(remaining) : 3,
       stock_qty: remaining !== '' ? Number(remaining) : 3,
       benefit_line: benefitLine.trim(),
-      category: category || 'Skincare & Face',
+      category: isCustomCategory && customCategoryInput.trim() ? customCategoryInput.trim() : (category || 'Skincare & Face'),
       photo: photos[0],
       photos: photos,
       in_stock: inStock,
@@ -582,34 +605,89 @@ export default function ProductModal({
 
           {/* Product Category Selector */}
           <div>
-            <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">
-              Product Category *
-            </label>
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-3.5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 font-semibold text-sm outline-none bg-white"
-            >
-              <optgroup label="👜 Handbags & Luxury Bags">
-                <option value="Handbags & Bags">👜 Handbags & Bags</option>
-              </optgroup>
-              <optgroup label="🌸 Category 1: Beauty & Personal Care">
-                <option value="Skincare & Face">🧴 Skincare & Face</option>
-                <option value="Bath & Body">🛁 Bath & Body</option>
-                <option value="Lip Care">💄 Lip Care</option>
-                <option value="Makeup & Prep">👑 Makeup & Prep</option>
-                <option value="Serums & Actives">🧪 Serums & Actives</option>
-                <option value="Sunscreen & SPF">☀️ Sunscreen & SPF</option>
-                <option value="Hair & Wellness">🌿 Hair & Wellness</option>
-              </optgroup>
-              <optgroup label="🛏️ Category 2: Household & Bedding">
-                <option value="Household & Bedding">🛏️ Household & Bedding</option>
-                <option value="Household & Kitchen">☕ Household & Kitchen</option>
-              </optgroup>
-              <optgroup label="👗 Category 3: Clothes & Fashion">
-                <option value="Classic Clothes">👗 Classic Clothes & Fashion</option>
-              </optgroup>
-            </select>
+            <div className="flex items-center justify-between mb-1">
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
+                Product Category *
+              </label>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsCustomCategory(!isCustomCategory);
+                  if (!isCustomCategory) setCustomCategoryInput('');
+                }}
+                className="text-[10px] text-emerald-700 font-bold hover:underline cursor-pointer"
+              >
+                {isCustomCategory ? '← Choose from list' : '+ Type custom category'}
+              </button>
+            </div>
+
+            {isCustomCategory ? (
+              <div className="space-y-1">
+                <input
+                  type="text"
+                  required
+                  value={customCategoryInput}
+                  onChange={(e) => {
+                    setCustomCategoryInput(e.target.value);
+                    setCategory(e.target.value);
+                  }}
+                  placeholder="e.g. Sneakers & Kicks, Perfumes, Watches..."
+                  className="w-full px-3.5 py-3 rounded-xl border border-emerald-500 focus:ring-2 focus:ring-emerald-500 font-semibold text-sm outline-none bg-emerald-50/30"
+                  autoFocus
+                />
+                <p className="text-[10px] text-gray-400">
+                  New category will automatically appear as an inventory filter chip.
+                </p>
+              </div>
+            ) : (
+              <select
+                value={category}
+                onChange={(e) => {
+                  if (e.target.value === '__custom__') {
+                    setIsCustomCategory(true);
+                    setCustomCategoryInput('');
+                  } else {
+                    setCategory(e.target.value);
+                  }
+                }}
+                className="w-full px-3.5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 font-semibold text-sm outline-none bg-white cursor-pointer"
+              >
+                <optgroup label="👟 Footwear & Sneakers">
+                  <option value="Sneakers & Kicks">👟 Sneakers &amp; Kicks</option>
+                  <option value="Men's Footwear">👞 Men's Footwear &amp; Loafers</option>
+                </optgroup>
+                <optgroup label="👜 Handbags & Luxury Bags">
+                  <option value="Handbags & Bags">👜 Handbags &amp; Bags</option>
+                </optgroup>
+                <optgroup label="🌸 Category 1: Beauty & Personal Care">
+                  <option value="Skincare & Face">🧴 Skincare &amp; Face</option>
+                  <option value="Bath & Body">🛁 Bath &amp; Body</option>
+                  <option value="Lip Care">💄 Lip Care</option>
+                  <option value="Makeup & Prep">👑 Makeup &amp; Prep</option>
+                  <option value="Serums & Actives">🧪 Serums &amp; Actives</option>
+                  <option value="Korean Skincare & Serums">✨ Korean Skincare &amp; Serums</option>
+                  <option value="Sunscreen & SPF">☀️ Sunscreen &amp; SPF</option>
+                  <option value="Hair & Wellness">🌿 Hair &amp; Wellness</option>
+                </optgroup>
+                <optgroup label="🛏️ Category 2: Household & Bedding">
+                  <option value="Household & Bedding">🛏️ Household &amp; Bedding</option>
+                  <option value="Household & Kitchen">☕ Household &amp; Kitchen</option>
+                </optgroup>
+                <optgroup label="👗 Category 3: Clothes & Fashion">
+                  <option value="Classic Clothes">👗 Classic Clothes &amp; Fashion</option>
+                </optgroup>
+
+                {customExistingCategories.length > 0 && (
+                  <optgroup label="🏷️ Other Store Categories">
+                    {customExistingCategories.map((c) => (
+                      <option key={c} value={c}>{c}</option>
+                    ))}
+                  </optgroup>
+                )}
+
+                <option value="__custom__">➕ + Add New Custom Category...</option>
+              </select>
+            )}
             <p className="text-[11px] text-emerald-700 font-medium mt-1">
               ✓ Prevents category mixing: posts are routed to this category's dedicated queue.
             </p>

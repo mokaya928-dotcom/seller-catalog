@@ -92,6 +92,22 @@ export const GLOWND_SELLER = {
   delivery_info: 'Nairobi Same-Day Boda & Countrywide Parcels via Fargo / G4S'
 };
 
+export const SHOE_IN_SELLER = {
+  id: 'seller_shoe_in_kenya',
+  shop_name: 'Shoe-In Kenya | Kicks & Loafers',
+  location: 'Imenti House / CBD, Nairobi • Delivery Across Kenya',
+  phone: '+254 712 345 999',
+  phone_raw: '254712345999',
+  brand_color: '#0f172a',
+  brand_secondary: '#1e293b',
+  palette: 'midnight_navy_amber',
+  brand_font: 'Outfit',
+  language: 'kenyan_mix',
+  mpesa_till: '782910',
+  mpesa_type: 'Buy Goods Till',
+  delivery_info: 'Same-day Nairobi Boda & Countrywide Delivery via Wells Fargo / G4S'
+};
+
 export const CURATED_PRODUCTS = [
   {
     "id": "prod_shoein_minimal_black",
@@ -5687,3 +5703,4 @@ export const CURATED_PRODUCTS = [
 ];
 
 export const STARTER_PRODUCTS = CURATED_PRODUCTS;
+export const SHOE_IN_PRODUCTS = CURATED_PRODUCTS.filter((p) => p.seller_id === 'seller_shoe_in_kenya');

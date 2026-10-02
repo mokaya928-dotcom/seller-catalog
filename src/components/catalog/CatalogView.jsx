@@ -1,7 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
   Search, ShoppingBag, ArrowLeft, ArrowUp, Sparkles, 
-  Check, X, MapPin, Flame, Plus, Download, Truck, ArrowRight
+  Check, X, MapPin, Flame, Plus, Download, Truck, ArrowRight,
+  LayoutGrid, List
 } from 'lucide-react';
 import ProductDetailModal from './ProductDetailModal';
 import CheckoutDrawer from './CheckoutDrawer';
@@ -17,15 +18,20 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [priceFilter, setPriceFilter] = useState('all'); // 'all' | 'under1500' | 'under3000' | 'offers'
   const [sortBy, setSortBy] = useState('featured'); // 'featured' | 'price_asc' | 'price_desc' | 'name_asc'
-
-  // Clear legacy layout choice from localStorage so clean default is guaranteed
-  useEffect(() => {
+  const [layoutMode, setLayoutMode] = useState(() => {
     try {
-      localStorage.removeItem('bbk_catalog_layout');
+      return localStorage.getItem('catalog_layout_mode') || 'grid';
     } catch (e) {
-      // ignore
+      return 'grid';
     }
-  }, []);
+  });
+
+  const handleSelectLayout = (mode) => {
+    setLayoutMode(mode);
+    try {
+      localStorage.setItem('catalog_layout_mode', mode);
+    } catch (e) {}
+  };
 
   const [cart, setCart] = useState({}); // { [productId]: quantity }
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -49,8 +55,26 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
 
   const cleanPhone = (seller.phone_raw || seller.phone || '254728222211').replace(/[^0-9]/g, '');
 
-  // Only show in-stock products in public catalogue
-  const inStockProducts = useMemo(() => products.filter((p) => p.in_stock), [products]);
+  const isShoesStore = (seller?.id === 'seller_shoe_in_kenya') || 
+                       Boolean(seller?.shop_name && seller.shop_name.toLowerCase().includes('shoe'));
+
+  // Only show in-stock products in public catalogue, cleanly isolated per brand
+  const inStockProducts = useMemo(() => {
+    const pool = (products || []).filter((p) => p.in_stock !== false);
+    if (isShoesStore) {
+      const shoesOnly = pool.filter(p => p.seller_id === 'seller_shoe_in_kenya' || p.category === 'Sneakers & Kicks' || p.category === "Men's Footwear");
+      return shoesOnly.length > 0 ? shoesOnly : pool;
+    }
+    if (seller?.id === 'seller_beauty_bar_kenya') {
+      const beautyOnly = pool.filter(p => p.seller_id === 'seller_beauty_bar_kenya' || p.seller_id === 'seller_glow_secret');
+      return beautyOnly.length > 0 ? beautyOnly : pool;
+    }
+    if (seller?.id === 'seller_glownd') {
+      const bagsOnly = pool.filter(p => p.seller_id === 'seller_glownd');
+      return bagsOnly.length > 0 ? bagsOnly : pool;
+    }
+    return pool;
+  }, [products, seller, isShoesStore]);
 
   // Deep Linking: Auto-open product modal if URL has ?prod=... or ?view=catalog&prod=...
   useEffect(() => {
@@ -77,6 +101,8 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   // Priority category ordering
   const CATEGORY_ORDER = [
     'All',
+    'Sneakers & Kicks',
+    "Men's Footwear",
     'Handbags & Bags',
     'Makeup & Prep',
     'Lip Care',
@@ -105,6 +131,8 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   const getCategoryIcon = (cat) => {
     switch (cat) {
       case 'All': return '✨';
+      case 'Sneakers & Kicks': return '👟';
+      case "Men's Footwear": return '👞';
       case 'Handbags & Bags': return '👜';
       case 'Makeup & Prep': return '👑';
       case 'Lip Care': return '💄';
@@ -326,13 +354,13 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
           })}
         </div>
 
-        {/* Quick Filter Row */}
+        {/* Quick Filter & Layout Row */}
         <div className="flex items-center justify-between gap-2 pt-0.5 text-xs">
           <div className="flex items-center gap-1 overflow-x-auto no-scrollbar">
             <button
               type="button"
               onClick={() => setPriceFilter('all')}
-              className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition ${
+              className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition cursor-pointer ${
                 priceFilter === 'all'
                   ? 'bg-slate-900 text-white'
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -343,7 +371,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
             <button
               type="button"
               onClick={() => setPriceFilter('under1500')}
-              className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition ${
+              className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition cursor-pointer ${
                 priceFilter === 'under1500'
                   ? 'bg-slate-900 text-white'
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -354,7 +382,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
             <button
               type="button"
               onClick={() => setPriceFilter('under3000')}
-              className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition ${
+              className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition cursor-pointer ${
                 priceFilter === 'under3000'
                   ? 'bg-slate-900 text-white'
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -365,19 +393,51 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
             <button
               type="button"
               onClick={() => setPriceFilter(priceFilter === 'offers' ? 'all' : 'offers')}
-              className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition flex items-center gap-1 ${
+              className={`px-2.5 py-1 rounded-lg text-[10px] font-bold whitespace-nowrap transition flex items-center gap-1 cursor-pointer ${
                 priceFilter === 'offers'
                   ? 'bg-rose-600 text-white'
                   : 'bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100'
               }`}
             >
-              <span>Special Offers 🔥</span>
+              <span>Offers 🔥</span>
             </button>
           </div>
 
-          <span className="text-[11px] font-medium text-slate-500 whitespace-nowrap flex-shrink-0">
-            {filteredProducts.length} {filteredProducts.length === 1 ? 'item' : 'items'}
-          </span>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {/* 1-Tap 2-Layout Switcher: Clean Grid vs Detailed List */}
+            <div className="flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200">
+              <button
+                type="button"
+                onClick={() => handleSelectLayout('grid')}
+                className={`p-1.5 rounded-lg transition cursor-pointer flex items-center gap-1 text-[11px] font-bold ${
+                  layoutMode === 'grid'
+                    ? 'bg-white text-slate-900 shadow-xs'
+                    : 'text-slate-400 hover:text-slate-700'
+                }`}
+                title="2-Column Visual Grid"
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Grid</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleSelectLayout('list')}
+                className={`p-1.5 rounded-lg transition cursor-pointer flex items-center gap-1 text-[11px] font-bold ${
+                  layoutMode === 'list'
+                    ? 'bg-white text-slate-900 shadow-xs'
+                    : 'text-slate-400 hover:text-slate-700'
+                }`}
+                title="Detailed Showcase List"
+              >
+                <List className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">List</span>
+              </button>
+            </div>
+
+            <span className="text-[11px] font-medium text-slate-500 whitespace-nowrap">
+              {filteredProducts.length}
+            </span>
+          </div>
         </div>
 
         {/* Empty State */}
@@ -409,9 +469,129 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
               </button>
             </div>
           </div>
+        ) : layoutMode === 'list' ? (
+          /* ======================================================== */
+          /* LAYOUT 2: CLEAN DETAILED SHOWCASE LIST                    */
+          /* ======================================================== */
+          <div className="space-y-3">
+            {filteredProducts.map((product) => {
+              const isSelected = Boolean(cart[product.id]);
+              const remaining = getProductRemaining(product);
+              const regularPrice = getProductRegularPrice(product);
+              const savings = regularPrice && regularPrice > product.price ? regularPrice - product.price : null;
+
+              return (
+                <article
+                  key={product.id}
+                  onClick={() => setViewingProduct(product)}
+                  className="bg-white rounded-2xl p-3 border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex gap-3 group active:scale-[0.99]"
+                >
+                  {/* Product Photo */}
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 flex-shrink-0 relative bg-slate-50 rounded-xl overflow-hidden border border-slate-100 p-2 flex items-center justify-center">
+                    <img
+                      src={getOptimizedImageUrl(product.photo)}
+                      alt={product.name}
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = '/products/bbk-vaseline-lip.jpg';
+                      }}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    />
+                    {savings ? (
+                      <span className="absolute top-1.5 left-1.5 bg-rose-600 text-white text-[8px] font-black px-1.5 py-0.5 rounded-md shadow-xs">
+                        -KES {savings.toLocaleString()}
+                      </span>
+                    ) : product.badge ? (
+                      <span className="absolute top-1.5 left-1.5 bg-slate-900 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-md shadow-xs">
+                        {product.badge}
+                      </span>
+                    ) : null}
+                  </div>
+
+                  {/* Product Details */}
+                  <div className="flex-1 min-w-0 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between gap-1">
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate">
+                          {product.category || 'Beauty Care'}
+                        </span>
+                        {product.size && (
+                          <span className="text-[10px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded">
+                            {product.size}
+                          </span>
+                        )}
+                      </div>
+
+                      <h2 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug line-clamp-1 mt-0.5 group-hover:text-emerald-700 transition-colors">
+                        {product.name}
+                      </h2>
+
+                      {/* Display Key Benefit Line Directly! */}
+                      {product.benefit_line && (
+                        <p className="text-[11px] text-slate-500 line-clamp-2 mt-1 leading-tight font-medium">
+                          {product.benefit_line}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="pt-2">
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <div className="flex items-baseline gap-1.5 flex-wrap">
+                          <span className="text-sm sm:text-base font-black text-emerald-700">
+                            KES {Number(product.price).toLocaleString()}
+                          </span>
+                          {regularPrice && regularPrice > product.price && (
+                            <span className="text-[10px] text-slate-400 line-through font-semibold">
+                              KES {Number(regularPrice).toLocaleString()}
+                            </span>
+                          )}
+                        </div>
+
+                        {remaining !== null && remaining <= 5 && (
+                          <span className="bg-amber-50 text-amber-900 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
+                            <Flame className="w-2.5 h-2.5 fill-amber-500 text-amber-500" />
+                            <span>{remaining} left</span>
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={(e) => handleSingleOrder(e, product)}
+                          className="flex-1 bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-black py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 text-xs shadow-xs transition active:scale-95 cursor-pointer"
+                        >
+                          <WhatsAppIcon className="w-3.5 h-3.5 fill-white flex-shrink-0" />
+                          <span>Order on WhatsApp</span>
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={(e) => handleToggleBag(e, product.id)}
+                          className={`p-2 rounded-xl border flex items-center justify-center transition cursor-pointer ${
+                            isSelected
+                              ? 'bg-emerald-600 text-white border-emerald-600'
+                              : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
+                          }`}
+                          title={isSelected ? 'Remove from Bag' : 'Add to Bag'}
+                        >
+                          {isSelected ? (
+                            <Check className="w-4 h-4 stroke-[3px]" />
+                          ) : (
+                            <Plus className="w-4 h-4 stroke-[2.5px]" />
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         ) : (
           /* ======================================================== */
-          /* THE BEST STOREFRONT LAYOUT: MODERN 2-COL VISUAL GRID      */
+          /* LAYOUT 1: MODERN 2-COL VISUAL GRID                        */
           /* ======================================================== */
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {filteredProducts.map((product) => {

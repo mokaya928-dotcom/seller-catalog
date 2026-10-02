@@ -21,6 +21,61 @@ export default function ProductsView({
   const [modalState, setModalState] = useState({ isOpen: false, product: null });
   const [previewProduct, setPreviewProduct] = useState(null);
 
+  // Dynamic Category Extraction from inventory
+  const categoryStats = useMemo(() => {
+    const counts = { All: products.length };
+    products.forEach((p) => {
+      const cat = p.category || 'Other';
+      counts[cat] = (counts[cat] || 0) + 1;
+    });
+    return counts;
+  }, [products]);
+
+  const CATEGORY_ORDER = [
+    'All',
+    'Sneakers & Kicks',
+    "Men's Footwear",
+    'Handbags & Bags',
+    'Makeup & Prep',
+    'Lip Care',
+    'Bath & Body',
+    'Sunscreen & SPF',
+    'Skincare & Face',
+    'Serums & Actives',
+    'Classic Clothes',
+    'Household & Bedding',
+    'Household & Kitchen'
+  ];
+
+  const categories = useMemo(() => {
+    const rawCats = Object.keys(categoryStats).filter((c) => c !== 'All');
+    return ['All', ...rawCats].sort((a, b) => {
+      const idxA = CATEGORY_ORDER.indexOf(a);
+      const idxB = CATEGORY_ORDER.indexOf(b);
+      const orderA = idxA === -1 ? 90 : idxA;
+      const orderB = idxB === -1 ? 90 : idxB;
+      return orderA - orderB;
+    });
+  }, [categoryStats]);
+
+  const getCategoryIcon = (cat) => {
+    const lower = (cat || '').toLowerCase();
+    if (cat === 'All') return '✨';
+    if (lower.includes('sneaker') || lower.includes('kicks')) return '👟';
+    if (lower.includes('footwear') || lower.includes('shoe') || lower.includes('loafer')) return '👞';
+    if (lower.includes('bag')) return '👜';
+    if (lower.includes('lip')) return '💄';
+    if (lower.includes('prep') || lower.includes('makeup')) return '👑';
+    if (lower.includes('bath') || lower.includes('body')) return '🌸';
+    if (lower.includes('spf') || lower.includes('sun')) return '☀️';
+    if (lower.includes('face') || lower.includes('skin')) return '🧴';
+    if (lower.includes('serum') || lower.includes('active')) return '🧪';
+    if (lower.includes('clothes') || lower.includes('dress') || lower.includes('fashion')) return '👗';
+    if (lower.includes('bedding') || lower.includes('household')) return '🛏️';
+    if (lower.includes('kitchen')) return '☕';
+    return '🏷️';
+  };
+
   const searchResult = useMemo(() => {
     return executeSmartSearch(products, searchQuery, {
       selectedCategory,
@@ -182,32 +237,31 @@ export default function ProductsView({
 
         {/* Visual Category Filter Chips */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar pt-1">
-          {[
-            { id: 'All', label: 'All', icon: '✨' },
-            { id: 'Handbags & Bags', label: 'Bags', icon: '👜' },
-            { id: 'Makeup & Prep', label: 'Make Up', icon: '👑' },
-            { id: 'Lip Care', label: 'Lip Care', icon: '💄' },
-            { id: 'Bath & Body', label: 'Body', icon: '🌸' },
-            { id: 'Sunscreen & SPF', label: 'SPF', icon: '☀️' },
-            { id: 'Skincare & Face', label: 'Face', icon: '🧴' },
-            { id: 'Serums & Actives', label: 'Serums', icon: '🧪' },
-            { id: 'Classic Clothes', label: 'Clothes', icon: '👗' },
-            { id: 'Household & Bedding', label: 'Household', icon: '🛏️' },
-          ].map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => setSelectedCategory(cat.id)}
-              className={`px-3 py-1 rounded-full text-[11px] font-bold whitespace-nowrap transition flex items-center gap-1 ${
-                selectedCategory === cat.id
-                  ? 'bg-slate-900 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60'
-              }`}
-            >
-              <span>{cat.icon}</span>
-              <span>{cat.label}</span>
-            </button>
-          ))}
+          {categories.map((cat) => {
+            const count = categoryStats[cat] || 0;
+            const icon = getCategoryIcon(cat);
+            const isSelected = selectedCategory === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-3 py-1 rounded-full text-[11px] font-bold whitespace-nowrap transition flex items-center gap-1 cursor-pointer ${
+                  isSelected
+                    ? 'bg-slate-900 text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60'
+                }`}
+              >
+                <span>{icon}</span>
+                <span>{cat}</span>
+                <span className={`text-[9px] px-1.5 py-0.2 rounded-full font-bold ${
+                  isSelected ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-600'
+                }`}>
+                  {count}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 

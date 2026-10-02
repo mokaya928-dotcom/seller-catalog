@@ -5,7 +5,7 @@
  * - Gracefully falls back to browser localStorage for offline support or local development.
  * - Zero UI breaking changes.
  */
-import { DEFAULT_SELLER, STARTER_PRODUCTS, BEAUTY_BAR_SELLER, CURATED_PRODUCTS, GLOW_HOUSE_SELLER } from '../data/starterData';
+import { DEFAULT_SELLER, STARTER_PRODUCTS, BEAUTY_BAR_SELLER, CURATED_PRODUCTS, GLOW_HOUSE_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS } from '../data/starterData';
 import { supabase, isSupabaseConfigured } from './supabaseClient';
 
 const KEYS = {
@@ -504,6 +504,11 @@ export const storageService = {
   async loadPreset(presetName) {
     if (presetName === 'halal') {
       return this.resetToDefaults();
+    }
+    if (presetName === 'shoes' || presetName === 'shoe_in') {
+      localStorage.setItem(KEYS.SELLER, JSON.stringify(SHOE_IN_SELLER));
+      localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(SHOE_IN_PRODUCTS));
+      return { seller: SHOE_IN_SELLER, products: SHOE_IN_PRODUCTS };
     }
     // Glow House Kakamega
     localStorage.setItem(KEYS.SELLER, JSON.stringify(GLOW_HOUSE_SELLER));

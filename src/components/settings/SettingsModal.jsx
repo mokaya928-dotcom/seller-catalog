@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Check, RotateCcw, ShieldCheck, Store, MapPin, CreditCard, Sparkles, Download, CheckCircle2, Smartphone, Lock, Eye, EyeOff, FileSpreadsheet, Database, Clock, BellRing } from 'lucide-react';
-import { BEAUTY_BAR_SELLER, GLOW_HOUSE_SELLER, HALAL_BEAUTY_SELLER, MOH_037_SELLER } from '../../data/starterData';
+import { BEAUTY_BAR_SELLER, GLOW_HOUSE_SELLER, HALAL_BEAUTY_SELLER, MOH_037_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS } from '../../data/starterData';
 
 const BRAND_PALETTES = [
   { name: 'Glownd Pink', hex: '#fa31df', dark: '#be185d' },
@@ -12,7 +12,7 @@ const BRAND_PALETTES = [
   { name: 'Midnight Black', hex: '#18181b', dark: '#09090b' },
 ];
 
-export default function SettingsModal({ seller, onClose, onSave, onResetDefaults, pwa, onOpenBulkModal, onOpenTimeSchedule }) {
+export default function SettingsModal({ seller, onClose, onSave, onResetDefaults, pwa, onOpenBulkModal, onOpenTimeSchedule, onLoadPreset }) {
   const [shopName, setShopName] = useState(seller.shop_name || '');
   const [phone, setPhone] = useState(seller.phone || '');
   const [location, setLocation] = useState(seller.location || '');
@@ -89,6 +89,20 @@ export default function SettingsModal({ seller, onClose, onSave, onResetDefaults
               <span>Load Shop Preset</span>
             </label>
             <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={async () => {
+                  applyPreset(SHOE_IN_SELLER);
+                  if (onLoadPreset) {
+                    await onLoadPreset('shoes');
+                    onClose();
+                  }
+                }}
+                className="p-2.5 rounded-xl border border-slate-700 bg-slate-900 text-[11px] font-black text-amber-400 hover:bg-slate-800 transition text-center shadow-2xs col-span-2 flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <span>👟</span>
+                <span>Shoe-In Kenya | Kicks &amp; Loafers (Shoes Alone Catalogue)</span>
+              </button>
               <button
                 type="button"
                 onClick={() => applyPreset(GLOWND_SELLER)}

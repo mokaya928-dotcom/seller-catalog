@@ -133,7 +133,15 @@ const SYNONYM_MAP = {
   duvet: ['duvet', 'bedding', 'sheets', 'bed', 'household'],
   kitchen: ['kitchen', 'household', 'flask', 'cooker', 'pot', 'pan'],
   clothes: ['classic clothes', 'dress', 'fashion', 'outfit', 'clothes', 'clothing'],
-  dress: ['classic clothes', 'dress', 'fashion', 'outfit', 'clothes']
+  dress: ['classic clothes', 'dress', 'fashion', 'outfit', 'clothes'],
+  sneaker: ['sneaker', 'sneakers', 'kicks', 'shoes', 'leather sneaker', 'slip-on', 'adidas', 'new balance'],
+  sneakers: ['sneaker', 'sneakers', 'kicks', 'shoes', 'leather sneaker', 'slip-on', 'adidas', 'new balance'],
+  shoe: ['shoe', 'shoes', 'sneakers', 'kicks', 'loafers', 'footwear'],
+  shoes: ['shoe', 'shoes', 'sneakers', 'kicks', 'loafers', 'footwear'],
+  loafer: ['loafer', 'loafers', 'slip-on', 'woven', 'horsebit', 'footwear', 'john foster'],
+  loafers: ['loafer', 'loafers', 'slip-on', 'woven', 'horsebit', 'footwear', 'john foster'],
+  kicks: ['sneaker', 'kicks', 'shoes', 'retro', 'adidas', 'spezia', '530'],
+  footwear: ['footwear', 'shoes', 'sneakers', 'loafers', 'kicks']
 };
 
 /**

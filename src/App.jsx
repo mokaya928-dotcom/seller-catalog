@@ -102,18 +102,33 @@ export default function App() {
   useEffect(() => {
     async function loadData() {
       try {
-        const [loadedSeller, loadedProducts, loadedPosted, loadedOverrides] = await Promise.all([
-          storageService.getSeller(),
-          storageService.getProducts(),
-          storageService.getPostedStatus(todayDateStr),
-          storageService.getDayOverrides(todayDateStr)
-        ]);
-        if (!demoSellerConfig) {
-          setSeller(loadedSeller);
+        const searchParams = new URLSearchParams(window.location.search);
+        const shopParam = (searchParams.get('shop') || searchParams.get('store') || searchParams.get('seller') || '').toLowerCase();
+
+        if (shopParam === 'shoes' || shopParam === 'shoe' || shopParam === 'shoe_in' || shopParam === 'kicks') {
+          const preset = await storageService.loadPreset('shoes');
+          setSeller(preset.seller);
+          setProducts(preset.products);
+          const [loadedPosted, loadedOverrides] = await Promise.all([
+            storageService.getPostedStatus(todayDateStr),
+            storageService.getDayOverrides(todayDateStr)
+          ]);
+          setPostedMap(loadedPosted);
+          setTodayOverrides(loadedOverrides || {});
+        } else {
+          const [loadedSeller, loadedProducts, loadedPosted, loadedOverrides] = await Promise.all([
+            storageService.getSeller(),
+            storageService.getProducts(),
+            storageService.getPostedStatus(todayDateStr),
+            storageService.getDayOverrides(todayDateStr)
+          ]);
+          if (!demoSellerConfig) {
+            setSeller(loadedSeller);
+          }
+          setProducts(loadedProducts);
+          setPostedMap(loadedPosted);
+          setTodayOverrides(loadedOverrides || {});
         }
-        setProducts(loadedProducts);
-        setPostedMap(loadedPosted);
-        setTodayOverrides(loadedOverrides || {});
       } catch (err) {
         console.error('Failed to load initial data', err);
         showToast('Could not load data from storage', 'error');
@@ -285,6 +300,14 @@ export default function App() {
     setSeller(reset.seller);
     setProducts(reset.products);
     showToast('✓ Loaded Beauty Bar Kenya Curated Collection with Videos', 'success');
+  };
+
+  // Load dedicated store preset (e.g. Shoes Alone)
+  const handleLoadStorePreset = async (presetKey) => {
+    const loaded = await storageService.loadPreset(presetKey);
+    setSeller(loaded.seller);
+    setProducts(loaded.products);
+    showToast(`✓ Loaded ${loaded.seller.shop_name}!`, 'success');
   };
 
   // Switch to customer catalogue preview
@@ -525,6 +548,7 @@ export default function App() {
           pwa={pwa}
           onOpenBulkModal={() => setIsBulkModalOpen(true)}
           onOpenTimeSchedule={() => setIsTimeScheduleOpen(true)}
+          onLoadPreset={handleLoadStorePreset}
         />
       )}
 
