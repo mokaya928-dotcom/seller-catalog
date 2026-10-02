@@ -2,18 +2,20 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { 
   X, Download, Copy, Share2, Eye, LayoutTemplate, 
   Palette, Languages, Sparkles, Check, Flame, Zap, 
-  Smartphone, Layers, RefreshCw 
+  Smartphone, Layers, RefreshCw, Image as ImageIcon 
 } from 'lucide-react';
 import { canvasRenderer, POST_STYLES } from '../../services/canvasRenderer';
 import { PRIMARY_PALETTES } from '../../services/configService';
 import { shareService } from '../../services/shareService';
 import { scheduleService } from '../../services/scheduleService';
+import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
 import WhatsAppIcon from '../common/WhatsAppIcon';
 
 export default function ProductPosterPreviewModal({
   product,
   seller,
   initialRatio = 'status',
+  initialPhoto = null,
   onClose,
   onShowToast
 }) {
@@ -24,10 +26,27 @@ export default function ProductPosterPreviewModal({
   });
 
   const [currentRatio, setCurrentRatio] = useState(initialRatio || 'status'); // 'status' (9:16) or 'group' (4:5)
-  const [currentPalette, setCurrentPalette] = useState(seller?.palette || 'emerald'); // 'emerald' or 'slate'
+  const [currentPalette, setCurrentPalette] = useState(seller?.palette || 'forest_amber');
   const [captionLang, setCaptionLang] = useState(
     seller?.language === 'swahili' ? 'swahili' : 'english'
   );
+
+  // Extract all photos belonging to this product for preview and poster angle selection
+  const photosList = useMemo(() => {
+    return getProductPhotosPool(product);
+  }, [product]);
+
+  const [activePhoto, setActivePhoto] = useState(() => {
+    return initialPhoto || product?.photo || photosList[0] || null;
+  });
+
+  useEffect(() => {
+    if (initialPhoto) {
+      setActivePhoto(initialPhoto);
+    } else if (product?.photo) {
+      setActivePhoto(product.photo);
+    }
+  }, [initialPhoto, product]);
 
   const [renderedImageUrl, setRenderedImageUrl] = useState(null);
   const [imageBlob, setImageBlob] = useState(null);
@@ -59,13 +78,19 @@ export default function ProductPosterPreviewModal({
     );
   }, [product, seller, currentStyle, todayStr, captionLang]);
 
-  // Re-render canvas poster when product, style, ratio, or palette changes
+  // Re-render canvas poster when product, activePhoto, style, ratio, or palette changes
   useEffect(() => {
     let isCurrent = true;
     setIsRendering(true);
 
+    const productForRender = {
+      ...product,
+      photo: activePhoto || product.photo,
+      selectedPhoto: activePhoto || product.photo
+    };
+
     canvasRenderer
-      .renderPost(product, seller, currentRatio, currentStyle, null, currentPalette)
+      .renderPost(productForRender, seller, currentRatio, currentStyle, null, currentPalette)
       .then((dataUrl) => {
         if (!isCurrent) return;
         setRenderedImageUrl(dataUrl);
@@ -88,7 +113,7 @@ export default function ProductPosterPreviewModal({
     product.id,
     product.name,
     product.price,
-    product.photo,
+    activePhoto,
     product.benefit_line,
     seller.brand_color,
     seller.shop_name,
@@ -309,6 +334,49 @@ export default function ProductPosterPreviewModal({
                 })}
               </div>
             </div>
+
+            {/* Photo Angle Selector for Products with Multiple Photos (Shoes, Bags, Cosmetics) */}
+            {photosList.length > 1 && (
+              <div className="bg-slate-800/60 p-2 rounded-2xl border border-slate-700/70 space-y-1.5">
+                <div className="flex items-center justify-between px-0.5">
+                  <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                    <ImageIcon className="w-3 h-3 text-emerald-400" />
+                    <span>Select Photo for Poster ({photosList.length} Angles):</span>
+                  </span>
+                  <span className="text-[10px] font-bold text-emerald-400">
+                    Angle {photosList.indexOf(activePhoto) >= 0 ? photosList.indexOf(activePhoto) + 1 : 1}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 overflow-x-auto pb-0.5 scrollbar-thin">
+                  {photosList.map((photoUrl, idx) => {
+                    const isSelected = activePhoto === photoUrl;
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setActivePhoto(photoUrl)}
+                        className={`w-12 h-12 rounded-xl overflow-hidden border-2 bg-slate-950 flex-shrink-0 transition-all cursor-pointer ${
+                          isSelected
+                            ? 'border-emerald-400 ring-2 ring-emerald-400/50 scale-105 shadow-md'
+                            : 'border-slate-700 opacity-60 hover:opacity-100 hover:border-slate-500'
+                        }`}
+                        title={`Render Photo Angle ${idx + 1} on Poster`}
+                      >
+                        <img
+                          src={getOptimizedImageUrl(photoUrl)}
+                          alt={`Angle ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                          }}
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Designed Poster Display Container */}

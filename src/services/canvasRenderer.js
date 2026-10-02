@@ -20,7 +20,7 @@
  */
 
 import { resolveSellerConfig, resolvePalette as dynamicResolvePalette, ensureBrandFontLoaded, SUPPORTED_BRAND_FONTS, STATIC_PALETTES, PRIMARY_PALETTES } from './configService.js';
-import { decodeHtmlEntities, normalizeProductText, validateProductForRender } from '../utils/textUtils.js';
+import { decodeHtmlEntities, normalizeProductText, validateProductForRender, stripTofuEmojis, sanitizeBadgeText } from '../utils/textUtils.js';
 import { CATEGORY_SKIN_RENDERERS, detectCategorySkin } from './categorySkinRenderer.js';
 import {
   roundRect,
@@ -493,77 +493,87 @@ function getCategorySizeText(product) {
   return 'AUTHENTIC';
 }
 
-function drawSharedHeader(ctx, width, headerH, isStatus, palette, shopName, location, subtitle, brandFont = 'Cinzel') {
-  ctx.fillStyle = palette.primary;
+function drawSharedHeader(ctx, width, headerH, isStatus, palette, shopName, location, subtitle, brandFont = null) {
+  const bandColor = palette.band || palette.primary || '#064e3b';
+  const stripeColor = palette.stripe || palette.accent || '#f59e0b';
+
+  // 1. Header band background (--band)
+  ctx.fillStyle = bandColor;
   ctx.fillRect(0, 0, width, headerH);
 
-  // Top & Bottom Gold Rules
-  ctx.fillStyle = palette.accent;
-  ctx.fillRect(0, 0, width, 8);
-  ctx.fillRect(0, headerH - 8, width, 8);
+  // 2. Double-stripe look: thin accent stripe lines above and below (--stripe)
+  const stripeThickness = 6;
+  ctx.fillStyle = stripeColor;
+  ctx.fillRect(0, 0, width, stripeThickness);
+  ctx.fillRect(0, headerH - stripeThickness, width, stripeThickness);
 
-  // Subtitle (Clean Bold Retail Typography - No AI Stars)
-  ctx.fillStyle = palette.accent;
+  // 3. Subtitle / Kicker (Bold Sans-Serif, no emojis)
+  const cleanSubtitle = stripTofuEmojis(subtitle || 'PREMIUM QUALITY • VERIFIED SELECTION');
+  ctx.fillStyle = stripeColor;
   ctx.textAlign = 'center';
-  ctx.font = '900 18px system-ui, -apple-system, sans-serif';
-  ctx.fillText(subtitle, width / 2, isStatus ? 44 : 36);
+  ctx.font = '900 18px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+  ctx.fillText(cleanSubtitle, width / 2, isStatus ? 44 : 36);
 
-  // Shop Name in authentic Brand Font
-  const fontObj = brandFont && SUPPORTED_BRAND_FONTS[brandFont];
-  const fontFam = fontObj ? fontObj.name : (brandFont || 'Cinzel');
+  // 4. Shop Name: Bold Sans-Serif ONLY (Locked: No serif fonts, no neon, no glow)
   ctx.fillStyle = '#ffffff';
-  ctx.font = `900 36px "${fontFam}", "Cinzel", system-ui, -apple-system, sans-serif`;
-  ctx.fillText(shopName, width / 2, isStatus ? 94 : 80);
+  ctx.font = '900 36px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+  ctx.fillText(stripTofuEmojis(shopName), width / 2, isStatus ? 94 : 80);
 
-  // Location
-  ctx.font = '600 17px system-ui, -apple-system, sans-serif';
-  ctx.fillStyle = palette.locationText;
-  ctx.fillText(location, width / 2, isStatus ? 136 : 112);
+  // 5. Location / Store Subtext
+  ctx.font = '700 17px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+  ctx.fillStyle = palette.locationText || '#e2e8f0';
+  ctx.fillText(stripTofuEmojis(location), width / 2, isStatus ? 136 : 112);
 }
 
 function drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone, mpesaTill, ctaHeader) {
   const footerY = height - footerH;
+  const bandColor = palette.band || palette.primary || '#064e3b';
+  const stripeColor = palette.stripe || palette.accent || '#f59e0b';
 
-  ctx.fillStyle = palette.primary;
+  // 1. Footer band background (--band)
+  ctx.fillStyle = bandColor;
   ctx.fillRect(0, footerY, width, footerH);
 
-  // Gold Top Separator Line
-  ctx.fillStyle = palette.accent;
-  ctx.fillRect(0, footerY, width, 8);
+  // 2. Double-stripe look: thin accent stripe lines above and below (--stripe)
+  const stripeThickness = 6;
+  ctx.fillStyle = stripeColor;
+  ctx.fillRect(0, footerY, width, stripeThickness);
+  ctx.fillRect(0, height - stripeThickness, width, stripeThickness);
 
-  // CTA Header (Clean Bold Retail Typography)
-  ctx.fillStyle = palette.accent;
+  // 3. CTA Header (Bold Sans-Serif, no emojis)
+  const cleanCta = stripTofuEmojis(ctaHeader || 'ORDER / INQUIRE ON WHATSAPP:');
+  ctx.fillStyle = stripeColor;
   ctx.textAlign = 'center';
-  ctx.font = `900 ${isStatus ? 22 : 17}px system-ui, -apple-system, sans-serif`;
-  ctx.fillText(ctaHeader, width / 2, footerY + (isStatus ? 48 : 34));
+  ctx.font = `900 ${isStatus ? 22 : 17}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+  ctx.fillText(cleanCta, width / 2, footerY + (isStatus ? 48 : 34));
 
-  // Large WhatsApp Number
+  // 4. Large WhatsApp Number
   ctx.fillStyle = '#ffffff';
-  ctx.font = `900 ${isStatus ? 58 : 44}px system-ui, -apple-system, sans-serif`;
+  ctx.font = `900 ${isStatus ? 58 : 44}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
   ctx.fillText(`WhatsApp: ${phone}`, width / 2, footerY + (isStatus ? 116 : 84));
 
-  // Screenshot helper
-  ctx.fillStyle = palette.footerSubtext;
-  ctx.font = `600 ${isStatus ? 20 : 15}px system-ui, -apple-system, sans-serif`;
+  // 5. Screenshot helper text
+  ctx.fillStyle = palette.footerSubtext || '#cbd5e1';
+  ctx.font = `700 ${isStatus ? 20 : 15}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
   ctx.fillText('Screenshot this post to order • Countrywide Delivery', width / 2, footerY + (isStatus ? 174 : 124));
 
-  // M-Pesa Pill
+  // 6. M-Pesa Pill with accent border
   const mpesaW = isStatus ? 760 : 660;
   const mpesaH = isStatus ? 48 : 38;
   const mpesaX = (width - mpesaW) / 2;
   const mpesaY = footerY + (isStatus ? 212 : 150);
 
-  ctx.fillStyle = palette.mpesaBg;
+  ctx.fillStyle = palette.mpesaBg || bandColor;
   roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
   ctx.fill();
 
-  ctx.strokeStyle = palette.mpesaBorder;
-  ctx.lineWidth = 2;
+  ctx.strokeStyle = stripeColor;
+  ctx.lineWidth = 2.5;
   roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
   ctx.stroke();
 
-  ctx.fillStyle = palette.mpesaText;
-  ctx.font = `700 ${isStatus ? 18 : 14}px system-ui, -apple-system, sans-serif`;
+  ctx.fillStyle = palette.mpesaText || '#ffffff';
+  ctx.font = `800 ${isStatus ? 18 : 14}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
   const mpesaText = mpesaTill
     ? `Lipa na M-Pesa Buy Goods Till: ${mpesaTill} • Same-Day Dispatch`
     : 'Lipa na M-Pesa Available • Same-Day Dispatch Across Kenya';
@@ -662,42 +672,37 @@ function drawCenteredTitleAndBenefit(ctx, title, benefit, centerX, startY, maxWi
 }
 
 /**
- * Centered Dedicated High-Impact Offer POP Rectangle with gold border
+ * Centered Dedicated High-Impact Offer POP Rectangle (Locked Architecture)
+ * Controlled via --price-bg and --stripe variables, pure bold sans-serif, no glow/neon
  */
-function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, fill = '#064e3b', outline = '#f59e0b', kicker = '✦ SPECIAL OFFER PRICE • IN STOCK ✦', kickerColor = '#f59e0b', price = 'KES 1,850', wasPrice = null) {
+function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, fill = '#064e3b', outline = '#f59e0b', kicker = 'SPECIAL OFFER PRICE • IN STOCK', kickerColor = '#f59e0b', price = 'KES 1,850', wasPrice = null) {
   const x = Math.round(centerX - width / 2);
   const cornerRadius = 22;
 
-  // Outer gold glow
-  ctx.save();
-  ctx.fillStyle = 'rgba(245, 158, 11, 0.25)';
-  roundRect(ctx, x - 3, y - 3, width + 6, height + 6, cornerRadius + 2);
-  ctx.fill();
-  ctx.restore();
-
-  // Box fill
+  // Box fill (--price-bg)
   ctx.fillStyle = fill;
   roundRect(ctx, x, y, width, height, cornerRadius);
   ctx.fill();
 
-  // Gold outline
+  // Accent outline (--stripe) - No neon/glow effects
   ctx.strokeStyle = outline;
-  ctx.lineWidth = 4;
+  ctx.lineWidth = 3.5;
   roundRect(ctx, x, y, width, height, cornerRadius);
   ctx.stroke();
 
-  // Kicker
+  // Kicker without emojis
+  const cleanKicker = stripTofuEmojis(kicker || 'SPECIAL OFFER PRICE • IN STOCK');
   const kickerY = y + (isStatus ? 28 : 22);
   ctx.fillStyle = kickerColor;
   ctx.textAlign = 'center';
-  ctx.font = `800 ${isStatus ? 15 : 12}px system-ui, -apple-system, sans-serif`;
-  ctx.fillText(kicker, centerX, kickerY);
+  ctx.font = `800 ${isStatus ? 15 : 12}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+  ctx.fillText(cleanKicker, centerX, kickerY);
 
-  // Price
+  // Price (Bold Sans-Serif)
   const priceY = y + (isStatus ? 76 : 58);
   if (wasPrice) {
-    const wasFont = `800 ${isStatus ? 24 : 17}px system-ui, -apple-system, sans-serif`;
-    const nowFont = `900 ${isStatus ? 54 : 38}px system-ui, -apple-system, sans-serif`;
+    const wasFont = `800 ${isStatus ? 24 : 17}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+    const nowFont = `900 ${isStatus ? 54 : 38}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
     
     ctx.font = wasFont;
     const wasW = ctx.measureText(wasPrice).width;
@@ -727,7 +732,7 @@ function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, f
     ctx.fillText(price, nowX, priceY);
   } else {
     ctx.fillStyle = '#ffffff';
-    ctx.font = `900 ${isStatus ? 60 : 44}px system-ui, -apple-system, sans-serif`;
+    ctx.font = `900 ${isStatus ? 60 : 44}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
     ctx.textAlign = 'center';
     ctx.fillText(price, centerX, priceY);
   }
@@ -824,13 +829,26 @@ export const canvasRenderer = {
 
     const config = resolveSellerConfig(seller);
     const palette = resolvePalette(config, paletteOverride);
+    
+    // Locked theme variables:
+    // --band: header and footer background
+    // --stripe: accent line color
+    // --price-bg: price box background
+    // --badge: corner badge color
+    // --subtext: description text color
+    const band = palette.band || palette.primary || '#064e3b';
+    const stripe = palette.stripe || palette.accent || '#f59e0b';
+    const priceBg = palette.priceBg || palette.primary || '#064e3b';
+    const badgeColor = palette.badge || palette.primary || '#0f172a';
+    const subtextColor = palette.subtext || palette.benefitText || '#047857';
+
     const shopName = (config.shop_name).toUpperCase();
     const phone = config.phone;
     const location = config.location;
     const sizeText = getCategorySizeText(product);
     const formattedPrice = `KES ${Number(product.price || 0).toLocaleString()}`;
 
-    // Base background & frame
+    // Base background & frame: White / very light (#F8FAFC). Never dark.
     ctx.fillStyle = '#f8fafc';
     ctx.fillRect(0, 0, width, height);
     ctx.strokeStyle = '#e2e8f0';
@@ -840,17 +858,19 @@ export const canvasRenderer = {
     // 1. Top Header Bar (170px for status / 135px for group)
     const headerH = isStatus ? 170 : 135;
     
-    // Category-smart header kicker
-    let headerKicker = '✦ 100% AUTHENTIC • VERIFIED QUALITY ✦';
+    // Category-smart header kicker (Plain bold sans-serif text, NO emojis)
+    let headerKicker = 'PREMIUM QUALITY • VERIFIED SELECTION';
     let headerLocation = location;
     const cat = (product.category || '').toLowerCase();
     if (cat.includes('household') || cat.includes('bedding') || cat.includes('kitchen')) {
-      headerKicker = '✦ CATEGORY 2 • HOUSEHOLD & BEDDING ✦';
+      headerKicker = 'PREMIUM HOME & BEDDING COLLECTION';
       headerLocation = "Owira's Luxury Home Collection • Countrywide Dispatch";
     } else if (cat.includes('bag')) {
-      headerKicker = '✦ LUXURY HANDBAGS & LEATHER ACCESSORIES ✦';
+      headerKicker = 'PREMIUM HANDBAGS & LEATHER ACCESSORIES';
+    } else if (cat.includes('shoe') || cat.includes('footwear') || cat.includes('sneaker')) {
+      headerKicker = 'PREMIUM FOOTWEAR & DESIGNER SNEAKERS';
     } else if (cat.includes('cloth') || cat.includes('fashion') || cat.includes('dress')) {
-      headerKicker = '✦ PREMIUM FASHION & STREETWEAR ✦';
+      headerKicker = 'PREMIUM FASHION & STREETWEAR';
     }
 
     drawSharedHeader(ctx, width, headerH, isStatus, palette, shopName, headerLocation, headerKicker, config.brand_font);
@@ -862,32 +882,33 @@ export const canvasRenderer = {
     const boxHeight = isStatus ? 1080 : 680;
     drawHeroCardBase(ctx, boxX, boxY, boxWidth, boxHeight, 28);
 
-    // Size / Authentic pill badge top-left
-    ctx.font = '800 15px system-ui, -apple-system, sans-serif';
+    // Corner badges: Size tag top-left (--badge variable)
+    ctx.font = '800 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
     const catBadgeW = Math.max(160, Math.round(ctx.measureText(sizeText).width + 36));
-    ctx.fillStyle = palette.primary;
+    ctx.fillStyle = badgeColor;
     roundRect(ctx, boxX + 24, boxY + 22, catBadgeW, 42, 12);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
     ctx.fillText(sizeText, boxX + 24 + catBadgeW / 2, boxY + 47);
 
-    // Promo badge top-right if turned on
+    // Promo badge top-right: dynamic width to prevent overflow; drops risky "100% Authentic" claims on bags
     if (product.badge || product.promo_tag) {
-      const badgeTxt = String(product.badge || product.promo_tag).replace(/[✦★✨⭐]/g, '').trim().toUpperCase();
+      const badgeTxt = sanitizeBadgeText(product.badge || product.promo_tag, product.category);
       if (badgeTxt) {
-        ctx.fillStyle = badgeTxt.includes('SALE') ? '#dc2626' : palette.accent;
+        ctx.fillStyle = badgeTxt.includes('SALE') ? '#dc2626' : stripe;
         const bW = Math.max(160, Math.round(ctx.measureText(badgeTxt).width + 36));
         roundRect(ctx, boxX + boxWidth - bW - 24, boxY + 22, bW, 42, 12);
         ctx.fill();
         ctx.fillStyle = '#ffffff';
-        ctx.font = '900 14px system-ui, -apple-system, sans-serif';
+        ctx.font = '900 14px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
         ctx.fillText(badgeTxt, boxX + boxWidth - bW / 2 - 24, boxY + 47);
       }
     }
 
-    // Hero Product Image - Auto-detected bounds so it fills ~80% to 85% of this large card!
-    const heroImg = await loadProductImage(product, product.photo);
+    // Hero Product Image - Supports user-chosen photo angle via product.selectedPhoto
+    const targetPhoto = product.selectedPhoto || product.photo || (Array.isArray(product.photos) && product.photos[0]);
+    const heroImg = await loadProductImage(product, targetPhoto);
     if (heroImg) {
       const bounds = getProductBounds(heroImg);
       const padW = isStatus ? 70 : 50;
@@ -902,11 +923,10 @@ export const canvasRenderer = {
       ctx.drawImage(heroImg, bounds.sx, bounds.sy, bounds.sWidth, bounds.sHeight, bx, by, dw, dh);
     }
 
-    // 3. Product Title & Benefit (Centered, clear spacing, wraps cleanly without ellipsis)
+    // 3. Product Title & One-Line Description (Centered, bold sans-serif, no emojis)
     const titleStartY = boxY + boxHeight + (isStatus ? 40 : 26);
-    const cleanBenefit = product.benefit_line
-      ? `✔ ${product.benefit_line}`
-      : '✔ Plant-based cleansers & moisturizers • 92% natural';
+    const rawBenefit = product.benefit_line || product.description || 'Verified Quality • In Stock Across Kenya';
+    const cleanBenefit = stripTofuEmojis(decodeHtmlEntities(rawBenefit));
 
     const textResult = drawCenteredTitleAndBenefit(
       ctx,
@@ -917,11 +937,10 @@ export const canvasRenderer = {
       boxWidth,
       isStatus,
       palette.titleText || '#0f172a',
-      palette.benefitText || '#047857',
-      config.brand_font
+      subtextColor
     );
 
-    // 4. Dedicated Offer POP Rectangle (Centered!)
+    // 4. Dedicated Offer POP Rectangle (Centered, --price-bg and --stripe variables)
     const offerW = isStatus ? 580 : 480;
     const offerH = isStatus ? 116 : 92;
     drawSharedOfferPopRectangle(
@@ -931,16 +950,16 @@ export const canvasRenderer = {
       offerW,
       offerH,
       isStatus,
-      palette.primary,
-      palette.accent,
-      '✦ SPECIAL OFFER PRICE • IN STOCK ✦',
-      palette.accent,
+      priceBg,
+      stripe,
+      'SPECIAL OFFER PRICE • IN STOCK',
+      stripe,
       formattedPrice
     );
 
-    // 5. Bottom WhatsApp Footer Panel (Centered!)
+    // 5. Bottom WhatsApp Footer Panel (Centered, double accent stripes, Lipa na M-Pesa)
     const footerH = isStatus ? 300 : 250;
-    drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone, config.mpesa_till, '⚡ TO INQUIRE OR ORDER ON WHATSAPP:');
+    drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone, config.mpesa_till, 'ORDER / INQUIRE ON WHATSAPP:');
 
     return canvas.toDataURL('image/png');
   },
@@ -983,7 +1002,7 @@ export const canvasRenderer = {
 
     // 1. Top Header Bar
     const headerH = isStatus ? 170 : 135;
-    drawSharedHeader(ctx, width, headerH, isStatus, palette, shopName, location, '⚡ 24-HOUR FLASH SALE • SPECIAL PRICE DROP ⚡', config.brand_font);
+    drawSharedHeader(ctx, width, headerH, isStatus, palette, shopName, location, '24-HOUR FLASH SALE • SPECIAL PRICE DROP', config.brand_font);
 
     // 2. The Main Product Showcase Card
     const boxX = 60;
@@ -1008,8 +1027,8 @@ export const canvasRenderer = {
     roundRect(ctx, boxX + boxWidth - flashTagW - 24, boxY + 22, flashTagW, 42, 12);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
-    ctx.font = '900 14px system-ui, -apple-system, sans-serif';
-    ctx.fillText('🔥 FLASH SALE • TODAY ONLY', boxX + boxWidth - flashTagW / 2 - 24, boxY + 47);
+    ctx.font = '900 14px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    ctx.fillText('FLASH SALE • TODAY ONLY', boxX + boxWidth - flashTagW / 2 - 24, boxY + 47);
 
     // Hero Product Image
     const heroImg = await loadProductImage(product, product.photo);
@@ -1041,15 +1060,13 @@ export const canvasRenderer = {
     ctx.stroke();
 
     ctx.fillStyle = '#dc2626';
-    ctx.font = `900 ${isStatus ? 15 : 12}px system-ui, -apple-system, sans-serif`;
+    ctx.font = `900 ${isStatus ? 15 : 12}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
     ctx.textAlign = 'center';
-    ctx.fillText('⏰ OFFER ENDS AT MIDNIGHT • LIMITED UNITS AT THIS PRICE', width / 2, ribY + ribH / 2 + (isStatus ? 5 : 4));
+    ctx.fillText('OFFER ENDS AT MIDNIGHT • LIMITED UNITS AT THIS PRICE', width / 2, ribY + ribH / 2 + (isStatus ? 5 : 4));
 
     // 3. Product Title & Benefit (Centered!)
     const titleStartY = boxY + boxHeight + (isStatus ? 40 : 26);
-    const cleanBenefit = product.benefit_line
-      ? `✔ ${product.benefit_line}`
-      : '✔ Clears blemishes, fades dark spots & refines pores';
+    const cleanBenefit = stripTofuEmojis(decodeHtmlEntities(product.benefit_line || 'Clears blemishes, fades dark spots & refines pores'));
 
     const textResult = drawCenteredTitleAndBenefit(
       ctx,
@@ -1079,7 +1096,7 @@ export const canvasRenderer = {
       isStatus,
       '#7f1d1d',
       '#f59e0b',
-      `✦ FLASH DEAL PRICE • SAVE KES ${savings.toLocaleString()} ✦`,
+      `FLASH DEAL PRICE • SAVE KES ${savings.toLocaleString()}`,
       '#fef08a',
       nowPriceStr,
       wasPriceStr
@@ -1087,7 +1104,7 @@ export const canvasRenderer = {
 
     // 5. Footer (Bold Retail CTA)
     const footerH = isStatus ? 300 : 250;
-    drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone, config.mpesa_till, '⚡ CLAIM THIS FLASH SALE DEAL ON WHATSAPP:');
+    drawSharedFooter(ctx, width, height, footerH, isStatus, palette, phone, config.mpesa_till, 'CLAIM THIS FLASH SALE DEAL ON WHATSAPP:');
 
     return canvas.toDataURL('image/png');
   },

@@ -49,15 +49,44 @@ export function decodeHtmlEntities(str) {
 }
 
 /**
+ * Strips special symbols and emojis that render as tofu empty boxes [▯] on canvas
+ */
+export function stripTofuEmojis(str) {
+  if (!str || typeof str !== 'string') return '';
+  return str
+    .replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '') // Strip 4-byte surrogate pair emojis
+    .replace(/[\u2600-\u27BF]/g, '') // Dingbats & miscellaneous symbols (checkmarks, stars, lightning)
+    .replace(/[✦★✨⭐⚡🔥🎁⏰⚠️🟢✔✓💅💄👜📦👑👔🏆👀💧🚀▯\uFFFD\?]{2,}/g, ' ') // Strip runs of replacement symbols / question marks
+    .replace(/[✦★✨⭐⚡🔥🎁⏰⚠️🟢✔✓💅💄👜📦👑👔🏆👀💧🚀▯\uFFFD]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Sanitizes badge text: drops fake claims like '100% Authentic' on bags/replicas and removes emojis
+ */
+export function sanitizeBadgeText(badge, category = '') {
+  if (!badge) return '';
+  let clean = stripTofuEmojis(decodeHtmlEntities(String(badge)));
+  const cat = String(category || '').toLowerCase();
+  if (cat.includes('bag') || cat.includes('handbag') || cat.includes('shoe') || cat.includes('sneaker')) {
+    clean = clean.replace(/100%\s*AUTHENTIC/gi, 'PREMIUM QUALITY');
+    clean = clean.replace(/AUTHENTIC\s*100%/gi, 'PREMIUM QUALITY');
+    clean = clean.replace(/^AUTHENTIC$/gi, 'PREMIUM QUALITY');
+  }
+  return clean.trim().toUpperCase();
+}
+
+/**
  * Normalizes all user-facing text fields of a product in one clean call
  */
 export function normalizeProductText(product) {
   if (!product) return null;
   const normalized = { ...product };
   if (product.name) normalized.name = decodeHtmlEntities(product.name);
-  if (product.benefit_line) normalized.benefit_line = decodeHtmlEntities(product.benefit_line);
+  if (product.benefit_line) normalized.benefit_line = stripTofuEmojis(decodeHtmlEntities(product.benefit_line));
   if (product.description) normalized.description = decodeHtmlEntities(product.description);
-  if (product.badge) normalized.badge = decodeHtmlEntities(product.badge);
+  if (product.badge) normalized.badge = sanitizeBadgeText(product.badge, product.category);
   if (product.category) normalized.category = decodeHtmlEntities(product.category);
   if (product.size) normalized.size = decodeHtmlEntities(product.size);
   return normalized;

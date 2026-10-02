@@ -5,6 +5,7 @@ import {
   LayoutGrid, List
 } from 'lucide-react';
 import ProductDetailModal from './ProductDetailModal';
+import ProductPosterPreviewModal from '../products/ProductPosterPreviewModal';
 import CheckoutDrawer from './CheckoutDrawer';
 import WhatsAppIcon from '../common/WhatsAppIcon';
 import PwaInstallBanner from '../common/PwaInstallBanner';
@@ -37,6 +38,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [catalogToast, setCatalogToast] = useState(null);
   const [viewingProduct, setViewingProduct] = useState(null); // Active product in modal
+  const [posterProduct, setPosterProduct] = useState(null); // { product, photo } for poster preview
 
   // Return to top visibility state
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -58,20 +60,23 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   const isShoesStore = (seller?.id === 'seller_shoe_in_kenya') || 
                        Boolean(seller?.shop_name && seller.shop_name.toLowerCase().includes('shoe'));
 
-  // Only show in-stock products in public catalogue, cleanly isolated per brand
+  // Show in-stock products in public catalogue, accessible for everyone
   const inStockProducts = useMemo(() => {
     const pool = (products || []).filter((p) => p.in_stock !== false);
     if (isShoesStore) {
       const shoesOnly = pool.filter(p => p.seller_id === 'seller_shoe_in_kenya' || p.category === 'Sneakers & Kicks' || p.category === "Men's Footwear");
       return shoesOnly.length > 0 ? shoesOnly : pool;
     }
-    if (seller?.id === 'seller_beauty_bar_kenya') {
-      const beautyOnly = pool.filter(p => p.seller_id === 'seller_beauty_bar_kenya' || p.seller_id === 'seller_glow_secret');
-      return beautyOnly.length > 0 ? beautyOnly : pool;
-    }
-    if (seller?.id === 'seller_glownd') {
-      const bagsOnly = pool.filter(p => p.seller_id === 'seller_glownd');
-      return bagsOnly.length > 0 ? bagsOnly : pool;
+    const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+    if (searchParams && searchParams.get('brand_only') === '1') {
+      if (seller?.id === 'seller_beauty_bar_kenya') {
+        const beautyOnly = pool.filter(p => p.seller_id === 'seller_beauty_bar_kenya' || p.seller_id === 'seller_glow_secret');
+        return beautyOnly.length > 0 ? beautyOnly : pool;
+      }
+      if (seller?.id === 'seller_glownd') {
+        const bagsOnly = pool.filter(p => p.seller_id === 'seller_glownd');
+        return bagsOnly.length > 0 ? bagsOnly : pool;
+      }
     }
     return pool;
   }, [products, seller, isShoesStore]);
@@ -568,6 +573,18 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
 
                         <button
                           type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setPosterProduct({ product, photo: product.photo });
+                          }}
+                          className="p-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-amber-600 transition cursor-pointer"
+                          title="Generate Designed WhatsApp Poster"
+                        >
+                          <Sparkles className="w-4 h-4 text-amber-500" />
+                        </button>
+
+                        <button
+                          type="button"
                           onClick={(e) => handleToggleBag(e, product.id)}
                           className={`p-2 rounded-xl border flex items-center justify-center transition cursor-pointer ${
                             isSelected
@@ -660,6 +677,20 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                           <span>+ Bag</span>
                         </>
                       )}
+                    </button>
+
+                    {/* Quick Poster Generator Button on bottom-right of image */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setPosterProduct({ product, photo: product.photo });
+                      }}
+                      className="absolute bottom-2 right-2 px-1.5 py-1 rounded-lg bg-black/65 hover:bg-black text-amber-300 backdrop-blur-xs transition shadow-xs z-10 cursor-pointer flex items-center gap-1 text-[9px] font-bold"
+                      title="Create Designed WhatsApp Poster"
+                    >
+                      <Sparkles className="w-3 h-3 text-amber-400" />
+                      <span className="hidden xs:inline">Poster</span>
                     </button>
                   </div>
 
@@ -817,6 +848,19 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
           onClose={() => setViewingProduct(null)}
           onAddToList={(id) => handleToggleBag(null, id)}
           isSelected={Boolean(cart[viewingProduct.id])}
+          onOpenPoster={(prod, photo) => setPosterProduct({ product: prod, photo })}
+        />
+      )}
+
+      {/* Designed Poster Preview Modal */}
+      {posterProduct && (
+        <ProductPosterPreviewModal
+          product={posterProduct.product}
+          seller={seller}
+          initialRatio="status"
+          initialPhoto={posterProduct.photo}
+          onClose={() => setPosterProduct(null)}
+          onShowToast={(msg) => setCatalogToast(msg)}
         />
       )}
 
