@@ -227,7 +227,7 @@ function drawCenteredTitleAndBenefit(ctx, title, benefit, centerX, startY, maxWi
  */
 function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, fill = '#064e3b', outline = '#f59e0b', kicker = '✦ SPECIAL OFFER PRICE • IN STOCK ✦', kickerColor = '#f59e0b', price = 'KES 1,850', wasPrice = null) {
   const x = Math.round(centerX - width / 2);
-  const cornerRadius = 22;
+  const cornerRadius = isStatus ? 36 : 28;
 
   // Outer glow
   ctx.save();
@@ -294,13 +294,19 @@ function drawSharedOfferPopRectangle(ctx, centerX, y, width, height, isStatus, f
  */
 function drawAuthenticFooter(ctx, width, height, footerH, isStatus, config, palette, ctaHeader = 'ORDER ON WHATSAPP:') {
   const footerY = height - footerH;
+  const footerRadius = isStatus ? 36 : 28;
 
+  ctx.save();
   ctx.fillStyle = palette.mpesaBg || '#080c14';
-  ctx.fillRect(0, footerY, width, footerH);
+  roundRect(ctx, 0, footerY, width, footerH, { tl: footerRadius, tr: footerRadius });
+  ctx.fill();
 
   // Accent divider line
-  ctx.fillStyle = palette.accent;
-  ctx.fillRect(0, footerY, width, 8);
+  ctx.strokeStyle = palette.accent;
+  ctx.lineWidth = 8;
+  roundRect(ctx, 0, footerY, width, footerH + 8, { tl: footerRadius, tr: footerRadius });
+  ctx.stroke();
+  ctx.restore();
 
   // CTA Prompt
   ctx.fillStyle = palette.accent;
@@ -318,19 +324,20 @@ function drawAuthenticFooter(ctx, width, height, footerH, isStatus, config, pale
   ctx.font = `600 ${isStatus ? 20 : 14}px system-ui, -apple-system, sans-serif`;
   ctx.fillText(config.delivery_info || 'Screenshot this post to order • Countrywide Delivery', width / 2, footerY + (isStatus ? 174 : 124));
 
-  // M-Pesa Till Container
+  // M-Pesa Till Container - Smooth pill
   const mpesaW = isStatus ? 760 : 660;
   const mpesaH = isStatus ? 48 : 38;
   const mpesaX = (width - mpesaW) / 2;
   const mpesaY = footerY + (isStatus ? 212 : 150);
+  const mpesaRadius = Math.round(mpesaH / 2);
 
   ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
-  roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
+  roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, mpesaRadius);
   ctx.fill();
 
   ctx.strokeStyle = palette.mpesaBorder || palette.accent;
   ctx.lineWidth = 2;
-  roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, 14);
+  roundRect(ctx, mpesaX, mpesaY, mpesaW, mpesaH, mpesaRadius);
   ctx.stroke();
 
   ctx.fillStyle = '#fef08a';

@@ -503,7 +503,7 @@ export default function ProductPosterPreviewModal({
               <img
                 src={renderedImageUrl}
                 alt={`${product.name} Designed Poster`}
-                className={`w-auto object-contain rounded-xl shadow-2xl transition-transform duration-200 ${
+                className={`w-auto object-contain rounded-2xl shadow-2xl transition-transform duration-200 ring-1 ring-slate-800 ${
                   currentRatio === 'status' ? 'max-h-[54vh] sm:max-h-[60vh]' : 'max-h-[46vh] sm:max-h-[52vh]'
                 }`}
               />
