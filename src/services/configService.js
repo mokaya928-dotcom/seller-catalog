@@ -45,6 +45,24 @@ export const OREWA_SELLER_CONFIG = {
   website: 'https://orewa.co.ke'
 };
 
+// Canonical Seller #003: Digital Store Kenya (digitalstore.co.ke)
+export const DIGITAL_STORE_SELLER_CONFIG = {
+  id: 'seller_digital_store_kenya',
+  shop_name: 'Digital Store Kenya',
+  location: 'Bihi Towers, Basement 1, Shop B10, Moi Avenue, Nairobi',
+  phone: '+254 718 263 833',
+  phone_raw: '254718263833',
+  brand_color: '#0284c7',
+  brand_secondary: '#0f172a',
+  palette: 'midnight_navy_amber',
+  brand_font: 'Outfit',
+  language: 'kenyan_mix',
+  mpesa_till: '718263',
+  mpesa_type: 'Buy Goods Till',
+  delivery_info: 'Nairobi Same-Day 2-Hour Delivery • Countrywide Courier Dispatch • 1-Year Local Warranty Included',
+  website: 'https://digitalstore.co.ke'
+};
+
 // Preset Palettes conforming to the LOCKED single template architecture
 export const STATIC_PALETTES = {
   forest_amber: {
@@ -297,7 +315,7 @@ export function getHarmoniousPaletteForProduct(product) {
   }
 
   // 4. Bags, bedding, shoes, sneakers, leather goods -> midnight_navy_amber
-  if (text.includes('bag') || text.includes('bedding') || text.includes('shoe') || text.includes('sneaker') || text.includes('duvet') || text.includes('sheet') || text.includes('tote') || text.includes('backpack') || text.includes('loafer') || text.includes('kicks') || text.includes('footwear') || text.includes('leather') || text.includes('handbag') || text.includes('heel') || text.includes('boot')) {
+  if (text.includes('bag') || text.includes('bedding') || text.includes('shoe') || text.includes('sneaker') || text.includes('duvet') || text.includes('sheet') || text.includes('tote') || text.includes('backpack') || text.includes('loafer') || text.includes('kicks') || text.includes('footwear') || text.includes('leather') || text.includes('handbag') || text.includes('heel') || text.includes('boot') || text.includes('laptop') || text.includes('monitor') || text.includes('gaming') || text.includes('macbook') || text.includes('soundcore') || text.includes('audio') || text.includes('display') || text.includes('headphones') || text.includes('tech')) {
     return 'midnight_navy_amber';
   }
 
@@ -584,6 +602,13 @@ export function parseDemoConfigFromUrl(search = (typeof window !== 'undefined' ?
     if (sellerParam === 'orewa' || sellerParam === 'orewa_limited' || params.get('orewa') !== null) {
       return resolveSellerConfig({
         ...OREWA_SELLER_CONFIG,
+        isDemoPreview: true
+      });
+    }
+
+    if (sellerParam === 'digital_store' || sellerParam === 'digitalstore' || sellerParam === 'tech' || params.get('digitalstore') !== null || params.get('digital_store') !== null) {
+      return resolveSellerConfig({
+        ...DIGITAL_STORE_SELLER_CONFIG,
         isDemoPreview: true
       });
     }

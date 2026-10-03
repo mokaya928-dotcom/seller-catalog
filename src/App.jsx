@@ -131,6 +131,22 @@ export default function App() {
           return;
         }
 
+        if (sellerParam === 'digital_store' || sellerParam === 'digitalstore' || sellerParam === 'tech' || urlParams.get('digitalstore') !== null || urlParams.get('digital_store') !== null) {
+          const loaded = await storageService.loadPreset('digital_store');
+          const [loadedPosted, loadedOverrides] = await Promise.all([
+            storageService.getPostedStatus(todayDateStr),
+            storageService.getDayOverrides(todayDateStr)
+          ]);
+          setSeller(loaded.seller);
+          setProducts(loaded.products);
+          setPostedMap(loadedPosted);
+          setTodayOverrides(loadedOverrides || {});
+          setIsUnlocked(true);
+          sessionStorage.setItem('seller_unlocked', 'true');
+          showToast('💻 Welcome to Digital Store Kenya (Bihi Towers) Daily Posters & Tech Catalog!', 'success');
+          return;
+        }
+
         const [loadedSeller, loadedProducts, loadedPosted, loadedOverrides] = await Promise.all([
           storageService.getSeller(),
           storageService.getProducts(),
@@ -607,7 +623,11 @@ export default function App() {
             seller={seller}
             ratio={ratio}
             todayDateStr={todayDateStr}
+            postLimit={postLimit}
+            onChangePostLimit={setPostLimit}
             postingCategory={postingCategory}
+            onChangeCategory={setPostingCategory}
+            customSchedule={customSchedule}
             onGoToToday={() => handleTabChange('today')}
             onShowToast={showToast}
           />

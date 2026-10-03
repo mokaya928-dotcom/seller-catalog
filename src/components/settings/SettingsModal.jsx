@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Check, RotateCcw, ShieldCheck, Store, MapPin, CreditCard, Sparkles, Download, CheckCircle2, Smartphone, Lock, Eye, EyeOff, FileSpreadsheet, Database, Clock, BellRing } from 'lucide-react';
-import { BEAUTY_BAR_SELLER, GLOW_HOUSE_SELLER, HALAL_BEAUTY_SELLER, MOH_037_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS, OREWA_SELLER } from '../../data/starterData';
+import { BEAUTY_BAR_SELLER, GLOW_HOUSE_SELLER, HALAL_BEAUTY_SELLER, MOH_037_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS, OREWA_SELLER, DIGITAL_STORE_SELLER } from '../../data/starterData';
 
 const BRAND_PALETTES = [
   { name: 'Glownd Pink', hex: '#fa31df', dark: '#be185d' },
@@ -89,6 +89,20 @@ export default function SettingsModal({ seller, onClose, onSave, onResetDefaults
               <span>Load Shop Preset</span>
             </label>
             <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={async () => {
+                  applyPreset(DIGITAL_STORE_SELLER);
+                  if (onLoadPreset) {
+                    await onLoadPreset('digital_store');
+                    onClose();
+                  }
+                }}
+                className="p-2.5 rounded-xl border border-sky-500/50 bg-[#0f172a] text-[11px] font-black text-sky-300 hover:bg-[#1e293b] transition text-center shadow-sm col-span-2 flex items-center justify-center gap-2 cursor-pointer ring-1 ring-sky-400/40"
+              >
+                <span>💻</span>
+                <span>Digital Store Kenya (Bihi Towers | Gaming Laptops & Tech)</span>
+              </button>
               <button
                 type="button"
                 onClick={async () => {

@@ -33,6 +33,9 @@ export default function ProductsView({
 
   const CATEGORY_ORDER = [
     'All',
+    'Gaming Laptops & Ultrabooks',
+    'Monitors & Displays',
+    'Smart Tech & Audio',
     'Sneakers & Kicks',
     "Men's Footwear",
     'Handbags & Bags',

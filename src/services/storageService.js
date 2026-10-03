@@ -5,7 +5,7 @@
  * - Gracefully falls back to browser localStorage for offline support or local development.
  * - Zero UI breaking changes.
  */
-import { DEFAULT_SELLER, STARTER_PRODUCTS, BEAUTY_BAR_SELLER, CURATED_PRODUCTS, GLOW_HOUSE_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS, OREWA_SELLER } from '../data/starterData';
+import { DEFAULT_SELLER, STARTER_PRODUCTS, BEAUTY_BAR_SELLER, CURATED_PRODUCTS, GLOW_HOUSE_SELLER, SHOE_IN_SELLER, SHOE_IN_PRODUCTS, OREWA_SELLER, OREWA_PRODUCTS, DIGITAL_STORE_SELLER, DIGITAL_STORE_PRODUCTS } from '../data/starterData';
 import { supabase, isSupabaseConfigured } from './supabaseClient';
 
 const KEYS = {
@@ -512,7 +512,14 @@ export const storageService = {
     }
     if (presetName === 'orewa' || presetName === 'orewa_limited') {
       localStorage.setItem(KEYS.SELLER, JSON.stringify(OREWA_SELLER));
-      return { seller: OREWA_SELLER, products: await this.getProducts() };
+      const prods = OREWA_PRODUCTS && OREWA_PRODUCTS.length > 0 ? OREWA_PRODUCTS : await this.getProducts();
+      localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(prods));
+      return { seller: OREWA_SELLER, products: prods };
+    }
+    if (presetName === 'digital_store' || presetName === 'digitalstore' || presetName === 'tech' || presetName === 'electronics') {
+      localStorage.setItem(KEYS.SELLER, JSON.stringify(DIGITAL_STORE_SELLER));
+      localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(DIGITAL_STORE_PRODUCTS));
+      return { seller: DIGITAL_STORE_SELLER, products: DIGITAL_STORE_PRODUCTS };
     }
     // Glow House Kakamega
     localStorage.setItem(KEYS.SELLER, JSON.stringify(GLOW_HOUSE_SELLER));

@@ -232,36 +232,77 @@ export const scheduleService = {
       ...storePool.slice(0, offset)
     ];
 
-    // Determine target post count
-    let targetCount = count === 'all' ? rotatedPool.length : Number(count) || 5;
-    if (targetCount < 1) targetCount = 5;
+    // CRITICAL: NO DUPLICATE PRODUCTS ON THE SAME DAY!
+    // A merchant must never see the same product poster repeat on the same day.
+    // Cap targetCount at the available unique in-stock products in this category.
+    const maxUniqueProducts = rotatedPool.length;
+    let targetCount = count === 'all' ? maxUniqueProducts : Number(count) || 5;
+    targetCount = Math.min(targetCount, maxUniqueProducts);
+    if (targetCount < 1) targetCount = Math.min(5, maxUniqueProducts);
 
     // Array of available style IDs
     const styleIds = POST_STYLES.map((s) => s.id);
 
-    // Extended time slot templates for sellers who post 10, 20, or all items
+    // Extended chronological time slot templates for sellers who post 10, 20, or all items
     const extraTimeLabels = [
-      { time: '10:15 AM', label: 'Mid-Morning Office Browse', icon: 'Sun' },
-      { time: '01:45 PM', label: 'Post-Lunch Restock Drop', icon: 'Clock' },
-      { time: '04:15 PM', label: 'Teatime Payday Special', icon: 'Sparkles' },
-      { time: '07:15 PM', label: 'Evening Transit & Matatu Scroll', icon: 'Sunset' },
-      { time: '09:30 PM', label: 'Late-Night Browsing & Next-Day Orders', icon: 'Moon' },
-      { time: '10:45 PM', label: 'Midnight Restock Alert', icon: 'Moon' },
-      { time: '11:30 AM', label: 'Flash Midday Discovery', icon: 'Sparkles' },
-      { time: '02:00 PM', label: 'Afternoon Beauty Essentials', icon: 'Sun' },
-      { time: '05:00 PM', label: 'Rush Hour Must-Have', icon: 'Sunset' },
-      { time: '08:15 PM', label: 'Prime Time Status Feature', icon: 'Sparkles' },
+      { time: '07:30 AM', label: 'Early Bird Breakfast Scroll', icon: 'Sun' },
+      { time: '08:15 AM', label: 'Morning Commute Rush', icon: 'Sun' },
+      { time: '09:00 AM', label: 'Morning Office Arrival', icon: 'Sun' },
+      { time: '09:45 AM', label: 'Morning Tea Break Discovery', icon: 'Sun' },
+      { time: '10:30 AM', label: 'Mid-Morning Payday Browse', icon: 'Sun' },
+      { time: '11:15 AM', label: 'Pre-Lunch Flash Restock', icon: 'Clock' },
+      { time: '12:00 PM', label: 'Lunch Hour Deal of the Day', icon: 'Clock' },
+      { time: '12:45 PM', label: 'Lunchtime Quick Inquiry', icon: 'Clock' },
+      { time: '01:30 PM', label: 'Afternoon Office Refresh', icon: 'Clock' },
+      { time: '02:15 PM', label: 'Afternoon Pick-Me-Up', icon: 'Sparkles' },
+      { time: '03:00 PM', label: 'Teatime Special Offer', icon: 'Sparkles' },
+      { time: '03:45 PM', label: 'Payday Restock Feature', icon: 'Sparkles' },
+      { time: '04:30 PM', label: 'Late Afternoon Must-Have', icon: 'Sparkles' },
+      { time: '05:15 PM', label: 'Pre-Commute Rush Alert', icon: 'Sunset' },
+      { time: '06:00 PM', label: 'Evening Transit & Matatu Scroll', icon: 'Sunset' },
+      { time: '06:45 PM', label: 'Evening Commute Special', icon: 'Sunset' },
+      { time: '07:30 PM', label: 'Dinner Hour Hot Pick', icon: 'Sunset' },
+      { time: '08:15 PM', label: 'Prime Time Status Feature', icon: 'Moon' },
+      { time: '09:00 PM', label: 'Bedtime Couch Browsing', icon: 'Moon' },
+      { time: '09:45 PM', label: 'Late-Night Next-Day Delivery', icon: 'Moon' }
     ];
 
-    const posts = [];
-    for (let index = 0; index < targetCount; index++) {
-      let product = rotatedPool[index % rotatedPool.length];
-      
-      // Determine slot metadata (uses owner's custom times & enabled slots)
-      const activeSchedule = Array.isArray(customSchedule) && customSchedule.length > 0
-        ? customSchedule.filter((s) => s.enabled !== false)
-        : TIME_SLOTS;
+    // Determine slot metadata (uses owner's custom times & enabled slots)
+    const activeSchedule = Array.isArray(customSchedule) && customSchedule.length > 0
+      ? customSchedule.filter((s) => s.enabled !== false)
+      : TIME_SLOTS;
 
+    // Track used product IDs to guarantee ZERO duplicates on the same day
+    const usedProductIds = new Set();
+    const posts = [];
+
+    // Pre-assign any explicit overrides first
+    for (let i = 0; i < targetCount; i++) {
+      let slot;
+      if (i < activeSchedule.length) {
+        slot = activeSchedule[i];
+      } else {
+        const extraIdx = (i - activeSchedule.length) % extraTimeLabels.length;
+        const extra = extraTimeLabels[extraIdx];
+        slot = {
+          id: `slot_drop_${i + 1}`,
+          time: extra.time,
+          label: `Drop #${i + 1} • ${extra.label}`,
+          icon: extra.icon
+        };
+      }
+
+      const slotOverride = overrides[slot.id] || {};
+      if (slotOverride.productId) {
+        usedProductIds.add(slotOverride.productId);
+      }
+    }
+
+    // Build the pool of products not yet used today
+    const unusedProducts = rotatedPool.filter((p) => !usedProductIds.has(p.id));
+    let unusedIdx = 0;
+
+    for (let index = 0; index < targetCount; index++) {
       let slot;
       if (index < activeSchedule.length) {
         slot = activeSchedule[index];
@@ -280,10 +321,29 @@ export const scheduleService = {
       const slotOverride = overrides[slot.id] || {};
       const isSkipped = !!slotOverride.skipped;
 
+      let product = null;
       if (slotOverride.productId) {
         const customProduct = products.find((p) => p.id === slotOverride.productId);
         if (customProduct) {
           product = customProduct;
+        }
+      }
+
+      // If no override, pick the next unique product from today's rotated pool
+      if (!product) {
+        if (unusedIdx < unusedProducts.length) {
+          product = unusedProducts[unusedIdx++];
+          usedProductIds.add(product.id);
+        } else {
+          // If we exhaust unused, find any product from rotatedPool not yet in posts
+          const remaining = rotatedPool.find((p) => !usedProductIds.has(p.id));
+          if (remaining) {
+            product = remaining;
+            usedProductIds.add(product.id);
+          } else {
+            // No more unique products available in this category for today! Stop here.
+            break;
+          }
         }
       }
 

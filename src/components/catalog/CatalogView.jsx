@@ -156,6 +156,9 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   // Priority selling category ordering for presentations (fits every merchant's niche)
   const CATEGORY_ORDER = [
     'All',
+    'Gaming Laptops & Ultrabooks',
+    'Monitors & Displays',
+    'Smart Tech & Audio',
     'All Shoes & Kicks',
     'Sneakers & Kicks',
     "Men's Footwear",

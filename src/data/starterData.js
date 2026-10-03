@@ -92,7 +92,10 @@ export const GLOWND_SELLER = {
   delivery_info: 'Nairobi Same-Day Boda & Countrywide Parcels via Fargo / G4S'
 };
 
-export const OREWA_PRODUCTS = [];
+import orewaProductsData from './orewaProducts.json';
+import digitalStoreProductsData from './digitalStoreProducts.json';
+
+export const OREWA_PRODUCTS = orewaProductsData;
 
 export const OREWA_SELLER = {
   id: 'seller_orewa_limited',
@@ -109,6 +112,25 @@ export const OREWA_SELLER = {
   mpesa_type: 'Buy Goods Till',
   delivery_info: 'Same-day 2-hr delivery in Nairobi • Fast countrywide dispatch • Pay on Delivery available',
   website: 'https://orewa.co.ke'
+};
+
+export const DIGITAL_STORE_PRODUCTS = digitalStoreProductsData;
+
+export const DIGITAL_STORE_SELLER = {
+  id: 'seller_digital_store_kenya',
+  shop_name: 'Digital Store Kenya',
+  location: 'Bihi Towers, Basement 1, Shop B10, Moi Avenue, Nairobi',
+  phone: '+254 718 263 833',
+  phone_raw: '254718263833',
+  brand_color: '#0284c7',
+  brand_secondary: '#0f172a',
+  palette: 'midnight_navy_amber',
+  brand_font: 'Outfit',
+  language: 'kenyan_mix',
+  mpesa_till: '718263',
+  mpesa_type: 'Buy Goods Till',
+  delivery_info: 'Nairobi Same-Day 2-Hour Delivery • Countrywide Courier Dispatch • 1-Year Local Warranty Included',
+  website: 'https://digitalstore.co.ke'
 };
 
 

@@ -1,0 +1,291 @@
+[
+  {
+    "id": "ds_rog_strix_g16",
+    "name": "Asus ROG Strix G16 Gaming Laptop G614JV",
+    "price": 234999,
+    "category": "Gaming Laptops & Ultrabooks",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/G614JV-N3404W-i1.jpg?v=1728121194",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/G614JV-N3404W-i1.jpg?v=1728121194"
+    ],
+    "description": "Intel Core i9-13980HX 13th Gen, 32GB RAM DDR5, 1TB SSD, 8GB NVIDIA GeForce RTX 4060, 16\" WUXGA 165Hz Display, Windows 11 Home.",
+    "benefit_line": "1-Year Warranty • Bihi Towers Moi Ave Pickup • Countrywide Dispatch",
+    "badge": "RTX 4060 GAMING",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "ASUS"
+  },
+  {
+    "id": "ds_tuf_gaming_f16",
+    "name": "ASUS TUF Gaming F16 FX608JHR 16″ WUXGA Laptop",
+    "price": 192999,
+    "category": "Gaming Laptops & Ultrabooks",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/FX608JHR-RV04USW-_i1.webp?v=1772874972",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/FX608JHR-RV04USW-_i1.webp?v=1772874972",
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/FX608JHR-RV04USW-i1.webp?v=1772624535"
+    ],
+    "description": "Intel Core i7-14650HX 14th Gen, 16GB RAM, 512GB NVMe SSD, NVIDIA GeForce RTX 5050 8GB GPU, Military-Grade Durability, Windows 11.",
+    "benefit_line": "Official Store Stock • Pay on Delivery in Nairobi",
+    "badge": "14TH GEN I7",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "ASUS"
+  },
+  {
+    "id": "ds_hp_omen_16",
+    "name": "HP Omen 16-wd0007nia Gaming Laptop",
+    "price": 179499,
+    "category": "Gaming Laptops & Ultrabooks",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/9Q043EA-i1.png?v=1727444698",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/9Q043EA-i1.png?v=1727444698"
+    ],
+    "description": "Intel Core i7-13620H 13th Gen, 32GB RAM DDR4, 512GB SSD, 16.1\" FHD IPS 144Hz Screen, Tempest Cooling, Windows 11 Home.",
+    "benefit_line": "Original HP Packaging • 1 Year Warranty • Free Setup",
+    "badge": "HP OMEN ELITE",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "HP"
+  },
+  {
+    "id": "ds_dell_g15",
+    "name": "Dell Gaming G15 5511 15.6\" 120Hz Laptop",
+    "price": 169999,
+    "category": "Gaming Laptops & Ultrabooks",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/DellGamingG155511Laptop-1.jpg?v=1653137764",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/DellGamingG155511Laptop-1.jpg?v=1653137764"
+    ],
+    "description": "11th Gen Intel Core i7-11800H, 16GB RAM, 512GB Solid State Drive, 15.6\" FHD 120Hz Display, Killer Wi-Fi 6, Game Shift Technology.",
+    "benefit_line": "Express 2-Hour Nairobi Delivery • Countrywide Courier Dispatch",
+    "badge": "DELL GAMING",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Dell"
+  },
+  {
+    "id": "ds_macbook_pro_16",
+    "name": "Apple MacBook Pro 16.2″ Liquid Retina XDR",
+    "price": 309999,
+    "category": "Gaming Laptops & Ultrabooks",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/61aUBxqc5PL._AC_SL1500.jpg?v=1652440551",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/61aUBxqc5PL._AC_SL1500.jpg?v=1652440551"
+    ],
+    "description": "Apple M1 Pro 10-core CPU, 16-core GPU, 16GB Unified RAM, 512GB SSD Storage, 16.2\" Liquid Retina XDR display with ProMotion 120Hz.",
+    "benefit_line": "Genuine Apple Box • 1 Year Warranty • Bihi Towers Nairobi",
+    "badge": "APPLE M1 PRO",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Apple"
+  },
+  {
+    "id": "ds_macbook_pro_13",
+    "name": "Apple MacBook Pro 13.3″ Retina Display",
+    "price": 193999,
+    "category": "Gaming Laptops & Ultrabooks",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/AppleMacbookPro-1A.jpg?v=1652515062",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/AppleMacbookPro-1A.jpg?v=1652515062"
+    ],
+    "description": "Apple M1 Chip 8-core CPU / 8-core GPU, 8GB RAM, 256GB SSD, 13.3\" Retina Display with True Tone, 20-hour battery life, Touch Bar.",
+    "benefit_line": "Brand New Sealed • 1-Year Local Warranty Included",
+    "badge": "APPLE SILICON",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Apple"
+  },
+  {
+    "id": "ds_hp_pavilion_x360",
+    "name": "HP Pavilion x360 Convertible 14″ Touchscreen",
+    "price": 102999,
+    "category": "Gaming Laptops & Ultrabooks",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/HPPavilionx360Convertible14M-DY1033dxLaptop-1.png?v=1655106668",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/HPPavilionx360Convertible14M-DY1033dxLaptop-1.png?v=1655106668"
+    ],
+    "description": "Intel Core i5, 8GB RAM, 512GB PCIe NVMe SSD, 14\" Full HD IPS Touchscreen 360-degree hinge, B&O Audio, Edge-to-edge glass.",
+    "benefit_line": "Versatile 2-in-1 Design • Stylus Compatible • Fast Nairobi Delivery",
+    "badge": "2-IN-1 TOUCH",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "HP"
+  },
+  {
+    "id": "ds_samsung_odyssey_g4",
+    "name": "Samsung G4 Odyssey 25″ 240Hz Gaming Monitor",
+    "price": 39399,
+    "category": "Monitors & Displays",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/Odysey-G4-i1.jpg?v=1760452558",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/Odysey-G4-i1.jpg?v=1760452558"
+    ],
+    "description": "Ultra-fast 240Hz refresh rate, 1ms response time, IPS panel with HDR10, G-Sync & FreeSync Premium compatible (LS25BG402EMXUE).",
+    "benefit_line": "Pro Esports Gaming Grade • 1 Year Samsung Warranty",
+    "badge": "240Hz GAMING",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Samsung"
+  },
+  {
+    "id": "ds_hp_series5_527da",
+    "name": "HP Series 5 527da 27″ FHD 100Hz Monitor",
+    "price": 30159,
+    "category": "Monitors & Displays",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/B11W6AS-_i1.webp?v=1773395737",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/B11W6AS-_i1.webp?v=1773395737"
+    ],
+    "description": "27-Inch Full HD IPS Display, smooth 100Hz refresh rate, built-in dual speakers, micro-edge borderless design with ergonomic stand.",
+    "benefit_line": "Built-in Speakers • EyeSafe Certified • Bihi Towers Store Stock",
+    "badge": "27\" 100Hz IPS",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "HP"
+  },
+  {
+    "id": "ds_dell_p2725h",
+    "name": "Dell P2725H 27″ FHD IPS Professional Monitor",
+    "price": 32999,
+    "category": "Monitors & Displays",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/P2725H-i1.jpg?v=1771393133",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/P2725H-i1.jpg?v=1771393133"
+    ],
+    "description": "27-inch IPS 100Hz refresh rate, ComfortView Plus hardware low blue light, height-adjustable stand with pivot, tilt & swivel, USB hub.",
+    "benefit_line": "Pro Workstation Display • 3-Year Dell Warranty Coverage",
+    "badge": "DELL PRO DISPLAY",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Dell"
+  },
+  {
+    "id": "ds_xiaomi_a24i",
+    "name": "Xiaomi A24i 24″ Ultra-Slim Desktop Monitor",
+    "price": 15998,
+    "category": "Monitors & Displays",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/Xiaomi-A24i-i1.jpg?v=1779953688",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/Xiaomi-A24i-i1.jpg?v=1779953688"
+    ],
+    "description": "Ultra-slim 7.5mm body, Full HD 1080p IPS display with 100Hz refresh rate, 99% sRGB color gamut, HDMI & DisplayPort inputs.",
+    "benefit_line": "Kenya's Best Value IPS Monitor • Modern Minimalist Setup",
+    "badge": "BEST VALUE DISPLAY",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Xiaomi"
+  },
+  {
+    "id": "ds_hp_e24q_g4",
+    "name": "HP E24Q G4 24″ QHD 2K Ergonomic Monitor",
+    "price": 36499,
+    "category": "Monitors & Displays",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/HPE24QG4Monitor-2.jpg?v=1655472045",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/HPE24QG4Monitor-2.jpg?v=1655472045"
+    ],
+    "description": "2560 x 1440 QHD 2K resolution, IPS panel, 4-way ergonomic adjustability, HP Eye Ease, integrated 4-port USB hub (9VG12AS).",
+    "benefit_line": "Crystal Clear 2K Resolution • Professional Color Accuracy",
+    "badge": "2K QHD 1440P",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "HP"
+  },
+  {
+    "id": "ds_soundcore_space_q45",
+    "name": "Anker Soundcore Space Q45 ANC Headphones",
+    "price": 18999,
+    "category": "Smart Tech & Audio",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/AnkerSoundcoreSpaceQ45AdaptiveActiveNoiseCancellingHeadphones-i1.jpg?v=1703430463",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/AnkerSoundcoreSpaceQ45AdaptiveActiveNoiseCancellingHeadphones-i1.jpg?v=1703430463"
+    ],
+    "description": "Adaptive Active Noise Cancelling reduces noise by 98%, 50H playtime (65H in standard mode), LDAC Hi-Res Wireless Audio, Soundcore App EQ.",
+    "benefit_line": "Flagship Noise Cancellation • 50-Hour Long Battery • Hi-Res LDAC",
+    "badge": "TOP ANC HEADPHONES",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Soundcore"
+  },
+  {
+    "id": "ds_soundcore_space_2",
+    "name": "Soundcore Space 2 Noise Cancelling Headphones",
+    "price": 16099,
+    "category": "Smart Tech & Audio",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/SOUNDCORE-SPACE2-i1.jpg?v=1788529004",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/SOUNDCORE-SPACE2-i1.jpg?v=1788529004"
+    ],
+    "description": "Advanced Hybrid ANC, 70-hour ultra battery life, LDAC lossless codec, memory foam cushioned earcups, fast USB-C charge.",
+    "benefit_line": "70 Hours Massive Playtime • Official Soundcore Stock Kenya",
+    "badge": "70H BATTERY LIFE",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Soundcore"
+  },
+  {
+    "id": "ds_soundcore_boom_2",
+    "name": "Anker Soundcore Boom 2 80W Outdoor Speaker",
+    "price": 18499,
+    "category": "Smart Tech & Audio",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/Anker_Soundcore_Boom_2_Portable_Bluetooth_Speaker_80W-i0507.jpg?v=1740750632",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/files/Anker_Soundcore_Boom_2_Portable_Bluetooth_Speaker_80W-i0507.jpg?v=1740750632"
+    ],
+    "description": "80W max output with BassUp 2.0 technology, racetrack subwoofer, IPX7 fully waterproof & floatable, built-in power bank to charge phones, RGB beat sync.",
+    "benefit_line": "80W Beast Sound • IPX7 Waterproof & Floats • Party RGB Sync",
+    "badge": "80W BASS MONSTER",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Soundcore"
+  },
+  {
+    "id": "ds_soundcore_life_q30",
+    "name": "Anker Soundcore Life Q30 Hybrid ANC Headphones",
+    "price": 13500,
+    "category": "Smart Tech & Audio",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/AnkerLifeQ30_i1.jpg?v=1651569790",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/AnkerLifeQ30_i1.jpg?v=1651569790"
+    ],
+    "description": "Hybrid Active Noise Cancelling with 3 modes (Transport/Outdoor/Indoor), 40H battery life with ANC on, customized EQ via app, NFC fast pairing.",
+    "benefit_line": "Kenya's #1 Selling ANC Headset • Hi-Res Certified Audio",
+    "badge": "BESTSELLER HEADSET",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Soundcore"
+  },
+  {
+    "id": "ds_soundcore_liberty_air_2_pro",
+    "name": "Anker Soundcore Liberty Air 2 Pro ANC Earbuds",
+    "price": 10999,
+    "category": "Smart Tech & Audio",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/61Y4f4fUmeL._AC_SX425.jpg?v=1648192188",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/61Y4f4fUmeL._AC_SX425.jpg?v=1648192188"
+    ],
+    "description": "Targeted active noise cancelling, PureNote driver technology for 45% bass boost, HearID personalized hearing profile, wireless charging case.",
+    "benefit_line": "6 Microphones for Clear Calls • Wireless Qi Charging Case",
+    "badge": "TARGETED ANC EARBUDS",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Soundcore"
+  },
+  {
+    "id": "ds_soundcore_flare_2",
+    "name": "Anker Soundcore Flare 2 360° Waterproof Speaker",
+    "price": 9999,
+    "category": "Smart Tech & Audio",
+    "photo": "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/A8432H21_1-12.jpg?v=1605762029",
+    "photos": [
+      "https://cdn.shopify.com/s/files/1/0026/1318/2510/products/A8432H21_1-12.jpg?v=1605762029"
+    ],
+    "description": "360-degree immersive sound, dual neodymium drivers with BassUp, rainbow ambient LED light rings that pulse with the rhythm, IPX7 waterproof, 12H playtime.",
+    "benefit_line": "360° Surround Sound • Rainbow Beat Light Show • IPX7 Waterproof",
+    "badge": "360° SOUND & LIGHT",
+    "in_stock": true,
+    "seller_id": "seller_digital_store_kenya",
+    "vendor": "Soundcore"
+  }
+]
