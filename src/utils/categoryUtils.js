@@ -8,17 +8,18 @@ export const CATEGORY_ORDER = [
   'All Shoes & Kicks',
   'Sneakers & Kicks',
   "Men's Footwear",
+  'Electronics',
+  'Gaming Laptops & Ultrabooks',
+  'Monitors & Displays',
+  'Smart Tech & Audio',
   'Handbags & Bags',
   'Makeup & Prep',
   'Lip Care',
   'Skincare & Face',
   'Serums & Actives',
+  'Health & Wellness',
   'Bath & Body',
   'Sunscreen & SPF',
-  'Electronics',
-  'Gaming Laptops & Ultrabooks',
-  'Monitors & Displays',
-  'Smart Tech & Audio',
   'Clothes & Fashion',
   'Fashion & Outfits',
   'Household & Bedding',
@@ -31,8 +32,14 @@ export const CATEGORY_ORDER = [
  */
 export function normalizeCategory(cat) {
   if (!cat) return 'Skincare & Face';
-  const c = cat.trim();
-  if (c === 'Skincare' || c === 'Korean Skincare & Serums' || c === 'Korean Skincare') return 'Skincare & Face';
+  let c = cat.trim();
+  c = c.replace(/&amp;/g, '&');
+  if (c === 'Skincare' || c === 'Korean Skincare & Serums' || c === 'Korean Skincare' || c === 'Cleanser' || c === 'Acne face' || c === 'K-Beauty' || c === 'Anti-Ageing') return 'Skincare & Face';
+  if (c === 'Foundation' || c === 'Eye Mascara' || c === 'Makeup') return 'Makeup & Prep';
+  if (c === 'Brightening serum') return 'Serums & Actives';
+  if (c === 'Malibu') return 'Sunscreen & SPF';
+  if (c === 'Hair Oil') return 'Bath & Body';
+  if (c === 'Health & Wellness' || c === 'BB LAB Collagen') return 'Health & Wellness';
   if (c === 'Classic Clothes' || c === 'Clothes' || c === 'Fashion') return 'Clothes & Fashion';
   if (c === 'Household & Kitchen') return 'Household & Kitchen';
   if (c === 'Household & Bedding' || c === 'Household') return 'Household & Bedding';
@@ -51,17 +58,18 @@ export function getCategoryIcon(cat) {
   if (c === 'All Shoes & Kicks' || lower === 'all shoes & kicks' || lower === 'shoes') return '👟';
   if (c === 'Sneakers & Kicks' || lower.includes('sneaker') || lower.includes('kicks')) return '👟';
   if (c === "Men's Footwear" || lower.includes('footwear') || lower.includes('loafer') || lower.includes('boot')) return '👞';
+  if (c === 'Electronics' || lower === 'electronics') return '⚡';
+  if (lower.includes('laptop') || lower.includes('computer')) return '💻';
+  if (lower.includes('monitor') || lower.includes('display')) return '🖥️';
+  if (lower.includes('audio') || lower.includes('headphone') || lower.includes('soundcore')) return '🎧';
   if (c === 'Handbags & Bags' || lower.includes('bag') || lower.includes('tote') || lower.includes('clutch')) return '👜';
   if (c === 'Makeup & Prep' || lower.includes('prep') || lower.includes('makeup')) return '👑';
   if (c === 'Lip Care' || lower.includes('lip')) return '💄';
   if (c === 'Skincare & Face' || lower.includes('skin') || lower.includes('face') || lower.includes('cleanser')) return '🧴';
   if (c === 'Serums & Actives' || lower.includes('serum') || lower.includes('active')) return '🧪';
+  if (c === 'Health & Wellness' || lower.includes('health') || lower.includes('wellness') || lower.includes('collagen')) return '🌿';
   if (c === 'Bath & Body' || lower.includes('bath') || lower.includes('body')) return '🌸';
   if (c === 'Sunscreen & SPF' || lower.includes('sun') || lower.includes('spf')) return '☀️';
-  if (c === 'Electronics' || lower === 'electronics') return '⚡';
-  if (lower.includes('laptop') || lower.includes('computer')) return '💻';
-  if (lower.includes('monitor') || lower.includes('display')) return '🖥️';
-  if (lower.includes('audio') || lower.includes('headphone') || lower.includes('soundcore')) return '🎧';
   if (lower.includes('cloth') || lower.includes('fashion') || lower.includes('dress')) return '👗';
   if (lower.includes('household') || lower.includes('bedding') || lower.includes('home')) return '🛏️';
   if (lower.includes('kitchen') || lower.includes('flask')) return '☕';

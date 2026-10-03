@@ -170,7 +170,7 @@ export const storageService = {
         if (Array.isArray(parsed) && parsed.length >= 100) {
           const hasLegacyDuplicates = parsed.some((p) => p.name && (p.name.includes('Loafer Dark-tan') || p.name.includes('Horsebit Loafer Dark-tan')));
           const hasElectronics = parsed.some((p) => p.category && (p.category.includes('Gaming') || p.category.includes('Monitor') || p.category.includes('Audio') || p.category.includes('Electronics') || p.category.includes('Smart Tech')));
-          if (hasLegacyDuplicates || !hasElectronics) {
+          if (hasLegacyDuplicates || !hasElectronics || parsed.length < STARTER_PRODUCTS.length) {
             localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(STARTER_PRODUCTS));
             return STARTER_PRODUCTS;
           }
