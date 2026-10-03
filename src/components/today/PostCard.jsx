@@ -9,6 +9,7 @@ import { getHarmoniousPaletteForProduct } from '../../services/configService';
 import { shareService } from '../../services/shareService';
 import { scheduleService } from '../../services/scheduleService';
 import WhatsAppIcon from '../common/WhatsAppIcon';
+import InstagramIcon from '../common/InstagramIcon';
 import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
 import ProductPosterPreviewModal from '../products/ProductPosterPreviewModal';
 
@@ -36,6 +37,7 @@ export default function PostCard({
   const [imageBlob, setImageBlob] = useState(null);
   const [isRendering, setIsRendering] = useState(true);
   const [isSharing, setIsSharing] = useState(false);
+  const [isSharingFeed, setIsSharingFeed] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   // Active palette: uses seller's brand palette or harmonious product palette
@@ -98,13 +100,13 @@ export default function PostCard({
     companion ? companion.id : null
   ]);
 
-  // Primary Action: Share to WhatsApp
-  const handleShare = async () => {
+  // Action 1: Post to WhatsApp Status / Stories (9:16 Vertical)
+  const handleShareToStatusStories = async () => {
     if (!imageBlob || isSharing) return;
     setIsSharing(true);
 
     const safeName = post.product.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
-    const filename = `${safeName}-${ratio}.png`;
+    const filename = `${safeName}-status-9x16.png`;
 
     try {
       const result = await shareService.sharePost({
@@ -117,23 +119,69 @@ export default function PostCard({
         onTogglePosted(post.slotId, true);
         if (result.method === 'native_share') {
           onShowToast(
-            `✓ Designed poster shared & caption copied! Ready to paste on WhatsApp.`,
+            `✓ 9:16 Story poster ready! Shared to WhatsApp Status / Stories.`,
             'success'
           );
-        } else if (result.method === 'desktop_whatsapp_opened' || result.method === 'download_fallback') {
+        } else {
           onShowToast(
-            `✓ Designed poster downloaded & WhatsApp opened! Drop poster into chat/status and paste caption.`,
+            `✓ 9:16 Poster downloaded & WhatsApp opened! Post to your Status.`,
             'success'
           );
         }
       } else if (result.method === 'cancelled') {
-        onShowToast('Share closed. Caption still copied to clipboard.', 'info');
+        onShowToast('Share sheet closed.', 'info');
       }
     } catch (err) {
       console.error('Sharing failed', err);
-      onShowToast('Could not open share sheet. Use download instead.', 'error');
+      onShowToast('Could not open share sheet. Poster saved to downloads.', 'error');
     } finally {
       setIsSharing(false);
+    }
+  };
+
+  // Action 2: Post to Instagram / Facebook Feed (4:5 Image + Auto-Copied Caption)
+  const handleShareToFeed = async () => {
+    if (isSharingFeed) return;
+    setIsSharingFeed(true);
+
+    const safeName = post.product.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+    const filename = `${safeName}-feed-4x5.png`;
+
+    try {
+      // 1. Auto-copy rich sales caption first
+      await shareService.copyText(caption);
+
+      // 2. Render 4:5 Feed flyer dynamically
+      const productToRender = {
+        ...post.product,
+        photo: activePhoto,
+        selectedPhoto: activePhoto
+      };
+
+      const feedDataUrl = await canvasRenderer.renderPost(
+        productToRender,
+        seller,
+        'group', // 4:5 portrait ratio for feed
+        'retail_classic',
+        companion,
+        activePalette
+      );
+      const feedBlob = canvasRenderer.dataURLToBlob(feedDataUrl);
+
+      // 3. Save / download the 4:5 flyer
+      shareService.downloadPosterOnly({ blob: feedBlob, filename });
+
+      // 4. Mark posted & toast instructions
+      onTogglePosted(post.slotId, true);
+      onShowToast(
+        `✓ Caption copied & 4:5 Feed flyer saved! Open Instagram / Facebook to paste.`,
+        'success'
+      );
+    } catch (err) {
+      console.error('Feed generation failed', err);
+      onShowToast('Could not generate feed poster.', 'error');
+    } finally {
+      setIsSharingFeed(false);
     }
   };
 
@@ -381,43 +429,68 @@ export default function PostCard({
           {caption}
         </div>
 
-        {/* Action Buttons */}
-        <div className="grid grid-cols-6 gap-2 pt-1">
-          <button
-            type="button"
-            onClick={handleShare}
-            disabled={isRendering || isSharing}
-            className="col-span-4 bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-bold py-3 px-3 rounded-xl flex items-center justify-center gap-2 shadow-xs transition disabled:opacity-50 text-sm cursor-pointer"
-            style={{ minHeight: '48px' }}
-          >
-            <WhatsAppIcon className="w-5 h-5 fill-white flex-shrink-0" />
-            <span className="truncate">
-              {isSharing ? 'Opening WhatsApp...' : 'Share Poster to WhatsApp'}
+        {/* Multi-Platform Publishing Hub (Stories vs Feed) */}
+        <div className="space-y-2 pt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {/* 1. WhatsApp Status & Stories (9:16 Fullscreen Vertical Flyer) */}
+            <button
+              type="button"
+              onClick={handleShareToStatusStories}
+              disabled={isRendering || isSharing}
+              className="bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-extrabold py-3 px-3 rounded-xl flex items-center justify-center gap-2 shadow-xs transition disabled:opacity-50 text-xs sm:text-sm cursor-pointer"
+              title="Post 9:16 Vertical Poster directly to WhatsApp Status & Stories"
+              style={{ minHeight: '46px' }}
+            >
+              <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
+              <span className="truncate">
+                {isSharing ? 'Opening WhatsApp...' : 'Status & Stories'}
+              </span>
+            </button>
+
+            {/* 2. Instagram & Facebook Feed (4:5 Image + Auto-Copied Caption) */}
+            <button
+              type="button"
+              onClick={handleShareToFeed}
+              disabled={isRendering || isSharingFeed}
+              className="bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-95 text-white font-extrabold py-3 px-3 rounded-xl flex items-center justify-center gap-2 shadow-xs transition disabled:opacity-50 text-xs sm:text-sm cursor-pointer"
+              title="Save 4:5 Feed Flyer & Auto-Copy Caption for Instagram / Facebook"
+              style={{ minHeight: '46px' }}
+            >
+              <InstagramIcon className="w-4 h-4 fill-white flex-shrink-0" />
+              <span className="truncate">
+                {isSharingFeed ? 'Preparing Feed...' : 'Instagram / FB Feed'}
+              </span>
+            </button>
+          </div>
+
+          {/* Quick Tools Bar */}
+          <div className="flex items-center justify-between text-[11px] text-slate-500 px-1 pt-0.5">
+            <span className="text-[10px] text-slate-400">
+              ⚡ Status = 9:16 Visual • Feed = 4:5 + Caption
             </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={handleDownloadOnly}
-            disabled={isRendering}
-            className="col-span-1 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 font-bold py-3 px-1.5 rounded-xl flex flex-col items-center justify-center gap-0.5 border border-slate-200 transition text-[10px] cursor-pointer"
-            title="Download flyer image only"
-            style={{ minHeight: '48px' }}
-          >
-            <Download className="w-4 h-4 text-slate-600" />
-            <span>Save</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={handleCopyCaption}
-            className="col-span-1 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 font-bold py-3 px-1.5 rounded-xl flex flex-col items-center justify-center gap-0.5 border border-slate-200 transition text-[10px] cursor-pointer"
-            title="Copy Caption to clipboard"
-            style={{ minHeight: '48px' }}
-          >
-            <Copy className="w-4 h-4 text-slate-600" />
-            <span>Copy</span>
-          </button>
+            <div className="flex items-center gap-2.5">
+              <button
+                type="button"
+                onClick={handleDownloadOnly}
+                disabled={isRendering}
+                className="hover:text-slate-900 font-bold flex items-center gap-1 cursor-pointer transition text-slate-600"
+                title="Save current flyer image"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Save</span>
+              </button>
+              <span className="text-slate-300">•</span>
+              <button
+                type="button"
+                onClick={handleCopyCaption}
+                className="hover:text-slate-900 font-bold flex items-center gap-1 cursor-pointer transition text-slate-600"
+                title="Copy caption text to clipboard"
+              >
+                <Copy className="w-3.5 h-3.5" />
+                <span>Copy Caption</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 

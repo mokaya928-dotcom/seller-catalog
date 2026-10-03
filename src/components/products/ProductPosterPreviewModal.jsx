@@ -11,6 +11,7 @@ import { shareService } from '../../services/shareService';
 import { scheduleService } from '../../services/scheduleService';
 import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
 import WhatsAppIcon from '../common/WhatsAppIcon';
+import InstagramIcon from '../common/InstagramIcon';
 
 export default function ProductPosterPreviewModal({
   product,
@@ -76,6 +77,7 @@ export default function ProductPosterPreviewModal({
   const [imageBlob, setImageBlob] = useState(null);
   const [isRendering, setIsRendering] = useState(true);
   const [isSharing, setIsSharing] = useState(false);
+  const [isSharingFeed, setIsSharingFeed] = useState(false);
   const [copiedCaption, setCopiedCaption] = useState(false);
 
   // ---------------------------------------------------------------------------
@@ -220,6 +222,51 @@ export default function ProductPosterPreviewModal({
       if (onShowToast) onShowToast('Failed to open WhatsApp. Use Save instead.', 'error');
     } finally {
       setIsSharing(false);
+    }
+  };
+
+  // Handle 1-Tap Instagram / Facebook Feed Share
+  const handleShareFeed = async () => {
+    if (isSharingFeed) return;
+    setIsSharingFeed(true);
+
+    const safeName = (product.name || 'product').toLowerCase().replace(/[^a-z0-9]/g, '-');
+    const filename = `${safeName}-${currentDesign}-${currentMood}-feed-4x5.png`;
+
+    try {
+      // 1. Auto-copy rich sales caption first
+      await shareService.copyText(caption);
+
+      // 2. Render 4:5 Feed flyer dynamically if current is status
+      let feedBlob = imageBlob;
+      if (currentRatio !== 'group') {
+        const productToRender = {
+          ...product,
+          photo: activePhoto,
+          selectedPhoto: activePhoto
+        };
+        const feedDataUrl = await canvasRenderer.renderPost(
+          productToRender,
+          seller,
+          'group', // 4:5 portrait ratio for feed
+          currentDesign,
+          null,
+          currentPalette
+        );
+        feedBlob = canvasRenderer.dataURLToBlob(feedDataUrl);
+      }
+
+      // 3. Save / download the 4:5 flyer
+      shareService.downloadPosterOnly({ blob: feedBlob, filename });
+
+      if (onShowToast) {
+        onShowToast('✓ Caption copied & 4:5 Feed flyer saved! Open Instagram / Facebook to paste.', 'success');
+      }
+    } catch (err) {
+      console.error('Feed generation failed', err);
+      if (onShowToast) onShowToast('Could not generate feed poster.', 'error');
+    } finally {
+      setIsSharingFeed(false);
     }
   };
 
@@ -558,46 +605,72 @@ export default function ProductPosterPreviewModal({
         </div>
 
         {/* ------------------------------------------------------------- */}
-        {/* 7. STICKY ACTION FOOTER                                       */}
+        {/* 7. STICKY ACTION FOOTER (Multi-Platform Publishing)           */}
         {/* ------------------------------------------------------------- */}
-        <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-950/95 backdrop-blur-md flex items-center gap-2 z-10">
-          <button
-            type="button"
-            onClick={handleDownload}
-            disabled={isRendering || !imageBlob}
-            className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-3.5 rounded-2xl flex items-center justify-center gap-1.5 text-xs border border-slate-700 transition active:scale-95 disabled:opacity-50 flex-shrink-0 cursor-pointer"
-            title="Download designed flyer image only"
-          >
-            <Download className="w-4 h-4 text-emerald-400" />
-            <span className="hidden xs:inline">Save</span>
-          </button>
+        <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-950/95 backdrop-blur-md flex flex-col gap-2 z-10">
+          <div className="grid grid-cols-2 gap-2">
+            {/* 1. WhatsApp Status & Stories (9:16 Fullscreen Vertical Flyer) */}
+            <button
+              type="button"
+              onClick={handleShare}
+              disabled={isRendering || isSharing || !imageBlob}
+              className="bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-black py-3 px-3 rounded-2xl flex items-center justify-center gap-1.5 text-xs sm:text-sm shadow-md transition disabled:opacity-50 cursor-pointer"
+              style={{ minHeight: '46px' }}
+              title="Post 9:16 Vertical Poster directly to WhatsApp Status & Stories"
+            >
+              <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
+              <span className="truncate">
+                {isSharing ? 'Opening...' : 'Status & Stories'}
+              </span>
+            </button>
 
-          <button
-            type="button"
-            onClick={handleCopyCaption}
-            className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-3.5 rounded-2xl flex items-center justify-center gap-1.5 text-xs border border-slate-700 transition active:scale-95 flex-shrink-0 cursor-pointer"
-            title="Copy WhatsApp Caption"
-          >
-            {copiedCaption ? (
-              <Check className="w-4 h-4 text-emerald-400 stroke-[3px]" />
-            ) : (
-              <Copy className="w-4 h-4 text-emerald-400" />
-            )}
-            <span className="hidden xs:inline">{copiedCaption ? 'Copied' : 'Copy'}</span>
-          </button>
+            {/* 2. Instagram & Facebook Feed (4:5 Image + Auto-Copied Caption) */}
+            <button
+              type="button"
+              onClick={handleShareFeed}
+              disabled={isRendering || isSharingFeed}
+              className="bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-95 text-white font-black py-3 px-3 rounded-2xl flex items-center justify-center gap-1.5 text-xs sm:text-sm shadow-md transition disabled:opacity-50 cursor-pointer"
+              style={{ minHeight: '46px' }}
+              title="Save 4:5 Feed Flyer & Auto-Copy Caption for Instagram / Facebook"
+            >
+              <InstagramIcon className="w-4 h-4 fill-white flex-shrink-0" />
+              <span className="truncate">
+                {isSharingFeed ? 'Preparing...' : 'Instagram / FB'}
+              </span>
+            </button>
+          </div>
 
-          <button
-            type="button"
-            onClick={handleShare}
-            disabled={isRendering || isSharing || !imageBlob}
-            className="flex-1 bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-black py-3 px-4 rounded-2xl flex items-center justify-center gap-2 text-xs sm:text-sm shadow-lg transition disabled:opacity-50 cursor-pointer"
-            style={{ minHeight: '46px' }}
-          >
-            <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
-            <span className="truncate">
-              {isSharing ? 'Opening WhatsApp...' : 'Share Poster to WhatsApp'}
+          <div className="flex items-center justify-between text-xs px-1 text-slate-400">
+            <span className="text-[10px] text-slate-500">
+              ⚡ Status = 9:16 Visual • Feed = 4:5 + Caption
             </span>
-          </button>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={handleDownload}
+                disabled={isRendering || !imageBlob}
+                className="hover:text-white font-bold flex items-center gap-1 cursor-pointer transition text-slate-400"
+                title="Download flyer image only"
+              >
+                <Download className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Save</span>
+              </button>
+              <span className="text-slate-600">•</span>
+              <button
+                type="button"
+                onClick={handleCopyCaption}
+                className="hover:text-white font-bold flex items-center gap-1 cursor-pointer transition text-slate-400"
+                title="Copy caption text to clipboard"
+              >
+                {copiedCaption ? (
+                  <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[3px]" />
+                ) : (
+                  <Copy className="w-3.5 h-3.5 text-emerald-400" />
+                )}
+                <span>{copiedCaption ? 'Copied' : 'Copy Caption'}</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

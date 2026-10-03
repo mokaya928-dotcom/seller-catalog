@@ -1,5 +1,4 @@
-import React from 'react';
-import { Settings, Smartphone, Users, ShoppingBag, Download, Lock } from 'lucide-react';
+import { Settings, ShoppingBag, Download, Lock } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
 export default function Header({ seller, ratio, onRatioChange, onPaletteChange, onOpenSettings, onOpenCatalog, onOpenCreatePoster, onLock, pwa }) {
@@ -171,74 +170,6 @@ export default function Header({ seller, ratio, onRatioChange, onPaletteChange, 
               </button>
             )}
           </div>
-        </div>
-
-        {/* Row 2: Segmented Post Aspect Ratio Toggle */}
-        <div 
-          className="p-1 flex items-center gap-1 border"
-          style={{
-            backgroundColor: 'var(--theme-color-surface-soft)',
-            borderColor: 'var(--theme-color-border-hairline)',
-            borderRadius: 'var(--theme-radius-button)'
-          }}
-        >
-          <button
-            type="button"
-            onClick={() => onRatioChange('status')}
-            className="flex-1 py-1.5 px-3 flex items-center justify-center gap-2 transition-all text-xs font-bold"
-            style={{
-              backgroundColor: ratio === 'status' ? 'var(--theme-color-surface-card)' : 'transparent',
-              color: ratio === 'status' ? 'var(--theme-color-ink)' : 'var(--theme-color-muted)',
-              borderRadius: 'var(--theme-radius-button)',
-              boxShadow: ratio === 'status' ? 'var(--theme-shadow-badge)' : 'none'
-            }}
-          >
-            <Smartphone 
-              className="w-3.5 h-3.5" 
-              style={{
-                color: ratio === 'status' ? 'var(--theme-color-primary)' : 'var(--theme-color-muted)'
-              }}
-            />
-            <span>WhatsApp Status</span>
-            <span 
-              className="text-[10px] px-1.5 py-0.2 rounded font-mono font-bold"
-              style={{
-                backgroundColor: ratio === 'status' ? 'var(--theme-color-surface-soft)' : 'transparent',
-                color: 'var(--theme-color-muted)'
-              }}
-            >
-              9:16
-            </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => onRatioChange('group')}
-            className="flex-1 py-1.5 px-3 flex items-center justify-center gap-2 transition-all text-xs font-bold"
-            style={{
-              backgroundColor: ratio === 'group' ? 'var(--theme-color-surface-card)' : 'transparent',
-              color: ratio === 'group' ? 'var(--theme-color-ink)' : 'var(--theme-color-muted)',
-              borderRadius: 'var(--theme-radius-button)',
-              boxShadow: ratio === 'group' ? 'var(--theme-shadow-badge)' : 'none'
-            }}
-          >
-            <Users 
-              className="w-3.5 h-3.5" 
-              style={{
-                color: ratio === 'group' ? 'var(--theme-color-primary)' : 'var(--theme-color-muted)'
-              }}
-            />
-            <span>Customer Groups</span>
-            <span 
-              className="text-[10px] px-1.5 py-0.2 rounded font-mono font-bold"
-              style={{
-                backgroundColor: ratio === 'group' ? 'var(--theme-color-surface-soft)' : 'transparent',
-                color: 'var(--theme-color-muted)'
-              }}
-            >
-              4:5
-            </span>
-          </button>
         </div>
       </div>
     </header>
