@@ -10,7 +10,7 @@ import { supabase, isSupabaseConfigured } from './supabaseClient';
 
 const KEYS = {
   SELLER: 'dailypost_seller_v12',
-  PRODUCTS: 'dailypost_products_v15',
+  PRODUCTS: 'dailypost_products_v16',
   POSTS_PREFIX: 'dailypost_posts_v11_',
   POSTED_STATUS_PREFIX: 'dailypost_posted_v11_',
   OVERRIDES_PREFIX: 'dailypost_overrides_v11_'
@@ -122,7 +122,25 @@ export const storageService = {
 
         if (!error && Array.isArray(data)) {
           if (data.length > 0) {
-            const normalized = data.map((p) => ({
+            // Ensure any newly added starter products (e.g. Electronics) are merged
+            const existingIds = new Set(data.map((p) => p.id));
+            const missingStarterProducts = STARTER_PRODUCTS.filter((p) => !existingIds.has(p.id));
+
+            let combined = data;
+            if (missingStarterProducts.length > 0) {
+              combined = [...missingStarterProducts, ...data];
+              try {
+                const cleanedToUpsert = missingStarterProducts.map((p) => {
+                  const { vendor, ...valid } = p;
+                  return valid;
+                });
+                supabase.from('products').upsert(cleanedToUpsert, { onConflict: 'id' }).then(() => {});
+              } catch (upsertErr) {
+                console.warn('Could not auto-sync missing starter products to Supabase', upsertErr);
+              }
+            }
+
+            const normalized = combined.map((p) => ({
               ...p,
               photos: Array.isArray(p.photos) && p.photos.length > 0 ? p.photos : (p.photo ? [p.photo] : [])
             }));
