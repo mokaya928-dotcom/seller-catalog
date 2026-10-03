@@ -12,6 +12,7 @@ import { scheduleService } from '../../services/scheduleService';
 import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
 import WhatsAppIcon from '../common/WhatsAppIcon';
 import InstagramIcon from '../common/InstagramIcon';
+import FacebookIcon from '../common/FacebookIcon';
 
 export default function ProductPosterPreviewModal({
   product,
@@ -225,13 +226,13 @@ export default function ProductPosterPreviewModal({
     }
   };
 
-  // Handle 1-Tap Instagram / Facebook Feed Share
-  const handleShareFeed = async () => {
+  // Handle 1-Tap Instagram or Facebook Direct Share
+  const handleSharePlatform = async (targetPlatform) => {
     if (isSharingFeed) return;
     setIsSharingFeed(true);
 
     const safeName = (product.name || 'product').toLowerCase().replace(/[^a-z0-9]/g, '-');
-    const filename = `${safeName}-${currentDesign}-${currentMood}-feed-4x5.png`;
+    const filename = `${safeName}-${currentDesign}-${currentMood}-${targetPlatform}-4x5.png`;
 
     try {
       // 1. Auto-copy rich sales caption first
@@ -256,15 +257,25 @@ export default function ProductPosterPreviewModal({
         feedBlob = canvasRenderer.dataURLToBlob(feedDataUrl);
       }
 
-      // 3. Save / download the 4:5 flyer
-      shareService.downloadPosterOnly({ blob: feedBlob, filename });
+      // 3. Share directly via Web Share API or platform launcher
+      const result = await shareService.sharePost({
+        blob: feedBlob,
+        caption: caption,
+        filename,
+        platform: targetPlatform
+      });
 
+      const platformName = targetPlatform === 'instagram' ? 'Instagram' : 'Facebook';
       if (onShowToast) {
-        onShowToast('✓ Caption copied & 4:5 Feed flyer saved! Open Instagram / Facebook to paste.', 'success');
+        if (result.method === 'native_share') {
+          onShowToast(`✓ Image & Caption ready! Choose ${platformName} in share tray to paste.`, 'success');
+        } else {
+          onShowToast(`✓ Caption copied & ${platformName} opened! Drop flyer into post and paste caption.`, 'success');
+        }
       }
     } catch (err) {
-      console.error('Feed generation failed', err);
-      if (onShowToast) onShowToast('Could not generate feed poster.', 'error');
+      console.error(`${targetPlatform} generation failed`, err);
+      if (onShowToast) onShowToast(`Could not generate ${targetPlatform} poster.`, 'error');
     } finally {
       setIsSharingFeed(false);
     }
@@ -608,35 +619,44 @@ export default function ProductPosterPreviewModal({
         {/* 7. STICKY ACTION FOOTER (Multi-Platform Publishing)           */}
         {/* ------------------------------------------------------------- */}
         <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-950/95 backdrop-blur-md flex flex-col gap-2 z-10">
-          <div className="grid grid-cols-2 gap-2">
-            {/* 1. WhatsApp Status & Stories (9:16 Fullscreen Vertical Flyer) */}
+          <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
+            {/* 1. WhatsApp */}
             <button
               type="button"
               onClick={handleShare}
               disabled={isRendering || isSharing || !imageBlob}
-              className="bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-black py-3 px-3 rounded-2xl flex items-center justify-center gap-1.5 text-xs sm:text-sm shadow-md transition disabled:opacity-50 cursor-pointer"
-              style={{ minHeight: '46px' }}
-              title="Post 9:16 Vertical Poster directly to WhatsApp Status & Stories"
+              className="bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-extrabold py-2.5 px-1.5 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition disabled:opacity-50 text-[11px] sm:text-xs cursor-pointer"
+              style={{ minHeight: '44px' }}
+              title="Post 9:16 Vertical Poster directly to WhatsApp Status"
             >
               <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
-              <span className="truncate">
-                {isSharing ? 'Opening...' : 'Status & Stories'}
-              </span>
+              <span className="truncate">{isSharing ? 'Opening...' : 'WhatsApp'}</span>
             </button>
 
-            {/* 2. Instagram & Facebook Feed (4:5 Image + Auto-Copied Caption) */}
+            {/* 2. Instagram */}
             <button
               type="button"
-              onClick={handleShareFeed}
+              onClick={() => handleSharePlatform('instagram')}
               disabled={isRendering || isSharingFeed}
-              className="bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-95 text-white font-black py-3 px-3 rounded-2xl flex items-center justify-center gap-1.5 text-xs sm:text-sm shadow-md transition disabled:opacity-50 cursor-pointer"
-              style={{ minHeight: '46px' }}
-              title="Save 4:5 Feed Flyer & Auto-Copy Caption for Instagram / Facebook"
+              className="bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-95 text-white font-extrabold py-2.5 px-1.5 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition disabled:opacity-50 text-[11px] sm:text-xs cursor-pointer"
+              style={{ minHeight: '44px' }}
+              title="Share 4:5 Flyer & Copy Caption to Instagram"
             >
               <InstagramIcon className="w-4 h-4 fill-white flex-shrink-0" />
-              <span className="truncate">
-                {isSharingFeed ? 'Preparing...' : 'Instagram / FB'}
-              </span>
+              <span className="truncate">{isSharingFeed ? 'Preparing...' : 'Instagram'}</span>
+            </button>
+
+            {/* 3. Facebook */}
+            <button
+              type="button"
+              onClick={() => handleSharePlatform('facebook')}
+              disabled={isRendering || isSharingFeed}
+              className="bg-[#1877F2] hover:bg-[#166fe5] active:bg-[#1465d2] text-white font-extrabold py-2.5 px-1.5 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition disabled:opacity-50 text-[11px] sm:text-xs cursor-pointer"
+              style={{ minHeight: '44px' }}
+              title="Share 4:5 Flyer & Copy Caption to Facebook"
+            >
+              <FacebookIcon className="w-4 h-4 fill-white flex-shrink-0" />
+              <span className="truncate">Facebook</span>
             </button>
           </div>
 

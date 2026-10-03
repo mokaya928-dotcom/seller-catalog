@@ -71,7 +71,7 @@ export const shareService = {
    * Falls back to sequential image download if Web Share is rejected or unavailable.
    * Auto-copies the caption to clipboard in all flows.
    */
-  async sharePost({ blob, blobs = [], caption, filename = 'post.png', filenames = [], post = null, slot = null }) {
+  async sharePost({ blob, blobs = [], caption, filename = 'post.png', filenames = [], post = null, slot = null, platform = 'whatsapp' }) {
     // 0. Track flyer share in analytics
     if (post || slot) {
       analyticsService.trackEvent({
@@ -150,17 +150,29 @@ export const shareService = {
       }, idx * 250);
     });
 
-    // Proactively launch WhatsApp Web so the seller is brought directly to WhatsApp
+    // Proactively launch target platform so the seller is brought directly there
     try {
-      const encoded = encodeURIComponent(caption);
-      window.open(`https://web.whatsapp.com/send?text=${encoded}`, '_blank');
+      if (platform === 'instagram') {
+        window.open('https://www.instagram.com/', '_blank');
+      } else if (platform === 'facebook') {
+        window.open('https://www.facebook.com/', '_blank');
+      } else {
+        const encoded = encodeURIComponent(caption);
+        window.open(`https://web.whatsapp.com/send?text=${encoded}`, '_blank');
+      }
     } catch (e) {
-      console.warn('Could not launch WhatsApp Web popup', e);
+      console.warn('Could not launch platform popup', e);
     }
+
+    const method = platform === 'instagram' 
+      ? 'desktop_instagram_opened' 
+      : platform === 'facebook' 
+        ? 'desktop_facebook_opened' 
+        : 'desktop_whatsapp_opened';
 
     return {
       success: true,
-      method: 'desktop_whatsapp_opened',
+      method,
       count: allBlobs.length,
       captionCopied
     };
