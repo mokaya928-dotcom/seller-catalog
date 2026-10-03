@@ -7,6 +7,7 @@
 import { TIME_SLOTS } from '../data/starterData.js';
 import { POST_STYLES } from './canvasRenderer.js';
 import { getHarmoniousPaletteForProduct } from './configService.js';
+import { filterProductsByCategory } from '../utils/categoryUtils.js';
 
 function getDateSeed(dateStr) {
   const str = dateStr || new Date().toISOString().split('T')[0];
@@ -193,19 +194,9 @@ export const scheduleService = {
     // -----------------------------------------------------------
     // CATEGORY FILTERING: NEVER MIX CATEGORIES TOGETHER!
     // -----------------------------------------------------------
-    if (categoryFilter === 'shoes') {
-      availableProducts = availableProducts.filter((p) => getCategoryGroup(p.category) === 'shoes');
-    } else if (categoryFilter === 'bags') {
-      availableProducts = availableProducts.filter((p) => getCategoryGroup(p.category) === 'bags');
-    } else if (categoryFilter === 'beauty') {
-      availableProducts = availableProducts.filter((p) => isBeautyCategory(p.category));
-    } else if (categoryFilter === 'household') {
-      availableProducts = availableProducts.filter((p) => getCategoryGroup(p.category) === 'household');
-    } else if (categoryFilter === 'clothes') {
-      availableProducts = availableProducts.filter((p) => getCategoryGroup(p.category) === 'clothes');
-    } else if (categoryFilter && categoryFilter !== 'all') {
-      availableProducts = availableProducts.filter((p) => p.category === categoryFilter || getCategoryGroup(p.category) === categoryFilter);
-    } else if (categoryFilter === 'all') {
+    availableProducts = filterProductsByCategory(availableProducts, categoryFilter);
+
+    if (categoryFilter === 'all' || categoryFilter === 'All') {
       // Group by category so they are structured cleanly
       availableProducts = [...availableProducts].sort((a, b) => {
         const groupA = getCategoryGroup(a.category);

@@ -12,6 +12,7 @@ import { shareService } from '../../services/shareService';
 import { executeSmartSearch, normalizeCategory } from '../../services/smartSearch';
 import { getProductRemaining, getProductRegularPrice, getProductSocialProof } from '../../services/scheduleService';
 import { getOptimizedImageUrl } from '../../utils/imageUtils';
+import { computeCategoryStats, getCategoryIcon } from '../../utils/categoryUtils';
 
 export default function CatalogView({ seller, products, onExitToSeller, onOpenSeller, isPreview = false, pwa }) {
   const [search, setSearch] = useState('');
@@ -138,86 +139,14 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
     }
   }, [inStockProducts]);
 
-  // Extract unique categories and calculate product count per category
-  const categoryStats = useMemo(() => {
-    const counts = { All: inStockProducts.length };
-    inStockProducts.forEach((p) => {
-      const cat = normalizeCategory(p.category);
-      counts[cat] = (counts[cat] || 0) + 1;
-    });
-
-    const shoeCount = (counts['Sneakers & Kicks'] || 0) + (counts["Men's Footwear"] || 0);
-    if (shoeCount > 0) {
-      counts['All Shoes & Kicks'] = shoeCount;
-    }
-
-    const electronicsCount = (counts['Gaming Laptops & Ultrabooks'] || 0) + 
-      (counts['Monitors & Displays'] || 0) + 
-      (counts['Smart Tech & Audio'] || 0) + 
-      (counts['Electronics'] || 0) + 
-      (counts['Electronics & Gadgets'] || 0);
-    if (electronicsCount > 0) {
-      counts['Electronics'] = electronicsCount;
-    }
-    return counts;
+  // Extract unique categories and calculate product count per category using unified engine
+  const { counts: categoryStats, categoryList } = useMemo(() => {
+    return computeCategoryStats(inStockProducts);
   }, [inStockProducts]);
 
-  // Priority selling category ordering for presentations (fits every merchant's niche)
-  const CATEGORY_ORDER = [
-    'All',
-    'Electronics',
-    'Gaming Laptops & Ultrabooks',
-    'Monitors & Displays',
-    'Smart Tech & Audio',
-    'All Shoes & Kicks',
-    'Sneakers & Kicks',
-    "Men's Footwear",
-    'Handbags & Bags',
-    'Lip Care',
-    'Makeup & Prep',
-    'Skincare & Face',
-    'Serums & Actives',
-    'Bath & Body',
-    'Sunscreen & SPF',
-    'Fashion & Outfits',
-    'Bedding & Home'
-  ];
-
   const categories = useMemo(() => {
-    const rawCats = Object.keys(categoryStats).filter((c) => c !== 'All');
-
-    return ['All', ...rawCats].sort((a, b) => {
-      const idxA = CATEGORY_ORDER.indexOf(a);
-      const idxB = CATEGORY_ORDER.indexOf(b);
-      const orderA = idxA === -1 ? 90 : idxA;
-      const orderB = idxB === -1 ? 90 : idxB;
-      return orderA - orderB;
-    });
-  }, [categoryStats]);
-
-  // Category visual icons map
-  const getCategoryIcon = (cat) => {
-    switch (cat) {
-      case 'All': return '✨';
-      case 'Electronics': return '⚡';
-      case 'Gaming Laptops & Ultrabooks': return '💻';
-      case 'Monitors & Displays': return '🖥️';
-      case 'Smart Tech & Audio': return '🎧';
-      case 'All Shoes & Kicks': return '👟';
-      case 'Sneakers & Kicks': return '👟';
-      case "Men's Footwear": return '👞';
-      case 'Handbags & Bags': return '👜';
-      case 'Lip Care': return '💄';
-      case 'Makeup & Prep': return '👑';
-      case 'Skincare & Face': return '🧴';
-      case 'Serums & Actives': return '🧪';
-      case 'Bath & Body': return '🌸';
-      case 'Sunscreen & SPF': return '☀️';
-      case 'Fashion & Outfits': return '👗';
-      case 'Bedding & Home': return '🛏️';
-      default: return '🛍️';
-    }
-  };
+    return categoryList.map((c) => c.rawKey);
+  }, [categoryList]);
 
   // Smart Search & Semantic Filtering
   const searchResult = useMemo(() => {

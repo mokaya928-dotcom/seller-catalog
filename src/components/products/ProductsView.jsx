@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
 import ProductPosterPreviewModal from './ProductPosterPreviewModal';
 import { executeSmartSearch } from '../../services/smartSearch';
+import { computeCategoryStats, getCategoryIcon } from '../../utils/categoryUtils';
 
 export default function ProductsView({
   products,
@@ -21,76 +22,14 @@ export default function ProductsView({
   const [modalState, setModalState] = useState({ isOpen: false, product: null });
   const [previewProduct, setPreviewProduct] = useState(null);
 
-  // Dynamic Category Extraction from inventory
-  const categoryStats = useMemo(() => {
-    const counts = { All: products.length };
-    products.forEach((p) => {
-      const cat = p.category || 'Other';
-      counts[cat] = (counts[cat] || 0) + 1;
-    });
-    const electronicsCount = (counts['Gaming Laptops & Ultrabooks'] || 0) + 
-      (counts['Monitors & Displays'] || 0) + 
-      (counts['Smart Tech & Audio'] || 0) + 
-      (counts['Electronics'] || 0) + 
-      (counts['Electronics & Gadgets'] || 0);
-    if (electronicsCount > 0) {
-      counts['Electronics'] = electronicsCount;
-    }
-    return counts;
+  // Dynamic Category Extraction from inventory using unified category engine
+  const { counts: categoryStats, categoryList } = useMemo(() => {
+    return computeCategoryStats(products);
   }, [products]);
 
-  const CATEGORY_ORDER = [
-    'All',
-    'Electronics',
-    'Gaming Laptops & Ultrabooks',
-    'Monitors & Displays',
-    'Smart Tech & Audio',
-    'Sneakers & Kicks',
-    "Men's Footwear",
-    'Handbags & Bags',
-    'Makeup & Prep',
-    'Lip Care',
-    'Bath & Body',
-    'Sunscreen & SPF',
-    'Skincare & Face',
-    'Serums & Actives',
-    'Classic Clothes',
-    'Household & Bedding',
-    'Household & Kitchen'
-  ];
-
   const categories = useMemo(() => {
-    const rawCats = Object.keys(categoryStats).filter((c) => c !== 'All');
-    return ['All', ...rawCats].sort((a, b) => {
-      const idxA = CATEGORY_ORDER.indexOf(a);
-      const idxB = CATEGORY_ORDER.indexOf(b);
-      const orderA = idxA === -1 ? 90 : idxA;
-      const orderB = idxB === -1 ? 90 : idxB;
-      return orderA - orderB;
-    });
-  }, [categoryStats]);
-
-  const getCategoryIcon = (cat) => {
-    const lower = (cat || '').toLowerCase();
-    if (cat === 'All') return '✨';
-    if (cat === 'Electronics' || lower.includes('electronic')) return '⚡';
-    if (lower.includes('laptop') || lower.includes('computer')) return '💻';
-    if (lower.includes('monitor') || lower.includes('display')) return '🖥️';
-    if (lower.includes('audio') || lower.includes('headphone') || lower.includes('soundcore')) return '🎧';
-    if (lower.includes('sneaker') || lower.includes('kicks')) return '👟';
-    if (lower.includes('footwear') || lower.includes('shoe') || lower.includes('loafer')) return '👞';
-    if (lower.includes('bag')) return '👜';
-    if (lower.includes('lip')) return '💄';
-    if (lower.includes('prep') || lower.includes('makeup')) return '👑';
-    if (lower.includes('bath') || lower.includes('body')) return '🌸';
-    if (lower.includes('spf') || lower.includes('sun')) return '☀️';
-    if (lower.includes('face') || lower.includes('skin')) return '🧴';
-    if (lower.includes('serum') || lower.includes('active')) return '🧪';
-    if (lower.includes('clothes') || lower.includes('dress') || lower.includes('fashion')) return '👗';
-    if (lower.includes('bedding') || lower.includes('household')) return '🛏️';
-    if (lower.includes('kitchen')) return '☕';
-    return '🏷️';
-  };
+    return categoryList.map((c) => c.rawKey);
+  }, [categoryList]);
 
   const searchResult = useMemo(() => {
     return executeSmartSearch(products, searchQuery, {

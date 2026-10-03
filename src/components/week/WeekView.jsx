@@ -25,6 +25,7 @@ import { shareService } from '../../services/shareService';
 import { canvasRenderer, POST_STYLES } from '../../services/canvasRenderer';
 import WhatsAppIcon from '../common/WhatsAppIcon';
 import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
+import { computeCategoryStats, getCategoryIcon } from '../../utils/categoryUtils';
 
 export default function WeekView({
   products,
@@ -306,10 +307,21 @@ export default function WeekView({
     }
   };
 
-  // Filter products for swap modal
+  // Filter products for swap modal and category stats
   const inStockProducts = useMemo(() => {
-    return products.filter((p) => p.in_stock);
+    return (products || []).filter((p) => p.in_stock !== false);
   }, [products]);
+
+  const { counts: categoryCounts, categoryList: categoryTabs } = useMemo(() => {
+    return computeCategoryStats(inStockProducts);
+  }, [inStockProducts]);
+
+  const activeTabObj = useMemo(() => {
+    return (
+      categoryTabs.find((t) => t.id === postingCategory || t.rawKey === postingCategory) ||
+      categoryTabs[0] || { id: 'all', label: 'All', count: inStockProducts.length }
+    );
+  }, [categoryTabs, postingCategory, inStockProducts.length]);
 
   const filteredSwapProducts = useMemo(() => {
     if (!swapSearchQuery.trim()) return inStockProducts;
@@ -387,6 +399,52 @@ export default function WeekView({
                     Today
                   </span>
                 )}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Category Selection Bar */}
+      <div className="bg-white rounded-2xl p-3 border border-slate-200/90 shadow-xs space-y-2">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900 uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-slate-500" />
+            <span>Posting Category</span>
+          </div>
+          <span className="text-[11px] font-bold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200">
+            {activeTabObj.count} items
+          </span>
+        </div>
+
+        {/* Scrollable Category Chips */}
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+          {categoryTabs.map((tab) => {
+            const isActive = postingCategory === tab.id || (postingCategory === 'all' && tab.id === 'all');
+            return (
+              <button
+                key={tab.id}
+                onClick={() => {
+                  if (onChangeCategory) onChangeCategory(tab.id);
+                  onShowToast(`✓ Category: ${tab.label}`, 'info');
+                }}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition flex items-center gap-1.5 ${
+                  isActive
+                    ? 'bg-slate-900 text-white shadow-xs'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                }`}
+              >
+                <span>{tab.icon}</span>
+                <span>{tab.label}</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+                    isActive
+                      ? 'bg-white/20 text-white'
+                      : 'bg-slate-200 text-slate-600'
+                  }`}
+                >
+                  {tab.count}
+                </span>
               </button>
             );
           })}

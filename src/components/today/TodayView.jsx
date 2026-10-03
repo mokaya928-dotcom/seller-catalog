@@ -5,6 +5,7 @@ import ProductModal from '../products/ProductModal';
 import { Sparkles, CheckCircle2, AlertCircle, Plus, Zap, RefreshCw, Flame, ShoppingBag, Tag, Layers, Download, Package, Languages, Camera, Clock } from 'lucide-react';
 import { isBeautyCategory, getCategoryGroup, scheduleService } from '../../services/scheduleService';
 import { shareService } from '../../services/shareService';
+import { computeCategoryStats, CATEGORY_ORDER, getCategoryIcon } from '../../utils/categoryUtils';
 
 export default function TodayView({
   posts,
@@ -78,55 +79,44 @@ export default function TodayView({
 
   const inStockProducts = useMemo(() => allProducts.filter((p) => p.in_stock), [allProducts]);
 
-  // Compute category breakdown
-  const categoryStats = useMemo(() => {
-    let shoes = 0;
-    let bags = 0;
-    let beauty = 0;
-    let household = 0;
-    let clothes = 0;
-    const catCounts = {};
-
-    inStockProducts.forEach((p) => {
-      const cat = p.category || 'Beauty Care';
-      catCounts[cat] = (catCounts[cat] || 0) + 1;
-      const group = getCategoryGroup(cat);
-      if (group === 'shoes') shoes++;
-      else if (group === 'bags') bags++;
-      else if (group === 'household') household++;
-      else if (group === 'clothes') clothes++;
-      else beauty++;
-    });
-
-    return {
-      all: inStockProducts.length,
-      shoes,
-      bags,
-      beauty,
-      household,
-      clothes,
-      catCounts
-    };
+  // Compute category breakdown with exact catalog categories and product counts
+  const { counts: categoryCounts, categoryList: categoryTabs } = useMemo(() => {
+    return computeCategoryStats(inStockProducts);
   }, [inStockProducts]);
 
-  // Dynamic Category Selector Tabs
-  const categoryTabs = useMemo(() => {
-    const tabs = [
-      { id: 'shoes', label: "Shoes & Footwear", icon: '👞', count: categoryStats.shoes },
-      { id: 'bags', label: 'Handbags & Bags', icon: '👜', count: categoryStats.bags },
-      { id: 'beauty', label: 'Beauty & Skincare', icon: '🌸', count: categoryStats.beauty },
-      { id: 'household', label: 'Household & Bedding', icon: '🛏️', count: categoryStats.household },
-      { id: 'clothes', label: 'Clothes & Fashion', icon: '👗', count: categoryStats.clothes },
-      { id: 'all', label: 'All Products (Grouped)', icon: '🛍️', count: categoryStats.all }
-    ];
+  const activeTabObj = useMemo(() => {
+    return (
+      categoryTabs.find((t) => t.id === postingCategory || t.rawKey === postingCategory) ||
+      categoryTabs[0] || { id: 'all', label: 'All', count: inStockProducts.length }
+    );
+  }, [categoryTabs, postingCategory, inStockProducts.length]);
 
-    return tabs;
-  }, [categoryStats]);
+  const activeCategoryCount = activeTabObj.count;
+  const activeCategoryLabel = activeTabObj.label;
 
-  const activeCategoryCount = useMemo(() => {
-    const found = categoryTabs.find(t => t.id === postingCategory);
-    return found ? found.count : categoryStats.all;
-  }, [categoryTabs, postingCategory, categoryStats.all]);
+  // Group in-stock products by category for quick-add dropdowns
+  const groupedProductsForSelect = useMemo(() => {
+    const groups = {};
+    inStockProducts.forEach((p) => {
+      const cat = p.category || 'Other';
+      if (!groups[cat]) groups[cat] = [];
+      groups[cat].push(p);
+    });
+
+    const keys = Object.keys(groups).sort((a, b) => {
+      const idxA = CATEGORY_ORDER.indexOf(a);
+      const idxB = CATEGORY_ORDER.indexOf(b);
+      const orderA = idxA === -1 ? 99 : idxA;
+      const orderB = idxB === -1 ? 99 : idxB;
+      return orderA - orderB;
+    });
+
+    return keys.map((cat) => ({
+      category: cat,
+      icon: getCategoryIcon(cat),
+      products: groups[cat]
+    }));
+  }, [inStockProducts]);
 
   const totalPosts = posts.length + customQueuedProducts.length;
   const postedCount = posts.filter((p) => postedMap[p.slotId]).length;
@@ -137,13 +127,13 @@ export default function TodayView({
     const current = typeof postLimit === 'number' ? postLimit : 5;
     const nextLimit = Math.min(current + 5, activeCategoryCount || 100);
     onChangePostLimit(nextLimit);
-    onShowToast(`✓ Added 5 more ${postingCategory === 'beauty' ? 'Beauty' : postingCategory} posts to queue!`, 'success');
+    onShowToast(`✓ Added 5 more ${activeCategoryLabel} posts to queue!`, 'success');
   };
 
   // Handler to show all in-stock products in the current category
   const handleShowAll = () => {
     onChangePostLimit('all');
-    onShowToast(`✓ Generated flyers for all ${activeCategoryCount} ${postingCategory === 'beauty' ? 'Beauty' : postingCategory} items!`, 'success');
+    onShowToast(`✓ Generated flyers for all ${activeCategoryCount} ${activeCategoryLabel} items!`, 'success');
   };
 
   // Automatically queue instant product if passed as prop from external view (e.g. Products tab)
@@ -310,7 +300,7 @@ export default function TodayView({
         {/* Scrollable Category Chips */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
           {categoryTabs.map((tab) => {
-            const isActive = postingCategory === tab.id;
+            const isActive = postingCategory === tab.id || (postingCategory === 'all' && tab.id === 'all');
             return (
               <button
                 key={tab.id}
@@ -380,7 +370,7 @@ export default function TodayView({
         <div className="pt-1 border-t border-slate-100">
           <div className="flex items-center justify-between gap-2 mb-2">
             <span className="text-[11px] font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1">
-              <Zap className="w-3 h-3 text-amber-500" /> Batch Size ({postingCategory === 'beauty' ? 'Beauty' : postingCategory}):
+              <Zap className="w-3 h-3 text-amber-500" /> Batch Size ({activeCategoryLabel}):
             </span>
             <span className="text-[11px] text-slate-500">
               {activeCategoryCount} items in category
@@ -506,39 +496,18 @@ export default function TodayView({
           <option value="__NEW_PRODUCT__" className="font-bold text-amber-900 bg-amber-50">
             ✨ + Have a new product? Generate flyer immediately...
           </option>
-          {categoryStats.beauty > 0 && (
-            <optgroup label="🌸 Beauty & Personal Care">
-              {inStockProducts
-                .filter((p) => isBeautyCategory(p.category))
-                .map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name} — KES {Number(p.price).toLocaleString()} ({p.category})
-                  </option>
-                ))}
+          {groupedProductsForSelect.map((group) => (
+            <optgroup
+              key={group.category}
+              label={`${group.icon} ${group.category} (${group.products.length})`}
+            >
+              {group.products.map((p) => (
+                <option key={p.id} value={p.id}>
+                  {p.name} — KES {Number(p.price).toLocaleString()}
+                </option>
+              ))}
             </optgroup>
-          )}
-          {categoryStats.household > 0 && (
-            <optgroup label="🛏️ Household & Bedding">
-              {inStockProducts
-                .filter((p) => getCategoryGroup(p.category) === 'household')
-                .map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name} — KES {Number(p.price).toLocaleString()}
-                  </option>
-                ))}
-            </optgroup>
-          )}
-          {categoryStats.clothes > 0 && (
-            <optgroup label="👗 Clothes & Fashion">
-              {inStockProducts
-                .filter((p) => getCategoryGroup(p.category) === 'clothes')
-                .map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name} — KES {Number(p.price).toLocaleString()}
-                  </option>
-                ))}
-            </optgroup>
-          )}
+          ))}
         </select>
       </div>
 
@@ -574,7 +543,7 @@ export default function TodayView({
             className="w-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition text-xs border border-emerald-200"
           >
             <Flame className="w-3.5 h-3.5 text-amber-500" />
-            <span>Generate Posters for All {activeCategoryCount} {postingCategory === 'beauty' ? 'Beauty' : postingCategory} Items</span>
+            <span>Generate Posters for All {activeCategoryCount} {activeCategoryLabel} Items</span>
           </button>
         )}
       </div>
@@ -640,10 +609,18 @@ export default function TodayView({
             <option value="__NEW_PRODUCT__" className="text-amber-900 font-bold bg-amber-100">
               ✨ + Add Brand New Product...
             </option>
-            {inStockProducts.map((p) => (
-              <option key={p.id} value={p.id} className="text-gray-900">
-                {p.name} — KES {Number(p.price).toLocaleString()}
-              </option>
+            {groupedProductsForSelect.map((group) => (
+              <optgroup
+                key={group.category}
+                label={`${group.icon} ${group.category} (${group.products.length})`}
+                className="text-gray-900 font-bold"
+              >
+                {group.products.map((p) => (
+                  <option key={p.id} value={p.id} className="text-gray-900 font-normal">
+                    {p.name} — KES {Number(p.price).toLocaleString()}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         </div>
