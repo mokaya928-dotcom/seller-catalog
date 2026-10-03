@@ -5,7 +5,6 @@ import {
   LayoutGrid, List
 } from 'lucide-react';
 import ProductDetailModal from './ProductDetailModal';
-import ProductPosterPreviewModal from '../products/ProductPosterPreviewModal';
 import CheckoutDrawer from './CheckoutDrawer';
 import WhatsAppIcon from '../common/WhatsAppIcon';
 import PwaInstallBanner from '../common/PwaInstallBanner';
@@ -61,7 +60,6 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [catalogToast, setCatalogToast] = useState(null);
   const [viewingProduct, setViewingProduct] = useState(null); // Active product in modal
-  const [posterProduct, setPosterProduct] = useState(null); // { product, photo } for poster preview
 
   // Modal History Handlers to prevent back button from exiting app
   const handleOpenProduct = (product) => {
@@ -93,10 +91,6 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   // Traps browser Back button so it closes modals instead of kicking user out of the site!
   useEffect(() => {
     const handlePopState = () => {
-      if (posterProduct) {
-        setPosterProduct(null);
-        return;
-      }
       if (viewingProduct) {
         setViewingProduct(null);
         return;
@@ -108,7 +102,7 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, [posterProduct, viewingProduct, isCheckoutOpen]);
+  }, [viewingProduct, isCheckoutOpen]);
 
   // Return to top visibility state
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -645,18 +639,6 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
 
                         <button
                           type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setPosterProduct({ product, photo: product.photo });
-                          }}
-                          className="p-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-amber-600 transition cursor-pointer"
-                          title="Generate Designed WhatsApp Poster"
-                        >
-                          <Sparkles className="w-4 h-4 text-amber-500" />
-                        </button>
-
-                        <button
-                          type="button"
                           onClick={(e) => handleToggleBag(e, product.id)}
                           className={`p-2 rounded-xl border flex items-center justify-center transition cursor-pointer ${
                             isSelected
@@ -758,20 +740,6 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
                         <span>{product.photos.length}</span>
                       </span>
                     )}
-
-                    {/* Quick Poster Generator Button on bottom-right of image */}
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setPosterProduct({ product, photo: product.photo });
-                      }}
-                      className="absolute bottom-2 right-2 px-1.5 py-1 rounded-lg bg-black/65 hover:bg-black text-amber-300 backdrop-blur-xs transition shadow-xs z-10 cursor-pointer flex items-center gap-1 text-[9px] font-bold"
-                      title="Create Designed WhatsApp Poster"
-                    >
-                      <Sparkles className="w-3 h-3 text-amber-400" />
-                      <span className="hidden xs:inline">Poster</span>
-                    </button>
                   </div>
 
                   {/* Card Details */}
@@ -939,19 +907,6 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
           onClose={handleCloseProduct}
           onAddToList={(id) => handleToggleBag(null, id)}
           isSelected={Boolean(cart[viewingProduct.id])}
-          onOpenPoster={(prod, photo) => setPosterProduct({ product: prod, photo })}
-        />
-      )}
-
-      {/* Designed Poster Preview Modal */}
-      {posterProduct && (
-        <ProductPosterPreviewModal
-          product={posterProduct.product}
-          seller={seller}
-          initialRatio="status"
-          initialPhoto={posterProduct.photo}
-          onClose={() => setPosterProduct(null)}
-          onShowToast={(msg) => setCatalogToast(msg)}
         />
       )}
 

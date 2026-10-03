@@ -9,7 +9,7 @@ import { getProductRemaining, getProductRegularPrice, getProductSocialProof } fr
 import WhatsAppIcon from '../common/WhatsAppIcon';
 import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUtils';
 
-export default function ProductDetailModal({ product, seller, onClose, onAddToList, isSelected, onOpenPoster }) {
+export default function ProductDetailModal({ product, seller, onClose, onAddToList, isSelected }) {
   const [activeTab, setActiveTab] = useState('about'); // 'about' | 'ingredients' | 'how_to_use'
   const [isMacroZoom, setIsMacroZoom] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -456,17 +456,6 @@ export default function ProductDetailModal({ product, seller, onClose, onAddToLi
 
         {/* Sticky Action Footer */}
         <div className="p-4 border-t border-slate-100 bg-white shadow-xl space-y-2">
-          {onOpenPoster && (
-            <button
-              type="button"
-              onClick={() => onOpenPoster(product, photosList[activeMedia.index] || product.photo)}
-              className="w-full py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs flex items-center justify-center gap-2 border border-slate-700 shadow-xs transition active:scale-95 cursor-pointer"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>Create WhatsApp Poster {photosList.length > 1 ? `(Photo Angle ${activeMedia.index + 1})` : ''}</span>
-            </button>
-          )}
-
           <div className="flex items-center gap-2">
           {onAddToList && (
             <button
