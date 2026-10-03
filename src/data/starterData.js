@@ -151,6 +151,8 @@ export const SHOE_IN_SELLER = {
 };
 
 export const CURATED_PRODUCTS = [
+  ...digitalStoreProductsData,
+  ...orewaProductsData,
 {
     "id": "prod_shoein_john_foster_woven_vamp_loafer_bl",
     "seller_id": "seller_beauty_bar_kenya",

@@ -150,12 +150,22 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
     if (shoeCount > 0) {
       counts['All Shoes & Kicks'] = shoeCount;
     }
+
+    const electronicsCount = (counts['Gaming Laptops & Ultrabooks'] || 0) + 
+      (counts['Monitors & Displays'] || 0) + 
+      (counts['Smart Tech & Audio'] || 0) + 
+      (counts['Electronics'] || 0) + 
+      (counts['Electronics & Gadgets'] || 0);
+    if (electronicsCount > 0) {
+      counts['Electronics'] = electronicsCount;
+    }
     return counts;
   }, [inStockProducts]);
 
   // Priority selling category ordering for presentations (fits every merchant's niche)
   const CATEGORY_ORDER = [
     'All',
+    'Electronics',
     'Gaming Laptops & Ultrabooks',
     'Monitors & Displays',
     'Smart Tech & Audio',
@@ -189,6 +199,10 @@ export default function CatalogView({ seller, products, onExitToSeller, onOpenSe
   const getCategoryIcon = (cat) => {
     switch (cat) {
       case 'All': return '✨';
+      case 'Electronics': return '⚡';
+      case 'Gaming Laptops & Ultrabooks': return '💻';
+      case 'Monitors & Displays': return '🖥️';
+      case 'Smart Tech & Audio': return '🎧';
       case 'All Shoes & Kicks': return '👟';
       case 'Sneakers & Kicks': return '👟';
       case "Men's Footwear": return '👞';

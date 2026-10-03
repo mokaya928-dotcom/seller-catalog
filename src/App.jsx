@@ -108,45 +108,10 @@ export default function App() {
     return () => clearTimeout(timer);
   }, [toast]);
 
-  // Load initial data from storageService
+  // Load initial data from storageService - Unified Master Catalog (One Link)
   useEffect(() => {
     async function loadData() {
       try {
-        const urlParams = new URLSearchParams(window.location.search);
-        const sellerParam = (urlParams.get('seller') || urlParams.get('store') || '').toLowerCase();
-
-        if (sellerParam === 'orewa' || sellerParam === 'orewa_limited' || urlParams.get('orewa') !== null) {
-          const loaded = await storageService.loadPreset('orewa');
-          const [loadedPosted, loadedOverrides] = await Promise.all([
-            storageService.getPostedStatus(todayDateStr),
-            storageService.getDayOverrides(todayDateStr)
-          ]);
-          setSeller(loaded.seller);
-          setProducts(loaded.products);
-          setPostedMap(loadedPosted);
-          setTodayOverrides(loadedOverrides || {});
-          setIsUnlocked(true);
-          sessionStorage.setItem('seller_unlocked', 'true');
-          showToast('✨ Welcome to Orewa Limited (orewa.co.ke) Daily Posters & Storefront!', 'success');
-          return;
-        }
-
-        if (sellerParam === 'digital_store' || sellerParam === 'digitalstore' || sellerParam === 'tech' || urlParams.get('digitalstore') !== null || urlParams.get('digital_store') !== null) {
-          const loaded = await storageService.loadPreset('digital_store');
-          const [loadedPosted, loadedOverrides] = await Promise.all([
-            storageService.getPostedStatus(todayDateStr),
-            storageService.getDayOverrides(todayDateStr)
-          ]);
-          setSeller(loaded.seller);
-          setProducts(loaded.products);
-          setPostedMap(loadedPosted);
-          setTodayOverrides(loadedOverrides || {});
-          setIsUnlocked(true);
-          sessionStorage.setItem('seller_unlocked', 'true');
-          showToast('💻 Welcome to Digital Store Kenya (Bihi Towers) Daily Posters & Tech Catalog!', 'success');
-          return;
-        }
-
         const [loadedSeller, loadedProducts, loadedPosted, loadedOverrides] = await Promise.all([
           storageService.getSeller(),
           storageService.getProducts(),

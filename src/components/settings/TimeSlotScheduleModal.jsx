@@ -15,7 +15,9 @@ import {
   RotateCcw,
   Volume2,
   ShieldCheck,
-  Smartphone
+  Smartphone,
+  Plus,
+  Trash2
 } from 'lucide-react';
 import {
   notificationService,
@@ -98,6 +100,78 @@ export default function TimeSlotScheduleModal({
         return slot;
       })
     );
+  };
+
+  // Quick Preset Routines for Sellers
+  const PRESET_ROUTINES = [
+    {
+      id: 'morning_rush',
+      name: '☀️ Morning Blitz (7-10 AM)',
+      desc: '5 rapid morning drops for commute & breakfast scrolling',
+      slots: [
+        { id: 'm_0715', time: '07:15 AM', label: 'Early Wakeup Browse', icon: 'Sun', enabled: true },
+        { id: 'm_0800', time: '08:00 AM', label: 'Morning Commute Rush', icon: 'Sun', enabled: true },
+        { id: 'm_0845', time: '08:45 AM', label: 'Office Arrival & Tea Browse', icon: 'Sun', enabled: true },
+        { id: 'm_0930', time: '09:30 AM', label: 'Mid-Morning Discovery', icon: 'Sun', enabled: true },
+        { id: 'm_1015', time: '10:15 AM', label: 'Morning Flash Deal', icon: 'Sun', enabled: true },
+      ]
+    },
+    {
+      id: 'all_day',
+      name: '⏰ Standard 5 Drops',
+      desc: 'Classic commercial flow across peak shopping windows',
+      slots: [
+        { id: 'morning_rush', time: '09:00 AM', label: 'Morning Commute & Office Browse', icon: 'Sun', enabled: true },
+        { id: 'lunch_break', time: '12:30 PM', label: 'Lunchtime Shoppers & Quick Inquiries', icon: 'Clock', enabled: true },
+        { id: 'afternoon_boost', time: '03:30 PM', label: 'Afternoon Pick-Me-Up & Restock', icon: 'Sparkles', enabled: true },
+        { id: 'evening_transit', time: '06:30 PM', label: 'Evening Commute & Matatu Scroll', icon: 'Sunset', enabled: true },
+        { id: 'bedtime_orders', time: '08:45 PM', label: 'Bedtime Browsing & Next-Day Orders', icon: 'Moon', enabled: true }
+      ]
+    },
+    {
+      id: 'high_volume',
+      name: '🔥 Power Seller (10 Drops)',
+      desc: '10 daily drops spaced every 1.5 hours throughout the day',
+      slots: [
+        { id: 'pv_1', time: '07:30 AM', label: 'Drop #1 • Early Bird', icon: 'Sun', enabled: true },
+        { id: 'pv_2', time: '08:45 AM', label: 'Drop #2 • Commute Rush', icon: 'Sun', enabled: true },
+        { id: 'pv_3', time: '10:00 AM', label: 'Drop #3 • Office Browse', icon: 'Sun', enabled: true },
+        { id: 'pv_4', time: '11:30 AM', label: 'Drop #4 • Pre-Lunch', icon: 'Clock', enabled: true },
+        { id: 'pv_5', time: '01:00 PM', label: 'Drop #5 • Lunch Deal', icon: 'Clock', enabled: true },
+        { id: 'pv_6', time: '02:30 PM', label: 'Drop #6 • Pick-Me-Up', icon: 'Sparkles', enabled: true },
+        { id: 'pv_7', time: '04:00 PM', label: 'Drop #7 • Tea Break', icon: 'Sparkles', enabled: true },
+        { id: 'pv_8', time: '05:30 PM', label: 'Drop #8 • Rush Hour', icon: 'Sunset', enabled: true },
+        { id: 'pv_9', time: '07:00 PM', label: 'Drop #9 • Matatu Scroll', icon: 'Sunset', enabled: true },
+        { id: 'pv_10', time: '08:30 PM', label: 'Drop #10 • Bedtime Orders', icon: 'Moon', enabled: true }
+      ]
+    }
+  ];
+
+  const handleApplyPreset = (presetSlots) => {
+    setSchedule(presetSlots);
+    onShowToast('✓ Applied routine! Tap Save Schedule to keep.', 'info');
+  };
+
+  const handleAddSlot = () => {
+    const count = schedule.length + 1;
+    const newSlot = {
+      id: `slot_custom_${Date.now()}`,
+      time: '11:00 AM',
+      label: `Custom Drop #${count}`,
+      icon: 'Clock',
+      enabled: true
+    };
+    setSchedule((prev) => [...prev, newSlot]);
+    onShowToast('✓ Added new posting window! Pick time & tap Save.', 'success');
+  };
+
+  const handleDeleteSlot = (slotId) => {
+    if (schedule.length <= 1) {
+      onShowToast('You must keep at least 1 posting window.', 'error');
+      return;
+    }
+    setSchedule((prev) => prev.filter((s) => s.id !== slotId));
+    onShowToast('Window removed.', 'info');
   };
 
   // Toggle single slot
@@ -302,6 +376,31 @@ export default function TimeSlotScheduleModal({
             </div>
           </div>
 
+          {/* Quick Schedule Routines */}
+          <div className="space-y-1.5">
+            <div className="flex items-center justify-between text-xs font-bold text-gray-700 px-1">
+              <span>Choose Posting Routine</span>
+              <span className="text-[10px] text-emerald-700 font-semibold">1-Tap Setup</span>
+            </div>
+            <div className="grid grid-cols-3 gap-1.5">
+              {PRESET_ROUTINES.map((preset) => (
+                <button
+                  key={preset.id}
+                  type="button"
+                  onClick={() => handleApplyPreset(preset.slots)}
+                  className="p-2 rounded-xl border border-gray-200 bg-gray-50/70 hover:bg-emerald-50 hover:border-emerald-300 text-left transition"
+                >
+                  <div className="text-[11px] font-black text-gray-900 leading-tight truncate">
+                    {preset.name}
+                  </div>
+                  <div className="text-[9px] text-gray-500 line-clamp-1 mt-0.5">
+                    {preset.desc}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Time Slots List */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-xs font-bold text-gray-700 px-1">
@@ -345,7 +444,7 @@ export default function TimeSlotScheduleModal({
                       </div>
                     </div>
 
-                    {/* Right: Time Picker & Switch */}
+                    {/* Right: Time Picker, Switch & Delete */}
                     <div className="flex items-center gap-2 flex-shrink-0">
                       {/* Native Time Input */}
                       <div className="relative">
@@ -377,10 +476,32 @@ export default function TimeSlotScheduleModal({
                           }`}
                         />
                       </button>
+
+                      {/* Delete Slot Button */}
+                      {schedule.length > 1 && (
+                        <button
+                          type="button"
+                          onClick={() => handleDeleteSlot(slot.id)}
+                          className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition"
+                          title="Remove this slot"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      )}
                     </div>
                   </div>
                 );
               })}
+
+              {/* Add Custom Slot Button */}
+              <button
+                type="button"
+                onClick={handleAddSlot}
+                className="w-full py-2.5 px-3 rounded-2xl border-2 border-dashed border-gray-300 hover:border-emerald-500 hover:bg-emerald-50/50 text-gray-600 hover:text-emerald-800 text-xs font-bold transition flex items-center justify-center gap-1.5"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Add Custom Posting Time (+ Window)</span>
+              </button>
             </div>
           </div>
 

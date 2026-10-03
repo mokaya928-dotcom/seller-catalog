@@ -28,11 +28,20 @@ export default function ProductsView({
       const cat = p.category || 'Other';
       counts[cat] = (counts[cat] || 0) + 1;
     });
+    const electronicsCount = (counts['Gaming Laptops & Ultrabooks'] || 0) + 
+      (counts['Monitors & Displays'] || 0) + 
+      (counts['Smart Tech & Audio'] || 0) + 
+      (counts['Electronics'] || 0) + 
+      (counts['Electronics & Gadgets'] || 0);
+    if (electronicsCount > 0) {
+      counts['Electronics'] = electronicsCount;
+    }
     return counts;
   }, [products]);
 
   const CATEGORY_ORDER = [
     'All',
+    'Electronics',
     'Gaming Laptops & Ultrabooks',
     'Monitors & Displays',
     'Smart Tech & Audio',
@@ -64,6 +73,10 @@ export default function ProductsView({
   const getCategoryIcon = (cat) => {
     const lower = (cat || '').toLowerCase();
     if (cat === 'All') return '✨';
+    if (cat === 'Electronics' || lower.includes('electronic')) return '⚡';
+    if (lower.includes('laptop') || lower.includes('computer')) return '💻';
+    if (lower.includes('monitor') || lower.includes('display')) return '🖥️';
+    if (lower.includes('audio') || lower.includes('headphone') || lower.includes('soundcore')) return '🎧';
     if (lower.includes('sneaker') || lower.includes('kicks')) return '👟';
     if (lower.includes('footwear') || lower.includes('shoe') || lower.includes('loafer')) return '👞';
     if (lower.includes('bag')) return '👜';

@@ -151,7 +151,17 @@ const SYNONYM_MAP = {
   loafer: ['loafer', 'loafers', 'slip-on', 'woven', 'horsebit', 'footwear', 'john foster'],
   loafers: ['loafer', 'loafers', 'slip-on', 'woven', 'horsebit', 'footwear', 'john foster'],
   kicks: ['sneaker', 'kicks', 'shoes', 'retro', 'adidas', 'spezia', '530'],
-  footwear: ['footwear', 'shoes', 'sneakers', 'loafers', 'kicks']
+  footwear: ['footwear', 'shoes', 'sneakers', 'loafers', 'kicks'],
+  electronics: ['electronics', 'laptop', 'gaming', 'monitor', 'soundcore', 'tech', 'headphones', 'gadgets'],
+  tech: ['electronics', 'laptop', 'gaming', 'monitor', 'soundcore', 'tech', 'headphones'],
+  laptop: ['laptop', 'laptops', 'notebook', 'macbook', 'gaming laptop', 'omen', 'asus', 'dell', 'hp'],
+  laptops: ['laptop', 'laptops', 'notebook', 'macbook', 'gaming laptop'],
+  gaming: ['gaming', 'laptop', 'rtx', 'strix', 'tuf', 'omen', 'odyssey', '240hz'],
+  monitor: ['monitor', 'monitors', 'display', 'screen', 'samsung', 'xiaomi', 'dell', 'hp', 'qhd', 'fhd'],
+  monitors: ['monitor', 'monitors', 'display', 'screen'],
+  audio: ['soundcore', 'headphones', 'speaker', 'earbuds', 'anker', 'anc', 'wireless'],
+  headphones: ['headphones', 'soundcore', 'earbuds', 'headset', 'anc', 'wireless'],
+  soundcore: ['soundcore', 'anker', 'headphones', 'speaker', 'boom', 'flare', 'space']
 };
 
 /**
@@ -374,17 +384,33 @@ export function executeSmartSearch(products = [], rawQuery = '', options = {}) {
     // 2. Category Check
     let matchesCategory = false;
     const prodCat = normalizeCategory(product.category);
+    const selLower = (selectedCategory || '').toLowerCase();
+    const prodCatLower = (prodCat || '').toLowerCase();
+
     if (selectedCategory === 'All') {
       matchesCategory = true;
     } else if (
-      selectedCategory.toLowerCase() === 'shoes' || 
-      selectedCategory.toLowerCase() === 'footwear' ||
-      selectedCategory.toLowerCase() === 'all shoes' ||
-      selectedCategory.toLowerCase() === 'all shoes & kicks'
+      selLower === 'electronics' ||
+      selLower === 'electronics & gadgets' ||
+      selLower === 'tech' ||
+      selLower === 'gadgets'
+    ) {
+      matchesCategory = (
+        prodCatLower.includes('electronic') ||
+        prodCatLower.includes('laptop') ||
+        prodCatLower.includes('monitor') ||
+        prodCatLower.includes('audio') ||
+        prodCatLower.includes('tech')
+      );
+    } else if (
+      selLower === 'shoes' || 
+      selLower === 'footwear' ||
+      selLower === 'all shoes' ||
+      selLower === 'all shoes & kicks'
     ) {
       matchesCategory = (prodCat === 'Sneakers & Kicks' || prodCat === "Men's Footwear");
     } else {
-      matchesCategory = prodCat.toLowerCase() === selectedCategory.toLowerCase();
+      matchesCategory = prodCatLower === selLower;
     }
 
     if (!matchesCategory) continue;

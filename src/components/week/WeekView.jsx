@@ -31,7 +31,11 @@ export default function WeekView({
   seller,
   ratio,
   todayDateStr,
+  postLimit = 5,
+  onChangePostLimit,
   postingCategory = 'beauty',
+  onChangeCategory,
+  customSchedule,
   onGoToToday,
   onShowToast
 }) {
@@ -102,11 +106,12 @@ export default function WeekView({
       seller,
       selectedDateStr,
       ratio,
-      5,
+      postLimit,
       postingCategory,
-      dayOverrides
+      dayOverrides,
+      customSchedule
     );
-  }, [products, seller, selectedDateStr, ratio, postingCategory, dayOverrides]);
+  }, [products, seller, selectedDateStr, ratio, postLimit, postingCategory, dayOverrides, customSchedule]);
 
   const activeDay = weekDays.find((d) => d.dateStr === selectedDateStr) || weekDays[0];
 

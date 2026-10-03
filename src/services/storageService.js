@@ -9,8 +9,8 @@ import { DEFAULT_SELLER, STARTER_PRODUCTS, BEAUTY_BAR_SELLER, CURATED_PRODUCTS, 
 import { supabase, isSupabaseConfigured } from './supabaseClient';
 
 const KEYS = {
-  SELLER: 'dailypost_seller_v11',
-  PRODUCTS: 'dailypost_products_v14',
+  SELLER: 'dailypost_seller_v12',
+  PRODUCTS: 'dailypost_products_v15',
   POSTS_PREFIX: 'dailypost_posts_v11_',
   POSTED_STATUS_PREFIX: 'dailypost_posted_v11_',
   OVERRIDES_PREFIX: 'dailypost_overrides_v11_'
@@ -151,7 +151,8 @@ export const storageService = {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length >= 100) {
           const hasLegacyDuplicates = parsed.some((p) => p.name && (p.name.includes('Loafer Dark-tan') || p.name.includes('Horsebit Loafer Dark-tan')));
-          if (hasLegacyDuplicates) {
+          const hasElectronics = parsed.some((p) => p.category && (p.category.includes('Gaming') || p.category.includes('Monitor') || p.category.includes('Audio') || p.category.includes('Electronics') || p.category.includes('Smart Tech')));
+          if (hasLegacyDuplicates || !hasElectronics) {
             localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(STARTER_PRODUCTS));
             return STARTER_PRODUCTS;
           }
