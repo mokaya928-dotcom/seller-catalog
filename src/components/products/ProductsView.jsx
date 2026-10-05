@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Plus, Search, PackageCheck, Sparkles, Zap, FileSpreadsheet } from 'lucide-react';
+import { Plus, Search, PackageCheck, Sparkles, Zap, FileSpreadsheet, Film } from 'lucide-react';
 import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
 import ProductPosterPreviewModal from './ProductPosterPreviewModal';
@@ -21,6 +21,17 @@ export default function ProductsView({
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [modalState, setModalState] = useState({ isOpen: false, product: null });
   const [previewProduct, setPreviewProduct] = useState(null);
+  const [isCatalogReelOpen, setIsCatalogReelOpen] = useState(false);
+
+  const handleOpenCatalogReel = () => {
+    const primary = products.find(p => p.featured) || products[0] || null;
+    if (!primary) {
+      if (onShowToast) onShowToast('Add at least 1 product to create a catalog reel', 'info');
+      return;
+    }
+    setPreviewProduct(primary);
+    setIsCatalogReelOpen(true);
+  };
 
   // Dynamic Category Extraction from inventory using unified category engine
   const { counts: categoryStats, categoryList } = useMemo(() => {
@@ -132,6 +143,17 @@ export default function ProductsView({
           </div>
 
           <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={handleOpenCatalogReel}
+              className="bg-gradient-to-r from-amber-500 via-rose-500 to-amber-600 hover:opacity-95 text-white font-extrabold py-2 px-3 rounded-xl flex items-center gap-1.5 text-xs shadow-xs transition active:scale-95 cursor-pointer"
+              title="Create an automated multi-product video reel slideshow for WhatsApp Status"
+              style={{ minHeight: '40px' }}
+            >
+              <Film className="w-4 h-4 text-amber-200" />
+              <span>🎬 Catalog Reel</span>
+            </button>
+
             <button
               type="button"
               onClick={onOpenBulkModal}
@@ -334,9 +356,15 @@ export default function ProductsView({
       {previewProduct && seller && (
         <ProductPosterPreviewModal
           product={previewProduct}
+          allProducts={products}
           seller={seller}
           initialRatio={ratio}
-          onClose={() => setPreviewProduct(null)}
+          initialTab={isCatalogReelOpen ? 'reel' : null}
+          initialReelMode={isCatalogReelOpen ? 'multi_product' : 'single_product'}
+          onClose={() => {
+            setPreviewProduct(null);
+            setIsCatalogReelOpen(false);
+          }}
           onShowToast={onShowToast}
         />
       )}

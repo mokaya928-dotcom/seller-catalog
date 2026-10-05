@@ -2,27 +2,23 @@
  * Video Reel & Animated Slideshow Service
  * 
  * Generates high-converting, silky-smooth 1080p animated video slideshows (Reels / Status)
- * for products with multiple colorways, photo angles, or variations (e.g. mobile phones with 4 colors,
- * shoes with 4 angles/colors, cosmetic shades, handbags).
+ * for:
+ * 1. Single Product Multi-Color / Angle Reels (e.g. mobile phones with 4 colors, shoes with 4 angles)
+ * 2. Multi-Product Catalog Showcase Reels (e.g. 3 to 6 distinct products with custom prices, names & photos)
  * 
  * Capabilities:
- * 1. Pre-renders each slide as a pixel-perfect branded canvas using canvasRenderer.
- * 2. Deterministic 60fps live canvas preview player for instant in-browser feedback.
- * 3. Multiple transition styles:
- *    - 'silk_crossfade': Silky smooth 0.5s crossfade between colors/angles.
- *    - 'cinematic_zoom': Ken Burns slow scale (1.00 -> 1.04) with smooth dissolve.
- *    - 'smooth_slide': Lateral slide transition.
- * 4. High-impact broadcast overlays:
- *    - Segmented Instagram/WhatsApp Story Progress Bars at the top.
- *    - Floating Color & Variant Indicator Pill with glowing active dots.
- * 5. Deterministic 30fps MediaRecorder export to MP4 / WebM with live percentage progress.
+ * - Pre-renders each slide as a pixel-perfect branded canvas using canvasRenderer.
+ * - Deterministic 60fps live canvas preview player for instant in-browser feedback.
+ * - Multiple transition styles (Silk Crossfade, Apple-style Cinematic Zoom, Lateral Slide).
+ * - High-impact overlays: Instagram/WhatsApp Story Progress Bars + Floating Variant Dots Pill.
+ * - 100% Mobile & Safari-safe 30fps MediaRecorder export (MP4 & WebM) with live percentage progress.
  */
 
 import { canvasRenderer } from './canvasRenderer';
 
 export const REEL_TRANSITIONS = [
-  { id: 'silk_crossfade', name: 'Silk Crossfade', icon: '✨', desc: 'Silky smooth dissolve between colors' },
-  { id: 'cinematic_zoom', name: 'Cinematic Zoom', icon: '🎥', desc: 'Subtle Apple-style slow zoom & crossfade' },
+  { id: 'silk_crossfade', name: 'Silk Crossfade', icon: '✨', desc: 'Silky smooth dissolve between items' },
+  { id: 'cinematic_zoom', name: 'Cinematic Zoom', icon: '🎥', desc: 'Apple/Samsung-style slow zoom & crossfade' },
   { id: 'smooth_slide', name: 'Lateral Slide', icon: '↔️', desc: 'Smooth horizontal sliding transition' }
 ];
 
@@ -53,12 +49,13 @@ export function loadImageElement(src) {
 }
 
 /**
- * Pre-renders all slide posters for the given product and list of photo URLs.
- * Because all slides share the exact same seller branding, header, footer, pricing, and palette,
- * the container remains 100% stable while only the product colors morph smoothly!
+ * Pre-renders all slide posters for either:
+ * A) A single product with multiple photos (Color/Angle Reel)
+ * B) An array of different products (Multi-Product Showcase Reel)
  */
 export async function renderReelSlidePosters({
-  product,
+  product = null,
+  products = null,
   seller,
   ratio = 'status',
   design = 'retail_classic',
@@ -66,6 +63,63 @@ export async function renderReelSlidePosters({
   mood = null,
   photos = []
 }) {
+  const slides = [];
+
+  // =========================================================================
+  // 1. MULTI-PRODUCT CATALOG SHOWCASE REEL MODE
+  // =========================================================================
+  if (Array.isArray(products) && products.length > 0) {
+    for (let i = 0; i < products.length; i++) {
+      const prodItem = products[i];
+      if (!prodItem) continue;
+
+      const prodPhoto = prodItem.photo || prodItem.selectedPhoto || (Array.isArray(prodItem.photos) ? prodItem.photos[0] : null) || '/products/bbk-vaseline-lip.jpg';
+      const cacheKey = `multiprod_${prodItem.id || i}_${prodPhoto}_${ratio}_${design}_${palette || 'def'}_${mood || 'std'}`;
+
+      let img = slideFrameCache.get(cacheKey);
+
+      if (!img) {
+        const productForSlide = {
+          ...prodItem,
+          photo: prodPhoto,
+          selectedPhoto: prodPhoto,
+          selectedMood: prodItem.selectedMood || mood
+        };
+
+        const dataUrl = await canvasRenderer.renderPost(
+          productForSlide,
+          seller,
+          ratio,
+          design,
+          null,
+          palette,
+          prodItem.selectedMood || mood
+        );
+
+        img = await loadImageElement(dataUrl);
+        if (img) {
+          slideFrameCache.set(cacheKey, img);
+        }
+      }
+
+      if (img) {
+        slides.push({
+          index: i,
+          product: prodItem,
+          photoUrl: prodPhoto,
+          img,
+          label: prodItem.name,
+          price: prodItem.price
+        });
+      }
+    }
+
+    return slides;
+  }
+
+  // =========================================================================
+  // 2. SINGLE PRODUCT MULTI-COLOR / ANGLE REEL MODE
+  // =========================================================================
   const photoList = Array.isArray(photos) && photos.length > 0
     ? photos
     : (Array.isArray(product?.photos) && product.photos.length > 0 ? product.photos : [product?.photo || product?.image_url]);
@@ -75,11 +129,9 @@ export async function renderReelSlidePosters({
     uniquePhotos.push(product?.photo || '/products/bbk-vaseline-lip.jpg');
   }
 
-  const slides = [];
-
   for (let i = 0; i < uniquePhotos.length; i++) {
     const photoUrl = uniquePhotos[i];
-    const cacheKey = `${product?.id || 'prod'}_${photoUrl}_${ratio}_${design}_${palette || 'def'}_${mood || 'std'}`;
+    const cacheKey = `single_${product?.id || 'prod'}_${photoUrl}_${ratio}_${design}_${palette || 'def'}_${mood || 'std'}`;
 
     let img = slideFrameCache.get(cacheKey);
 
@@ -110,9 +162,11 @@ export async function renderReelSlidePosters({
     if (img) {
       slides.push({
         index: i,
+        product,
         photoUrl,
         img,
-        label: `Color / Angle ${i + 1}`
+        label: `Color / Angle ${i + 1}`,
+        price: product?.price
       });
     }
   }
@@ -122,13 +176,6 @@ export async function renderReelSlidePosters({
 
 /**
  * Draws a single frame of the animated reel onto the target canvas context.
- * 
- * @param {CanvasRenderingContext2D} ctx Target 2D canvas context
- * @param {number} width Canvas width (e.g. 1080)
- * @param {number} height Canvas height (e.g. 1920 or 1350)
- * @param {Array} slides Array of pre-rendered slide objects { img, photoUrl, index }
- * @param {number} progress Continuous float progress through the reel (0.0 to slides.length)
- * @param {Object} options Configuration options
  */
 export function drawReelFrame(ctx, width, height, slides, progress, options = {}) {
   if (!ctx || !slides || slides.length === 0) return;
@@ -261,15 +308,23 @@ export function drawReelFrame(ctx, width, height, slides, progress, options = {}
     ctx.restore();
   }
 
-  // B. Color & Variant Indicator Dots Pill
+  // B. Color & Variant / Multi-Product Indicator Dots Pill
   if (showVariantDots && N > 1) {
+    const isMultiProd = Boolean(currentSlide?.product && currentSlide.product.name && options.isMultiProduct);
     const pillY = isStatus ? 1230 : 860;
     const pillHeight = isStatus ? 40 : 34;
     const dotRadius = isStatus ? 4.5 : 3.5;
     const activeDotRadius = isStatus ? 6.0 : 5.0;
     const dotGap = isStatus ? 14 : 11;
     const dotsWidth = (N * dotGap);
-    const labelText = `Color ${currentIndex + 1} of ${N}`;
+
+    let labelText = `Color ${currentIndex + 1} of ${N}`;
+    if (isMultiProd) {
+      const pName = String(currentSlide.product.name || 'Item');
+      const shortName = pName.length > 20 ? pName.slice(0, 20) + '…' : pName;
+      const priceStr = currentSlide.product.price ? ` • KES ${Number(currentSlide.product.price).toLocaleString()}` : '';
+      labelText = `#${currentIndex + 1}: ${shortName}${priceStr}`;
+    }
 
     ctx.save();
     ctx.font = `900 ${isStatus ? 14 : 12}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
@@ -279,7 +334,7 @@ export function drawReelFrame(ctx, width, height, slides, progress, options = {}
     const pillX = Math.round((width - pillWidth) / 2);
 
     // Pill background
-    ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+    ctx.fillStyle = 'rgba(15, 23, 42, 0.88)';
     ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
     ctx.shadowBlur = 12;
     ctx.shadowOffsetY = 4;
@@ -323,7 +378,7 @@ export function drawReelFrame(ctx, width, height, slides, progress, options = {}
       dotStartX += dotGap;
     }
 
-    // Draw Variant Text Label
+    // Draw Variant / Item Text Label
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
@@ -333,8 +388,58 @@ export function drawReelFrame(ctx, width, height, slides, progress, options = {}
 }
 
 /**
+ * Resolves the optimal video MIME type for the user's specific operating system and browser.
+ * On iOS Safari / WebKit, prioritizes MP4 so the video can be played and saved in iOS Photos & WhatsApp.
+ */
+export function getOptimalVideoMimeType() {
+  if (typeof MediaRecorder === 'undefined' || !MediaRecorder.isTypeSupported) {
+    return { mimeType: 'video/webm', extension: 'webm' };
+  }
+
+  const isIOS = typeof navigator !== 'undefined' && (
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+  );
+
+  const isSafari = typeof navigator !== 'undefined' && (
+    /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+  );
+
+  // iOS Safari requires MP4 for camera roll and native playback
+  const prioritizedCandidates = (isIOS || isSafari)
+    ? [
+        { type: 'video/mp4;codecs=avc1', ext: 'mp4' },
+        { type: 'video/mp4;codecs=h264', ext: 'mp4' },
+        { type: 'video/mp4', ext: 'mp4' },
+        { type: 'video/webm;codecs=vp9,opus', ext: 'webm' },
+        { type: 'video/webm;codecs=vp9', ext: 'webm' },
+        { type: 'video/webm', ext: 'webm' }
+      ]
+    : [
+        { type: 'video/mp4;codecs=avc1', ext: 'mp4' },
+        { type: 'video/mp4', ext: 'mp4' },
+        { type: 'video/webm;codecs=vp9,opus', ext: 'webm' },
+        { type: 'video/webm;codecs=vp9', ext: 'webm' },
+        { type: 'video/webm;codecs=vp8', ext: 'webm' },
+        { type: 'video/webm', ext: 'webm' }
+      ];
+
+  for (const candidate of prioritizedCandidates) {
+    try {
+      if (MediaRecorder.isTypeSupported(candidate.type)) {
+        return { mimeType: candidate.type, extension: candidate.ext };
+      }
+    } catch (e) {
+      // Continue searching
+    }
+  }
+
+  return { mimeType: 'video/webm', extension: 'webm' };
+}
+
+/**
  * Records an animated video reel deterministically using canvas.captureStream() and MediaRecorder.
- * Supports MP4 / WebM with live progress callback.
+ * Supports MP4 / WebM with live percentage progress callback.
  */
 export async function recordReelVideo(canvas, slides, options = {}, onProgress = () => {}) {
   if (!canvas || !slides || slides.length === 0) {
@@ -348,92 +453,110 @@ export async function recordReelVideo(canvas, slides, options = {}, onProgress =
   const totalDurationSeconds = totalSlides * secondsPerSlide * loops;
   const totalFrames = Math.max(1, Math.round(totalDurationSeconds * fps));
 
-  // Determine optimal supported MIME type
-  const mimeCandidates = [
-    { type: 'video/mp4;codecs=avc1', ext: 'mp4' },
-    { type: 'video/mp4', ext: 'mp4' },
-    { type: 'video/webm;codecs=vp9,opus', ext: 'webm' },
-    { type: 'video/webm;codecs=vp9', ext: 'webm' },
-    { type: 'video/webm;codecs=vp8', ext: 'webm' },
-    { type: 'video/webm', ext: 'webm' }
-  ];
+  const { mimeType: selectedMime, extension: selectedExt } = getOptimalVideoMimeType();
 
-  let selectedMime = 'video/webm';
-  let selectedExt = 'webm';
-
-  if (typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported) {
-    for (const c of mimeCandidates) {
-      if (MediaRecorder.isTypeSupported(c.type)) {
-        selectedMime = c.type;
-        selectedExt = c.ext;
-        break;
-      }
-    }
+  // Safely ensure canvas is attached in DOM during capture (WebKit/Safari requirement)
+  let cleanupAttachedCanvas = false;
+  if (typeof document !== 'undefined' && !document.body.contains(canvas)) {
+    canvas.style.position = 'fixed';
+    canvas.style.left = '-9999px';
+    canvas.style.top = '0';
+    canvas.style.opacity = '0';
+    canvas.style.pointerEvents = 'none';
+    document.body.appendChild(canvas);
+    cleanupAttachedCanvas = true;
   }
 
-  // Capture canvas stream at requested FPS
-  const stream = canvas.captureStream ? canvas.captureStream(fps) : null;
-  if (!stream) {
-    throw new Error('canvas.captureStream() is not supported on this browser');
-  }
-
-  const recorder = new MediaRecorder(stream, {
-    mimeType: selectedMime,
-    videoBitsPerSecond: options.videoBitsPerSecond || 5000000 // 5 Mbps crystal clear 1080p
-  });
-
-  const chunks = [];
-  recorder.ondataavailable = (e) => {
-    if (e.data && e.data.size > 0) {
-      chunks.push(e.data);
+  try {
+    // Capture canvas stream at requested FPS
+    const getStream = canvas.captureStream || canvas.mozCaptureStream || canvas.webkitCaptureStream;
+    if (!getStream) {
+      throw new Error('canvas.captureStream() is not supported on this browser');
     }
-  };
 
-  const recordingPromise = new Promise((resolve, reject) => {
-    recorder.onstop = () => {
-      try {
-        const blob = new Blob(chunks, { type: selectedMime });
-        const url = URL.createObjectURL(blob);
-        resolve({
-          blob,
-          url,
-          mimeType: selectedMime,
-          extension: selectedExt,
-          duration: totalDurationSeconds
-        });
-      } catch (err) {
-        reject(err);
+    const stream = getStream.call(canvas, fps);
+    if (!stream) {
+      throw new Error('Could not initialize canvas media stream');
+    }
+
+    const recorder = new MediaRecorder(stream, {
+      mimeType: selectedMime,
+      videoBitsPerSecond: options.videoBitsPerSecond || 5000000 // 5 Mbps crystal clear 1080p
+    });
+
+    const chunks = [];
+    recorder.ondataavailable = (e) => {
+      if (e.data && e.data.size > 0) {
+        chunks.push(e.data);
       }
     };
-    recorder.onerror = (e) => reject(e.error || new Error('MediaRecorder error'));
-  });
 
-  recorder.start();
+    const recordingPromise = new Promise((resolve, reject) => {
+      recorder.onstop = () => {
+        try {
+          if (chunks.length === 0) {
+            return reject(new Error('No video data chunks were captured by the browser encoder.'));
+          }
+          const blob = new Blob(chunks, { type: selectedMime });
+          const url = URL.createObjectURL(blob);
+          resolve({
+            blob,
+            url,
+            mimeType: selectedMime,
+            extension: selectedExt,
+            duration: totalDurationSeconds
+          });
+        } catch (err) {
+          reject(err);
+        }
+      };
+      recorder.onerror = (e) => reject(e.error || new Error('MediaRecorder encoder error'));
+    });
 
-  const ctx = canvas.getContext('2d');
-  const frameIntervalMs = 1000 / fps;
+    // Start recorder with 100ms timeslice to ensure continuous chunk buffering on mobile
+    recorder.start(100);
 
-  // Render each frame deterministically
-  for (let f = 0; f < totalFrames; f++) {
-    const elapsedSeconds = f / fps;
-    const progress = (elapsedSeconds / secondsPerSlide) % totalSlides;
+    const ctx = canvas.getContext('2d');
+    const frameIntervalMs = 1000 / fps;
 
-    drawReelFrame(ctx, canvas.width, canvas.height, slides, progress, options);
+    // Render each frame deterministically
+    for (let f = 0; f < totalFrames; f++) {
+      const elapsedSeconds = f / fps;
+      const progress = (elapsedSeconds / secondsPerSlide) % totalSlides;
 
-    if (onProgress) {
-      onProgress({
-        frame: f + 1,
-        totalFrames,
-        percent: Math.min(100, Math.round(((f + 1) / totalFrames) * 100))
-      });
+      drawReelFrame(ctx, canvas.width, canvas.height, slides, progress, options);
+
+      if (onProgress) {
+        onProgress({
+          frame: f + 1,
+          totalFrames,
+          percent: Math.min(100, Math.round(((f + 1) / totalFrames) * 100))
+        });
+      }
+
+      // Allow the canvas stream and MediaRecorder encoder to ingest the frame
+      await new Promise((r) => setTimeout(r, frameIntervalMs));
     }
 
-    // Allow the canvas stream and MediaRecorder encoder to ingest the frame
-    await new Promise((r) => setTimeout(r, frameIntervalMs));
-  }
+    // Force flush of buffered frames before stopping
+    if (recorder.requestData && recorder.state === 'recording') {
+      try {
+        recorder.requestData();
+      } catch (e) {
+        // Safe non-blocking request
+      }
+    }
 
-  recorder.stop();
-  return await recordingPromise;
+    if (recorder.state === 'recording') {
+      recorder.stop();
+    }
+
+    return await recordingPromise;
+  } finally {
+    if (cleanupAttachedCanvas && canvas.parentNode) {
+      canvas.parentNode.removeChild(canvas);
+    }
+  }
 }
 
 /**

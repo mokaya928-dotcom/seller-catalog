@@ -17,12 +17,15 @@ import VideoReelPlayer from './VideoReelPlayer';
 
 export default function ProductPosterPreviewModal({
   product,
+  allProducts = [],
   seller,
   initialRatio = 'status',
   initialPhoto = null,
   initialDesign = 'retail_classic',
   initialMood = null,
   initialPalette = null,
+  initialTab = null,
+  initialReelMode = 'single_product',
   onClose,
   onShowToast
 }) {
@@ -65,6 +68,7 @@ export default function ProductPosterPreviewModal({
 
   // Active Studio Mode: 'poster' (Static Single Flyer) vs 'reel' (Smooth Multi-Color Animated Slideshow)
   const [activeStudioTab, setActiveStudioTab] = useState(() => {
+    if (initialTab) return initialTab;
     return (photosList && photosList.length > 1) ? 'reel' : 'poster';
   });
 
@@ -539,12 +543,14 @@ export default function ProductPosterPreviewModal({
           {activeStudioTab === 'reel' && (
             <VideoReelPlayer
               product={product}
+              allProducts={allProducts}
               seller={seller}
               ratio={currentRatio}
               design={currentDesign}
               palette={currentPalette}
               mood={currentMood}
               initialPhotos={photosList}
+              initialMode={initialReelMode}
               caption={caption}
               onShowToast={onShowToast}
             />
