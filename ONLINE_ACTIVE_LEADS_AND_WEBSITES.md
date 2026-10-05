@@ -99,7 +99,7 @@
 
 ### 10. MTEMI Kicks & Fits
 * **Live Website:** [mtemi.co.ke](https://mtemi.co.ke/)
-* **Contact:** On-site WhatsApp integration
+* **Contact:** On-site WhatsApp integration 
 * **Physical Hub:** Nairobi, Kenya
 * **Core Products:** Trending streetwear footwear & apparel drops.
 
@@ -126,7 +126,7 @@
 
 ### 13. Phoneplace Kenya
 * **Live Website:** [phoneplacekenya.com](https://phoneplacekenya.com/)
-* **WhatsApp Sales Line:** `0726 526 390` ➔ [Chat on WhatsApp](https://wa.me/254726526390)
+* **WhatsApp Sales Line:** ``0726 526 390 ➔ [Chat on WhatsApp](https://wa.me/254726526390)
 * **Physical Hub:** The Bazaar Building, 4th Floor, Wing A, Moi Avenue, Nairobi CBD
 * **Core Products:** iPhones, Samsung Galaxy S-series, Google Pixels, Apple Watches, iPads.
 * **Why They Need This:** Gadget prices fluctuate every single morning. Graphic designers can't keep up with 15 price updates a day.

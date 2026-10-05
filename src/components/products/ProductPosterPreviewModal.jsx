@@ -3,7 +3,7 @@ import {
   X, Download, Copy, Eye, LayoutTemplate, 
   Palette, Languages, Sparkles, Check, Flame, Zap, 
   Smartphone, Layers, RefreshCw, Image as ImageIcon,
-  Tag, Star, ShieldCheck
+  Tag, Star, ShieldCheck, Film, Video as VideoIcon
 } from 'lucide-react';
 import { canvasRenderer, POST_DESIGNS, POST_MOODS } from '../../services/canvasRenderer';
 import { PRIMARY_PALETTES, getHarmoniousPaletteForProduct } from '../../services/configService';
@@ -13,6 +13,7 @@ import { getOptimizedImageUrl, getProductPhotosPool } from '../../utils/imageUti
 import WhatsAppIcon from '../common/WhatsAppIcon';
 import InstagramIcon from '../common/InstagramIcon';
 import FacebookIcon from '../common/FacebookIcon';
+import VideoReelPlayer from './VideoReelPlayer';
 
 export default function ProductPosterPreviewModal({
   product,
@@ -61,6 +62,11 @@ export default function ProductPosterPreviewModal({
   const photosList = useMemo(() => {
     return getProductPhotosPool(product);
   }, [product]);
+
+  // Active Studio Mode: 'poster' (Static Single Flyer) vs 'reel' (Smooth Multi-Color Animated Slideshow)
+  const [activeStudioTab, setActiveStudioTab] = useState(() => {
+    return (photosList && photosList.length > 1) ? 'reel' : 'poster';
+  });
 
   const [activePhoto, setActivePhoto] = useState(() => {
     return initialPhoto || product?.photo || photosList[0] || null;
@@ -346,6 +352,37 @@ export default function ProductPosterPreviewModal({
         {/* Scrollable Main Control Area */}
         <div className="overflow-y-auto flex-1 p-3 sm:p-4 space-y-3 scrollbar-thin">
           
+          {/* Studio Format Mode Switcher: Static Poster vs Video Reel */}
+          <div className="flex items-center gap-1.5 p-1 bg-slate-950 rounded-2xl border border-slate-800 shadow-sm">
+            <button
+              type="button"
+              onClick={() => setActiveStudioTab('poster')}
+              className={`flex-1 py-2 px-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                activeStudioTab === 'poster'
+                  ? 'bg-emerald-600 text-white shadow-xs'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <ImageIcon className="w-3.5 h-3.5" />
+              <span>Static Poster</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveStudioTab('reel')}
+              className={`flex-1 py-2 px-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                activeStudioTab === 'reel'
+                  ? 'bg-gradient-to-r from-amber-500 via-rose-500 to-amber-600 text-white shadow-md'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <Film className="w-3.5 h-3.5 text-amber-300" />
+              <span>🎬 Video Reel Slideshow</span>
+              <span className="text-[9px] bg-black/40 text-amber-300 font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-wider">
+                {photosList.length >= 2 ? `${photosList.length} Colors` : '4-Color'}
+              </span>
+            </button>
+          </div>
+
           {/* ------------------------------------------------------------- */}
           {/* 1. IN-PREVIEW COLOR ADJUSTER ("Adjust colors when I preview")  */}
           {/* ------------------------------------------------------------- */}
@@ -497,81 +534,101 @@ export default function ProductPosterPreviewModal({
           </div>
 
           {/* ------------------------------------------------------------- */}
-          {/* 4. MULTI-PHOTO ANGLE PICKER (Shoes, Bags, Cosmetics)           */}
+          {/* 4. VIDEO REEL SLIDESHOW STUDIO (Multi-Color Smooth Swap)      */}
           {/* ------------------------------------------------------------- */}
-          {photosList.length > 1 && (
-            <div className="bg-slate-800/80 p-2 rounded-2xl border border-slate-700 space-y-1.5">
-              <div className="flex items-center justify-between px-0.5">
-                <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider flex items-center gap-1">
-                  <ImageIcon className="w-3 h-3 text-emerald-400" />
-                  <span>Choose Photo Angle ({photosList.length} Available):</span>
-                </span>
-                <span className="text-[10px] font-bold text-emerald-400">
-                  Angle {photosList.indexOf(activePhoto) >= 0 ? photosList.indexOf(activePhoto) + 1 : 1}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 overflow-x-auto pb-0.5 scrollbar-thin">
-                {photosList.map((photoUrl, idx) => {
-                  const isSelected = activePhoto === photoUrl;
-                  return (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => setActivePhoto(photoUrl)}
-                      className={`w-12 h-12 rounded-xl overflow-hidden border-2 bg-slate-950 flex-shrink-0 transition-all cursor-pointer ${
-                        isSelected
-                          ? 'border-emerald-400 ring-2 ring-emerald-400/50 scale-105 shadow-md'
-                          : 'border-slate-700 opacity-60 hover:opacity-100 hover:border-slate-500'
-                      }`}
-                      title={`Render Photo Angle ${idx + 1} on Poster`}
-                    >
-                      <img
-                        src={getOptimizedImageUrl(photoUrl)}
-                        alt={`Angle ${idx + 1}`}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.onerror = null;
-                          e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
-                        }}
-                      />
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
+          {activeStudioTab === 'reel' && (
+            <VideoReelPlayer
+              product={product}
+              seller={seller}
+              ratio={currentRatio}
+              design={currentDesign}
+              palette={currentPalette}
+              mood={currentMood}
+              initialPhotos={photosList}
+              caption={caption}
+              onShowToast={onShowToast}
+            />
           )}
 
           {/* ------------------------------------------------------------- */}
-          {/* 5. LIVE CANVAS PREVIEW DISPLAY                                */}
+          {/* 5. STATIC POSTER PREVIEW & ANGLE PICKER (When in Poster Mode) */}
           {/* ------------------------------------------------------------- */}
-          <div className="relative group bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center p-2 min-h-[340px] sm:min-h-[400px]">
-            {isRendering && (
-              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-xs rounded-2xl transition-all">
-                <div className="w-10 h-10 border-3 border-emerald-400 border-t-transparent rounded-full animate-spin" />
-                <span className="text-emerald-300 text-xs font-black mt-3">
-                  Rendering Branded Poster...
-                </span>
-                <span className="text-[10px] text-slate-400 mt-1">
-                  1080px Master Quality • {activeDesignObj.name}
-                </span>
-              </div>
-            )}
+          {activeStudioTab === 'poster' && (
+            <>
+              {/* Photo Angle Picker */}
+              {photosList.length > 1 && (
+                <div className="bg-slate-800/80 p-2 rounded-2xl border border-slate-700 space-y-1.5">
+                  <div className="flex items-center justify-between px-0.5">
+                    <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                      <ImageIcon className="w-3 h-3 text-emerald-400" />
+                      <span>Choose Photo Angle ({photosList.length} Available):</span>
+                    </span>
+                    <span className="text-[10px] font-bold text-emerald-400">
+                      Angle {photosList.indexOf(activePhoto) >= 0 ? photosList.indexOf(activePhoto) + 1 : 1}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 overflow-x-auto pb-0.5 scrollbar-thin">
+                    {photosList.map((photoUrl, idx) => {
+                      const isSelected = activePhoto === photoUrl;
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => setActivePhoto(photoUrl)}
+                          className={`w-12 h-12 rounded-xl overflow-hidden border-2 bg-slate-950 flex-shrink-0 transition-all cursor-pointer ${
+                            isSelected
+                              ? 'border-emerald-400 ring-2 ring-emerald-400/50 scale-105 shadow-md'
+                              : 'border-slate-700 opacity-60 hover:opacity-100 hover:border-slate-500'
+                          }`}
+                          title={`Render Photo Angle ${idx + 1} on Poster`}
+                        >
+                          <img
+                            src={getOptimizedImageUrl(photoUrl)}
+                            alt={`Angle ${idx + 1}`}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              e.currentTarget.onerror = null;
+                              e.currentTarget.src = '/products/bbk-vaseline-lip.jpg';
+                            }}
+                          />
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
 
-            {renderedImageUrl ? (
-              <img
-                src={renderedImageUrl}
-                alt={`${product.name} Designed Poster`}
-                className={`w-auto object-contain rounded-3xl shadow-2xl transition-transform duration-200 ring-1 ring-slate-800 ${
-                  currentRatio === 'status' ? 'max-h-[54vh] sm:max-h-[60vh]' : 'max-h-[46vh] sm:max-h-[52vh]'
-                }`}
-              />
-            ) : (
-              <div className="flex flex-col items-center justify-center text-slate-400 p-8 text-center">
-                <RefreshCw className="w-8 h-8 text-emerald-400 animate-spin mb-2" />
-                <span className="text-xs font-bold text-slate-300">Generating Designed Poster...</span>
+              {/* Live Canvas Preview Display */}
+              <div className="relative group bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center p-2 min-h-[340px] sm:min-h-[400px]">
+                {isRendering && (
+                  <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-xs rounded-2xl transition-all">
+                    <div className="w-10 h-10 border-3 border-emerald-400 border-t-transparent rounded-full animate-spin" />
+                    <span className="text-emerald-300 text-xs font-black mt-3">
+                      Rendering Branded Poster...
+                    </span>
+                    <span className="text-[10px] text-slate-400 mt-1">
+                      1080px Master Quality • {activeDesignObj.name}
+                    </span>
+                  </div>
+                )}
+
+                {renderedImageUrl ? (
+                  <img
+                    src={renderedImageUrl}
+                    alt={`${product.name} Designed Poster`}
+                    className={`w-auto object-contain rounded-3xl shadow-2xl transition-transform duration-200 ring-1 ring-slate-800 ${
+                      currentRatio === 'status' ? 'max-h-[54vh] sm:max-h-[60vh]' : 'max-h-[46vh] sm:max-h-[52vh]'
+                    }`}
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center text-slate-400 p-8 text-center">
+                    <RefreshCw className="w-8 h-8 text-emerald-400 animate-spin mb-2" />
+                    <span className="text-xs font-bold text-slate-300">Generating Designed Poster...</span>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            </>
+          )}
 
           {/* ------------------------------------------------------------- */}
           {/* 6. WHATSAPP CAPTION SECTION WITH SWAHILI / ENGLISH SWITCHER   */}
@@ -619,67 +676,16 @@ export default function ProductPosterPreviewModal({
         {/* 7. STICKY ACTION FOOTER (Multi-Platform Publishing)           */}
         {/* ------------------------------------------------------------- */}
         <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-950/95 backdrop-blur-md flex flex-col gap-2 z-10">
-          <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
-            {/* 1. WhatsApp */}
-            <button
-              type="button"
-              onClick={handleShare}
-              disabled={isRendering || isSharing || !imageBlob}
-              className="bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-extrabold py-2.5 px-1.5 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition disabled:opacity-50 text-[11px] sm:text-xs cursor-pointer"
-              style={{ minHeight: '44px' }}
-              title="Post 9:16 Vertical Poster directly to WhatsApp Status"
-            >
-              <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
-              <span className="truncate">{isSharing ? 'Opening...' : 'WhatsApp'}</span>
-            </button>
-
-            {/* 2. Instagram */}
-            <button
-              type="button"
-              onClick={() => handleSharePlatform('instagram')}
-              disabled={isRendering || isSharingFeed}
-              className="bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-95 text-white font-extrabold py-2.5 px-1.5 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition disabled:opacity-50 text-[11px] sm:text-xs cursor-pointer"
-              style={{ minHeight: '44px' }}
-              title="Share 4:5 Flyer & Copy Caption to Instagram"
-            >
-              <InstagramIcon className="w-4 h-4 fill-white flex-shrink-0" />
-              <span className="truncate">{isSharingFeed ? 'Preparing...' : 'Instagram'}</span>
-            </button>
-
-            {/* 3. Facebook */}
-            <button
-              type="button"
-              onClick={() => handleSharePlatform('facebook')}
-              disabled={isRendering || isSharingFeed}
-              className="bg-[#1877F2] hover:bg-[#166fe5] active:bg-[#1465d2] text-white font-extrabold py-2.5 px-1.5 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition disabled:opacity-50 text-[11px] sm:text-xs cursor-pointer"
-              style={{ minHeight: '44px' }}
-              title="Share 4:5 Flyer & Copy Caption to Facebook"
-            >
-              <FacebookIcon className="w-4 h-4 fill-white flex-shrink-0" />
-              <span className="truncate">Facebook</span>
-            </button>
-          </div>
-
-          <div className="flex items-center justify-between text-xs px-1 text-slate-400">
-            <span className="text-[10px] text-slate-500">
-              ⚡ Status = 9:16 Visual • Feed = 4:5 + Caption
-            </span>
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={handleDownload}
-                disabled={isRendering || !imageBlob}
-                className="hover:text-white font-bold flex items-center gap-1 cursor-pointer transition text-slate-400"
-                title="Download flyer image only"
-              >
-                <Download className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Save</span>
-              </button>
-              <span className="text-slate-600">•</span>
+          {activeStudioTab === 'reel' ? (
+            <div className="flex items-center justify-between text-xs px-1 text-slate-400">
+              <span className="text-[10px] text-amber-400 font-bold flex items-center gap-1.5">
+                <Film className="w-3.5 h-3.5" />
+                <span>Video Reel Studio • 1080p Master Quality Slideshow Ready</span>
+              </span>
               <button
                 type="button"
                 onClick={handleCopyCaption}
-                className="hover:text-white font-bold flex items-center gap-1 cursor-pointer transition text-slate-400"
+                className="hover:text-white font-bold flex items-center gap-1.5 cursor-pointer transition text-slate-300 bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-700"
                 title="Copy caption text to clipboard"
               >
                 {copiedCaption ? (
@@ -690,7 +696,82 @@ export default function ProductPosterPreviewModal({
                 <span>{copiedCaption ? 'Copied' : 'Copy Caption'}</span>
               </button>
             </div>
-          </div>
+          ) : (
+            <>
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
+                {/* 1. WhatsApp */}
+                <button
+                  type="button"
+                  onClick={handleShare}
+                  disabled={isRendering || isSharing || !imageBlob}
+                  className="bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-extrabold py-2.5 px-1.5 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition disabled:opacity-50 text-[11px] sm:text-xs cursor-pointer"
+                  style={{ minHeight: '44px' }}
+                  title="Post 9:16 Vertical Poster directly to WhatsApp Status"
+                >
+                  <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
+                  <span className="truncate">{isSharing ? 'Opening...' : 'WhatsApp'}</span>
+                </button>
+
+                {/* 2. Instagram */}
+                <button
+                  type="button"
+                  onClick={() => handleSharePlatform('instagram')}
+                  disabled={isRendering || isSharingFeed}
+                  className="bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-95 text-white font-extrabold py-2.5 px-1.5 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition disabled:opacity-50 text-[11px] sm:text-xs cursor-pointer"
+                  style={{ minHeight: '44px' }}
+                  title="Share 4:5 Flyer & Copy Caption to Instagram"
+                >
+                  <InstagramIcon className="w-4 h-4 fill-white flex-shrink-0" />
+                  <span className="truncate">{isSharingFeed ? 'Preparing...' : 'Instagram'}</span>
+                </button>
+
+                {/* 3. Facebook */}
+                <button
+                  type="button"
+                  onClick={() => handleSharePlatform('facebook')}
+                  disabled={isRendering || isSharingFeed}
+                  className="bg-[#1877F2] hover:bg-[#166fe5] active:bg-[#1465d2] text-white font-extrabold py-2.5 px-1.5 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition disabled:opacity-50 text-[11px] sm:text-xs cursor-pointer"
+                  style={{ minHeight: '44px' }}
+                  title="Share 4:5 Flyer & Copy Caption to Facebook"
+                >
+                  <FacebookIcon className="w-4 h-4 fill-white flex-shrink-0" />
+                  <span className="truncate">Facebook</span>
+                </button>
+              </div>
+
+              <div className="flex items-center justify-between text-xs px-1 text-slate-400">
+                <span className="text-[10px] text-slate-500">
+                  ⚡ Status = 9:16 Visual • Feed = 4:5 + Caption
+                </span>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={handleDownload}
+                    disabled={isRendering || !imageBlob}
+                    className="hover:text-white font-bold flex items-center gap-1 cursor-pointer transition text-slate-400"
+                    title="Download flyer image only"
+                  >
+                    <Download className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Save</span>
+                  </button>
+                  <span className="text-slate-600">•</span>
+                  <button
+                    type="button"
+                    onClick={handleCopyCaption}
+                    className="hover:text-white font-bold flex items-center gap-1 cursor-pointer transition text-slate-400"
+                    title="Copy caption text to clipboard"
+                  >
+                    {copiedCaption ? (
+                      <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[3px]" />
+                    ) : (
+                      <Copy className="w-3.5 h-3.5 text-emerald-400" />
+                    )}
+                    <span>{copiedCaption ? 'Copied' : 'Copy Caption'}</span>
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>

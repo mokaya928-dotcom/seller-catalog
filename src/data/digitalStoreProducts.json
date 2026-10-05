@@ -1,5 +1,43 @@
 [
   {
+    "id": "ds_iphone_16_pro_max",
+    "name": "Apple iPhone 16 Pro Max (256GB Titanium)",
+    "price": 189999,
+    "category": "Smartphones & Mobile",
+    "badge": "4 PRO COLORS",
+    "description": "Super Retina XDR OLED 6.9\" display with ProMotion 120Hz, A18 Pro chip, 48MP fusion camera, Grade 5 Titanium finish in 4 stunning colors.",
+    "benefit_line": "Official 1-Year Apple Warranty • All 4 Titanium Colors In Stock • Bihi Towers Moi Ave",
+    "seller_id": "seller_digital_store_kenya",
+    "in_stock": true,
+    "photo": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=900&q=85",
+    "photos": [
+      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=900&q=85",
+      "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=900&q=85",
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02560?w=900&q=85",
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=900&q=85"
+    ],
+    "featured": true
+  },
+  {
+    "id": "ds_samsung_s24_ultra",
+    "name": "Samsung Galaxy S24 Ultra 5G (512GB)",
+    "price": 164999,
+    "category": "Smartphones & Mobile",
+    "badge": "AI FLAGSHIP • 4 COLORS",
+    "description": "Snapdragon 8 Gen 3, 200MP Quad Telephoto Camera, Galaxy AI Built-in, S-Pen included, 6.8\" Dynamic AMOLED 2X 120Hz in 4 Titanium colors.",
+    "benefit_line": "Official Samsung Kenya • All 4 Titanium Colors • Free S-Pen Included",
+    "seller_id": "seller_digital_store_kenya",
+    "in_stock": true,
+    "photo": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=900&q=85",
+    "photos": [
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=900&q=85",
+      "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=900&q=85",
+      "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=900&q=85",
+      "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=900&q=85"
+    ],
+    "featured": true
+  },
+  {
     "price": 234999,
     "category": "Gaming Laptops & Ultrabooks",
     "badge": "RTX 4060 GAMING",
