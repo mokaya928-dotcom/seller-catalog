@@ -9,6 +9,20 @@ import { analyticsService, EVENT_TYPES } from './analyticsService';
  * clipboard auto-copy, and graceful download fallbacks.
  */
 
+export function getCleanMimeType(blobOrType, filename = '') {
+  const rawType = typeof blobOrType === 'string' ? blobOrType : (blobOrType?.type || '');
+  const clean = rawType.split(';')[0].trim().toLowerCase();
+  if (clean && clean !== 'application/octet-stream') return clean;
+  const lowerName = (filename || '').toLowerCase();
+  if (lowerName.endsWith('.mp4')) return 'video/mp4';
+  if (lowerName.endsWith('.webm')) return 'video/webm';
+  if (lowerName.endsWith('.png')) return 'image/png';
+  if (lowerName.endsWith('.jpg') || lowerName.endsWith('.jpeg')) return 'image/jpeg';
+  if (lowerName.endsWith('.webp')) return 'image/webp';
+  if (lowerName.endsWith('.zip')) return 'application/zip';
+  return 'application/octet-stream';
+}
+
 export const shareService = {
   /**
    * Copy caption text to clipboard reliably (supports older Android WebViews)
@@ -66,7 +80,7 @@ export const shareService = {
   },
 
   /**
-   * Share post image(s) directly to WhatsApp Status / Groups via Web Share API
+   * Share post image(s) or video directly to WhatsApp Status / Groups via Web Share API
    * Supports multiple files (canvas post + reference photos) simultaneously!
    * Falls back to sequential image download if Web Share is rejected or unavailable.
    * Auto-copies the caption to clipboard in all flows.
@@ -110,9 +124,14 @@ export const shareService = {
     }
 
     // 2. Check for Web Share API file sharing support
-    if (navigator.share) {
+    // On iOS Safari / Android Chrome, we strip codec parameters (e.g. video/mp4;codecs=avc1 -> video/mp4)
+    // so navigator.canShare accurately validates the file without failing.
+    if (typeof navigator !== 'undefined' && navigator.share) {
       try {
-        const files = allBlobs.map((b, i) => new File([b], allNames[i], { type: b.type || 'image/png' }));
+        const files = allBlobs.map((b, i) => {
+          const cleanMime = getCleanMimeType(b, allNames[i]);
+          return new File([b], allNames[i], { type: cleanMime });
+        });
         
         if (navigator.canShare && navigator.canShare({ files })) {
           await navigator.share({
@@ -136,7 +155,8 @@ export const shareService = {
       }
     }
 
-    // 3. Desktop / Fallback: Auto-download image(s) AND immediately launch WhatsApp Web
+    // 3. Desktop / Mobile Fallback: Auto-download image(s) AND launch WhatsApp
+    // Note: Blob URL is kept alive for 15 minutes so mobile downloads never terminate prematurely!
     allBlobs.forEach((b, idx) => {
       setTimeout(() => {
         const url = URL.createObjectURL(b);
@@ -146,11 +166,18 @@ export const shareService = {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        setTimeout(() => URL.revokeObjectURL(url), 2000);
+        setTimeout(() => {
+          try { URL.revokeObjectURL(url); } catch (e) {}
+        }, 15 * 60 * 1000);
       }, idx * 250);
     });
 
-    // Proactively launch target platform so the seller is brought directly there
+    const isMobileDevice = typeof navigator !== 'undefined' && (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+    );
+
+    // Proactively launch target platform
     try {
       if (platform === 'instagram') {
         window.open('https://www.instagram.com/', '_blank');
@@ -158,7 +185,13 @@ export const shareService = {
         window.open('https://www.facebook.com/', '_blank');
       } else {
         const encoded = encodeURIComponent(caption);
-        window.open(`https://web.whatsapp.com/send?text=${encoded}`, '_blank');
+        if (isMobileDevice) {
+          // On mobile phones, open native WhatsApp app with prefilled text
+          window.open(`https://api.whatsapp.com/send?text=${encoded}`, '_blank');
+        } else {
+          // On desktop, open WhatsApp Web
+          window.open(`https://web.whatsapp.com/send?text=${encoded}`, '_blank');
+        }
       }
     } catch (e) {
       console.warn('Could not launch platform popup', e);
@@ -168,7 +201,7 @@ export const shareService = {
       ? 'desktop_instagram_opened' 
       : platform === 'facebook' 
         ? 'desktop_facebook_opened' 
-        : 'desktop_whatsapp_opened';
+        : (isMobileDevice ? 'mobile_whatsapp_opened' : 'desktop_whatsapp_opened');
 
     return {
       success: true,
@@ -179,7 +212,8 @@ export const shareService = {
   },
 
   /**
-   * Explicitly download flyer only without opening WhatsApp
+   * Explicitly download flyer or file without opening WhatsApp.
+   * Keeps blob URL active for 15 minutes to guarantee mobile downloads finish completely!
    */
   downloadPosterOnly({ blob, filename = 'post.png' }) {
     if (!blob) return false;
@@ -190,8 +224,50 @@ export const shareService = {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    // Keep blob URL alive for 15 minutes so mobile downloads never get aborted mid-stream
+    setTimeout(() => {
+      try {
+        URL.revokeObjectURL(url);
+      } catch (e) {}
+    }, 15 * 60 * 1000);
     return true;
+  },
+
+  /**
+   * Save video reel directly to device Camera Roll / Photos or local storage.
+   * On mobile (iOS / Android), triggers native Web Share API with the video file,
+   * enabling user to tap "Save Video" (direct to Photos / Camera Roll) or send to WhatsApp.
+   * On desktop, initiates a direct browser download.
+   */
+  async saveVideoToDevice({ blob, filename = 'product-reel.mp4', title = 'Product Video Reel' }) {
+    if (!blob) return { success: false, message: 'No video data' };
+
+    const cleanMime = getCleanMimeType(blob, filename);
+    const file = new File([blob], filename, { type: cleanMime });
+
+    // 1. Try native Web Share API with File (Supported on iOS 15+ Safari & Android Chrome)
+    // On iOS, this provides the native "Save Video" option directly to Apple Photos!
+    if (typeof navigator !== 'undefined' && navigator.share && navigator.canShare) {
+      try {
+        if (navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            files: [file],
+            title: title || 'Product Video Reel',
+            text: ''
+          });
+          return { success: true, method: 'native_share_sheet' };
+        }
+      } catch (err) {
+        if (err.name === 'AbortError') {
+          return { success: false, method: 'cancelled' };
+        }
+        console.warn('Native share sheet save failed, falling back to download', err);
+      }
+    }
+
+    // 2. Direct browser download fallback
+    const ok = this.downloadPosterOnly({ blob, filename });
+    return { success: ok, method: 'browser_download' };
   },
 
   /**

@@ -298,7 +298,7 @@ export default function ProductPosterPreviewModal({
     const filename = `${safeName}-${currentDesign}-${currentMood}-${currentRatio}.png`;
     shareService.downloadPosterOnly({ blob: imageBlob, filename });
     if (onShowToast) {
-      onShowToast(`✓ Designed poster saved to your device!`, 'success');
+      onShowToast(`✓ Poster saved! On iPhone, find it in Files app > Downloads (or share to WhatsApp directly).`, 'success');
     }
   };
 

@@ -503,6 +503,7 @@ export async function recordReelVideo(canvas, slides, options = {}, onProgress =
             blob,
             url,
             mimeType: selectedMime,
+            cleanMimeType: selectedExt === 'mp4' ? 'video/mp4' : 'video/webm',
             extension: selectedExt,
             duration: totalDurationSeconds
           });
@@ -538,7 +539,8 @@ export async function recordReelVideo(canvas, slides, options = {}, onProgress =
       await new Promise((r) => setTimeout(r, frameIntervalMs));
     }
 
-    // Force flush of buffered frames before stopping
+    // Allow encoder to finalize incoming chunks before stopping
+    await new Promise((r) => setTimeout(r, 150));
     if (recorder.requestData && recorder.state === 'recording') {
       try {
         recorder.requestData();
@@ -546,6 +548,7 @@ export async function recordReelVideo(canvas, slides, options = {}, onProgress =
         // Safe non-blocking request
       }
     }
+    await new Promise((r) => setTimeout(r, 100));
 
     if (recorder.state === 'recording') {
       recorder.stop();

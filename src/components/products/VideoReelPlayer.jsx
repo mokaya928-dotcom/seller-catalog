@@ -80,6 +80,7 @@ export default function VideoReelPlayer({
   const [recordProgress, setRecordProgress] = useState(0);
   const [recordedVideo, setRecordedVideo] = useState(null);
   const [isSharing, setIsSharing] = useState(false);
+  const [isSavingToDevice, setIsSavingToDevice] = useState(false);
 
   // 6. Modals
   const [showAddPhotoModal, setShowAddPhotoModal] = useState(false);
@@ -411,6 +412,46 @@ export default function VideoReelPlayer({
     }
   };
 
+  const videoSizeMB = useMemo(() => {
+    if (!recordedVideo?.blob?.size) return null;
+    return (recordedVideo.blob.size / (1024 * 1024)).toFixed(1);
+  }, [recordedVideo]);
+
+  // Save video directly to Camera Roll / Photos via native share sheet or direct download
+  const handleSaveToDevice = async () => {
+    if (!recordedVideo || isSavingToDevice) return;
+    setIsSavingToDevice(true);
+
+    try {
+      const res = await shareService.saveVideoToDevice({
+        blob: recordedVideo.blob,
+        filename: recordedVideo.filename,
+        title: reelMode === 'multi_product' 
+          ? `${seller?.shop_name || 'Catalog'} - Product Reel` 
+          : `${product?.name || 'Product'} - Color Reel`
+      });
+
+      if (res.success) {
+        if (res.method === 'native_share_sheet') {
+          if (onShowToast) onShowToast('✓ Tap "Save Video" in the share menu to add to Camera Roll / Photos!', 'success');
+        } else {
+          if (onShowToast) onShowToast(`✓ Video Reel saved (${recordedVideo.filename})!`, 'success');
+        }
+      } else if (res.method === 'cancelled') {
+        if (onShowToast) onShowToast('Save cancelled.', 'info');
+      }
+    } catch (err) {
+      console.error('Save to device failed', err);
+      shareService.downloadPosterOnly({
+        blob: recordedVideo.blob,
+        filename: recordedVideo.filename
+      });
+      if (onShowToast) onShowToast(`✓ Video downloaded (${recordedVideo.filename})!`, 'success');
+    } finally {
+      setIsSavingToDevice(false);
+    }
+  };
+
   // Download video file directly
   const handleDownloadVideo = () => {
     if (!recordedVideo) return;
@@ -419,7 +460,7 @@ export default function VideoReelPlayer({
       filename: recordedVideo.filename
     });
     if (onShowToast) {
-      onShowToast(`✓ Video Reel saved to your device (${recordedVideo.filename})!`, 'success');
+      onShowToast(`✓ Video download started! On iPhone, check the Files app > Downloads folder.`, 'success');
     }
   };
 
@@ -791,7 +832,7 @@ export default function VideoReelPlayer({
             />
             <div className="absolute top-2 left-2 bg-emerald-600/90 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-md flex items-center gap-1 backdrop-blur-xs">
               <Check className="w-3.5 h-3.5 stroke-[3px]" />
-              <span>1080p Video Ready ({recordedVideo.extension.toUpperCase()})</span>
+              <span>1080p Video Ready ({recordedVideo.extension.toUpperCase()}{videoSizeMB ? ` • ${videoSizeMB} MB` : ''})</span>
             </div>
           </div>
         ) : (
@@ -884,11 +925,11 @@ export default function VideoReelPlayer({
             </span>
           </button>
         ) : (
-          <div className="space-y-2 animate-fade-in">
+          <div className="space-y-2.5 animate-fade-in">
             <div className="p-2.5 bg-emerald-950/40 border border-emerald-500/30 rounded-xl flex items-center justify-between text-xs">
               <span className="text-emerald-300 font-extrabold flex items-center gap-1.5 text-[11px]">
                 <Check className="w-4 h-4 text-emerald-400 stroke-[3px]" />
-                <span>Video Reel Ready! Playing on screen above.</span>
+                <span>1080p Reel Ready! ({recordedVideo.extension.toUpperCase()}{videoSizeMB ? ` • ${videoSizeMB} MB` : ''})</span>
               </span>
               <button
                 type="button"
@@ -899,31 +940,57 @@ export default function VideoReelPlayer({
               </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-2">
-              {/* Share Video to WhatsApp */}
+            {/* Action Buttons */}
+            <div className="space-y-2">
+              {/* Primary 1: Save to Camera Roll / Photos (Mobile Native Share Sheet) */}
               <button
                 type="button"
-                onClick={handleShareVideo}
-                disabled={isSharing}
-                className="bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-extrabold py-2.5 px-2 rounded-xl flex items-center justify-center gap-2 shadow-sm transition cursor-pointer text-xs"
+                onClick={handleSaveToDevice}
+                disabled={isSavingToDevice}
+                className="w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:opacity-95 active:scale-[0.99] text-white font-black py-3 px-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition cursor-pointer text-xs sm:text-sm"
               >
-                <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
-                <span className="truncate">{isSharing ? 'Sharing...' : 'Share Video to WhatsApp'}</span>
+                <Download className="w-4 h-4 text-white" />
+                <span>{isSavingToDevice ? 'Opening Save Menu...' : '💾 Save Video to Photos / Camera Roll'}</span>
               </button>
 
-              {/* Download Video */}
-              <button
-                type="button"
-                onClick={handleDownloadVideo}
-                className="bg-slate-800 hover:bg-slate-700 text-white font-extrabold py-2.5 px-2 rounded-xl flex items-center justify-center gap-2 border border-slate-600 transition cursor-pointer text-xs"
-              >
-                <Download className="w-4 h-4 text-amber-400" />
-                <span className="truncate">Download Video</span>
-              </button>
+              <div className="grid grid-cols-2 gap-2">
+                {/* Primary 2: Share Video to WhatsApp */}
+                <button
+                  type="button"
+                  onClick={handleShareVideo}
+                  disabled={isSharing}
+                  className="bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1caa52] text-white font-extrabold py-2.5 px-2 rounded-xl flex items-center justify-center gap-2 shadow-sm transition cursor-pointer text-xs"
+                >
+                  <WhatsAppIcon className="w-4 h-4 fill-white flex-shrink-0" />
+                  <span className="truncate">{isSharing ? 'Sharing...' : 'Share to WhatsApp'}</span>
+                </button>
+
+                {/* Secondary: Direct Download File */}
+                <button
+                  type="button"
+                  onClick={handleDownloadVideo}
+                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 font-extrabold py-2.5 px-2 rounded-xl flex items-center justify-center gap-2 border border-slate-700 transition cursor-pointer text-xs"
+                >
+                  <Film className="w-4 h-4 text-amber-400" />
+                  <span className="truncate">Download File</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Mobile Helpful Guidance Box */}
+            <div className="p-2.5 bg-slate-900/90 rounded-xl border border-slate-800 text-[10.5px] text-slate-300 space-y-1">
+              <div className="flex items-center gap-1.5 text-amber-400 font-black">
+                <Smartphone className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+                <span>Finding your video on mobile:</span>
+              </div>
+              <p className="text-slate-300 leading-relaxed text-[10.5px]">
+                • Tap <strong className="text-emerald-400">"Save Video to Photos"</strong> above and choose <strong className="text-white">"Save Video"</strong> to add directly into your Photos/Gallery.<br />
+                • On iPhone, if you tapped <strong className="text-white">"Download File"</strong>, it is saved in your <strong className="text-amber-300">Files app &gt; Downloads</strong> folder.
+              </p>
             </div>
 
             {/* Mobile Long-Press / Open in New Tab Fallback */}
-            <div className="text-center pt-1">
+            <div className="text-center pt-0.5">
               <a
                 href={recordedVideo.url}
                 target="_blank"
@@ -931,7 +998,7 @@ export default function VideoReelPlayer({
                 className="text-[10px] text-slate-400 hover:text-emerald-300 underline inline-flex items-center gap-1"
               >
                 <ExternalLink className="w-3 h-3" />
-                <span>Open in new tab (Long-press to save directly to camera roll)</span>
+                <span>Open in new tab (or long-press video player above to save)</span>
               </a>
             </div>
           </div>
